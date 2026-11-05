@@ -1,0 +1,123 @@
+name: SONAR · collect, verify & deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      collect:
+        description: Refresh YouTube data before deployment (requires YOUTUBE_API_KEY secret)
+        type: boolean
+        default: false
+  schedule:
+    - cron: '17 */6 * * *'
+    - cron: '7,27,47 * * * *'
+concurrency:
+  group: sonar-${{ github.ref }}
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  collect:
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.collect)
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collector tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -q
+      - name: Validate registry and show budget estimate
+        run: |
+          python -m collectors.groups validate
+          python -m collectors.quota --estimate
+      - name: Collect or refresh with persistent limits
+        id: collect_data
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          FULL: ${{ github.event_name == 'workflow_dispatch' || github.event.schedule == '17 */6 * * *' }}
+        shell: bash
+        run: |
+          if [ -z "$YOUTUBE_API_KEY" ]; then
+            echo '::error::Add the YOUTUBE_API_KEY repository secret to enable collection.'
+            exit 1
+          fi
+          if [ "$FULL" = "true" ]; then
+            python -m collectors.youtube --pages 1
+          else
+            python -m collectors.youtube --refresh-live
+          fi
+      - name: Commit data or quota ledger
+        id: commit
+        if: always()
+        env:
+          COLLECTION_OK: ${{ steps.collect_data.outcome == 'success' }}
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if [ "$COLLECTION_OK" = "true" ]; then
+            git add public/data
+          elif [ -f public/data/collection-state.json ]; then
+            git add public/data/collection-state.json
+          fi
+          changed=false
+          if git diff --cached --name-only | grep -qv '^public/data/collection-state.json$'; then
+            changed=true
+          fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: refresh SONAR indexes and API budget'
+            git push
+          fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+  build:
+    needs: collect
+    if: always() && (needs.collect.result == 'skipped' || (needs.collect.result == 'success' && needs.collect.outputs.changed == 'true'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.collect.outputs.commit_sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '11.25.0'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pnpm install --frozen-lockfile
+      - run: python -m collectors.groups validate
+      - run: python -m collectors.groups sync
+      - run: pnpm test
+      - run: python -m unittest discover -s tests -p 'test_*.py' -q
+      - run: pnpm build
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    if: always() && needs.build.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
