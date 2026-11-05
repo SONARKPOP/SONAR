@@ -116,7 +116,8 @@ def normalize(raw, channel, config, override=None):
     text = snippet['title']
     groups = set(channel['groupIds'] if channel['official'] else [])
     groups.update(g['id'] for g in config['groups'] if not g.get('ambiguousName') and any(mentions(text, a) for a in g['aliases']))
-    members = infer_members(snippet, groups, config)
+    # A name unique in our catalog may still belong to an unrelated artist.
+    members = infer_members(snippet, groups, config) if groups else []
     groups.update(m['groupId'] for m in config['members'] if m['id'] in members)
     live = raw.get('liveStreamingDetails', {})
     status = 'ended' if live.get('actualEndTime') else 'live' if live.get('actualStartTime') else 'upcoming' if live.get('scheduledStartTime') else 'none'
