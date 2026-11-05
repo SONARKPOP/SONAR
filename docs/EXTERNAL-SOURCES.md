@@ -14,7 +14,7 @@ Source ownership is stored independently in contentTypes, so an external perform
 
 Reviewed SCENE-FLIX (https://adam-yam.github.io/SCENE-FLIX/) and its published EXTERNAL_CATS/EXTERNAL_LABELS on 2026-11-06. It organizes performances, radio, variety, interviews, promotions, events, challenge behind-the-scenes and other appearances by program. SONAR uses broad categories and independently authored publisher-scoped title rules; no SCENE-FLIX video list or implementation is imported.
 
-New publisher candidates: M2 (@MnetM2), KBS Kpop (@KBSKpop), MBC Radio (@radiombc), Arirang Radio (@Music180Arirang), 1theK Originals (@1theKOriginals), TEO (@TEO_universe). Runtime API identity checks gate each source. Source URLs are in config/channels.json.
+New publisher candidates: M2 (@MnetM2), KBS Kpop (@KBSKpop), MBC Radio (@radiombc), Arirang Radio (@arirangradio; formerly Music180Arirang), 1theK Originals (@1theKOriginals), TEO (@TEO_universe). Runtime API identity checks gate each source. Source URLs are in config/channels.json.
 
 Programs include Relay Dance, Tingle Interview, LA Deja Vu, Lee Mujin Service, Idol 1N2D, Gap Crush, Idol Silence, Idol Backstage, Killing Voice and Salon Drip. A title match applies only on the configured publisher; editorial overrides take precedence. Program filter buttons use the existing SONAR discovery UI. Videos without a recognized program remain under their channel. Multiple programs on the same publisher share one upload scan.
 
