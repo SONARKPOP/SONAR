@@ -3,7 +3,7 @@ export function monthKey(value){const parts=new Intl.DateTimeFormat('en-US',{tim
 export function dedupe(rows){return [...new Map(rows.map(x=>[x.id,x])).values()];}
 export function filterContent(rows,{groups=[],category='home',query='',channel='',member='',subtype='',format='',year='',month='',externalType='',ownType=''}){
  const q=query.trim().toLocaleLowerCase();
- return dedupe(rows).filter(v=>(!groups.length||groups.some(g=>v.groupIds.includes(g))) && (category==='shorts'?(v.format==='short'||v.category==='shorts'):(category==='uploads'||(v.format!=='short'&&v.category!=='shorts'))&&(category==='home'||category==='uploads'||(category==='live'?v.format==='live':category===v.category||v.contentTypes?.includes(category)))) && (!q||[v.title,v.channelName,...v.tags].join(' ').toLocaleLowerCase().includes(q)) && (!channel||(v.programId||v.channelId)===channel) && (!member||v.memberIds.includes(member)) && (!subtype||v.subtypes.includes(subtype)) && (!format||v.format===format) && (!year||monthKey(v.publishedAt).slice(0,4)===year) && (!month||monthKey(v.publishedAt).slice(5,7)===month) && (!externalType||externalKind(v)===externalType) && (!ownType||ownKind(v)===ownType)).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
+ return dedupe(rows).filter(v=>(!groups.length||groups.some(g=>v.groupIds.includes(g))) && (category==='shorts'?isShortContent(v):(category==='uploads'||!isShortContent(v))&&(category==='home'||category==='uploads'||(category==='live'?v.format==='live':category===v.category||v.contentTypes?.includes(category)))) && (!q||[v.title,v.channelName,...v.tags].join(' ').toLocaleLowerCase().includes(q)) && (!channel||(v.programId||v.channelId)===channel) && (!member||v.memberIds.includes(member)) && (!subtype||v.subtypes.includes(subtype)) && (!format||v.format===format) && (!year||monthKey(v.publishedAt).slice(0,4)===year) && (!month||monthKey(v.publishedAt).slice(5,7)===month) && (!externalType||externalKind(v)===externalType) && (!ownType||ownKind(v)===ownType)).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
 }
 export function commonChannels(rows,groups){
  const map=new Map();
@@ -145,4 +145,22 @@ export function activityLabel(group,now=Date.now()){
 }
 export function activityDirectory(groups,archived=false,now=Date.now()){
  return groups.filter(g=>(groupActivity(g,now)==='archived')===archived);
+}
+
+// A duration fallback groups untagged short clips without claiming YouTube's
+// unavailable vertical-video metadata. Live streams always retain their type.
+export function isShortContent(video){
+ if(video.format==='short'||video.category==='shorts')return true;
+ if(video.format==='live'||['live','upcoming','ended'].includes(video.liveStatus))return false;
+ const value=String(video.durationLabel||'').toLowerCase().replace(/^pt/,'');
+ const match=value.match(/^(?:(\d+)h)?(?:(\d+)m)?(?:(\d+(?:\.\d+)?)s)?$/);
+ const seconds=match&&value?Number(match[1]||0)*3600+Number(match[2]||0)*60+Number(match[3]||0):NaN;
+ return seconds>0&&seconds<=60;
+}
+export function modalHistory(history,target,onBack,token){
+ const previous=history.state;
+ history.pushState({...previous,sonarVideoModal:token},'');
+ const pop=()=>{if(history.state?.sonarVideoModal!==token)onBack();};
+ target.addEventListener('popstate',pop);
+ return ()=>{target.removeEventListener('popstate',pop);if(history.state?.sonarVideoModal===token)history.back();};
 }
