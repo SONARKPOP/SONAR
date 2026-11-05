@@ -79,6 +79,8 @@ def validate(bundles, shared, taxonomy):
     for channel in all_channels:
         if not isinstance(channel, dict):
             raise ValueError('Each channel must be a JSON object.')
+        if type(channel.get('collectionPages', 1)) is not int or not 1 <= channel.get('collectionPages', 1) <= 4:
+            raise ValueError('Channel collectionPages must be an integer from 1 to 4.')
         cid = channel.get('id')
         slug(cid, 'Channel ID')
         if cid in channel_ids:

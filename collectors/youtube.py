@@ -127,7 +127,8 @@ def normalize(raw, channel, config, override=None):
     # Source ownership is independent of music/short/live format.
     if not channel['official']:
         v['contentTypes'] = ['external']
-        v['externalType'] = channel.get('externalType', 'other')
+        if channel.get('externalType'):
+            v['externalType'] = channel['externalType']
     if override:
         allowed = {'groupIds', 'memberIds', 'category', 'subtypes', 'tags', 'format', 'externalType', 'programId', 'programName', 'contentTypes', 'ownType'}
         unknown = set(override) - allowed
@@ -196,7 +197,7 @@ def collect(api, pages=1):
         if not c.get('collectionEnabled', True):
             continue
         try:
-            for item in api.pages('playlistItems', limit=pages, part='contentDetails', playlistId=c['uploadsPlaylistId'], maxResults=50):
+            for item in api.pages('playlistItems', limit=c.get('collectionPages', pages), part='contentDetails', playlistId=c['uploadsPlaylistId'], maxResults=50):
                 ids.add(item['contentDetails']['videoId'])
         except YouTubeHTTPError as exc:
             # Query shape is fixed; 400/404 here identifies an inaccessible or
