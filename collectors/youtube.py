@@ -161,9 +161,10 @@ def resolve(api, config):
             print(f"Source unavailable: {c['id']}; retained archive is preserved.")
             continue
         raw = response['items'][0]
+        c['observedChannelName'] = raw.get('snippet', {}).get('title', '')
         if not expected_channel(c, raw.get('snippet', {}).get('title', '')):
             c.update(collectionEnabled=False, unavailableReason='channel-name-needs-review')
-            print(f"Source identity needs review: {c['id']}; source was not collected.")
+            print(f"Source identity needs review: {c['id']}; observed name={json.dumps(c['observedChannelName'], ensure_ascii=True)}")
             continue
         if raw['id'] in lookup:
             raise RuntimeError(f"Duplicate resolved YouTube channel: {c['id']} and {lookup[raw['id']]['id']}. Register this source once.")
@@ -193,9 +194,11 @@ def collect(api, pages=1):
             for item in api.pages('playlistItems', limit=pages, part='contentDetails', playlistId=c['uploadsPlaylistId'], maxResults=50):
                 ids.add(item['contentDetails']['videoId'])
         except YouTubeHTTPError as exc:
-            if exc.status != 404:
+            # Query shape is fixed; 400/404 here identifies an inaccessible or
+            # invalid uploads playlist. Global auth/quota errors remain fatal.
+            if exc.status not in (400, 404):
                 raise
-            c.update(collectionEnabled=False, unavailableReason='uploads-unavailable')
+            c.update(collectionEnabled=False, unavailableReason=f'uploads-http-{exc.status}')
             lookup.pop(c.get('platformId'), None)
             print(f"Source unavailable: {c['id']}; retained archive is preserved.")
     paused = []
@@ -238,7 +241,7 @@ def collect(api, pages=1):
             records.append(v)
     publish(records, config)
     write(DATA / 'collection-report.json', {'updatedAt':now(), 'recordCount':len(records),
-        'unavailableSources':[{'id':c['id'],'reason':c['unavailableReason']} for c in config['channels'] if c.get('unavailableReason')]})
+        'unavailableSources':[{'id':c['id'],'reason':c['unavailableReason'],'observedName':c.get('observedChannelName')} for c in config['channels'] if c.get('unavailableReason')]})
     print(f'Published {len(records)} records.')
 
 def refresh_live(api):

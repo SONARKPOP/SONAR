@@ -1,4 +1,4 @@
-﻿import copy
+import copy
 import json
 import tempfile
 import unittest
@@ -35,7 +35,7 @@ class SourceHealthTests(unittest.TestCase):
   config={**config,'channels':[source],'collectionGroupIds':['aespa']}
   raw={'id':'old','snippet':{'title':'aespa video','description':'','publishedAt':'2026-10-01T00:00:00Z','channelTitle':'aespa'}}
   video=normalize(raw,source,config)
-  for status in (404,403):
+  for status in (400,404,403):
    with tempfile.TemporaryDirectory() as tmp:
     local=copy.deepcopy(config);publish([video],local,output=tmp)
     api=YouTube('test-not-a-secret')
@@ -47,4 +47,4 @@ class SourceHealthTests(unittest.TestCase):
       collect(api)
       self.assertTrue((Path(tmp)/'content/youtube__old.json').exists())
       report=json.loads((Path(tmp)/'collection-report.json').read_text(encoding='utf-8'))
-      self.assertEqual(report['unavailableSources'][0]['reason'],'uploads-unavailable')
+      self.assertEqual(report['unavailableSources'][0]['reason'],f'uploads-http-{status}')
