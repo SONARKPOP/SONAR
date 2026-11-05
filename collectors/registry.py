@@ -81,6 +81,21 @@ def validate(bundles, shared, taxonomy):
             raise ValueError('Each channel must be a JSON object.')
         if type(channel.get('collectionPages', 1)) is not int or not 1 <= channel.get('collectionPages', 1) <= 4:
             raise ValueError('Channel collectionPages must be an integer from 1 to 4.')
+        programs = channel.get('programs', [])
+        if not isinstance(programs, list):
+            raise ValueError('Channel programs must be a list.')
+        program_ids = set()
+        for program in programs:
+            slug(program.get('id'), 'Program ID')
+            text(program.get('name'), 'Program name')
+            if program['id'] in program_ids or program.get('externalType') not in ('song','radio','variety','interview','ad','other'):
+                raise ValueError('Duplicate program ID or invalid external type.')
+            program_ids.add(program['id'])
+            text(program.get('titlePattern'), 'Program title pattern')
+            try:
+                re.compile(program['titlePattern'])
+            except re.error:
+                raise ValueError('Invalid program title pattern.') from None
         cid = channel.get('id')
         slug(cid, 'Channel ID')
         if cid in channel_ids:

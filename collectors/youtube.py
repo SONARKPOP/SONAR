@@ -130,6 +130,12 @@ def normalize(raw, channel, config, override=None):
         v['contentTypes'] = ['external']
         if channel.get('externalType'):
             v['externalType'] = channel['externalType']
+    if not channel['official']:
+        for program in channel.get('programs', []):
+            if re.search(program['titlePattern'], snippet['title'], re.I):
+                v.update(programId=channel['id'] + '--' + program['id'],
+                         programName=program['name'], externalType=program['externalType'])
+                break
     if override:
         allowed = {'groupIds', 'memberIds', 'category', 'subtypes', 'tags', 'format', 'externalType', 'programId', 'programName', 'contentTypes', 'ownType'}
         unknown = set(override) - allowed

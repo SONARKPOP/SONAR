@@ -20,3 +20,21 @@ class ExternalSourcesTests(unittest.TestCase):
         video = normalize(raw,channel,config)
         self.assertEqual(video['groupIds'],[])
         self.assertEqual(video['memberIds'],[])
+
+    def test_program_rules_are_scoped_to_publisher(self):
+        config = read_config()
+        raw = {'id':'abc123DEF45','snippet':{'title':'[Relay Dance] NMIXX performance','description':'','publishedAt':'2026-11-05T00:00:00Z','channelTitle':'M2'}}
+        m2 = next(c for c in config['channels'] if c['id']=='m2')
+        video = normalize(raw,m2,config)
+        self.assertEqual(video['programId'],'m2--relay-dance')
+        self.assertEqual(video['externalType'],'song')
+        other = next(c for c in config['channels'] if c['id']=='kbs-coolfm')
+        self.assertNotIn('programId',normalize(raw,other,config))
+
+    def test_editorial_override_wins_over_program_guess(self):
+        config = read_config()
+        raw = {'id':'abc123DEF45','snippet':{'title':'[Relay Dance] NMIXX','description':'','publishedAt':'2026-11-05T00:00:00Z','channelTitle':'M2'}}
+        m2 = next(c for c in config['channels'] if c['id']=='m2')
+        video = normalize(raw,m2,config,{'externalType':'interview','programId':'manual','programName':'Reviewed'})
+        self.assertEqual(video['programId'],'manual')
+        self.assertEqual(video['externalType'],'interview')
