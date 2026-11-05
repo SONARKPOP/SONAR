@@ -124,6 +124,10 @@ def normalize(raw, channel, config, override=None):
     thumbnails = snippet.get('thumbnails', {})
     thumb = next((thumbnails[k]['url'] for k in ('high', 'medium', 'default') if k in thumbnails), '')
     v = {'id': f"youtube__{raw['id']}", 'platform': 'youtube', 'platformId': raw['id'], 'demo': False, 'title': snippet['title'], 'description': snippet.get('description', ''), 'publishedAt': snippet['publishedAt'], 'groupIds': sorted(groups), 'memberIds': members, 'channelId': channel['id'], 'channelName': snippet['channelTitle'], 'category': category, 'subtypes': [subtype], 'tags': [subtype], 'format': 'short' if short else 'live' if status in ('live', 'upcoming', 'ended') else 'video', 'thumbnail': thumb, 'durationLabel': raw.get('contentDetails', {}).get('duration', 'VIDEO').replace('PT', '').lower(), 'liveStatus': status, 'actualStartTime': live.get('actualStartTime'), 'actualEndTime': live.get('actualEndTime'), 'scheduledStartTime': live.get('scheduledStartTime'), 'source': {'collectedAt': now(), 'adapter': 'youtube-v3'}}
+    # Source ownership is independent of music/short/live format.
+    if not channel['official']:
+        v['contentTypes'] = ['external']
+        v['externalType'] = channel.get('externalType', 'other')
     if override:
         allowed = {'groupIds', 'memberIds', 'category', 'subtypes', 'tags', 'format', 'externalType', 'programId', 'programName', 'contentTypes', 'ownType'}
         unknown = set(override) - allowed
