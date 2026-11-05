@@ -1,7 +1,7 @@
-# inklade/SONAR 자동 수집·배포
+# SONARKPOP/SONAR 자동 수집·배포
 
-대상 저장소: https://github.com/inklade/SONAR
-사이트 주소: https://inklade.github.io/SONAR/
+대상 저장소: https://github.com/SONARKPOP/SONAR
+사이트 주소: https://SONARKPOP.github.io/SONAR/
 
 ## 저장소에서 한 번만 설정
 
@@ -55,4 +55,4 @@ main 코드가 바뀌면 검사·빌드·Pages 배포를 실행합니다. 정기
 
 Pages가 아직 설정되지 않으면 배포 단계가 실패할 수 있습니다. 설정 후 같은 Actions 실행을 재실행하거나 main에서 Run workflow를 실행합니다. Secret이 없으면 자동 수집은 명확한 오류를 내고 기존 데이터를 보존합니다. Secret 없이도 collect=false 수동 배포는 가능합니다.
 
-2026-11-05: 연결된 GitHub 인증으로 소스를 게시했습니다. GitHub Actions에서 의존성 설치, JavaScript 42개·Python 50개 테스트, 프로덕션 빌드, Pages 배포가 성공했습니다. 최초 배포 실행: https://github.com/inklade/SONAR/actions/runs/42042053088 . collect=true 실행 42042429631에서도 키 인증·실제 수집·데이터 커밋·빌드·Pages 배포가 모두 성공했고, 공개 영상이 90개에서 478개로 늘었습니다. 실행 결과: https://github.com/inklade/SONAR/actions/runs/42042429631 . 이 환경에서는 공개 사이트에 직접 접속하지 못했으므로 브라우저 화면 검수는 수행하지 않았습니다.
+2026-11-05: 연결된 GitHub 인증으로 소스를 게시했습니다. GitHub Actions에서 의존성 설치, JavaScript 42개·Python 50개 테스트, 프로덕션 빌드, Pages 배포가 성공했습니다. 최초 배포 실행: https://github.com/SONARKPOP/SONAR/actions/runs/42042053088 . collect=true 실행 42042429631에서도 키 인증·실제 수집·데이터 커밋·빌드·Pages 배포가 모두 성공했고, 공개 영상이 90개에서 478개로 늘었습니다. 실행 결과: https://github.com/SONARKPOP/SONAR/actions/runs/42042429631 . 이 환경에서는 공개 사이트에 직접 접속하지 못했으므로 브라우저 화면 검수는 수행하지 않았습니다.

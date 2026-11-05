@@ -85,7 +85,7 @@ python -m collectors.youtube --refresh-live
 
 ## GitHub Pages 배포
 
-대상 저장소는 https://github.com/inklade/SONAR 입니다. 연결된 GitHub 앱 인증으로 게시하며 채팅에 공유된 자격 증명을 사용하지 않습니다. Secret·Pages 설정과 API 예산은 docs/GITHUB-DEPLOYMENT.md를 참고하세요.
+대상 저장소는 https://github.com/SONARKPOP/SONAR 입니다. 연결된 GitHub 앱 인증으로 게시하며 채팅에 공유된 자격 증명을 사용하지 않습니다. Secret·Pages 설정과 API 예산은 docs/GITHUB-DEPLOYMENT.md를 참고하세요.
 
 1. GitHub에서 새 저장소를 만들고 프로젝트 내용을 `main`에 올립니다. node_modules, .env, review, API 키는 올리지 않습니다.
 2. GitHub CLI를 사용한다면 `gh auth login`으로 대화형 인증 후 저장소를 연결합니다.
