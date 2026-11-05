@@ -1,6 +1,15 @@
 import React from 'react';
 export const LANGUAGES=[['ko','KR'],['ja','JP'],['en','EN'],['es','ES']];
 const entries={
+ '일반 그룹':['通常のグループ','Regular groups','Grupos generales'],
+ '활동정지 그룹':['活動停止グループ','Dormant groups','Grupos inactivos'],
+ '활동정지':['活動停止','Dormant','Sin actividad'],
+ '비활성':['非アクティブ','Inactive','Inactivo'],
+ '활동 중':['活動中','Active','Activo'],
+ '공식 채널 확인 대기':['公式チャンネル確認待ち','Official channel pending','Canal oficial pendiente'],
+ '업로드 확인 대기':['投稿確認待ち','Upload check pending','Revisión de vídeos pendiente'],
+ '전체 해제':['すべて解除','Clear all','Desmarcar todo'],
+ '공식 채널 마지막 업로드 기준 · 6개월 비활성 / 1년 활동정지 · 실제 해체 여부와 무관':['公式チャンネルの最終投稿基準 · 6か月で非アクティブ / 1年で活動停止 · 解散の判定ではありません','Based on official uploads: inactive after 6 months, dormant after 1 year. Does not indicate disbandment.','Según vídeos oficiales: inactivo a los 6 meses y sin actividad al año. No indica disolución.'],
  '데뷔 연도':['デビュー年','Debut year','Año de debut'],
  '미확인':['未確認','Unconfirmed','Sin confirmar'],
  '최소 한 유형은 켜져 있어야 합니다.':['少なくとも1種類はオンにしてください。','At least one type must stay enabled.','Debe quedar al menos un tipo activado.'],

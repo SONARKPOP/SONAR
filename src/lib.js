@@ -3,7 +3,7 @@ export function monthKey(value){const parts=new Intl.DateTimeFormat('en-US',{tim
 export function dedupe(rows){return [...new Map(rows.map(x=>[x.id,x])).values()];}
 export function filterContent(rows,{groups=[],category='home',query='',channel='',member='',subtype='',format='',year='',month='',externalType='',ownType=''}){
  const q=query.trim().toLocaleLowerCase();
- return dedupe(rows).filter(v=>(!groups.length||groups.some(g=>v.groupIds.includes(g))) && (category==='home'||(category==='live'?v.format==='live':category==='shorts'?v.format==='short'||v.category==='shorts':category===v.category||v.contentTypes?.includes(category))) && (category!=='own'||(v.format!=='short'&&v.category!=='shorts')) && (!q||[v.title,v.channelName,...v.tags].join(' ').toLocaleLowerCase().includes(q)) && (!channel||(v.programId||v.channelId)===channel) && (!member||v.memberIds.includes(member)) && (!subtype||v.subtypes.includes(subtype)) && (!format||v.format===format) && (!year||monthKey(v.publishedAt).slice(0,4)===year) && (!month||monthKey(v.publishedAt).slice(5,7)===month) && (!externalType||externalKind(v)===externalType) && (!ownType||ownKind(v)===ownType)).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
+ return dedupe(rows).filter(v=>(!groups.length||groups.some(g=>v.groupIds.includes(g))) && (category==='shorts'?(v.format==='short'||v.category==='shorts'):(category==='uploads'||(v.format!=='short'&&v.category!=='shorts'))&&(category==='home'||category==='uploads'||(category==='live'?v.format==='live':category===v.category||v.contentTypes?.includes(category)))) && (!q||[v.title,v.channelName,...v.tags].join(' ').toLocaleLowerCase().includes(q)) && (!channel||(v.programId||v.channelId)===channel) && (!member||v.memberIds.includes(member)) && (!subtype||v.subtypes.includes(subtype)) && (!format||v.format===format) && (!year||monthKey(v.publishedAt).slice(0,4)===year) && (!month||monthKey(v.publishedAt).slice(5,7)===month) && (!externalType||externalKind(v)===externalType) && (!ownType||ownKind(v)===ownType)).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
 }
 export function commonChannels(rows,groups){
  const map=new Map();
@@ -127,3 +127,22 @@ export function toggleArtistType(current,id){if(!DISPLAY_ARTIST_TYPES.includes(i
 export function visibleArtistIds(artists,ids,types,excluded=[]){const lookup=new Map(artists.map(a=>[a.id,a]));return ids.filter(id=>lookup.has(id)&&types.includes(artistCategory(lookup.get(id)))&&!excluded.includes(id));}
 export function debutYearRanges(artists){const starts=[...new Set(artists.filter(a=>Number.isInteger(a.debutYear)).map(a=>Math.floor(a.debutYear/5)*5))].sort((a,b)=>a-b);return starts.map(start=>({id:String(start),label:`${start}–${start+4}`}));}
 export function artistsInDebutRange(artists,range){if(range==='all')return artists;if(range==='unknown')return artists.filter(a=>!Number.isInteger(a.debutYear));const start=Number(range);return artists.filter(a=>Number.isInteger(a.debutYear)&&a.debutYear>=start&&a.debutYear<start+5);}
+export function monthsAfter(value,months){
+ const date=new Date(value);if(!Number.isFinite(date.getTime()))return NaN;
+ const target=new Date(date);target.setUTCDate(1);target.setUTCMonth(target.getUTCMonth()+months);
+ const last=new Date(Date.UTC(target.getUTCFullYear(),target.getUTCMonth()+1,0)).getUTCDate();
+ target.setUTCDate(Math.min(date.getUTCDate(),last));return target.getTime();
+}
+export function groupActivity(group,now=Date.now()){
+ const last=Date.parse(group?.lastOfficialUploadAt);if(!Number.isFinite(last)||last>now)return 'unknown';
+ if(now>=monthsAfter(last,12))return 'archived';
+ if(now>=monthsAfter(last,6))return 'inactive';
+ return 'active';
+}
+export function activityLabel(group,now=Date.now()){
+ const state=groupActivity(group,now);
+ return {archived:'활동정지',inactive:'비활성',active:'활동 중',unknown:group?.officialSourceConnected?'업로드 확인 대기':'공식 채널 확인 대기'}[state];
+}
+export function activityDirectory(groups,archived=false,now=Date.now()){
+ return groups.filter(g=>(groupActivity(g,now)==='archived')===archived);
+}

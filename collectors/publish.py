@@ -1,5 +1,6 @@
 """Canonical records are stored once; group files contain thin discovery indexes."""
 import json
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -13,8 +14,19 @@ def write(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix('.tmp')
-    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    temporary.replace(path)
+    content = json.dumps(value, ensure_ascii=False, indent=2) + '\n'
+    if path.exists() and path.read_text(encoding='utf-8') == content:
+        return
+    temporary.write_text(content, encoding='utf-8')
+    for attempt in range(6):
+        try:
+            temporary.replace(path)
+            break
+        except PermissionError:
+            # Windows file scanners can briefly hold a freshly written index.
+            if attempt == 5:
+                raise
+            time.sleep(0.05 * 2 ** attempt)
 
 def summary(v):
     return {k: value for k, value in v.items() if k not in ('description', 'source', 'liveStatus', 'actualStartTime', 'actualEndTime', 'scheduledStartTime')}
@@ -46,7 +58,14 @@ def publish(records, config, events=(), output=DATA, demo=False):
             old.unlink()
     write(output / 'latest.json', {'schemaVersion': 1, 'updatedAt': updated, 'items': [summary(v) for v in ordered[:72]], 'events': list(events)})
     public_config = {k: config[k] for k in ('groups', 'members', 'channels', 'taxonomy')}
-    public_config['groups'] = [{**g,'contentCount':sum(g['id'] in v['groupIds'] for v in ordered)} for g in config['groups']]
+    # Only group-owned official uploads determine activity. Shared appearances
+    # must not make a dormant official channel appear recently active.
+    public_config['groups'] = []
+    for g in config['groups']:
+        official_ids = {c['id'] for c in config['channels'] if c['official'] and g['id'] in c['groupIds']}
+        dates = [v['publishedAt'] for v in ordered if not v.get('demo') and v['channelId'] in official_ids and g['id'] in v['groupIds']]
+        public_config['groups'].append({**g, 'contentCount':sum(g['id'] in v['groupIds'] for v in ordered),
+            'lastOfficialUploadAt':max(dates, default=None), 'officialSourceConnected':bool(official_ids)})
     public_config['defaultGroupIds'] = config.get('defaultGroupIds', [])
     public_config['collectionGroupIds'] = config.get('collectionGroupIds', [])
     write(output / 'catalog.json', {'schemaVersion': 1, 'updatedAt': updated, 'demo': demo, **public_config})

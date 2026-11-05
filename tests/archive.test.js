@@ -23,7 +23,7 @@ test('own tab excludes shorts even with own tags, and shorts tab includes them b
  const rows=[row('normal',{contentTypes:['own']}),row('short',{category:'shorts',format:'short',contentTypes:['own']}),row('legacy-short',{category:'own',format:'short',contentTypes:['own']})];
  assert.deepEqual(filterContent(rows,{category:'own'}).map(v=>v.id),['normal']);
  assert.deepEqual(filterContent(rows,{category:'shorts'}).map(v=>v.id),['short','legacy-short']);
- assert.equal(filterContent(rows,{category:'home'}).length,3);
+ assert.equal(filterContent(rows,{category:'home'}).length,1);
 });
 test('upload calendar groups records by Korean publication date',()=>{
  const rows=[row('a'),row('b',{publishedAt:'2025-12-31T14:59:00Z'}),row('c')];
