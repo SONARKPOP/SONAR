@@ -11,6 +11,17 @@ from .publish import ROOT, DATA, now, publish, write
 from .registry import load_config
 from .quota import QuotaGuard, BudgetExceeded
 
+class YouTubeHTTPError(RuntimeError):
+    def __init__(self, resource, status):
+        self.resource, self.status = resource, status
+        super().__init__(f'YouTube {resource} returned HTTP {status}; check key restrictions, quota, and source configuration.')
+
+def expected_channel(channel, title):
+    normalize_name = lambda value: re.sub(r'[^\w]', '', value.casefold())
+    actual = normalize_name(title)
+    names = channel.get('expectedChannelNames', [])
+    return not names or any(normalize_name(name) in actual for name in names if normalize_name(name))
+
 class YouTube:
     def __init__(self, key, budget=None):
         if not key:
@@ -28,7 +39,7 @@ class YouTube:
             except urllib.error.HTTPError as exc:
                 # Avoid including the request URL (which contains the API key).
                 if exc.code not in (429, 500, 502, 503, 504) or attempt == 3:
-                    raise RuntimeError(f'YouTube {resource} returned HTTP {exc.code}; check key restrictions, quota, and source configuration.') from None
+                    raise YouTubeHTTPError(resource, exc.code) from None
             except urllib.error.URLError:
                 if attempt == 3:
                     raise RuntimeError('YouTube connection failed after retries.') from None
@@ -102,9 +113,9 @@ def classify(title, description, official):
 
 def normalize(raw, channel, config, override=None):
     snippet = raw['snippet']
-    text = snippet['title'] + '\n' + snippet.get('description', '')
+    text = snippet['title']
     groups = set(channel['groupIds'] if channel['official'] else [])
-    groups.update(g['id'] for g in config['groups'] if any(mentions(text, a) for a in g['aliases']))
+    groups.update(g['id'] for g in config['groups'] if not g.get('ambiguousName') and any(mentions(text, a) for a in g['aliases']))
     members = infer_members(snippet, groups, config)
     groups.update(m['groupId'] for m in config['members'] if m['id'] in members)
     live = raw.get('liveStreamingDetails', {})
@@ -146,8 +157,14 @@ def resolve(api, config):
             continue
         response = api.get('channels', part='snippet,contentDetails', **({'id':c['platformId']} if c.get('platformId') else {'forHandle':c['handle']}))
         if not response.get('items'):
-            raise RuntimeError(f"Channel not found: {c['id']}; verify its group file in config/groups/")
+            c.update(collectionEnabled=False, unavailableReason='channel-not-found')
+            print(f"Source unavailable: {c['id']}; retained archive is preserved.")
+            continue
         raw = response['items'][0]
+        if not expected_channel(c, raw.get('snippet', {}).get('title', '')):
+            c.update(collectionEnabled=False, unavailableReason='channel-name-needs-review')
+            print(f"Source identity needs review: {c['id']}; source was not collected.")
+            continue
         if raw['id'] in lookup:
             raise RuntimeError(f"Duplicate resolved YouTube channel: {c['id']} and {lookup[raw['id']]['id']}. Register this source once.")
         c['platformId'] = raw['id']
@@ -169,6 +186,18 @@ def collect(api, pages=1):
                     if old.get(field) and not c.get(field):c[field]=old[field]
     lookup = resolve(api, config)
     ids = set()
+    for c in config['channels']:
+        if not c.get('collectionEnabled', True):
+            continue
+        try:
+            for item in api.pages('playlistItems', limit=pages, part='contentDetails', playlistId=c['uploadsPlaylistId'], maxResults=50):
+                ids.add(item['contentDetails']['videoId'])
+        except YouTubeHTTPError as exc:
+            if exc.status != 404:
+                raise
+            c.update(collectionEnabled=False, unavailableReason='uploads-unavailable')
+            lookup.pop(c.get('platformId'), None)
+            print(f"Source unavailable: {c['id']}; retained archive is preserved.")
     paused = []
     sources = {c['id']:c for c in config['channels']}
     supported = {g['id'] for g in config['groups']}
@@ -183,11 +212,6 @@ def collect(api, pages=1):
                 if old['groupIds']:paused.append(old)
             else:
                 ids.add(old['platformId'])
-    for c in config['channels']:
-        if not c.get('collectionEnabled', True):
-            continue
-        for item in api.pages('playlistItems', limit=pages, part='contentDetails', playlistId=c['uploadsPlaylistId'], maxResults=50):
-            ids.add(item['contentDetails']['videoId'])
     official=[c for c in config['channels'] if c['official'] and c.get('collectionEnabled',True)]
     discovery=api.budget.discovery_sources(official) if api.budget else official
     checked=0
@@ -213,6 +237,8 @@ def collect(api, pages=1):
         if v['groupIds']:
             records.append(v)
     publish(records, config)
+    write(DATA / 'collection-report.json', {'updatedAt':now(), 'recordCount':len(records),
+        'unavailableSources':[{'id':c['id'],'reason':c['unavailableReason']} for c in config['channels'] if c.get('unavailableReason')]})
     print(f'Published {len(records)} records.')
 
 def refresh_live(api):

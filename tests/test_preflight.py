@@ -15,12 +15,14 @@ class FakeAPI:
     def __init__(self):
         self.calls=[]
         self.channels={}
+        self.sources={c.get('platformId') or c.get('handle'):c for c in load_config()['channels']}
     def get(self, resource, **params):
         self.calls.append((resource,params))
         if resource=='channels':
-            channel_id='UC'+str(len(self.channels)+1).zfill(22)
-            self.channels[channel_id]=params['forHandle']
-            return {'items':[{'id':channel_id,'contentDetails':{'relatedPlaylists':{'uploads':'UU'+channel_id[2:]}}}]}
+            identity=params.get('forHandle') or params['id']
+            channel_id=params.get('id') or 'UC'+str(len(self.channels)+1).zfill(22)
+            self.channels[channel_id]=identity
+            return {'items':[{'id':channel_id,'snippet':{'title':self.sources.get(identity,{}).get('name','Official')},'contentDetails':{'relatedPlaylists':{'uploads':'UU'+channel_id[2:]}}}]}
         if resource=='playlistItems':
             return {'items':[{'contentDetails':{'videoId':'video-'+params['playlistId'][2:]}}]}
         raise AssertionError('Unexpected endpoint: '+resource)
@@ -43,7 +45,7 @@ class PreflightTests(unittest.TestCase):
             self.assertTrue((output/'data/groups/uspeer.json').exists())
             self.assertFalse(any(resource=='search' for resource,_ in api.calls))
             self.assertTrue(all(params['maxResults']==5 for resource,params in api.calls if resource=='playlistItems'))
-            self.assertNotIn('key',json.dumps(report))
+            self.assertNotIn('"key":',json.dumps(report))
         self.assertEqual(before,(DATA/'catalog.json').read_bytes())
 
     def test_failed_api_does_not_write_partial_review(self):

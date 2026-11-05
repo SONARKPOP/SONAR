@@ -45,6 +45,8 @@ def validate(bundles, shared, taxonomy):
             raise ValueError(f'{gid}: invalid gender.')
         if bundle.get('artistType', 'group') not in ('group','duo','solo'):
             raise ValueError(f'{gid}: invalid artistType.')
+        if type(bundle.get('ambiguousName', False)) is not bool:
+            raise ValueError(f'{gid}: ambiguousName must be boolean.')
         for flag in ('supported', 'defaultSelected', 'collectionEnabled', 'sampleEnabled'):
             if type(bundle.get(flag)) is not bool:
                 raise ValueError(f'{gid}.{flag}: boolean required.')
@@ -155,7 +157,7 @@ def load_config(config_dir=CONFIG):
     channels.extend(shared)
     return {
         'schemaVersion': 1,
-        'groups': [{**{k:b[k] for k in public_fields}, 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group')} for b in supported],
+        'groups': [{**{k:b[k] for k in public_fields}, 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False)} for b in supported],
         'members': [m for b in supported for m in b['members']],
         'channels': channels,
         'taxonomy': taxonomy,

@@ -25,6 +25,8 @@ def run(api, limit=5, output=None):
     ids = set()
     counts = {}
     for channel in config['channels']:
+        if not channel.get('collectionEnabled',True):
+            continue
         result = api.get('playlistItems', part='contentDetails', playlistId=channel['uploadsPlaylistId'], maxResults=limit)
         items = result.get('items', [])
         counts[channel['id']] = len(items)

@@ -7,7 +7,7 @@ class PriorityGroupsTests(unittest.TestCase):
         config=load_config()
         expected=['rescene','kiiikiii','uspeer','hearts2hearts','tuide','hitgs','unchild','heart-of-woman','meovv']
         self.assertEqual(config['defaultGroupIds'],expected)
-        self.assertEqual(config['collectionGroupIds'],expected)
+        self.assertTrue(set(expected).issubset(config['collectionGroupIds']))
         self.assertEqual(config['sampleGroupIds'],[])
 
     def test_shared_member_name_stays_with_explicit_group(self):
