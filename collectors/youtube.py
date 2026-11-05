@@ -182,7 +182,8 @@ def collect(api, pages=1):
         for c in config['channels']:
             old=old_sources.get(c['id'],{})
             same=(c.get('handle') and c.get('handle')==old.get('handle')) or (c.get('platformId') and c.get('platformId')==old.get('platformId'))
-            if same:
+            valid_cache = bool(re.fullmatch(r'UC[\w-]{22}', old.get('platformId', ''))) and bool(re.fullmatch(r'UU[\w-]{22}', old.get('uploadsPlaylistId', '')))
+            if same and valid_cache:
                 for field in ('platformId','uploadsPlaylistId'):
                     if old.get(field) and not c.get(field):c[field]=old[field]
     lookup = resolve(api, config)
@@ -206,6 +207,8 @@ def collect(api, pages=1):
     supported = {g['id'] for g in config['groups']}
     for path in (DATA / 'content').glob('*.json'):
         old = json.loads(path.read_text(encoding='utf-8'))
+        if old.get('platform') == 'youtube' and not re.fullmatch(r'[A-Za-z0-9_-]{11}', old.get('platformId', '')):
+            continue
         if not old.get('demo'):
             source = sources.get(old['channelId'])
             if source and not source['collectionEnabled']:
@@ -239,7 +242,7 @@ def collect(api, pages=1):
         v = normalize(raw, channel, matching_config, overrides['videos'].get(raw['id']))
         if v['groupIds']:
             records.append(v)
-    publish(records, config)
+    publish(records, config, output=DATA)
     write(DATA / 'collection-report.json', {'updatedAt':now(), 'recordCount':len(records),
         'unavailableSources':[{'id':c['id'],'reason':c['unavailableReason'],'observedName':c.get('observedChannelName')} for c in config['channels'] if c.get('unavailableReason')]})
     print(f'Published {len(records)} records.')

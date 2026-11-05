@@ -10,7 +10,7 @@ class CollectorTests(unittest.TestCase):
     def setUp(self):
         self.config = read_config()
         self.channel = next(c for c in self.config['channels'] if c['id']=='aespa-official')
-        self.raw = {'id':'abc123', 'snippet':{'title':'aespa Supernova MV', 'description':'KARINA', 'publishedAt':'2026-11-05T01:00:00Z','channelTitle':'aespa','channelId':'resolved'}, 'contentDetails':{'duration':'PT3M'},'status':{'privacyStatus':'public'}}
+        self.raw = {'id':'abc123DEF45', 'snippet':{'title':'aespa Supernova MV', 'description':'KARINA', 'publishedAt':'2026-11-05T01:00:00Z','channelTitle':'aespa','channelId':'resolved'}, 'contentDetails':{'duration':'PT3M'},'status':{'privacyStatus':'public'}}
 
     def test_secret_required(self):
         with self.assertRaises(ValueError): YouTube('')
@@ -22,7 +22,7 @@ class CollectorTests(unittest.TestCase):
     def test_normalize_official_music_and_member(self):
         self.raw['snippet']['title']='aespa KARINA Supernova MV'
         v=normalize(self.raw,self.channel,self.config)
-        self.assertEqual(v['id'],'youtube__abc123')
+        self.assertEqual(v['id'],'youtube__abc123DEF45')
         self.assertEqual(v['category'],'music')
         self.assertIn('aespa-karina',v['memberIds'])
 

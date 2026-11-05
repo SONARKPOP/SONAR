@@ -1,8 +1,8 @@
 {
   "reviewedAt": "2026-11-06",
   "scope": "162 newly registered entries. Existing registered sources are retained. Member names are not inferred.",
-  "verifiedCount": 89,
-  "pendingCount": 73,
+  "verifiedCount": 87,
+  "pendingCount": 75,
   "verified": {
     "nmixx": {
       "handle": "@NMIXXOfficial",
@@ -313,11 +313,6 @@
       "evidence": "https://www.youtube.com/channel/UCktNjyMDqmJr7Eo1Tt5O00g",
       "basis": "Artist official channel page with matching group/Korean artist description and content; topic/fan channels excluded"
     },
-    "pritti-g": {
-      "platformId": "UC9Zdit-LdjPdX4XABNDGqiA",
-      "evidence": "https://www.youtube.com/channel/UC9Zdit-LdjPdX4XABNDGqiA",
-      "basis": "Artist official channel page with matching group/Korean artist description and content; topic/fan channels excluded"
-    },
     "rumble-g": {
       "platformId": "UCVSJVbZSUQs_El_SntTob-A",
       "evidence": "https://www.youtube.com/channel/UCVSJVbZSUQs_El_SntTob-A",
@@ -357,11 +352,6 @@
       "handle": "@QWER_Band_official",
       "evidence": "https://weverse.io/qwer/notice/40622",
       "basis": "Official Weverse notice explicitly links group channel"
-    },
-    "vvs": {
-      "platformId": "UCJTl6UFrIW1lY_uUZ3ySdtA",
-      "evidence": "https://www.youtube.com/channel/UCJTl6UFrIW1lY_uUZ3ySdtA",
-      "basis": "Stable channel ID verified after discovering an outdated artist handle."
     },
     "vvup": {
       "handle": "@vvup_official",
@@ -897,6 +887,29 @@
       "name": "XUM",
       "status": "needs-review",
       "reason": "No exclusive official source confidently verified; search results may be ambiguous, outdated, private or deleted"
+    },
+    {
+      "id": "pritti-g",
+      "name": "프리티지",
+      "status": "needs-review",
+      "reason": "YouTube API returned a different owner/channel name: channel identity is no longer the artist.",
+      "previousEvidence": {
+        "platformId": "UC9Zdit-LdjPdX4XABNDGqiA",
+        "evidence": "https://www.youtube.com/channel/UC9Zdit-LdjPdX4XABNDGqiA",
+        "basis": "Artist official channel page with matching group/Korean artist description and content; topic/fan channels excluded"
+      }
+    },
+    {
+      "id": "vvs",
+      "name": "VVS",
+      "status": "needs-review",
+      "reason": "Previously cited channel ID and handle are currently unavailable in YouTube API; new source needs confirmation.",
+      "previousEvidence": {
+        "platformId": "UCJTl6UFrIW1lY_uUZ3ySdtA",
+        "evidence": "https://www.youtube.com/channel/UCJTl6UFrIW1lY_uUZ3ySdtA",
+        "basis": "Stable channel ID verified after discovering an outdated artist handle."
+      }
     }
-  ]
+  ],
+  "apiReviewNote": "Real API validation rejects stale/reassigned channels. Lilli lilli identity matches but uploads playlist is inaccessible; retained for future recovery."
 }

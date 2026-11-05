@@ -6,8 +6,15 @@ from pathlib import Path
 from unittest.mock import patch
 from collectors.youtube import YouTube, YouTubeHTTPError, resolve, collect, normalize, expected_channel
 from collectors.registry import load_config
-from collectors.publish import publish
+from collectors.publish import publish, DATA as PRODUCTION_DATA
 class SourceHealthTests(unittest.TestCase):
+ def setUp(self):
+  self.before_catalog=(PRODUCTION_DATA/'catalog.json').read_bytes()
+  self.before_records={p.name:p.read_bytes() for p in (PRODUCTION_DATA/'content').glob('*.json')}
+ def tearDown(self):
+  self.assertEqual((PRODUCTION_DATA/'catalog.json').read_bytes(),self.before_catalog)
+  self.assertEqual({p.name:p.read_bytes() for p in (PRODUCTION_DATA/'content').glob('*.json')},self.before_records)
+
  def test_channel_identity_guard_and_missing_source_isolation(self):
   self.assertTrue(expected_channel({'expectedChannelNames':['NMIXX','엔믹스']},'NMIXX'))
   self.assertFalse(expected_channel({'expectedChannelNames':['NMIXX','엔믹스']},'Some other channel'))
@@ -33,7 +40,7 @@ class SourceHealthTests(unittest.TestCase):
   config=load_config();source=next(c for c in config['channels'] if c['id']=='aespa-official')
   source.update(platformId='resolved',uploadsPlaylistId='uploads',collectionEnabled=True)
   config={**config,'channels':[source],'collectionGroupIds':['aespa']}
-  raw={'id':'old','snippet':{'title':'aespa video','description':'','publishedAt':'2026-10-01T00:00:00Z','channelTitle':'aespa'}}
+  raw={'id':'old12345678','snippet':{'title':'aespa video','description':'','publishedAt':'2026-10-01T00:00:00Z','channelTitle':'aespa'}}
   video=normalize(raw,source,config)
   for status in (400,404,403):
    with tempfile.TemporaryDirectory() as tmp:
@@ -45,6 +52,6 @@ class SourceHealthTests(unittest.TestCase):
       with self.assertRaises(YouTubeHTTPError):collect(api)
      else:
       collect(api)
-      self.assertTrue((Path(tmp)/'content/youtube__old.json').exists())
+      self.assertTrue((Path(tmp)/'content/youtube__old12345678.json').exists())
       report=json.loads((Path(tmp)/'collection-report.json').read_text(encoding='utf-8'))
       self.assertEqual(report['unavailableSources'][0]['reason'],f'uploads-http-{status}')
