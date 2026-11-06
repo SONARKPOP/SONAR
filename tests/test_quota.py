@@ -48,3 +48,10 @@ class QuotaTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             path=Path(tmp)/'state.json';path.write_text('{"calls":{"search":"invalid"}}')
             with self.assertRaises(ValueError):QuotaGuard(path)
+
+class QuotaEstimateTests(unittest.TestCase):
+    def test_estimate_includes_external_archive_pages(self):
+        from collectors.quota import estimate
+        source={'collectionEnabled':True,'official':False,'platform':'youtube','collectionPages':4,'archivePages':2}
+        result=estimate({'channels':[source],'groups':[]},0)
+        self.assertEqual(result['readUnitsPerDayEstimate'],24)

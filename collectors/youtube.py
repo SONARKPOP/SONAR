@@ -116,8 +116,29 @@ def normalize(raw, channel, config, override=None):
     text = snippet['title']
     groups = set(channel['groupIds'] if channel['official'] else [])
     groups.update(g['id'] for g in config['groups'] if not g.get('ambiguousName') and any(mentions(text, a) for a in g['aliases']))
+    scoped_members, appearance_evidence = [], []
+    if not channel['official']:
+        credit_lines = [line for line in snippet.get('description', '').splitlines()
+                        if re.match(r'^\s*(?:\uCD9C\uC5F0(?:\uC9C4)?|\uAC8C\uC2A4\uD2B8|guests?|starring)\s*[:\uFF1A-]', line, re.I)]
+        for group in config['groups']:
+            if not group.get('ambiguousName') and any(mentions(line, alias) for line in credit_lines for alias in group['aliases']):
+                groups.add(group['id'])
+                appearance_evidence.append({'groupId':group['id'], 'source':'publisher-credit-line',
+                    'role':'participant', 'url':'https://www.youtube.com/watch?v=' + raw['id']})
+        known_members = {m['id']: m for m in config['members']}
+        for program in channel.get('programs', []):
+            if not re.search(program['titlePattern'], text, re.I):
+                continue
+            for cast in program.get('cast', []):
+                member = known_members.get(cast['memberId'])
+                if member and any(mentions(text, alias) for alias in cast['titleAliases']):
+                    groups.add(member['groupId'])
+                    scoped_members.append(member['id'])
+                    appearance_evidence.append({'memberId':member['id'], 'source':'publisher-program-title',
+                        'role':'participant', 'url':cast['evidenceUrl']})
     # A name unique in our catalog may still belong to an unrelated artist.
     members = infer_members(snippet, groups, config) if groups else []
+    members = sorted(set(members + scoped_members))
     groups.update(m['groupId'] for m in config['members'] if m['id'] in members)
     live = raw.get('liveStreamingDetails', {})
     status = 'ended' if live.get('actualEndTime') else 'live' if live.get('actualStartTime') else 'upcoming' if live.get('scheduledStartTime') else 'none'
@@ -136,13 +157,15 @@ def normalize(raw, channel, config, override=None):
                 v.update(programId=channel['id'] + '--' + program['id'],
                          programName=program['name'], externalType=program['externalType'])
                 break
+    if appearance_evidence:
+        v['appearanceEvidence'] = appearance_evidence
     if override:
-        allowed = {'groupIds', 'memberIds', 'category', 'subtypes', 'tags', 'format', 'externalType', 'programId', 'programName', 'contentTypes', 'ownType'}
+        allowed = {'groupIds', 'memberIds', 'category', 'subtypes', 'tags', 'format', 'externalType', 'programId', 'programName', 'contentTypes', 'ownType', 'appearanceEvidence'}
         unknown = set(override) - allowed
         if unknown:
             raise ValueError(f'Unsupported override fields: {sorted(unknown)}')
         v.update(override)
-    v['memberTagging'] = {'policy':'title-only-v1', 'source':'manual-override' if override and 'memberIds' in override else 'title' if v['memberIds'] else 'unclassified', 'appearanceVerified':False}
+    v['memberTagging'] = {'policy':'title-only-v1', 'source':'manual-override' if override and 'memberIds' in override else 'publisher-program-title' if scoped_members else 'title' if v['memberIds'] else 'unclassified', 'appearanceVerified':False}
     valid_groups = {g['id'] for g in config['groups']}
     valid_members = {m['id']:m['groupId'] for m in config['members']}
     if set(v['groupIds']) - valid_groups or any(m not in valid_members or valid_members[m] not in v['groupIds'] for m in v['memberIds']):
@@ -200,12 +223,21 @@ def collect(api, pages=1):
                     if old.get(field) and not c.get(field):c[field]=old[field]
     lookup = resolve(api, config)
     ids = set()
+    archive_path = DATA / 'external-backfill.json'
+    archive_state = json.loads(archive_path.read_text(encoding='utf-8')) if archive_path.exists() else {}
     for c in config['channels']:
         if not c.get('collectionEnabled', True):
             continue
         try:
-            for item in api.pages('playlistItems', limit=c.get('collectionPages', pages), part='contentDetails', playlistId=c['uploadsPlaylistId'], maxResults=50):
-                ids.add(item['contentDetails']['videoId'])
+            ids.update(c.get('seedVideoIds', []))
+            if c.get('archivePages') and not c['official']:
+                from .external_archive import scan_uploads
+                found, state = scan_uploads(api, c, archive_state.get(c['id']))
+                ids.update(found)
+                archive_state[c['id']] = state
+            else:
+                for item in api.pages('playlistItems', limit=c.get('collectionPages', pages), part='contentDetails', playlistId=c['uploadsPlaylistId'], maxResults=50):
+                    ids.add(item['contentDetails']['videoId'])
         except YouTubeHTTPError as exc:
             # Query shape is fixed; 400/404 here identifies an inaccessible or
             # invalid uploads playlist. Global auth/quota errors remain fatal.
@@ -246,16 +278,20 @@ def collect(api, pages=1):
     enabled = set(config.get('collectionGroupIds', [g['id'] for g in config['groups']]))
     matching_config = {**config, 'groups':[g for g in config['groups'] if g['id'] in enabled], 'members':[m for m in config['members'] if m['groupId'] in enabled]}
     records = paused
+    seed_sources = {vid:c.get('platformId') for c in config['channels'] for vid in c.get('seedVideoIds', [])}
     # Refresh all retained metadata; removed/private videos disappear from the index.
     for raw in api.videos(ids):
         channel = lookup.get(raw['snippet']['channelId'])
+        if raw['id'] in seed_sources and raw['snippet']['channelId'] != seed_sources[raw['id']]:
+            continue
         if not channel or raw.get('status', {}).get('privacyStatus') != 'public':
             continue
-        v = normalize(raw, channel, matching_config, overrides['videos'].get(raw['id']))
+        v = normalize(raw, channel, matching_config if channel['official'] else config, overrides['videos'].get(raw['id']))
         if v['groupIds']:
             records.append(v)
     publish(records, config, output=DATA)
-    write(DATA / 'collection-report.json', {'updatedAt':now(), 'recordCount':len(records),
+    write(archive_path, archive_state)
+    write(DATA / 'collection-report.json', {'updatedAt':now(), 'recordCount':len(records), 'externalRecordCount':sum('external' in v.get('contentTypes', []) or v.get('category')=='external' for v in records),
         'unavailableSources':[{'id':c['id'],'reason':c['unavailableReason'],'observedName':c.get('observedChannelName')} for c in config['channels'] if c.get('unavailableReason')]})
     print(f'Published {len(records)} records.')
 

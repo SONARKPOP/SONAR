@@ -66,7 +66,7 @@ def estimate(config,records=90,pages=1):
             'enabledChannels':len(channels),'officialChannels':official,
             'legacySearchCallsPerDay':official*2*4,
             'plannedSearchCallsPerDay':min(official,20)*4,
-            'readUnitsPerDayEstimate':4*(len(channels)*pages+math.ceil(records/50))+72*math.ceil(min(records,50)/50),
+            'readUnitsPerDayEstimate':4*(sum(c.get('collectionPages', pages) + (c.get('archivePages', 0) if not c.get('official') else 0) for c in channels)+math.ceil(records/50))+72*math.ceil(min(records,50)/50),
             'limits':{'searchRolling24h':80,'readRolling24h':8000,'searchPerRun':20,'readPerRun':600},
             'notes':'Read estimate assumes one batch of live candidates per refresh and cached channel identities; API retries and new upload batches can add calls.'}
 

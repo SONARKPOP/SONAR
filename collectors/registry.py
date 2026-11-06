@@ -81,6 +81,11 @@ def validate(bundles, shared, taxonomy):
             raise ValueError('Each channel must be a JSON object.')
         if type(channel.get('collectionPages', 1)) is not int or not 1 <= channel.get('collectionPages', 1) <= 4:
             raise ValueError('Channel collectionPages must be an integer from 1 to 4.')
+        if type(channel.get('archivePages', 0)) is not int or not 0 <= channel.get('archivePages', 0) <= 2:
+            raise ValueError('Channel archivePages must be an integer from 0 to 2.')
+        for video_id in channel.get('seedVideoIds', []):
+            if not isinstance(video_id, str) or not re.fullmatch(r'[A-Za-z0-9_-]{11}', video_id):
+                raise ValueError('Invalid seed video ID.')
         programs = channel.get('programs', [])
         if not isinstance(programs, list):
             raise ValueError('Channel programs must be a list.')
@@ -90,6 +95,11 @@ def validate(bundles, shared, taxonomy):
             text(program.get('name'), 'Program name')
             if program['id'] in program_ids or program.get('externalType') not in ('song','radio','variety','interview','ad','other'):
                 raise ValueError('Duplicate program ID or invalid external type.')
+            for cast in program.get('cast', []):
+                if cast.get('memberId') not in member_ids:
+                    raise ValueError('Program cast references an unknown member.')
+                strings(cast.get('titleAliases'), 'Cast title aliases')
+                text(cast.get('evidenceUrl'), 'Cast evidence URL')
             program_ids.add(program['id'])
             text(program.get('titlePattern'), 'Program title pattern')
             try:

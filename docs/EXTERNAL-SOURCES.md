@@ -19,3 +19,14 @@ New publisher candidates: M2 (@MnetM2), KBS Kpop (@KBSKpop), MBC Radio (@radiomb
 Programs include Relay Dance, Tingle Interview, LA Deja Vu, Lee Mujin Service, Idol 1N2D, Gap Crush, Idol Silence, Idol Backstage, Killing Voice and Salon Drip. A title match applies only on the configured publisher; editorial overrides take precedence. Program filter buttons use the existing SONAR discovery UI. Videos without a recognized program remain under their channel. Multiple programs on the same publisher share one upload scan.
 
 Events, advertisements and cross-artist challenge appearances need individual evidence; they are not assigned solely because another archive lists them. The current 200-upload window is not a complete historic archive.
+
+
+## Hosts, guests and historical discovery
+
+External content includes individual idol hosts, regular cast and episode guests. Group-owned uploads are not a prerequisite: external title matching covers all supported directory groups, including those awaiting official-channel verification.
+
+Workman (@workman) and Wassup Man (@WassupMan) are additional publishers. Workdol has reviewed program-scoped title aliases for HAEWON/NMIXX and TSUKI/Billlie. An episode must match both its publisher/program and a reviewed cast name; a show is never assigned wholesale to every past host. Ordinary cast records use role=participant because a title alone cannot distinguish host, guest, substitute or compilation. The official host compilation HImR7CR_zs0 is retained as a reviewed historical seed, with publisher credits and explicit linked members. Its actual API publisher must match the configured source.
+
+Explicit publisher description lines starting with Guest:, Starring:, or the equivalent Korean cast/guest labels may establish group context. Unlabelled description lists and social boilerplate remain ignored. Member tags still require explicit title mentions, program-scoped reviewed evidence or a per-video editorial override. No full-video appearance verification is claimed.
+
+Each external source refreshes its recent 200 uploads and advances two additional historical pages (up to 100 older uploads) per full run. Per-source playlist cursors are stored in public/data/external-backfill.json only after successful publishing. Invalidated cursors restart historical paging while recent results are retained; authentication/quota failures remain fatal. Existing read/search budget limits apply. History is filled progressively, not claimed complete after one run. Multiple links to the same video retain one canonical record.

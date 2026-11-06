@@ -38,3 +38,27 @@ class ExternalSourcesTests(unittest.TestCase):
         video = normalize(raw,m2,config,{'externalType':'interview','programId':'manual','programName':'Reviewed'})
         self.assertEqual(video['programId'],'manual')
         self.assertEqual(video['externalType'],'interview')
+
+    def test_reviewed_cast_alias_is_limited_to_publisher_and_program(self):
+        config = read_config()
+        source = next(c for c in config['channels'] if c['id']=='workman')
+        raw = {'id':'abc123DEF45','snippet':{'title':'Workdol HAEWON part time job','description':'','publishedAt':'2026-11-05T00:00:00Z','channelTitle':'Workman'}}
+        video = normalize(raw,source,config)
+        self.assertEqual(video['groupIds'],['nmixx'])
+        self.assertEqual(video['memberIds'],['nmixx-haewon'])
+        other = next(c for c in config['channels'] if c['id']=='its-live')
+        self.assertEqual(normalize(raw,other,config)['groupIds'],[])
+        raw['snippet']['title']='Workman HAEWON mentioned'
+        self.assertEqual(normalize(raw,source,config)['groupIds'],[])
+        raw['snippet']['title']='Workdol new host'
+        self.assertEqual(normalize(raw,source,config)['memberIds'],[])
+
+    def test_explicit_guest_credit_is_allowed_but_boilerplate_is_not(self):
+        config = read_config()
+        channel = next(c for c in config['channels'] if c['id']=='wassup-man')
+        raw = {'id':'abc123DEF45','snippet':{'title':'KARINA interview','description':'Guest: aespa KARINA','publishedAt':'2026-11-05T00:00:00Z','channelTitle':'Wassup Man'}}
+        video = normalize(raw,channel,config)
+        self.assertEqual(video['groupIds'],['aespa'])
+        self.assertEqual(video['memberIds'],['aespa-karina'])
+        raw['snippet']['description']='aespa KARINA, IVE, NMIXX social links'
+        self.assertEqual(normalize(raw,channel,config)['groupIds'],[])
