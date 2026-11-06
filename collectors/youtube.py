@@ -246,6 +246,8 @@ def collect(api, pages=1):
     retained_ids = {p.stem.removeprefix('youtube__') for p in (DATA/'content').glob('youtube__*.json')}
     unresolved = sum(not c.get('uploadsPlaylistId') for c in config['channels'] if c.get('collectionEnabled',True))
     if api.budget and api.budget.remaining('read') < metadata_read_reserve(retained_ids) + unresolved:
+        from .targeted import collect_pending
+        if collect_pending(api,config,overrides,DATA,previous if previous_path.exists() else {}):return
         raise BudgetExceeded('Insufficient read budget for a safe metadata refresh; collection deferred, existing data retained.')
     lookup = resolve(api, config)
     ids = set()
