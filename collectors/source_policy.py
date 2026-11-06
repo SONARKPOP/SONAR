@@ -1,6 +1,7 @@
 """Only reviewed original publishers may supply SONAR records."""
 
-ORIGINAL_KINDS = {'broadcaster', 'production', 'program', 'brand', 'artist-label'}
+ORIGINAL_KINDS = {'broadcaster', 'production', 'program', 'brand', 'artist-label',
+                  'creator', 'public-institution'}
 
 
 def approved_original(channel):

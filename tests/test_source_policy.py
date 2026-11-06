@@ -8,6 +8,14 @@ from collectors.publish import publish
 
 
 class SourcePolicyTests(unittest.TestCase):
+    def test_creator_brand_and_public_sources_require_explicit_review(self):
+        for kind in ('creator', 'brand', 'public-institution'):
+            source = {'official':False, 'publisherReview':{
+                'status':'approved', 'kind':kind, 'evidenceUrl':'https://example.com/original'}}
+            self.assertTrue(approved_original(source))
+            source['publisherReview']['status'] = 'pending'
+            self.assertFalse(approved_original(source))
+
     def test_fan_reupload_and_gossip_sources_are_rejected_before_api(self):
         for kind in ('fan', 'reupload', 'gossip', 'aggregator'):
             source = {'id':'excluded', 'official':False, 'collectionEnabled':True,
