@@ -22,7 +22,10 @@ class FakeAPI:
             identity=params.get('forHandle') or params['id']
             channel_id=params.get('id') or 'UC'+str(len(self.channels)+1).zfill(22)
             self.channels[channel_id]=identity
-            return {'items':[{'id':channel_id,'snippet':{'title':self.sources.get(identity,{}).get('name','Official')},'contentDetails':{'relatedPlaylists':{'uploads':'UU'+channel_id[2:]}}}]}
+            source=self.sources.get(identity,{})
+            title=(source.get('expectedChannelNames') or [source.get('name','Official')])[0]
+            handle=(source.get('expectedHandles') or [source.get('handle','')])[0]
+            return {'items':[{'id':channel_id,'snippet':{'title':title,'customUrl':handle},'contentDetails':{'relatedPlaylists':{'uploads':'UU'+channel_id[2:]}}}]}
         if resource=='playlistItems':
             return {'items':[{'contentDetails':{'videoId':'video-'+params['playlistId'][2:]}}]}
         raise AssertionError('Unexpected endpoint: '+resource)
@@ -86,3 +89,4 @@ class PreflightTests(unittest.TestCase):
         self.assertEqual(set(normalize(raw,channel,config)['memberIds']),{'hearts2hearts-ana','hearts2hearts-yeon','hearts2hearts-ian'})
 
 if __name__=='__main__':unittest.main()
+
