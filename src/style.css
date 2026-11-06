@@ -599,3 +599,20 @@ footer{border-color:#e0e8ef;margin-top:35px;color:#7893a8}
 [data-theme="dark"] .directory-grid,[data-theme="dark"] .directory-artist{border-color:#314c62}[data-theme="dark"] .directory-back-top{background:#29485e;border-color:#658ba2;color:#e0f2ff}
 @media(max-width:1250px){.directory-artist{grid-template-areas:"name activity policies" "career last source";grid-template-columns:minmax(170px,1fr) 120px 170px;min-height:75px;row-gap:6px}}
 @media(max-width:650px){.directory-artist{grid-template-areas:"name name" "activity last" "career source" "policies policies";grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:120px;gap:6px 10px;padding:9px 11px;contain-intrinsic-size:auto 120px}.directory-save span{display:inline}.directory-artist .editor-group-policies button{min-width:34px;min-height:40px}.directory-artist .editor-group-policies .policy-allow{min-width:65px}.directory-back-top{right:14px;bottom:16px}}
+/* Compact platform shortcuts: wrap without widening the artist list. */
+.directory-source-links{gap:4px;align-items:center;min-width:0}
+.directory-source-links a{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;flex:0 0 28px;border:1px solid #c9dce7;border-radius:7px;background:#edf5fa;color:#517b93;transition:background .15s,border-color .15s}
+.directory-source-links a:hover{background:#dbeaf4;border-color:#83adc6}
+.directory-source-links a:focus-visible{outline:2px solid #5797bd;outline-offset:2px}
+.directory-source-links a[data-platform="youtube"]{color:#be5562}
+.directory-source-links a[data-platform="weverse"]{color:#269d9e}
+.directory-source-links a[data-platform="berriz"]{color:#9171a5}
+.directory-artist{grid-template-columns:minmax(165px,1.2fr) 100px minmax(90px,1fr) 110px 124px 170px}
+[data-theme="dark"] .directory-source-links a{background:#20394e;border-color:#3b5970;color:#b4cddd}
+[data-theme="dark"] .directory-source-links a:hover{background:#31516b;border-color:#789fb6}
+[data-theme="dark"] .directory-source-links a[data-platform="youtube"]{color:#f08c98}
+[data-theme="dark"] .directory-source-links a[data-platform="weverse"]{color:#6ad4ce}
+[data-theme="dark"] .directory-source-links a[data-platform="berriz"]{color:#c8a0e0}
+@media(max-width:1400px){.directory-artist{grid-template-areas:"name activity policies" "career last source";grid-template-columns:minmax(170px,1fr) 120px 170px;min-height:75px;row-gap:6px}}
+@media(max-width:650px){.directory-artist{grid-template-areas:"name name" "activity last" "career source" "policies policies";grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.directory-source-links a{width:34px;height:36px;flex-basis:34px}}
+

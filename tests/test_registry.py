@@ -108,6 +108,17 @@ class RegistryTests(unittest.TestCase):
         self.assertEqual(read(self.data/'content/youtube__fixture.json')['groupIds'],['rescene','uspeer'])
         self.assertEqual(read(self.data/'live.json')['updatedAt'],'2020-01-01T00:00:00Z')
 
+    def test_sync_preserves_failed_channel_identity_until_collection_rechecks(self):
+        config=load_config(self.config)
+        source=next(c for c in config['channels'] if c['id']=='rescene-official')
+        source.update(collectionEnabled=False,unavailableReason='channel-name-needs-review',observedChannelName='Unrelated')
+        publish([],config,output=self.data)
+        sync_catalog(self.config,self.data)
+        catalog=read(self.data/'catalog.json')
+        artist=next(g for g in catalog['groups'] if g['id']=='rescene')
+        self.assertFalse(artist['officialSourceConnected'])
+        self.assertEqual(artist['officialSourceReviewReason'],'channel-name-needs-review')
+
     def test_unsupported_group_is_removed_from_indexes(self):
         config=load_config(self.config)
         publish([],config,output=self.data)
@@ -129,3 +140,4 @@ class RegistryTests(unittest.TestCase):
         self.assertFalse((self.config/'groups/test-crew.json').exists())
 
 if __name__=='__main__':unittest.main()
+

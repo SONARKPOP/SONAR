@@ -1,6 +1,7 @@
 """Validated group bundles: the only source of UI defaults and collection policy."""
 import json
 import re
+from urllib.parse import urlparse
 from pathlib import Path
 
 CONFIG = Path(__file__).resolve().parents[1] / 'config'
@@ -26,6 +27,24 @@ def strings(value, label):
     for item in value:
         text(item, label)
 
+def validate_official_links(links):
+    hosts={'youtube':{'youtube.com','www.youtube.com'},'weverse':{'weverse.io'},
+           'berriz':{'berriz.in','link.berriz.in'},'x':{'x.com','www.x.com','twitter.com','www.twitter.com'},
+           'instagram':{'instagram.com','www.instagram.com'},'tiktok':{'tiktok.com','www.tiktok.com'}}
+    if not isinstance(links,list):raise ValueError('officialLinks must be a list.')
+    seen=set()
+    for link in links:
+        if not isinstance(link,dict):raise ValueError('Official link must be an object.')
+        platform=link.get('platform')
+        url=urlparse(link.get('url',''))
+        if platform not in {*hosts,'website'} or url.scheme!='https' or not url.hostname or url.username or url.password or (platform!='website' and (url.path in ('','/') or url.hostname not in hosts[platform])):
+            raise ValueError('Official link has an invalid platform or URL.')
+        key=(platform,link['url'].rstrip('/'))
+        if key in seen:raise ValueError('Duplicate official link.')
+        seen.add(key)
+        text(link.get('evidenceUrl'),'Official link evidence')
+        text(link.get('checkedAt'),'Official link checked date')
+
 def validate(bundles, shared, taxonomy):
     group_ids, member_ids, channel_ids, identities, aliases = set(), set(), set(), set(), {}
     for bundle in bundles:
@@ -39,6 +58,7 @@ def validate(bundles, shared, taxonomy):
         text(bundle.get('name'), f'{gid}.name')
         strings(bundle.get('aliases'), f'{gid}.aliases')
         strings(bundle.get('platforms'), f'{gid}.platforms')
+        validate_official_links(bundle.get('officialLinks',[]))
         if bundle.get('debutYear') is not None and (type(bundle['debutYear']) is not int or not 1900 <= bundle['debutYear'] <= 2100):
             raise ValueError(f'{gid}.debutYear: year must be an integer or null.')
         if bundle.get('gender') not in ('girl', 'boy', 'mixed'):
@@ -210,7 +230,7 @@ def load_config(config_dir=CONFIG):
     channels.extend(shared)
     return {
         'schemaVersion': 1,
-        'groups': [{**{k:b[k] for k in public_fields}, 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False), 'displayCategories':b.get('displayCategories',[]), 'directoryVisibility':b.get('directoryVisibility','visible'), 'previousGroupIds':b.get('previousGroupIds',[]), 'careerEvidence':b.get('careerEvidence',[]), 'relatedGroupIds':b.get('relatedGroupIds',[]), 'relatedMemberIds':b.get('relatedMemberIds',[]), 'ambiguousAliases':b.get('ambiguousAliases',[])} for b in supported],
+        'groups': [{**{k:b[k] for k in public_fields}, 'officialLinks':b.get('officialLinks',[]), 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False), 'displayCategories':b.get('displayCategories',[]), 'directoryVisibility':b.get('directoryVisibility','visible'), 'previousGroupIds':b.get('previousGroupIds',[]), 'careerEvidence':b.get('careerEvidence',[]), 'relatedGroupIds':b.get('relatedGroupIds',[]), 'relatedMemberIds':b.get('relatedMemberIds',[]), 'ambiguousAliases':b.get('ambiguousAliases',[])} for b in supported],
         'members': [m for b in supported for m in b['members']],
         'channels': channels,
         'taxonomy': taxonomy,
@@ -218,3 +238,4 @@ def load_config(config_dir=CONFIG):
         'sampleGroupIds': [b['id'] for b in supported if b['sampleEnabled']],
         'collectionGroupIds': [b['id'] for b in supported if b['collectionEnabled']],
     }
+

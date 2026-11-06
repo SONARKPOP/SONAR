@@ -7,6 +7,11 @@ from collectors.quota import QuotaGuard, BudgetExceeded
 from collectors.youtube import YouTube
 
 class QuotaTests(unittest.TestCase):
+    def test_metadata_reserve_deduplicates_and_reserves_room_for_new_pages(self):
+        from collectors.quota import metadata_read_reserve
+        self.assertEqual(metadata_read_reserve(range(100),range(50,150)),11)
+        self.assertEqual(metadata_read_reserve(range(100),range(100),50),11)
+
     def test_persistent_rolling_budget_including_repeat_runs(self):
         with tempfile.TemporaryDirectory() as tmp:
             path=Path(tmp)/'state.json'
@@ -55,3 +60,4 @@ class QuotaEstimateTests(unittest.TestCase):
         source={'collectionEnabled':True,'official':False,'platform':'youtube','collectionPages':4,'archivePages':2}
         result=estimate({'channels':[source],'groups':[]},0)
         self.assertEqual(result['readUnitsPerDayEstimate'],24)
+

@@ -230,6 +230,7 @@ def resolve(api, config):
     return lookup
 
 def collect(api, pages=1):
+    from .quota import metadata_read_reserve
     config, overrides = read_config(), read_overrides()
     previous_path=DATA/'catalog.json'
     if previous_path.exists():
@@ -242,13 +243,26 @@ def collect(api, pages=1):
             if same and valid_cache:
                 for field in ('platformId','uploadsPlaylistId'):
                     if old.get(field) and not c.get(field):c[field]=old[field]
+    retained_ids = {p.stem.removeprefix('youtube__') for p in (DATA/'content').glob('youtube__*.json')}
+    unresolved = sum(not c.get('uploadsPlaylistId') for c in config['channels'] if c.get('collectionEnabled',True))
+    if api.budget and api.budget.remaining('read') < metadata_read_reserve(retained_ids) + unresolved:
+        raise BudgetExceeded('Insufficient read budget for a safe metadata refresh; collection deferred, existing data retained.')
     lookup = resolve(api, config)
     ids = set()
     archive_path = DATA / 'external-backfill.json'
     archive_state = json.loads(archive_path.read_text(encoding='utf-8')) if archive_path.exists() else {}
-    for c in config['channels']:
+    scan_channels=[c for c in config['channels'] if c.get('collectionEnabled',True)]
+    scan_start=int(api.budget.state.get('uploadsCursor',0))%len(scan_channels) if api.budget and scan_channels else 0
+    scan_channels=scan_channels[scan_start:]+scan_channels[:scan_start]
+    scanned=0
+    for c in scan_channels:
         if not c.get('collectionEnabled', True):
             continue
+        requests=c.get('collectionPages',pages)+c.get('archivePages',0)
+        if api.budget and api.budget.remaining('read') < requests+metadata_read_reserve(retained_ids,ids,requests*50):
+            print('Playlist scanning paused to reserve metadata calls; remaining channels rotate into the next full run.')
+            break
+        scanned+=1
         try:
             ids.update(c.get('seedVideoIds', []))
             if c.get('archivePages') and not c['official']:
@@ -313,6 +327,9 @@ def collect(api, pages=1):
         if v['groupIds']:
             records.append(v)
     publish(records, config, output=DATA)
+    if api.budget and scan_channels:
+        api.budget.state['uploadsCursor']=(scan_start+scanned)%len(scan_channels)
+        write(api.budget.path,api.budget.state)
     write(archive_path, archive_state)
     write(DATA / 'collection-report.json', {'updatedAt':now(), 'recordCount':len(records), 'externalRecordCount':sum('external' in v.get('contentTypes', []) or v.get('category')=='external' for v in records),
         'unavailableSources':[{'id':c['id'],'reason':c['unavailableReason'],'observedName':c.get('observedChannelName')} for c in config['channels'] if c.get('unavailableReason')]})
@@ -348,8 +365,12 @@ def main():
     try:
         api = YouTube(os.environ.get('YOUTUBE_API_KEY'),budget=QuotaGuard(DATA/'collection-state.json'))
         refresh_live(api) if args.refresh_live else collect(api, args.pages)
+    except BudgetExceeded as exc:
+        print(f'Collection deferred: {exc}')
+        print('Existing published videos are retained; site-only updates may still deploy.')
     except (ValueError, RuntimeError) as exc:
         parser.exit(1, f'{exc}\n')
 
 if __name__ == '__main__':
     main()
+

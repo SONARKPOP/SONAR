@@ -55,6 +55,11 @@ def sync_catalog(config_dir=CONFIG, output=DATA):
         if (channel.get('handle') and old.get('handle') == channel['handle']) or (channel.get('platformId') and old.get('platformId') == channel['platformId']):
             for key in ('platformId', 'uploadsPlaylistId'):
                 if old.get(key) and not channel.get(key):channel[key] = old[key]
+            # A UI-only rebuild must not turn a failed identity check into an
+            # apparently verified official link. Full collection retries it.
+            if old.get('unavailableReason'):
+                channel.update(collectionEnabled=False, unavailableReason=old['unavailableReason'])
+                if old.get('observedChannelName'):channel['observedChannelName']=old['observedChannelName']
     index = read(output / 'latest.json') if (output / 'latest.json').exists() else {'events':[]}
     events = []
     for event in index.get('events', []):
@@ -153,3 +158,4 @@ def main(argv=None, config_dir=CONFIG, output=DATA):
         parser.exit(1, f'{exc}\n')
 
 if __name__ == '__main__':main()
+

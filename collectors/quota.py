@@ -14,6 +14,10 @@ from .publish import DATA, write
 class BudgetExceeded(RuntimeError):
     pass
 
+def metadata_read_reserve(existing_ids, discovered_ids=(), extra_videos=0):
+    """Reserve batched metadata reads before spending calls on more playlists."""
+    return math.ceil((len(set(existing_ids) | set(discovered_ids)) + extra_videos) / 50) + 8
+
 class QuotaGuard:
     def __init__(self,path,search_day=80,read_day=8000,search_run=20,read_run=600,clock=time.time):
         self.path=Path(path)
@@ -78,3 +82,4 @@ def main():
     print(json.dumps(estimate(load_config(),len(list((DATA/'content').glob('*.json')))),ensure_ascii=False,indent=2))
 
 if __name__=='__main__':main()
+
