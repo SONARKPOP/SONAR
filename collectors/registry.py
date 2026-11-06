@@ -118,6 +118,9 @@ def validate(bundles, shared, taxonomy):
             raise ValueError(f'{cid}: unknown group link.')
         if type(channel.get('official')) is not bool or type(channel.get('collectionEnabled')) is not bool:
             raise ValueError(f'{cid}: official and collectionEnabled must be boolean.')
+        from .source_policy import approved_original
+        if channel['collectionEnabled'] and not approved_original(channel):
+            raise ValueError(f'{cid}: collection requires a reviewed original publisher; fan/reupload/gossip sources are excluded.')
         if channel['official'] and not channel['groupIds']:
             raise ValueError(f'{cid}: official source needs a group link.')
         identity = channel.get('handle') or channel.get('platformId')

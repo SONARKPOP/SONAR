@@ -25,7 +25,7 @@ class SourceHealthTests(unittest.TestCase):
   self.assertEqual(list(lookup),['okay'])
   self.assertFalse(config['channels'][0]['collectionEnabled'])
  def test_wrong_identity_is_not_collected(self):
-  source={'id':'bad','platformId':'bad','collectionEnabled':True,'expectedChannelNames':['Artist A']}
+  source={'id':'bad','official':True,'platformId':'bad','collectionEnabled':True,'expectedChannelNames':['Artist A']}
   api=YouTube('test-not-a-secret')
   with patch.object(api,'get',return_value={'items':[{'id':'bad','snippet':{'title':'Different creator'},'contentDetails':{'relatedPlaylists':{'uploads':'uploads'}}}]}):
    self.assertEqual(resolve(api,{'channels':[source]}),{})

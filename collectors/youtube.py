@@ -10,6 +10,7 @@ import urllib.request
 from .publish import ROOT, DATA, now, publish, write
 from .registry import load_config
 from .quota import QuotaGuard, BudgetExceeded
+from .source_policy import approved_original
 
 class YouTubeHTTPError(RuntimeError):
     def __init__(self, resource, status):
@@ -186,6 +187,9 @@ def resolve(api, config):
     for c in config['channels']:
         if not c.get('collectionEnabled', True):
             continue
+        if not approved_original(c):
+            c.update(collectionEnabled=False, unavailableReason='source-not-approved')
+            continue
         if c.get('platformId') and c.get('uploadsPlaylistId'):
             if c['platformId'] in lookup:raise RuntimeError('Duplicate resolved YouTube channel identity.')
             lookup[c['platformId']]=c
@@ -255,6 +259,8 @@ def collect(api, pages=1):
             continue
         if not old.get('demo'):
             source = sources.get(old['channelId'])
+            if not source or not approved_original(source):
+                continue
             if source and not source['collectionEnabled']:
                 old['groupIds'] = [g for g in old['groupIds'] if g in supported]
                 # Pausing collection retains the archive, never asserts a continuing live.

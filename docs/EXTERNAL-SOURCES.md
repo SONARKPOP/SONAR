@@ -30,3 +30,10 @@ Workman (@workman) and Wassup Man (@WassupMan) are additional publishers. Workdo
 Explicit publisher description lines starting with Guest:, Starring:, or the equivalent Korean cast/guest labels may establish group context. Unlabelled description lists and social boilerplate remain ignored. Member tags still require explicit title mentions, program-scoped reviewed evidence or a per-video editorial override. No full-video appearance verification is claimed.
 
 Each external source refreshes its recent 200 uploads and advances two additional historical pages (up to 100 older uploads) per full run. Per-source playlist cursors are stored in public/data/external-backfill.json only after successful publishing. Invalidated cursors restart historical paging while recent results are retained; authentication/quota failures remain fatal. Existing read/search budget limits apply. History is filled progressively, not claimed complete after one run. Multiple links to the same video retain one canonical record.
+
+
+## Original publisher policy (2026-11-06)
+
+Exclude fan edits, reuploads, gossip/rumor channels and unreviewed aggregators, even when their titles mention supported artists. External collection uses an explicit publisherReview allowlist for broadcasters, production companies, program owners, brands and artist labels publishing their own material. Current 14 external sources were classified as original broadcasters/production publishers, with evidence URLs. Channel name or verification badge alone is not approval.
+
+Registry validation rejects enabled unapproved sources. Collection checks approval before API calls, and publishing also drops existing records from unknown or unapproved publishers. Automatic discovery of older episodes remains restricted to these approved source channels. Appearance as an idol host/guest does not relax publisher eligibility. New sources require a manual provenance review before activation.

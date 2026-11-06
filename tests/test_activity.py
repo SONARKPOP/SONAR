@@ -15,7 +15,7 @@ class ActivityTests(unittest.TestCase):
    self.assertEqual(groups[item['id']]['debutYear'],item['debutYear'])
  def test_only_real_official_uploads_determine_activity(self):
   with tempfile.TemporaryDirectory() as temporary:
-   config={'groups':[{'id':'a'},{'id':'empty'}],'members':[],'taxonomy':{},'channels':[{'id':'official','official':True,'groupIds':['a']},{'id':'external','official':False,'groupIds':[]}]}
+   config={'groups':[{'id':'a'},{'id':'empty'}],'members':[],'taxonomy':{},'channels':[{'id':'official','official':True,'groupIds':['a']},{'id':'external','official':False,'groupIds':[],'publisherReview':{'status':'approved','kind':'broadcaster','evidenceUrl':'https://example.com/original'}}]}
    def row(id,source,date,demo=False):return {'id':'youtube__'+id,'platform':'youtube','platformId':id,'groupIds':['a'],'channelId':source,'category':'own','title':'hello','publishedAt':date,'demo':demo,'format':'video','tags':[],'subtypes':[]}
    publish([row('real','official','2024-01-01T00:00:00Z'),row('external','external','2026-11-01T00:00:00Z'),row('sample','official','2026-11-02T00:00:00Z',True)],config,output=Path(temporary))
    groups=json.loads((Path(temporary)/'catalog.json').read_text(encoding='utf-8'))['groups']

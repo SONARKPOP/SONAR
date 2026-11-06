@@ -36,8 +36,9 @@ def publish(records, config, events=(), output=DATA, demo=False):
     # Events remain an empty schema field for compatibility; schedules are disabled.
     events = ()
     from .content_tags import apply_tags
+    from .source_policy import approved_original
     sources = {c['id']:c for c in config['channels']}
-    records = {v['id']: apply_tags(v, sources.get(v['channelId'], {}).get('official', False)) for v in records}
+    records = {v['id']: apply_tags(v, sources.get(v['channelId'], {}).get('official', False)) for v in records if approved_original(sources.get(v['channelId'], {}))}
     updated = now()
     ordered = sorted(records.values(), key=lambda v: v['publishedAt'], reverse=True)
     for v in ordered:
