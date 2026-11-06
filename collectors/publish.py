@@ -63,7 +63,8 @@ def publish(records, config, events=(), output=DATA, demo=False):
     # must not make a dormant official channel appear recently active.
     public_config['groups'] = []
     for g in config['groups']:
-        official_ids = {c['id'] for c in config['channels'] if c['official'] and g['id'] in c['groupIds']}
+        owners = {g['id'], *g.get('relatedGroupIds', [])}
+        official_ids = {c['id'] for c in config['channels'] if c['official'] and owners.intersection(c['groupIds'])}
         dates = [v['publishedAt'] for v in ordered if not v.get('demo') and v['channelId'] in official_ids and g['id'] in v['groupIds']]
         public_config['groups'].append({**g, 'contentCount':sum(g['id'] in v['groupIds'] for v in ordered),
             'lastOfficialUploadAt':max(dates, default=None), 'officialSourceConnected':bool(official_ids)})

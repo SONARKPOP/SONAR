@@ -1,0 +1,42 @@
+import tempfile
+import unittest
+from pathlib import Path
+import json
+from collectors.registry import load_config
+from collectors.youtube import normalize
+from collectors.publish import publish
+
+
+class SoloRelationshipsTests(unittest.TestCase):
+    def test_parent_channel_routes_only_explicit_solo_member(self):
+        config=load_config()
+        source=next(c for c in config['channels'] if c['id']=='gidle-official')
+        raw={'id':'abc123DEF45','snippet':{'title':"MINNIE 'HER' Official Music Video",
+             'description':'','publishedAt':'2026-01-01T00:00:00Z','channelTitle':'i-dle'}}
+        video=normalize(raw,source,config)
+        self.assertEqual(set(video['groupIds']),{'gidle','minnie'})
+        self.assertIn('gidle-minnie',video['memberIds'])
+        self.assertNotIn('yuqi',video['groupIds'])
+        raw['snippet']['title']='i-dle group behind the scenes'
+        self.assertEqual(normalize(raw,source,config)['groupIds'],['gidle'])
+
+    def test_solo_and_parent_share_one_canonical_video(self):
+        config=load_config()
+        source=next(c for c in config['channels'] if c['id']=='hwasa-official')
+        raw={'id':'abc123DEF45','snippet':{'title':'HWASA MV','description':'',
+             'publishedAt':'2026-01-01T00:00:00Z','channelTitle':'HWASA'}}
+        video=normalize(raw,source,config)
+        self.assertEqual(set(video['groupIds']),{'hwasa','mamamoo'})
+        with tempfile.TemporaryDirectory() as tmp:
+            publish([video,video],config,output=tmp)
+            self.assertEqual(len(list((Path(tmp)/'content').glob('*.json'))),1)
+            for gid in ('hwasa','mamamoo'):
+                index=json.loads((Path(tmp)/'groups'/f'{gid}.json').read_text(encoding='utf-8'))
+                self.assertEqual(len(index['items']),1)
+
+    def test_unrelated_cover_does_not_infer_an_ambiguous_soloist(self):
+        config=load_config()
+        source=next(c for c in config['channels'] if c['id']=='nmixx-official')
+        raw={'id':'abc123DEF45','snippet':{'title':'MINNIE cover','description':'',
+             'publishedAt':'2026-01-01T00:00:00Z','channelTitle':'NMIXX'}}
+        self.assertNotIn('minnie',normalize(raw,source,config)['groupIds'])

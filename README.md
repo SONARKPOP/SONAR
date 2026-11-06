@@ -165,3 +165,10 @@ LIVE NOW 위의 여자·남자·혼성·듀오/솔로 버튼을 여러 개 켤 �
 config 또는 collectors 변경을 main에 게시하면 즉시 전체 수집을 한 번 실행합니다. 일반 UI·문서 변경은 기존 데이터로 배포하며 YouTube를 호출하지 않습니다. 정기 수집은 6시간, 알려진 라이브 확인은 20분이며 검색 20회/실행·80회/24시간, 일반 조회 600회/실행·8000회/24시간 제한을 유지합니다. 그룹 수가 늘어 새 라이브 검색은 전체 채널을 순환하므로 즉시 발견은 보장하지 않습니다. 방문자의 그룹 선택은 API 호출을 발생시키지 않습니다. 검토 뒤 실제 수집의 성공/미접근 여부는 collection-report.json과 Actions 실행 결과로 확인합니다.
 
 2026-11-06 ?? ??: ?? ?? ?? ? ?? ?? 4,819?, ?? 478? ??, ??? ?? ID 0?. lilli lilli? ??? ?? 404? ?? ??. Python 56??JavaScript 49? ?? ? ????? ??. ??? ?? ??? ??? ?? ??? ???? ??? ??????. ?? NMIXX ?? ?? ? ?? ?? ???? ??? ?? ???? ??????.
+
+
+## Expanded artist directory (2026-11-06)
+
+The catalog now covers 501 artist profiles: boy-group debuts from 2020 onward, girl-group debuts from 2007 onward, plus requested female solo/pop artists. Idol solo profiles appear in both girl-idol and duo/solo tabs using one stable profile ID. Explicit solo uploads may link to their parent groups without duplicating canonical videos or re-registering shared YouTube channels. Existing default 9 selections remain unchanged.
+
+Directory registration does not imply an official channel has been verified or a complete discography collected. Dedicated publisher references are enabled selectively; pending sources remain disconnected and fan/reupload/gossip sources remain excluded. See docs/ARTIST-DIRECTORY.md and docs/ARTIST-EXPANSION-2026-11.json for scope and evidence. Activity dates for a shared group source count only uploads explicitly linked to the solo artist.

@@ -1,7 +1,7 @@
 import React,{useEffect,useMemo,useRef,useState,useReducer} from 'react';
 import {createRoot} from 'react-dom/client';
 import {Search,Plus,X,Radio,Home,Music2,Clapperboard,Layers,CalendarDays,Play,ArrowUpRight,SlidersHorizontal,ChevronLeft,ChevronRight,Menu,Check,Disc3,Star,Moon,Sun,Heart,Sprout,Ban,Smartphone,Settings2,ShieldCheck} from 'lucide-react';
-import {PAGE_SIZE,filterContent,commonChannels,activeLives,groupPreferences,favoriteGroupSelection,selectionReducer,monthKey,favoriteColorPreferences,favoriteCardStyle,themePreference,favoritePresetPreferences,excludedGroupPreferences,withoutExcludedGroups,prioritizeGroups,EXTERNAL_TYPES,externalKind,uploadDays,uploadKind,uploadGroupSummary,OWN_TYPES,allGroupSelection,sortGroups,ARTIST_CATEGORIES,artistsInCategory,recommendedArtists,artistCategory,excludedArtistIds,loadSaved,updateGroupMembership,DISPLAY_ARTIST_TYPES,enabledArtistTypePreferences,toggleArtistType,visibleArtistIds,debutYearRanges,artistsInDebutRange,groupActivity,activityLabel,activityDirectory,isShortContent,modalHistory} from './lib';
+import {PAGE_SIZE,filterContent,commonChannels,activeLives,groupPreferences,favoriteGroupSelection,selectionReducer,monthKey,favoriteColorPreferences,favoriteCardStyle,themePreference,favoritePresetPreferences,excludedGroupPreferences,withoutExcludedGroups,prioritizeGroups,EXTERNAL_TYPES,externalKind,uploadDays,uploadKind,uploadGroupSummary,OWN_TYPES,allGroupSelection,sortGroups,ARTIST_CATEGORIES,artistsInCategory,recommendedArtists,artistCategory,artistCategories,excludedArtistIds,loadSaved,updateGroupMembership,DISPLAY_ARTIST_TYPES,enabledArtistTypePreferences,toggleArtistType,visibleArtistIds,debutYearRanges,artistsInDebutRange,groupActivity,activityLabel,activityDirectory,isShortContent,modalHistory} from './lib';
 import './style.css';
 import {createDataClient} from './data';
 import {LANGUAGES,localize,readScreenPreference} from './i18n';
@@ -64,7 +64,7 @@ function App(){
  const calendarRows=filtered.filter(v=>uploadKind(v));
  const pageRows=filtered.slice((page-1)*PAGE_SIZE,page*PAGE_SIZE);
  useEffect(()=>{let cancel=false;Promise.allSettled(pageRows.map(v=>json(`content/${encodeURIComponent(v.id)}.json`))).then(results=>{if(!cancel)setDetails(Object.fromEntries(results.filter(r=>r.status==='fulfilled').map(r=>[r.value.id,r.value])));});return()=>{cancel=true;};},[filtered,page,retry,category]);
- const lives=catalog?withoutExcludedGroups(activeLives(feed,catalog.channels,clock),excludedGroups).filter(v=>v.groupIds.some(id=>enabledArtistTypes.includes(artistCategory(catalog.groups.find(g=>g.id===id)||{})))):[];
+ const lives=catalog?withoutExcludedGroups(activeLives(feed,catalog.channels,clock),excludedGroups).filter(v=>v.groupIds.some(id=>artistCategories(catalog.groups.find(g=>g.id===id)||{}).some(type=>enabledArtistTypes.includes(type)))):[];
  const externalRows=rows.filter(v=>(v.category==='external'||v.contentTypes?.includes('external'))&&(!externalType||externalKind(v)===externalType)&&(!excludeMode||!v.groupIds.some(id=>excludedGroups.includes(id))));
  const channels=commonChannels(externalRows,selected);
  const archiveYears=[...new Set(rows.map(v=>monthKey(v.publishedAt).slice(0,4)))].sort().reverse();

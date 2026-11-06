@@ -45,6 +45,11 @@ def validate(bundles, shared, taxonomy):
             raise ValueError(f'{gid}: invalid gender.')
         if bundle.get('artistType', 'group') not in ('group','duo','solo'):
             raise ValueError(f'{gid}: invalid artistType.')
+        if not isinstance(bundle.get('displayCategories', []), list) or set(bundle.get('displayCategories', [])) - {'girl','boy','mixed','duo-solo'}:
+            raise ValueError(f'{gid}: invalid display categories.')
+        strings(bundle.get('relatedGroupIds', []), f'{gid}.relatedGroupIds')
+        strings(bundle.get('relatedMemberIds', []), f'{gid}.relatedMemberIds')
+        strings(bundle.get('ambiguousAliases', []), f'{gid}.ambiguousAliases')
         if type(bundle.get('ambiguousName', False)) is not bool:
             raise ValueError(f'{gid}: ambiguousName must be boolean.')
         for flag in ('supported', 'defaultSelected', 'collectionEnabled', 'sampleEnabled'):
@@ -75,6 +80,17 @@ def validate(bundles, shared, taxonomy):
                 strings(member['ambiguousAliases'], f'{mid}.ambiguousAliases')
                 if set(member['ambiguousAliases']) - set(member['aliases']):
                     raise ValueError(f'{mid}: ambiguous aliases must also appear in aliases.')
+    for bundle in bundles:
+        related = bundle.get('relatedGroupIds', [])
+        if set(related) - group_ids or bundle['id'] in related:
+            raise ValueError('Artist relationship must reference another registered group.')
+        if any(next(b for b in bundles if b['id']==target).get('artistType','group') == 'solo' for target in related):
+            raise ValueError('A parent relationship must reference a group, not another solo profile.')
+        for member_id in bundle.get('relatedMemberIds', []):
+            if not any(m['id']==member_id and m['groupId'] in related for b in bundles for m in b['members']):
+                raise ValueError('Related member must belong to a linked parent group.')
+        if related and bundle.get('artistType') != 'solo':
+            raise ValueError('Only solo profiles can link to parent groups.')
     all_channels = [c for b in bundles for c in b['channels']] + shared
     for channel in all_channels:
         if not isinstance(channel, dict):
@@ -187,7 +203,7 @@ def load_config(config_dir=CONFIG):
     channels.extend(shared)
     return {
         'schemaVersion': 1,
-        'groups': [{**{k:b[k] for k in public_fields}, 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False)} for b in supported],
+        'groups': [{**{k:b[k] for k in public_fields}, 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False), 'displayCategories':b.get('displayCategories',[]), 'relatedGroupIds':b.get('relatedGroupIds',[]), 'relatedMemberIds':b.get('relatedMemberIds',[]), 'ambiguousAliases':b.get('ambiguousAliases',[])} for b in supported],
         'members': [m for b in supported for m in b['members']],
         'channels': channels,
         'taxonomy': taxonomy,

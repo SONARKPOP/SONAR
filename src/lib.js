@@ -112,7 +112,8 @@ export function sortGroups(groups,mode='default'){
 
 export const ARTIST_CATEGORIES=[['all','전체'],['girl','여자 아이돌'],['mixed','혼성 아이돌'],['boy','남자 아이돌'],['duo-solo','듀오·솔로']];
 export function artistCategory(artist){return ['duo','solo'].includes(artist.artistType)?'duo-solo':artist.gender;}
-export function artistsInCategory(artists,category){return artists.filter(a=>category==='all'||artistCategory(a)===category);}
+export function artistCategories(artist){return [...new Set([artistCategory(artist),...(artist.displayCategories||[])])];}
+export function artistsInCategory(artists,category){return artists.filter(a=>category==='all'||artistCategories(a).includes(category));}
 export function recommendedArtists(artists,chosen,excluded,category='all',limit=4){return artistsInCategory(artists,category).filter(a=>!chosen.includes(a.id)&&!excluded.includes(a.id)).sort((a,b)=>(b.contentCount||0)-(a.contentCount||0)||a.name.localeCompare(b.name,'en',{sensitivity:'base'})).slice(0,limit);}
 
 export function excludedArtistIds(artists,individual,blockedTypes,allowed,protectedIds=[]){
@@ -124,7 +125,7 @@ export function updateGroupMembership(saved,selected,ids,enabled){
 export const DISPLAY_ARTIST_TYPES=['girl','boy','mixed','duo-solo'];
 export function enabledArtistTypePreferences(storage){const ids=[...new Set(loadSaved(storage,'sonar.enabled-artist-types.v1',DISPLAY_ARTIST_TYPES).filter(id=>DISPLAY_ARTIST_TYPES.includes(id)))];return ids.length?ids:[...DISPLAY_ARTIST_TYPES];}
 export function toggleArtistType(current,id){if(!DISPLAY_ARTIST_TYPES.includes(id))return current;if(current.includes(id))return current.length===1?current:current.filter(type=>type!==id);return [...current,id];}
-export function visibleArtistIds(artists,ids,types,excluded=[]){const lookup=new Map(artists.map(a=>[a.id,a]));return ids.filter(id=>lookup.has(id)&&types.includes(artistCategory(lookup.get(id)))&&!excluded.includes(id));}
+export function visibleArtistIds(artists,ids,types,excluded=[]){const lookup=new Map(artists.map(a=>[a.id,a]));return ids.filter(id=>lookup.has(id)&&artistCategories(lookup.get(id)).some(type=>types.includes(type))&&!excluded.includes(id));}
 export function debutYearRanges(artists){const starts=[...new Set(artists.filter(a=>Number.isInteger(a.debutYear)).map(a=>Math.floor(a.debutYear/5)*5))].sort((a,b)=>a-b);return starts.map(start=>({id:String(start),label:`${start}–${start+4}`}));}
 export function artistsInDebutRange(artists,range){if(range==='all')return artists;if(range==='unknown')return artists.filter(a=>!Number.isInteger(a.debutYear));const start=Number(range);return artists.filter(a=>Number.isInteger(a.debutYear)&&a.debutYear>=start&&a.debutYear<start+5);}
 export function monthsAfter(value,months){

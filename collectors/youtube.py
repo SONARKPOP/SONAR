@@ -1,5 +1,6 @@
 """YouTube adapter. Uses stdlib only; secrets never appear in URLs in logs."""
 import argparse
+from functools import lru_cache
 import json
 import os
 import re
@@ -62,9 +63,14 @@ class YouTube:
             result.extend(self.get('videos', part='snippet,contentDetails,liveStreamingDetails,status', id=','.join(ids[start:start + 50])).get('items', []))
         return result
 
+@lru_cache(maxsize=4096)
+def alias_pattern(alias):
+    return re.compile(r'(?<![\w])' + re.escape(alias) + r'(?![\w])', re.IGNORECASE)
+
+
 def mentions(text, alias):
     # Latin word boundaries prevent IVE matching "live" or REI matching other words.
-    return bool(re.search(r'(?<![\w])' + re.escape(alias) + r'(?![\w])', text, re.IGNORECASE)) if alias.isascii() else alias.casefold() in text.casefold()
+    return bool(alias_pattern(alias).search(text)) if alias.isascii() else alias.casefold() in text.casefold()
 
 def member_match(member, snippet, groups):
     title = snippet['title']
@@ -116,7 +122,14 @@ def normalize(raw, channel, config, override=None):
     snippet = raw['snippet']
     text = snippet['title']
     groups = set(channel['groupIds'] if channel['official'] else [])
-    groups.update(g['id'] for g in config['groups'] if not g.get('ambiguousName') and any(mentions(text, a) for a in g['aliases']))
+    owner_groups = set(groups)
+    groups.update(g['id'] for g in config['groups'] if (not g.get('ambiguousName') or owner_groups.intersection(g.get('relatedGroupIds', [])))
+                  and (not channel['official'] or g.get('artistType') != 'solo' or g['id'] in owner_groups
+                       or owner_groups.intersection(g.get('relatedGroupIds', [])))
+                  and any(mentions(text, a) for a in g['aliases'] if a not in g.get('ambiguousAliases', []) or owner_groups.intersection(g.get('relatedGroupIds', []))))
+    for artist in config['groups']:
+        if artist['id'] in groups and artist.get('artistType') == 'solo':
+            groups.update(artist.get('relatedGroupIds', []))
     scoped_members, appearance_evidence = [], []
     if not channel['official']:
         credit_lines = [line for line in snippet.get('description', '').splitlines()
@@ -141,6 +154,10 @@ def normalize(raw, channel, config, override=None):
     members = infer_members(snippet, groups, config) if groups else []
     members = sorted(set(members + scoped_members))
     groups.update(m['groupId'] for m in config['members'] if m['id'] in members)
+    for artist in config['groups']:
+        if artist.get('artistType') == 'solo' and set(artist.get('relatedMemberIds', [])).intersection(members):
+            groups.add(artist['id'])
+            groups.update(artist.get('relatedGroupIds', []))
     live = raw.get('liveStreamingDetails', {})
     status = 'ended' if live.get('actualEndTime') else 'live' if live.get('actualStartTime') else 'upcoming' if live.get('scheduledStartTime') else 'none'
     category, subtype, short = classify(snippet['title'], snippet.get('description', ''), channel['official'])
@@ -292,7 +309,7 @@ def collect(api, pages=1):
             continue
         if not channel or raw.get('status', {}).get('privacyStatus') != 'public':
             continue
-        v = normalize(raw, channel, matching_config if channel['official'] else config, overrides['videos'].get(raw['id']))
+        v = normalize(raw, channel, config, overrides['videos'].get(raw['id']))
         if v['groupIds']:
             records.append(v)
     publish(records, config, output=DATA)
