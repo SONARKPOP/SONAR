@@ -19,8 +19,8 @@ def run(api, limit=5, output=None):
     config['channels'] = [c for c in config['channels'] if c['official'] and c['collectionEnabled']]
     if not config['channels']:
         raise ValueError('No enabled official channel. Check group collection settings.')
-    enabled = set(config['collectionGroupIds'])
-    matching = {**config, 'groups':[g for g in config['groups'] if g['id'] in enabled], 'members':[m for m in config['members'] if m['groupId'] in enabled]}
+    # Solo sources may refer to parent groups whose own collection is disabled.
+    matching = config
     lookup = resolve(api, config)
     ids = set()
     counts = {}

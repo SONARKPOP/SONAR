@@ -48,6 +48,8 @@ def validate(bundles, shared, taxonomy):
         if not isinstance(bundle.get('displayCategories', []), list) or set(bundle.get('displayCategories', [])) - {'girl','boy','mixed','duo-solo'}:
             raise ValueError(f'{gid}: invalid display categories.')
         strings(bundle.get('relatedGroupIds', []), f'{gid}.relatedGroupIds')
+        strings(bundle.get('previousGroupIds', []), f'{gid}.previousGroupIds')
+        strings(bundle.get('careerEvidence', []), f'{gid}.careerEvidence')
         strings(bundle.get('relatedMemberIds', []), f'{gid}.relatedMemberIds')
         strings(bundle.get('ambiguousAliases', []), f'{gid}.ambiguousAliases')
         if type(bundle.get('ambiguousName', False)) is not bool:
@@ -82,6 +84,9 @@ def validate(bundles, shared, taxonomy):
                     raise ValueError(f'{mid}: ambiguous aliases must also appear in aliases.')
     for bundle in bundles:
         related = bundle.get('relatedGroupIds', [])
+        previous = bundle.get('previousGroupIds', [])
+        if set(previous) - group_ids or bundle['id'] in previous:
+            raise ValueError('Previous group must reference another registered group.')
         if set(related) - group_ids or bundle['id'] in related:
             raise ValueError('Artist relationship must reference another registered group.')
         if any(next(b for b in bundles if b['id']==target).get('artistType','group') == 'solo' for target in related):
@@ -203,7 +208,7 @@ def load_config(config_dir=CONFIG):
     channels.extend(shared)
     return {
         'schemaVersion': 1,
-        'groups': [{**{k:b[k] for k in public_fields}, 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False), 'displayCategories':b.get('displayCategories',[]), 'relatedGroupIds':b.get('relatedGroupIds',[]), 'relatedMemberIds':b.get('relatedMemberIds',[]), 'ambiguousAliases':b.get('ambiguousAliases',[])} for b in supported],
+        'groups': [{**{k:b[k] for k in public_fields}, 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False), 'displayCategories':b.get('displayCategories',[]), 'previousGroupIds':b.get('previousGroupIds',[]), 'careerEvidence':b.get('careerEvidence',[]), 'relatedGroupIds':b.get('relatedGroupIds',[]), 'relatedMemberIds':b.get('relatedMemberIds',[]), 'ambiguousAliases':b.get('ambiguousAliases',[])} for b in supported],
         'members': [m for b in supported for m in b['members']],
         'channels': channels,
         'taxonomy': taxonomy,
