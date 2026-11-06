@@ -1,4 +1,4 @@
-﻿import json
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -23,3 +23,9 @@ class ActivityTests(unittest.TestCase):
    self.assertTrue(groups[0]['officialSourceConnected'])
    self.assertIsNone(groups[1]['lastOfficialUploadAt'])
    self.assertFalse(groups[1]['officialSourceConnected'])
+ def test_unavailable_official_source_is_not_shown_as_connected(self):
+  with tempfile.TemporaryDirectory() as temporary:
+   config={'groups':[{'id':'a'}],'members':[],'taxonomy':{},'channels':[{'id':'missing','official':True,'groupIds':['a'],'collectionEnabled':False,'unavailableReason':'channel-not-found'}]}
+   publish([],config,output=Path(temporary))
+   group=json.loads((Path(temporary)/'catalog.json').read_text(encoding='utf-8'))['groups'][0]
+   self.assertFalse(group['officialSourceConnected'])

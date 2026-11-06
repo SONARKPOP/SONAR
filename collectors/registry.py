@@ -50,6 +50,8 @@ def validate(bundles, shared, taxonomy):
         strings(bundle.get('relatedGroupIds', []), f'{gid}.relatedGroupIds')
         strings(bundle.get('previousGroupIds', []), f'{gid}.previousGroupIds')
         strings(bundle.get('careerEvidence', []), f'{gid}.careerEvidence')
+        if bundle.get('directoryVisibility','visible') not in ('visible','agency-only'):
+            raise ValueError(f'{gid}: invalid directory visibility.')
         strings(bundle.get('relatedMemberIds', []), f'{gid}.relatedMemberIds')
         strings(bundle.get('ambiguousAliases', []), f'{gid}.ambiguousAliases')
         if type(bundle.get('ambiguousName', False)) is not bool:
@@ -208,7 +210,7 @@ def load_config(config_dir=CONFIG):
     channels.extend(shared)
     return {
         'schemaVersion': 1,
-        'groups': [{**{k:b[k] for k in public_fields}, 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False), 'displayCategories':b.get('displayCategories',[]), 'previousGroupIds':b.get('previousGroupIds',[]), 'careerEvidence':b.get('careerEvidence',[]), 'relatedGroupIds':b.get('relatedGroupIds',[]), 'relatedMemberIds':b.get('relatedMemberIds',[]), 'ambiguousAliases':b.get('ambiguousAliases',[])} for b in supported],
+        'groups': [{**{k:b[k] for k in public_fields}, 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False), 'displayCategories':b.get('displayCategories',[]), 'directoryVisibility':b.get('directoryVisibility','visible'), 'previousGroupIds':b.get('previousGroupIds',[]), 'careerEvidence':b.get('careerEvidence',[]), 'relatedGroupIds':b.get('relatedGroupIds',[]), 'relatedMemberIds':b.get('relatedMemberIds',[]), 'ambiguousAliases':b.get('ambiguousAliases',[])} for b in supported],
         'members': [m for b in supported for m in b['members']],
         'channels': channels,
         'taxonomy': taxonomy,

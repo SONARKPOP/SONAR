@@ -68,7 +68,7 @@ def publish(records, config, events=(), output=DATA, demo=False):
         official_ids = {c['id'] for c in config['channels'] if c['official'] and owners.intersection(c['groupIds'])}
         dates = [v['publishedAt'] for v in ordered if not v.get('demo') and v['channelId'] in official_ids and g['id'] in v['groupIds']]
         public_config['groups'].append({**g, 'contentCount':sum(g['id'] in v['groupIds'] for v in ordered),
-            'lastOfficialUploadAt':max(dates, default=None), 'officialSourceConnected':bool(official_ids)})
+            'lastOfficialUploadAt':max(dates, default=None), 'officialSourceConnected':any(c['id'] in official_ids and c.get('collectionEnabled',True) and not c.get('unavailableReason') for c in config['channels'])})
     public_config['defaultGroupIds'] = config.get('defaultGroupIds', [])
     public_config['collectionGroupIds'] = config.get('collectionGroupIds', [])
     write(output / 'catalog.json', {'schemaVersion': 1, 'updatedAt': updated, 'demo': demo, **public_config})
