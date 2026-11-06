@@ -43,5 +43,7 @@ def apply_tags(record, official):
     v['musicBroadcast']=is_music_broadcast(v)
     if v['musicBroadcast']:
         labels.append('음악방송')
+    else:
+        v['tags']=[tag for tag in v.get('tags',[]) if tag!='음악방송']
     v['tags']=list(dict.fromkeys([*v.get('tags',[]),*labels]))
     return v
