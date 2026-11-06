@@ -102,7 +102,7 @@ function App(){
  const artistDirectory=artistsInCategory(activityGroups,artistTab);
  const visibleArtistDirectory=artistDirectory.filter(g=>!showExcludedSettings||(exclusionList==='individual'?individualExcluded.includes(g.id):exclusionList==='allowed'?allowedGroups.includes(g.id):excludedGroups.includes(g.id)));
  const directoryQuery=groupQuery.trim().toLowerCase();
- const editorDirectory=directoryQuery?artistDirectory:artistsInDebutRange(artistDirectory,debutRange);
+ const editorDirectory=directoryQuery?(catalog?.groups||[]):artistsInDebutRange(artistDirectory,debutRange);
  const directoryMatches=editorDirectory.filter(g=>`${g.name} ${g.aliases.join(' ')}`.toLowerCase().includes(directoryQuery));
  const suggestions=recommendedArtists(editorDirectory,saved,excludedGroups,artistTab);
  const memberName=id=>catalog?.members.find(m=>m.id===id)?.name||id;
