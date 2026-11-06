@@ -101,8 +101,9 @@ function App(){
  const archivedCount=(catalog?.groups||[]).filter(g=>groupActivity(g,clock)==='archived').length;
  const artistDirectory=artistsInCategory(activityGroups,artistTab);
  const visibleArtistDirectory=artistDirectory.filter(g=>!showExcludedSettings||(exclusionList==='individual'?individualExcluded.includes(g.id):exclusionList==='allowed'?allowedGroups.includes(g.id):excludedGroups.includes(g.id)));
- const editorDirectory=artistsInDebutRange(artistDirectory,debutRange);
- const directoryMatches=editorDirectory.filter(g=>`${g.name} ${g.aliases.join(' ')}`.toLowerCase().includes(groupQuery.toLowerCase()));
+ const directoryQuery=groupQuery.trim().toLowerCase();
+ const editorDirectory=directoryQuery?artistDirectory:artistsInDebutRange(artistDirectory,debutRange);
+ const directoryMatches=editorDirectory.filter(g=>`${g.name} ${g.aliases.join(' ')}`.toLowerCase().includes(directoryQuery));
  const suggestions=recommendedArtists(editorDirectory,saved,excludedGroups,artistTab);
  const memberName=id=>catalog?.members.find(m=>m.id===id)?.name||id;
  return localize(<div className={collapsed?"app-shell sidebar-collapsed":"app-shell"}>
