@@ -1,5 +1,6 @@
 """Broad, non-exclusive content tags. No appearance or whole-group inference."""
 import re
+from .broadcast import is_music_broadcast
 
 OWN_LABELS={'behind':'비하인드','daily':'일상·브이로그','variety':'자체 예능','practice':'연습·퍼포먼스','other':'기타·미분류'}
 EXTERNAL_LABELS={'song':'노래·퍼포먼스','radio':'라디오','variety':'예능','interview':'인터뷰','ad':'광고·홍보','other':'기타·미분류'}
@@ -39,5 +40,8 @@ def apply_tags(record, official):
         v['subtypes']=['쇼츠' if t=='기타' else t for t in v.get('subtypes',[])] or ['쇼츠']
         v['tags']=['쇼츠' if t=='기타' else t for t in v.get('tags',[])]
         labels.append('쇼츠')
+    v['musicBroadcast']=is_music_broadcast(v)
+    if v['musicBroadcast']:
+        labels.append('음악방송')
     v['tags']=list(dict.fromkeys([*v.get('tags',[]),*labels]))
     return v

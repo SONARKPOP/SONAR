@@ -3,6 +3,7 @@ import json
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from .live_policy import is_continuous_live
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'public' / 'data'
@@ -72,7 +73,7 @@ def publish(records, config, events=(), output=DATA, demo=False):
     public_config['collectionGroupIds'] = config.get('collectionGroupIds', [])
     write(output / 'catalog.json', {'schemaVersion': 1, 'updatedAt': updated, 'demo': demo, **public_config})
     official = {c['id'] for c in config['channels'] if c['official']}
-    live = [v for v in ordered if v.get('liveStatus') == 'live' and v['channelId'] in official and v.get('actualStartTime') and not v.get('actualEndTime') and not v.get('demo')]
+    live = [v for v in ordered if v.get('liveStatus') == 'live' and not is_continuous_live(v) and v['channelId'] in official and v.get('actualStartTime') and not v.get('actualEndTime') and not v.get('demo')]
     write(output / 'live.json', {'updatedAt': updated, 'items': live})
     candidates = [v['platformId'] for v in ordered if v.get('liveStatus') in ('live', 'upcoming') and v['channelId'] in official]
     write(output / 'live-candidates.json', {'ids': candidates})

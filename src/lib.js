@@ -1,19 +1,30 @@
+import {isMusicBroadcast} from './broadcast.js';
+import {isContinuousLive} from './live-policy.js';
 export const PAGE_SIZE=24;
 export function monthKey(value){const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit'}).formatToParts(new Date(value));return `${parts.find(p=>p.type==='year').value}-${parts.find(p=>p.type==='month').value}`;}
 export function dedupe(rows){return [...new Map(rows.map(x=>[x.id,x])).values()];}
+function matchesContentTab(video,category){
+ if(isContinuousLive(video))return false;
+ if(category==='uploads')return true;
+ if(isMusicBroadcast(video))return category==='broadcast';
+ if(category==='broadcast')return false;
+ if(category==='shorts')return isShortContent(video);
+ if(isShortContent(video))return false;
+ return category==='home'||(category==='live'?video.format==='live':category===video.category||video.contentTypes?.includes(category));
+}
 export function filterContent(rows,{groups=[],category='home',query='',channel='',member='',subtype='',format='',year='',month='',externalType='',ownType=''}){
  const q=query.trim().toLocaleLowerCase();
- return dedupe(rows).filter(v=>(!groups.length||groups.some(g=>v.groupIds.includes(g))) && (category==='shorts'?isShortContent(v):(category==='uploads'||!isShortContent(v))&&(category==='home'||category==='uploads'||(category==='live'?v.format==='live':category===v.category||v.contentTypes?.includes(category)))) && (!q||[v.title,v.channelName,...v.tags].join(' ').toLocaleLowerCase().includes(q)) && (!channel||(v.programId||v.channelId)===channel) && (!member||v.memberIds.includes(member)) && (!subtype||v.subtypes.includes(subtype)) && (!format||v.format===format) && (!year||monthKey(v.publishedAt).slice(0,4)===year) && (!month||monthKey(v.publishedAt).slice(5,7)===month) && (!externalType||externalKind(v)===externalType) && (!ownType||ownKind(v)===ownType)).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
+ return dedupe(rows).filter(v=>(!groups.length||groups.some(g=>v.groupIds.includes(g))) && matchesContentTab(v,category) && (!q||[v.title,v.channelName,...v.tags].join(' ').toLocaleLowerCase().includes(q)) && (!channel||(v.programId||v.channelId)===channel) && (!member||v.memberIds.includes(member)) && (!subtype||v.subtypes.includes(subtype)) && (!format||v.format===format) && (!year||monthKey(v.publishedAt).slice(0,4)===year) && (!month||monthKey(v.publishedAt).slice(5,7)===month) && (!externalType||externalKind(v)===externalType) && (!ownType||ownKind(v)===ownType)).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
 }
 export function commonChannels(rows,groups){
  const map=new Map();
- for(const v of dedupe(rows).filter(v=>(v.category==='external'||v.contentTypes?.includes('external')))){const key=v.programId||v.channelId;const x=map.get(key)||{id:key,name:v.programName||v.channelName,groups:new Set(),count:0};v.groupIds.filter(g=>!groups.length||groups.includes(g)).forEach(g=>x.groups.add(g));x.count++;map.set(x.id,x);}
+ for(const v of dedupe(rows).filter(v=>!isMusicBroadcast(v)&&(v.category==='external'||v.contentTypes?.includes('external')))){const key=v.programId||v.channelId;const x=map.get(key)||{id:key,name:v.programName||v.channelName,groups:new Set(),count:0};v.groupIds.filter(g=>!groups.length||groups.includes(g)).forEach(g=>x.groups.add(g));x.count++;map.set(x.id,x);}
  return [...map.values()].sort((a,b)=>b.groups.size-a.groups.size||b.count-a.count||a.name.localeCompare(b.name));
 }
 export function activeLives(feed,channels,now=Date.now()){
  const updated=Date.parse(feed.updatedAt);
  if(!Number.isFinite(updated)||now-updated>30*60*1000||updated>now+60000)return [];
- return feed.items.filter(v=>!v.demo&&v.liveStatus==='live'&&v.actualStartTime&&!v.actualEndTime&&channels.some(c=>c.id===v.channelId&&c.official&&v.groupIds.some(g=>c.groupIds.includes(g))));
+ return feed.items.filter(v=>!v.demo&&!isContinuousLive(v)&&v.liveStatus==='live'&&v.actualStartTime&&!v.actualEndTime&&channels.some(c=>c.id===v.channelId&&c.official&&v.groupIds.some(g=>c.groupIds.includes(g))));
 }
 export function loadSaved(storage,key,fallback){try{const v=JSON.parse(storage.getItem(key));return Array.isArray(v)&&v.every(x=>typeof x==='string')?v:fallback;}catch{return fallback;}}
 export function groupPreferences(storage,catalog){

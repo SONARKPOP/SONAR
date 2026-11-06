@@ -1,6 +1,7 @@
 import React from 'react';
 export const LANGUAGES=[['ko','KR'],['ja','JP'],['en','EN'],['es','ES']];
 const entries={
+ '음악방송':['音楽番組','Music Shows','Programas musicales'],
  '짧은 클립':['短いクリップ','Short clip','Clip corto'],
  '일반 그룹':['通常のグループ','Regular groups','Grupos generales'],
  '활동정지 그룹':['活動停止グループ','Dormant groups','Grupos inactivos'],
