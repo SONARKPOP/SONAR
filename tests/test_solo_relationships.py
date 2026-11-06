@@ -3,11 +3,16 @@ import unittest
 from pathlib import Path
 import json
 from collectors.registry import load_config
-from collectors.youtube import normalize
+from collectors.youtube import normalize, classify
 from collectors.publish import publish
 
 
 class SoloRelationshipsTests(unittest.TestCase):
+    def test_explicit_song_clip_formats_are_music_and_behind_still_wins(self):
+        for label in ('Official Video','Live Clip','Special Clip','Lyric Video','Official Audio'):
+            self.assertEqual(classify('Artist - Song '+label,'',True)[0],'music')
+        self.assertEqual(classify('Artist Official Video Behind','',True)[0],'own')
+
     def test_parent_channel_routes_only_explicit_solo_member(self):
         config=load_config()
         source=next(c for c in config['channels'] if c['id']=='gidle-official')

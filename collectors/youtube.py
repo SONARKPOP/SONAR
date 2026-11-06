@@ -111,7 +111,7 @@ def classify(title, description, official):
         subtype = '티저'
     elif re.search(r'cover video|커버', title, re.I):
         category, subtype = 'music', '커버'
-    elif re.search(r'\bM/?V\b|music video|performance|퍼포먼스', title, re.I):
+    elif re.search(r'\bM/?V\b|music video|official video|live clip|special clip|live video|lyric video|official audio|performance|퍼포먼스', title, re.I):
         category, subtype = 'music', 'MV' if re.search(r'\bM/?V\b|music video', title, re.I) else '퍼포먼스'
     elif re.search(r'vlog|브이로그', title, re.I):
         subtype = '브이로그'

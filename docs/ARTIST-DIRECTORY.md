@@ -13,3 +13,6 @@ For activity labels, a solo profile may use its parent's official source only fo
 Dates in the new directory are curated debut/solo-career years, not inferred from channel creation dates. A first solo single, first solo EP, Japanese debut and Korean debut can differ. Fine-grained exact dates and disputed cases require further publisher review; sourceReview=needs-review is retained where official links are not established. No disbandment status is inferred from a list's end year.
 
 Machine-readable entries and reference pages: docs/ARTIST-EXPANSION-2026-11.json.
+
+
+Post-collection verification: obsolete APINK, ENHYPEN, MAMAMOO and GFRIEND handles were replaced by stable official channel IDs corroborated by artist/publisher references. MINNIE HER (UTHqh7Vpa64) and YUQI M.O. (nZFH-gZa9R4) are explicit original-channel music seeds so shared-channel solo profiles retain verified music releases beyond the recent-upload window. All user-named 13 solo profiles had actual video records in the first expanded collection.
