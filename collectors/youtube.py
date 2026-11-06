@@ -18,7 +18,12 @@ class YouTubeHTTPError(RuntimeError):
         self.resource, self.status = resource, status
         super().__init__(f'YouTube {resource} returned HTTP {status}; check key restrictions, quota, and source configuration.')
 
-def expected_channel(channel, title):
+def expected_channel(channel, title, custom_url=''):
+    # A reviewed, pinned channel can have a generic display name (e.g.
+    # "OFFICIAL") while its exact artist handle establishes its identity.
+    handle=lambda value:value.strip().casefold().removeprefix('@')
+    if channel.get('platformId') and custom_url and any(handle(custom_url)==handle(value) for value in channel.get('expectedHandles',[])):
+        return True
     normalize_name = lambda value: re.sub(r'[^\w]', '', value.casefold())
     actual = normalize_name(title)
     names = channel.get('expectedChannelNames', [])
@@ -218,7 +223,7 @@ def resolve(api, config):
             continue
         raw = response['items'][0]
         c['observedChannelName'] = raw.get('snippet', {}).get('title', '')
-        if not expected_channel(c, raw.get('snippet', {}).get('title', '')):
+        if not expected_channel(c, raw.get('snippet', {}).get('title', ''), raw.get('snippet', {}).get('customUrl', '')):
             c.update(collectionEnabled=False, unavailableReason='channel-name-needs-review')
             print(f"Source identity needs review: {c['id']}; observed name={json.dumps(c['observedChannelName'], ensure_ascii=True)}")
             continue

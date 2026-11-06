@@ -157,6 +157,10 @@ def validate(bundles, shared, taxonomy):
         text(channel.get('name'), cid)
         text(channel.get('platform'), cid)
         strings(channel.get('groupIds'), cid)
+        if 'expectedHandles' in channel:
+            strings(channel['expectedHandles'], f'{cid}.expectedHandles')
+            if not re.fullmatch(r'UC[\w-]{22}',channel.get('platformId','')) or any(not re.fullmatch(r'@[^\s/@]+',h) for h in channel['expectedHandles']):
+                raise ValueError('Reviewed handles require a pinned YouTube channel ID and @handles.')
         if set(channel['groupIds']) - group_ids:
             raise ValueError(f'{cid}: unknown group link.')
         if type(channel.get('official')) is not bool or type(channel.get('collectionEnabled')) is not bool:

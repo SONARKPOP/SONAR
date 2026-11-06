@@ -16,7 +16,8 @@ def pending_sources(config, previous):
         if not c.get('collectionEnabled',True):continue
         prior=old.get(c['id'])
         changed=prior and ((c.get('handle') and c['handle']!=prior.get('handle')) or
-                          (c.get('platformId') and c['platformId']!=prior.get('platformId')))
+                          (c.get('platformId') and c['platformId']!=prior.get('platformId')) or
+                          c.get('expectedHandles',[])!=prior.get('expectedHandles',[]))
         if not prior or changed:result.append(c)
     return result
 
