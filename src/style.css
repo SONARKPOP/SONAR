@@ -539,3 +539,18 @@ footer{border-color:#e0e8ef;margin-top:35px;color:#7893a8}
 [data-theme="dark"] .live-status-panel{background:#172b3b;border-color:#3b5366;box-shadow:0 14px 40px #0006}
 [data-theme="dark"] .live-status-heading{color:#ffb3bf}[data-theme="dark"] .live-status-entry{color:#d2e5f1}[data-theme="dark"] .live-status-entry:hover{background:#223d50}[data-theme="dark"] .live-status-entry small{color:#a6bdcd}
 @media(max-width:760px){.content-navigation{gap:8px}.live-status-trigger{gap:6px;padding:10px 9px;font-size:10px}.live-status-panel{top:53px}}
+
+/* Calendar favorites share the video-card palette and retain every preset badge. */
+.upload-group-summary{border:1px solid transparent;min-width:0}
+.upload-group-summary+.upload-group-summary{border-top-style:solid}
+.upload-group-line>.upload-group-name{display:flex;align-items:center;gap:7px}
+.upload-group-name>span:last-child{min-width:0;overflow-wrap:anywhere}
+.upload-group-presets{display:inline-flex;align-items:center;gap:4px;flex-shrink:0}
+.upload-group-presets:empty{display:none}
+.upload-group-presets>span{display:inline-flex;align-items:center}
+.upload-group-presets [data-preset="heart"]{color:#c96991}
+.upload-group-presets [data-preset="star"]{color:#a37e20}
+.upload-group-presets [data-preset="clover"]{color:#4d8b65}
+[data-theme="dark"] .upload-group-presets [data-preset="heart"]{color:#f1a4c3}
+[data-theme="dark"] .upload-group-presets [data-preset="star"]{color:#f0cc6d}
+[data-theme="dark"] .upload-group-presets [data-preset="clover"]{color:#9ad7ac}
