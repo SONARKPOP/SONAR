@@ -153,6 +153,7 @@ export function groupActivity(group,now=Date.now()){
 }
 export function activityLabel(group,now=Date.now()){
  const state=groupActivity(group,now);
+ if(state==='unknown'&&!group?.officialSourceConnected&&group?.officialSourceReviewReason)return group.officialSourceReviewReason==='channel-name-needs-review'?'채널명 재확인 필요':'공식 채널 접근 불가';
  return {archived:'활동정지',inactive:'비활성',active:'활동 중',unknown:group?.officialSourceConnected?'업로드 확인 대기':'공식 채널 확인 대기'}[state];
 }
 export function activityDirectory(groups,archived=false,now=Date.now()){

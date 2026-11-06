@@ -86,7 +86,21 @@ jobs:
           fi
           if ! git diff --cached --quiet; then
             git commit -m 'data: refresh SONAR indexes and API budget'
-            git push
+            pushed=false
+            for attempt in 1 2 3; do
+              if git push origin "HEAD:$GITHUB_REF_NAME"; then
+                pushed=true
+                break
+              fi
+              # Source updates can land while collection is running. Preserve
+              # them by replaying our data-only commit; never force-push.
+              git fetch origin "$GITHUB_REF_NAME"
+              git rebase "origin/$GITHUB_REF_NAME"
+            done
+            if [ "$pushed" != true ]; then
+              echo '::error::Data could not be saved after concurrent updates.'
+              exit 1
+            fi
           fi
           echo "changed=$changed" >> "$GITHUB_OUTPUT"
           echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
