@@ -2,7 +2,10 @@ import {activityView} from './youtube-activity.js';
 import {artistCategories} from './lib.js';
 
 const INITIALS=[...'ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ'];
-export const INITIAL_KEYS=['0–9','기호',...'ABCDEFGHIJKLMNOPQRSTUVWXYZ',...'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ'];
+export const INITIAL_ROWS=[
+ ['한글 초성',[...'ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ']],
+ ['숫자·기호·알파벳',['0–9','기호',...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']],
+];
 const DOUBLE_INITIAL={'ㄲ':'ㄱ','ㄸ':'ㄷ','ㅃ':'ㅂ','ㅆ':'ㅅ','ㅉ':'ㅈ'};
 
 function initial(name){

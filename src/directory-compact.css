@@ -100,8 +100,17 @@
 .directory-editor .directory-compact-heading{min-height:42px;padding-right:48px;margin-bottom:7px}
 .directory-editor .directory-rows{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
 .directory-shortcuts,.directory-favorite-options{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-top:6px}
-.directory-initials{display:flex;gap:4px;overflow-x:auto;margin:5px 0;scrollbar-width:thin}
-.directory-initials button{min-width:36px}
+.directory-initials{margin:5px 0}
+.directory-initial-row{display:flex;gap:4px;overflow-x:auto;padding:2px 0 4px;scrollbar-width:thin}
+.directory-initial-row button{flex:none;min-width:36px}
+.directory-shortcuts button:disabled,.directory-activity-bulk button:disabled{opacity:.45;cursor:default}
+.directory-activity-bulk{display:grid;gap:4px;margin-top:6px;max-width:440px}
+.directory-activity-bulk-row{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.directory-activity-bulk-row>span,.directory-activity-bulk-row>div{display:flex;align-items:center;gap:6px}
+.directory-activity-bulk-row>span small{color:var(--dir-muted);font-variant-numeric:tabular-nums}
+@media(max-width:760px){
+ .directory-initial-row button,.directory-activity-bulk button{min-height:40px}
+}
 .directory-favorite-panel{margin:7px 0;padding:7px;border:1px solid var(--dir-line);border-radius:8px;color:var(--dir-text);background:var(--dir-surface)}
 .directory-recommendations{display:flex;gap:5px;overflow-x:auto;margin:6px 0 0;padding:0;list-style:none;scrollbar-width:thin}
 .directory-recommendations li{display:flex;flex:none;align-items:center;gap:7px;padding:4px 5px 4px 8px;border-radius:7px;border:1px solid var(--dir-line);min-width:130px}

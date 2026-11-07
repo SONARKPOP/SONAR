@@ -1,11 +1,12 @@
 import React,{useEffect,useId,useMemo,useRef,useState} from 'react';
 import {ArrowUp,ArrowDownUp,ChevronLeft,Heart,ListChecks,Search,SlidersHorizontal,Sprout,Star,X} from 'lucide-react';
 import {debutYearRanges,recommendedArtists} from './lib';
-import {directoryResults,isArtistSearch,matchesDirectoryScope} from './directory';
+import {DIRECTORY_ACTIVITY_STATES,directoryResults,isArtistSearch,matchesDirectoryScope} from './directory';
+import {ACTIVITY_META,activityView} from './youtube-activity';
 import {officialLinksFor} from './official-links';
 import ArtistDirectoryRow from './ArtistDirectoryRow';
 import DirectoryFilters,{DEFAULT_DIRECTORY_FILTERS,DIRECTORY_SCOPES} from './DirectoryFilters';
-import {activityRecommendations,artistInitials,INITIAL_KEYS} from './directory-shortcuts';
+import {activityRecommendations,artistInitials,INITIAL_ROWS} from './directory-shortcuts';
 import './directory-compact.css';
 
 const TYPES=[['all','전체'],['girl','여자'],['boy','남자'],['mixed','혼성'],['duo-solo','듀오·솔로']];
@@ -28,6 +29,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  const listRef=useRef(null);
  const instanceId=useId();
  const bulkId=`${instanceId}-directory-bulk`;
+ const initialsId=`${instanceId}-directory-initials`;
  useEffect(()=>{
   if(editorTitle)return;
   const update=()=>setShowTop(window.scrollY>400);
@@ -64,6 +66,13 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  [groups,clock,type,recommend,favoriteIds,preset,excluded,favoriteEdit]);
  const [,presetLabel,PresetIcon]=PRESETS.find(([key])=>key===preset);
  const savedCount=results.filter(group=>savedIds.has(group.id)).length;
+ const activityBatches=useMemo(()=>{
+  const batches=new Map(DIRECTORY_ACTIVITY_STATES.map(state=>[state,[]]));
+  if(!editorTitle&&editing){
+   for(const group of results)batches.get(activityView(group,clock)?.state)?.push(group);
+  }
+  return batches;
+ },[editorTitle,editing,results,clock]);
  const suggestions=editorTitle&&!saved.length&&!results.length?recommendedArtists(groups,saved,excluded):EMPTY;
  const updateFilters=patch=>{setExpanded('');setFilters(previous=>({...previous,...patch}));};
  const resetFilters=()=>updateFilters(DEFAULT_DIRECTORY_FILTERS);
@@ -79,8 +88,8 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   filters.year!=='all'&&[years.find(([id])=>id===filters.year)?.[1]||filters.year,()=>updateFilters({year:'all'})],
   filters.savedOnly&&['MY GROUPS만',()=>updateFilters({savedOnly:false})],
  ].filter(Boolean);
- const updateResults=enabled=>{
-  const ids=results.filter(group=>savedIds.has(group.id)!==enabled).map(group=>group.id);
+ const updateResults=(enabled,groupsToUpdate=results)=>{
+  const ids=groupsToUpdate.filter(group=>savedIds.has(group.id)!==enabled).map(group=>group.id);
   if(ids.length)setUndo({count:ids.length,enabled,restore:onBulkGroups(ids,enabled)});
  };
  const showFilters=event=>{
@@ -107,14 +116,34 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
     onClick={()=>{setExpanded('');setType(id);}}>{label}</button>)}
   </nav>
   <div className="directory-shortcuts">
-   <button type="button" className="directory-control" aria-expanded={initialOpen} onClick={()=>setInitialOpen(value=>!value)}>이름 첫 글자{initial?' · '+initial:''}</button>
+   <button type="button" className="directory-control" aria-expanded={initialOpen} aria-controls={initialsId} onClick={()=>setInitialOpen(value=>!value)}>이름 첫 글자{initial?' · '+initial:''}</button>
+   {!editorTitle&&<>
+    <button type="button" className="directory-control" aria-label="현재 결과 전체 선택" disabled={savedCount===results.length} onClick={()=>updateResults(true)}>전체 선택</button>
+    <button type="button" className="directory-control" aria-label="현재 결과 전체 선택 해제" disabled={!savedCount} onClick={()=>updateResults(false)}>전체 해제</button>
+    <button type="button" className="directory-control" aria-expanded={editing} aria-controls={bulkId} onClick={()=>setEditing(value=>!value)}>활동별 선택</button>
+   </>}
    {editorTitle&&<button type="button" className="directory-control" aria-expanded={favoriteEdit}
     onClick={()=>{if(!favoriteEdit)updateFilters({savedOnly:false});setFavoriteEdit(value=>!value);}}>선호그룹 편집</button>}
   </div>
-  {initialOpen&&<nav className="directory-initials" aria-label="이름 첫 글자로 찾기">
-   {['',...INITIAL_KEYS].map(letter=><button key={letter} className="directory-control" type="button"
-    aria-pressed={initial===letter} onClick={()=>{setInitial(letter);setSort('az');setExpanded('');listRef.current?.scrollTo({top:0});}}>{letter||'전체'}</button>)}
-  </nav>}
+  <nav className="directory-initials" id={initialsId} aria-label="이름 첫 글자로 찾기" hidden={!initialOpen}>
+   {INITIAL_ROWS.map(([label,letters],row)=><div key={label} className="directory-initial-row" role="group" aria-label={label}>
+    {(row===0?['',...letters]:letters).map(letter=><button key={letter} className="directory-control" type="button"
+     aria-pressed={initial===letter} onClick={()=>{setInitial(letter);setSort('az');setExpanded('');listRef.current?.scrollTo({top:0});}}>{letter||'전체'}</button>)}
+   </div>)}
+  </nav>
+  {!editorTitle&&editing&&<div className="directory-bulk-panel directory-activity-bulk" id={bulkId}>
+   <small>현재 검색·필터 결과에서 MY GROUPS를 편집합니다.</small>
+   {[...activityBatches].map(([state,matches])=>{
+    const selectedCount=matches.filter(group=>savedIds.has(group.id)).length;
+    return <div className="directory-activity-bulk-row" key={state}>
+     <span><i className="directory-status-dot" style={{'--activity-color':ACTIVITY_META[state].color}} aria-hidden="true"/><b>{state}</b><small>{selectedCount}/{matches.length}</small></span>
+     <div role="group" aria-label={`${state} 그룹 일괄 편집`}>
+      <button type="button" className="directory-control" aria-label={`${state} 그룹 선택`} disabled={selectedCount===matches.length} onClick={()=>updateResults(true,matches)}>선택</button>
+      <button type="button" className="directory-control" aria-label={`${state} 그룹 선택 해제`} disabled={!selectedCount} onClick={()=>updateResults(false,matches)}>해제</button>
+     </div>
+    </div>;
+   })}
+  </div>}
   {favoriteEdit&&<div className="directory-favorite-panel">
    <div className="directory-favorite-options" aria-label="담을 선호 목록"><small>담을 곳</small>{PRESETS.map(([key,label,Icon])=>
     <button key={key} type="button" className="directory-control" aria-pressed={preset===key} onClick={()=>setPreset(key)}><Icon size={14}/>{label}</button>)}</div>
@@ -137,15 +166,15 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
     <button type="button" className="directory-control" aria-haspopup="dialog" onClick={showFilters}>
      <SlidersHorizontal size={15}/>필터{chips.length>0&&<small className="directory-filter-count">{chips.length}</small>}
     </button>
-    <button type="button" className="directory-control" aria-expanded={editing} aria-controls={editing?bulkId:undefined}
-     onClick={()=>setEditing(value=>!value)}><ListChecks size={15}/><span>{editorTitle?'일괄 작업':'목록 편집'}</span></button>
+    {editorTitle&&<button type="button" className="directory-control" aria-expanded={editing} aria-controls={editing?bulkId:undefined}
+     onClick={()=>setEditing(value=>!value)}><ListChecks size={15}/><span>일괄 작업</span></button>}
    </div>
   </div>
   {chips.length>0&&<div className="directory-applied-chips" aria-label="적용된 아티스트 필터">
    {chips.map(([label,remove])=><button type="button" key={label} aria-label={`${label} 필터 해제`} onClick={remove}><span>{label}</span><X size={12}/></button>)}
    <button type="button" className="directory-chip-reset" onClick={resetFilters}>초기화</button>
   </div>}
-  {editing&&<div className="directory-bulk-panel" id={bulkId}>
+  {editorTitle&&editing&&<div className="directory-bulk-panel" id={bulkId}>
    <small>현재 결과 {results.length}명 중 {savedCount}명 저장</small>
    <div className="directory-bulk" role="group" aria-label="현재 목록 MY GROUPS 일괄 편집">
     <button type="button" disabled={savedCount===results.length} onClick={()=>updateResults(true)}>결과 일괄 추가</button>
