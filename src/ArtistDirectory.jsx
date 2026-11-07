@@ -211,7 +211,10 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
    <button type="button" className="directory-chip-reset" onClick={resetFilters}>초기화</button>
   </div>}
   {(!editorTitle||editing||selectionEdit)&&<div className="directory-bulk-panel" id={bulkId}>
-   <small>현재 결과 {results.length}명 중 {editedCount}명 {selectionEdit?'선택':'저장'}</small>
+   <div className="directory-bulk-counts" aria-live="polite" aria-atomic="true">
+    {selectionEdit&&<strong>전체 선택 {selectedIds.size}개</strong>}
+    <small>현재 결과 {results.length}명 중 {editedCount}명 {selectionEdit?'선택':'저장'}</small>
+   </div>
    <div className="directory-bulk" role="group" aria-label="현재 결과 MY GROUPS 일괄 선택">
     <button type="button" disabled={editedCount===results.length} onClick={()=>updateResults(true)}>{editorTitle&&!selectionEdit?'결과 일괄 추가':'결과 전체 선택'}</button>
     <button type="button" disabled={!editedCount} onClick={()=>updateResults(false)}>{editorTitle&&!selectionEdit?'결과 일괄 제거':'결과 전체 해제'}</button>
