@@ -68,11 +68,11 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  const savedCount=results.filter(group=>savedIds.has(group.id)).length;
  const activityBatches=useMemo(()=>{
   const batches=new Map(DIRECTORY_ACTIVITY_STATES.map(state=>[state,[]]));
-  if(!editorTitle&&editing){
+  if(!editorTitle){
    for(const group of results)batches.get(activityView(group,clock)?.state)?.push(group);
   }
   return batches;
- },[editorTitle,editing,results,clock]);
+ },[editorTitle,results,clock]);
  const suggestions=editorTitle&&!saved.length&&!results.length?recommendedArtists(groups,saved,excluded):EMPTY;
  const updateFilters=patch=>{setExpanded('');setFilters(previous=>({...previous,...patch}));};
  const resetFilters=()=>updateFilters(DEFAULT_DIRECTORY_FILTERS);
@@ -117,11 +117,18 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   </nav>
   <div className="directory-shortcuts">
    <button type="button" className="directory-control" aria-expanded={initialOpen} aria-controls={initialsId} onClick={()=>setInitialOpen(value=>!value)}>이름 첫 글자{initial?' · '+initial:''}</button>
-   {!editorTitle&&<>
-    <button type="button" className="directory-control" aria-label="현재 결과 전체 선택" disabled={savedCount===results.length} onClick={()=>updateResults(true)}>전체 선택</button>
-    <button type="button" className="directory-control" aria-label="현재 결과 전체 선택 해제" disabled={!savedCount} onClick={()=>updateResults(false)}>전체 해제</button>
-    <button type="button" className="directory-control" aria-expanded={editing} aria-controls={bulkId} onClick={()=>setEditing(value=>!value)}>활동별 선택</button>
-   </>}
+   {!editorTitle&&<div className="directory-selection-toggles" role="group" aria-label="현재 결과 MY GROUPS 선택">
+    {[[null,results],...activityBatches].map(([state,matches])=>{
+     const count=state?matches.filter(group=>savedIds.has(group.id)).length:savedCount;
+     const allSelected=matches.length>0&&count===matches.length;
+     const label=state||'전체';
+     return <button key={label} type="button" className="directory-control" disabled={!matches.length}
+      aria-pressed={allSelected||(!count?false:'mixed')} aria-label={`${label} 그룹 선택 토글`}
+      title={`${label} · ${count}/${matches.length} 선택`} onClick={()=>updateResults(!allSelected,matches)}>
+      {state&&<i className="directory-status-dot" style={{'--activity-color':ACTIVITY_META[state].color}} aria-hidden="true"/>}{label}
+     </button>;
+    })}
+   </div>}
    {editorTitle&&<button type="button" className="directory-control" aria-expanded={favoriteEdit}
     onClick={()=>{if(!favoriteEdit)updateFilters({savedOnly:false});setFavoriteEdit(value=>!value);}}>선호그룹 편집</button>}
   </div>
@@ -131,19 +138,6 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
      aria-pressed={initial===letter} onClick={()=>{setInitial(letter);setSort('az');setExpanded('');listRef.current?.scrollTo({top:0});}}>{letter||'전체'}</button>)}
    </div>)}
   </nav>
-  {!editorTitle&&editing&&<div className="directory-bulk-panel directory-activity-bulk" id={bulkId}>
-   <small>현재 검색·필터 결과에서 MY GROUPS를 편집합니다.</small>
-   {[...activityBatches].map(([state,matches])=>{
-    const selectedCount=matches.filter(group=>savedIds.has(group.id)).length;
-    return <div className="directory-activity-bulk-row" key={state}>
-     <span><i className="directory-status-dot" style={{'--activity-color':ACTIVITY_META[state].color}} aria-hidden="true"/><b>{state}</b><small>{selectedCount}/{matches.length}</small></span>
-     <div role="group" aria-label={`${state} 그룹 일괄 편집`}>
-      <button type="button" className="directory-control" aria-label={`${state} 그룹 선택`} disabled={selectedCount===matches.length} onClick={()=>updateResults(true,matches)}>선택</button>
-      <button type="button" className="directory-control" aria-label={`${state} 그룹 선택 해제`} disabled={!selectedCount} onClick={()=>updateResults(false,matches)}>해제</button>
-     </div>
-    </div>;
-   })}
-  </div>}
   {favoriteEdit&&<div className="directory-favorite-panel">
    <div className="directory-favorite-options" aria-label="담을 선호 목록"><small>담을 곳</small>{PRESETS.map(([key,label,Icon])=>
     <button key={key} type="button" className="directory-control" aria-pressed={preset===key} onClick={()=>setPreset(key)}><Icon size={14}/>{label}</button>)}</div>
