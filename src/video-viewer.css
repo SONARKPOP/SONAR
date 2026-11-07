@@ -1,8 +1,26 @@
+.app-shell{--player-sidebar-width:248px}
+.app-shell.sidebar-collapsed{--player-sidebar-width:72px}
 .docked-player{
+ --player-width:600px;
  position:sticky;top:0;z-index:14;
- width:min(calc(100% - 24px),1080px);margin:0 auto 12px;padding:6px 12px 8px;
+ width:min(calc(100% - 24px),calc(var(--player-width) + 26px));margin:0 auto 12px;padding:6px 12px 8px;
  border:1px solid #c6dce8;border-top:0;border-radius:0 0 12px 12px;
  background:#f5f9fc;box-shadow:0 6px 20px #17344a25;
+}
+.docked-player[data-size="small"]{--player-width:320px}
+.docked-player[data-size="large"]{--player-width:820px}
+[data-player-position^="bottom-"] .docked-player{
+ position:fixed;top:auto;bottom:max(8px,env(safe-area-inset-bottom));margin:0;
+ max-width:calc(100% - var(--player-sidebar-width) - 24px);
+ border:1px solid #c6dce8;border-radius:12px;
+}
+[data-player-position="bottom-left"] .docked-player{left:calc(var(--player-sidebar-width) + 12px)}
+[data-player-position="bottom-right"] .docked-player{right:12px}
+[data-player-position^="bottom-"] main{padding-bottom:calc(46svh + 145px)}
+[data-player-position^="bottom-"][data-player-minimized="true"] main{padding-bottom:104px}
+[data-player-minimized="true"] .docked-player{width:min(calc(100% - 24px),480px)}
+[data-player-minimized="true"] .docked-player-media{
+ position:absolute;inset:0 12px auto;clip-path:inset(50%);pointer-events:none;
 }
 .docked-player-heading,.docked-player-tools{display:flex;align-items:center;gap:8px}
 .docked-player-heading h2{
@@ -11,25 +29,34 @@
 }
 .docked-player-heading button,.docked-player-search button{flex:none;width:36px;height:36px}
 .docked-player .video-player-frame,.docked-player .sample-preview{
- width:min(100%,680px,calc(42svh * 16 / 9));margin:0 auto;
+ width:min(100%,var(--player-width),max(356px,calc(46svh * 16 / 9)));min-height:200px;margin:0 auto;
 }
 .docked-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .docked-player-tools{margin-top:6px;flex-wrap:wrap}
-.docked-player-search{min-width:0;flex:1;padding:3px 8px}
+.docked-player-search{min-width:min(100%,180px);flex:1;padding:3px 8px}
 .docked-player-search input{width:100%;min-width:0;height:34px}
+.docked-player-options{display:flex;gap:5px}
+.docked-player-options select{
+ min-height:36px;padding:4px 6px;border:1px solid #b9d1df;border-radius:7px;
+ background:#edf4f8;color:#315c76;font:inherit;font-size:11px;
+}
 .docked-player .video-actions{gap:5px;margin:0}
 .docked-player .youtube-link,.docked-player .video-share-button{min-height:36px;padding:4px 7px;font-size:11px}
 .docked-player .video-share-status{flex-basis:100%}
 .docked-player .video-share-status:empty{display:none}
-.has-player #collection{scroll-margin-top:min(calc(42svh + 125px),510px)}
+[data-player-position="top"] #collection{scroll-margin-top:calc(46svh + 152px)}
+[data-player-position="top"][data-player-minimized="true"] #collection{scroll-margin-top:104px}
 [data-theme="dark"] .docked-player{background:#142635;border-color:#38576b;box-shadow:0 6px 20px #0006}
-[data-theme="dark"] .docked-player-search{background:#20394b;border-color:#44647c}
+[data-theme="dark"] .docked-player-search,[data-theme="dark"] .docked-player-options select{background:#20394b;border-color:#44647c;color:#d4eaf7}
 [data-theme="dark"] .docked-player-search input{color:#ecf5fc}
+@media(max-width:1150px){.app-shell{--player-sidebar-width:215px}}
 @media(max-width:760px){
- .docked-player{width:100%;padding:4px 8px 6px;border-left:0;border-right:0}
- .docked-player-heading{padding-left:44px}
+ .app-shell,.app-shell.sidebar-collapsed{--player-sidebar-width:0px}
+ .docked-player{padding:4px 8px 6px}
+ [data-player-position="top"] .docked-player{width:min(100%,calc(var(--player-width) + 18px))}
+ [data-player-position="top"] .docked-player-heading{padding-left:44px}
  .docked-player-heading button{width:40px;height:40px}
- .has-player .mobile-menu{position:fixed;top:2px;left:3px;z-index:15}
+ [data-player-position="top"] .mobile-menu{position:fixed;top:2px;left:3px;z-index:15}
  .docked-player-search{flex-basis:100%}
  .docked-player-search input{font-size:16px}
  .docked-player .video-actions{margin-left:auto}

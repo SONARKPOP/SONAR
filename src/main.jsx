@@ -1,6 +1,6 @@
 import React,{useEffect,useMemo,useRef,useState,useReducer} from 'react';
 import {createRoot} from 'react-dom/client';
-import {Search,Plus,X,Radio,Home,Music2,Clapperboard,Layers,CalendarDays,Play,ArrowUpRight,SlidersHorizontal,ChevronLeft,ChevronRight,Menu,Check,Disc3,Star,Moon,Sun,Heart,Sprout,Ban,Smartphone,Settings2,ShieldCheck,Copy,Tv} from 'lucide-react';
+import {Search,Plus,X,Radio,Home,Music2,Clapperboard,Layers,CalendarDays,Play,ArrowUpRight,SlidersHorizontal,ChevronLeft,ChevronRight,Menu,Check,Disc3,Star,Moon,Sun,Heart,Sprout,Ban,Smartphone,Settings2,ShieldCheck,Copy,Tv,Minus,Maximize2} from 'lucide-react';
 import {PAGE_SIZE,filterContent,commonChannels,activeLives,activeStations,groupPreferences,favoriteGroupSelection,selectionReducer,monthKey,favoriteColorPreferences,favoriteCardStyle,themePreference,favoritePresetPreferences,excludedGroupPreferences,withoutExcludedGroups,prioritizeGroups,EXTERNAL_TYPES,externalKind,uploadDays,uploadKind,uploadGroupSummary,OWN_TYPES,allGroupSelection,sortGroups,ARTIST_CATEGORIES,artistsInCategory,artistCategory,artistCategories,excludedArtistIds,loadSaved,updateGroupMembership,DISPLAY_ARTIST_TYPES,enabledArtistTypePreferences,toggleArtistType,visibleArtistIds,groupActivity,activityLabel,activityDirectory,isShortContent,modalHistory} from './lib';
 import './style.css';
 import './activity-ui.css';
@@ -201,12 +201,15 @@ function App(){
 
  const go=id=>{if(directoryPage)window.location.hash='collection';if(id==='uploads'&&!archiveYear&&!archiveMonth){const newest=[...rows].sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt))[0];const period=monthKey(newest?.publishedAt||Date.now());setArchiveYear(period.slice(0,4));setArchiveMonth(period.slice(5,7));}setOpenFilter('');setCategory(id);setOwnType('');setExternalType('');setChannel('');setMember('');setSubtype('');setFormat('');setMobile(false);};
  const [embedLoading,setEmbedLoading]=useState(false);
+ const [playerMinimized,setPlayerMinimized]=useState(false);
+ const [playerPosition,setPlayerPosition]=useState('top');
+ const [playerSize,setPlayerSize]=useState('medium');
  useEffect(()=>{if(!playing||playing.demo)return;const link=document.createElement('link');link.rel='preconnect';link.href='https://www.youtube-nocookie.com';document.head.appendChild(link);return()=>link.remove();},[playing?.id]);
  const [shareStatus,setShareStatus]=useState('');
  const shareTimer=useRef(null);
  useEffect(()=>()=>clearTimeout(shareTimer.current),[]);
  const copyVideoUrl=async()=>{try{await navigator.clipboard.writeText(`https://www.youtube.com/watch?v=${encodeURIComponent(playing.platformId)}`);setShareStatus('영상 주소를 복사했습니다.');}catch{setShareStatus('복사하지 못했습니다. YouTube에서 열어 주소를 복사해주세요.');}clearTimeout(shareTimer.current);shareTimer.current=setTimeout(()=>setShareStatus(''),4000);};
- const open=v=>{setMobile(false);if(v.id!==playing?.id){setEmbedLoading(!v.demo);setPlaying(v);setShareStatus('');}};
+ const open=v=>{setMobile(false);setPlayerMinimized(false);if(v.id!==playing?.id){setEmbedLoading(!v.demo);setPlaying(v);setShareStatus('');}};
  const groupsById=useMemo(()=>new Map((catalog?.groups||[]).map(group=>[group.id,group])),[catalog]);
  const groupName=id=>groupsById.get(id)?.name||id;
  const visibleFavorites=visibleArtistIds(catalog?.groups||[],protectedGroups,enabledArtistTypes,excludedGroups);
@@ -219,7 +222,7 @@ function App(){
   onFavorite:toggleFavorite,onExclude:toggleExcluded,onAllow:toggleAllowedArtist,
  };
  const memberName=id=>catalog?.members.find(m=>m.id===id)?.name||id;
- return localize(<div className={`app-shell${collapsed?' sidebar-collapsed':''}${hasPlayer?' has-player':''}`}>
+ return localize(<div className={`app-shell${collapsed?' sidebar-collapsed':''}`} data-player-position={playing?playerPosition:undefined} data-player-minimized={playing?playerMinimized:undefined}>
  <button className="mobile-menu icon-button" aria-label="메뉴 열기" onClick={()=>setMobile(!mobile)}><Menu/></button>
  {mobile&&<button className="sidebar-scrim" aria-label="메뉴 닫기" onClick={()=>setMobile(false)}/>}
  <aside className={mobile?'sidebar is-open':'sidebar'}><button className="sidebar-collapse" aria-label={collapsed?'사이드바 펼치기':'사이드바 접기'} title={collapsed?'사이드바 펼치기':'사이드바 접기'} aria-expanded={!collapsed} onClick={()=>setCollapsed(s=>!s)}>{collapsed?<ChevronRight size={18}/>:<ChevronLeft size={18}/>}</button><a className="brand" href="#collection" onClick={e=>{e.preventDefault();go('home');}}><span className="brand-symbol"><Radio size={23}/></span>SONAR<span className="brand-dot">●</span></a><p className="brand-caption"><span>Search · Organize · Navigate</span><span>Archive · Replay</span></p>
@@ -237,11 +240,13 @@ function App(){
 
  <div className="sidebar-bottom"><div className="voyage-mini"><Disc3 size={23}/><span className="sonar-on-label">SONAR ON</span></div><small>SONAR · FAN-MADE ARCHIVE<br/>콘텐츠의 바다를 탐색하는 소나</small></div></aside>
  <main><h1 className="sr-only">SONAR · 비공식 K-POP 팬페이지</h1>
- {playing&&<section className="docked-player" aria-label="영상 플레이어">
+ {playing&&<section className="docked-player" data-size={playerSize} aria-label="영상 플레이어">
   <div className="docked-player-heading">
    <h2 data-no-translate title={playing.title}>{playing.title}</h2>
+   <button type="button" className="icon-button" aria-expanded={!playerMinimized} aria-controls="docked-video" aria-label={playerMinimized?'플레이어 펼치기':'플레이어 최소화'} title={playerMinimized?'플레이어 펼치기':'플레이어 최소화'} onClick={()=>setPlayerMinimized(value=>!value)}>{playerMinimized?<Maximize2 size={17}/>:<Minus size={19}/>}</button>
    <button type="button" className="icon-button" aria-label="영상 닫기" onClick={()=>setPlaying(null)}><X size={19}/></button>
   </div>
+  <div id="docked-video" className="docked-player-media" inert={playerMinimized}>
   {playing.demo?<div className="sample-preview"><Disc3 size={40}/><p>샘플 영상입니다.</p></div>:
    <div className="video-player-frame" aria-busy={embedLoading}>
     <iframe key={playing.id} title={playing.title}
@@ -250,12 +255,21 @@ function App(){
      allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen/>
     {embedLoading&&<div className="player-loading" role="status">{playing.thumbnail&&<img src={playing.thumbnail} alt=""/>}<span>YouTube 플레이어를 불러오는 중…</span></div>}
    </div>}
+  </div>
   <div className="docked-player-tools">
    <label className="search docked-player-search"><Search size={16}/>
     <input aria-label="영상 채널 태그 검색" placeholder="영상, 채널, 태그 검색" value={query} onChange={e=>setQuery(e.target.value)}/>
     {query&&<button type="button" className="icon-button" aria-label="검색 지우기" onClick={()=>setQuery('')}><X size={15}/></button>}
    </label>
-   {!playing.demo&&<div className="video-actions">
+   {!playerMinimized&&<div className="docked-player-options">
+    <select aria-label="플레이어 위치" value={playerPosition} onChange={e=>setPlayerPosition(e.target.value)}>
+     <option value="top">상단</option><option value="bottom-left">왼쪽 아래</option><option value="bottom-right">오른쪽 아래</option>
+    </select>
+    <select aria-label="플레이어 크기" value={playerSize} onChange={e=>setPlayerSize(e.target.value)}>
+     <option value="small">작게</option><option value="medium">보통</option><option value="large">크게</option>
+    </select>
+   </div>}
+   {!playing.demo&&!playerMinimized&&<div className="video-actions">
     <a className="youtube-link" target="_blank" rel="noreferrer" href={`https://www.youtube.com/watch?v=${encodeURIComponent(playing.platformId)}`}>YouTube에서 보기 <ArrowUpRight size={14}/></a>
     <button type="button" className="video-share-button" onClick={copyVideoUrl}><Copy size={14}/>주소 복사</button>
    </div>}
