@@ -8,6 +8,8 @@ from .activity import eligible_group
 
 def export_database(config_dir=CONFIG, output=DATA, report_dir=None):
     bundles,_,_,_=load_bundles(config_dir)
+    cache_path=Path(output)/'channel-activity.json'
+    observed=json.loads(cache_path.read_text(encoding='utf-8')).get('channels',{}) if cache_path.exists() else {}
     groups=[];channels=[];pending=[]
     for bundle in bundles:
         if not eligible_group(bundle):continue
@@ -22,11 +24,15 @@ def export_database(config_dir=CONFIG, output=DATA, report_dir=None):
         for index,channel in enumerate(dedicated):
             evidence=channel.get('verification',{});cid=channel.get('platformId')
             handle=channel.get('handle') or next(iter(channel.get('expectedHandles',[])),None)
+            previous_handle=handle
+            current=observed.get(channel['id'],{})
+            if current.get('channelId')==cid and not current.get('error') and current.get('handle'):
+                handle=current['handle']
             verified=bool(evidence.get('checkedAt') and evidence.get('evidenceUrl'))
             status=channel.get('verificationStatus') or ('VERIFIED' if verified else 'UNVERIFIED')
             channels.append({'channel_id':cid,'source_id':channel['id'],'group_id':bundle['id'],
                 'channel_url':f'https://www.youtube.com/channel/{cid}' if cid else (f'https://www.youtube.com/{handle}' if handle else None),
-                'handle':handle,'historical_urls':channel.get('historicalUrls',[]),'verification_status':status,
+                'handle':handle,'historical_urls':list(dict.fromkeys([*channel.get('historicalUrls',[]),*(['https://www.youtube.com/'+previous_handle] if previous_handle and previous_handle.casefold()!=str(handle).casefold() else [])])),'verification_status':status,
                 'verification_source_url':evidence.get('evidenceUrl'),'verification_sources':evidence.get('sources',[]),
                 'verification_basis':evidence.get('basis'),'verified_at':evidence.get('checkedAt'),'is_primary':channel.get('isPrimary',index==0)})
         if not dedicated or not any(c.get('verification') for c in dedicated):

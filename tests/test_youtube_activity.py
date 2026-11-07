@@ -60,7 +60,8 @@ class ActivityTests(unittest.TestCase):
         api.videos.side_effect=[[{'id':'a','status':{'privacyStatus':'public'},'snippet':{'channelId':source['platformId'],'publishedAt':iso(NOW)}}],
                                 [{'id':'b','status':{'privacyStatus':'public'},'snippet':{'channelId':source['platformId'],'publishedAt':iso(NOW-20*DAY)}}]]
         result=collect_channel(api,source,NOW)
-        self.assertTrue(result['complete']);self.assertEqual(len(result['uploads']),2)
+        self.assertTrue(result['complete']);self.assertEqual(len(result['uploads']),1)
+        self.assertEqual(api.videos.call_count,2)
         self.assertEqual(api.get.call_args.kwargs['pageToken'],'next')
     def test_api_failure_is_unknown_and_cache_reused(self):
         config={'groups':[{'id':'g','gender':'girl','artistType':'group','debutYear':2024}], 'channels':[{'id':'s','platform':'youtube','platformId':'UC'+'1'*22,'official':True,'groupIds':['g'],'verification':{'basis':'checked'}}]}
