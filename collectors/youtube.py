@@ -12,6 +12,7 @@ from .publish import ROOT, DATA, now, publish, write
 from .registry import load_config
 from .quota import QuotaGuard, BudgetExceeded
 from .source_policy import approved_original
+from .individual_activity import personal_title_kind
 
 class YouTubeHTTPError(RuntimeError):
     def __init__(self, resource, status):
@@ -160,7 +161,8 @@ def normalize(raw, channel, config, override=None):
             appearance_evidence.append({'groupId':gid, 'source':'publisher-credit-line',
                 'role':'participant', 'url':'https://www.youtube.com/watch?v=' + raw['id']})
         elif any(mentions(text, alias) for alias in aliases) and (
-                not channel['official'] or related or
+                not channel['official'] or (related and
+                 (group.get('artistType') != 'solo' or personal_title_kind(text, aliases, True))) or
                 (group.get('artistType') != 'solo' and has_collaboration_title(text, owner_aliases, aliases))):
             groups.add(gid)
     for artist in config['groups']:
@@ -183,7 +185,9 @@ def normalize(raw, channel, config, override=None):
     members = sorted(set(members + scoped_members))
     groups.update(m['groupId'] for m in config['members'] if m['id'] in members)
     for artist in config['groups']:
-        if artist.get('artistType') == 'solo' and set(artist.get('relatedMemberIds', [])).intersection(members):
+        tagged_members = set(artist.get('relatedMemberIds', [])).intersection(members)
+        if artist.get('artistType') == 'solo' and tagged_members and len(members) == 1 and (
+                personal_title_kind(text, artist['aliases'], bool(owner_groups)) or artist['id'] in groups):
             groups.add(artist['id'])
             groups.update(artist.get('relatedGroupIds', []))
     live = raw.get('liveStreamingDetails', {})

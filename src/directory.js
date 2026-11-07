@@ -1,4 +1,4 @@
-import {artistCategories,groupActivity,sortGroups,artistsInDebutRange} from './lib.js';
+import {artistCategories,groupActivity,sortGroups,artistsInDebutRange,monthsAfter} from './lib.js';
 import {ACTIVITY_META,activityView} from './youtube-activity.js';
 
 export const DIRECTORY_ACTIVITY_STATES=Object.keys(ACTIVITY_META);
@@ -15,6 +15,15 @@ export function matchesArtistName(artist,query,extra=[]){
 }
 
 export function isArtistSearch(query){return Boolean(normalizeName(query));}
+
+export function legacyGroupState(artist,now=Date.now()){
+ if(artist.artistType==='solo')return null;
+ if(artist.groupStatus==='disbanded'||artist.groupStatus==='hiatus')return artist.groupStatus;
+ const dates=[artist.youtubeActivity?.last_upload_at,artist.lastOfficialUploadAt].map(Date.parse).filter(date=>Number.isFinite(date)&&date<=now);
+ return dates.length&&now>=monthsAfter(Math.max(...dates),24)?'long-dormant':null;
+}
+
+export const LEGACY_LABELS={disbanded:'해체',hiatus:'활동 중단','long-dormant':'2년 이상 미업로드'};
 
 export function matchesDirectoryActivity(artist,status,now){
  if(status==='all')return true;
@@ -33,7 +42,11 @@ export function careerTagsFor(artist,groups){
 }
 
 export function directoryResults(groups,{query='',type='all',status='general',year='all',sort='az',now=Date.now()}={}){
- const matched=isArtistSearch(query)?groups.filter(g=>matchesArtistName(g,query,careerTagsFor(g,groups).map(t=>t.label))&&(status==='general'||matchesDirectoryActivity(g,status,now))):
+ const matched=isArtistSearch(query)?groups.filter(g=>{
+  const relatedIds=[...(g.previousGroupIds||[]),...(g.relatedGroupIds||[])];
+  const relatedNames=groups.filter(group=>relatedIds.includes(group.id)).flatMap(group=>[group.name,group.nameKo,group.nameEn,...(group.aliases||[])]);
+  return matchesArtistName(g,query,[...relatedNames,...careerTagsFor(g,groups).map(tag=>tag.label)])&&(status==='general'||matchesDirectoryActivity(g,status,now));
+ }):
  artistsInDebutRange(groups.filter(g=>(type==='all'||artistCategories(g).includes(type))&&matchesDirectoryActivity(g,status,now)),year);
  return sortGroups(matched,sort);
 }

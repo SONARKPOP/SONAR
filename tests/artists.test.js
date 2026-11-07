@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {artistCategory,artistsInCategory,recommendedArtists,excludedArtistIds,enabledArtistTypePreferences,toggleArtistType,visibleArtistIds,debutYearRanges,artistsInDebutRange} from '../src/lib.js';
 const artists=[{id:'girl',name:'Girl',gender:'girl',contentCount:4},{id:'boy',name:'Boy',gender:'boy',contentCount:0},{id:'mixed',name:'Mixed',gender:'mixed'},{id:'duo',name:'Duo',gender:'mixed',artistType:'duo'},{id:'solo',name:'Solo',gender:'girl',artistType:'solo'}];
-test('duo and solo types take precedence over gender without duplicate categories',()=>{
+test('mixed duos appear in both tabs without duplicates in All',()=>{
  assert.equal(artistCategory(artists[3]),'duo-solo');
  assert.deepEqual(artistsInCategory(artists,'girl').map(a=>a.id),['girl']);
- assert.deepEqual(artistsInCategory(artists,'mixed').map(a=>a.id),['mixed']);
+ assert.deepEqual(artistsInCategory(artists,'mixed').map(a=>a.id),['mixed','duo']);
  assert.equal(artistsInCategory(artists,'duo-solo').length,2);
  assert.equal(artistsInCategory(artists,'all').length,5);
 });

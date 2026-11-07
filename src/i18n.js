@@ -1,6 +1,11 @@
 import React from 'react';
 export const LANGUAGES=[['ko','KR'],['ja','JP'],['en','EN'],['es','ES']];
 const entries={
+ '멤버 단독 활동 포함':['メンバーの個人活動を含める','Include individual member activity','Incluir actividades individuales'],
+ '선택됨만':['選択済みのみ','Selected only','Solo seleccionados'],
+ '레거시 그룹':['レガシーグループ','Legacy groups','Grupos de archivo'],
+ 'MY GROUPS만':['MY GROUPSのみ','MY GROUPS only','Solo MY GROUPS'],
+ '실행 취소':['元に戻す','Undo','Deshacer'],
  '음악방송':['音楽番組','Music Shows','Programas musicales'],
  '짧은 클립':['短いクリップ','Short clip','Clip corto'],
  '일반 그룹':['通常のグループ','Regular groups','Grupos generales'],

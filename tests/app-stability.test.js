@@ -43,7 +43,11 @@ test('App settles after initial detail loading and repeated content-tab clicks',
   globalThis.__sonarTestHooks=harness.hooks;
   const server=await createServer({server:{middlewareMode:true,hmr:false,ws:false},plugins:[{
     name:'app-interaction-harness',enforce:'pre',transform(source,id){
-      if(!id.replaceAll('\\','/').endsWith('/src/main.jsx'))return;
+      const path=id.replaceAll('\\','/');
+      if(path.endsWith('/src/useGroupVideos.js')){
+        return source.replace("import {useEffect,useState} from 'react';",'const {useEffect,useState}=globalThis.__sonarTestHooks;');
+      }
+      if(!path.endsWith('/src/main.jsx'))return;
       return source.replace(/import React,\{[^}]+\} from 'react';/,"import React from 'react'; const {useEffect,useMemo,useRef,useState,useReducer}=globalThis.__sonarTestHooks;")
         .replace("createRoot(document.getElementById('root')).render(<App/>);",'export {App};');
     },

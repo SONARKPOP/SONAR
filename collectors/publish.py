@@ -32,16 +32,36 @@ def write(path, value):
 def summary(v):
     return {k: value for k, value in v.items() if k not in ('description', 'source', 'liveStatus', 'actualStartTime', 'actualEndTime', 'scheduledStartTime')}
 
+
+def discovery_groups(video):
+    return set(video['groupIds']) | set(video.get('individualActivity', {}).get('groupIds', []))
+
 def publish(records, config, events=(), output=DATA, demo=False):
     output = Path(output)
     # Events remain an empty schema field for compatibility; schedules are disabled.
     events = ()
     from .content_tags import apply_tags
+    from .individual_activity import classify_individual, solo_review_candidates
     from .source_policy import approved_original
     sources = {c['id']:c for c in config['channels']}
-    records = {v['id']: apply_tags(v, sources.get(v['channelId'], {}).get('official', False)) for v in records if approved_original(sources.get(v['channelId'], {}))}
+    artists = {group['id']:group for group in config['groups']}
+    members = {member['id']:member for member in config['members']}
+    indexed = {}
+    for record in records:
+        source = sources.get(record['channelId'], {})
+        if not approved_original(source):
+            continue
+        video = apply_tags(record, source.get('official', False))
+        activity = classify_individual(video, source, artists, members)
+        if activity:
+            video['individualActivity'] = activity
+        else:
+            video.pop('individualActivity', None)
+        indexed[video['id']] = video
+    records = indexed
     updated = now()
     ordered = sorted(records.values(), key=lambda v: v['publishedAt'], reverse=True)
+    write(output / 'solo-review.json', {'updatedAt':updated,'candidates':solo_review_candidates(ordered,sources,artists)})
     for v in ordered:
         if v['id'] != f"{v['platform']}__{v['platformId']}":
             raise ValueError('Invalid canonical ID')
@@ -52,8 +72,14 @@ def publish(records, config, events=(), output=DATA, demo=False):
     for old in (output / 'content').glob('*.json'):
         if old.stem not in records:
             old.unlink()
-    for g in config['groups']:
-        write(output / 'groups' / f"{g['id']}.json", {'schemaVersion': 1, 'updatedAt': updated, 'items': [summary(v) for v in ordered if g['id'] in v['groupIds']], 'events': [e for e in events if g['id'] in e['groupIds']]})
+    group_indexes = {group['id']:[] for group in config['groups']}
+    for video in ordered:
+        item = summary(video)
+        for group_id in discovery_groups(video):
+            if group_id in group_indexes:
+                group_indexes[group_id].append(item)
+    for group_id, items in group_indexes.items():
+        write(output / 'groups' / f"{group_id}.json", {'schemaVersion': 1, 'updatedAt': updated, 'items':items, 'events':[]})
     group_ids = {g['id'] for g in config['groups']}
     for old in (output / 'groups').glob('*.json'):
         if old.stem not in group_ids:
@@ -68,7 +94,7 @@ def publish(records, config, events=(), output=DATA, demo=False):
         official_ids = {c['id'] for c in config['channels'] if c['official'] and owners.intersection(c['groupIds'])}
         dates = [v['publishedAt'] for v in ordered if not v.get('demo') and v['channelId'] in official_ids and g['id'] in v['groupIds']]
         source_review = next((c['unavailableReason'] for c in config['channels'] if c['id'] in official_ids and c.get('unavailableReason')), '')
-        public_config['groups'].append({**g, 'contentCount':sum(g['id'] in v['groupIds'] for v in ordered),
+        public_config['groups'].append({**g, 'contentCount':len(group_indexes[g['id']]),
             'lastOfficialUploadAt':max(dates, default=None), 'officialSourceReviewReason':source_review, 'officialSourceConnected':any(c['id'] in official_ids and c.get('collectionEnabled',True) and not c.get('unavailableReason') for c in config['channels'])})
     public_config['defaultGroupIds'] = config.get('defaultGroupIds', [])
     public_config['collectionGroupIds'] = config.get('collectionGroupIds', [])

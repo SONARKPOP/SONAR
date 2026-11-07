@@ -14,9 +14,27 @@ function matchesContentTab(video,category){
  if(isShortContent(video))return false;
  return category==='home'||(category==='live'?video.format==='live':category===video.category||video.contentTypes?.includes(category));
 }
-export function filterContent(rows,{groups=[],category='home',query='',channel='',member='',subtype='',format='',year='',month='',externalType='',ownType=''}){
+export function videoMatchesArtist(video,id,includeIndividual=true){
+ const activity=video.individualActivity;
+ const fromGroup=activity?.groupIds.includes(id);
+ if(!includeIndividual&&fromGroup&&id!==activity.artistId)return false;
+ return video.groupIds.includes(id)||(includeIndividual&&fromGroup);
+}
+export function filterContent(rows,{groups=[],category='home',query='',channel='',member='',subtype='',format='',year='',month='',externalType='',ownType='',includeIndividual=true,artistNames}){
  const q=query.trim().toLocaleLowerCase();
- return dedupe(rows).filter(v=>(!groups.length||groups.some(g=>v.groupIds.includes(g))) && matchesContentTab(v,category) && (!q||[v.title,v.channelName,...v.tags].join(' ').toLocaleLowerCase().includes(q)) && (!channel||(v.programId||v.channelId)===channel) && (!member||v.memberIds.includes(member)) && (!subtype||v.subtypes.includes(subtype)) && (!format||v.format===format) && (!year||monthKey(v.publishedAt).slice(0,4)===year) && (!month||monthKey(v.publishedAt).slice(5,7)===month) && (!externalType||externalKind(v)===externalType) && (!ownType||ownKind(v)===ownType)).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
+ return dedupe(rows).filter(v=>{
+  const activity=v.individualActivity;
+  if(groups.length&&!groups.some(g=>videoMatchesArtist(v,g,includeIndividual)))return false;
+  if(q){
+   const names=[...new Set([...v.groupIds,...(activity?.groupIds||[])])].flatMap(id=>artistNames?.get(id)||[]);
+   if(![v.title,v.channelName,...v.tags,...names].join(' ').toLocaleLowerCase().includes(q))return false;
+  }
+  return matchesContentTab(v,category)&&(!channel||(v.programId||v.channelId)===channel)&&
+   (!member||v.memberIds.includes(member))&&(!subtype||v.subtypes.includes(subtype))&&
+   (!format||v.format===format)&&(!year||monthKey(v.publishedAt).slice(0,4)===year)&&
+   (!month||monthKey(v.publishedAt).slice(5,7)===month)&&(!externalType||externalKind(v)===externalType)&&
+   (!ownType||ownKind(v)===ownType);
+ }).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
 }
 export function commonChannels(rows,groups){
  const map=new Map();
@@ -46,6 +64,11 @@ export function groupPreferences(storage,catalog){
 export function favoriteGroupSelection(storage,catalog){
  return [...new Set(loadSaved(storage,'sonar.favorite-groups.v1',[]).filter(id=>catalog.groups.some(g=>g.id===id)))];
 }
+export function restoreSubset(current,previous,ids){
+ const affected=new Set(ids),existing=new Set(current);
+ return [...previous.filter(id=>affected.has(id)||existing.has(id)),
+         ...current.filter(id=>!affected.has(id)&&!previous.includes(id))];
+}
 export function selectionReducer(state,action){
  if(action.type==='hydrate')return {selected:[...new Set(action.selected)]};
  let next;
@@ -53,6 +76,7 @@ export function selectionReducer(state,action){
  else if(action.type==='add')next=[...new Set([...state.selected,...action.ids])];
  else if(action.type==='remove')next=state.selected.filter(id=>!action.ids.includes(id));
  else if(action.type==='change')next=[...new Set(action.ids)];
+ else if(action.type==='restore')next=restoreSubset(state.selected,action.previous,action.ids);
  else return state;
  if(next.length===state.selected.length&&next.every(id=>state.selected.includes(id)))return state;
  return {selected:next};
@@ -106,8 +130,8 @@ export function uploadDays(rows){
 }
 
 export function uploadKind(row){return row.format==='live'?'live':row.format==='short'?'short':(['own','external'].includes(row.category)||row.contentTypes?.some(t=>['own','external'].includes(t)))?'long':null;}
-export function uploadGroupSummary(rows,selected){
- return selected.map(id=>({id,live:[],short:[],long:[]})).map(group=>{for(const row of rows){const kind=uploadKind(row);if(kind&&row.groupIds.includes(group.id))group[kind].push(row);}return group;}).filter(group=>group.live.length+group.short.length+group.long.length);
+export function uploadGroupSummary(rows,selected,includeIndividual=true){
+ return selected.map(id=>({id,live:[],short:[],long:[]})).map(group=>{for(const row of rows){const kind=uploadKind(row);if(kind&&videoMatchesArtist(row,group.id,includeIndividual))group[kind].push(row);}return group;}).filter(group=>group.live.length+group.short.length+group.long.length);
 }
 
 export const OWN_TYPES=[['behind','비하인드'],['daily','일상·브이로그'],['variety','자체 예능'],['practice','연습·퍼포먼스'],['other','기타·미분류']];
@@ -132,7 +156,10 @@ export function sortGroups(groups,mode='default'){
 
 export const ARTIST_CATEGORIES=[['all','전체'],['girl','여자 아이돌'],['mixed','혼성 아이돌'],['boy','남자 아이돌'],['duo-solo','듀오·솔로']];
 export function artistCategory(artist){return ['duo','solo'].includes(artist.artistType)?'duo-solo':artist.gender;}
-export function artistCategories(artist){return [...new Set([artistCategory(artist),...(artist.displayCategories||[])])];}
+export function artistCategories(artist){
+ const mixedDuo=artist.artistType==='duo'&&artist.gender==='mixed';
+ return [...new Set([artistCategory(artist),...(mixedDuo?['mixed']:[]),...(artist.displayCategories||[])])];
+}
 export function artistsInCategory(artists,category){return artists.filter(a=>category==='all'||artistCategories(a).includes(category));}
 export function recommendedArtists(artists,chosen,excluded,category='all',limit=4){return artistsInCategory(artists,category).filter(a=>!chosen.includes(a.id)&&!excluded.includes(a.id)).sort((a,b)=>(b.contentCount||0)-(a.contentCount||0)||a.name.localeCompare(b.name,'en',{sensitivity:'base'})).slice(0,limit);}
 

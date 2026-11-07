@@ -21,6 +21,7 @@ export function createDataClient({base='./',fetcher=(...args)=>fetch(...args),sn
   }else{
    value=await parseDataResponse(await fetcher(`${base}data/${path}`,{cache:'no-store',headers:{Accept:'application/json'}}),path);
   }
+  if(group&&!Array.isArray(value?.items))throw new Error(`그룹 목록 형식이 올바르지 않습니다: ${path}`);
   if(path==='catalog.json')catalog=value;
   return value;
  }
