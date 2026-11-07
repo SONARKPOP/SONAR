@@ -7,17 +7,30 @@ import {officialLinksFor} from './official-links';
 import {ActivityGlyph} from './ActivityIcon';
 import ArtistDirectoryRow from './ArtistDirectoryRow';
 import DirectoryFilters,{DEFAULT_DIRECTORY_FILTERS,DIRECTORY_SCOPES} from './DirectoryFilters';
-import {activityRecommendations,artistInitials,INITIAL_ROWS} from './directory-shortcuts';
+import {artistInitials,INITIAL_ROWS} from './directory-shortcuts';
 import './directory-compact.css';
 
 const TYPES=[['all','전체'],['girl','여자'],['boy','남자'],['mixed','혼성'],['duo-solo','듀오·솔로']];
 const SORTS=[['az','이름 A–Z'],['debut-desc','데뷔 최신순'],['debut-asc','데뷔 오래된순']];
 const EMPTY=[];
 const PRESETS=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];
-const RECOMMEND=[['steady','꾸준히 업로드'],['hot','지금 활발'],['recent','최근 업로드']];
+const RECOMMEND=['SURGE','SAILING','COASTING'];
+
+function ActivityFilterButton({state,count,status,onChange}){
+ const active=status===state;
+ const label=state==='all'?'전체':state;
+ const activity=ACTIVITY_META[state];
+ return <button type="button" className="directory-control" disabled={Boolean(activity)&&!count&&!active}
+  style={activity?{'--toggle-accent':activity.color}:undefined}
+  aria-pressed={active} aria-label={`${label} 활동 필터, ${count}개`}
+  title={`${label} · ${count}개`} onClick={()=>onChange(active?'all':state)}>
+  {activity?<><ActivityGlyph icon={activity.icon} size={17}/><span>{count}</span></>:label}
+ </button>;
+}
 
 export default function ArtistDirectory({catalog,clock,saved,favorites,colors,excluded,allowed,protectedGroups,
- onToggleGroup,onBulkGroups,onFavorite,onExclude,onAllow,editorTitle,initialSavedOnly=false,editorSort,onEditorSort}){
+ onToggleGroup,onBulkGroups,onFavorite,onExclude,onAllow,editorTitle,initialSavedOnly=false,editorSort,onEditorSort,
+ selected=EMPTY,onBulkSelection}){
  const [query,setQuery]=useState(''),[type,setType]=useState('all'),[directorySort,setDirectorySort]=useState('az');
  const sort=editorSort??directorySort;
  const setSort=onEditorSort??setDirectorySort;
@@ -25,7 +38,8 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  const [expanded,setExpanded]=useState(''),[editing,setEditing]=useState(false);
  const [undo,setUndo]=useState(null),[showTop,setShowTop]=useState(false);
  const [initialOpen,setInitialOpen]=useState(false),[initial,setInitial]=useState('');
- const [favoriteEdit,setFavoriteEdit]=useState(false),[preset,setPreset]=useState('star'),[recommend,setRecommend]=useState('steady');
+ const [editMode,setEditMode]=useState(''),[preset,setPreset]=useState('star');
+ const favoriteEdit=editMode==='favorites',selectionEdit=editMode==='selection';
  const filterDialog=useRef(null);
  const listRef=useRef(null);
  const instanceId=useId();
@@ -41,6 +55,8 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  const groups=catalog?.groups||EMPTY,channels=catalog?.channels||EMPTY;
  const groupMap=useMemo(()=>new Map(groups.map(group=>[group.id,group])),[groups]);
  const savedIds=useMemo(()=>new Set(saved),[saved]);
+ const selectedIds=useMemo(()=>new Set(selected),[selected]);
+ const excludedIds=useMemo(()=>new Set(excluded),[excluded]);
  const lockedIds=useMemo(()=>new Set(protectedGroups),[protectedGroups]);
  const favoriteIds=useMemo(()=>Object.fromEntries(Object.entries(favorites).map(([key,ids])=>[key,new Set(ids)])),[favorites]);
  const connected=useMemo(()=>{
@@ -58,29 +74,29 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  const {status,scope,year,savedOnly}=filters;
  const baseResults=useMemo(()=>{
   const rows=directoryResults(groups,{query,type,status:'all',year,sort,now:clock,narrowSearch:true});
-  return rows.filter(group=>(!savedOnly||savedIds.has(group.id))&&matchesDirectoryScope(group,scope,clock)&&(!initial||artistInitials(group).includes(initial)));
- },[groups,query,type,scope,year,savedOnly,sort,clock,savedIds,initial]);
+  return rows.filter(group=>(!(selectionEdit||savedOnly)||savedIds.has(group.id))&&matchesDirectoryScope(group,scope,clock)&&(!initial||artistInitials(group).includes(initial)));
+ },[groups,query,type,scope,year,savedOnly,selectionEdit,sort,clock,savedIds,initial]);
  const results=useMemo(()=>{
-  const matches=status==='all'?baseResults:baseResults.filter(group=>matchesDirectoryActivity(group,status,clock));
+  const recommendationFilter=favoriteEdit&&RECOMMEND.includes(status);
+  const matches=status==='all'?baseResults:baseResults.filter(group=>
+   (!recommendationFilter||!excludedIds.has(group.id))&&matchesDirectoryActivity(group,status,clock));
   if(!favoriteEdit)return matches;
   const pinned=favoriteIds[preset];
   return [...matches.filter(group=>pinned.has(group.id)),...matches.filter(group=>!pinned.has(group.id))];
- },[baseResults,status,clock,favoriteEdit,favoriteIds,preset]);
- const recommendations=useMemo(()=>favoriteEdit?
-  activityRecommendations(groups,{clock,type,mode:recommend,favorites:favoriteIds[preset],excluded}):EMPTY,
- [groups,clock,type,recommend,favoriteIds,preset,excluded,favoriteEdit]);
- const [,presetLabel,PresetIcon]=PRESETS.find(([key])=>key===preset);
- const savedCount=results.filter(group=>savedIds.has(group.id)).length;
+ },[baseResults,status,clock,favoriteEdit,excludedIds,favoriteIds,preset]);
+ const editingIds=selectionEdit?selectedIds:savedIds;
+ const editedCount=results.filter(group=>editingIds.has(group.id)).length;
  const activityCounts=useMemo(()=>{
   const counts=new Map(DIRECTORY_ACTIVITY_STATES.map(state=>[state,0]));
-  if(!editorTitle){
+  if(!editorTitle||favoriteEdit){
    for(const group of baseResults){
+    if(favoriteEdit&&excludedIds.has(group.id))continue;
     const state=activityView(group,clock)?.state;
     if(counts.has(state))counts.set(state,counts.get(state)+1);
    }
   }
   return counts;
- },[editorTitle,baseResults,clock]);
+ },[editorTitle,favoriteEdit,baseResults,clock,excludedIds]);
  const suggestions=editorTitle&&!saved.length&&!results.length?recommendedArtists(groups,saved,excluded):EMPTY;
  const updateFilters=patch=>{setExpanded('');setFilters(previous=>({...previous,...patch}));};
  const resetFilters=()=>updateFilters(DEFAULT_DIRECTORY_FILTERS);
@@ -97,8 +113,14 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   filters.savedOnly&&['MY GROUPS만',()=>updateFilters({savedOnly:false})],
  ].filter(Boolean);
  const updateResults=enabled=>{
-  const ids=results.filter(group=>savedIds.has(group.id)!==enabled).map(group=>group.id);
-  if(ids.length)setUndo({count:ids.length,enabled,restore:onBulkGroups(ids,enabled)});
+  const ids=results.filter(group=>editingIds.has(group.id)!==enabled).map(group=>group.id);
+  if(ids.length)setUndo({count:ids.length,enabled,selectionEdit,restore:(selectionEdit?onBulkSelection:onBulkGroups)(ids,enabled)});
+ };
+ const changeActivity=status=>{updateFilters({status});listRef.current?.scrollTo({top:0});};
+ const toggleEdit=mode=>{
+  setExpanded('');setUndo(null);
+  if(editMode!==mode&&mode==='favorites')updateFilters({savedOnly:false});
+  setEditMode(editMode===mode?'':mode);
  };
  const showFilters=event=>{
   const dialog=filterDialog.current;
@@ -126,20 +148,13 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   <div className="directory-shortcuts">
    <button type="button" className="directory-control" aria-expanded={initialOpen} aria-controls={initialsId} onClick={()=>setInitialOpen(value=>!value)}>이름 첫 글자{initial?' · '+initial:''}</button>
    {!editorTitle&&<div className="directory-selection-toggles" role="group" aria-label="YouTube 활동 상태 필터">
-    {[['all',baseResults.length],...activityCounts].map(([state,count])=>{
-     const active=status===state;
-     const label=state==='all'?'전체':state;
-     const activity=ACTIVITY_META[state];
-     return <button key={label} type="button" className="directory-control" disabled={Boolean(activity)&&!count&&!active}
-      style={activity?{'--toggle-accent':activity.color}:undefined}
-      aria-pressed={active} aria-label={`${label} 활동 필터, ${count}개`}
-      title={`${label} · ${count}개`} onClick={()=>updateFilters({status:active?'all':state})}>
-      {activity?<><ActivityGlyph icon={activity.icon} size={17}/><span>{count}</span></>:label}
-     </button>;
-    })}
+    {[['all',baseResults.length],...activityCounts].map(([state,count])=>
+     <ActivityFilterButton key={state} state={state} count={count} status={status} onChange={changeActivity}/>)}
    </div>}
-   {editorTitle&&<button type="button" className="directory-control" aria-expanded={favoriteEdit}
-    onClick={()=>{if(!favoriteEdit)updateFilters({savedOnly:false});setFavoriteEdit(value=>!value);}}>선호그룹 편집</button>}
+   {editorTitle&&<button type="button" className="directory-control" aria-pressed={favoriteEdit}
+    onClick={()=>toggleEdit('favorites')}>선호그룹 편집</button>}
+   {initialSavedOnly&&<button type="button" className="directory-control" aria-pressed={selectionEdit}
+    onClick={()=>toggleEdit('selection')}>선택그룹 편집</button>}
   </div>
   <nav className="directory-initials" id={initialsId} aria-label="이름 첫 글자로 찾기" hidden={!initialOpen}>
    {INITIAL_ROWS.map(([label,letters],row)=><div key={label} className="directory-initial-row" role="group" aria-label={label}>
@@ -150,12 +165,10 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   {favoriteEdit&&<div className="directory-favorite-panel">
    <div className="directory-favorite-options" aria-label="담을 선호 목록"><small>담을 곳</small>{PRESETS.map(([key,label,Icon])=>
     <button key={key} type="button" className="directory-control" aria-pressed={preset===key} onClick={()=>setPreset(key)}><Icon size={14}/>{label}</button>)}</div>
-   <div className="directory-favorite-options" aria-label="추천 그룹"><small>추천 그룹</small>{RECOMMEND.map(([id,label])=>
-    <button key={id} type="button" className="directory-control" aria-pressed={recommend===id} onClick={()=>setRecommend(id)}>{label}</button>)}</div>
-   {recommendations.length?<ul className="directory-recommendations">{recommendations.map(({artist,view})=><li key={artist.id}>
-    <span><b data-no-translate>{artist.name}</b><small>{view.state} · 최근 7일 {view.uploads7d??0}개</small></span>
-    <button type="button" className="directory-control directory-icon" aria-label={`${artist.name} ${presetLabel}에 담기`} onClick={()=>onFavorite(preset,artist.id)}><PresetIcon size={15}/></button>
-   </li>)}</ul>:<small>추천 조건에 맞는 그룹이 없어요.</small>}
+   <div className="directory-favorite-options"><small>추천 그룹</small>
+    <div className="directory-selection-toggles directory-recommendation-toggles" role="group" aria-label="추천 그룹 활동 필터">{RECOMMEND.map(state=>
+     <ActivityFilterButton key={state} state={state} count={activityCounts.get(state)} status={status} onChange={changeActivity}/>)}</div>
+   </div>
   </div>}
   <div className="directory-list-toolbar">
    <strong aria-live="polite">결과 {results.length}명</strong>
@@ -169,7 +182,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
     <button type="button" className="directory-control" aria-haspopup="dialog" onClick={showFilters}>
      <SlidersHorizontal size={15}/>필터{chips.length>0&&<small className="directory-filter-count">{chips.length}</small>}
     </button>
-    {editorTitle&&<button type="button" className="directory-control" aria-expanded={editing} aria-controls={editing?bulkId:undefined}
+    {editorTitle&&!selectionEdit&&<button type="button" className="directory-control" aria-expanded={editing} aria-controls={editing?bulkId:undefined}
      onClick={()=>setEditing(value=>!value)}><ListChecks size={15}/><span>일괄 작업</span></button>}
    </div>
   </div>
@@ -177,23 +190,23 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
    {chips.map(([label,remove])=><button type="button" key={label} aria-label={`${label} 필터 해제`} onClick={remove}><span>{label}</span><X size={12}/></button>)}
    <button type="button" className="directory-chip-reset" onClick={resetFilters}>초기화</button>
   </div>}
-  {(!editorTitle||editing)&&<div className="directory-bulk-panel" id={bulkId}>
-   <small>현재 결과 {results.length}명 중 {savedCount}명 저장</small>
+  {(!editorTitle||editing||selectionEdit)&&<div className="directory-bulk-panel" id={bulkId}>
+   <small>현재 결과 {results.length}명 중 {editedCount}명 {selectionEdit?'선택':'저장'}</small>
    <div className="directory-bulk" role="group" aria-label="현재 결과 MY GROUPS 일괄 선택">
-    <button type="button" disabled={savedCount===results.length} onClick={()=>updateResults(true)}>{editorTitle?'결과 일괄 추가':'결과 전체 선택'}</button>
-    <button type="button" disabled={!savedCount} onClick={()=>updateResults(false)}>{editorTitle?'결과 일괄 제거':'결과 전체 해제'}</button>
+    <button type="button" disabled={editedCount===results.length} onClick={()=>updateResults(true)}>{editorTitle&&!selectionEdit?'결과 일괄 추가':'결과 전체 선택'}</button>
+    <button type="button" disabled={!editedCount} onClick={()=>updateResults(false)}>{editorTitle&&!selectionEdit?'결과 일괄 제거':'결과 전체 해제'}</button>
    </div>
   </div>}
   {undo&&<div className="index-notice" role="status">
-   <span>{undo.count}개 그룹을 {undo.enabled?'추가':'제거'}했습니다.</span>
+   <span>{undo.count}개 그룹을 {undo.selectionEdit?(undo.enabled?'선택':'선택 해제'):(undo.enabled?'추가':'제거')}했습니다.</span>
    <button type="button" onClick={()=>{undo.restore?.();setUndo(null);}}>실행 취소</button>
   </div>}
   <div className="directory-rows" ref={listRef} onScroll={editorTitle?event=>setShowTop(event.currentTarget.scrollTop>220):undefined}>
    {results.map(artist=><ArtistDirectoryRow key={artist.id} artist={artist} detailsId={`${instanceId}-${artist.id}`} groups={groupMap} channels={channels} clock={clock}
-    saved={savedIds.has(artist.id)} favorites={favoriteIds} color={colors[artist.id]} locked={lockedIds.has(artist.id)}
+    saved={editingIds.has(artist.id)} selectionEdit={selectionEdit} favorites={favoriteIds} color={colors[artist.id]} locked={lockedIds.has(artist.id)}
     excluded={excluded.includes(artist.id)} allowed={allowed.includes(artist.id)} expanded={expanded===artist.id}
     connected={connected.has(artist.id)} onExpand={id=>setExpanded(current=>current===id?'':id)}
-    onSave={id=>{setUndo(null);onToggleGroup(id);}} onFavorite={onFavorite} onExclude={onExclude}
+    onSave={id=>{setUndo(null);if(selectionEdit)onBulkSelection([id],!selectedIds.has(id));else onToggleGroup(id);}} onFavorite={onFavorite} onExclude={onExclude}
     onAllow={onAllow} onCareerSearch={search} quickPreset={favoriteEdit?PRESETS.find(([key])=>key===preset):null}/>)}
   </div>
   {!catalog?<p role="status">아티스트 목록을 불러오는 중…</p>:!results.length&&<div className="empty">

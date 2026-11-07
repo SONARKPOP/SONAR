@@ -7,7 +7,7 @@ import {careerTagsFor,koreanArtistName,lastKnownUpload,legacyGroupState,LEGACY_L
 const PRESETS=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];
 const dateFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul'});
 
-export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clock,saved,favorites,color,locked,
+export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clock,saved,selectionEdit,favorites,color,locked,
  excluded,allowed,expanded,connected,onExpand,onSave,onFavorite,onExclude,onAllow,onCareerSearch,quickPreset}){
  const name=artist.name;
  const korean=koreanArtistName(artist);
@@ -40,7 +40,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
      aria-label={`${name} ${quickLabel} 선호 지정`} aria-pressed={favorites[quickId].has(artist.id)}
      onClick={()=>onFavorite(quickId,artist.id)}><QuickIcon size={16}/></button>}
     <button type="button" className="directory-control directory-icon directory-save-icon"
-     aria-label={`${name} MY GROUPS ${saved?'제거':'추가'}`} aria-pressed={saved} onClick={()=>onSave(artist.id)}>
+     aria-label={`${name} ${selectionEdit?(saved?'영상 선택 해제':'영상 선택'):(saved?'MY GROUPS 제거':'MY GROUPS 추가')}`} aria-pressed={saved} onClick={()=>onSave(artist.id)}>
      {saved?<Check size={17}/>:<Plus size={17}/>}
     </button>
     <button type="button" className="directory-control directory-icon directory-expand-icon"
