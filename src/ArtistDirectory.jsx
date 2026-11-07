@@ -1,12 +1,12 @@
 import React,{useEffect,useId,useMemo,useRef,useState} from 'react';
 import {ArrowUp,ArrowDownUp,ChevronLeft,Heart,ListChecks,Search,SlidersHorizontal,Sprout,Star,X} from 'lucide-react';
-import {debutYearRanges,recommendedArtists} from './lib';
-import {DIRECTORY_ACTIVITY_STATES,directoryResults,isArtistSearch,matchesDirectoryActivity,matchesDirectoryScope} from './directory';
+import {artistCategories,artistsInDebutRange,debutYearRanges,recommendedArtists} from './lib';
+import {DIRECTORY_ACTIVITY_STATES,directoryResults,isArtistSearch,matchesDirectoryScope} from './directory';
 import {ACTIVITY_META,activityView} from './youtube-activity';
 import {officialLinksFor} from './official-links';
 import {ActivityGlyph} from './ActivityIcon';
 import ArtistDirectoryRow from './ArtistDirectoryRow';
-import DirectoryFilters,{DEFAULT_DIRECTORY_FILTERS,DIRECTORY_SCOPES} from './DirectoryFilters';
+import DirectoryFilters,{DEFAULT_DIRECTORY_FILTERS,DIRECTORY_SCOPES,statusForDirectoryScope} from './DirectoryFilters';
 import {artistInitials,INITIAL_ROWS} from './directory-shortcuts';
 import './directory-compact.css';
 
@@ -40,6 +40,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  const [initialOpen,setInitialOpen]=useState(false),[initial,setInitial]=useState('');
  const [editMode,setEditMode]=useState(''),[preset,setPreset]=useState('star');
  const favoriteEdit=editMode==='favorites',selectionEdit=editMode==='selection';
+ const recommendationMode=favoriteEdit||selectionEdit;
  const filterDialog=useRef(null);
  const listRef=useRef(null);
  const instanceId=useId();
@@ -72,31 +73,50 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  },[groups,channels]);
  const years=useMemo(()=>[['all','전체 연도'],...debutYearRanges(groups).map(({id,label})=>[id,label]),['unknown','연도 미확인']],[groups]);
  const {status,scope,year,savedOnly}=filters;
- const baseResults=useMemo(()=>{
-  const rows=directoryResults(groups,{query,type,status:'all',year,sort,now:clock,narrowSearch:true});
-  return rows.filter(group=>(!(selectionEdit||savedOnly)||savedIds.has(group.id))&&matchesDirectoryScope(group,scope,clock)&&(!initial||artistInitials(group).includes(initial)));
- },[groups,query,type,scope,year,savedOnly,selectionEdit,sort,clock,savedIds,initial]);
+ const searchRows=useMemo(()=>directoryResults(groups,{query,type:'all',status:'all',year:'all',sort,now:clock,narrowSearch:true})
+  .filter(group=>!initial||artistInitials(group).includes(initial)),[groups,query,sort,clock,initial]);
+ const facets=useMemo(()=>{
+  const activity=new Map(searchRows.map(group=>[group.id,activityView(group,clock)?.state||'unknown']));
+  const inType=(group,id)=>id==='all'||artistCategories(group).includes(id);
+  const inScope=(group,id)=>matchesDirectoryScope(group,id,clock);
+  const matchesStatus=(group,key)=>key==='all'||activity.get(group.id)===key&&(!recommendationMode||!RECOMMEND.includes(key)||!excludedIds.has(group.id));
+  const inStatus=group=>matchesStatus(group,status);
+  const isSaved=group=>savedIds.has(group.id);
+  const eligible=searchRows.filter(group=>!(selectionEdit||savedOnly)||isSaved(group));
+  const scoped=eligible.filter(group=>inScope(group,scope));
+  const typed=eligible.filter(group=>inType(group,type));
+  const typeRows=artistsInDebutRange(scoped.filter(inStatus),year);
+  const scopeRows=artistsInDebutRange(typed,year);
+  const yearRows=typed.filter(group=>inScope(group,scope)&&inStatus(group));
+  const base=artistsInDebutRange(typed.filter(group=>inScope(group,scope)),year);
+  const statusCounts={all:base.length,unknown:0,...Object.fromEntries(DIRECTORY_ACTIVITY_STATES.map(key=>[key,0]))};
+  for(const group of base){
+   const key=activity.get(group.id);
+   if(recommendationMode&&RECOMMEND.includes(key)&&excludedIds.has(group.id))continue;
+   statusCounts[key]++;
+  }
+  return {
+   base,activity,
+   types:Object.fromEntries(TYPES.map(([id])=>[id,typeRows.filter(group=>inType(group,id)).length])),
+   scopes:Object.fromEntries(DIRECTORY_SCOPES.map(([id])=>{
+    const nextStatus=statusForDirectoryScope(id,status);
+    return [id,scopeRows.filter(group=>inScope(group,id)&&matchesStatus(group,nextStatus)).length];
+   })),
+   years:Object.fromEntries(years.map(([id])=>[id,artistsInDebutRange(yearRows,id).length])),
+   statuses:statusCounts,
+   saved:artistsInDebutRange(searchRows.filter(group=>isSaved(group)&&inType(group,type)&&inScope(group,scope)&&inStatus(group)),year).length,
+  };
+ },[searchRows,type,scope,status,year,savedOnly,selectionEdit,recommendationMode,clock,savedIds,excludedIds,years]);
  const results=useMemo(()=>{
-  const recommendationFilter=favoriteEdit&&RECOMMEND.includes(status);
-  const matches=status==='all'?baseResults:baseResults.filter(group=>
-   (!recommendationFilter||!excludedIds.has(group.id))&&matchesDirectoryActivity(group,status,clock));
+  const recommendationFilter=recommendationMode&&RECOMMEND.includes(status);
+  const matches=status==='all'?facets.base:facets.base.filter(group=>
+   (!recommendationFilter||!excludedIds.has(group.id))&&facets.activity.get(group.id)===status);
   if(!favoriteEdit)return matches;
   const pinned=favoriteIds[preset];
   return [...matches.filter(group=>pinned.has(group.id)),...matches.filter(group=>!pinned.has(group.id))];
- },[baseResults,status,clock,favoriteEdit,excludedIds,favoriteIds,preset]);
+ },[facets,status,favoriteEdit,recommendationMode,excludedIds,favoriteIds,preset]);
  const editingIds=selectionEdit?selectedIds:savedIds;
  const editedCount=results.filter(group=>editingIds.has(group.id)).length;
- const activityCounts=useMemo(()=>{
-  const counts=new Map(DIRECTORY_ACTIVITY_STATES.map(state=>[state,0]));
-  if(!editorTitle||favoriteEdit){
-   for(const group of baseResults){
-    if(favoriteEdit&&excludedIds.has(group.id))continue;
-    const state=activityView(group,clock)?.state;
-    if(counts.has(state))counts.set(state,counts.get(state)+1);
-   }
-  }
-  return counts;
- },[editorTitle,favoriteEdit,baseResults,clock,excludedIds]);
  const suggestions=editorTitle&&!saved.length&&!results.length?recommendedArtists(groups,saved,excluded):EMPTY;
  const updateFilters=patch=>{setExpanded('');setFilters(previous=>({...previous,...patch}));};
  const resetFilters=()=>updateFilters(DEFAULT_DIRECTORY_FILTERS);
@@ -108,9 +128,9 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  };
  const chips=[
   filters.scope!=='all'&&[DIRECTORY_SCOPES.find(([id])=>id===filters.scope)[1],()=>updateFilters({scope:'all'})],
-  status!=='all'&&(editorTitle||!ACTIVITY_META[status])&&[status==='unknown'?'상태 미확인':status,()=>updateFilters({status:'all'})],
+  status!=='all'&&(editorTitle?!(recommendationMode&&RECOMMEND.includes(status)):!ACTIVITY_META[status])&&[status==='unknown'?'상태 미확인':status,()=>updateFilters({status:'all'})],
   filters.year!=='all'&&[years.find(([id])=>id===filters.year)?.[1]||filters.year,()=>updateFilters({year:'all'})],
-  filters.savedOnly&&['MY GROUPS만',()=>updateFilters({savedOnly:false})],
+  filters.savedOnly&&!selectionEdit&&['MY GROUPS만',()=>updateFilters({savedOnly:false})],
  ].filter(Boolean);
  const updateResults=enabled=>{
   const ids=results.filter(group=>editingIds.has(group.id)!==enabled).map(group=>group.id);
@@ -143,13 +163,13 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   </div>
   <nav className="directory-type-tabs" aria-label="목록 아티스트 유형">
    {TYPES.map(([id,label])=><button type="button" key={id} aria-pressed={type===id}
-    onClick={()=>{setExpanded('');setType(id);}}>{label}</button>)}
+    onClick={()=>{setExpanded('');setType(id);}}>{label}<small className="directory-option-count">{facets.types[id]}</small></button>)}
   </nav>
   <div className="directory-shortcuts">
    <button type="button" className="directory-control" aria-expanded={initialOpen} aria-controls={initialsId} onClick={()=>setInitialOpen(value=>!value)}>이름 첫 글자{initial?' · '+initial:''}</button>
    {!editorTitle&&<div className="directory-selection-toggles" role="group" aria-label="YouTube 활동 상태 필터">
-    {[['all',baseResults.length],...activityCounts].map(([state,count])=>
-     <ActivityFilterButton key={state} state={state} count={count} status={status} onChange={changeActivity}/>)}
+    {['all',...DIRECTORY_ACTIVITY_STATES].map(state=>
+     <ActivityFilterButton key={state} state={state} count={facets.statuses[state]} status={status} onChange={changeActivity}/>)}
    </div>}
    {editorTitle&&<button type="button" className="directory-control" aria-pressed={favoriteEdit}
     onClick={()=>toggleEdit('favorites')}>선호그룹 편집</button>}
@@ -162,12 +182,12 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
      aria-pressed={initial===letter} onClick={()=>{setInitial(letter);setSort('az');setExpanded('');listRef.current?.scrollTo({top:0});}}>{letter||'전체'}</button>)}
    </div>)}
   </nav>
-  {favoriteEdit&&<div className="directory-favorite-panel">
-   <div className="directory-favorite-options" aria-label="담을 선호 목록"><small>담을 곳</small>{PRESETS.map(([key,label,Icon])=>
-    <button key={key} type="button" className="directory-control" aria-pressed={preset===key} onClick={()=>setPreset(key)}><Icon size={14}/>{label}</button>)}</div>
+  {recommendationMode&&<div className="directory-favorite-panel">
+   {favoriteEdit&&<div className="directory-favorite-options" aria-label="담을 선호 목록"><small>담을 곳</small>{PRESETS.map(([key,label,Icon])=>
+    <button key={key} type="button" className="directory-control" aria-pressed={preset===key} onClick={()=>setPreset(key)}><Icon size={14}/>{label}<small className="directory-option-count">{favoriteIds[key].size}</small></button>)}</div>}
    <div className="directory-favorite-options"><small>추천 그룹</small>
     <div className="directory-selection-toggles directory-recommendation-toggles" role="group" aria-label="추천 그룹 활동 필터">{RECOMMEND.map(state=>
-     <ActivityFilterButton key={state} state={state} count={activityCounts.get(state)} status={status} onChange={changeActivity}/>)}</div>
+     <ActivityFilterButton key={state} state={state} count={facets.statuses[state]} status={status} onChange={changeActivity}/>)}</div>
    </div>
   </div>}
   <div className="directory-list-toolbar">
@@ -216,7 +236,8 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   {suggestions.length>0&&<div className="directory-applied-chips" aria-label="추천 아티스트">
    {suggestions.map(artist=><button type="button" key={artist.id} onClick={()=>onToggleGroup(artist.id)}>{artist.name} 추가</button>)}
   </div>}
-  <DirectoryFilters titleId={`${instanceId}-directory-filter-title`} dialogRef={filterDialog} filters={filters} years={years} update={updateFilters} reset={resetFilters} resultCount={results.length}/>
+  <DirectoryFilters titleId={`${instanceId}-directory-filter-title`} dialogRef={filterDialog} filters={filters} years={years}
+   counts={facets} selectionEdit={selectionEdit} update={updateFilters} reset={resetFilters} resultCount={results.length}/>
   {showTop&&<button type="button" className={`directory-back-top${editorTitle?' directory-editor-top':''}`}
    onClick={()=>(editorTitle?listRef.current:window)?.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
    aria-label="맨 위로 가기"><ArrowUp size={17}/><span>맨 위로</span></button>}

@@ -29,6 +29,7 @@ export default function SidebarGroupRow({group,clock,checked,badges,color,swiped
  return <div className="mygroup-item" data-swiped={swiped||undefined}>
   <button type="button" className="mygroup-select" data-favorite={badges.length>0||undefined}
    style={badges.length?{'--favorite-accent':color||'#729ca8'}:undefined} aria-pressed={checked} onClick={toggle}
+   title={checked?'모아보기에서 선택 해제':'모아보기에 포함'}
    onPointerDown={startSwipe} onPointerUp={endSwipe} onPointerCancel={()=>{gesture.current=null;}}>
    <span className="mygroup-check" aria-hidden="true">{checked&&<Check size={14}/>}</span>
    <span className="mygroup-title" data-no-translate>{group.name}<ActivityIcon group={group} clock={clock}/>

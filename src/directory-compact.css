@@ -123,6 +123,12 @@
 }
 .directory-favorite-panel{margin:7px 0;padding:7px;border:1px solid var(--dir-line);border-radius:8px;color:var(--dir-text);background:var(--dir-surface)}
 .directory-recommendation-toggles{flex:none;overflow:visible;flex-wrap:wrap}
+.directory-option-count{
+ display:inline-flex;align-items:center;justify-content:center;min-width:18px;padding:1px 4px;
+ border-radius:5px;background:color-mix(in srgb,var(--dir-text) 9%,transparent);
+ color:var(--dir-text);font-size:10px;font-variant-numeric:tabular-nums
+}
+.directory-option-activity{display:inline-flex}
 .directory-editor-top{position:absolute;right:22px;bottom:19px}
 @media(max-width:760px){
  .group-editor-modal{max-height:91dvh;padding:12px}
