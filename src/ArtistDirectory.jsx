@@ -1,6 +1,6 @@
-import React,{useEffect,useMemo,useRef,useState} from 'react';
+import React,{useEffect,useId,useMemo,useRef,useState} from 'react';
 import {ArrowUp,ArrowDownUp,ChevronLeft,ListChecks,Search,SlidersHorizontal,X} from 'lucide-react';
-import {debutYearRanges} from './lib';
+import {debutYearRanges,recommendedArtists} from './lib';
 import {directoryResults,isArtistSearch,matchesDirectoryScope} from './directory';
 import {officialLinksFor} from './official-links';
 import ArtistDirectoryRow from './ArtistDirectoryRow';
@@ -12,18 +12,23 @@ const SORTS=[['az','이름 A–Z'],['debut-desc','데뷔 최신순'],['debut-asc
 const EMPTY=[];
 
 export default function ArtistDirectory({catalog,clock,saved,favorites,colors,excluded,allowed,protectedGroups,
- onToggleGroup,onBulkGroups,onFavorite,onExclude,onAllow}){
- const [query,setQuery]=useState(''),[type,setType]=useState('all'),[sort,setSort]=useState('az');
- const [filters,setFilters]=useState(DEFAULT_DIRECTORY_FILTERS);
+ onToggleGroup,onBulkGroups,onFavorite,onExclude,onAllow,editorTitle,initialSavedOnly=false,editorSort,onEditorSort}){
+ const [query,setQuery]=useState(''),[type,setType]=useState('all'),[directorySort,setDirectorySort]=useState('az');
+ const sort=editorSort??directorySort;
+ const setSort=onEditorSort??setDirectorySort;
+ const [filters,setFilters]=useState(()=>({...DEFAULT_DIRECTORY_FILTERS,savedOnly:initialSavedOnly}));
  const [expanded,setExpanded]=useState(''),[editing,setEditing]=useState(false);
  const [undo,setUndo]=useState(null),[showTop,setShowTop]=useState(false);
  const filterDialog=useRef(null);
+ const instanceId=useId();
+ const bulkId=`${instanceId}-directory-bulk`;
  useEffect(()=>{
+  if(editorTitle)return;
   const update=()=>setShowTop(window.scrollY>400);
   update();
   window.addEventListener('scroll',update,{passive:true});
   return()=>window.removeEventListener('scroll',update);
- },[]);
+ },[editorTitle]);
  const groups=catalog?.groups||EMPTY,channels=catalog?.channels||EMPTY;
  const groupMap=useMemo(()=>new Map(groups.map(group=>[group.id,group])),[groups]);
  const savedIds=useMemo(()=>new Set(saved),[saved]);
@@ -46,11 +51,12 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   return rows.filter(group=>(!filters.savedOnly||savedIds.has(group.id))&&matchesDirectoryScope(group,filters.scope,clock));
  },[groups,query,type,filters,sort,clock,savedIds]);
  const savedCount=results.filter(group=>savedIds.has(group.id)).length;
+ const suggestions=editorTitle&&!saved.length&&!results.length?recommendedArtists(groups,saved,excluded):EMPTY;
  const updateFilters=patch=>{setExpanded('');setFilters(previous=>({...previous,...patch}));};
  const resetFilters=()=>updateFilters(DEFAULT_DIRECTORY_FILTERS);
  const search=value=>{
   if(!isArtistSearch(query)&&isArtistSearch(value)){
-   setType('all');updateFilters({year:'all'});
+   setType('all');updateFilters({year:'all',...(editorTitle?{savedOnly:false}:{})});
   }
   setExpanded('');setQuery(value);
  };
@@ -71,14 +77,16 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   dialog.style.setProperty('--directory-filter-top',`${box.bottom+8}px`);
   dialog.showModal();
  };
- return <section className="artist-directory-page directory-compact" aria-label="전체 아티스트 목록">
+ return <section className={`artist-directory-page directory-compact${editorTitle?' directory-editor':''}`} aria-label={editorTitle||'전체 아티스트 목록'}>
   <header className="directory-compact-heading">
-   <a href="#collection"><ChevronLeft size={16}/><span>영상으로</span></a>
-   <h2>전체 아티스트 <small>{groups.length}</small></h2>
+   {editorTitle?<h2>{editorTitle} <small>{saved.length}개 저장</small></h2>:<>
+    <a href="#collection"><ChevronLeft size={16}/><span>영상으로</span></a>
+    <h2>전체 아티스트 <small>{groups.length}</small></h2>
+   </>}
   </header>
   <div className="directory-search">
    <label className="search"><Search size={17}/><input value={query} onChange={event=>search(event.target.value)}
-    placeholder="아티스트·출신 그룹 검색" aria-label="전체 아티스트 검색"/></label>
+    placeholder="아티스트·출신 그룹 검색" aria-label={editorTitle?'그룹 검색':'전체 아티스트 검색'}/></label>
    {query&&<button type="button" className="directory-control directory-icon" aria-label="검색 지우기" onClick={()=>search('')}><X size={16}/></button>}
   </div>
   <nav className="directory-type-tabs" aria-label="목록 아티스트 유형">
@@ -90,21 +98,22 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
    <div className="directory-toolbar-actions">
     <label className="directory-control directory-sort"><ArrowDownUp size={14}/><span>정렬</span>
      <select value={sort} onChange={event=>setSort(event.target.value)} aria-label="아티스트 목록 정렬">
+      {editorTitle&&<option value="default">기본순</option>}
       {SORTS.map(([id,label])=><option key={id} value={id}>{label}</option>)}
      </select>
     </label>
     <button type="button" className="directory-control" aria-haspopup="dialog" onClick={showFilters}>
      <SlidersHorizontal size={15}/>필터{chips.length>0&&<small className="directory-filter-count">{chips.length}</small>}
     </button>
-    <button type="button" className="directory-control" aria-expanded={editing} aria-controls={editing?'directory-bulk-panel':undefined}
-     onClick={()=>setEditing(value=>!value)}><ListChecks size={15}/><span>목록 편집</span></button>
+    <button type="button" className="directory-control" aria-expanded={editing} aria-controls={editing?bulkId:undefined}
+     onClick={()=>setEditing(value=>!value)}><ListChecks size={15}/><span>{editorTitle?'일괄 작업':'목록 편집'}</span></button>
    </div>
   </div>
   {chips.length>0&&<div className="directory-applied-chips" aria-label="적용된 아티스트 필터">
    {chips.map(([label,remove])=><button type="button" key={label} aria-label={`${label} 필터 해제`} onClick={remove}><span>{label}</span><X size={12}/></button>)}
    <button type="button" className="directory-chip-reset" onClick={resetFilters}>초기화</button>
   </div>}
-  {editing&&<div className="directory-bulk-panel" id="directory-bulk-panel">
+  {editing&&<div className="directory-bulk-panel" id={bulkId}>
    <small>현재 결과 {results.length}명 중 {savedCount}명 저장</small>
    <div className="directory-bulk" role="group" aria-label="현재 목록 MY GROUPS 일괄 편집">
     <button type="button" disabled={savedCount===results.length} onClick={()=>updateResults(true)}>결과 일괄 추가</button>
@@ -116,7 +125,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
    <button type="button" onClick={()=>{undo.restore?.();setUndo(null);}}>실행 취소</button>
   </div>}
   <div className="directory-rows">
-   {results.map(artist=><ArtistDirectoryRow key={artist.id} artist={artist} groups={groupMap} channels={channels} clock={clock}
+   {results.map(artist=><ArtistDirectoryRow key={artist.id} artist={artist} detailsId={`${instanceId}-${artist.id}`} groups={groupMap} channels={channels} clock={clock}
     saved={savedIds.has(artist.id)} favorites={favoriteIds} color={colors[artist.id]} locked={lockedIds.has(artist.id)}
     excluded={excluded.includes(artist.id)} allowed={allowed.includes(artist.id)} expanded={expanded===artist.id}
     connected={connected.has(artist.id)} onExpand={id=>setExpanded(current=>current===id?'':id)}
@@ -127,8 +136,11 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
    조건에 맞는 아티스트가 없습니다.
    {chips.length>0&&<button type="button" className="directory-control" onClick={resetFilters}>필터 초기화</button>}
   </div>}
-  <DirectoryFilters dialogRef={filterDialog} filters={filters} years={years} update={updateFilters} reset={resetFilters} resultCount={results.length}/>
-  {showTop&&<button type="button" className="directory-back-top"
+  {suggestions.length>0&&<div className="directory-applied-chips" aria-label="추천 아티스트">
+   {suggestions.map(artist=><button type="button" key={artist.id} onClick={()=>onToggleGroup(artist.id)}>{artist.name} 추가</button>)}
+  </div>}
+  <DirectoryFilters titleId={`${instanceId}-directory-filter-title`} dialogRef={filterDialog} filters={filters} years={years} update={updateFilters} reset={resetFilters} resultCount={results.length}/>
+  {showTop&&!editorTitle&&<button type="button" className="directory-back-top"
    onClick={()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
    aria-label="맨 위로 가기"><ArrowUp size={17}/><span>맨 위로</span></button>}
  </section>;

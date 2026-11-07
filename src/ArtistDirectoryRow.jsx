@@ -7,7 +7,7 @@ import {careerTagsFor,koreanArtistName,lastKnownUpload,legacyGroupState,LEGACY_L
 const PRESETS=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];
 const dateFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul'});
 
-export default function ArtistDirectoryRow({artist,groups,channels,clock,saved,favorites,color,locked,
+export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clock,saved,favorites,color,locked,
  excluded,allowed,expanded,connected,onExpand,onSave,onFavorite,onExclude,onAllow,onCareerSearch}){
  const name=artist.name;
  const korean=koreanArtistName(artist);
@@ -15,7 +15,6 @@ export default function ArtistDirectoryRow({artist,groups,channels,clock,saved,f
  const selectedPresets=PRESETS.filter(([key])=>favorites[key].has(artist.id));
  const legacy=legacyGroupState(artist,clock);
  const visibleLegacy=legacy&&legacy!=='long-dormant'?LEGACY_LABELS[legacy]:null;
- const detailsId=`directory-row-${artist.id}`;
  const lastUpload=expanded?lastKnownUpload(artist,clock):null;
  const summary=[artist.debutYear||'데뷔 미확인',visibleLegacy,...tags.map(tag=>tag.label),
                 connected?'YouTube 연결':'YouTube 확인 대기'].filter(Boolean).join(' · ');

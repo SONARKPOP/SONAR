@@ -27,16 +27,16 @@ function Choices({label,options,value,onChange,color=false}){
  </fieldset>;
 }
 
-export default function DirectoryFilters({dialogRef,filters,years,update,reset,resultCount}){
+export default function DirectoryFilters({titleId,dialogRef,filters,years,update,reset,resultCount}){
  const chooseScope=scope=>{
   const status=statusOptions(scope).some(([value])=>value===filters.status)?filters.status:'all';
   update({scope,status});
  };
- return <dialog ref={dialogRef} className="directory-filter-dialog" aria-labelledby="directory-filter-title"
+ return <dialog ref={dialogRef} className="directory-filter-dialog" aria-labelledby={titleId}
   onClick={event=>{if(event.target===event.currentTarget)dialogRef.current.close();}}>
   <div className="directory-filter-panel">
    <header className="directory-filter-header">
-    <h3 id="directory-filter-title">아티스트 필터</h3>
+    <h3 id={titleId}>아티스트 필터</h3>
     <button type="button" className="directory-control directory-icon" aria-label="필터 닫기" onClick={()=>dialogRef.current.close()}><X size={18}/></button>
    </header>
    <div className="directory-filter-body">

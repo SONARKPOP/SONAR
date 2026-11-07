@@ -93,3 +93,13 @@
  .directory-type-tabs{gap:3px}
  .directory-type-tabs button{padding-inline:8px}
 }
+.group-editor-modal{display:flex;flex-direction:column;overflow:hidden;max-height:min(90dvh,780px);padding:18px 20px}
+.group-editor-modal>.modal-close{top:13px;right:13px;z-index:1}
+.directory-editor{display:flex;flex-direction:column;min-height:0;padding:0}
+.directory-editor>:not(.directory-rows){flex-shrink:0}
+.directory-editor .directory-compact-heading{min-height:42px;padding-right:48px;margin-bottom:7px}
+.directory-editor .directory-rows{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+@media(max-width:760px){
+ .group-editor-modal{max-height:91dvh;padding:12px}
+ .group-editor-modal>.modal-close{top:7px;right:7px}
+}
