@@ -13,22 +13,22 @@ test('career tags show solo and previous group once; parent-name search finds so
  assert.deepEqual(directoryResults(groups,{query:'weeekly'}).map(g=>g.id).sort(),['lunedi','weeekly']);
  assert.deepEqual(careerTagsFor({previousGroupIds:['weeekly']},groups).map(t=>t.label),['재데뷔','Weeekly 출신']);
 });
-test('directory scopes separate confirmed legacy groups from upload age at 90 days',()=>{
+test('directory scopes follow the calendar-month boundaries of official uploads',()=>{
  const now=Date.parse('2026-11-07T00:00:00Z');
- const upload=days=>({lastOfficialUploadAt:new Date(now-days*86400000).toISOString()});
- assert(matchesDirectoryScope(upload(89),'recent',now));
- assert(!matchesDirectoryScope(upload(90),'recent',now));
- assert(matchesDirectoryScope(upload(90),'dormant',now));
- assert(matchesDirectoryScope(upload(800),'dormant',now));
- assert(!matchesDirectoryScope(upload(800),'legacy',now));
+ const scopes=['recent','intermittent','dormant','legacy'];
+ for(const [lastOfficialUploadAt,expected] of [
+  ['2026-10-08','recent'],['2026-10-07','intermittent'],
+  ['2026-05-08','intermittent'],['2026-05-07','dormant'],
+  ['2024-11-08','dormant'],['2024-11-07','legacy'],
+  [undefined,null],
+ ]){
+  assert.deepEqual(scopes.filter(scope=>matchesDirectoryScope({lastOfficialUploadAt},scope,now)),expected?[expected]:[]);
+ }
  for(const groupStatus of ['hiatus','disbanded']){
-  const artist={...upload(800),groupStatus};
-  assert(matchesDirectoryScope(artist,'legacy',now));
-  assert(matchesDirectoryScope(artist,'all',now));
-  assert(!matchesDirectoryScope(artist,'dormant',now));
+  assert(matchesDirectoryScope({lastOfficialUploadAt:'2026-11-01',groupStatus},'recent',now));
+  assert(!matchesDirectoryScope({groupStatus},'legacy',now));
  }
  assert(matchesDirectoryScope({},'all',now));
- assert(!matchesDirectoryScope({},'recent',now));
 });
 test('an explicit type or year selection can narrow a name search',()=>{
  const opts={query:'weeekly',narrowSearch:true,status:'all'};

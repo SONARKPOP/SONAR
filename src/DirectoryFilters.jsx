@@ -5,14 +5,19 @@ import {ACTIVITY_META} from './youtube-activity';
 import {ActivityGlyph} from './ActivityIcon';
 
 export const DIRECTORY_SCOPES=[
- ['all','전체 아티스트'],['recent','최근 업로드'],['dormant','장기 미업로드'],['legacy','레거시'],
+ ['all','전체 아티스트'],['recent','최근 업로드'],['intermittent','간헐 업로드'],
+ ['dormant','장기 미업로드'],['legacy','레거시'],
 ];
 export const DEFAULT_DIRECTORY_FILTERS={scope:'all',status:'all',year:'all',savedOnly:false};
-const RECENT_STATES=['SURGE','SAILING','COASTING'];
-const DORMANT_STATES=['ANCHORED','LOST SIGNAL'];
+const STATES_BY_SCOPE={
+ recent:['SURGE','SAILING','COASTING'],
+ intermittent:['COASTING','ANCHORED'],
+ dormant:['ANCHORED','LOST SIGNAL'],
+ legacy:['LOST SIGNAL'],
+};
 
 function statusOptions(scope){
- const states=scope==='recent'?RECENT_STATES:scope==='dormant'?DORMANT_STATES:DIRECTORY_ACTIVITY_STATES;
+ const states=STATES_BY_SCOPE[scope]||DIRECTORY_ACTIVITY_STATES;
  return [['all','전체 상태'],...states.map(state=>[state,state]),['unknown','상태 미확인']];
 }
 
@@ -44,7 +49,7 @@ export default function DirectoryFilters({titleId,dialogRef,filters,years,counts
    </header>
    <div className="directory-filter-body">
     <Choices label="목록 범위" options={DIRECTORY_SCOPES} value={filters.scope} onChange={chooseScope} counts={counts.scopes}/>
-    <p className="directory-filter-help">공식 업로드 기준 · 최근 90일 미만, 장기 90일 이상. 레거시는 확인된 활동 중단·해체 그룹입니다.</p>
+    <p className="directory-filter-help">마지막 공식 YouTube 업로드 기준 · 최근 1개월 미만 · 간헐 1~6개월 미만 · 장기 6개월~2년 미만 · 레거시 2년 이상</p>
     <Choices label="YouTube 활동 상태" options={statusOptions(filters.scope)} value={filters.status} onChange={status=>update({status})} counts={counts.statuses} color/>
     <Choices label="데뷔 연도" options={years} value={filters.year} onChange={year=>update({year})} counts={counts.years}/>
     {!selectionEdit&&<label className="directory-saved-filter"><input type="checkbox" checked={filters.savedOnly} onChange={event=>update({savedOnly:event.target.checked})}/> MY GROUPS만 <small className="directory-option-count">{counts.saved}</small></label>}

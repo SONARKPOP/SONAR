@@ -1,6 +1,5 @@
 import {artistCategories,groupActivity,sortGroups,artistsInDebutRange,monthsAfter} from './lib.js';
 import {ACTIVITY_META,activityView} from './youtube-activity.js';
-import activityRules from '../config/activity-rules.json' with {type:'json'};
 
 export const DIRECTORY_ACTIVITY_STATES=Object.keys(ACTIVITY_META);
 const normalizeName=value=>value.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
@@ -33,13 +32,12 @@ export const LEGACY_LABELS={disbanded:'해체',hiatus:'활동 중단','long-dorm
 
 export function matchesDirectoryScope(artist,scope,now=Date.now()){
  if(scope==='all')return true;
- const legacy=artist.artistType!=='solo'&&['disbanded','hiatus'].includes(artist.groupStatus);
- if(scope==='legacy')return legacy;
- if(legacy)return false;
  const last=lastKnownUpload(artist,now);
  if(last===null)return false;
- const days=(now-last)/86400000;
- return scope==='recent'?days<activityRules.anchoredDays:days>=activityRules.anchoredDays;
+ const band=now>=monthsAfter(last,24)?'legacy':
+  now>=monthsAfter(last,6)?'dormant':
+  now>=monthsAfter(last,1)?'intermittent':'recent';
+ return scope===band;
 }
 
 export function matchesDirectoryActivity(artist,status,now){

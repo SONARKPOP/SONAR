@@ -1,7 +1,7 @@
 import React,{useEffect,useMemo,useRef,useState,useReducer} from 'react';
 import {createRoot} from 'react-dom/client';
 import {Search,Plus,X,Radio,Home,Music2,Clapperboard,Layers,CalendarDays,Play,ArrowUpRight,SlidersHorizontal,ChevronLeft,ChevronRight,Menu,Check,Disc3,Star,Moon,Sun,Heart,Sprout,Ban,Smartphone,Settings2,ShieldCheck,Copy,Tv,Minus,Maximize2} from 'lucide-react';
-import {PAGE_SIZE,filterContent,commonChannels,activeLives,activeStations,groupPreferences,favoriteGroupSelection,selectionReducer,monthKey,favoriteColorPreferences,favoriteCardStyle,themePreference,favoritePresetPreferences,excludedGroupPreferences,withoutExcludedGroups,prioritizeGroups,EXTERNAL_TYPES,externalKind,uploadDays,uploadKind,uploadGroupSummary,OWN_TYPES,allGroupSelection,sortGroups,ARTIST_CATEGORIES,artistsInCategory,artistCategory,artistCategories,excludedArtistIds,loadSaved,updateGroupMembership,DISPLAY_ARTIST_TYPES,enabledArtistTypePreferences,toggleArtistType,visibleArtistIds,activityDirectory,isShortContent,modalHistory} from './lib';
+import {PAGE_SIZE,filterContent,commonChannels,activeLives,activeStations,groupPreferences,favoriteGroupSelection,selectionReducer,monthKey,favoriteColorPreferences,favoriteCardStyle,themePreference,favoritePresetPreferences,excludedGroupPreferences,withoutExcludedGroups,prioritizeGroups,EXTERNAL_TYPES,externalKind,uploadDays,uploadKind,uploadGroupSummary,OWN_TYPES,allGroupSelection,sortGroups,ARTIST_CATEGORIES,artistsInCategory,artistCategory,artistCategories,excludedArtistIds,loadSaved,updateGroupMembership,DISPLAY_ARTIST_TYPES,enabledArtistTypePreferences,toggleArtistType,visibleArtistIds,isShortContent,modalHistory} from './lib';
 import './style.css';
 import './activity-ui.css';
 import './video-viewer.css';
@@ -71,7 +71,6 @@ function App(){
  const [page,setPage]=useState(1),[indexRetry,setIndexRetry]=useState(0);
  const [archiveProgress,setArchiveProgress]=useState({key:'',pages:0,months:0});
  const [includeIndividual,setIncludeIndividual]=useState(()=>readScreenPreference('sonar.individual-activity.v1',['on','off'],'on')==='on');
- const [onlyChecked,setOnlyChecked]=useState(false);
  const [swipedGroup,setSwipedGroup]=useState(null),[sidebarUndo,setSidebarUndo]=useState(null);
  useEffect(()=>{try{localStorage.setItem('sonar.individual-activity.v1',includeIndividual?'on':'off');}catch{}},[includeIndividual]);
  const [myGroupQuery,setMyGroupQuery]=useState('');
@@ -163,7 +162,8 @@ function App(){
   return [...new Set(years.length?years:rows.map(video=>monthKey(video.publishedAt).slice(0,4)))].sort().reverse();
  },[catalog,indexKey,rows]);
  const availableAllGroups=useMemo(()=>{
-  const groups=activityDirectory(catalog?.groups||[],false,clock).filter(group=>!matchesDirectoryScope(group,'legacy',clock));
+  const groups=(catalog?.groups||[]).filter(group=>!matchesDirectoryScope(group,'legacy',clock)&&
+   (group.artistType==='solo'||!['disbanded','hiatus'].includes(group.groupStatus)));
   return visibleArtistIds(groups,groups.map(group=>group.id),enabledArtistTypes,excludedGroups);
  },[catalog,clock,enabledArtistTypes,excludedGroups]);
  const allGroupsAdded=excludeMode&&availableAllGroups.length>0&&selected.length===availableAllGroups.length&&availableAllGroups.every(id=>selected.includes(id));
@@ -227,7 +227,7 @@ function App(){
   const groups=visibleSaved.map(id=>groupsById.get(id));
   return groupSort==='default'?prioritizeGroups(groups,selected):sortGroups(groups,groupSort);
  },[visibleSaved,groupsById,groupSort,selected]);
- const matchingGroups=orderedSaved.filter(group=>(!onlyChecked||checkedIds.has(group.id))&&matchesArtistName(group,myGroupQuery));
+ const matchingGroups=orderedSaved.filter(group=>matchesArtistName(group,myGroupQuery));
  const removeSidebarGroup=id=>{
   const restore=editDirectoryGroups([id],false);
   setSwipedGroup(null);setSidebarUndo(()=>restore);
@@ -247,11 +247,11 @@ function App(){
  <section className="mygroups-section"><h2>MY GROUPS<button className="mygroups-edit-toggle" onClick={openGroupEditor}>편집</button></h2>
 
  <div className="favorite-presets" aria-label="선호그룹 프리셋"><button className="all-groups-toggle" title="제외 그룹을 뺀 전체 선택 · 다시 누르면 선택 해제" aria-label={`${allGroupsAdded?'전체 선택 해제':'제외 그룹 빼고 전체 보기'} (${availableAllGroups.length}개 그룹)`} aria-pressed={allGroupsAdded} disabled={!catalog} onClick={toggleAllGroups}>전체<small>{availableAllGroups.length}</small></button>{presetOptions.map(([key,name,Icon])=><button key={key} data-preset={key} aria-label={`${name} 프리셋 (${favoritePresets[key].length}개 그룹)`} aria-pressed={viewPresets.includes(key)} title={`${name} 프리셋 선택 (${favoritePresets[key].length}개 그룹)`} onClick={()=>{setExcludeMode(false);setActivePreset(key);const next=viewPresets.includes(key)?viewPresets.filter(k=>k!==key):[...viewPresets,key];setViewPresets(next);const ids=[...new Set(next.flatMap(k=>favoritePresets[k]))];setSaved(s=>[...new Set([...s,...ids])]);dispatchSelection({type:'change',ids});}}><Icon size={15} fill={key==='clover'?'none':'currentColor'}/><small>{favoritePresets[key].length}</small></button>)}</div>
- <div className="mygroups-count"><span>저장 {saved.length}개 · 선호 {protectedGroups.length}개 · 선택 {selected.length}개</span><button type="button" aria-pressed={onlyChecked} title="선택 해제한 그룹은 저장 목록에 유지됩니다." onClick={()=>{setSwipedGroup(null);setOnlyChecked(value=>!value);}}><SlidersHorizontal size={13}/>선택 그룹만</button></div>
+ <div className="mygroups-count"><span>저장 {saved.length}개 · 선호 {protectedGroups.length}개 · 선택 {selected.length}개</span></div>
  <div className="mygroups-search"><label className="search"><Search size={14}/><input aria-label="MY GROUPS 검색" placeholder="그룹 검색 · 한글 / 영문" value={myGroupQuery} onChange={e=>{setSwipedGroup(null);setMyGroupQuery(e.target.value);}}/></label>{myGroupQuery&&<button type="button" aria-label="그룹 검색 지우기" onClick={()=>setMyGroupQuery('')}><X size={14}/></button>}</div>
  {sidebarUndo&&<div className="mygroups-count mygroups-undo" role="status"><span>그룹을 제거했어요.</span><button type="button" onClick={()=>{sidebarUndo();setSidebarUndo(null);}}>실행 취소</button></div>}
  {myGroupQuery.trim()?<p className="mygroups-search-count" aria-live="polite">{matchingGroups.length?matchingGroups.length+'개 검색 결과':'검색 결과가 없어요.'}</p>:
- catalog&&!matchingGroups.length&&<p className="mygroups-search-count">{onlyChecked&&visibleSaved.length?'선택한 그룹이 없어요.':saved.length?'현재 유형에 표시할 그룹이 없어요.':'그룹을 추가하면 여기에 표시됩니다.'}</p>}
+ catalog&&!matchingGroups.length&&<p className="mygroups-search-count">{saved.length?'현재 유형에 표시할 그룹이 없어요.':'그룹을 추가하면 여기에 표시됩니다.'}</p>}
  <div className={matchingGroups.length>10?'mygroups-items mygroups-items-scroll':'mygroups-items'}>
   {matchingGroups.map(group=><SidebarGroupRow key={group.id} group={group} clock={clock} checked={checkedIds.has(group.id)}
    badges={presetOptions.filter(([key])=>favoritePresets[key].includes(group.id))} color={favoriteColors[group.id]}
