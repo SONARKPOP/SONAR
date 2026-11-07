@@ -127,7 +127,11 @@ function App(){
   dispatchSelection({type:'change',ids:availableAllGroups});
  },[catalog,excludeMode,availableAllGroups]);
 
- const toggle=id=>{setViewPresets([]);setExcludeMode(false);dispatchSelection({type:"toggle",id});};
+ const toggle=id=>{
+  setViewPresets([]);setExcludeMode(false);
+  if(!rawSelected.includes(id))setSaved(current=>current.includes(id)?current:[...current,id]);
+  dispatchSelection({type:"toggle",id});
+ };
  const openGroups=()=>{setExclusionList('blocked');setArtistTab('all');setEditingGroups(false);setViewSettings(false);setGroupQuery('');setAdd(true);};
  const openGroupEditor=()=>{openGroups();setEditingGroups(true);};
  const editMembership=(ids,enabled)=>{const next=updateGroupMembership(saved,rawSelected,ids,enabled);setSaved(next.saved);setViewPresets([]);setExcludeMode(false);dispatchSelection({type:'change',ids:next.selected});};
@@ -162,9 +166,9 @@ function App(){
  };
  const groupsById=useMemo(()=>new Map((catalog?.groups||[]).map(group=>[group.id,group])),[catalog]);
  const groupName=id=>groupsById.get(id)?.name||id;
- const visibleSaved=visibleArtistIds(catalog?.groups||[],saved,enabledArtistTypes,excludedGroups);
- const orderedSaved=groupSort==='default'?visibleSaved:sortGroups((catalog?.groups||[]).filter(g=>visibleSaved.includes(g.id)),groupSort).map(g=>g.id);
- const matchingSaved=orderedSaved.filter(id=>(!onlyChecked||selected.includes(id))&&matchesArtistName(groupsById.get(id),myGroupQuery));
+ const visibleFavorites=visibleArtistIds(catalog?.groups||[],protectedGroups,enabledArtistTypes,excludedGroups);
+ const orderedFavorites=groupSort==='default'?visibleFavorites:sortGroups(visibleFavorites.map(id=>groupsById.get(id)),groupSort).map(g=>g.id);
+ const matchingFavorites=orderedFavorites.filter(id=>(!onlyChecked||selected.includes(id))&&matchesArtistName(groupsById.get(id),myGroupQuery));
  const artistDirectory=artistsInCategory(catalog?.groups||[],artistTab);
  const artistDirectoryProps={
   catalog,clock,saved,favorites:favoritePresets,colors:favoriteColors,excluded:individualExcluded,
@@ -180,10 +184,11 @@ function App(){
  <section className="mygroups-section"><h2>MY GROUPS<button className="mygroups-edit-toggle" onClick={openGroupEditor}>편집</button></h2>
 
  <div className="favorite-presets" aria-label="선호그룹 프리셋"><button className="all-groups-toggle" title="제외 그룹을 뺀 전체 선택 · 다시 누르면 선택 해제" aria-label={allGroupsAdded?'전체 선택 해제':'제외 그룹 빼고 전체 보기'} aria-pressed={allGroupsAdded} disabled={!catalog} onClick={toggleAllGroups}>전체</button>{presetOptions.map(([key,name,Icon])=><button key={key} data-preset={key} aria-label={`${name} 프리셋 (${favoritePresets[key].length}개 그룹)`} aria-pressed={viewPresets.includes(key)} title={`${name} 프리셋 선택 (${favoritePresets[key].length}개 그룹)`} onClick={()=>{setExcludeMode(false);setActivePreset(key);const next=viewPresets.includes(key)?viewPresets.filter(k=>k!==key):[...viewPresets,key];setViewPresets(next);const ids=[...new Set(next.flatMap(k=>favoritePresets[k]))];setSaved(s=>[...new Set([...s,...ids])]);dispatchSelection({type:'change',ids});}}><Icon size={18} fill={key==='clover'?'none':'currentColor'}/></button>)}</div>
- <div className="mygroups-count"><span>저장 {saved.length}개 · 체크 {selected.length}개</span><button type="button" aria-pressed={onlyChecked} onClick={()=>setOnlyChecked(value=>!value)}>선택됨만</button></div>
- <div className="mygroups-search"><label className="search"><Search size={14}/><input aria-label="MY GROUPS 검색" placeholder="그룹 검색 · 한글 / 영문" value={myGroupQuery} onChange={e=>setMyGroupQuery(e.target.value)}/></label>{myGroupQuery&&<button type="button" aria-label="그룹 검색 지우기" onClick={()=>setMyGroupQuery('')}><X size={14}/></button>}</div>
- {myGroupQuery.trim()&&<p className="mygroups-search-count" aria-live="polite">{matchingSaved.length?`${matchingSaved.length}개 검색 결과`:'저장한 그룹 중 검색 결과가 없어요.'}</p>}
- <div className={matchingSaved.length>10?'mygroups-items mygroups-items-scroll':'mygroups-items'}>{matchingSaved.map(id=>{const group=groupsById.get(id),korean=koreanArtistName(group),favorite=protectedGroups.includes(id);return <div className="mygroup-item" key={id}><button className="mygroup-select" data-favorite={favorite||undefined} style={favorite?{'--favorite-accent':favoriteColors[id]||'#729ca8'}:undefined} aria-pressed={selected.includes(id)} onClick={()=>toggle(id)}><span className="mygroup-check" aria-hidden="true">{selected.includes(id)&&<Check size={14}/>}</span><span className="mygroup-title" data-no-translate>{group.name}<ActivityIcon group={group} clock={clock}/>{!group.youtubeActivity&&['inactive','archived'].includes(groupActivity(group,clock))&&<small className="sidebar-activity">{activityLabel(group,clock)}</small>}{korean&&<small className="artist-korean-name" lang="ko">{korean}</small>}</span><span className="mygroup-badges" aria-hidden="true">{presetOptions.filter(([key])=>favoritePresets[key].includes(id)).map(([key,name,Icon])=><Icon key={key} data-preset={key} size={11} fill={key==='clover'?'none':'currentColor'}/>)}</span>{group.contentCount===0&&<span className="mygroup-pending-dot" title="수집 대기"/>}</button>
+ <div className="mygroups-count"><span>선호 {visibleFavorites.length}개 · 체크 {visibleFavorites.filter(id=>selected.includes(id)).length}개</span><button type="button" aria-pressed={onlyChecked} onClick={()=>setOnlyChecked(value=>!value)}>선택됨만</button></div>
+ <div className="mygroups-search"><label className="search"><Search size={14}/><input aria-label="MY GROUPS 검색" placeholder="선호그룹 검색 · 한글 / 영문" value={myGroupQuery} onChange={e=>setMyGroupQuery(e.target.value)}/></label>{myGroupQuery&&<button type="button" aria-label="그룹 검색 지우기" onClick={()=>setMyGroupQuery('')}><X size={14}/></button>}</div>
+ {myGroupQuery.trim()?<p className="mygroups-search-count" aria-live="polite">{matchingFavorites.length?`${matchingFavorites.length}개 검색 결과`:'선호그룹 중 검색 결과가 없어요.'}</p>:
+ catalog&&!matchingFavorites.length&&<p className="mygroups-search-count">{onlyChecked&&visibleFavorites.length?'체크한 선호그룹이 없어요.':protectedGroups.length?'현재 유형에 표시할 선호그룹이 없어요.':'편집에서 하트·별·새싹을 지정하면 여기에 표시됩니다.'}</p>}
+ <div className={matchingFavorites.length>10?'mygroups-items mygroups-items-scroll':'mygroups-items'}>{matchingFavorites.map(id=>{const group=groupsById.get(id),korean=koreanArtistName(group);return <div className="mygroup-item" key={id}><button className="mygroup-select" data-favorite="true" style={{'--favorite-accent':favoriteColors[id]||'#729ca8'}} aria-pressed={selected.includes(id)} onClick={()=>toggle(id)}><span className="mygroup-check" aria-hidden="true">{selected.includes(id)&&<Check size={14}/>}</span><span className="mygroup-title" data-no-translate>{group.name}<ActivityIcon group={group} clock={clock}/>{!group.youtubeActivity&&['inactive','archived'].includes(groupActivity(group,clock))&&<small className="sidebar-activity">{activityLabel(group,clock)}</small>}{korean&&<small className="artist-korean-name" lang="ko">{korean}</small>}</span><span className="mygroup-badges" aria-hidden="true">{presetOptions.filter(([key])=>favoritePresets[key].includes(id)).map(([key,name,Icon])=><Icon key={key} data-preset={key} size={11} fill={key==='clover'?'none':'currentColor'}/>)}</span>{group.contentCount===0&&<span className="mygroup-pending-dot" title="수집 대기"/>}</button>
 
  </div>;})}</div><button className="add-group" onClick={openGroups}><Plus size={15}/> 그룹 추가하기</button><button className="view-settings-open" onClick={openViewSettings}><Settings2 size={14}/> 보기 설정</button></section>
 
