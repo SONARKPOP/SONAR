@@ -627,3 +627,22 @@ footer{border-color:#e0e8ef;margin-top:35px;color:#7893a8}
 .fan-page-note .live-status-panel{top:calc(100% + 8px)}
 .fan-page-note .top-live-status+small{margin-left:8px}
 @media(max-width:760px){.fan-page-note>p{flex:1;min-width:110px}.fan-page-note .live-status-trigger{min-height:28px}.fan-page-note .live-status-panel{width:min(340px,calc(100vw - 24px));right:0}}
+
+.mygroups-search{position:relative;margin:0 0 7px}
+.mygroups-search .search{min-height:35px;padding:6px 32px 6px 9px;background:#ffffff09;border-color:#ffffff29;color:#b8cfdd}
+.mygroups-search .search input{color:#e9f4fa;font-size:11px;min-width:0}
+.mygroups-search .search input::placeholder{color:#a0b8c8}
+.mygroups-search>button{position:absolute;right:3px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:28px;height:28px;background:none;border:0;color:#b8cfdd;border-radius:5px;cursor:pointer}
+.mygroups-search-count{color:#a0b8c8;font-size:10px;margin:3px 0 7px}
+.mygroup-select[data-favorite]{background:color-mix(in srgb,var(--favorite-accent) 14%,#1a2b3b);box-shadow:inset 3px 0 0 color-mix(in srgb,var(--favorite-accent) 75%,#527287);border-color:color-mix(in srgb,var(--favorite-accent) 35%,#263e50)}
+.mygroup-select[data-favorite][aria-pressed="true"]{background:color-mix(in srgb,var(--favorite-accent) 20%,#274154);border-color:color-mix(in srgb,var(--favorite-accent) 60%,#354e63)}
+.artist-korean-name,.simple-group-name .artist-korean-name{display:block;margin-top:2px;font-size:10px;font-weight:400;line-height:1.35;color:#55788e;overflow:hidden;text-overflow:ellipsis}
+.mygroup-title .artist-korean-name,[data-theme="dark"] .artist-korean-name{color:#a5c0d0}
+.directory-status-dot{width:7px;height:7px;border-radius:50%;background:var(--activity-color);flex-shrink:0}
+.directory-bulk{display:flex;gap:6px;flex-wrap:wrap}
+.directory-bulk button{min-height:34px;padding:6px 10px;border:1px solid #aecadb;border-radius:6px;color:#315d77;background:#e3f0f6;font-size:11px;cursor:pointer}
+.directory-bulk button:not(:disabled):hover{background:#d1e7f2}
+.directory-bulk button:disabled{opacity:.45;cursor:default}
+[data-theme="dark"] .directory-bulk button{background:#233b4e;border-color:#49697e;color:#d1e6f2}
+[data-theme="dark"] .directory-bulk button:not(:disabled):hover{background:#30536b}
+@media(max-width:760px){.mygroups-search .search,.directory-bulk button{min-height:40px}.mygroups-search>button{height:36px;width:30px}}
