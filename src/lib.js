@@ -32,7 +32,8 @@ export function activeStations(feed,channels,now=Date.now()){
 function activeStreams(feed,channels,now,station){
  const updated=Date.parse(feed.updatedAt);
  if(!Number.isFinite(updated)||now-updated>30*60*1000||updated>now+60000)return [];
- return dedupe([...(feed.items||[]),...(feed.stations||[])]).filter(v=>!v.demo&&isContinuousLive(v)===station&&v.liveStatus==='live'&&v.actualStartTime&&!v.actualEndTime&&channels.some(c=>c.id===v.channelId&&c.official&&v.groupIds.some(g=>c.groupIds.includes(g))));
+ const streams=[...(feed.items||[]),...(feed.stations||[])];
+ return streams.filter((v,index)=>!v.id||streams.findIndex(other=>other.id===v.id)===index).filter(v=>!v.demo&&isContinuousLive(v)===station&&v.liveStatus==='live'&&v.actualStartTime&&!v.actualEndTime&&channels.some(c=>c.id===v.channelId&&c.official&&v.groupIds.some(g=>c.groupIds.includes(g))));
 }
 export function loadSaved(storage,key,fallback){try{const v=JSON.parse(storage.getItem(key));return Array.isArray(v)&&v.every(x=>typeof x==='string')?v:fallback;}catch{return fallback;}}
 export function groupPreferences(storage,catalog){
@@ -187,3 +188,4 @@ export function modalHistory(history,target,onBack,token){
  target.addEventListener('popstate',pop);
  return ()=>{target.removeEventListener('popstate',pop);if(history.state?.sonarVideoModal===token)history.back();};
 }
+
