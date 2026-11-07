@@ -131,6 +131,23 @@ class CollectorTests(unittest.TestCase):
         self.raw['snippet']['title']='이브 (Yves) 공식 인터뷰'
         self.assertIn('yves',normalize(self.raw,external,self.config)['groupIds'])
 
+    def test_song_title_and_original_artist_credit_are_not_appearances(self):
+        external = next(c for c in self.config['channels'] if c['id'] == 'its-live')
+        for video_id, title, old_groups, old_members in (
+            ('CbD3N5ts9w4', '릴보이 & Woodie Gochild & pH-1 “DARA” Band LIVE', ['2ne1','sandara-park'], ['2ne1-sandara-park']),
+            ('3a8HXPUs3p8', 'XCROWN - MEOW (원곡 : MEOVV) | KBS', ['meovv'], []),
+        ):
+            self.raw['id'] = video_id
+            self.raw['snippet']['title'] = title
+            record = normalize(self.raw, external, self.config)
+            self.assertFalse(record['groupIds'])
+            stale = {**record, 'groupIds':old_groups, 'memberIds':old_members}
+            corrected = prune_stale_attribution(stale, external, self.config, {'groupIds':[], 'memberIds':[]})
+            self.assertFalse(corrected['groupIds'])
+            self.assertFalse(corrected['memberIds'])
+        self.raw['snippet']['title'] = 'MEOVV performs MEOW (원곡 : MEOVV)'
+        self.assertIn('meovv', normalize(self.raw, external, self.config)['groupIds'])
+
     def test_video_batching(self):
         api=YouTube('test-not-a-secret')
         with patch.object(api,'get',return_value={'items':[]}) as get:

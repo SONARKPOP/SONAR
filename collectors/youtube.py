@@ -139,9 +139,15 @@ def has_collaboration_title(title, owner_aliases, guest_aliases):
     return False
 
 
+ORIGINAL_ARTIST_CREDIT = re.compile(
+    r'[\[(]\s*(?:원곡(?:자)?\s*[:：]|original(?:ly)?(?: performed)? by\b)\s*[^\])]*[\])]',
+    re.I,
+)
+
+
 def normalize(raw, channel, config, override=None):
     snippet = raw['snippet']
-    text = snippet['title']
+    text = ORIGINAL_ARTIST_CREDIT.sub(' ', snippet['title'])
     groups = set(channel['groupIds'] if channel['official'] else [])
     owner_groups = set(groups)
     credit_lines = [line for line in snippet.get('description', '').splitlines()
@@ -181,7 +187,7 @@ def normalize(raw, channel, config, override=None):
                     appearance_evidence.append({'memberId':member['id'], 'source':'publisher-program-title',
                         'role':'participant', 'url':cast['evidenceUrl']})
     # A name unique in our catalog may still belong to an unrelated artist.
-    members = infer_members(snippet, groups, config) if groups else []
+    members = infer_members({**snippet, 'title':text}, groups, config) if groups else []
     members = sorted(set(members + scoped_members))
     groups.update(m['groupId'] for m in config['members'] if m['id'] in members)
     for artist in config['groups']:
@@ -235,12 +241,17 @@ def ambiguous_artist_links(config):
 
 def prune_stale_attribution(record, channel, config, override=None, ambiguous_links=None):
     """Remove unsupported automatic group tags from retained videos."""
+    if override and 'groupIds' in override:
+        keep = set(override['groupIds'])
+        member_groups = {m['id']:m['groupId'] for m in config['members']}
+        return {**record, 'groupIds':override['groupIds'],
+                'memberIds':[mid for mid in override.get('memberIds', record['memberIds'])
+                             if member_groups.get(mid) in keep]}
     groups = set(record['groupIds'])
     owners = set(channel['groupIds']) if channel['official'] else set()
     links = ambiguous_links if ambiguous_links is not None else ambiguous_artist_links(config)
     risky = set().union(*(links[gid] for gid in groups & links.keys() - owners))
     if (record.get('demo') or record.get('platform') != 'youtube' or not record.get('title') or
-            (override and 'groupIds' in override) or
             not ((owners and groups - owners) or risky)):
         return record
     raw = {'id':record['platformId'], 'snippet':{
