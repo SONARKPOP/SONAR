@@ -72,6 +72,12 @@ def publish(records, config, events=(), output=DATA, demo=False):
             'lastOfficialUploadAt':max(dates, default=None), 'officialSourceReviewReason':source_review, 'officialSourceConnected':any(c['id'] in official_ids and c.get('collectionEnabled',True) and not c.get('unavailableReason') for c in config['channels'])})
     public_config['defaultGroupIds'] = config.get('defaultGroupIds', [])
     public_config['collectionGroupIds'] = config.get('collectionGroupIds', [])
+    from .activity import eligible_group, group_snapshot
+    activity_path=output/'channel-activity.json'
+    activity_cache=json.loads(activity_path.read_text(encoding='utf-8')).get('channels',{}) if activity_path.exists() else {}
+    for group in public_config['groups']:
+        if eligible_group(group):
+            group['youtubeActivity']=group_snapshot(group,config['channels'],activity_cache,time.time())
     write(output / 'catalog.json', {'schemaVersion': 1, 'updatedAt': updated, 'demo': demo, **public_config})
     official = {c['id'] for c in config['channels'] if c['official']}
     live = [v for v in ordered if v.get('liveStatus') == 'live' and not is_continuous_live(v) and v['channelId'] in official and v.get('actualStartTime') and not v.get('actualEndTime') and not v.get('demo')]

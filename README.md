@@ -172,3 +172,9 @@ config 또는 collectors 변경을 main에 게시하면 즉시 전체 수집을 
 The catalog now covers 501 artist profiles: boy-group debuts from 2020 onward, girl-group debuts from 2007 onward, plus requested female solo/pop artists. Idol solo profiles appear in both girl-idol and duo/solo tabs using one stable profile ID. Explicit solo uploads may link to their parent groups without duplicating canonical videos or re-registering shared YouTube channels. Existing default 9 selections remain unchanged.
 
 Directory registration does not imply an official channel has been verified or a complete discography collected. Dedicated publisher references are enabled selectively; pending sources remain disconnected and fan/reupload/gossip sources remain excluded. See docs/ARTIST-DIRECTORY.md and docs/ARTIST-EXPANSION-2026-11.json for scope and evidence. Activity dates for a shared group source count only uploads explicitly linked to the solo artist.
+# Girl-group YouTube activity
+
+Five English icon states are calculated from independently collected official uploads: SURGE, SAILING, COASTING, ANCHORED and LOST SIGNAL. Unknown or incomplete data has no icon. Actual group disbandment is a separate, nullable registry field. See [activity rules, cache, database and review workflow](docs/YOUTUBE-ACTIVITY.md).
+
+Run `python -m collectors.channel_activity` with `YOUTUBE_API_KEY` configured, then `python -m collectors.groups sync`. Run `python -m collectors.channel_database` for the full source/evidence census. GitHub Actions uses the existing secret and persistent API budget; no key belongs in a source file. `python -m collectors.channel_candidates` adds review-only candidates, never automatically verified official channels.
+

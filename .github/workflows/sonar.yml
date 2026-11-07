@@ -49,6 +49,14 @@ jobs:
             if git diff --quiet HEAD^ HEAD -- config collectors; then collect=false; fi
           fi
           echo "collect=$collect" >> "$GITHUB_OUTPUT"
+      - name: Refresh cached girl-group YouTube activity
+        if: steps.scope.outputs.collect == 'true'
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python -m collectors.channel_activity
+      - name: Discover review-only channel and new-group candidates
+        if: steps.scope.outputs.collect == 'true'
+        run: python -m collectors.channel_candidates
       - name: Collect or refresh with persistent limits
         id: collect_data
         if: steps.scope.outputs.collect == 'true'
@@ -123,7 +131,9 @@ jobs:
           python-version: '3.12'
       - run: pnpm install --frozen-lockfile
       - run: python -m collectors.groups validate
+      - run: python -m collectors.channel_activity --recalculate
       - run: python -m collectors.groups sync
+      - run: python -m collectors.channel_database
       - run: pnpm test
       - run: python -m unittest discover -s tests -p 'test_*.py' -q
       - run: pnpm build

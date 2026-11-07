@@ -615,4 +615,9 @@ footer{border-color:#e0e8ef;margin-top:35px;color:#7893a8}
 [data-theme="dark"] .directory-source-links a[data-platform="berriz"]{color:#c8a0e0}
 @media(max-width:1400px){.directory-artist{grid-template-areas:"name activity policies" "career last source";grid-template-columns:minmax(170px,1fr) 120px 170px;min-height:75px;row-gap:6px}}
 @media(max-width:650px){.directory-artist{grid-template-areas:"name name" "activity last" "career source" "policies policies";grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.directory-source-links a{width:34px;height:36px;flex-basis:34px}}
-
+.youtube-activity-icon{display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;width:15px;height:15px;margin-left:5px;flex:0 0 15px;position:relative;cursor:help;outline-offset:3px}
+.youtube-activity-icon svg{width:15px;height:15px;min-width:15px}
+.youtube-activity-tooltip{display:none;position:fixed;z-index:10000;min-width:172px;padding:9px 11px;border:1px solid #547389;border-radius:8px;background:#102333;color:#e5edf5;box-shadow:0 5px 20px #0004;font:11px/1.6 system-ui;text-align:left;white-space:nowrap;pointer-events:none}
+.youtube-activity-tooltip strong,.youtube-activity-tooltip span{display:block;color:inherit}
+.youtube-activity-icon:hover .youtube-activity-tooltip,.youtube-activity-icon:focus-visible .youtube-activity-tooltip,.youtube-activity-tooltip[data-open="true"]{display:block}
+.directory-artist-title h3{overflow:visible}

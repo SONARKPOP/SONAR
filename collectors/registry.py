@@ -56,6 +56,12 @@ def validate(bundles, shared, taxonomy):
             raise ValueError(f'Duplicate group: {gid}')
         group_ids.add(gid)
         text(bundle.get('name'), f'{gid}.name')
+        if bundle.get('groupStatus','unknown') not in ('active','hiatus','disbanded','unknown'):
+            raise ValueError(f'{gid}: invalid real-world groupStatus.')
+        if bundle.get('debutDate') is not None:
+            from datetime import date
+            try:date.fromisoformat(bundle['debutDate'])
+            except (TypeError,ValueError):raise ValueError(f'{gid}: invalid debutDate.') from None
         strings(bundle.get('aliases'), f'{gid}.aliases')
         strings(bundle.get('platforms'), f'{gid}.platforms')
         validate_official_links(bundle.get('officialLinks',[]))
@@ -150,6 +156,8 @@ def validate(bundles, shared, taxonomy):
             except re.error:
                 raise ValueError('Invalid program title pattern.') from None
         cid = channel.get('id')
+        if channel.get('verificationStatus','UNVERIFIED') not in ('VERIFIED','SUPPORTED','UNVERIFIED','NOT FOUND'):
+            raise ValueError('Invalid channel verificationStatus.')
         slug(cid, 'Channel ID')
         if cid in channel_ids:
             raise ValueError(f'Duplicate channel ID: {cid}')
@@ -234,7 +242,7 @@ def load_config(config_dir=CONFIG):
     channels.extend(shared)
     return {
         'schemaVersion': 1,
-        'groups': [{**{k:b[k] for k in public_fields}, 'officialLinks':b.get('officialLinks',[]), 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False), 'displayCategories':b.get('displayCategories',[]), 'directoryVisibility':b.get('directoryVisibility','visible'), 'previousGroupIds':b.get('previousGroupIds',[]), 'careerEvidence':b.get('careerEvidence',[]), 'relatedGroupIds':b.get('relatedGroupIds',[]), 'relatedMemberIds':b.get('relatedMemberIds',[]), 'ambiguousAliases':b.get('ambiguousAliases',[])} for b in supported],
+        'groups': [{**{k:b[k] for k in public_fields}, 'nameKo':b.get('nameKo'), 'nameEn':b.get('nameEn'), 'debutDate':b.get('debutDate'), 'groupStatus':b.get('groupStatus','unknown'), 'officialLinks':b.get('officialLinks',[]), 'debutYear':b.get('debutYear'), 'artistType':b.get('artistType','group'), 'ambiguousName':b.get('ambiguousName',False), 'displayCategories':b.get('displayCategories',[]), 'directoryVisibility':b.get('directoryVisibility','visible'), 'previousGroupIds':b.get('previousGroupIds',[]), 'careerEvidence':b.get('careerEvidence',[]), 'relatedGroupIds':b.get('relatedGroupIds',[]), 'relatedMemberIds':b.get('relatedMemberIds',[]), 'ambiguousAliases':b.get('ambiguousAliases',[])} for b in supported],
         'members': [m for b in supported for m in b['members']],
         'channels': channels,
         'taxonomy': taxonomy,
@@ -242,4 +250,3 @@ def load_config(config_dir=CONFIG):
         'sampleGroupIds': [b['id'] for b in supported if b['sampleEnabled']],
         'collectionGroupIds': [b['id'] for b in supported if b['collectionEnabled']],
     }
-

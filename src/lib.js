@@ -1,3 +1,4 @@
+import {activityView} from './youtube-activity.js';
 import {isMusicBroadcast} from './broadcast.js';
 import {isContinuousLive} from './live-policy.js';
 export const PAGE_SIZE=24;
@@ -146,12 +147,14 @@ export function monthsAfter(value,months){
  target.setUTCDate(Math.min(date.getUTCDate(),last));return target.getTime();
 }
 export function groupActivity(group,now=Date.now()){
+ if(group?.youtubeActivity){const view=activityView(group,now);return !view?'unknown':view.state==='LOST SIGNAL'?'archived':view.state==='ANCHORED'?'inactive':'active';}
  const last=Date.parse(group?.lastOfficialUploadAt);if(!Number.isFinite(last)||last>now)return 'unknown';
  if(now>=monthsAfter(last,12))return 'archived';
  if(now>=monthsAfter(last,6))return 'inactive';
  return 'active';
 }
 export function activityLabel(group,now=Date.now()){
+ if(group?.youtubeActivity)return activityView(group,now)?.state||'UNKNOWN';
  const state=groupActivity(group,now);
  if(state==='unknown'&&!group?.officialSourceConnected&&group?.officialSourceReviewReason)return group.officialSourceReviewReason==='channel-name-needs-review'?'채널명 재확인 필요':'공식 채널 접근 불가';
  return {archived:'활동정지',inactive:'비활성',active:'활동 중',unknown:group?.officialSourceConnected?'업로드 확인 대기':'공식 채널 확인 대기'}[state];

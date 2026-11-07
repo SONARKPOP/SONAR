@@ -1,0 +1,73 @@
+import unittest
+from collectors.activity import calculate_activity, effective_upload, group_snapshot, iso, DAY
+from collectors.channel_activity import collect_channel, refresh
+from unittest.mock import Mock
+from tempfile import TemporaryDirectory
+from pathlib import Path
+
+NOW=1804507200
+def rows(count,age):return [{'id':str(i),'at':iso(NOW-age)} for i in range(count)]
+def calc(values,**kwargs):return calculate_activity(values,NOW,checked_at=iso(NOW),**kwargs)
+
+class ActivityTests(unittest.TestCase):
+    def test_surge_count_boundaries(self):
+        for age,threshold in [(DAY,3),(3*DAY,10),(5*DAY,15)]:
+            # One fresh upload satisfies the required 48-hour gate.
+            with self.subTest(age=age):
+                before=rows(threshold-2,age)+[{'id':'fresh','at':iso(NOW)}]
+                self.assertNotEqual(calc(before)['activity_status'],'SURGE')
+                self.assertEqual(calc(before+[{'id':'extra','at':iso(NOW-age)}])['activity_status'],'SURGE')
+    def test_rolling_window_and_48h_gate(self):
+        self.assertEqual(calc(rows(3,DAY))['activity_status'],'SURGE')
+        self.assertNotEqual(calc(rows(3,DAY+1))['activity_status'],'SURGE')
+        self.assertEqual(calc(rows(10,2*DAY))['activity_status'],'SURGE')
+        self.assertEqual(calc(rows(10,2*DAY+1))['activity_status'],'SAILING')
+        self.assertEqual(calc(rows(10,3*DAY+1))['uploads_3d'],0)
+        self.assertEqual(calc(rows(15,5*DAY+1))['uploads_5d'],0)
+    def test_age_boundaries(self):
+        for age,state in [(3*DAY,'SAILING'),(3*DAY+1,'COASTING'),(90*DAY-1,'COASTING'),(90*DAY,'ANCHORED'),(365*DAY-1,'ANCHORED'),(365*DAY,'LOST SIGNAL')]:
+            self.assertEqual(calc(rows(1,age))['activity_status'],state)
+    def test_sailing_windows(self):
+        self.assertEqual(calc(rows(2,7*DAY))['activity_status'],'SAILING')
+        self.assertEqual(calc(rows(1,7*DAY))['activity_status'],'COASTING')
+        self.assertEqual(calc(rows(4,14*DAY))['activity_status'],'SAILING')
+        self.assertEqual(calc(rows(4,14*DAY+1))['activity_status'],'COASTING')
+    def test_unknown_and_deduplication(self):
+        for kwargs in [{'complete':False},{'official':False},{'error':'api-failure'}]:self.assertEqual(calc(rows(4,0),**kwargs)['activity_status'],'UNKNOWN')
+        self.assertEqual(calc([])['activity_status'],'UNKNOWN')
+        self.assertEqual(calc(rows(1,0)*4)['uploads_24h'],1)
+        self.assertEqual(calculate_activity(rows(4,0),NOW,checked_at=iso(NOW-25*3600))['activity_status'],'UNKNOWN')
+        self.assertEqual(calc([{'id':'future','at':iso(NOW+1)}])['activity_status'],'UNKNOWN')
+    def test_upload_types_and_live_reservations(self):
+        raw={'id':'v','status':{'privacyStatus':'public'},'snippet':{'publishedAt':iso(NOW-DAY)}}
+        self.assertIsNotNone(effective_upload(raw,NOW))
+        self.assertIsNone(effective_upload({**raw,'snippet':{**raw['snippet'],'liveBroadcastContent':'upcoming'}},NOW))
+        self.assertIsNone(effective_upload({**raw,'liveStreamingDetails':{'scheduledStartTime':iso(NOW+DAY)}},NOW))
+        live={**raw,'liveStreamingDetails':{'actualStartTime':iso(NOW-60)}}
+        self.assertEqual(effective_upload(live,NOW)['at'],iso(NOW-60))
+        self.assertIsNone(effective_upload({**raw,'status':{'privacyStatus':'private'}},NOW))
+    def test_shared_channel_and_secondary_failure(self):
+        g={'id':'g'};source={'id':'official','official':True,'platform':'youtube','groupIds':['g'],'verification':{'basis':'checked'}}
+        cache={'official':{'complete':True,'checkedAt':iso(NOW),'uploads':rows(4,0)}}
+        self.assertEqual(group_snapshot(g,[source],cache,NOW)['activity_status'],'SURGE')
+        self.assertEqual(group_snapshot(g,[{**source,'groupIds':['g','other']}],cache,NOW)['activity_status'],'UNKNOWN')
+        self.assertEqual(group_snapshot(g,[source,{**source,'id':'missing'}],cache,NOW)['activity_status'],'UNKNOWN')
+    def test_pagination_checks_more_than_ten_items(self):
+        api=Mock();source={'id':'g-official','platformId':'UC'+'1'*22,'expectedChannelNames':['Group']}
+        api.get.side_effect=[{'items':[{'id':source['platformId'],'snippet':{'title':'Group'},'contentDetails':{'relatedPlaylists':{'uploads':'UU1'}}}]},
+            {'items':[{'contentDetails':{'videoId':'a','videoPublishedAt':iso(NOW)}}],'nextPageToken':'next'},
+            {'items':[{'contentDetails':{'videoId':'b','videoPublishedAt':iso(NOW-20*DAY)}}]}]
+        api.videos.side_effect=[[{'id':'a','status':{'privacyStatus':'public'},'snippet':{'channelId':source['platformId'],'publishedAt':iso(NOW)}}],
+                                [{'id':'b','status':{'privacyStatus':'public'},'snippet':{'channelId':source['platformId'],'publishedAt':iso(NOW-20*DAY)}}]]
+        result=collect_channel(api,source,NOW)
+        self.assertTrue(result['complete']);self.assertEqual(len(result['uploads']),2)
+        self.assertEqual(api.get.call_args.kwargs['pageToken'],'next')
+    def test_api_failure_is_unknown_and_cache_reused(self):
+        config={'groups':[{'id':'g','gender':'girl','artistType':'group','debutYear':2024}], 'channels':[{'id':'s','platform':'youtube','platformId':'UC'+'1'*22,'official':True,'groupIds':['g'],'verification':{'basis':'checked'}}]}
+        api=Mock();api.budget=None;api.get.side_effect=RuntimeError('API error')
+        with TemporaryDirectory() as tmp:
+            self.assertEqual(refresh(api,config,Path(tmp),NOW)['g']['activity_status'],'UNKNOWN')
+            refresh(api,config,Path(tmp),NOW+60)
+            self.assertEqual(api.get.call_count,1)
+
+if __name__=='__main__':unittest.main()
