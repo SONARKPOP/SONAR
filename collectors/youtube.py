@@ -228,13 +228,13 @@ def prune_stale_attribution(record, channel, config, override=None):
     """Remove unsupported automatic group tags from retained videos."""
     groups = set(record['groupIds'])
     owners = set(channel['groupIds']) if channel['official'] else set()
-    if (record.get('demo') or record.get('platform') != 'youtube' or
+    if (record.get('demo') or record.get('platform') != 'youtube' or not record.get('title') or
             (override and 'groupIds' in override) or
             not ((owners and groups - owners) or 'xum' in groups - owners)):
         return record
     raw = {'id':record['platformId'], 'snippet':{
         'title':record['title'], 'description':record.get('description', ''),
-        'publishedAt':record['publishedAt'], 'channelTitle':record['channelName']}}
+        'publishedAt':record['publishedAt'], 'channelTitle':record.get('channelName', channel['name'])}}
     inferred = normalize(raw, channel, config)
     keep = groups.intersection(inferred['groupIds'])
     if not owners:
