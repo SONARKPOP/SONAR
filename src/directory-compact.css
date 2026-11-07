@@ -118,10 +118,6 @@
  box-shadow:inset 0 0 0 1px var(--toggle-border)
 }
 .directory-selection-toggles button:disabled{opacity:.45;cursor:default}
-.directory-selection-toggles button[aria-pressed="mixed"]{
- border:1px dashed var(--toggle-border);
- background:color-mix(in srgb,var(--toggle-accent) 16%,var(--dir-surface))
-}
 @media(max-width:760px){
  .directory-initial-row button,.directory-selection-toggles button{min-height:40px}
 }

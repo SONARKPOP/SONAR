@@ -1,7 +1,7 @@
 import React,{useEffect,useId,useMemo,useRef,useState} from 'react';
 import {ArrowUp,ArrowDownUp,ChevronLeft,Heart,ListChecks,Search,SlidersHorizontal,Sprout,Star,X} from 'lucide-react';
 import {debutYearRanges,recommendedArtists} from './lib';
-import {DIRECTORY_ACTIVITY_STATES,directoryResults,isArtistSearch,matchesDirectoryScope} from './directory';
+import {DIRECTORY_ACTIVITY_STATES,directoryResults,isArtistSearch,matchesDirectoryActivity,matchesDirectoryScope} from './directory';
 import {ACTIVITY_META,activityView} from './youtube-activity';
 import {officialLinksFor} from './official-links';
 import {ActivityGlyph} from './ActivityIcon';
@@ -55,25 +55,32 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   return new Set(groups.filter(group=>officialLinksFor(group,byGroup.get(group.id)).some(link=>link.platform==='youtube')).map(group=>group.id));
  },[groups,channels]);
  const years=useMemo(()=>[['all','전체 연도'],...debutYearRanges(groups).map(({id,label})=>[id,label]),['unknown','연도 미확인']],[groups]);
+ const {status,scope,year,savedOnly}=filters;
+ const baseResults=useMemo(()=>{
+  const rows=directoryResults(groups,{query,type,status:'all',year,sort,now:clock,narrowSearch:true});
+  return rows.filter(group=>(!savedOnly||savedIds.has(group.id))&&matchesDirectoryScope(group,scope,clock)&&(!initial||artistInitials(group).includes(initial)));
+ },[groups,query,type,scope,year,savedOnly,sort,clock,savedIds,initial]);
  const results=useMemo(()=>{
-  const rows=directoryResults(groups,{query,type,status:filters.status,year:filters.year,sort,now:clock,narrowSearch:true});
-  const matches=rows.filter(group=>(!filters.savedOnly||savedIds.has(group.id))&&matchesDirectoryScope(group,filters.scope,clock)&&(!initial||artistInitials(group).includes(initial)));
+  const matches=status==='all'?baseResults:baseResults.filter(group=>matchesDirectoryActivity(group,status,clock));
   if(!favoriteEdit)return matches;
   const pinned=favoriteIds[preset];
   return [...matches.filter(group=>pinned.has(group.id)),...matches.filter(group=>!pinned.has(group.id))];
- },[groups,query,type,filters,sort,clock,savedIds,initial,favoriteEdit,favoriteIds,preset]);
+ },[baseResults,status,clock,favoriteEdit,favoriteIds,preset]);
  const recommendations=useMemo(()=>favoriteEdit?
   activityRecommendations(groups,{clock,type,mode:recommend,favorites:favoriteIds[preset],excluded}):EMPTY,
  [groups,clock,type,recommend,favoriteIds,preset,excluded,favoriteEdit]);
  const [,presetLabel,PresetIcon]=PRESETS.find(([key])=>key===preset);
  const savedCount=results.filter(group=>savedIds.has(group.id)).length;
- const activityBatches=useMemo(()=>{
-  const batches=new Map(DIRECTORY_ACTIVITY_STATES.map(state=>[state,[]]));
+ const activityCounts=useMemo(()=>{
+  const counts=new Map(DIRECTORY_ACTIVITY_STATES.map(state=>[state,0]));
   if(!editorTitle){
-   for(const group of results)batches.get(activityView(group,clock)?.state)?.push(group);
+   for(const group of baseResults){
+    const state=activityView(group,clock)?.state;
+    if(counts.has(state))counts.set(state,counts.get(state)+1);
+   }
   }
-  return batches;
- },[editorTitle,results,clock]);
+  return counts;
+ },[editorTitle,baseResults,clock]);
  const suggestions=editorTitle&&!saved.length&&!results.length?recommendedArtists(groups,saved,excluded):EMPTY;
  const updateFilters=patch=>{setExpanded('');setFilters(previous=>({...previous,...patch}));};
  const resetFilters=()=>updateFilters(DEFAULT_DIRECTORY_FILTERS);
@@ -85,12 +92,12 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  };
  const chips=[
   filters.scope!=='all'&&[DIRECTORY_SCOPES.find(([id])=>id===filters.scope)[1],()=>updateFilters({scope:'all'})],
-  filters.status!=='all'&&[filters.status==='unknown'?'상태 미확인':filters.status,()=>updateFilters({status:'all'})],
+  status!=='all'&&(editorTitle||!ACTIVITY_META[status])&&[status==='unknown'?'상태 미확인':status,()=>updateFilters({status:'all'})],
   filters.year!=='all'&&[years.find(([id])=>id===filters.year)?.[1]||filters.year,()=>updateFilters({year:'all'})],
   filters.savedOnly&&['MY GROUPS만',()=>updateFilters({savedOnly:false})],
  ].filter(Boolean);
- const updateResults=(enabled,groupsToUpdate=results)=>{
-  const ids=groupsToUpdate.filter(group=>savedIds.has(group.id)!==enabled).map(group=>group.id);
+ const updateResults=enabled=>{
+  const ids=results.filter(group=>savedIds.has(group.id)!==enabled).map(group=>group.id);
   if(ids.length)setUndo({count:ids.length,enabled,restore:onBulkGroups(ids,enabled)});
  };
  const showFilters=event=>{
@@ -118,17 +125,16 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   </nav>
   <div className="directory-shortcuts">
    <button type="button" className="directory-control" aria-expanded={initialOpen} aria-controls={initialsId} onClick={()=>setInitialOpen(value=>!value)}>이름 첫 글자{initial?' · '+initial:''}</button>
-   {!editorTitle&&<div className="directory-selection-toggles" role="group" aria-label="현재 결과 MY GROUPS 선택">
-    {[[null,results],...activityBatches].map(([state,matches])=>{
-     const count=state?matches.filter(group=>savedIds.has(group.id)).length:savedCount;
-     const allSelected=matches.length>0&&count===matches.length;
-     const label=state||'전체';
+   {!editorTitle&&<div className="directory-selection-toggles" role="group" aria-label="YouTube 활동 상태 필터">
+    {[['all',baseResults.length],...activityCounts].map(([state,count])=>{
+     const active=status===state;
+     const label=state==='all'?'전체':state;
      const activity=ACTIVITY_META[state];
-     return <button key={label} type="button" className="directory-control" disabled={!matches.length}
+     return <button key={label} type="button" className="directory-control" disabled={Boolean(activity)&&!count&&!active}
       style={activity?{'--toggle-accent':activity.color}:undefined}
-      aria-pressed={allSelected?true:count?'mixed':false} aria-label={`${label} 그룹 선택 토글, ${matches.length}개 중 ${count}개 선택`}
-      title={`${label} · ${count}/${matches.length} 선택`} onClick={()=>updateResults(!allSelected,matches)}>
-      {activity?<><ActivityGlyph icon={activity.icon} size={17}/><span>{matches.length}</span></>:label}
+      aria-pressed={active} aria-label={`${label} 활동 필터, ${count}개`}
+      title={`${label} · ${count}개`} onClick={()=>updateFilters({status:active?'all':state})}>
+      {activity?<><ActivityGlyph icon={activity.icon} size={17}/><span>{count}</span></>:label}
      </button>;
     })}
    </div>}
@@ -171,11 +177,11 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
    {chips.map(([label,remove])=><button type="button" key={label} aria-label={`${label} 필터 해제`} onClick={remove}><span>{label}</span><X size={12}/></button>)}
    <button type="button" className="directory-chip-reset" onClick={resetFilters}>초기화</button>
   </div>}
-  {editorTitle&&editing&&<div className="directory-bulk-panel" id={bulkId}>
+  {(!editorTitle||editing)&&<div className="directory-bulk-panel" id={bulkId}>
    <small>현재 결과 {results.length}명 중 {savedCount}명 저장</small>
-   <div className="directory-bulk" role="group" aria-label="현재 목록 MY GROUPS 일괄 편집">
-    <button type="button" disabled={savedCount===results.length} onClick={()=>updateResults(true)}>결과 일괄 추가</button>
-    <button type="button" disabled={!savedCount} onClick={()=>updateResults(false)}>결과 일괄 제거</button>
+   <div className="directory-bulk" role="group" aria-label="현재 결과 MY GROUPS 일괄 선택">
+    <button type="button" disabled={savedCount===results.length} onClick={()=>updateResults(true)}>{editorTitle?'결과 일괄 추가':'결과 전체 선택'}</button>
+    <button type="button" disabled={!savedCount} onClick={()=>updateResults(false)}>{editorTitle?'결과 일괄 제거':'결과 전체 해제'}</button>
    </div>
   </div>}
   {undo&&<div className="index-notice" role="status">
