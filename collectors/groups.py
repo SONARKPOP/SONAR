@@ -35,7 +35,7 @@ def save_bundle(bundle, config_dir=CONFIG, create=True):
 
 def sync_catalog(config_dir=CONFIG, output=DATA):
     """Re-index retained content without API calls or refreshing live freshness."""
-    from .youtube import prune_stale_attribution
+    from .youtube import ambiguous_artist_links, prune_stale_attribution
     output = Path(output)
     config = load_config(config_dir)
     groups = {g['id'] for g in config['groups']}
@@ -43,11 +43,12 @@ def sync_catalog(config_dir=CONFIG, output=DATA):
     channels = {c['id']:c for c in config['channels']}
     overrides_path = Path(config_dir) / 'overrides.json'
     overrides = read(overrides_path).get('videos', {}) if overrides_path.exists() else {}
+    ambiguous_links = ambiguous_artist_links(config)
 
     def clean(record):
         channel = channels.get(record['channelId'])
         if channel:
-            return prune_stale_attribution(record, channel, config, overrides.get(record.get('platformId')))
+            return prune_stale_attribution(record, channel, config, overrides.get(record.get('platformId')), ambiguous_links)
         return record
     records = []
     for path in (output / 'content').glob('*.json'):

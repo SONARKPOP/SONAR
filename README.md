@@ -178,3 +178,5 @@ Five English icon states are calculated from independently collected official up
 
 Run `python -m collectors.channel_activity` with `YOUTUBE_API_KEY` configured, then `python -m collectors.groups sync`. Run `python -m collectors.channel_database` for the full source/evidence census. GitHub Actions uses the existing secret and persistent API budget; no key belongs in a source file. `python -m collectors.channel_candidates` adds review-only candidates, never automatically verified official channels.
 
+
+Use python -m collectors.channel_review to refresh the channel review queue in public/data/channel-review.json. To inspect one candidate, supply its artist ID and YouTube handle. After verifying dedicated artist ownership, add --apply --evidence URL to record the evidence, and add --official-evidence for an artist or agency source. The review command uses the same environment variable for the API key.

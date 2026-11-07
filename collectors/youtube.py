@@ -155,7 +155,7 @@ def normalize(raw, channel, config, override=None):
         related = owner_groups.intersection(group.get('relatedGroupIds', []))
         if group.get('ambiguousName') and not related:
             continue
-        aliases = group['aliases'] if related else group_title_aliases(group)
+        aliases = group_title_aliases(group)
         if any(alias_pattern(alias).search(line) for line in credit_lines for alias in aliases):
             groups.add(gid)
             appearance_evidence.append({'groupId':gid, 'source':'publisher-credit-line',
@@ -228,13 +228,20 @@ def normalize(raw, channel, config, override=None):
 def read_config():
     return load_config()
 
-def prune_stale_attribution(record, channel, config, override=None):
+def ambiguous_artist_links(config):
+    return {g['id']: {g['id'], *g.get('relatedGroupIds', []), *g.get('previousGroupIds', [])}
+            for g in config['groups'] if g.get('ambiguousAliases')}
+
+
+def prune_stale_attribution(record, channel, config, override=None, ambiguous_links=None):
     """Remove unsupported automatic group tags from retained videos."""
     groups = set(record['groupIds'])
     owners = set(channel['groupIds']) if channel['official'] else set()
+    links = ambiguous_links if ambiguous_links is not None else ambiguous_artist_links(config)
+    risky = set().union(*(links[gid] for gid in groups & links.keys() - owners))
     if (record.get('demo') or record.get('platform') != 'youtube' or not record.get('title') or
             (override and 'groupIds' in override) or
-            not ((owners and groups - owners) or 'xum' in groups - owners)):
+            not ((owners and groups - owners) or risky)):
         return record
     raw = {'id':record['platformId'], 'snippet':{
         'title':record['title'], 'description':record.get('description', ''),
@@ -242,7 +249,7 @@ def prune_stale_attribution(record, channel, config, override=None):
     inferred = normalize(raw, channel, config)
     keep = groups.intersection(inferred['groupIds'])
     if not owners:
-        keep |= groups - {'xum'}
+        keep |= groups - risky
     if keep == groups:
         return record
     member_groups = {m['id']:m['groupId'] for m in config['members']}

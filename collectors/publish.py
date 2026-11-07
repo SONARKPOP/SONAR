@@ -1,12 +1,13 @@
 """Canonical records are stored once; group files contain thin discovery indexes."""
 import json
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from .live_policy import is_continuous_live
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'public' / 'data'
+KST = timezone(timedelta(hours=9))
 
 def now():
     return datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
@@ -36,6 +37,17 @@ def summary(v):
 def discovery_groups(video):
     return set(video['groupIds']) | set(video.get('individualActivity', {}).get('groupIds', []))
 
+
+def archive_years(items):
+    years = set()
+    for item in items:
+        try:
+            stamp = datetime.fromisoformat(item['publishedAt'].replace('Z', '+00:00'))
+        except (AttributeError, ValueError):
+            continue
+        years.add(str(stamp.replace(tzinfo=stamp.tzinfo or timezone.utc).astimezone(KST).year))
+    return sorted(years, reverse=True)
+
 def publish(records, config, events=(), output=DATA, demo=False):
     output = Path(output)
     # Events remain an empty schema field for compatibility; schedules are disabled.
@@ -43,6 +55,7 @@ def publish(records, config, events=(), output=DATA, demo=False):
     from .content_tags import apply_tags
     from .individual_activity import classify_individual, solo_review_candidates
     from .source_policy import approved_original
+    from .browse_index import build_indexes
     sources = {c['id']:c for c in config['channels']}
     artists = {group['id']:group for group in config['groups']}
     members = {member['id']:member for member in config['members']}
@@ -86,6 +99,12 @@ def publish(records, config, events=(), output=DATA, demo=False):
             old.unlink()
     write(output / 'latest.json', {'schemaVersion': 1, 'updatedAt': updated, 'items': [summary(v) for v in ordered[:72]], 'events': list(events)})
     public_config = {k: config[k] for k in ('groups', 'members', 'channels', 'taxonomy')}
+    public_config['browse'] = build_indexes(ordered,group_indexes,output,write,summary,discovery_groups,
+                                            datetime.fromisoformat(updated.replace('Z','+00:00')))
+    report_path = output/'collection-report.json'
+    previous_collection = json.loads(report_path.read_text(encoding='utf-8')) if report_path.exists() else {}
+    public_config['contentUpdatedAt'] = previous_collection.get('updatedAt') or max(
+        (video.get('source',{}).get('collectedAt') or '' for video in ordered if not video.get('demo')),default='') or None
     # Only group-owned official uploads determine activity. Shared appearances
     # must not make a dormant official channel appear recently active.
     public_config['groups'] = []
@@ -94,7 +113,7 @@ def publish(records, config, events=(), output=DATA, demo=False):
         official_ids = {c['id'] for c in config['channels'] if c['official'] and owners.intersection(c['groupIds'])}
         dates = [v['publishedAt'] for v in ordered if not v.get('demo') and v['channelId'] in official_ids and g['id'] in v['groupIds']]
         source_review = next((c['unavailableReason'] for c in config['channels'] if c['id'] in official_ids and c.get('unavailableReason')), '')
-        public_config['groups'].append({**g, 'contentCount':len(group_indexes[g['id']]),
+        public_config['groups'].append({**g, 'contentCount':len(group_indexes[g['id']]), 'archiveYears':archive_years(group_indexes[g['id']]),
             'lastOfficialUploadAt':max(dates, default=None), 'officialSourceReviewReason':source_review, 'officialSourceConnected':any(c['id'] in official_ids and c.get('collectionEnabled',True) and not c.get('unavailableReason') for c in config['channels'])})
     public_config['defaultGroupIds'] = config.get('defaultGroupIds', [])
     public_config['collectionGroupIds'] = config.get('collectionGroupIds', [])

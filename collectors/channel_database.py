@@ -64,4 +64,7 @@ def export_database(config_dir=CONFIG, output=DATA, report_dir=None):
         (Path(report_dir)/'OFFICIAL-CHANNEL-CENSUS.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     print(json.dumps(summary));return report
 
-if __name__=='__main__':export_database(report_dir=ROOT/'docs')
+if __name__=='__main__':
+    from .channel_review import export_queue
+    export_database(report_dir=ROOT/'docs')
+    export_queue()

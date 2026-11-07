@@ -8,7 +8,7 @@ const PRESETS=[['heart','하트',Heart],['star','별',Star],['clover','새싹',S
 const dateFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul'});
 
 export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clock,saved,favorites,color,locked,
- excluded,allowed,expanded,connected,onExpand,onSave,onFavorite,onExclude,onAllow,onCareerSearch}){
+ excluded,allowed,expanded,connected,onExpand,onSave,onFavorite,onExclude,onAllow,onCareerSearch,quickPreset}){
  const name=artist.name;
  const korean=koreanArtistName(artist);
  const tags=careerTagsFor(artist,groups);
@@ -18,6 +18,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
  const lastUpload=expanded?lastKnownUpload(artist,clock):null;
  const summary=[artist.debutYear||'데뷔 미확인',visibleLegacy,...tags.map(tag=>tag.label),
                 connected?'YouTube 연결':'YouTube 확인 대기'].filter(Boolean).join(' · ');
+ const [quickId,quickLabel,QuickIcon]=quickPreset||[];
  return <article className="directory-list-row" data-favorite={locked||undefined}
   style={locked?{'--directory-favorite-color':color||'#729ca8'}:undefined}>
   <div className="directory-row-main">
@@ -33,6 +34,9 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
     <p className="directory-row-summary" title={summary}>{summary}</p>
    </div>
    <div className="directory-row-actions">
+    {QuickIcon&&<button type="button" className="directory-control directory-icon" data-preset={quickId}
+     aria-label={`${name} ${quickLabel} 선호 지정`} aria-pressed={favorites[quickId].has(artist.id)}
+     onClick={()=>onFavorite(quickId,artist.id)}><QuickIcon size={16}/></button>}
     <button type="button" className="directory-control directory-icon directory-save-icon"
      aria-label={`${name} MY GROUPS ${saved?'제거':'추가'}`} aria-pressed={saved} onClick={()=>onSave(artist.id)}>
      {saved?<Check size={17}/>:<Plus size={17}/>}

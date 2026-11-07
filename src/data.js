@@ -11,7 +11,7 @@ export function createDataClient({base='./',fetcher=(...args)=>fetch(...args),sn
  async function request(path){
   // Empty registered artists have no content to download yet. In particular,
   // newly added directory entries must not break the populated group indexes.
-  const group=path.match(/^groups\/([^/]+)\.json$/)?.[1];
+  const group=path.match(/^(?:recent-)?groups\/([^/]+)\.json$/)?.[1];
   if(group&&catalog?.groups.some(g=>g.id===group&&g.contentCount===0))return {schemaVersion:1,items:[],events:[]};
   const embedded=snapshot();
   let value;
@@ -21,7 +21,7 @@ export function createDataClient({base='./',fetcher=(...args)=>fetch(...args),sn
   }else{
    value=await parseDataResponse(await fetcher(`${base}data/${path}`,{cache:'no-store',headers:{Accept:'application/json'}}),path);
   }
-  if(group&&!Array.isArray(value?.items))throw new Error(`그룹 목록 형식이 올바르지 않습니다: ${path}`);
+  if((group||path.startsWith('browse/'))&&!Array.isArray(value?.items))throw new Error(`영상 목록 형식이 올바르지 않습니다: ${path}`);
   if(path==='catalog.json')catalog=value;
   return value;
  }

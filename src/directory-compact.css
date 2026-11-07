@@ -35,7 +35,7 @@
 .directory-rows:empty{display:none}
 .directory-list-row{min-width:0;border-bottom:1px solid var(--dir-line);content-visibility:auto;contain-intrinsic-size:auto 60px}
 .directory-list-row:last-child{border-bottom:0}
-.directory-list-row[data-favorite]{box-shadow:inset 3px 0 0 var(--directory-favorite-color);background:color-mix(in srgb,var(--directory-favorite-color) 13%,var(--dir-surface))}
+.directory-list-row[data-favorite]{box-shadow:inset 4px 0 0 var(--directory-favorite-color);background:color-mix(in srgb,var(--directory-favorite-color) 23%,var(--dir-surface))}
 .directory-row-main{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:60px;padding:6px 9px 6px 12px}
 .directory-row-text{flex:1;min-width:0}
 .directory-row-name{display:flex;align-items:center;gap:6px;min-width:0;color:var(--dir-text);white-space:nowrap}
@@ -99,6 +99,15 @@
 .directory-editor>:not(.directory-rows){flex-shrink:0}
 .directory-editor .directory-compact-heading{min-height:42px;padding-right:48px;margin-bottom:7px}
 .directory-editor .directory-rows{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.directory-shortcuts,.directory-favorite-options{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.directory-initials{display:flex;gap:4px;overflow-x:auto;margin:5px 0;scrollbar-width:thin}
+.directory-initials button{min-width:36px}
+.directory-favorite-panel{margin:7px 0;padding:7px;border:1px solid var(--dir-line);border-radius:8px;color:var(--dir-text);background:var(--dir-surface)}
+.directory-recommendations{display:flex;gap:5px;overflow-x:auto;margin:6px 0 0;padding:0;list-style:none;scrollbar-width:thin}
+.directory-recommendations li{display:flex;flex:none;align-items:center;gap:7px;padding:4px 5px 4px 8px;border-radius:7px;border:1px solid var(--dir-line);min-width:130px}
+.directory-recommendations li span{display:grid;gap:2px;font-size:11px}
+.directory-recommendations small{font-size:9px;color:var(--dir-muted)}
+.directory-editor-top{position:absolute;right:22px;bottom:19px}
 @media(max-width:760px){
  .group-editor-modal{max-height:91dvh;padding:12px}
  .group-editor-modal>.modal-close{top:7px;right:7px}

@@ -11,11 +11,11 @@ test('group colors are distinct and stored valid choices survive',()=>{
 test('only favorites tint cards and saturated choices remain subtle in both themes',()=>{
  assert.equal(favoriteCardStyle(['a'],[],{a:'#ff0000'},'light'),undefined);
  const light=favoriteCardStyle(['a'],['a'],{a:'#ff0000'},'light');
- assert.equal(light.backgroundColor,'rgb(255, 217, 217)');
+ assert.equal(light.backgroundColor,'rgb(255, 201, 201)');
  assert.equal(light.borderColor,'rgb(255, 158, 158)');
  assert.match(light.boxShadow,/inset 0 4px 0/);
  const dark=favoriteCardStyle(['a'],['a'],{a:'#ff0000'},'dark');
- assert.equal(dark.backgroundColor,'rgb(69, 29, 42)');
+ assert.equal(dark.backgroundColor,'rgb(83, 27, 38)');
  assert.match(dark.boxShadow,/inset 0 4px 0/);
 });
 test('theme respects saved preference then system and handles blocked storage',()=>{

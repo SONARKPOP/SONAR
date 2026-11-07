@@ -1,6 +1,7 @@
 import json
 import tempfile
 import unittest
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
 from collectors.youtube import YouTube, normalize, mentions, read_config, collect, refresh_live, prune_stale_attribution
@@ -95,6 +96,40 @@ class CollectorTests(unittest.TestCase):
         with patch.object(api,'get',side_effect=[{'items':[{'id':1}],'nextPageToken':'next'},{'items':[{'id':2}]}]) as get:
             self.assertEqual(list(api.pages('playlistItems',limit=2)),[{'id':1},{'id':2}])
             self.assertEqual(get.call_args.kwargs['pageToken'],'next')
+
+    def test_browse_previews_are_bounded_and_keep_month_archive(self):
+        video = normalize(self.raw,self.channel,self.config)
+        current = datetime.now(timezone.utc)
+        recent = [
+            {**video,'id':f'youtube__new{i:02}','platformId':f'new{i:02}',
+             'publishedAt':(current-timedelta(minutes=i+1)).isoformat()}
+            for i in range(30)
+        ]
+        old = {**video,'id':'youtube__old','platformId':'old','publishedAt':'2022-01-01T00:00:00Z'}
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp)
+            publish([old,*recent],self.config,output=output)
+            preview = json.loads((output/'browse/groups/home/aespa.json').read_text(encoding='utf-8'))
+            shared = json.loads((output/'browse/home.json').read_text(encoding='utf-8'))
+            archive = json.loads((output/'groups/aespa.json').read_text(encoding='utf-8'))
+            catalog = json.loads((output/'catalog.json').read_text(encoding='utf-8'))
+            group = next(group for group in catalog['groups'] if group['id']=='aespa')
+            self.assertEqual(len(preview['items']),6)
+            self.assertEqual(len(shared['items']),4)
+            self.assertEqual(preview['items'],archive['items'][:6])
+            self.assertEqual(archive['items'][-1]['id'],old['id'])
+            self.assertIn('2022',group['archiveYears'])
+            self.assertIn('2022-01',catalog['browse']['months'])
+
+    def test_ambiguous_yves_alias_is_searchable_but_not_an_appearance(self):
+        external = next(c for c in self.config['channels'] if not c['official'])
+        self.raw['snippet']['title']='크리스마스 이브 특집'
+        record=normalize(self.raw,external,self.config)
+        self.assertNotIn('yves',record['groupIds'])
+        old={**record,'groupIds':['yves','loona']}
+        self.assertEqual(prune_stale_attribution(old,external,self.config)['groupIds'],[])
+        self.raw['snippet']['title']='이브 (Yves) 공식 인터뷰'
+        self.assertIn('yves',normalize(self.raw,external,self.config)['groupIds'])
 
     def test_video_batching(self):
         api=YouTube('test-not-a-secret')

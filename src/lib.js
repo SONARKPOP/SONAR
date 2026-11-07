@@ -94,7 +94,7 @@ export function favoriteCardStyle(ids,favorites,colors,theme){
  const accent=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));
  const dark=theme==='dark',base=dark?[23,36,52]:[255,255,255];
  const blend=weight=>`rgb(${base.map((n,i)=>Math.round(n*(1-weight)+accent[i]*weight)).join(', ')})`;
- return {backgroundColor:blend(dark?.20:.15),borderColor:blend(dark?.50:.38),boxShadow:`inset 0 4px 0 ${blend(dark?.76:.72)}, 0 3px 10px #16365308`};
+ return {backgroundColor:blend(dark?.26:.21),borderColor:blend(dark?.50:.38),boxShadow:`inset 0 4px 0 ${blend(dark?.84:.78)}, 0 3px 10px #16365308`};
 }
 
 export const FAVORITE_PRESETS=['heart','star','clover'];
