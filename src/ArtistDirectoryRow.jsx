@@ -16,8 +16,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
  const legacy=legacyGroupState(artist,clock);
  const visibleLegacy=legacy&&legacy!=='long-dormant'?LEGACY_LABELS[legacy]:null;
  const lastUpload=expanded?lastKnownUpload(artist,clock):null;
- const summary=[artist.debutYear||'데뷔 미확인',visibleLegacy,...tags.map(tag=>tag.label),
-                connected?'YouTube 연결':'YouTube 확인 대기'].filter(Boolean).join(' · ');
+ const summary=[artist.debutYear||'데뷔 미확인',visibleLegacy,...tags.map(tag=>tag.label)].filter(Boolean).join(' · ');
  const [quickId,quickLabel,QuickIcon]=quickPreset||[];
  return <article className="directory-list-row" data-favorite={locked||undefined}
   style={locked?{'--directory-favorite-color':color||'#729ca8'}:undefined}>
@@ -31,7 +30,10 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
       {selectedPresets.map(([key,,Icon])=><Icon key={key} size={11} data-preset={key} aria-hidden="true" fill={key==='clover'?'none':'currentColor'}/>)}
      </span>}
     </div>
-    <p className="directory-row-summary" title={summary}>{summary}</p>
+    <div className="directory-row-meta">
+     <p className="directory-row-summary" title={summary}>{summary}</p>
+     {!connected&&<span className="directory-source-pending">YouTube 확인 대기</span>}
+    </div>
    </div>
    <div className="directory-row-actions">
     {QuickIcon&&<button type="button" className="directory-control directory-icon" data-preset={quickId}
@@ -51,7 +53,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
     <small>{lastUpload===null?'마지막 공식 업로드 확인 대기':`마지막 공식 업로드 ${dateFormat.format(lastUpload)}`}</small>
     {legacy==='long-dormant'&&<small>{LEGACY_LABELS[legacy]}</small>}
    </div>
-   <OfficialLinks artist={artist} channels={channels} showYouTubeStatus/>
+   <OfficialLinks artist={artist} channels={channels}/>
    {tags.some(tag=>!['solo','redebut'].includes(tag.id))&&<div className="directory-career-tags">
     {tags.filter(tag=>!['solo','redebut'].includes(tag.id)).map(tag=><button type="button" key={tag.id}
      data-no-translate onClick={()=>onCareerSearch(groups.get(tag.id)?.name||tag.id)}>{tag.label}</button>)}
