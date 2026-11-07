@@ -35,14 +35,23 @@ def save_bundle(bundle, config_dir=CONFIG, create=True):
 
 def sync_catalog(config_dir=CONFIG, output=DATA):
     """Re-index retained content without API calls or refreshing live freshness."""
+    from .youtube import prune_stale_attribution
     output = Path(output)
     config = load_config(config_dir)
     groups = {g['id'] for g in config['groups']}
     members = {m['id'] for m in config['members']}
-    channels = {c['id'] for c in config['channels']}
+    channels = {c['id']:c for c in config['channels']}
+    overrides_path = Path(config_dir) / 'overrides.json'
+    overrides = read(overrides_path).get('videos', {}) if overrides_path.exists() else {}
+
+    def clean(record):
+        channel = channels.get(record['channelId'])
+        if channel:
+            return prune_stale_attribution(record, channel, config, overrides.get(record.get('platformId')))
+        return record
     records = []
     for path in (output / 'content').glob('*.json'):
-        record = read(path)
+        record = clean(read(path))
         record['groupIds'] = [g for g in record['groupIds'] if g in groups]
         record['memberIds'] = [m for m in record['memberIds'] if m in members]
         if record['groupIds'] and record['channelId'] in channels:
@@ -69,7 +78,8 @@ def sync_catalog(config_dir=CONFIG, output=DATA):
     official = {c['id'] for c in config['channels'] if c['official'] and c['collectionEnabled']}
     live['items'] = [v for v in live.get('items', []) if v['channelId'] in official and set(v['groupIds']) & groups]
     from .live_policy import is_continuous_live
-    streams={v['id']:v for v in [*live['items'],*live.get('stations',[])] if v['channelId'] in official and set(v['groupIds']) & groups}
+    streams={v['id']:v for v in map(clean, [*live['items'],*live.get('stations',[])])
+             if v['channelId'] in official and set(v['groupIds']) & groups}
     live['items']=[v for v in streams.values() if not is_continuous_live(v)]
     live['stations']=[v for v in streams.values() if is_continuous_live(v)]
     candidates = read(output / 'live-candidates.json') if (output / 'live-candidates.json').exists() else {'ids':[]}

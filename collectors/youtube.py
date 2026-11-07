@@ -123,27 +123,50 @@ def classify(title, description, official):
     short = bool(re.search(r'#shorts?\b', title + '\n' + description, re.I))
     return ('shorts' if short else category), subtype, short
 
+def group_title_aliases(group):
+    ambiguous = {alias.casefold() for alias in group.get('ambiguousAliases', [])}
+    return [alias for alias in group['aliases'] if alias.casefold() not in ambiguous]
+
+
+def has_collaboration_title(title, owner_aliases, guest_aliases):
+    separator = r'(?:\s*×\s*|\s+[xX]\s+)'
+    for owner in owner_aliases:
+        for guest in guest_aliases:
+            left, right = re.escape(owner), re.escape(guest)
+            if re.search(r'(?<!\w)(?:'+left+separator+right+'|'+right+separator+left+r')(?!\w)', title, re.I):
+                return True
+    return False
+
+
 def normalize(raw, channel, config, override=None):
     snippet = raw['snippet']
     text = snippet['title']
     groups = set(channel['groupIds'] if channel['official'] else [])
     owner_groups = set(groups)
-    groups.update(g['id'] for g in config['groups'] if (not g.get('ambiguousName') or owner_groups.intersection(g.get('relatedGroupIds', [])))
-                  and (not channel['official'] or g.get('artistType') != 'solo' or g['id'] in owner_groups
-                       or owner_groups.intersection(g.get('relatedGroupIds', [])))
-                  and any(mentions(text, a) for a in g['aliases'] if a not in g.get('ambiguousAliases', []) or owner_groups.intersection(g.get('relatedGroupIds', []))))
+    credit_lines = [line for line in snippet.get('description', '').splitlines()
+                    if re.match(r'^\s*(?:\uCD9C\uC5F0(?:\uC9C4)?|\uAC8C\uC2A4\uD2B8|guests?|starring)\s*[:\uFF1A-]', line, re.I)]
+    owner_aliases = [alias for g in config['groups'] if g['id'] in owner_groups for alias in group_title_aliases(g)]
+    scoped_members, appearance_evidence = [], []
+    for group in config['groups']:
+        gid = group['id']
+        if gid in owner_groups:
+            continue
+        related = owner_groups.intersection(group.get('relatedGroupIds', []))
+        if group.get('ambiguousName') and not related:
+            continue
+        aliases = group['aliases'] if related else group_title_aliases(group)
+        if any(alias_pattern(alias).search(line) for line in credit_lines for alias in aliases):
+            groups.add(gid)
+            appearance_evidence.append({'groupId':gid, 'source':'publisher-credit-line',
+                'role':'participant', 'url':'https://www.youtube.com/watch?v=' + raw['id']})
+        elif any(mentions(text, alias) for alias in aliases) and (
+                not channel['official'] or related or
+                (group.get('artistType') != 'solo' and has_collaboration_title(text, owner_aliases, aliases))):
+            groups.add(gid)
     for artist in config['groups']:
         if artist['id'] in groups and artist.get('artistType') == 'solo':
             groups.update(artist.get('relatedGroupIds', []))
-    scoped_members, appearance_evidence = [], []
     if not channel['official']:
-        credit_lines = [line for line in snippet.get('description', '').splitlines()
-                        if re.match(r'^\s*(?:\uCD9C\uC5F0(?:\uC9C4)?|\uAC8C\uC2A4\uD2B8|guests?|starring)\s*[:\uFF1A-]', line, re.I)]
-        for group in config['groups']:
-            if not group.get('ambiguousName') and any(mentions(line, alias) for line in credit_lines for alias in group['aliases']):
-                groups.add(group['id'])
-                appearance_evidence.append({'groupId':group['id'], 'source':'publisher-credit-line',
-                    'role':'participant', 'url':'https://www.youtube.com/watch?v=' + raw['id']})
         known_members = {m['id']: m for m in config['members']}
         for program in channel.get('programs', []):
             if not re.search(program['titlePattern'], text, re.I):
@@ -200,6 +223,32 @@ def normalize(raw, channel, config, override=None):
 
 def read_config():
     return load_config()
+
+def prune_stale_attribution(record, channel, config, override=None):
+    """Remove unsupported automatic group tags from retained videos."""
+    groups = set(record['groupIds'])
+    owners = set(channel['groupIds']) if channel['official'] else set()
+    if (record.get('demo') or record.get('platform') != 'youtube' or
+            (override and 'groupIds' in override) or
+            not ((owners and groups - owners) or 'xum' in groups - owners)):
+        return record
+    raw = {'id':record['platformId'], 'snippet':{
+        'title':record['title'], 'description':record.get('description', ''),
+        'publishedAt':record['publishedAt'], 'channelTitle':record['channelName']}}
+    inferred = normalize(raw, channel, config)
+    keep = groups.intersection(inferred['groupIds'])
+    if not owners:
+        keep |= groups - {'xum'}
+    if keep == groups:
+        return record
+    member_groups = {m['id']:m['groupId'] for m in config['members']}
+    cleaned = {**record, 'groupIds':sorted(keep),
+               'memberIds':[mid for mid in record['memberIds'] if member_groups.get(mid) in keep]}
+    if 'appearanceEvidence' in cleaned:
+        cleaned['appearanceEvidence'] = [e for e in cleaned['appearanceEvidence']
+                                         if e.get('groupId') in keep or member_groups.get(e.get('memberId')) in keep]
+    return cleaned
+
 
 def read_overrides():
     return json.loads((ROOT / 'config' / 'overrides.json').read_text(encoding='utf-8'))

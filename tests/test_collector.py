@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-from collectors.youtube import YouTube, normalize, mentions, read_config, collect, refresh_live
+from collectors.youtube import YouTube, normalize, mentions, read_config, collect, refresh_live, prune_stale_attribution
 from collectors.publish import publish
 
 class CollectorTests(unittest.TestCase):
@@ -31,6 +31,32 @@ class CollectorTests(unittest.TestCase):
         v=normalize(self.raw,self.config['channels'][-1],self.config)
         self.assertEqual(v['groupIds'],['aespa','ive'])
         self.assertEqual(v['category'],'external')
+
+    def test_official_group_mention_does_not_imply_appearance(self):
+        riize = next(c for c in self.config['channels'] if c['id']=='riize-official')
+        self.raw['snippet']['title'] = "완전 인썸니아야 지금 | RIIZE 'Insomnia' 비하인드"
+        video = normalize(self.raw, riize, self.config)
+        self.assertEqual(video['groupIds'], ['riize'])
+        old = {**video, 'groupIds':['riize','xum']}
+        self.assertEqual(prune_stale_attribution(old, riize, self.config)['groupIds'], ['riize'])
+        self.assertEqual(prune_stale_attribution(old, riize, self.config, {'groupIds':old['groupIds']}), old)
+        self.raw['snippet']['title'] = 'Hearts2Hearts song reaction | RIIZE'
+        self.assertEqual(normalize(self.raw, riize, self.config)['groupIds'], ['riize'])
+        self.raw['snippet']['title'] = 'RIIZE × Hearts2Hearts dance challenge'
+        self.assertEqual(normalize(self.raw, riize, self.config)['groupIds'], ['hearts2hearts','riize'])
+        self.raw['snippet']['title'] = 'Episode 1'
+        self.raw['snippet']['description'] = 'Guests: Hearts2Hearts'
+        self.assertEqual(normalize(self.raw, riize, self.config)['groupIds'], ['hearts2hearts','riize'])
+
+    def test_xum_search_alias_does_not_tag_unrelated_broadcasts(self):
+        external = next(c for c in self.config['channels'] if not c['official'])
+        self.raw['snippet']['title'] = '라잇썸 LIGHTSUM 직캠'
+        video = normalize(self.raw, external, self.config)
+        self.assertEqual(video['groupIds'], ['lightsum'])
+        old = {**video, 'groupIds':['lightsum','xum']}
+        self.assertEqual(prune_stale_attribution(old, external, self.config)['groupIds'], ['lightsum'])
+        self.raw['snippet']['title'] = 'XUM (썸) interview'
+        self.assertEqual(normalize(self.raw, external, self.config)['groupIds'], ['xum'])
 
     def test_duration_does_not_imply_short(self):
         self.raw['contentDetails']['duration']='PT35S'
