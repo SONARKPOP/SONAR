@@ -8,7 +8,7 @@ import urllib.request
 from .publish import DATA, write, now
 from .registry import load_config
 from .activity import eligible_group, stamp
-from .profile_links import profile_candidates, INDEX_URL
+from .profile_links import profile_candidates, wikipedia_group_titles, INDEX_URL
 
 def fetch(url):
     request=urllib.request.Request(url,headers={'User-Agent':'SONARChannelReview/1.0 (https://github.com/SONARKPOP/SONAR)'})
@@ -19,7 +19,7 @@ def discover(config,output=DATA,fetcher=fetch,current=None):
     current=time.time() if current is None else current
     path=output/'channel-candidates.json'
     state=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'candidates':[],'cursor':0,'newArtistCandidates':[]}
-    if current-(stamp(state.get('lastAttemptAt') or state.get('updatedAt')) or 0)<86400:return state
+    if state.get('generatorVersion')==2 and current-(stamp(state.get('lastAttemptAt') or state.get('updatedAt')) or 0)<86400:return state
     state['lastAttemptAt']=now()
     groups=[g for g in config['groups'] if eligible_group(g)]
     start=state.get('cursor',0)%max(1,len(groups));selected=(groups+groups)[start:start+15]
@@ -37,9 +37,9 @@ def discover(config,output=DATA,fetcher=fetch,current=None):
                     if not re.fullmatch(r'UC[\w-]{22}',cid):continue
                     gid=titles.get(qids[qid])
                     if gid:candidates[(gid,cid)]={'groupId':gid,'channelId':cid,'channelUrl':'https://www.youtube.com/channel/'+cid,'verificationStatus':'UNVERIFIED','sourceUrl':'https://www.wikidata.org/wiki/'+qid,'foundAt':now(),'reason':'Wikidata P2397 candidate; dedicated-channel and official-source review required.'}
-        links=fetcher('https://en.wikipedia.org/w/api.php?'+urllib.parse.urlencode({'action':'parse','format':'json','page':'List of South Korean girl groups','prop':'links'})).get('parse',{}).get('links',[])
+        html=fetcher('https://en.wikipedia.org/w/api.php?'+urllib.parse.urlencode({'action':'parse','format':'json','page':'List of South Korean girl groups','prop':'text'})).get('parse',{}).get('text',{}).get('*','')
         known={a.casefold() for g in groups for a in [g['name'],*g['aliases']]}
-        state.update(candidates=list(candidates.values()),newArtistCandidates=[{'title':v['*'],'sourceUrl':'https://en.wikipedia.org/wiki/List_of_South_Korean_girl_groups','verificationStatus':'UNVERIFIED','reason':'List link only; nationality, group type and debut date require review.'} for v in links if v.get('ns')==0 and v.get('*','').casefold() not in known],cursor=(start+len(selected))%max(1,len(groups)),updatedAt=now(),error=None)
+        state.update(generatorVersion=2,candidates=list(candidates.values()),newArtistCandidates=[{'title':title,'sourceUrl':'https://en.wikipedia.org/wiki/List_of_South_Korean_girl_groups','verificationStatus':'UNVERIFIED','reason':'Group-bearing list/table entry; nationality, group type and debut date require review.'} for title in wikipedia_group_titles(html) if title.casefold() not in known],cursor=(start+len(selected))%max(1,len(groups)),updatedAt=now(),error=None)
     except (OSError,ValueError,KeyError) as exc:
         state['error']=type(exc).__name__;state['lastAttemptAt']=now()
     # Independent provider failure must not discard successful discovery.
