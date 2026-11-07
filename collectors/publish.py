@@ -111,7 +111,8 @@ def publish(records, config, events=(), output=DATA, demo=False):
     for g in config['groups']:
         owners = {g['id'], *g.get('relatedGroupIds', [])}
         official_ids = {c['id'] for c in config['channels'] if c['official'] and owners.intersection(c['groupIds'])}
-        dates = [v['publishedAt'] for v in ordered if not v.get('demo') and v['channelId'] in official_ids and g['id'] in v['groupIds']]
+        dates = [v.get('actualStartTime') or v['publishedAt'] for v in ordered
+                 if not v.get('demo') and v.get('liveStatus')!='upcoming' and v['channelId'] in official_ids and g['id'] in v['groupIds']]
         source_review = next((c['unavailableReason'] for c in config['channels'] if c['id'] in official_ids and c.get('unavailableReason')), '')
         public_config['groups'].append({**g, 'contentCount':len(group_indexes[g['id']]), 'archiveYears':archive_years(group_indexes[g['id']]),
             'lastOfficialUploadAt':max(dates, default=None), 'officialSourceReviewReason':source_review, 'officialSourceConnected':any(c['id'] in official_ids and c.get('collectionEnabled',True) and not c.get('unavailableReason') for c in config['channels'])})

@@ -5,7 +5,9 @@ export function activityView(group,now=Date.now()){
  const data=group?.youtubeActivity;
  if(!data||data.activity_status==='UNKNOWN'||!ACTIVITY_META[data.activity_status])return null;
  const checked=Date.parse(data.checked_at),last=Date.parse(data.last_upload_at);
- if(!Number.isFinite(checked)||!Number.isFinite(last)||checked>now||last>now||now-checked>rules.staleHours*3600000)return null;
+ const validUntil=Date.parse(data.valid_until);
+ if(!Number.isFinite(checked)||!Number.isFinite(last)||checked>now||last>now||
+  now>(Number.isFinite(validUntil)?validUntil:checked+rules.staleHours*3600000))return null;
  const elapsed=Math.max(0,Math.floor((now-last)/1000));
  const age=elapsed<3600?`${Math.floor(elapsed/60)}m ago`:elapsed<86400?`${Math.floor(elapsed/3600)}h ago`:`${Math.floor(elapsed/86400)}d ago`;
  // Re-evaluate rolling windows and age transitions between collection runs.

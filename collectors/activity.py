@@ -2,17 +2,11 @@
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from .upload_cadence import stamp, upload_interval_hours
 
 RULES=json.loads((Path(__file__).resolve().parents[1]/'config/activity-rules.json').read_text(encoding='utf-8'))
 DAY=86400
 WINDOWS={'uploads_24h':DAY,'uploads_3d':3*DAY,'uploads_5d':5*DAY,'uploads_7d':7*DAY,'uploads_14d':14*DAY}
-
-def stamp(value):
-    try:
-        if not isinstance(value,str):return None
-        date=datetime.fromisoformat(value.replace('Z','+00:00'))
-        return date.timestamp() if date.tzinfo else None
-    except (ValueError,TypeError,OverflowError):return None
 
 def iso(value):
     return datetime.fromtimestamp(value,timezone.utc).isoformat().replace('+00:00','Z')
@@ -37,7 +31,7 @@ def calculate_activity(uploads, current, *, complete=True, official=True, checke
     current=stamp(iso(current))
     result={'activity_status':'UNKNOWN','last_upload_at':None,**{k:None for k in WINDOWS},'updated_at':iso(current),'checked_at':checked_at,'reason':error}
     checked=stamp(checked_at)
-    if not official or not complete or error or checked is None or checked>current or current-checked>RULES['staleHours']*3600:
+    if not official or not complete or error or checked is None or checked>current:
         result['reason']=error or ('incomplete-data' if not complete else 'unverified-or-stale')
         return result
     unique={}
@@ -48,6 +42,10 @@ def calculate_activity(uploads, current, *, complete=True, official=True, checke
     if not unique:
         result['reason']='no-valid-upload';return result
     last=max(unique.values());age=current-last
+    valid_hours=max(RULES['staleHours'],upload_interval_hours(last,current,RULES)+RULES['cacheHours'])
+    if current-checked>valid_hours*3600:
+        result['reason']='unverified-or-stale';return result
+    result['valid_until']=iso(checked+valid_hours*3600)
     result.update({k:sum(0<=current-at<=window for at in unique.values()) for k,window in WINDOWS.items()})
     result['last_upload_at']=iso(last);result['reason']=None
     if age>=RULES['lostSignalDays']*DAY:state='LOST SIGNAL'

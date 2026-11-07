@@ -80,4 +80,13 @@ class ActivityTests(unittest.TestCase):
         data=[{'id':str(i),'at':iso(current)} for i in range(3)]
         self.assertEqual(calculate_activity(data,current,checked_at=iso(current))['activity_status'],'SURGE')
 
+    def test_upload_intervals_and_legacy_snapshot_freshness(self):
+        from collectors.activity import RULES, stamp
+        from collectors.upload_cadence import upload_interval_hours
+        current=stamp('2026-11-07T00:00:00Z')
+        for last,hours in [('2026-11-01',6),('2026-10-07',24),('2026-05-07',168),('2024-11-07',720)]:
+            self.assertEqual(upload_interval_hours(stamp(last+'T00:00:00Z'),current,RULES),hours)
+        self.assertEqual(calculate_activity(rows(1,800*DAY),NOW,checked_at=iso(NOW-29*DAY))['activity_status'],'LOST SIGNAL')
+        self.assertEqual(calculate_activity(rows(1,800*DAY),NOW,checked_at=iso(NOW-31*DAY))['activity_status'],'UNKNOWN')
+
 if __name__=='__main__':unittest.main()

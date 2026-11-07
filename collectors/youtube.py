@@ -307,7 +307,11 @@ def resolve(api, config):
 
 def collect(api, pages=1):
     from .quota import metadata_read_reserve
+    from .activity import RULES, stamp, iso
+    from .upload_cadence import source_identity, source_interval_hours
     config, overrides = read_config(), read_overrides()
+    current = time.time()
+    previous = {}
     previous_path=DATA/'catalog.json'
     if previous_path.exists():
         previous=json.loads(previous_path.read_text(encoding='utf-8'))
@@ -319,11 +323,30 @@ def collect(api, pages=1):
             if same and valid_cache:
                 for field in ('platformId','uploadsPlaylistId'):
                     if old.get(field) and not c.get(field):c[field]=old[field]
-    retained_ids = {p.stem.removeprefix('youtube__') for p in (DATA/'content').glob('youtube__*.json')}
+    groups = {g['id']:g for g in previous.get('groups', [])}
+    activity_path = DATA/'channel-activity.json'
+    activity_cache = json.loads(activity_path.read_text(encoding='utf-8')).get('channels', {}) if activity_path.exists() else {}
+    check_history = api.budget.state.get('uploadChecks', {}) if api.budget else {}
+    deferred = set()
+    for source in config['channels']:
+        if not source.get('official') or not source.get('collectionEnabled', True):
+            continue
+        sid = source['id']
+        last = max((value for upload in activity_cache.get(sid, {}).get('uploads', [])
+                    if (value := stamp(upload.get('at'))) is not None and value <= current), default=None)
+        interval = source_interval_hours(source, groups, current, RULES, last)
+        previous_check = check_history.get(sid, {})
+        checked_at = stamp(previous_check.get('checkedAt'))
+        if (interval > RULES['uploadCadenceHours']['recent'] and checked_at is not None and
+                previous_check.get('identity') == source_identity(source) and current-checked_at < interval*3600):
+            deferred.add(sid)
+    retained = [json.loads(path.read_text(encoding='utf-8')) for path in (DATA/'content').glob('youtube__*.json')]
+    retained_ids = {record['platformId'] for record in retained
+                    if record['channelId'] not in deferred or record.get('liveStatus') in ('live','upcoming')}
     unresolved = sum(not c.get('uploadsPlaylistId') for c in config['channels'] if c.get('collectionEnabled',True))
     if api.budget and api.budget.remaining('read') < metadata_read_reserve(retained_ids) + unresolved:
         from .targeted import collect_pending
-        if collect_pending(api,config,overrides,DATA,previous if previous_path.exists() else {}):return
+        if collect_pending(api,config,overrides,DATA,previous):return
         raise BudgetExceeded('Insufficient read budget for a safe metadata refresh; collection deferred, existing data retained.')
     lookup = resolve(api, config)
     ids = set()
@@ -332,15 +355,17 @@ def collect(api, pages=1):
     scan_channels=[c for c in config['channels'] if c.get('collectionEnabled',True)]
     scan_start=int(api.budget.state.get('uploadsCursor',0))%len(scan_channels) if api.budget and scan_channels else 0
     scan_channels=scan_channels[scan_start:]+scan_channels[:scan_start]
-    scanned=0
+    visited=0
+    checked_uploads={}
     for c in scan_channels:
-        if not c.get('collectionEnabled', True):
+        if c['id'] in deferred:
+            visited+=1
             continue
         requests=c.get('collectionPages',pages)+c.get('archivePages',0)
         if api.budget and api.budget.remaining('read') < requests+metadata_read_reserve(retained_ids,ids,requests*50):
             print('Playlist scanning paused to reserve metadata calls; remaining channels rotate into the next full run.')
             break
-        scanned+=1
+        visited+=1
         try:
             ids.update(c.get('seedVideoIds', []))
             if c.get('archivePages') and not c['official']:
@@ -351,6 +376,7 @@ def collect(api, pages=1):
             else:
                 for item in api.pages('playlistItems', limit=c.get('collectionPages', pages), part='contentDetails', playlistId=c['uploadsPlaylistId'], maxResults=50):
                     ids.add(item['contentDetails']['videoId'])
+            checked_uploads[c['id']]={'identity':source_identity(c),'checkedAt':iso(current)}
         except YouTubeHTTPError as exc:
             # Query shape is fixed; 400/404 here identifies an inaccessible or
             # invalid uploads playlist. Global auth/quota errors remain fatal.
@@ -360,10 +386,11 @@ def collect(api, pages=1):
             lookup.pop(c.get('platformId'), None)
             print(f"Source unavailable: {c['id']}; retained archive is preserved.")
     paused = []
+    cadence_retained = []
     sources = {c['id']:c for c in config['channels']}
     supported = {g['id'] for g in config['groups']}
-    for path in (DATA / 'content').glob('*.json'):
-        old = json.loads(path.read_text(encoding='utf-8'))
+    ambiguous_links = ambiguous_artist_links(config)
+    for old in retained:
         if old.get('platform') == 'youtube' and not re.fullmatch(r'[A-Za-z0-9_-]{11}', old.get('platformId', '')):
             continue
         if not old.get('demo'):
@@ -375,6 +402,9 @@ def collect(api, pages=1):
                 # Pausing collection retains the archive, never asserts a continuing live.
                 old['liveStatus'] = 'none'
                 if old['groupIds']:paused.append(old)
+            elif source['id'] in deferred and old.get('liveStatus') not in ('live','upcoming'):
+                cleaned=prune_stale_attribution(old,source,config,overrides['videos'].get(old['platformId']),ambiguous_links)
+                if cleaned['groupIds']:cadence_retained.append(cleaned)
             else:
                 ids.add(old['platformId'])
     official=[c for c in config['channels'] if c['official'] and c.get('collectionEnabled',True)]
@@ -392,9 +422,9 @@ def collect(api, pages=1):
     if api.budget:api.budget.advance_discovery(checked,len(official))
     enabled = set(config.get('collectionGroupIds', [g['id'] for g in config['groups']]))
     matching_config = {**config, 'groups':[g for g in config['groups'] if g['id'] in enabled], 'members':[m for m in config['members'] if m['groupId'] in enabled]}
-    records = paused
+    records = paused + [old for old in cadence_retained if old['platformId'] not in ids]
     seed_sources = {vid:c.get('platformId') for c in config['channels'] for vid in c.get('seedVideoIds', [])}
-    # Refresh all retained metadata; removed/private videos disappear from the index.
+    # Refresh requested metadata. Channels waiting for their next upload check retain their archive.
     for raw in api.videos(ids):
         channel = lookup.get(raw['snippet']['channelId'])
         if raw['id'] in seed_sources and raw['snippet']['channelId'] != seed_sources[raw['id']]:
@@ -406,12 +436,14 @@ def collect(api, pages=1):
             records.append(v)
     publish(records, config, output=DATA)
     if api.budget and scan_channels:
-        api.budget.state['uploadsCursor']=(scan_start+scanned)%len(scan_channels)
+        api.budget.state['uploadsCursor']=(scan_start+visited)%len(scan_channels)
+        api.budget.state.setdefault('uploadChecks',{}).update(checked_uploads)
         write(api.budget.path,api.budget.state)
     write(archive_path, archive_state)
     write(DATA / 'collection-report.json', {'updatedAt':now(), 'recordCount':len(records), 'externalRecordCount':sum('external' in v.get('contentTypes', []) or v.get('category')=='external' for v in records),
+        'checkedUploadSources':len(checked_uploads),'waitingForUploadCadence':len(deferred),
         'unavailableSources':[{'id':c['id'],'reason':c['unavailableReason'],'observedName':c.get('observedChannelName')} for c in config['channels'] if c.get('unavailableReason')]})
-    print(f'Published {len(records)} records.')
+    print(f'Published {len(records)} records. Upload playlists checked: {len(checked_uploads)}; waiting for cadence: {len(deferred)}.')
 
 def refresh_live(api):
     if not (DATA / 'catalog.json').exists():

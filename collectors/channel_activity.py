@@ -9,6 +9,7 @@ from .publish import DATA, write
 from .registry import load_config
 from .youtube import YouTube, expected_channel
 from .quota import QuotaGuard, BudgetExceeded
+from .upload_cadence import source_interval_hours
 
 def collect_channel(api, source, current):
     params={'id':source['platformId']} if source.get('platformId') else {'forHandle':source['handle'].lstrip('@')}
@@ -48,7 +49,17 @@ def refresh(api, config, output=DATA, current=None):
     old=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
     cache=old.get('channels',{});groups=[g for g in config['groups'] if eligible_group(g)]
     sources={c['id']:c for g in groups for c in dedicated_sources(g,config['channels'])}
-    due=[c for c in sources.values() if cache.get(c['id'],{}).get('configuredIdentity')!=(c.get('platformId') or c.get('handle')) or current-(stamp(cache.get(c['id'],{}).get('checkedAt')) or 0)>=RULES['cacheHours']*3600]
+    catalog_path=output/'catalog.json'
+    published=json.loads(catalog_path.read_text(encoding='utf-8')) if catalog_path.exists() else {}
+    previous_groups={g['id']:g for g in published.get('groups',[])}
+    def due_for_check(source):
+        entry=cache.get(source['id'],{})
+        if entry.get('configuredIdentity')!=(source.get('platformId') or source.get('handle')):return True
+        last=max((value for upload in entry.get('uploads',[])
+                  if (value:=stamp(upload.get('at'))) is not None and value<=current),default=None)
+        interval=source_interval_hours(source,previous_groups,current,RULES,last)
+        return current-(stamp(entry.get('checkedAt')) or 0)>=interval*3600
+    due=[source for source in sources.values() if due_for_check(source)]
     due.sort(key=lambda c:stamp(cache.get(c['id'],{}).get('checkedAt')) or 0)
     checked=0
     for source in due:

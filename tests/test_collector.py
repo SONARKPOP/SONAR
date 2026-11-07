@@ -186,6 +186,37 @@ class CollectorTests(unittest.TestCase):
                 self.assertEqual(json.loads((Path(tmp)/'live.json').read_text(encoding='utf-8'))['items'],[])
                 self.assertEqual(json.loads((Path(tmp)/'live-candidates.json').read_text())['ids'],[])
 
+    def test_upload_cadence_retains_legacy_archive_and_promotes_a_fresh_upload(self):
+        from collectors.quota import QuotaGuard
+        from collectors.activity import iso
+        current = datetime(2026,11,7,tzinfo=timezone.utc).timestamp()
+        resolved={**self.channel,'platformId':'resolved','uploadsPlaylistId':'uploads','collectionEnabled':True}
+        config={**self.config,'channels':[resolved],'collectionGroupIds':['aespa']}
+        old=normalize({**self.raw,'snippet':{**self.raw['snippet'],'publishedAt':'2024-10-01T00:00:00Z'}},resolved,config)
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            publish([old],config,output=output)
+            api=YouTube('test-not-a-secret',QuotaGuard(output/'collection-state.json',search_run=0,clock=lambda:current))
+            identity=resolved.get('handle') or resolved['platformId']
+            api.budget.state['uploadChecks']={'aespa-official':{'identity':identity,'checkedAt':iso(current-86400)}}
+            with patch('collectors.youtube.read_config',return_value=config), patch('collectors.youtube.resolve',return_value={'resolved':resolved}), patch('collectors.youtube.DATA',output), patch('collectors.youtube.time.time',return_value=current), patch.object(api,'pages',return_value=iter([])) as pages, patch.object(api,'videos',return_value=[]) as videos:
+                collect(api)
+                pages.assert_not_called()
+                self.assertEqual(videos.call_args.args[0],set())
+                self.assertTrue((output/'content'/f"{old['id']}.json").is_file())
+                api.budget.state['uploadChecks']['aespa-official']['checkedAt']=iso(current-30*86400)
+                pages.return_value=iter([{'contentDetails':{'videoId':self.raw['id']}}])
+                videos.return_value=[self.raw]
+                collect(api)
+                pages.assert_called_once()
+                catalog=json.loads((output/'catalog.json').read_text(encoding='utf-8'))
+                group=next(g for g in catalog['groups'] if g['id']=='aespa')
+                self.assertEqual(group['lastOfficialUploadAt'],self.raw['snippet']['publishedAt'])
+                pages.reset_mock()
+                pages.return_value=iter([])
+                collect(api)
+                pages.assert_called_once()
+
     def test_paused_source_keeps_archive_without_asserting_live(self):
         config={**self.config,'channels':[{**self.channel,'collectionEnabled':False}]}
         v=normalize(self.raw,self.channel,self.config)
