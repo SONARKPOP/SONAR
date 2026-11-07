@@ -10,22 +10,28 @@ def export_database(config_dir=CONFIG, output=DATA, report_dir=None):
     bundles,_,_,_=load_bundles(config_dir)
     cache_path=Path(output)/'channel-activity.json'
     observed=json.loads(cache_path.read_text(encoding='utf-8')).get('channels',{}) if cache_path.exists() else {}
+    catalog_path=Path(output)/'catalog.json'
+    resolved={c['id']:c for c in json.loads(catalog_path.read_text(encoding='utf-8')).get('channels',[])} if catalog_path.exists() else {}
     groups=[];channels=[];pending=[]
     for bundle in bundles:
         if not eligible_group(bundle):continue
         aliases=bundle.get('aliases',[])
         group={'group_id':bundle['id'],'name_ko':bundle.get('nameKo') or next((v for v in aliases if re.search('[가-힣]',v)),None),
                'name_en':bundle.get('nameEn') or next((v for v in [bundle['name'],*aliases] if re.search('[a-zA-Z]',v)),None),
-               'display_name':bundle['name'],'aliases':aliases,'debut_year':bundle.get('debutYear'),'debut_date':bundle.get('debutDate'),
+               'display_name':bundle['name'],'aliases':aliases,'debut_year':bundle.get('debutYear'),'debut_date':bundle.get('debutDate'),'debut_date_sources':bundle.get('debutDateSources',[]),
                'group_status':bundle.get('groupStatus','unknown'),'group_status_sources':bundle.get('groupStatusSources',[]),
                'previous_group_ids':bundle.get('previousGroupIds',[]),'search_status':bundle.get('channelSearchStatus','UNVERIFIED')}
         groups.append(group)
         dedicated=[c for c in bundle['channels'] if c.get('official') and c.get('groupIds')==[bundle['id']] and c.get('platform')=='youtube']
         for index,channel in enumerate(dedicated):
             evidence=channel.get('verification',{});cid=channel.get('platformId')
+            current=observed.get(channel['id'],{})
+            identity=channel.get('platformId') or channel.get('handle')
+            if not cid and current.get('configuredIdentity')==identity:cid=current.get('channelId')
+            prior=resolved.get(channel['id'],{})
+            if not cid and channel.get('handle') and prior.get('handle')==channel['handle']:cid=prior.get('platformId')
             handle=channel.get('handle') or next(iter(channel.get('expectedHandles',[])),None)
             previous_handle=handle
-            current=observed.get(channel['id'],{})
             if current.get('channelId')==cid and not current.get('error') and current.get('handle'):
                 handle=current['handle']
             verified=bool(evidence.get('checkedAt') and evidence.get('evidenceUrl'))

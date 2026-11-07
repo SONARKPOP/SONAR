@@ -70,5 +70,10 @@ class ActivityTests(unittest.TestCase):
             self.assertEqual(refresh(api,config,Path(tmp),NOW)['g']['activity_status'],'UNKNOWN')
             refresh(api,config,Path(tmp),NOW+60)
             self.assertEqual(api.get.call_count,1)
+    def test_legacy_sources_without_expected_names_still_check_identity(self):
+        api=Mock();source={'id':'g-official','name':'Expected Artist','platformId':'UC'+'1'*22}
+        api.get.return_value={'items':[{'id':source['platformId'],'snippet':{'title':'Unrelated creator'}}]}
+        with self.assertRaisesRegex(ValueError,'channel-identity-changed'):collect_channel(api,source,NOW)
+        self.assertEqual(api.get.call_count,1)
 
 if __name__=='__main__':unittest.main()

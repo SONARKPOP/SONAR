@@ -16,7 +16,8 @@ def collect_channel(api, source, current):
     raw=next(iter(response.get('items',[])),None)
     if not raw:raise ValueError('channel-unavailable')
     snippet=raw.get('snippet',{})
-    if not expected_channel(source,snippet.get('title',''),snippet.get('customUrl','')):raise ValueError('channel-identity-changed')
+    identity_check={**source,'expectedChannelNames':source.get('expectedChannelNames') or [source.get('name',source['id'])]}
+    if not expected_channel(identity_check,snippet.get('title',''),snippet.get('customUrl','')):raise ValueError('channel-identity-changed')
     if 'topic' in snippet.get('title','').casefold().split():raise ValueError('topic-channel-excluded')
     playlist=raw['contentDetails']['relatedPlaylists']['uploads']
     ids=set();token=None;complete=False;uploads=[]
