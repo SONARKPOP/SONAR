@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {isContinuousLive} from '../src/live-policy.js';
-import {activeLives,filterContent} from '../src/lib.js';
+import {activeLives,activeStations,filterContent} from '../src/lib.js';
 test('continuous music stations are hidden while ordinary fan and concert lives remain',()=>{
  const row={id:'station',title:'BIBI STATION 📻',format:'live',liveStatus:'live',actualStartTime:'2026-11-06T00:00:00Z',channelId:'bibi',groupIds:['bibi'],memberIds:[],tags:[],subtypes:[],publishedAt:'2026-11-06T00:00:00Z'};
  const fan={...row,id:'fan',title:'오늘 같이 얘기해요 보이는 라디오'};
@@ -11,4 +11,13 @@ test('continuous music stations are hidden while ordinary fan and concert lives 
  assert(!isContinuousLive({...row,format:'video',liveStatus:'none'}));
  assert.deepEqual(activeLives({updatedAt:new Date(now).toISOString(),items:[row,fan,concert]},[{id:'bibi',official:true,groupIds:['bibi']}],now).map(v=>v.id),['fan','concert']);
  assert.deepEqual(filterContent([row,fan],{category:'live'}).map(v=>v.id),['fan']);
+ assert.deepEqual(filterContent([row,fan],{category:'station'}).map(v=>v.id),['station']);
+ const playlist={...row,id:'itzy-station',title:'ITZY - Playlist Station'};
+ const korean={...row,id:'itzy-ko',title:'있지 플레이스테이션'};
+ const feed={updatedAt:new Date(now).toISOString(),items:[fan,playlist],stations:[row,playlist,korean]};
+ const channels=[{id:'bibi',official:true,groupIds:['bibi']}];
+ assert.deepEqual(activeLives(feed,channels,now).map(v=>v.id),['fan']);
+ assert.deepEqual(activeStations(feed,channels,now).map(v=>v.id),['itzy-station','station','itzy-ko']);
+ assert.deepEqual(activeStations(feed,channels,now+31*60000),[]);
+ assert.deepEqual(activeStations(feed,[{...channels[0],official:false}],now),[]);
 });

@@ -5,6 +5,7 @@ export const PAGE_SIZE=24;
 export function monthKey(value){const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit'}).formatToParts(new Date(value));return `${parts.find(p=>p.type==='year').value}-${parts.find(p=>p.type==='month').value}`;}
 export function dedupe(rows){return [...new Map(rows.map(x=>[x.id,x])).values()];}
 function matchesContentTab(video,category){
+ if(category==='station')return isContinuousLive(video);
  if(isContinuousLive(video))return false;
  if(category==='uploads')return true;
  if(isMusicBroadcast(video))return category==='broadcast';
@@ -23,9 +24,15 @@ export function commonChannels(rows,groups){
  return [...map.values()].sort((a,b)=>b.groups.size-a.groups.size||b.count-a.count||a.name.localeCompare(b.name));
 }
 export function activeLives(feed,channels,now=Date.now()){
+ return activeStreams(feed,channels,now,false);
+}
+export function activeStations(feed,channels,now=Date.now()){
+ return activeStreams(feed,channels,now,true);
+}
+function activeStreams(feed,channels,now,station){
  const updated=Date.parse(feed.updatedAt);
  if(!Number.isFinite(updated)||now-updated>30*60*1000||updated>now+60000)return [];
- return feed.items.filter(v=>!v.demo&&!isContinuousLive(v)&&v.liveStatus==='live'&&v.actualStartTime&&!v.actualEndTime&&channels.some(c=>c.id===v.channelId&&c.official&&v.groupIds.some(g=>c.groupIds.includes(g))));
+ return dedupe([...(feed.items||[]),...(feed.stations||[])]).filter(v=>!v.demo&&isContinuousLive(v)===station&&v.liveStatus==='live'&&v.actualStartTime&&!v.actualEndTime&&channels.some(c=>c.id===v.channelId&&c.official&&v.groupIds.some(g=>c.groupIds.includes(g))));
 }
 export function loadSaved(storage,key,fallback){try{const v=JSON.parse(storage.getItem(key));return Array.isArray(v)&&v.every(x=>typeof x==='string')?v:fallback;}catch{return fallback;}}
 export function groupPreferences(storage,catalog){

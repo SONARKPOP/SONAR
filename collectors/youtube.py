@@ -358,9 +358,10 @@ def refresh_live(api):
         channel = lookup.get(raw['snippet']['channelId'])
         if channel and raw.get('status', {}).get('privacyStatus') == 'public':
             candidates.append(normalize(raw, channel, catalog, overrides['videos'].get(raw['id'])))
-    active=[v for v in candidates if v['liveStatus']=='live']
-    if active or old_feed.get('items'):
-        write(DATA / 'live.json', {'updatedAt': now(), 'items': active})
+    from .live_policy import is_continuous_live
+    active=[v for v in candidates if v['liveStatus']=='live' and v.get('actualStartTime') and not v.get('actualEndTime')]
+    if active or old_feed.get('items') or old_feed.get('stations'):
+        write(DATA / 'live.json', {'updatedAt': now(), 'items': [v for v in active if not is_continuous_live(v)], 'stations':[v for v in active if is_continuous_live(v)]})
     write(DATA / 'live-candidates.json', {'ids': [v['platformId'] for v in candidates if v['liveStatus'] in ('live', 'upcoming')]})
     print(f'Refreshed {len(candidates)} known live/upcoming videos. New discovery happens in full collection.')
 
@@ -371,7 +372,14 @@ def main():
     args = parser.parse_args()
     try:
         api = YouTube(os.environ.get('YOUTUBE_API_KEY'),budget=QuotaGuard(DATA/'collection-state.json'))
-        refresh_live(api) if args.refresh_live else collect(api, args.pages)
+        if args.refresh_live:
+            refresh_live(api)
+        else:
+            # Keep known on-air streams fresh even if the large archive scan
+            # must defer for quota. This is one batched read for usual feeds.
+            if all((DATA/name).exists() for name in ('catalog.json','live.json','live-candidates.json')):
+                refresh_live(api)
+            collect(api, args.pages)
     except BudgetExceeded as exc:
         print(f'Collection deferred: {exc}')
         print('Existing published videos are retained; site-only updates may still deploy.')
@@ -380,4 +388,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

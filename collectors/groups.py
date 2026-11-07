@@ -68,6 +68,10 @@ def sync_catalog(config_dir=CONFIG, output=DATA):
     live = read(output / 'live.json') if (output / 'live.json').exists() else {'updatedAt':None, 'items':[]}
     official = {c['id'] for c in config['channels'] if c['official'] and c['collectionEnabled']}
     live['items'] = [v for v in live.get('items', []) if v['channelId'] in official and set(v['groupIds']) & groups]
+    from .live_policy import is_continuous_live
+    streams={v['id']:v for v in [*live['items'],*live.get('stations',[])] if v['channelId'] in official and set(v['groupIds']) & groups}
+    live['items']=[v for v in streams.values() if not is_continuous_live(v)]
+    live['stations']=[v for v in streams.values() if is_continuous_live(v)]
     candidates = read(output / 'live-candidates.json') if (output / 'live-candidates.json').exists() else {'ids':[]}
     retained = {v['platformId'] for v in records if v['channelId'] in official}
     candidates['ids'] = [i for i in candidates['ids'] if i in retained]
@@ -158,4 +162,3 @@ def main(argv=None, config_dir=CONFIG, output=DATA):
         parser.exit(1, f'{exc}\n')
 
 if __name__ == '__main__':main()
-

@@ -114,6 +114,22 @@ class CollectorTests(unittest.TestCase):
         v.update(liveStatus='live',actualStartTime='2026-11-05T00:00:00Z')
         with tempfile.TemporaryDirectory() as tmp:
             publish([v],config,output=tmp)
+
+    def test_station_refresh_is_separate_and_clears_ended_station(self):
+        self.channel['platformId']='resolved'
+        normal={**self.raw,'snippet':{**self.raw['snippet'],'title':'aespa birthday live'},'liveStreamingDetails':{'actualStartTime':'2026-11-06T00:00:00Z'}}
+        station={**normal,'id':'station1234','snippet':{**normal['snippet'],'title':'aespa Playlist Station'}}
+        with tempfile.TemporaryDirectory() as tmp:
+            publish([normalize(v,self.channel,self.config) for v in [normal,station]],self.config,output=tmp)
+            api=YouTube('test-not-a-secret')
+            with patch('collectors.youtube.DATA',Path(tmp)),patch.object(api,'videos',return_value=[normal,station]):
+                refresh_live(api)
+                feed=json.loads((Path(tmp)/'live.json').read_text(encoding='utf-8'))
+                self.assertEqual(len(feed['items']),1);self.assertEqual(len(feed['stations']),1)
+                station['liveStreamingDetails']={**station['liveStreamingDetails'],'actualEndTime':'2026-11-06T01:00:00Z'}
+                refresh_live(api)
+                feed=json.loads((Path(tmp)/'live.json').read_text(encoding='utf-8'))
+                self.assertEqual(len(feed['items']),1);self.assertEqual(feed['stations'],[])
             api=YouTube('test-not-a-secret')
             with patch('collectors.youtube.read_config',return_value=config), patch('collectors.youtube.resolve',return_value={}), patch('collectors.youtube.DATA',Path(tmp)), patch.object(api,'videos',return_value=[]) as videos, patch('collectors.youtube.publish') as pub:
                 collect(api)
