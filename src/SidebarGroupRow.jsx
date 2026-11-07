@@ -4,11 +4,11 @@ import ActivityIcon from './ActivityIcon';
 import {koreanArtistName} from './directory';
 import {activityLabel,groupActivity} from './lib';
 
-export default function SidebarGroupRow({group,clock,checked,saved,badges,color,swiped,onSwipe,onToggle,onRemove}){
+export default function SidebarGroupRow({group,clock,checked,saved,removeFrom,badges,color,swiped,onSwipe,onToggle,onRemove}){
  const gesture=useRef(null),suppressClick=useRef(0);
  const korean=koreanArtistName(group);
  const startSwipe=event=>{
-  if(!saved||!event.isPrimary||event.button!==0||(event.pointerType==='mouse'&&!window.matchMedia('(max-width:760px)').matches))return;
+  if(!removeFrom||!event.isPrimary||event.button!==0||(event.pointerType==='mouse'&&!window.matchMedia('(max-width:760px)').matches))return;
   gesture.current={x:event.clientX,y:event.clientY,id:event.pointerId};
   if(event.pointerType==='mouse')event.currentTarget.setPointerCapture(event.pointerId);
  };
@@ -39,7 +39,7 @@ export default function SidebarGroupRow({group,clock,checked,saved,badges,color,
    {badges.length>0&&<span className="mygroup-badges" aria-hidden="true">{badges.map(([key,,Icon])=><Icon key={key} data-preset={key} size={11} fill={key==='clover'?'none':'currentColor'}/>)}</span>}
    {group.contentCount===0&&<span className="mygroup-pending-dot" title="수집 대기"/>}
   </button>
-  {saved&&<button type="button" className="mygroup-remove-action" aria-label={`${group.name} MY GROUPS에서 제거`}
+  {removeFrom&&<button type="button" className="mygroup-remove-action" aria-label={`${group.name} ${removeFrom}에서 제거`}
    onClick={()=>onRemove(group.id)}><X size={15}/><span>제거</span></button>}
  </div>;
 }

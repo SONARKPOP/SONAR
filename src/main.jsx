@@ -8,6 +8,7 @@ import './video-viewer.css';
 import ArtistDirectory from './ArtistDirectory';
 import ActivityIcon from './ActivityIcon';
 import {matchesArtistName,matchesDirectoryScope} from './directory';
+import {listedGroupPreferences} from './lib';
 import SidebarGroupRow from './SidebarGroupRow';
 import {isMusicBroadcast} from './broadcast';
 import {createDataClient} from './data';
@@ -53,8 +54,8 @@ function App(){
  useEffect(()=>{document.documentElement.lang=language;try{localStorage.setItem('sonar.language.v1',language);localStorage.setItem('sonar.sidebar.v1',collapsed?'collapsed':'expanded');}catch{}},[language,collapsed]);
  const [catalog,setCatalog]=useState(null),[feed,setFeed]=useState({items:[]}),[error,setError]=useState(''),[retry,setRetry]=useState(0),[clock,setClock]=useState(Date.now());
  const [saved,setSaved]=useState([]),[preferencesReady,setPreferencesReady]=useState(false);
- const [selection,dispatchSelection]=useReducer(selectionReducer,{selected:[]});
- const rawSelected=selection.selected;
+ const [selection,dispatchSelection]=useReducer(selectionReducer,{selected:[],listed:[]});
+ const {selected:rawSelected,listed:rawListed}=selection;
  const [category,setCategory]=useState('home'),[query,setQuery]=useState(''),[channel,setChannel]=useState(''),[member,setMember]=useState(''),[subtype,setSubtype]=useState(''),[format,setFormat]=useState('');
  const [openFilter,setOpenFilter]=useState('');
  const sidebarSearchRef=useRef(null);
@@ -74,7 +75,6 @@ function App(){
  const [swipedGroup,setSwipedGroup]=useState(null),[sidebarUndo,setSidebarUndo]=useState(null);
  const [sidebarGroupView,setSidebarGroupView]=useState('all');
  useEffect(()=>{try{localStorage.setItem('sonar.individual-activity.v1',includeIndividual?'on':'off');}catch{}},[includeIndividual]);
- const [myGroupQuery,setMyGroupQuery]=useState('');
  const [add,setAdd]=useState(false),[groupQuery,setGroupQuery]=useState(''),[playing,setPlaying]=useState(null),[mobile,setMobile]=useState(false);
  const [artistTab,setArtistTab]=useState('all');
  const [viewSettings,setViewSettings]=useState(false),[settingsPage,setSettingsPage]=useState('favorites');
@@ -117,10 +117,10 @@ function App(){
   document.addEventListener('keydown',key);
   return()=>{document.removeEventListener('keydown',key);previousFocus.current?.focus();};
  },[add]);
- useEffect(()=>{let cancelled=false;Promise.all([json('catalog.json'),json('live.json').catch(()=>({items:[]}))]).then(([c,l])=>{if(cancelled)return;c={...c,groups:c.groups.filter(g=>g.directoryVisibility!=='agency-only')};const preferences=groupPreferences({getItem:key=>localStorage.getItem(key)},c);setSaved(preferences.saved);dispatchSelection({type:"hydrate",selected:preferences.selected});const favorites=favoritePresetPreferences({getItem:key=>localStorage.getItem(key)},c);setFavoritePresets(favorites.presets);setActivePreset(favorites.active);setViewPresets([]);setFavoriteColors(favoriteColorPreferences({getItem:key=>localStorage.getItem(key)},c));setIndividualExcluded(excludedGroupPreferences({getItem:key=>localStorage.getItem(key)},c));setBlockedTypes(loadSaved({getItem:key=>localStorage.getItem(key)},'sonar.blocked-artist-types.v1',[]).filter(id=>ARTIST_CATEGORIES.some(([key])=>key===id&&key!=='all')));setAllowedGroups(loadSaved({getItem:key=>localStorage.getItem(key)},'sonar.allowed-groups.v1',[]).filter(id=>c.groups.some(g=>g.id===id)));try{setExcludeMode(localStorage.getItem('sonar.exclude-mode.v1')==='true');}catch{}setCatalog(c);setFeed(l);setPreferencesReady(true);}).catch(e=>{if(!cancelled){setError(e.message);}});return()=>{cancelled=true;};},[retry]);
+ useEffect(()=>{let cancelled=false;Promise.all([json('catalog.json'),json('live.json').catch(()=>({items:[]}))]).then(([c,l])=>{if(cancelled)return;c={...c,groups:c.groups.filter(g=>g.directoryVisibility!=='agency-only')};const preferences=groupPreferences({getItem:key=>localStorage.getItem(key)},c);setSaved(preferences.saved);dispatchSelection({type:"hydrate",selected:preferences.selected,listed:listedGroupPreferences(localStorage,preferences.saved,preferences.selected)});const favorites=favoritePresetPreferences({getItem:key=>localStorage.getItem(key)},c);setFavoritePresets(favorites.presets);setActivePreset(favorites.active);setViewPresets([]);setFavoriteColors(favoriteColorPreferences({getItem:key=>localStorage.getItem(key)},c));setIndividualExcluded(excludedGroupPreferences({getItem:key=>localStorage.getItem(key)},c));setBlockedTypes(loadSaved({getItem:key=>localStorage.getItem(key)},'sonar.blocked-artist-types.v1',[]).filter(id=>ARTIST_CATEGORIES.some(([key])=>key===id&&key!=='all')));setAllowedGroups(loadSaved({getItem:key=>localStorage.getItem(key)},'sonar.allowed-groups.v1',[]).filter(id=>c.groups.some(g=>g.id===id)));try{setExcludeMode(localStorage.getItem('sonar.exclude-mode.v1')==='true');}catch{}setCatalog(c);setFeed(l);setPreferencesReady(true);}).catch(e=>{if(!cancelled){setError(e.message);}});return()=>{cancelled=true;};},[retry]);
  useEffect(()=>{const timer=setInterval(()=>{setClock(Date.now());cache.delete('live.json');json('live.json').then(setFeed).catch(()=>{});},60000);return()=>clearInterval(timer);},[]);
  useEffect(()=>{let cancelled=false;const refresh=()=>{cache.delete('catalog.json');json('catalog.json').then(value=>{if(cancelled)return;setCatalog(previous=>{if(previous?.updatedAt===value.updatedAt)return previous;for(const key of cache.keys())if(key.startsWith('groups/')||key.startsWith('browse/')||key==='latest.json')cache.delete(key);return {...value,groups:value.groups.filter(group=>group.directoryVisibility!=='agency-only')};});}).catch(()=>{});};const timer=setInterval(refresh,300000);return()=>{cancelled=true;clearInterval(timer);};},[]);
- useEffect(()=>{if(!preferencesReady)return;try{localStorage.setItem('sonar.groups.v2',JSON.stringify(saved));localStorage.setItem('sonar.selected.v2',JSON.stringify(rawSelected));localStorage.setItem('sonar.favorite-presets.v1',JSON.stringify(favoritePresets));localStorage.setItem('sonar.favorite-preset-active.v1',activePreset);localStorage.setItem('sonar.favorite-colors.v1',JSON.stringify(favoriteColors));localStorage.setItem('sonar.excluded-groups.v1',JSON.stringify(individualExcluded));localStorage.setItem('sonar.blocked-artist-types.v1',JSON.stringify(blockedTypes));localStorage.setItem('sonar.allowed-groups.v1',JSON.stringify(allowedGroups));localStorage.setItem('sonar.exclude-mode.v1',String(excludeMode));localStorage.removeItem('sonar.previous-selected.v1');}catch{/* Browsing still works when storage is unavailable. */}},[saved,rawSelected,favoritePresets,activePreset,favoriteColors,individualExcluded,blockedTypes,allowedGroups,excludeMode,preferencesReady]);
+ useEffect(()=>{if(!preferencesReady)return;try{localStorage.setItem('sonar.groups.v2',JSON.stringify(saved));localStorage.setItem('sonar.selected.v2',JSON.stringify(rawSelected));localStorage.setItem('sonar.selected-list.v1',JSON.stringify(rawListed));localStorage.setItem('sonar.favorite-presets.v1',JSON.stringify(favoritePresets));localStorage.setItem('sonar.favorite-preset-active.v1',activePreset);localStorage.setItem('sonar.favorite-colors.v1',JSON.stringify(favoriteColors));localStorage.setItem('sonar.excluded-groups.v1',JSON.stringify(individualExcluded));localStorage.setItem('sonar.blocked-artist-types.v1',JSON.stringify(blockedTypes));localStorage.setItem('sonar.allowed-groups.v1',JSON.stringify(allowedGroups));localStorage.setItem('sonar.exclude-mode.v1',String(excludeMode));localStorage.removeItem('sonar.previous-selected.v1');}catch{/* Browsing still works when storage is unavailable. */}},[saved,rawSelected,rawListed,favoritePresets,activePreset,favoriteColors,individualExcluded,blockedTypes,allowedGroups,excludeMode,preferencesReady]);
  const indexGroups=filterGroup&&selected.includes(filterGroup)?[filterGroup]:selected;
  const indexKey=indexGroups.join(',');
  const browse=catalog?.browse;
@@ -180,29 +180,33 @@ function App(){
  },[catalog,excludeMode,availableAllGroups]);
 
  const toggle=id=>{
-  setViewPresets([]);setExcludeMode(false);
+  setExcludeMode(false);
   if(!rawSelected.includes(id))setSaved(current=>current.includes(id)?current:[...current,id]);
   dispatchSelection({type:"toggle",id});
  };
  const openGroups=()=>{setExclusionList('blocked');setArtistTab('all');setEditingGroups(false);setViewSettings(false);setGroupQuery('');setAdd(true);};
  const openGroupEditor=()=>{openGroups();setEditingGroups(true);};
- const editMembership=(ids,enabled)=>{const next=updateGroupMembership(saved,rawSelected,ids,enabled);setSaved(next.saved);setViewPresets([]);setExcludeMode(false);dispatchSelection({type:'change',ids:next.selected});};
+ const editMembership=(ids,enabled)=>{
+  setSaved(current=>updateGroupMembership(current,[],ids,enabled).saved);
+  setExcludeMode(false);
+  dispatchSelection({type:enabled?'add':'unlist',ids});
+ };
  const toggleSavedGroup=id=>editMembership([id],!saved.includes(id));
  const editDirectoryGroups=(ids,enabled)=>{
-  const snapshot={saved,selected:rawSelected};
+  const snapshot={saved,selected:rawSelected,listed:rawListed};
   editMembership(ids,enabled);
   return ()=>{
-   setExcludeMode(false);setViewPresets([]);
+   setExcludeMode(false);
    setSaved(current=>restoreSubset(current,snapshot.saved,ids));
-   dispatchSelection({type:'restore',ids,previous:snapshot.selected});
+   dispatchSelection({type:'restore',ids,previous:snapshot.selected,previousListed:snapshot.listed});
   };
  };
 
  const editCheckedGroups=(ids,enabled)=>{
-  const previous=rawSelected;
-  setViewPresets([]);setExcludeMode(false);
+  const previous=rawSelected,previousListed=rawListed;
+  setExcludeMode(false);
   dispatchSelection({type:enabled?'add':'remove',ids});
-  return ()=>dispatchSelection({type:'restore',ids,previous});
+  return ()=>dispatchSelection({type:'restore',ids,previous,previousListed});
  };
  const openViewSettings=()=>{openGroups();setViewSettings(true);setSettingsPage('favorites');};
 
@@ -225,15 +229,21 @@ function App(){
  },[catalog,enabledArtistTypes,excludedGroups]);
  const checkedIds=useMemo(()=>new Set(selected),[selected]);
  const savedIds=useMemo(()=>new Set(saved),[saved]);
- const sidebarGroupIds=sidebarGroupView==='selected'?selected:visibleRegistered;
+ const visibleListed=useMemo(()=>visibleArtistIds(catalog?.groups||[],rawListed,enabledArtistTypes,excludedGroups),
+  [catalog,rawListed,enabledArtistTypes,excludedGroups]);
+ const listedIds=useMemo(()=>new Set(rawListed),[rawListed]);
+ const visiblePresetGroups=useMemo(()=>visibleArtistIds(catalog?.groups||[],
+  [...new Set(viewPresets.flatMap(key=>favoritePresets[key]))],enabledArtistTypes,excludedGroups),
+  [catalog,viewPresets,favoritePresets,enabledArtistTypes,excludedGroups]);
+ const sidebarGroupIds=sidebarGroupView==='selected'?visibleListed:sidebarGroupView==='favorites'?visiblePresetGroups:visibleRegistered;
  const orderedSidebarGroups=useMemo(()=>{
   const groups=sidebarGroupIds.map(id=>groupsById.get(id));
   return groupSort==='default'?groups:sortGroups(groups,groupSort);
  },[sidebarGroupIds,groupsById,groupSort]);
- const matchingGroups=orderedSidebarGroups.filter(group=>matchesArtistName(group,myGroupQuery));
  const showSidebarGroups=view=>{setSidebarGroupView(view);setSwipedGroup(null);};
  const chooseSidebarPreset=key=>{
-  setExcludeMode(false);setActivePreset(key);showSidebarGroups('selected');
+  if(sidebarGroupView!=='favorites'&&viewPresets.includes(key)){showSidebarGroups('favorites');return;}
+  setExcludeMode(false);setActivePreset(key);showSidebarGroups('favorites');
   const next=viewPresets.includes(key)?viewPresets.filter(id=>id!==key):[...viewPresets,key];
   setViewPresets(next);
   const ids=[...new Set(next.flatMap(id=>favoritePresets[id]))];
@@ -241,8 +251,13 @@ function App(){
   dispatchSelection({type:'change',ids});
  };
  const removeSidebarGroup=id=>{
-  const restore=editDirectoryGroups([id],false);
-  setSwipedGroup(null);setSidebarUndo(()=>restore);
+  const fromSelection=sidebarGroupView!=='all';
+  const ids=[id];
+  const restore=fromSelection?()=>{
+   dispatchSelection({type:'restore',ids,previous:rawSelected,previousListed:rawListed});
+  }:editDirectoryGroups(ids,false);
+  if(fromSelection){setExcludeMode(false);dispatchSelection({type:'unlist',ids});}
+  setSwipedGroup(null);setSidebarUndo({restore,fromSelection});
  };
  const artistDirectory=artistsInCategory(catalog?.groups||[],artistTab);
  const artistDirectoryProps={
@@ -260,18 +275,17 @@ function App(){
 
  <div className="favorite-presets sidebar-group-views" role="group" aria-label="MY GROUPS 목록과 프리셋">
   <button type="button" aria-label={`등록된 전체 그룹 (${catalog?.groups.length||0}개)`} title="등록된 그룹 목록" aria-pressed={sidebarGroupView==='all'} disabled={!catalog} onClick={()=>showSidebarGroups('all')}>전체<small>{catalog?.groups.length||0}</small></button>
-  <button type="button" aria-label={`선택 그룹 (${selected.length}개)`} title="영상 모아보기에 선택한 그룹 목록" aria-pressed={sidebarGroupView==='selected'} disabled={!catalog} onClick={()=>showSidebarGroups('selected')}>선택<small>{selected.length}</small></button>
+  <button type="button" aria-label={`선택 그룹 (${visibleListed.length}개)`} title="선택 목록에 담긴 그룹" aria-pressed={sidebarGroupView==='selected'} disabled={!catalog} onClick={()=>showSidebarGroups('selected')}>선택<small>{visibleListed.length}</small></button>
   {presetOptions.map(([key,name,Icon])=><button type="button" key={key} data-preset={key}
    aria-label={`${name} 프리셋 (${favoritePresets[key].length}개 그룹)`} aria-pressed={viewPresets.includes(key)}
    title={`${name} 프리셋 선택 (${favoritePresets[key].length}개 그룹)`} onClick={()=>chooseSidebarPreset(key)}><Icon size={15} fill={key==='clover'?'none':'currentColor'}/><small>{favoritePresets[key].length}</small></button>)}
  </div>
- <div className="mygroups-count"><span>저장 {saved.length}개 · 선호 {protectedGroups.length}개 · 선택 {selected.length}개</span></div>
- <div className="mygroups-search"><label className="search"><Search size={14}/><input aria-label="MY GROUPS 검색" placeholder="그룹 검색 · 한글 / 영문" value={myGroupQuery} onChange={e=>{setSwipedGroup(null);setMyGroupQuery(e.target.value);}}/></label>{myGroupQuery&&<button type="button" aria-label="그룹 검색 지우기" onClick={()=>setMyGroupQuery('')}><X size={14}/></button>}</div>
- {sidebarUndo&&<div className="mygroups-count mygroups-undo" role="status"><span>저장 목록에서 제거했어요.</span><button type="button" onClick={()=>{sidebarUndo();setSidebarUndo(null);}}>실행 취소</button></div>}
- {myGroupQuery.trim()?<p className="mygroups-search-count" aria-live="polite">{matchingGroups.length?matchingGroups.length+'개 검색 결과':'검색 결과가 없어요.'}</p>:
- catalog&&!matchingGroups.length&&<p className="mygroups-search-count">{sidebarGroupView==='selected'?'선택한 그룹이 없어요.':'현재 유형에 표시할 그룹이 없어요.'}</p>}
- <div className={matchingGroups.length>10?'mygroups-items mygroups-items-scroll':'mygroups-items'}>
-  {matchingGroups.map(group=><SidebarGroupRow key={group.id} group={group} clock={clock} checked={checkedIds.has(group.id)} saved={savedIds.has(group.id)}
+ <div className="mygroups-count"><span>저장 {saved.length}개 · 선호 {protectedGroups.length}개 · 선택 {visibleListed.length}개 · 영상 켜짐 {selected.length}개</span></div>
+ {sidebarUndo&&<div className="mygroups-count mygroups-undo" role="status"><span>{sidebarUndo.fromSelection?'선택 목록':'저장 목록'}에서 제거했어요.</span><button type="button" onClick={()=>{sidebarUndo.restore();setSidebarUndo(null);}}>실행 취소</button></div>}
+ {catalog&&!orderedSidebarGroups.length&&<p className="mygroups-search-count">{sidebarGroupView==='selected'?'선택 목록에 담긴 그룹이 없어요.':sidebarGroupView==='favorites'?'표시할 선호그룹이 없어요.':'현재 유형에 표시할 그룹이 없어요.'}</p>}
+ <div className={orderedSidebarGroups.length>10?'mygroups-items mygroups-items-scroll':'mygroups-items'}>
+  {orderedSidebarGroups.map(group=><SidebarGroupRow key={group.id} group={group} clock={clock} checked={checkedIds.has(group.id)} saved={savedIds.has(group.id)}
+   removeFrom={sidebarGroupView==='all'?(savedIds.has(group.id)?'MY GROUPS':null):(listedIds.has(group.id)?'선택 목록':null)}
    badges={presetOptions.filter(([key])=>favoritePresets[key].includes(group.id))} color={favoriteColors[group.id]}
    swiped={swipedGroup===group.id} onSwipe={setSwipedGroup} onToggle={id=>{setSwipedGroup(null);setSidebarUndo(null);toggle(id);}} onRemove={removeSidebarGroup}/>)}
  </div>

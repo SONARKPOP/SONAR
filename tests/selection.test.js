@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {selectionReducer,favoriteGroupSelection,favoritePresetPreferences,excludedGroupPreferences,withoutExcludedGroups,prioritizeGroups,allGroupSelection,sortGroups,updateGroupMembership} from '../src/lib.js';
+import {selectionReducer,listedGroupPreferences,favoriteGroupSelection,favoritePresetPreferences,excludedGroupPreferences,withoutExcludedGroups,prioritizeGroups,allGroupSelection,sortGroups,updateGroupMembership} from '../src/lib.js';
 
 test('immediate membership changes preserve other group choices without a separate apply step',()=>{
  const added=updateGroupMembership(['a','b'],['b'],['c'],true);
@@ -50,13 +50,27 @@ test('three independent presets migrate legacy favorites to star and preserve em
  assert.deepEqual(favoritePresetPreferences({getItem:key=>values[key]??null},catalog),{presets:{heart:['b'],star:[],clover:['a']},active:'heart'});
 });
 
-test('bulk and checkbox changes affect current selection only',()=>{
- let state={selected:['rescene']};
+test('checkbox and preset changes preserve listed groups until explicitly removed',()=>{
+ let state={selected:['rescene'],listed:['rescene']};
  state=selectionReducer(state,{type:'change',ids:['rescene','kiiikiii','uspeer']});
- assert.deepEqual(state,{selected:['rescene','kiiikiii','uspeer']});
+ const listed=['rescene','kiiikiii','uspeer'];
+ assert.deepEqual(state,{selected:listed,listed});
+ state=selectionReducer(state,{type:'toggle',id:'kiiikiii'});
+ assert.deepEqual(state,{selected:['rescene','uspeer'],listed});
  state=selectionReducer(state,{type:'change',ids:[]});
- assert.deepEqual(state,{selected:[]});
- assert.deepEqual(selectionReducer(state,{type:'toggle',id:'rescene'}),{selected:['rescene']});
+ assert.deepEqual(state,{selected:[],listed});
+ assert.deepEqual(selectionReducer(state,{type:'toggle',id:'rescene'}),{selected:['rescene'],listed});
+ const removed=selectionReducer(state,{type:'unlist',ids:['kiiikiii']});
+ assert.deepEqual(removed,{selected:[],listed:['rescene','uspeer']});
+ assert.deepEqual(selectionReducer(removed,{type:'restore',ids:['kiiikiii'],previous:[],previousListed:listed}),state);
+});
+test('selection list is restored independently of checked videos and drops unsaved IDs',()=>{
+ const saved=['rescene','kiiikiii'];
+ const selected=['rescene'];
+ assert.deepEqual(listedGroupPreferences({getItem:()=>null},saved,selected),selected);
+ const storage={getItem:()=>JSON.stringify(['kiiikiii','removed'])};
+ const listed=listedGroupPreferences(storage,saved,selected);
+ assert.deepEqual(selectionReducer({},{type:'hydrate',selected,listed}),{selected,listed:['kiiikiii','rescene']});
 });
 test('saved favorites ignore selection and obsolete previous-selection records',()=>{
  const catalog={groups:[{id:'rescene'},{id:'uspeer'}]};
@@ -65,7 +79,7 @@ test('saved favorites ignore selection and obsolete previous-selection records',
  assert.deepEqual(favoriteGroupSelection(storage,catalog),['uspeer']);
  const current=selectionReducer({selected:['rescene']},{type:'change',ids:[]});
  assert.deepEqual(favoriteGroupSelection(storage,catalog),['uspeer']);
- assert.deepEqual(selectionReducer(current,{type:'change',ids:favoriteGroupSelection(storage,catalog)}),{selected:['uspeer']});
+ assert.deepEqual(selectionReducer(current,{type:'change',ids:favoriteGroupSelection(storage,catalog)}),{selected:['uspeer'],listed:['rescene','uspeer']});
  assert.equal(values['sonar.favorite-groups.v1'],'["uspeer","removed","uspeer"]');
 });
 test('new or invalid favorite storage stays empty instead of adopting defaults or history',()=>{

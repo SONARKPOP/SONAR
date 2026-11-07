@@ -61,6 +61,11 @@ export function groupPreferences(storage,catalog){
  const selected=[...new Set((loadSaved(storage,'sonar.selected.v2',null)??saved).filter(id=>saved.includes(id)))];
  return {saved,selected};
 }
+export function listedGroupPreferences(storage,saved,selected){
+ const savedIds=new Set(saved);
+ const listed=loadSaved(storage,'sonar.selected-list.v1',selected);
+ return [...new Set([...listed,...selected])].filter(id=>savedIds.has(id));
+}
 export function favoriteGroupSelection(storage,catalog){
  return [...new Set(loadSaved(storage,'sonar.favorite-groups.v1',[]).filter(id=>catalog.groups.some(g=>g.id===id)))];
 }
@@ -70,16 +75,32 @@ export function restoreSubset(current,previous,ids){
          ...current.filter(id=>!affected.has(id)&&!previous.includes(id))];
 }
 export function selectionReducer(state,action){
- if(action.type==='hydrate')return {selected:[...new Set(action.selected)]};
+ if(action.type==='hydrate'){
+  const selected=[...new Set(action.selected)];
+  return {selected,listed:[...new Set([...(action.listed||[]),...selected])]};
+ }
+ const listed=state.listed||state.selected;
  let next;
+ let nextListed=listed;
  if(action.type==='toggle')next=state.selected.includes(action.id)?state.selected.filter(id=>id!==action.id):[...state.selected,action.id];
  else if(action.type==='add')next=[...new Set([...state.selected,...action.ids])];
  else if(action.type==='remove')next=state.selected.filter(id=>!action.ids.includes(id));
+ else if(action.type==='unlist'){
+  const removed=new Set(action.ids);
+  next=state.selected.filter(id=>!removed.has(id));
+  nextListed=listed.filter(id=>!removed.has(id));
+ }
  else if(action.type==='change')next=[...new Set(action.ids)];
- else if(action.type==='restore')next=restoreSubset(state.selected,action.previous,action.ids);
+ else if(action.type==='restore'){
+  next=restoreSubset(state.selected,action.previous,action.ids);
+  if(action.previousListed)nextListed=restoreSubset(listed,action.previousListed,action.ids);
+ }
  else return state;
- if(next.length===state.selected.length&&next.every(id=>state.selected.includes(id)))return state;
- return {selected:next};
+ const listedIds=new Set(nextListed);
+ const newlyListed=next.filter(id=>!listedIds.has(id));
+ if(newlyListed.length)nextListed=[...nextListed,...newlyListed];
+ if(nextListed===state.listed&&next.length===state.selected.length&&next.every(id=>state.selected.includes(id)))return state;
+ return {selected:next,listed:nextListed};
 }
 
 const GROUP_COLORS=['#729ca8','#aa8eae','#8ea782','#b69a76','#8d99bd','#b88491','#78a69a','#aa9e72','#918ab3','#81a1bc','#b39481','#90aaa0','#a58d9b','#9aab73','#ac997f','#b0a2bf','#91b0ae','#bd9b9f','#a1ac90'];
