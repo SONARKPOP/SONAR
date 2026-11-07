@@ -4,6 +4,7 @@ import {debutYearRanges,recommendedArtists} from './lib';
 import {DIRECTORY_ACTIVITY_STATES,directoryResults,isArtistSearch,matchesDirectoryScope} from './directory';
 import {ACTIVITY_META,activityView} from './youtube-activity';
 import {officialLinksFor} from './official-links';
+import {ActivityGlyph} from './ActivityIcon';
 import ArtistDirectoryRow from './ArtistDirectoryRow';
 import DirectoryFilters,{DEFAULT_DIRECTORY_FILTERS,DIRECTORY_SCOPES} from './DirectoryFilters';
 import {activityRecommendations,artistInitials,INITIAL_ROWS} from './directory-shortcuts';
@@ -122,10 +123,12 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
      const count=state?matches.filter(group=>savedIds.has(group.id)).length:savedCount;
      const allSelected=matches.length>0&&count===matches.length;
      const label=state||'전체';
+     const activity=ACTIVITY_META[state];
      return <button key={label} type="button" className="directory-control" disabled={!matches.length}
-      aria-pressed={allSelected||(!count?false:'mixed')} aria-label={`${label} 그룹 선택 토글`}
+      style={activity?{'--toggle-accent':activity.color}:undefined}
+      aria-pressed={allSelected?true:count?'mixed':false} aria-label={`${label} 그룹 선택 토글, ${matches.length}개 중 ${count}개 선택`}
       title={`${label} · ${count}/${matches.length} 선택`} onClick={()=>updateResults(!allSelected,matches)}>
-      {state&&<i className="directory-status-dot" style={{'--activity-color':ACTIVITY_META[state].color}} aria-hidden="true"/>}{label}
+      {activity?<><ActivityGlyph icon={activity.icon} size={17}/><span>{matches.length}</span></>:label}
      </button>;
     })}
    </div>}
