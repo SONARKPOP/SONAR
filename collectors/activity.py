@@ -32,6 +32,9 @@ def effective_upload(raw, current):
     return {'id':raw['id'],'at':iso(at)}
 
 def calculate_activity(uploads, current, *, complete=True, official=True, checked_at=None, error=None):
+    # Compare at the same microsecond precision used by persisted ISO dates.
+    # A rounded checked_at must not look fractionally later than this run.
+    current=stamp(iso(current))
     result={'activity_status':'UNKNOWN','last_upload_at':None,**{k:None for k in WINDOWS},'updated_at':iso(current),'checked_at':checked_at,'reason':error}
     checked=stamp(checked_at)
     if not official or not complete or error or checked is None or checked>current or current-checked>RULES['staleHours']*3600:

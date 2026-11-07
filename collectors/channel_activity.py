@@ -43,7 +43,7 @@ def collect_channel(api, source, current):
             'error':None if complete else 'pagination-incomplete','uploads':list({v['id']:v for v in uploads}.values())}
 
 def refresh(api, config, output=DATA, current=None):
-    current=time.time() if current is None else current;output=Path(output)
+    current=stamp(iso(time.time() if current is None else current));output=Path(output)
     path=output/'channel-activity.json'
     old=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
     cache=old.get('channels',{});groups=[g for g in config['groups'] if eligible_group(g)]

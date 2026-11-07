@@ -43,10 +43,18 @@ jobs:
         id: scope
         env:
           EVENT_NAME: ${{ github.event_name }}
+          SOURCE_BEFORE: ${{ github.event.before }}
+          SOURCE_SHA: ${{ github.sha }}
         run: |
           collect=true
-          if [ "$EVENT_NAME" = "push" ] && git rev-parse HEAD^ >/dev/null 2>&1; then
-            if git diff --quiet HEAD^ HEAD -- config collectors; then collect=false; fi
+          if [ "$EVENT_NAME" = "push" ] && [[ "$SOURCE_BEFORE" =~ ^[0-9a-f]{40}$ ]] && [ "$SOURCE_BEFORE" != "0000000000000000000000000000000000000000" ]; then
+            # Checkout stays on latest main so the persistent quota ledger is
+            # current. Scope must use the triggering source diff, not a newer
+            # data-only bot commit that landed while this run was queued.
+            if ! git cat-file -e "$SOURCE_BEFORE^{commit}" 2>/dev/null || ! git cat-file -e "$SOURCE_SHA^{commit}" 2>/dev/null; then
+              git fetch --no-tags origin "$SOURCE_BEFORE" "$SOURCE_SHA" --depth=2
+            fi
+            if git diff --quiet "$SOURCE_BEFORE" "$SOURCE_SHA" -- config collectors .github/workflows/sonar.yml; then collect=false; fi
           fi
           echo "collect=$collect" >> "$GITHUB_OUTPUT"
       - name: Refresh cached girl-group YouTube activity

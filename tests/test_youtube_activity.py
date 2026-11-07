@@ -75,5 +75,9 @@ class ActivityTests(unittest.TestCase):
         api.get.return_value={'items':[{'id':source['platformId'],'snippet':{'title':'Unrelated creator'}}]}
         with self.assertRaisesRegex(ValueError,'channel-identity-changed'):collect_channel(api,source,NOW)
         self.assertEqual(api.get.call_count,1)
+    def test_persisted_microsecond_rounding_is_not_future_data(self):
+        current=NOW+0.1234567
+        data=[{'id':str(i),'at':iso(current)} for i in range(3)]
+        self.assertEqual(calculate_activity(data,current,checked_at=iso(current))['activity_status'],'SURGE')
 
 if __name__=='__main__':unittest.main()
