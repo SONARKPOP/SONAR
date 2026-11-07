@@ -114,6 +114,12 @@ class CollectorTests(unittest.TestCase):
         v.update(liveStatus='live',actualStartTime='2026-11-05T00:00:00Z')
         with tempfile.TemporaryDirectory() as tmp:
             publish([v],config,output=tmp)
+            api=YouTube('test-not-a-secret')
+            with patch('collectors.youtube.read_config',return_value=config), patch('collectors.youtube.resolve',return_value={}), patch('collectors.youtube.DATA',Path(tmp)), patch.object(api,'videos',return_value=[]) as videos, patch('collectors.youtube.publish') as pub:
+                collect(api)
+                self.assertEqual(videos.call_args.args[0],set())
+                self.assertEqual(pub.call_args.args[0][0]['id'],v['id'])
+                self.assertEqual(pub.call_args.args[0][0]['liveStatus'],'none')
 
     def test_station_refresh_is_separate_and_clears_ended_station(self):
         self.channel['platformId']='resolved'
@@ -130,11 +136,5 @@ class CollectorTests(unittest.TestCase):
                 refresh_live(api)
                 feed=json.loads((Path(tmp)/'live.json').read_text(encoding='utf-8'))
                 self.assertEqual(len(feed['items']),1);self.assertEqual(feed['stations'],[])
-            api=YouTube('test-not-a-secret')
-            with patch('collectors.youtube.read_config',return_value=config), patch('collectors.youtube.resolve',return_value={}), patch('collectors.youtube.DATA',Path(tmp)), patch.object(api,'videos',return_value=[]) as videos, patch('collectors.youtube.publish') as pub:
-                collect(api)
-                self.assertEqual(videos.call_args.args[0],set())
-                self.assertEqual(pub.call_args.args[0][0]['id'],v['id'])
-                self.assertEqual(pub.call_args.args[0][0]['liveStatus'],'none')
 
 if __name__=='__main__':unittest.main()

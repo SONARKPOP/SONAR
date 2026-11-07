@@ -348,7 +348,7 @@ def refresh_live(api):
     catalog = json.loads((DATA / 'catalog.json').read_text(encoding='utf-8'))
     ids = json.loads((DATA / 'live-candidates.json').read_text(encoding='utf-8'))['ids']
     old_feed=json.loads((DATA/'live.json').read_text(encoding='utf-8'))
-    if not ids and not old_feed.get('items'):
+    if not ids and not old_feed.get('items') and not old_feed.get('stations'):
         print('No known live candidates; no YouTube calls or data changes.')
         return
     lookup = {c.get('platformId'): c for c in catalog['channels'] if c['official'] and c.get('platformId')}
