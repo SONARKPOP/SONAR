@@ -1,0 +1,18 @@
+.modal.video-modal{padding:16px}
+.modal.video-modal .video-viewer-title{
+ display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+ overflow:hidden;margin:0 38px 10px 0;font-size:16px;line-height:1.4;
+}
+.video-modal .modal-close{top:9px;right:9px}
+.video-modal .video-actions{gap:7px;margin-top:8px}
+.video-modal .video-actions .youtube-link,.video-modal .video-share-button{
+ min-height:40px;padding:6px 10px;justify-content:center;font-size:12px;
+}
+.video-modal .video-share-status:empty{position:absolute}
+@media(max-width:760px){
+ .modal.video-modal{padding:10px}
+ .modal.video-modal .video-viewer-title{margin-bottom:8px;font-size:14px}
+ .video-modal .modal-close{top:5px;right:5px}
+ .video-modal .video-actions>a,.video-modal .video-actions>button{flex:1;min-height:44px}
+ .video-modal .video-share-status:not(:empty){flex-basis:100%}
+}
