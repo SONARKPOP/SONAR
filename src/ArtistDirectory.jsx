@@ -18,13 +18,14 @@ const RECOMMEND=['SURGE','SAILING','COASTING'];
 
 function ActivityFilterButton({state,count,status,onChange}){
  const active=status===state;
- const label=state==='all'?'전체':state;
+ const label=state==='all'?'전체 상태':state==='unknown'?'상태 미확인':state;
  const activity=ACTIVITY_META[state];
  return <button type="button" className="directory-control" disabled={Boolean(activity)&&!count&&!active}
   style={activity?{'--toggle-accent':activity.color}:undefined}
   aria-pressed={active} aria-label={`${label} 활동 필터, ${count}개`}
   title={`${label} · ${count}개`} onClick={()=>onChange(active?'all':state)}>
-  {activity?<><ActivityGlyph icon={activity.icon} size={17}/><span>{count}</span></>:label}
+  {activity?<><ActivityGlyph icon={activity.icon} size={17}/><span>{count}</span></>:
+   state==='unknown'?<><b aria-hidden="true">?</b><span>{count}</span></>:label}
  </button>;
 }
 
@@ -119,7 +120,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
  const editedCount=results.filter(group=>editingIds.has(group.id)).length;
  const suggestions=editorTitle&&!saved.length&&!results.length?recommendedArtists(groups,saved,excluded):EMPTY;
  const updateFilters=patch=>{setExpanded('');setFilters(previous=>({...previous,...patch}));};
- const resetFilters=()=>updateFilters(DEFAULT_DIRECTORY_FILTERS);
+ const resetFilters=()=>{if(!editorTitle)setInitial('');updateFilters(DEFAULT_DIRECTORY_FILTERS);};
  const search=value=>{
   if(!isArtistSearch(query)&&isArtistSearch(value)){
    setType('all');updateFilters({year:'all',...(editorTitle?{savedOnly:false}:{})});
@@ -168,7 +169,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   <div className="directory-shortcuts">
    <button type="button" className="directory-control" aria-expanded={initialOpen} aria-controls={initialsId} onClick={()=>setInitialOpen(value=>!value)}>이름 첫 글자{initial?' · '+initial:''}</button>
    {!editorTitle&&<div className="directory-selection-toggles" role="group" aria-label="YouTube 활동 상태 필터">
-    {['all',...DIRECTORY_ACTIVITY_STATES].map(state=>
+    {['all',...DIRECTORY_ACTIVITY_STATES,'unknown'].map(state=>
      <ActivityFilterButton key={state} state={state} count={facets.statuses[state]} status={status} onChange={changeActivity}/>)}
    </div>}
    {editorTitle&&<button type="button" className="directory-control" aria-pressed={favoriteEdit}
@@ -182,6 +183,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
      aria-pressed={initial===letter} onClick={()=>{setInitial(letter);setSort('az');setExpanded('');listRef.current?.scrollTo({top:0});}}>{letter||'전체'}</button>)}
    </div>)}
   </nav>
+  {!editorTitle&&<DirectoryFilters inline filters={filters} years={years} counts={facets} update={updateFilters} reset={resetFilters}/>}
   {recommendationMode&&<div className="directory-favorite-panel">
    {favoriteEdit&&<div className="directory-favorite-options" aria-label="담을 선호 목록"><small>담을 곳</small>{PRESETS.map(([key,label,Icon])=>
     <button key={key} type="button" className="directory-control" aria-pressed={preset===key} onClick={()=>setPreset(key)}><Icon size={14}/>{label}<small className="directory-option-count">{favoriteIds[key].size}</small></button>)}</div>}
@@ -199,14 +201,14 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
       {SORTS.map(([id,label])=><option key={id} value={id}>{label}</option>)}
      </select>
     </label>
-    <button type="button" className="directory-control" aria-haspopup="dialog" onClick={showFilters}>
+    {editorTitle&&<button type="button" className="directory-control" aria-haspopup="dialog" onClick={showFilters}>
      <SlidersHorizontal size={15}/>필터{chips.length>0&&<small className="directory-filter-count">{chips.length}</small>}
-    </button>
+    </button>}
     {editorTitle&&!selectionEdit&&<button type="button" className="directory-control" aria-expanded={editing} aria-controls={editing?bulkId:undefined}
      onClick={()=>setEditing(value=>!value)}><ListChecks size={15}/><span>일괄 작업</span></button>}
    </div>
   </div>
-  {chips.length>0&&<div className="directory-applied-chips" aria-label="적용된 아티스트 필터">
+  {editorTitle&&chips.length>0&&<div className="directory-applied-chips" aria-label="적용된 아티스트 필터">
    {chips.map(([label,remove])=><button type="button" key={label} aria-label={`${label} 필터 해제`} onClick={remove}><span>{label}</span><X size={12}/></button>)}
    <button type="button" className="directory-chip-reset" onClick={resetFilters}>초기화</button>
   </div>}
@@ -234,13 +236,13 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   </div>
   {!catalog?<p role="status">아티스트 목록을 불러오는 중…</p>:!results.length&&<div className="empty">
    조건에 맞는 아티스트가 없습니다.
-   {chips.length>0&&<button type="button" className="directory-control" onClick={resetFilters}>필터 초기화</button>}
+   {editorTitle&&chips.length>0&&<button type="button" className="directory-control" onClick={resetFilters}>필터 초기화</button>}
   </div>}
   {suggestions.length>0&&<div className="directory-applied-chips" aria-label="추천 아티스트">
    {suggestions.map(artist=><button type="button" key={artist.id} onClick={()=>onToggleGroup(artist.id)}>{artist.name} 추가</button>)}
   </div>}
-  <DirectoryFilters titleId={`${instanceId}-directory-filter-title`} dialogRef={filterDialog} filters={filters} years={years}
-   counts={facets} selectionEdit={selectionEdit} update={updateFilters} reset={resetFilters} resultCount={results.length}/>
+  {editorTitle&&<DirectoryFilters titleId={`${instanceId}-directory-filter-title`} dialogRef={filterDialog} filters={filters} years={years}
+   counts={facets} selectionEdit={selectionEdit} update={updateFilters} reset={resetFilters} resultCount={results.length}/>}
   {showTop&&<button type="button" className={`directory-back-top${editorTitle?' directory-editor-top':''}`}
    onClick={()=>(editorTitle?listRef.current:window)?.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
    aria-label="맨 위로 가기"><ArrowUp size={17}/><span>맨 위로</span></button>}

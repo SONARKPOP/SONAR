@@ -80,6 +80,12 @@
 .directory-filter-choices button[aria-pressed="true"]{background:var(--dir-active);border-color:var(--dir-accent);color:var(--dir-text)}
 .directory-filter-help{margin:-4px 0 11px;color:var(--dir-muted);font-size:10px;line-height:1.45}
 .directory-saved-filter{display:flex;align-items:center;gap:8px;min-height:35px;font-size:12px;cursor:pointer}
+.directory-inline-filters{min-width:0;margin:8px 0;padding:8px;border:1px solid var(--dir-line);border-radius:8px;background:var(--dir-surface)}
+.directory-inline-filters .directory-filter-section{margin-bottom:6px}
+.directory-inline-filters .directory-filter-section legend{margin-bottom:3px;color:var(--dir-muted);font-size:11px}
+.directory-inline-filters .directory-filter-choices{flex-wrap:nowrap;overflow-x:auto;padding:1px 1px 4px;scrollbar-width:thin}
+.directory-inline-filters .directory-filter-choices button{flex:none;white-space:nowrap}
+.directory-inline-actions{display:flex;align-items:center;justify-content:space-between;gap:8px}
 @media(max-width:760px){
  .directory-compact{padding-top:6px}
  .directory-compact-heading{margin-bottom:7px}

@@ -5,8 +5,10 @@ import {ACTIVITY_META} from './youtube-activity';
 import {ActivityGlyph} from './ActivityIcon';
 
 export const DIRECTORY_SCOPES=[
- ['all','전체 아티스트'],['recent','최근 업로드'],['intermittent','간헐 업로드'],
- ['dormant','장기 미업로드'],['legacy','레거시'],
+ ['all','전체 아티스트'],['recent','최근 업로드','마지막 공식 업로드가 1개월 미만'],
+ ['intermittent','간헐 업로드','마지막 공식 업로드가 1개월 이상~6개월 미만'],
+ ['dormant','장기 미업로드','마지막 공식 업로드가 6개월 이상~2년 미만'],
+ ['legacy','레거시','마지막 공식 업로드가 2년 이상'],
 ];
 export const DEFAULT_DIRECTORY_FILTERS={scope:'all',status:'all',year:'all',savedOnly:false};
 const STATES_BY_SCOPE={
@@ -29,7 +31,7 @@ function Choices({label,options,value,onChange,counts,color=false}){
  return <fieldset className="directory-filter-section">
   <legend>{label}</legend>
   <div className="directory-filter-choices">
-   {options.map(([id,text])=><button type="button" key={id} aria-pressed={value===id} onClick={()=>onChange(id)}>
+   {options.map(([id,text,help])=><button type="button" key={id} aria-pressed={value===id} title={help} onClick={()=>onChange(id)}>
     {color&&ACTIVITY_META[id]&&<span className="directory-option-activity" style={{color:ACTIVITY_META[id].color}}><ActivityGlyph icon={ACTIVITY_META[id].icon} size={14}/></span>}
     <span data-no-translate={ACTIVITY_META[id]?true:undefined}>{text}</span>
     <small className="directory-option-count">{counts[id]}</small>
@@ -38,8 +40,21 @@ function Choices({label,options,value,onChange,counts,color=false}){
  </fieldset>;
 }
 
-export default function DirectoryFilters({titleId,dialogRef,filters,years,counts,selectionEdit,update,reset,resultCount}){
+export default function DirectoryFilters({titleId,dialogRef,filters,years,counts,selectionEdit,update,reset,resultCount,inline=false}){
  const chooseScope=scope=>update({scope,status:statusForDirectoryScope(scope,filters.status)});
+ const options=<>
+  <Choices label="목록 범위" options={DIRECTORY_SCOPES} value={filters.scope} onChange={chooseScope} counts={counts.scopes}/>
+  {!inline&&<>
+   <p className="directory-filter-help">마지막 공식 YouTube 업로드 기준 · 최근 1개월 미만 · 간헐 1~6개월 미만 · 장기 6개월~2년 미만 · 레거시 2년 이상</p>
+   <Choices label="YouTube 활동 상태" options={statusOptions(filters.scope)} value={filters.status} onChange={status=>update({status})} counts={counts.statuses} color/>
+  </>}
+  <Choices label="데뷔 연도" options={years} value={filters.year} onChange={year=>update({year})} counts={counts.years}/>
+ </>;
+ const savedToggle=!selectionEdit&&<label className="directory-saved-filter"><input type="checkbox" checked={filters.savedOnly} onChange={event=>update({savedOnly:event.target.checked})}/> MY GROUPS만 <small className="directory-option-count">{counts.saved}</small></label>;
+ if(inline)return <div className="directory-inline-filters" role="group" aria-label="아티스트 필터">
+  {options}
+  <div className="directory-inline-actions">{savedToggle}<button type="button" className="directory-control" onClick={reset}>필터 초기화</button></div>
+ </div>;
  return <dialog ref={dialogRef} className="directory-filter-dialog" aria-labelledby={titleId}
   onClick={event=>{if(event.target===event.currentTarget)dialogRef.current.close();}}>
   <div className="directory-filter-panel">
@@ -48,11 +63,8 @@ export default function DirectoryFilters({titleId,dialogRef,filters,years,counts
     <button type="button" className="directory-control directory-icon" aria-label="필터 닫기" onClick={()=>dialogRef.current.close()}><X size={18}/></button>
    </header>
    <div className="directory-filter-body">
-    <Choices label="목록 범위" options={DIRECTORY_SCOPES} value={filters.scope} onChange={chooseScope} counts={counts.scopes}/>
-    <p className="directory-filter-help">마지막 공식 YouTube 업로드 기준 · 최근 1개월 미만 · 간헐 1~6개월 미만 · 장기 6개월~2년 미만 · 레거시 2년 이상</p>
-    <Choices label="YouTube 활동 상태" options={statusOptions(filters.scope)} value={filters.status} onChange={status=>update({status})} counts={counts.statuses} color/>
-    <Choices label="데뷔 연도" options={years} value={filters.year} onChange={year=>update({year})} counts={counts.years}/>
-    {!selectionEdit&&<label className="directory-saved-filter"><input type="checkbox" checked={filters.savedOnly} onChange={event=>update({savedOnly:event.target.checked})}/> MY GROUPS만 <small className="directory-option-count">{counts.saved}</small></label>}
+    {options}
+    {savedToggle}
    </div>
    <footer className="directory-filter-footer">
     <button type="button" className="directory-control" onClick={reset}>초기화</button>
