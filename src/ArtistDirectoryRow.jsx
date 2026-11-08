@@ -14,7 +14,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
  const tags=careerTagsFor(artist,groups);
  const selectedPresets=PRESETS.filter(([key])=>favorites[key].has(artist.id));
  const legacy=legacyGroupState(artist,clock);
- const visibleLegacy=legacy&&legacy!=='long-dormant'?LEGACY_LABELS[legacy]:null;
+ const visibleLegacy=LEGACY_LABELS[legacy];
  const lastUpload=expanded?lastKnownUpload(artist,clock):null;
  const summary=[artist.debutYear||'데뷔 미확인',visibleLegacy].filter(Boolean).join(' · ');
  const roster=artist.memberRoster;
@@ -59,18 +59,19 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
    </div>
   </div>
   {expanded&&<div className="directory-row-details" id={detailsId}>
-   <div className="directory-row-detail-meta">
-    <small>{lastUpload===null?'마지막 공식 업로드 확인 대기':`마지막 공식 업로드 ${dateFormat.format(lastUpload)}`}</small>
-    {legacy==='long-dormant'&&<small>{LEGACY_LABELS[legacy]}</small>}
+   <div className="directory-row-detail-main">
+    <div className="directory-row-detail-meta">
+     <small>{lastUpload===null?'마지막 공식 업로드 확인 대기':`마지막 공식 업로드 ${dateFormat.format(lastUpload)}`}</small>
+    </div>
+    <OfficialLinks artist={artist} channels={channels}/>
+    {artist.artistType!=='solo'&&memberSections.filter(([,names])=>names.length>0).map(([label,names])=>
+     <div className="directory-member-section" key={label} role="group" aria-label={label}>
+      <small>{label}</small>
+      <div className="directory-row-tags">{names.map(name=><button type="button" className="directory-tag" key={name}
+       onClick={()=>onCareerSearch(name)} aria-label={name+' 관련 아티스트 검색'} data-no-translate>{name}</button>)}</div>
+     </div>)}
    </div>
-   <OfficialLinks artist={artist} channels={channels}/>
-   {artist.artistType!=='solo'&&memberSections.filter(([,names])=>names.length>0).map(([label,names])=>
-    <div className="directory-member-section" key={label} role="group" aria-label={label}>
-     <small>{label}</small>
-     <div className="directory-row-tags">{names.map(name=><button type="button" className="directory-tag" key={name}
-      onClick={()=>onCareerSearch(name)} aria-label={name+' 관련 아티스트 검색'} data-no-translate>{name}</button>)}</div>
-    </div>)}
-   <div className="editor-group-policies">
+   <div className="editor-group-policies" role="group" aria-label="선호 그룹 및 보기 설정">
     {PRESETS.map(([key,label,Icon])=><button type="button" key={key} data-preset={key}
      aria-label={`${name} ${label}`} aria-pressed={favorites[key].has(artist.id)}
      onClick={()=>onFavorite(key,artist.id)}><Icon size={16} fill={key!=='clover'&&favorites[key].has(artist.id)?'currentColor':'none'}/></button>)}

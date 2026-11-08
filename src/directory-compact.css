@@ -59,10 +59,12 @@
 .directory-expand-icon{border-color:transparent;background:transparent;color:var(--dir-muted)}
 .directory-expand-icon[aria-expanded="true"] svg{transform:rotate(180deg)}
 .directory-save-icon[aria-pressed="true"]{color:var(--dir-accent);background:var(--dir-active)}
-.directory-row-details{display:grid;gap:8px;padding:8px 12px 12px;border-top:1px solid var(--dir-line)}
+.directory-row-details{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:start;gap:8px;padding:8px 12px 12px;border-top:1px solid var(--dir-line)}
+.directory-row-detail-main{min-width:0;display:grid;gap:8px}
 .directory-row-detail-meta{display:flex;gap:9px;flex-wrap:wrap;color:var(--dir-muted);font-size:11px}
 .directory-row-details .directory-source-links,.directory-row-details .editor-group-policies{margin:0}
-.directory-row-details .editor-group-policies{padding:7px 0 0}
+.directory-row-details .editor-group-policies{display:grid;grid-template-columns:repeat(3,40px);padding:0;border-top:0}
+.directory-row-details .editor-group-policies .policy-allow{grid-column:span 2;width:100%;margin:0}
 .directory-row-details .editor-group-policies button{min-width:40px;min-height:40px}
 .directory-compact .empty .directory-control{display:flex;margin:9px auto 0}
 .directory-filter-dialog{position:fixed;inset:clamp(12px,var(--directory-filter-top,12px),calc(100dvh - 420px)) var(--directory-filter-right,12px) auto auto;width:min(390px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);margin:0;padding:0;overflow:hidden;border:1px solid var(--dir-line);border-radius:12px;background:var(--dir-surface);color:var(--dir-text);box-shadow:0 12px 40px #071a3560}

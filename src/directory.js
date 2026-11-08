@@ -29,7 +29,7 @@ export function lastKnownUpload(artist,now=Date.now()){
  return dates.length?Math.max(...dates):null;
 }
 
-export const LEGACY_LABELS={disbanded:'해체',hiatus:'활동 중단','long-dormant':'2년 이상 미업로드','channel-unavailable':'공식 채널 이용 불가'};
+export const LEGACY_LABELS={disbanded:'해체',hiatus:'활동 중단','channel-unavailable':'공식 채널 이용 불가'};
 
 export function matchesDirectoryScope(artist,scope,now=Date.now()){
  if(scope==='all')return true;
