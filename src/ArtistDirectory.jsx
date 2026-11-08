@@ -10,7 +10,7 @@ import DirectoryFilters,{DEFAULT_DIRECTORY_FILTERS,DIRECTORY_SCOPES,statusForDir
 import {artistInitials,INITIAL_ROWS} from './directory-shortcuts';
 import './directory-compact.css';
 
-const TYPES=[['all','전체'],['girl','여자'],['boy','남자'],['mixed','혼성'],['duo-solo','듀오·솔로']];
+const TYPES=[['all','전체'],['girl','여자'],['mixed','혼성'],['duo-solo','솔로']];
 const SORTS=[['az','이름 A–Z'],['debut-desc','데뷔 최신순'],['debut-asc','데뷔 오래된순']];
 const EMPTY=[];
 const PRESETS=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];

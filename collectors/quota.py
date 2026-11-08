@@ -79,7 +79,7 @@ def main():
     parser.add_argument('--estimate',action='store_true')
     args=parser.parse_args()
     from .registry import load_config
-    print(json.dumps(estimate(load_config(),len(list((DATA/'content').glob('*.json')))),ensure_ascii=False,indent=2))
+    from .source_policy import public_artist_scope
+    print(json.dumps(estimate(public_artist_scope(load_config()),len(list((DATA/'content').glob('*.json')))),ensure_ascii=False,indent=2))
 
 if __name__=='__main__':main()
-

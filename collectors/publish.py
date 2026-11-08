@@ -54,8 +54,9 @@ def publish(records, config, events=(), output=DATA, demo=False):
     events = ()
     from .content_tags import apply_tags
     from .individual_activity import classify_individual, solo_review_candidates
-    from .source_policy import approved_original
+    from .source_policy import approved_original, public_artist_scope, scope_video
     from .browse_index import build_indexes
+    config = public_artist_scope(config)
     sources = {c['id']:c for c in config['channels']}
     artists = {group['id']:group for group in config['groups']}
     members = {member['id']:member for member in config['members']}
@@ -63,6 +64,9 @@ def publish(records, config, events=(), output=DATA, demo=False):
     for record in records:
         source = sources.get(record['channelId'], {})
         if not approved_original(source):
+            continue
+        record = scope_video(record, artists, members)
+        if not record['groupIds']:
             continue
         video = apply_tags(record, source.get('official', False))
         activity = classify_individual(video, source, artists, members)

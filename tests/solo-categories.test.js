@@ -30,9 +30,10 @@ test('individual switch hides only career-linked results and still allows direct
  assert.equal(filterContent([solo],{groups:['lunedi'],includeIndividual:false}).length,1);
 });
 
-test('mixed duos are discoverable in both tabs and legacy status is independent of upload inactivity',()=>{
+test('mixed duos are groups and legacy status is independent of upload inactivity',()=>{
  const artists=[{id:'akmu',name:'AKMU',gender:'mixed',artistType:'duo'}];
- for(const category of ['mixed','duo-solo','all'])assert.equal(artistsInCategory(artists,category).length,1);
+ for(const category of ['mixed','all'])assert.equal(artistsInCategory(artists,category).length,1);
+ assert.equal(artistsInCategory(artists,'duo-solo').length,0);
  const now=Date.parse('2026-11-07T00:00:00Z');
  assert.equal(legacyGroupState({lastOfficialUploadAt:'2024-11-07'},now),'long-dormant');
  assert.equal(legacyGroupState({lastOfficialUploadAt:'2025-01-01'},now),null);

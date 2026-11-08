@@ -8,6 +8,7 @@ import math
 from pathlib import Path
 from .quota import BudgetExceeded
 from .publish import publish, write, now
+from .source_policy import scope_video
 
 def pending_sources(config, previous):
     old={c['id']:c for c in previous.get('channels',[])}
@@ -21,7 +22,7 @@ def pending_sources(config, previous):
         if not prior or changed:result.append(c)
     return result
 
-def collect_pending(api, config, overrides, output, previous):
+def collect_pending(api, config, overrides, output, previous, *, attribution_config=None):
     from .youtube import resolve, normalize, YouTubeHTTPError
     output=Path(output)
     candidates=pending_sources(config,previous)[:20]
@@ -32,6 +33,8 @@ def collect_pending(api, config, overrides, output, previous):
     required=2*len(candidates)+math.ceil(planned/50)+8
     if api.budget and api.budget.remaining('read')<required:return False
     staged=copy.deepcopy(config)
+    groups={group['id'] for group in staged['groups']}
+    members={member['id'] for member in staged['members']}
     selected={c['id'] for c in candidates}
     stage_sources={c['id']:c for c in staged['channels']}
     lookup=resolve(api,{**staged,'channels':[stage_sources[c['id']] for c in candidates]})
@@ -52,7 +55,7 @@ def collect_pending(api, config, overrides, output, previous):
         source=lookup.get(raw['snippet']['channelId'])
         if not source or raw.get('status',{}).get('privacyStatus')!='public':continue
         if raw['id'] in seeds and seeds[raw['id']]!=source['platformId']:continue
-        record=normalize(raw,source,staged,overrides['videos'].get(raw['id']))
+        record=scope_video(normalize(raw,source,attribution_config or staged,overrides['videos'].get(raw['id'])),groups,members)
         if record['groupIds']:new_records.append(record)
     old_sources={c['id']:c for c in previous.get('channels',[])}
     for c in staged['channels']:
@@ -61,12 +64,19 @@ def collect_pending(api, config, overrides, output, previous):
             for field in ('unavailableReason','observedChannelName'):
                 if prior.get(field):c[field]=prior[field]
             if prior.get('unavailableReason'):c['collectionEnabled']=False
-    retained=[json.loads(p.read_text(encoding='utf-8')) for p in (output/'content').glob('*.json')]
-    merged={v['id']:v for v in retained if not v.get('demo')}
+    retained=(scope_video(json.loads(p.read_text(encoding='utf-8')),groups,members)
+              for p in (output/'content').glob('*.json'))
+    merged={v['id']:v for v in retained if not v.get('demo') and v['groupIds'] and v['channelId'] in stage_sources}
     merged.update({v['id']:v for v in new_records})
     live_path=output/'live.json';candidate_path=output/'live-candidates.json'
     live=json.loads(live_path.read_text(encoding='utf-8')) if live_path.exists() else {'updatedAt':None,'items':[]}
     live_candidates=json.loads(candidate_path.read_text(encoding='utf-8')) if candidate_path.exists() else {'ids':[]}
+    for field in ('items','stations'):
+        if field in live:
+            streams=(scope_video(v,groups,members) for v in live[field] if v['channelId'] in stage_sources)
+            live[field]=[v for v in streams if v['groupIds']]
+    retained_ids={v['platformId'] for v in merged.values()}
+    live_candidates['ids']=[vid for vid in live_candidates['ids'] if vid in retained_ids]
     publish(list(merged.values()),staged,output=output)
     write(live_path,live);write(candidate_path,live_candidates)
     report_path=output/'collection-report.json'
@@ -77,4 +87,3 @@ def collect_pending(api, config, overrides, output, previous):
         'unavailableSources':[{'id':c['id'],'reason':c['unavailableReason'],'observedName':c.get('observedChannelName')} for c in staged['channels'] if c.get('unavailableReason')]})
     print(f'Targeted collection checked {len(selected)} new sources and retained {len(new_records)} artist-attributed videos. Existing archive and live confirmation time preserved.')
     return True
-

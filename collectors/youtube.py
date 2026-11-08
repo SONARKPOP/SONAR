@@ -11,7 +11,7 @@ import urllib.request
 from .publish import ROOT, DATA, now, publish, write
 from .registry import load_config
 from .quota import QuotaGuard, BudgetExceeded
-from .source_policy import approved_original
+from .source_policy import approved_original, public_artist_scope
 from .individual_activity import personal_title_kind
 
 class YouTubeHTTPError(RuntimeError):
@@ -309,7 +309,8 @@ def collect(api, pages=1):
     from .quota import metadata_read_reserve
     from .activity import RULES, stamp, iso
     from .upload_cadence import source_identity, source_interval_hours
-    config, overrides = read_config(), read_overrides()
+    attribution_config, overrides = read_config(), read_overrides()
+    config = public_artist_scope(attribution_config)
     current = time.time()
     previous = {}
     previous_path=DATA/'catalog.json'
@@ -340,13 +341,17 @@ def collect(api, pages=1):
         if (interval > RULES['uploadCadenceHours']['recent'] and checked_at is not None and
                 previous_check.get('identity') == source_identity(source) and current-checked_at < interval*3600):
             deferred.add(sid)
-    retained = [json.loads(path.read_text(encoding='utf-8')) for path in (DATA/'content').glob('youtube__*.json')]
+    supported = {g['id'] for g in config['groups']}
+    sources = {c['id']:c for c in config['channels']}
+    retained = [record for path in (DATA/'content').glob('youtube__*.json')
+                if (record:=json.loads(path.read_text(encoding='utf-8')))['channelId'] in sources
+                and supported.intersection(record['groupIds'])]
     retained_ids = {record['platformId'] for record in retained
                     if record['channelId'] not in deferred or record.get('liveStatus') in ('live','upcoming')}
     unresolved = sum(not c.get('uploadsPlaylistId') for c in config['channels'] if c.get('collectionEnabled',True))
     if api.budget and api.budget.remaining('read') < metadata_read_reserve(retained_ids) + unresolved:
         from .targeted import collect_pending
-        if collect_pending(api,config,overrides,DATA,previous):return
+        if collect_pending(api,config,overrides,DATA,previous,attribution_config=attribution_config):return
         raise BudgetExceeded('Insufficient read budget for a safe metadata refresh; collection deferred, existing data retained.')
     lookup = resolve(api, config)
     ids = set()
@@ -389,7 +394,7 @@ def collect(api, pages=1):
     cadence_retained = []
     sources = {c['id']:c for c in config['channels']}
     supported = {g['id'] for g in config['groups']}
-    ambiguous_links = ambiguous_artist_links(config)
+    ambiguous_links = ambiguous_artist_links(attribution_config)
     for old in retained:
         if old.get('platform') == 'youtube' and not re.fullmatch(r'[A-Za-z0-9_-]{11}', old.get('platformId', '')):
             continue
@@ -403,7 +408,7 @@ def collect(api, pages=1):
                 old['liveStatus'] = 'none'
                 if old['groupIds']:paused.append(old)
             elif source['id'] in deferred and old.get('liveStatus') not in ('live','upcoming'):
-                cleaned=prune_stale_attribution(old,source,config,overrides['videos'].get(old['platformId']),ambiguous_links)
+                cleaned=prune_stale_attribution(old,source,attribution_config,overrides['videos'].get(old['platformId']),ambiguous_links)
                 if cleaned['groupIds']:cadence_retained.append(cleaned)
             else:
                 ids.add(old['platformId'])
@@ -431,8 +436,8 @@ def collect(api, pages=1):
             continue
         if not channel or raw.get('status', {}).get('privacyStatus') != 'public':
             continue
-        v = normalize(raw, channel, config, overrides['videos'].get(raw['id']))
-        if v['groupIds']:
+        v = normalize(raw, channel, attribution_config, overrides['videos'].get(raw['id']))
+        if supported.intersection(v['groupIds']):
             records.append(v)
     publish(records, config, output=DATA)
     if api.budget and scan_channels:
@@ -448,7 +453,7 @@ def collect(api, pages=1):
 def refresh_live(api):
     if not (DATA / 'catalog.json').exists():
         raise RuntimeError('Run full collection first.')
-    catalog = json.loads((DATA / 'catalog.json').read_text(encoding='utf-8'))
+    catalog = public_artist_scope(json.loads((DATA / 'catalog.json').read_text(encoding='utf-8')))
     ids = json.loads((DATA / 'live-candidates.json').read_text(encoding='utf-8'))['ids']
     old_feed=json.loads((DATA/'live.json').read_text(encoding='utf-8'))
     if not ids and not old_feed.get('items') and not old_feed.get('stations'):
@@ -457,10 +462,16 @@ def refresh_live(api):
     lookup = {c.get('platformId'): c for c in catalog['channels'] if c['official'] and c.get('platformId')}
     candidates = []
     overrides = read_overrides()
+    from .source_policy import scope_video
+    attribution_config = read_config()
+    groups = {g['id'] for g in catalog['groups']}
+    members = {m['id'] for m in catalog['members']}
     for raw in api.videos(ids):
         channel = lookup.get(raw['snippet']['channelId'])
         if channel and raw.get('status', {}).get('privacyStatus') == 'public':
-            candidates.append(normalize(raw, channel, catalog, overrides['videos'].get(raw['id'])))
+            video = scope_video(normalize(raw, channel, attribution_config, overrides['videos'].get(raw['id'])), groups, members)
+            if video['groupIds']:
+                candidates.append(video)
     from .live_policy import is_continuous_live
     active=[v for v in candidates if v['liveStatus']=='live' and v.get('actualStartTime') and not v.get('actualEndTime')]
     if active or old_feed.get('items') or old_feed.get('stations'):

@@ -36,25 +36,26 @@ def save_bundle(bundle, config_dir=CONFIG, create=True):
 def sync_catalog(config_dir=CONFIG, output=DATA):
     """Re-index retained content without API calls or refreshing live freshness."""
     from .youtube import ambiguous_artist_links, prune_stale_attribution
+    from .source_policy import public_artist_scope, scope_video
     output = Path(output)
-    config = load_config(config_dir)
+    attribution_config = load_config(config_dir)
+    config = public_artist_scope(attribution_config)
     groups = {g['id'] for g in config['groups']}
     members = {m['id'] for m in config['members']}
     channels = {c['id']:c for c in config['channels']}
     overrides_path = Path(config_dir) / 'overrides.json'
     overrides = read(overrides_path).get('videos', {}) if overrides_path.exists() else {}
-    ambiguous_links = ambiguous_artist_links(config)
+    ambiguous_links = ambiguous_artist_links(attribution_config)
 
     def clean(record):
         channel = channels.get(record['channelId'])
         if channel:
-            return prune_stale_attribution(record, channel, config, overrides.get(record.get('platformId')), ambiguous_links)
+            record = prune_stale_attribution(record, channel, attribution_config, overrides.get(record.get('platformId')), ambiguous_links)
+            return scope_video(record, groups, members)
         return record
     records = []
     for path in (output / 'content').glob('*.json'):
         record = clean(read(path))
-        record['groupIds'] = [g for g in record['groupIds'] if g in groups]
-        record['memberIds'] = [m for m in record['memberIds'] if m in members]
         if record['groupIds'] and record['channelId'] in channels:
             records.append(record)
     previous = read(output / 'catalog.json') if (output / 'catalog.json').exists() else {'demo':True}

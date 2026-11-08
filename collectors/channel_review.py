@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 from .groups import save_bundle, youtube_identity
 from .publish import DATA, now, write
 from .registry import CONFIG, load_bundles, read
+from .source_policy import public_artist
 from .youtube import YouTube
 
 
@@ -17,7 +18,7 @@ def export_queue(output=DATA,config_dir=CONFIG):
         candidates.setdefault(item['groupId'],[]).append(item)
     queue=[]
     for group in bundles:
-        if not group.get('supported',True):
+        if not group.get('supported',True) or not public_artist(group):
             continue
         dedicated=[source for source in group['channels'] if source.get('official') and
                    source.get('platform')=='youtube' and source.get('groupIds')==[group['id']]]
