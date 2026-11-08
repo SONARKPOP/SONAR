@@ -8,9 +8,15 @@ on:
         description: Refresh YouTube data before deployment (requires YOUTUBE_API_KEY secret)
         type: boolean
         default: false
+      boost_reads:
+        description: Enable temporary 24-hour read budget (does not change live search budget)
+        type: boolean
+        default: false
   schedule:
     - cron: '17 */6 * * *'
-    - cron: '7,27,47 * * * *'
+    - cron: '2-52/10 * * * *'
+    - cron: '7,27,37,47,57 * * * *'
+    - cron: '17 1-5,7-11,13-17,19-23 * * *'
 concurrency:
   group: sonar-${{ github.ref }}
   cancel-in-progress: false
@@ -18,7 +24,7 @@ permissions:
   contents: read
 jobs:
   collect:
-    if: github.event_name == 'push' || github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.collect)
+    if: github.event_name == 'push' || github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && (inputs.collect || inputs.boost_reads))
     runs-on: ubuntu-latest
     outputs:
       changed: ${{ steps.commit.outputs.changed }}
@@ -34,8 +40,10 @@ jobs:
         with:
           python-version: '3.12'
       - name: Collector tests
+        if: github.event_name == 'push'
         run: python -m unittest discover -s tests -p 'test_*.py' -q
       - name: Validate registry and show budget estimate
+        if: github.event_name != 'schedule' || github.event.schedule == '17 */6 * * *'
         run: |
           python -m collectors.groups validate
           python -m collectors.quota --estimate
@@ -57,20 +65,24 @@ jobs:
             if git diff --quiet "$SOURCE_BEFORE" "$SOURCE_SHA" -- config collectors .github/workflows/sonar.yml; then collect=false; fi
           fi
           echo "collect=$collect" >> "$GITHUB_OUTPUT"
+      - name: Enable temporary general read budget
+        if: github.event_name == 'workflow_dispatch' && inputs.boost_reads
+        run: python -m collectors.quota --enable-read-boost
       - name: Refresh cached girl-group YouTube activity
-        if: steps.scope.outputs.collect == 'true'
+        if: steps.scope.outputs.collect == 'true' && (github.event_name == 'push' || inputs.collect || github.event.schedule == '17 */6 * * *')
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python -m collectors.channel_activity
       - name: Discover review-only channel and new-group candidates
-        if: steps.scope.outputs.collect == 'true'
+        if: steps.scope.outputs.collect == 'true' && (github.event_name == 'push' || inputs.collect || github.event.schedule == '17 */6 * * *')
         run: python -m collectors.channel_candidates
       - name: Collect or refresh with persistent limits
         id: collect_data
         if: steps.scope.outputs.collect == 'true'
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-          FULL: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.schedule == '17 */6 * * *' }}
+          FULL: ${{ github.event_name == 'push' || inputs.collect || github.event.schedule == '17 */6 * * *' }}
+          LIVE: ${{ github.event.schedule == '2-52/10 * * * *' }}
         shell: bash
         run: |
           if [ -z "$YOUTUBE_API_KEY" ]; then
@@ -80,7 +92,10 @@ jobs:
           if [ "$FULL" = "true" ]; then
             python -m collectors.youtube --pages 1
           else
-            python -m collectors.youtube --refresh-live
+            if [ "$LIVE" = "true" ]; then
+              python -m collectors.youtube --refresh-live
+            fi
+            python -m collectors.youtube --refresh-uploads
           fi
       - name: Commit data or quota ledger
         id: commit

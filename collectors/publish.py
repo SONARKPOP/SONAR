@@ -132,5 +132,21 @@ def publish(records, config, events=(), output=DATA, demo=False):
     official = {c['id'] for c in config['channels'] if c['official']}
     live = [v for v in ordered if v.get('liveStatus') == 'live' and v['channelId'] in official and v.get('actualStartTime') and not v.get('actualEndTime') and not v.get('demo')]
     write(output / 'live.json', {'updatedAt': updated, 'items': [v for v in live if not is_continuous_live(v)], 'stations':[v for v in live if is_continuous_live(v)]})
-    candidates = [v['platformId'] for v in ordered if v.get('liveStatus') in ('live', 'upcoming') and v['channelId'] in official]
-    write(output / 'live-candidates.json', {'ids': candidates})
+    candidates = [v for v in ordered if v.get('liveStatus') in ('live', 'upcoming') and v['channelId'] in official]
+    write(output / 'live-candidates.json', live_candidate_index(candidates))
+
+
+def live_candidate_index(videos, waiting=None):
+    starts = dict(waiting or {})
+    ids = list(starts)
+    for video in videos:
+        if video['liveStatus'] not in ('live', 'upcoming'):
+            continue
+        video_id = video['platformId']
+        ids.append(video_id)
+        if video['liveStatus'] == 'upcoming' and video.get('scheduledStartTime'):
+            starts[video_id] = video['scheduledStartTime']
+    result = {'ids': sorted(set(ids))}
+    if starts:
+        result['scheduledStarts'] = starts
+    return result

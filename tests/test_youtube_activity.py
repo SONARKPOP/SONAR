@@ -84,9 +84,24 @@ class ActivityTests(unittest.TestCase):
         from collectors.activity import RULES, stamp
         from collectors.upload_cadence import upload_interval_hours
         current=stamp('2026-11-07T00:00:00Z')
-        for last,hours in [('2026-11-01',6),('2026-10-07',24),('2026-05-07',168),('2024-11-07',720)]:
-            self.assertEqual(upload_interval_hours(stamp(last+'T00:00:00Z'),current,RULES),hours)
-        self.assertEqual(calculate_activity(rows(1,800*DAY),NOW,checked_at=iso(NOW-29*DAY))['activity_status'],'LOST SIGNAL')
-        self.assertEqual(calculate_activity(rows(1,800*DAY),NOW,checked_at=iso(NOW-31*DAY))['activity_status'],'UNKNOWN')
+        for age, hours in [(0, 9.5), (7, 16.5), (15, 24.5), (30, 72), (90, 168),
+                           (180, 360), (365, 720), (730, 2160)]:
+            self.assertEqual(upload_interval_hours(current-age*DAY,current,RULES),hours)
+        self.assertEqual(calculate_activity(rows(1,800*DAY),NOW,checked_at=iso(NOW-89*DAY))['activity_status'],'LOST SIGNAL')
+        self.assertEqual(calculate_activity(rows(1,800*DAY),NOW,checked_at=iso(NOW-91*DAY))['activity_status'],'UNKNOWN')
+
+    def test_daily_slots_are_spread_and_not_repeated_at_midnight(self):
+        from collectors.activity import RULES, stamp
+        from collectors.upload_cadence import scheduled_slot, source_due_slot
+        midnight = stamp('2026-11-07T15:00:00Z')
+        after = midnight + 25*60
+        band = RULES['uploadCadence'][0]
+        slots = {scheduled_slot(str(i), band, after) for i in range(60)}
+        self.assertEqual(slots, {midnight + offset*60 for offset in range(-5, 26, 5)})
+        source = {'id':'sample-channel','handle':'@sample'}
+        slot = scheduled_slot(source['id'], band, after)
+        checked = {'identity':'@sample','checkedAt':iso(slot)}
+        self.assertIsNone(source_due_slot(source, {}, after, RULES, checked, midnight-DAY))
+        self.assertEqual(source_due_slot(source, {}, after, RULES, {}, midnight-DAY), slot)
 
 if __name__=='__main__':unittest.main()

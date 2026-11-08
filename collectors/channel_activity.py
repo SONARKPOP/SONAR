@@ -57,10 +57,11 @@ def refresh(api, config, output=DATA, current=None):
         if entry.get('configuredIdentity')!=(source.get('platformId') or source.get('handle')):return True
         last=max((value for upload in entry.get('uploads',[])
                   if (value:=stamp(upload.get('at'))) is not None and value<=current),default=None)
-        interval=source_interval_hours(source,previous_groups,current,RULES,last)
+        interval=6 if not entry.get('complete') else source_interval_hours(source,previous_groups,current,RULES,last)
         return current-(stamp(entry.get('checkedAt')) or 0)>=interval*3600
     due=[source for source in sources.values() if due_for_check(source)]
-    due.sort(key=lambda c:stamp(cache.get(c['id'],{}).get('checkedAt')) or 0)
+    due.sort(key=lambda c: (bool(cache.get(c['id'],{}).get('complete')),
+                            stamp(cache.get(c['id'],{}).get('checkedAt')) or 0))
     checked=0
     for source in due:
         if api.budget and api.budget.remaining('read')<4:break

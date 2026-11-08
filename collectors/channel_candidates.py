@@ -1,4 +1,4 @@
-"""Daily bounded Wikipedia/Wikidata discovery. Candidates never enter live registry."""
+"""Periodic bounded Wikipedia/Wikidata discovery. Candidates never enter live registry."""
 import argparse
 import json
 import re
@@ -31,10 +31,13 @@ def discover(config,output=DATA,fetcher=fetch,current=None):
     current=time.time() if current is None else current
     path=output/'channel-candidates.json'
     state=json.loads(path.read_text(encoding='utf-8')) if path.exists() else {'candidates':[],'cursor':0,'newArtistCandidates':[]}
-    if state.get('generatorVersion')==3 and current-(stamp(state.get('lastAttemptAt') or state.get('updatedAt')) or 0)<86400:return state
+    if state.get('generatorVersion')==4 and current-(stamp(state.get('lastAttemptAt') or state.get('updatedAt')) or 0)<21600:return state
     state['lastAttemptAt']=now()
     groups=[g for g in config['groups'] if eligible_group(g)]
-    start=state.get('cursor',0)%max(1,len(groups));selected=(groups+groups)[start:start+15]
+    from .activity import dedicated_sources
+    pending = [g for g in groups if not dedicated_sources(g, config.get('channels', []))]
+    start = state.get('cursor', 0) % max(1, len(pending))
+    selected = (pending + pending)[start:start + min(35, len(pending))]
     titles={next((a for a in [g.get('nameEn'),g['name'],*g['aliases']] if a and a.isascii()),g['name']):g['id'] for g in selected}
     try:
         endpoint='https://en.wikipedia.org/w/api.php?'+urllib.parse.urlencode({'action':'query','format':'json','prop':'pageprops','redirects':1,'titles':'|'.join(titles)})
@@ -48,8 +51,9 @@ def discover(config,output=DATA,fetcher=fetch,current=None):
             except (OSError,ValueError,KeyError):
                 pass
         candidates={(v['groupId'],v['channelUrl']):v for v in state['candidates']}
-        if qids:
-            entities=fetcher('https://www.wikidata.org/w/api.php?'+urllib.parse.urlencode({'action':'wbgetentities','format':'json','props':'claims','ids':'|'.join(qids)})).get('entities',{})
+        entity_ids = list(qids)
+        for i in range(0, len(entity_ids), 50):
+            entities=fetcher('https://www.wikidata.org/w/api.php?'+urllib.parse.urlencode({'action':'wbgetentities','format':'json','props':'claims','ids':'|'.join(entity_ids[i:i+50])})).get('entities',{})
             for qid,entity in entities.items():
                 for claim in entity.get('claims',{}).get('P2397',[]):
                     cid=claim.get('mainsnak',{}).get('datavalue',{}).get('value','')
@@ -59,7 +63,7 @@ def discover(config,output=DATA,fetcher=fetch,current=None):
                     if gid:candidates[(gid,url)]={'groupId':gid,'channelId':cid,'channelUrl':url,'verificationStatus':'UNVERIFIED','sourceUrl':'https://www.wikidata.org/wiki/'+qid,'foundAt':now(),'reason':'Wikidata P2397 candidate; dedicated-channel and official-source review required.'}
         html=fetcher('https://en.wikipedia.org/w/api.php?'+urllib.parse.urlencode({'action':'parse','format':'json','page':'List of South Korean girl groups','prop':'text'})).get('parse',{}).get('text',{}).get('*','')
         known={a.casefold() for g in groups for a in [g['name'],*g['aliases']]}
-        state.update(generatorVersion=3,candidates=list(candidates.values()),newArtistCandidates=[{'title':title,'sourceUrl':'https://en.wikipedia.org/wiki/List_of_South_Korean_girl_groups','verificationStatus':'UNVERIFIED','reason':'Group-bearing list/table entry; nationality, group type and debut date require review.'} for title in wikipedia_group_titles(html) if title.casefold() not in known],cursor=(start+len(selected))%max(1,len(groups)),updatedAt=now(),error=None)
+        state.update(generatorVersion=4,candidates=list(candidates.values()),newArtistCandidates=[{'title':title,'sourceUrl':'https://en.wikipedia.org/wiki/List_of_South_Korean_girl_groups','verificationStatus':'UNVERIFIED','reason':'Group-bearing list/table entry; nationality, group type and debut date require review.'} for title in wikipedia_group_titles(html) if title.casefold() not in known],cursor=(start+len(selected))%max(1,len(pending)),updatedAt=now(),error=None)
     except (OSError,ValueError,KeyError) as exc:
         state['error']=type(exc).__name__;state['lastAttemptAt']=now()
     # Independent provider failure must not discard successful discovery.

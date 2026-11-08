@@ -35,13 +35,27 @@ class QuotaGuard:
             if not isinstance(history,list) or any(not isinstance(x,(int,float)) for x in history):
                 raise ValueError('Invalid quota history; refusing to reset usage automatically.')
 
-    def remaining(self,bucket):
-        current=self.clock()
-        history=self.state['calls'][bucket]
+    @property
+    def read_boost(self):
+        return self.clock() < self.state.get('readBoostUntil', 0)
+
+    def enable_read_boost(self):
+        self.state['readBoostUntil'] = self.clock() + 86400
+        write(self.path, self.state)
+
+    def remaining_daily(self, bucket):
+        current = self.clock()
+        history = self.state['calls'][bucket]
         # Retain future-dated records too: a clock change must not reset the budget.
-        self.state['calls'][bucket]=[stamp for stamp in history if stamp>current-86400]
-        daily,per_run=self.limits[bucket]
-        return max(0,min(daily-len(self.state['calls'][bucket]),per_run-self.run[bucket]))
+        self.state['calls'][bucket] = [stamp for stamp in history if stamp > current - 86400]
+        daily, _ = self.limits[bucket]
+        if bucket == 'read' and self.read_boost:
+            daily = max(daily, 9000)
+        return max(0, daily - len(self.state['calls'][bucket]))
+
+    def remaining(self, bucket):
+        _, per_run = self.limits[bucket]
+        return max(0, min(self.remaining_daily(bucket), per_run - self.run[bucket]))
 
     def consume(self,resource):
         bucket='search' if resource=='search' else 'read'
@@ -70,14 +84,19 @@ def estimate(config,records=90,pages=1):
             'enabledChannels':len(channels),'officialChannels':official,
             'legacySearchCallsPerDay':official*2*4,
             'plannedSearchCallsPerDay':min(official,20)*4,
-            'readUnitsPerDayEstimate':4*(sum(c.get('collectionPages', pages) + (c.get('archivePages', 0) if not c.get('official') else 0) for c in channels)+math.ceil(records/50))+72*math.ceil(min(records,50)/50),
+            'readUnitsPerDayEstimate':4*(sum(c.get('collectionPages', pages) + (c.get('archivePages', 0) if not c.get('official') else 0) for c in channels)+math.ceil(records/50))+144*math.ceil(min(records,50)/50),
             'limits':{'searchRolling24h':80,'readRolling24h':8000,'searchPerRun':20,'readPerRun':600},
-            'notes':'Read estimate assumes one batch of live candidates per refresh and cached channel identities; API retries and new upload batches can add calls.'}
+            'notes':'Illustrative full-collection ceiling plus one candidate batch per 10-minute refresh. Incremental slots, API retries, and metadata or candidate counts can change actual usage.'}
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--estimate',action='store_true')
+    parser.add_argument('--enable-read-boost', action='store_true')
     args=parser.parse_args()
+    if args.enable_read_boost:
+        QuotaGuard(DATA/'collection-state.json').enable_read_boost()
+        print('Temporary read budget enabled for 24 hours. Search limits remain unchanged.')
+        return
     from .registry import load_config
     from .source_policy import public_artist_scope
     print(json.dumps(estimate(public_artist_scope(load_config()),len(list((DATA/'content').glob('*.json')))),ensure_ascii=False,indent=2))

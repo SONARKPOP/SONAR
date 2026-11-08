@@ -214,8 +214,9 @@ class CollectorTests(unittest.TestCase):
                 self.assertEqual(group['lastOfficialUploadAt'],self.raw['snippet']['publishedAt'])
                 pages.reset_mock()
                 pages.return_value=iter([])
+                videos.return_value=[]
                 collect(api)
-                pages.assert_called_once()
+                pages.assert_not_called()
 
     def test_paused_source_keeps_archive_without_asserting_live(self):
         config={**self.config,'channels':[{**self.channel,'collectionEnabled':False}]}
@@ -229,6 +230,22 @@ class CollectorTests(unittest.TestCase):
                 self.assertEqual(videos.call_args.args[0],set())
                 self.assertEqual(pub.call_args.args[0][0]['id'],v['id'])
                 self.assertEqual(pub.call_args.args[0][0]['liveStatus'],'none')
+
+    def test_fast_upload_scan_skips_metadata_for_already_archived_videos(self):
+        from collectors.quota import QuotaGuard
+        resolved={**self.channel,'platformId':'resolved','uploadsPlaylistId':'uploads','collectionEnabled':True}
+        config={**self.config,'channels':[resolved],'collectionGroupIds':['aespa']}
+        with tempfile.TemporaryDirectory() as tmp:
+            output=Path(tmp)
+            publish([normalize(self.raw,resolved,config)],config,output=output)
+            api=YouTube('test-not-a-secret',QuotaGuard(output/'collection-state.json'))
+            playlist=[{'contentDetails':{'videoId':self.raw['id']}}]
+            with patch('collectors.youtube.read_config',return_value=config), patch('collectors.youtube.DATA',output), patch('collectors.youtube.publish') as pub, patch.object(api,'pages',return_value=iter(playlist)) as pages, patch.object(api,'videos') as videos:
+                collect(api,incremental=True)
+                pages.assert_called_once()
+                videos.assert_not_called()
+                pub.assert_not_called()
+                self.assertIn('aespa-official',api.budget.state['uploadChecks'])
 
     def test_station_refresh_is_separate_and_clears_ended_station(self):
         self.channel['platformId']='resolved'

@@ -1,12 +1,12 @@
 import React,{useEffect,useId,useMemo,useRef,useState} from 'react';
 import {ArrowUp,ArrowDownUp,ChevronLeft,Heart,ListChecks,Search,SlidersHorizontal,Sprout,Star,X} from 'lucide-react';
 import {artistCategories,artistsInDebutRange,debutYearRanges,recommendedArtists} from './lib';
-import {DIRECTORY_ACTIVITY_STATES,directoryResults,isArtistSearch,matchesDirectoryScope} from './directory';
+import {DIRECTORY_ACTIVITY_STATES,directoryResults,isArtistSearch} from './directory';
 import {ACTIVITY_META,activityView} from './youtube-activity';
 import {officialLinksFor} from './official-links';
 import {ActivityGlyph} from './ActivityIcon';
 import ArtistDirectoryRow from './ArtistDirectoryRow';
-import DirectoryFilters,{DEFAULT_DIRECTORY_FILTERS,DIRECTORY_SCOPES,statusForDirectoryScope} from './DirectoryFilters';
+import DirectoryFilters,{DEFAULT_DIRECTORY_FILTERS} from './DirectoryFilters';
 import {artistInitials,INITIAL_ROWS} from './directory-shortcuts';
 import './directory-compact.css';
 
@@ -73,23 +73,20 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   return new Set(groups.filter(group=>officialLinksFor(group,byGroup.get(group.id)).some(link=>link.platform==='youtube')).map(group=>group.id));
  },[groups,channels]);
  const years=useMemo(()=>[['all','전체 연도'],...debutYearRanges(groups).map(({id,label})=>[id,label]),['unknown','연도 미확인']],[groups]);
- const {status,scope,year,savedOnly}=filters;
+ const {status,year,savedOnly}=filters;
  const searchRows=useMemo(()=>directoryResults(groups,{query,type:'all',status:'all',year:'all',sort,now:clock,narrowSearch:true})
   .filter(group=>!initial||artistInitials(group).includes(initial)),[groups,query,sort,clock,initial]);
  const facets=useMemo(()=>{
   const activity=new Map(searchRows.map(group=>[group.id,activityView(group,clock)?.state||'unknown']));
   const inType=(group,id)=>id==='all'||artistCategories(group).includes(id);
-  const inScope=(group,id)=>matchesDirectoryScope(group,id,clock);
   const matchesStatus=(group,key)=>key==='all'||activity.get(group.id)===key&&(!recommendationMode||!RECOMMEND.includes(key)||!excludedIds.has(group.id));
   const inStatus=group=>matchesStatus(group,status);
   const isSaved=group=>savedIds.has(group.id);
   const eligible=searchRows.filter(group=>!(selectionEdit||savedOnly)||isSaved(group));
-  const scoped=eligible.filter(group=>inScope(group,scope));
   const typed=eligible.filter(group=>inType(group,type));
-  const typeRows=artistsInDebutRange(scoped.filter(inStatus),year);
-  const scopeRows=artistsInDebutRange(typed,year);
-  const yearRows=typed.filter(group=>inScope(group,scope)&&inStatus(group));
-  const base=artistsInDebutRange(typed.filter(group=>inScope(group,scope)),year);
+  const typeRows=artistsInDebutRange(eligible.filter(inStatus),year);
+  const yearRows=typed.filter(inStatus);
+  const base=artistsInDebutRange(typed,year);
   const statusCounts={all:base.length,unknown:0,...Object.fromEntries(DIRECTORY_ACTIVITY_STATES.map(key=>[key,0]))};
   for(const group of base){
    const key=activity.get(group.id);
@@ -99,15 +96,11 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   return {
    base,activity,
    types:Object.fromEntries(TYPES.map(([id])=>[id,typeRows.filter(group=>inType(group,id)).length])),
-   scopes:Object.fromEntries(DIRECTORY_SCOPES.map(([id])=>{
-    const nextStatus=statusForDirectoryScope(id,status);
-    return [id,scopeRows.filter(group=>inScope(group,id)&&matchesStatus(group,nextStatus)).length];
-   })),
    years:Object.fromEntries(years.map(([id])=>[id,artistsInDebutRange(yearRows,id).length])),
    statuses:statusCounts,
-   saved:artistsInDebutRange(searchRows.filter(group=>isSaved(group)&&inType(group,type)&&inScope(group,scope)&&inStatus(group)),year).length,
+   saved:artistsInDebutRange(searchRows.filter(group=>isSaved(group)&&inType(group,type)&&inStatus(group)),year).length,
   };
- },[searchRows,type,scope,status,year,savedOnly,selectionEdit,recommendationMode,clock,savedIds,excludedIds,years]);
+ },[searchRows,type,status,year,savedOnly,selectionEdit,recommendationMode,clock,savedIds,excludedIds,years]);
  const results=useMemo(()=>{
   const recommendationFilter=recommendationMode&&RECOMMEND.includes(status);
   const matches=status==='all'?facets.base:facets.base.filter(group=>
@@ -128,7 +121,6 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   setExpanded('');setInitial('');setQuery(value);
  };
  const chips=[
-  filters.scope!=='all'&&[DIRECTORY_SCOPES.find(([id])=>id===filters.scope)[1],()=>updateFilters({scope:'all'})],
   status!=='all'&&(editorTitle?!(recommendationMode&&RECOMMEND.includes(status)):!ACTIVITY_META[status])&&[status==='unknown'?'상태 미확인':status,()=>updateFilters({status:'all'})],
   filters.year!=='all'&&[years.find(([id])=>id===filters.year)?.[1]||filters.year,()=>updateFilters({year:'all'})],
   filters.savedOnly&&!selectionEdit&&['MY GROUPS만',()=>updateFilters({savedOnly:false})],

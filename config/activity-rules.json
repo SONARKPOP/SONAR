@@ -4,7 +4,17 @@
   "anchoredDays": 90,
   "lostSignalDays": 365,
   "cacheHours": 6,
-  "uploadCadenceHours": {"recent": 6, "intermittent": 24, "dormant": 168, "legacy": 720},
+  "uploadCadence": [
+    {"beforeDays": 7, "kstMinutes": [360, 900, 1080, 1200, 1320, 1380, 10]},
+    {"beforeDays": 15, "kstMinutes": [360, 1320, 10]},
+    {"beforeDays": 30, "kstMinutes": [10]},
+    {"beforeDays": 90, "days": 3},
+    {"beforeDays": 180, "days": 7},
+    {"beforeDays": 365, "days": 15},
+    {"beforeDays": 730, "days": 30},
+    {"days": 90}
+  ],
+  "eveningBoostKstMinutes": {"SURGE": [1110, 1140, 1260], "SAILING": [1140, 1260], "COASTING": [1140]},
   "staleHours": 24,
   "maxPagesPerChannel": 20,
   "maxReadCallsPerRun": 80
