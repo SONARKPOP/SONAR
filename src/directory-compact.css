@@ -122,7 +122,9 @@
 .directory-tag{display:inline-flex;align-items:center;border:1px solid var(--dir-line);border-radius:12px;background:var(--dir-control);color:var(--dir-text);font:inherit;font-size:11px;line-height:1.2;min-height:24px;padding:3px 7px}
 button.directory-tag{cursor:pointer}
 button.directory-tag:hover{background:var(--dir-active);border-color:var(--dir-accent)}
-.directory-member-section>small{color:var(--dir-muted);font-size:11px;font-weight:650}
+.directory-member-label{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;color:var(--dir-muted)}
+.directory-member-label small{font-size:11px;font-weight:650}
+.directory-member-label a{font-size:10px;color:var(--dir-accent);text-decoration:underline;text-underline-offset:2px}
 .directory-member-section button{min-height:35px}
 
 .directory-selection-toggles{display:flex;flex:1;min-width:0;gap:5px;overflow-x:auto;padding:2px;scrollbar-width:thin}

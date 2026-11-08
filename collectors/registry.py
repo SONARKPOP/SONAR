@@ -88,9 +88,16 @@ def validate(bundles, shared, taxonomy):
             strings(roster.get('former'), f'{gid} former members')
             if len(set(roster['current'] + roster['former'])) != len(roster['current'] + roster['former']):
                 raise ValueError(f'{gid}: a member may only appear once in the roster.')
-            text(roster.get('evidenceUrl'), f'{gid} member roster evidence')
-            if roster['former']:
-                text(roster.get('formerEvidenceUrl'), f'{gid} former member roster evidence')
+            if roster.get('lineup') not in (None, 'last'):
+                raise ValueError(f'{gid}: invalid member lineup type.')
+            for key in ('evidenceUrl', 'formerEvidenceUrl'):
+                url = roster.get(key)
+                if key == 'formerEvidenceUrl' and not roster['former'] and url is None:
+                    continue
+                text(url, f'{gid} member roster evidence')
+                parsed = urlparse(url)
+                if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
+                    raise ValueError(f'{gid}: member roster evidence must use a valid HTTPS URL.')
         strings(bundle.get('relatedMemberIds', []), f'{gid}.relatedMemberIds')
         strings(bundle.get('ambiguousAliases', []), f'{gid}.ambiguousAliases')
         if type(bundle.get('ambiguousName', False)) is not bool:

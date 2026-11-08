@@ -18,9 +18,9 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
  const lastUpload=expanded?lastKnownUpload(artist,clock):null;
  const summary=[artist.debutYear||'데뷔 미확인',visibleLegacy].filter(Boolean).join(' · ');
  const roster=artist.memberRoster;
- const memberSections=[
-  [roster?'현재 멤버':'등록 멤버',roster?.current||registeredMembers],
-  ['탈퇴 멤버',roster?.former||[]],
+ const memberSections=artist.artistType==='solo'?[]:[
+  [roster?.lineup==='last'?'마지막 활동 멤버':roster?'현재 멤버':'등록 멤버 · 일부',roster?.current||registeredMembers,roster?.evidenceUrl],
+  ['탈퇴 멤버',roster?.former||[],roster?.formerEvidenceUrl],
  ];
  const [quickId,quickLabel,QuickIcon]=quickPreset||[];
  return <article className="directory-list-row" data-favorite={locked||undefined}
@@ -64,9 +64,12 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
      <small>{lastUpload===null?'마지막 공식 업로드 확인 대기':`마지막 공식 업로드 ${dateFormat.format(lastUpload)}`}</small>
     </div>
     <OfficialLinks artist={artist} channels={channels}/>
-    {artist.artistType!=='solo'&&memberSections.filter(([,names])=>names.length>0).map(([label,names])=>
+    {memberSections.filter(([,names])=>names.length>0).map(([label,names,evidence])=>
      <div className="directory-member-section" key={label} role="group" aria-label={label}>
-      <small>{label}</small>
+      <div className="directory-member-label">
+       <small>{label}</small>
+       {evidence&&<a href={evidence} target="_blank" rel="noopener noreferrer" aria-label={label+' 출처 (새 탭)'}>출처</a>}
+      </div>
       <div className="directory-row-tags">{names.map(name=><button type="button" className="directory-tag" key={name}
        onClick={()=>onCareerSearch(name)} aria-label={name+' 관련 아티스트 검색'} data-no-translate>{name}</button>)}</div>
      </div>)}
