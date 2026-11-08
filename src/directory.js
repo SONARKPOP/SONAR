@@ -19,6 +19,7 @@ export function isArtistSearch(query){return Boolean(normalizeName(query));}
 export function legacyGroupState(artist,now=Date.now()){
  if(artist.artistType==='solo')return null;
  if(artist.groupStatus==='disbanded'||artist.groupStatus==='hiatus')return artist.groupStatus;
+ if(artist.directoryArchiveReason==='official-channel-unavailable')return 'channel-unavailable';
  const last=lastKnownUpload(artist,now);
  return last!==null&&now>=monthsAfter(last,24)?'long-dormant':null;
 }
@@ -28,7 +29,7 @@ export function lastKnownUpload(artist,now=Date.now()){
  return dates.length?Math.max(...dates):null;
 }
 
-export const LEGACY_LABELS={disbanded:'해체',hiatus:'활동 중단','long-dormant':'2년 이상 미업로드'};
+export const LEGACY_LABELS={disbanded:'해체',hiatus:'활동 중단','long-dormant':'2년 이상 미업로드','channel-unavailable':'공식 채널 이용 불가'};
 
 export function matchesDirectoryScope(artist,scope,now=Date.now()){
  if(scope==='all')return true;
@@ -50,20 +51,24 @@ export function matchesDirectoryActivity(artist,status,now){
 }
 
 export function careerTagsFor(artist,groups){
- const previous=[...new Set(artist.previousGroupIds||[])];
- const parents=[...new Set(artist.relatedGroupIds||[])].filter(id=>!previous.includes(id));
- const name=id=>(groups instanceof Map?groups.get(id):groups.find(g=>g.id===id))?.name||id;
- return [...(artist.artistType==='solo'?[{id:'solo',label:'솔로'}]:previous.length?[{id:'redebut',label:'재데뷔'}]:[]),...previous.map(id=>({id,label:`${name(id)} 출신`})),...parents.map(id=>({id,label:`${name(id)} · 솔로`}))];
+ const previous=artist.previousGroupIds||[];
+ const affiliations=[...new Set([...previous,...(artist.relatedGroupIds||[])])];
+ const name=id=>{
+  const group=groups instanceof Map?groups.get(id):groups.find(g=>g.id===id);
+  return group?koreanArtistName(group)||group.name:id;
+ };
+ const kind=artist.artistType==='solo'?{id:'solo',label:'솔로'}:previous.length?{id:'redebut',label:'재데뷔'}:null;
+ return [...(kind?[kind]:[]),...affiliations.map(id=>({id,label:name(id),affiliation:true}))];
 }
 
-export function directoryResults(groups,{query='',type='all',status='general',year='all',sort='az',now=Date.now(),narrowSearch=false}={}){
+export function directoryResults(groups,{query='',type='all',status='general',year='all',sort='az',now=Date.now(),narrowSearch=false,memberNames}={}){
  const searching=isArtistSearch(query);
  const inScope=groups.filter(g=>(type==='all'||artistCategories(g).includes(type))&&
   (searching&&status==='general'||matchesDirectoryActivity(g,status,now)));
  const matched=searching?(narrowSearch?artistsInDebutRange(inScope,year):groups).filter(g=>{
   const relatedIds=[...(g.previousGroupIds||[]),...(g.relatedGroupIds||[])];
   const relatedNames=groups.filter(group=>relatedIds.includes(group.id)).flatMap(group=>[group.name,group.nameKo,group.nameEn,...(group.aliases||[])]);
-  return matchesArtistName(g,query,[...relatedNames,...careerTagsFor(g,groups).map(tag=>tag.label)])&&(status==='general'||matchesDirectoryActivity(g,status,now));
+  return matchesArtistName(g,query,[...relatedNames,...careerTagsFor(g,groups).map(tag=>tag.label),...(g.memberRoster?.current||[]),...(g.memberRoster?.former||[]),...(memberNames?.get(g.id)||[])])&&(status==='general'||matchesDirectoryActivity(g,status,now));
  }):
  artistsInDebutRange(inScope,year);
  return sortGroups(matched,sort);

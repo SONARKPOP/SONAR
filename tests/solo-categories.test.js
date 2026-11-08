@@ -39,6 +39,7 @@ test('mixed duos are groups and legacy status is independent of upload inactivit
  assert.equal(legacyGroupState({lastOfficialUploadAt:'2025-01-01'},now),null);
  assert.equal(legacyGroupState({groupStatus:'disbanded'},now),'disbanded');
  assert.equal(legacyGroupState({groupStatus:'hiatus'},now),'hiatus');
+ assert.equal(legacyGroupState({directoryArchiveReason:'official-channel-unavailable'},now),'channel-unavailable');
  const group={id:'weeekly',name:'Weeekly',nameKo:'위클리'};
  const solo={id:'lunedi',name:'루네디',artistType:'solo',previousGroupIds:['weeekly']};
  assert.deepEqual(directoryResults([group,solo],{query:'위클리'}).map(g=>g.id).sort(),['lunedi','weeekly']);

@@ -163,7 +163,7 @@ function App(){
   return [...new Set(years.length?years:rows.map(video=>monthKey(video.publishedAt).slice(0,4)))].sort().reverse();
  },[catalog,indexKey,rows]);
  const availableAllGroups=useMemo(()=>{
-  const groups=(catalog?.groups||[]).filter(group=>!matchesDirectoryScope(group,'legacy',clock)&&
+  const groups=(catalog?.groups||[]).filter(group=>!matchesDirectoryScope(group,'legacy',clock)&&!group.directoryArchiveReason&&
    (group.artistType==='solo'||!['disbanded','hiatus'].includes(group.groupStatus)));
   return visibleArtistIds(groups,groups.map(group=>group.id),enabledArtistTypes,excludedGroups);
  },[catalog,clock,enabledArtistTypes,excludedGroups]);

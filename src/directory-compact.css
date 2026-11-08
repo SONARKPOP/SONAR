@@ -78,13 +78,10 @@
 .directory-filter-choices{display:flex;gap:5px;flex-wrap:wrap}
 .directory-filter-choices button{display:flex;align-items:center;gap:5px;padding:4px 8px;min-height:35px;border:1px solid var(--dir-line);border-radius:7px;background:var(--dir-control);color:var(--dir-muted);font:inherit;font-size:11px;cursor:pointer}
 .directory-filter-choices button[aria-pressed="true"]{background:var(--dir-active);border-color:var(--dir-accent);color:var(--dir-text)}
-.directory-filter-help{margin:-4px 0 11px;color:var(--dir-muted);font-size:10px;line-height:1.45}
 .directory-saved-filter{display:flex;align-items:center;gap:8px;min-height:35px;font-size:12px;cursor:pointer}
-.directory-inline-filters{min-width:0;margin:8px 0;padding:8px;border:1px solid var(--dir-line);border-radius:8px;background:var(--dir-surface)}
-.directory-inline-filters .directory-filter-section{margin-bottom:6px}
-.directory-inline-filters .directory-filter-section legend{margin-bottom:3px;color:var(--dir-muted);font-size:11px}
-.directory-inline-filters .directory-filter-choices{flex-wrap:nowrap;overflow-x:auto;padding:1px 1px 4px;scrollbar-width:thin}
-.directory-inline-filters .directory-filter-choices button{flex:none;white-space:nowrap}
+.directory-inline-filters{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;margin:8px 0;padding:8px;border:1px solid var(--dir-line);border-radius:8px;background:var(--dir-surface)}
+.directory-year-select{display:flex;align-items:center;gap:7px;color:var(--dir-muted);font-size:12px}
+.directory-year-select select{min-width:0;max-width:100%;min-height:42px;padding:5px 8px;border:1px solid var(--dir-line);border-radius:7px;background:var(--dir-control);color:var(--dir-text);font:inherit}
 .directory-inline-actions{display:flex;align-items:center;justify-content:space-between;gap:8px}
 @media(max-width:760px){
  .directory-compact{padding-top:6px}
@@ -111,9 +108,23 @@
 .directory-editor .directory-rows{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
 .directory-shortcuts,.directory-favorite-options{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-top:6px}
 .directory-initials{margin:5px 0}
-.directory-initial-row{display:flex;gap:4px;overflow-x:auto;padding:2px 0 4px;scrollbar-width:thin}
-.directory-initial-row button{flex:none;min-width:36px}
+.directory-initial-section{margin:5px 0}
+.directory-initial-section>small{display:block;margin:3px 0;color:var(--dir-muted);font-size:11px}
+.directory-initial-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(37px,1fr));gap:4px}
+.directory-initial-row button{min-width:0;padding-inline:2px}
+.directory-selection-toggles .directory-control{min-height:45px;min-width:0;flex-direction:column;gap:1px;padding:4px}
+.directory-activity-button-icon{display:inline-flex;align-items:center;gap:4px}
+.directory-selection-toggles .directory-control small{font-size:9px;line-height:1.2;white-space:nowrap}
+.directory-recommendation-toggles .directory-control{min-width:61px}
+.directory-row-tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:3px}
+.directory-tag{display:inline-flex;align-items:center;border:1px solid var(--dir-line);border-radius:12px;background:var(--dir-control);color:var(--dir-text);font:inherit;font-size:11px;line-height:1.2;min-height:24px;padding:3px 7px}
+button.directory-tag{cursor:pointer}
+button.directory-tag:hover{background:var(--dir-active);border-color:var(--dir-accent)}
+.directory-member-section>small{color:var(--dir-muted);font-size:11px;font-weight:650}
+.directory-member-section button{min-height:35px}
+
 .directory-selection-toggles{display:flex;flex:1;min-width:0;gap:5px;overflow-x:auto;padding:2px;scrollbar-width:thin}
+.directory-activity-filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,62px),1fr));overflow:visible;margin-top:6px}
 .directory-selection-toggles button{
  --toggle-accent:#5899c1;
  --toggle-border:color-mix(in srgb,var(--toggle-accent) 75%,var(--dir-text));

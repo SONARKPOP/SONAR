@@ -9,9 +9,9 @@ test('directory separates archive but name search overrides type, year and defau
  assert(!directoryResults(groups,{now:opts.now}).some(g=>g.id==='weeekly'));
 });
 test('career tags show solo and previous group once; parent-name search finds solo',()=>{
- assert.deepEqual(careerTagsFor(groups[1],groups).map(t=>t.label),['솔로','Weeekly 출신']);
+ assert.deepEqual(careerTagsFor(groups[1],groups).map(t=>t.label),['솔로','Weeekly']);
  assert.deepEqual(directoryResults(groups,{query:'weeekly'}).map(g=>g.id).sort(),['lunedi','weeekly']);
- assert.deepEqual(careerTagsFor({previousGroupIds:['weeekly']},groups).map(t=>t.label),['재데뷔','Weeekly 출신']);
+ assert.deepEqual(careerTagsFor({previousGroupIds:['weeekly']},groups).map(t=>t.label),['재데뷔','Weeekly']);
 });
 test('directory scopes follow the calendar-month boundaries of official uploads',()=>{
  const now=Date.parse('2026-11-07T00:00:00Z');

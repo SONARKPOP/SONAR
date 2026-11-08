@@ -4,8 +4,8 @@ import {DIRECTORY_ACTIVITY_STATES} from './directory';
 import {ACTIVITY_META} from './youtube-activity';
 import {ActivityGlyph} from './ActivityIcon';
 
-export const DEFAULT_DIRECTORY_FILTERS={status:'all',year:'all',savedOnly:false};
-const STATUS_OPTIONS=[['all','전체 상태'],...DIRECTORY_ACTIVITY_STATES.map(state=>[state,state]),['unknown','상태 미확인']];
+export const DEFAULT_DIRECTORY_FILTERS={status:'all',year:'all',savedOnly:false,archiveOnly:false};
+const STATUS_OPTIONS=[['all','전체 상태'],...DIRECTORY_ACTIVITY_STATES.map(state=>[state,state==='LOST SIGNAL'?'NO SIGNAL':state]),['unknown','상태 미확인']];
 
 function Choices({label,options,value,onChange,counts,color=false}){
  return <fieldset className="directory-filter-section">
@@ -23,7 +23,12 @@ function Choices({label,options,value,onChange,counts,color=false}){
 export default function DirectoryFilters({titleId,dialogRef,filters,years,counts,selectionEdit,update,reset,resultCount,inline=false}){
  const options=<>
   {!inline&&<Choices label="YouTube 활동 상태" options={STATUS_OPTIONS} value={filters.status} onChange={status=>update({status})} counts={counts.statuses} color/>}
-  <Choices label="데뷔 연도" options={years} value={filters.year} onChange={year=>update({year})} counts={counts.years}/>
+  <label className="directory-year-select">
+   <span>데뷔 연도</span>
+   <select value={filters.year} onChange={event=>update({year:event.target.value})}>
+    {years.map(([id,label])=><option key={id} value={id}>{label} ({counts.years[id]??0})</option>)}
+   </select>
+  </label>
  </>;
  const savedToggle=!selectionEdit&&<label className="directory-saved-filter"><input type="checkbox" checked={filters.savedOnly} onChange={event=>update({savedOnly:event.target.checked})}/> MY GROUPS만 <small className="directory-option-count">{counts.saved}</small></label>;
  if(inline)return <div className="directory-inline-filters" role="group" aria-label="아티스트 필터">
