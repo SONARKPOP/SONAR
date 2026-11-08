@@ -4,10 +4,11 @@ import {isContinuousLive} from './live-policy.js';
 export const PAGE_SIZE=24;
 export function monthKey(value){const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit'}).formatToParts(new Date(value));return `${parts.find(p=>p.type==='year').value}-${parts.find(p=>p.type==='month').value}`;}
 export function dedupe(rows){return [...new Map(rows.map(x=>[x.id,x])).values()];}
-function matchesContentTab(video,category){
+export function matchesContentTab(video,category){
  if(category==='station')return isContinuousLive(video);
  if(isContinuousLive(video))return false;
  if(category==='uploads')return true;
+ if(Array.isArray(video.contentTabs))return video.contentTabs.includes(category);
  if(isMusicBroadcast(video))return category==='broadcast';
  if(category==='broadcast')return false;
  if(category==='shorts')return isShortContent(video);
@@ -38,7 +39,7 @@ export function filterContent(rows,{groups=[],category='home',query='',channel='
 }
 export function commonChannels(rows,groups){
  const map=new Map();
- for(const v of dedupe(rows).filter(v=>!isMusicBroadcast(v)&&(v.category==='external'||v.contentTypes?.includes('external')))){const key=v.programId||v.channelId;const x=map.get(key)||{id:key,name:v.programName||v.channelName,groups:new Set(),count:0};v.groupIds.filter(g=>!groups.length||groups.includes(g)).forEach(g=>x.groups.add(g));x.count++;map.set(x.id,x);}
+ for(const v of dedupe(rows).filter(v=>matchesContentTab(v,'external'))){const key=v.programId||v.channelId;const x=map.get(key)||{id:key,name:v.programName||v.channelName,groups:new Set(),count:0};v.groupIds.filter(g=>!groups.length||groups.includes(g)).forEach(g=>x.groups.add(g));x.count++;map.set(x.id,x);}
  return [...map.values()].sort((a,b)=>b.groups.size-a.groups.size||b.count-a.count||a.name.localeCompare(b.name));
 }
 export function activeLives(feed,channels,now=Date.now()){
@@ -58,13 +59,15 @@ export function groupPreferences(storage,catalog){
  const available=new Set(catalog.groups.map(g=>g.id));
  const defaults=(catalog.defaultGroupIds||[]).filter(id=>available.has(id));
  const saved=[...new Set((loadSaved(storage,'sonar.groups.v2',null)??defaults).filter(id=>available.has(id)))];
- const selected=[...new Set((loadSaved(storage,'sonar.selected.v2',null)??saved).filter(id=>saved.includes(id)))];
+ const checked=loadSaved(storage,'sonar.view-checked.v1',null);
+ const selected=[...new Set((checked??loadSaved(storage,'sonar.selected.v2',null)??saved)
+  .filter(id=>available.has(id)&&(checked!==null||saved.includes(id))))];
  return {saved,selected};
 }
 export function listedGroupPreferences(storage,saved,selected){
  const savedIds=new Set(saved);
  const listed=loadSaved(storage,'sonar.selected-list.v1',selected);
- return [...new Set([...listed,...selected])].filter(id=>savedIds.has(id));
+ return [...new Set(listed)].filter(id=>savedIds.has(id));
 }
 export function favoriteGroupSelection(storage,catalog){
  return [...new Set(loadSaved(storage,'sonar.favorite-groups.v1',[]).filter(id=>catalog.groups.some(g=>g.id===id)))];
@@ -75,9 +78,10 @@ export function restoreSubset(current,previous,ids){
          ...current.filter(id=>!affected.has(id)&&!previous.includes(id))];
 }
 export function selectionReducer(state,action){
+ if(action.type==='sidebar')return {...state,selected:[...new Set(action.ids)]};
  if(action.type==='hydrate'){
   const selected=[...new Set(action.selected)];
-  return {selected,listed:[...new Set([...(action.listed||[]),...selected])]};
+  return {selected,listed:[...new Set(action.listed??selected)]};
  }
  const listed=state.listed||state.selected;
  let next;
@@ -151,8 +155,38 @@ export function uploadDays(rows){
 }
 
 export function uploadKind(row){return row.format==='live'?'live':row.format==='short'?'short':(['own','external'].includes(row.category)||row.contentTypes?.some(t=>['own','external'].includes(t)))?'long':null;}
-export function uploadGroupSummary(rows,selected,includeIndividual=true){
- return selected.map(id=>({id,live:[],short:[],long:[]})).map(group=>{for(const row of rows){const kind=uploadKind(row);if(kind&&videoMatchesArtist(row,group.id,includeIndividual))group[kind].push(row);}return group;}).filter(group=>group.live.length+group.short.length+group.long.length);
+export function uploadGroupSummary(rows,selected,includeIndividual=true,artists,history=rows){
+ const allowed=new Set(selected), groups=new Map(), popularity=new Map();
+ const latest=history.reduce((n,v)=>Math.max(n,Date.parse(v.publishedAt)||0),0);
+ const identities=row=>[...new Set([...row.groupIds,...(includeIndividual?row.individualActivity?.groupIds||[]:[])])]
+  .filter(id=>allowed.has(id)&&videoMatchesArtist(row,id,includeIndividual));
+ for(const row of dedupe(history)){
+  const when=Date.parse(row.publishedAt);
+  if(when<latest-30*86400000)continue;
+  const solo=row.individualActivity?.artistId;
+  for(const id of identities(row)){
+   if(solo&&id!==solo)continue;
+   const previous=popularity.get(id)||[0,0];
+   popularity.set(id,[previous[0]+1,Math.max(previous[1],when)]);
+  }
+ }
+ for(const row of dedupe(rows)){
+  const kind=uploadKind(row), ids=identities(row);
+  if(!kind||!ids.length)continue;
+  const solo=row.individualActivity?.artistId;
+  const ranked=ids.sort((a,b)=>{
+   const [ac,at]=popularity.get(a)||[0,0], [bc,bt]=popularity.get(b)||[0,0];
+   const priority=id=>id===solo?2:artists?.get(id)?.previousGroupIds?.some(old=>ids.includes(old))?1:0;
+   return priority(b)-priority(a)||bc-ac||bt-at;
+  });
+  const id=ranked[0], artist=artists?.get(id);
+  if(!groups.has(id))groups.set(id,{id,live:[],short:[],long:[],related:new Set(),members:new Set()});
+  const group=groups.get(id);
+  group[kind].push(row);
+  for(const old of [...(artist?.relatedGroupIds||[]),...(artist?.previousGroupIds||[])])group.related.add(old);
+  for(const member of row.memberIds||[])group.members.add(member);
+ }
+ return [...groups.values()];
 }
 
 export const OWN_TYPES=[['behind','비하인드'],['daily','일상·브이로그'],['variety','자체 예능'],['practice','연습·퍼포먼스'],['other','기타·미분류']];

@@ -34,10 +34,9 @@ test('upload calendar groups records by Korean publication date',()=>{
 test('calendar summarizes each selected group by live/short/combined own and external long-form',()=>{
  const rows=[row('own'),row('external',{category:'external',groupIds:['a','b']}),row('short',{format:'short',category:'shorts'}),row('live',{format:'live'}),row('music',{category:'music'})];
  const groups=uploadGroupSummary(rows,['a','b','empty']);
- assert.deepEqual(groups.map(g=>g.id),['a','b']);
+ assert.deepEqual(groups.map(g=>g.id),['a']);
  assert.deepEqual(groups[0].long.map(v=>v.id),['own','external']);
  assert.equal(groups[0].short.length,1);assert.equal(groups[0].live.length,1);
- assert.deepEqual(groups[1].long.map(v=>v.id),['external']);
  assert.equal(uploadKind(rows[4]),null);
 });
 test('external dimensions use explicit classification first and unknown stays unclassified',()=>{
@@ -47,4 +46,13 @@ test('external dimensions use explicit classification first and unknown stays un
  const rows=[row('one',{category:'external',externalType:'radio',programId:'p',programName:'Show'}),row('two',{category:'external',externalType:'variety',programId:'q'})];
  assert.deepEqual(filterContent(rows,{category:'external',channel:'p',externalType:'radio'}).map(v=>v.id),['one']);
  assert.deepEqual(commonChannels(rows,['a']).map(c=>c.id).sort(),['p','q']);
+});
+
+test('explicit content tabs apply radio precedence and preserve stage overlap',()=>{
+ const rows=[row('stage',{contentTabs:['home','broadcast']}),row('radio',{contentTabs:['radio'],format:'short'}),
+  row('teaser',{contentTabs:['teaser','shorts'],format:'short'}),row('interview',{contentTabs:['broadcast','external']})];
+ assert.deepEqual(filterContent(rows,{category:'home'}).map(v=>v.id),['stage']);
+ assert.deepEqual(filterContent(rows,{category:'radio'}).map(v=>v.id),['radio']);
+ assert.deepEqual(filterContent(rows,{category:'shorts'}).map(v=>v.id),['teaser']);
+ assert.deepEqual(filterContent(rows,{category:'broadcast'}).map(v=>v.id),['stage','interview']);
 });

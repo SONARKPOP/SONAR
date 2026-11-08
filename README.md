@@ -180,3 +180,9 @@ Run `python -m collectors.channel_activity` with `YOUTUBE_API_KEY` configured, t
 
 
 Use python -m collectors.channel_review to refresh the channel review queue in public/data/channel-review.json. To inspect one candidate, supply its artist ID and YouTube handle. After verifying dedicated artist ownership, add --apply --evidence URL to record the evidence, and add --official-evidence for an artist or agency source. The review command uses the same environment variable for the API key.
+
+### 치지직 및 공식 원본 링크
+
+GitHub Actions 저장소 시크릿에 CHZZK_CLIENT_ID와 CHZZK_CLIENT_SECRET을 설정합니다. 이어 config/platform-content.json의 chzzkChannels에 공식 근거를 확인한 channelId, groupIds, evidenceUrl을 등록합니다. 정기 실행은 치지직 Open API의 채널 조회와 진행 중인 라이브 목록을 사용합니다. 라이브 조회는 회차당 최대 10페이지이며, 등록 채널이 없으면 API 호출을 건너뜁니다.
+
+videos에는 검수한 원본 링크를 등록할 수 있습니다. platform, externalId, sourceUrl, evidenceUrl, title, publishedAt, channelId, channelName, groupIds를 입력합니다. 확인한 YouTube 미러 ID는 duplicateYouTubeIds에 넣습니다. 공식 공개 Open API에서 치지직 다시보기·클립의 조회 및 임베드 방법이 확인될 때까지 이 콘텐츠는 검수한 원본 링크로 연결합니다. 네이버 온스테이지도 검수된 네이버TV 원본 링크를 같은 방식으로 다룹니다.

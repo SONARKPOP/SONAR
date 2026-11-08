@@ -1,7 +1,7 @@
 import React,{useEffect,useMemo,useRef,useState,useReducer} from 'react';
 import {createRoot} from 'react-dom/client';
-import {Search,Plus,X,Radio,Home,Music2,Clapperboard,Layers,CalendarDays,Play,ArrowUpRight,SlidersHorizontal,ChevronLeft,ChevronRight,Menu,Check,Disc3,Star,Moon,Sun,Heart,Sprout,Ban,Smartphone,Settings2,ShieldCheck,Copy,Tv,Minus,Maximize2} from 'lucide-react';
-import {PAGE_SIZE,filterContent,commonChannels,activeLives,activeStations,groupPreferences,favoriteGroupSelection,selectionReducer,monthKey,favoriteColorPreferences,favoriteCardStyle,themePreference,favoritePresetPreferences,excludedGroupPreferences,withoutExcludedGroups,EXTERNAL_TYPES,externalKind,uploadDays,uploadKind,uploadGroupSummary,OWN_TYPES,sortGroups,ARTIST_CATEGORIES,artistsInCategory,artistCategory,artistCategories,excludedArtistIds,loadSaved,updateGroupMembership,DISPLAY_ARTIST_TYPES,enabledArtistTypePreferences,toggleArtistType,visibleArtistIds,isShortContent,modalHistory} from './lib';
+import {Search,Plus,X,Radio,Home,Music2,Clapperboard,Layers,CalendarDays,Play,ArrowUpRight,SlidersHorizontal,ChevronLeft,ChevronRight,Menu,Check,Disc3,Star,Moon,Sun,Heart,Sprout,Ban,Smartphone,Settings2,ShieldCheck,Copy,Tv,Youtube,Minus,Maximize2} from 'lucide-react';
+import {PAGE_SIZE,matchesContentTab,filterContent,commonChannels,activeLives,activeStations,groupPreferences,favoriteGroupSelection,selectionReducer,monthKey,favoriteColorPreferences,favoriteCardStyle,themePreference,favoritePresetPreferences,excludedGroupPreferences,withoutExcludedGroups,EXTERNAL_TYPES,externalKind,uploadDays,uploadKind,uploadGroupSummary,OWN_TYPES,sortGroups,ARTIST_CATEGORIES,artistsInCategory,artistCategory,artistCategories,excludedArtistIds,loadSaved,updateGroupMembership,DISPLAY_ARTIST_TYPES,enabledArtistTypePreferences,toggleArtistType,visibleArtistIds,isShortContent,modalHistory} from './lib';
 import './style.css';
 import './activity-ui.css';
 import './video-viewer.css';
@@ -12,6 +12,7 @@ import {listedGroupPreferences} from './lib';
 import SidebarGroupRow from './SidebarGroupRow';
 import {isMusicBroadcast} from './broadcast';
 import {createDataClient} from './data';
+import {PLATFORM_LABELS,videoSourceUrl,mergePlatformRows,currentChzzkLives} from './platforms';
 import {useGroupVideos} from './useGroupVideos';
 import {archiveRequest,balancedPreview} from './browse';
 import {restoreSubset} from './lib';
@@ -19,7 +20,7 @@ import {LANGUAGES,localize,readScreenPreference} from './i18n';
 const base=import.meta.env.BASE_URL;
 const {json,cache}=createDataClient({base});
 const presetOptions=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];
-const menus=[['home','홈',Home],['music','MUSIC',Music2],['broadcast','음악방송',Tv],['own','자체 콘텐츠',Clapperboard],['external','외부 콘텐츠',Layers],['live','라이브 영상',Radio],['station','LIVE STATION',Disc3],['shorts','Shorts',Play],['uploads','업로드 달력',CalendarDays]];
+const menus=[['home','홈',Home],['music','MUSIC',Music2],['broadcast','음악방송',Tv],['teaser','TEASER',Play],['radio','RADIO',Radio],['own','자체 콘텐츠',Clapperboard],['external','외부 콘텐츠',Layers],['live','라이브 영상',Radio],['station','LIVE STATION',Disc3],['shorts','Shorts',Play],['uploads','업로드 달력',CalendarDays]];
 const labels={home:'흩어진 순간들을 한곳에',music:'음악이 시작되는 순간',own:'우리만의 이야기',external:'새로운 조합의 즐거움',live:'다시 만나는 라이브',shorts:'짧지만 확실한 행복',uploads:'유튜브 업로드 달력'};
 function filterButtons(label,value,options,onChange){return <div className="filter-button-row"><span className="filter-row-label">{label}</span><div className="filter-button-scroll" role="group" aria-label={label}>{options.map(([id,name])=><button type="button" key={id} className="filter-choice" aria-pressed={value===id} onClick={()=>onChange(id)}>{name}</button>)}</div></div>;}
 function DataRefreshTime({value}){
@@ -53,6 +54,7 @@ function App(){
  const [collapsed,setCollapsed]=useState(()=>readScreenPreference('sonar.sidebar.v1',['expanded','collapsed'],'expanded')==='collapsed');
  useEffect(()=>{document.documentElement.lang=language;try{localStorage.setItem('sonar.language.v1',language);localStorage.setItem('sonar.sidebar.v1',collapsed?'collapsed':'expanded');}catch{}},[language,collapsed]);
  const [catalog,setCatalog]=useState(null),[feed,setFeed]=useState({items:[]}),[error,setError]=useState(''),[retry,setRetry]=useState(0),[clock,setClock]=useState(Date.now());
+ const [platformVideos,setPlatformVideos]=useState([]),[chzzkFeed,setChzzkFeed]=useState({items:[]});
  const [saved,setSaved]=useState([]),[preferencesReady,setPreferencesReady]=useState(false);
  const [selection,dispatchSelection]=useReducer(selectionReducer,{selected:[],listed:[]});
  const {selected:rawSelected,listed:rawListed}=selection;
@@ -74,6 +76,7 @@ function App(){
  const [includeIndividual,setIncludeIndividual]=useState(()=>readScreenPreference('sonar.individual-activity.v1',['on','off'],'on')==='on');
  const [swipedGroup,setSwipedGroup]=useState(null),[sidebarUndo,setSidebarUndo]=useState(null);
  const [sidebarGroupView,setSidebarGroupView]=useState('all');
+ const lastSidebarSelection=useRef(null);
  useEffect(()=>{try{localStorage.setItem('sonar.individual-activity.v1',includeIndividual?'on':'off');}catch{}},[includeIndividual]);
  const [add,setAdd]=useState(false),[groupQuery,setGroupQuery]=useState(''),[playing,setPlaying]=useState(null),[mobile,setMobile]=useState(false);
  const [artistTab,setArtistTab]=useState('all');
@@ -118,9 +121,20 @@ function App(){
   return()=>{document.removeEventListener('keydown',key);previousFocus.current?.focus();};
  },[add]);
  useEffect(()=>{let cancelled=false;Promise.all([json('catalog.json'),json('live.json').catch(()=>({items:[]}))]).then(([c,l])=>{if(cancelled)return;c={...c,groups:c.groups.filter(g=>g.directoryVisibility!=='agency-only')};const preferences=groupPreferences({getItem:key=>localStorage.getItem(key)},c);setSaved(preferences.saved);dispatchSelection({type:"hydrate",selected:preferences.selected,listed:listedGroupPreferences(localStorage,preferences.saved,preferences.selected)});const favorites=favoritePresetPreferences({getItem:key=>localStorage.getItem(key)},c);setFavoritePresets(favorites.presets);setActivePreset(favorites.active);setViewPresets([]);setFavoriteColors(favoriteColorPreferences({getItem:key=>localStorage.getItem(key)},c));setIndividualExcluded(excludedGroupPreferences({getItem:key=>localStorage.getItem(key)},c));setBlockedTypes(loadSaved({getItem:key=>localStorage.getItem(key)},'sonar.blocked-artist-types.v1',[]).filter(id=>ARTIST_CATEGORIES.some(([key])=>key===id&&key!=='all')));setAllowedGroups(loadSaved({getItem:key=>localStorage.getItem(key)},'sonar.allowed-groups.v1',[]).filter(id=>c.groups.some(g=>g.id===id)));try{setExcludeMode(localStorage.getItem('sonar.exclude-mode.v1')==='true');}catch{}setCatalog(c);setFeed(l);setPreferencesReady(true);}).catch(e=>{if(!cancelled){setError(e.message);}});return()=>{cancelled=true;};},[retry]);
+ useEffect(()=>{
+  let stopped=false;
+  const refresh=()=>{
+   cache.delete('chzzk-live.json');
+   json('chzzk-live.json').then(value=>{if(!stopped)setChzzkFeed(value);}).catch(()=>{});
+  };
+  json('platform-content.json').then(value=>{if(!stopped)setPlatformVideos(value.items||[]);}).catch(()=>{});
+  refresh();
+  const timer=setInterval(refresh,60000);
+  return()=>{stopped=true;clearInterval(timer);};
+ },[]);
  useEffect(()=>{const timer=setInterval(()=>{setClock(Date.now());cache.delete('live.json');json('live.json').then(setFeed).catch(()=>{});},60000);return()=>clearInterval(timer);},[]);
  useEffect(()=>{let cancelled=false;const refresh=()=>{cache.delete('catalog.json');json('catalog.json').then(value=>{if(cancelled)return;setCatalog(previous=>{if(previous?.updatedAt===value.updatedAt)return previous;for(const key of cache.keys())if(key.startsWith('groups/')||key.startsWith('browse/')||key==='latest.json')cache.delete(key);return {...value,groups:value.groups.filter(group=>group.directoryVisibility!=='agency-only')};});}).catch(()=>{});};const timer=setInterval(refresh,300000);return()=>{cancelled=true;clearInterval(timer);};},[]);
- useEffect(()=>{if(!preferencesReady)return;try{localStorage.setItem('sonar.groups.v2',JSON.stringify(saved));localStorage.setItem('sonar.selected.v2',JSON.stringify(rawSelected));localStorage.setItem('sonar.selected-list.v1',JSON.stringify(rawListed));localStorage.setItem('sonar.favorite-presets.v1',JSON.stringify(favoritePresets));localStorage.setItem('sonar.favorite-preset-active.v1',activePreset);localStorage.setItem('sonar.favorite-colors.v1',JSON.stringify(favoriteColors));localStorage.setItem('sonar.excluded-groups.v1',JSON.stringify(individualExcluded));localStorage.setItem('sonar.blocked-artist-types.v1',JSON.stringify(blockedTypes));localStorage.setItem('sonar.allowed-groups.v1',JSON.stringify(allowedGroups));localStorage.setItem('sonar.exclude-mode.v1',String(excludeMode));localStorage.removeItem('sonar.previous-selected.v1');}catch{/* Browsing still works when storage is unavailable. */}},[saved,rawSelected,rawListed,favoritePresets,activePreset,favoriteColors,individualExcluded,blockedTypes,allowedGroups,excludeMode,preferencesReady]);
+ useEffect(()=>{if(!preferencesReady)return;try{localStorage.setItem('sonar.groups.v2',JSON.stringify(saved));localStorage.setItem('sonar.selected.v2',JSON.stringify(rawSelected));localStorage.setItem('sonar.view-checked.v1',JSON.stringify(rawSelected));localStorage.setItem('sonar.selected-list.v1',JSON.stringify(rawListed));localStorage.setItem('sonar.favorite-presets.v1',JSON.stringify(favoritePresets));localStorage.setItem('sonar.favorite-preset-active.v1',activePreset);localStorage.setItem('sonar.favorite-colors.v1',JSON.stringify(favoriteColors));localStorage.setItem('sonar.excluded-groups.v1',JSON.stringify(individualExcluded));localStorage.setItem('sonar.blocked-artist-types.v1',JSON.stringify(blockedTypes));localStorage.setItem('sonar.allowed-groups.v1',JSON.stringify(allowedGroups));localStorage.setItem('sonar.exclude-mode.v1',String(excludeMode));localStorage.removeItem('sonar.previous-selected.v1');}catch{/* Browsing still works when storage is unavailable. */}},[saved,rawSelected,rawListed,favoritePresets,activePreset,favoriteColors,individualExcluded,blockedTypes,allowedGroups,excludeMode,preferencesReady]);
  const indexGroups=filterGroup&&selected.includes(filterGroup)?[filterGroup]:selected;
  const indexKey=indexGroups.join(',');
  const browse=catalog?.browse;
@@ -128,9 +142,11 @@ function App(){
  const progress=archiveProgress.key===browseKey?archiveProgress:{pages:0,months:0};
  const request=archiveRequest(browse,indexGroups,category,archiveYear,archiveMonth,progress);
  const indexesEnabled=Boolean(catalog)&&!directoryPage&&category!=='station';
- const {rows,failed:indexFailures,loading:indexLoading}=useGroupVideos(json,request.paths,{
+ const {rows:youtubeRows,failed:indexFailures,loading:indexLoading}=useGroupVideos(json,request.paths,{
   enabled:indexesEnabled,version:catalog?.updatedAt,retry:indexRetry
  });
+ const platformLives=useMemo(()=>currentChzzkLives(chzzkFeed,clock),[chzzkFeed,clock]);
+ const rows=useMemo(()=>mergePlatformRows(youtubeRows,[...platformVideos,...platformLives]),[youtubeRows,platformVideos,platformLives]);
  const loading=!catalog&&!error||indexesEnabled&&indexLoading&&!rows.length;
  const artistNames=useMemo(()=>new Map((catalog?.groups||[]).map(group=>[
   group.id,[group.name,group.nameKo,group.nameEn,...(group.aliases||[])].filter(Boolean)
@@ -152,10 +168,10 @@ function App(){
   key:browseKey,pages:progress.pages+1,pinnedIds:pageRows.map(video=>video.id),months:(category==='uploads'||filtered.length<=shownCount)&&request.hasMore?
    (request.monthCount||0)+1:progress.months
  });
- const lives=catalog?withoutExcludedGroups(activeLives(feed,catalog.channels,clock),excludedGroups).filter(v=>v.groupIds.some(id=>artistCategories(catalog.groups.find(g=>g.id===id)||{}).some(type=>enabledArtistTypes.includes(type)))):[];
+ const lives=catalog?withoutExcludedGroups([...activeLives(feed,catalog.channels,clock),...platformLives],excludedGroups).filter(v=>v.groupIds.some(id=>artistCategories(catalog.groups.find(g=>g.id===id)||{}).some(type=>enabledArtistTypes.includes(type)))):[];
  useEffect(()=>{if(!livePanel)return;const dismiss=e=>{if(!liveStatusRef.current?.contains(e.target))setLivePanel(false);};const escape=e=>{if(e.key==='Escape'){setLivePanel(false);liveStatusButtonRef.current?.focus();}};document.addEventListener('pointerdown',dismiss);document.addEventListener('keydown',escape);return()=>{document.removeEventListener('pointerdown',dismiss);document.removeEventListener('keydown',escape);};},[livePanel]);
  useEffect(()=>{if(!lives.length)setLivePanel(false);},[lives.length]);
- const externalRows=rows.filter(v=>!isMusicBroadcast(v)&&(v.category==='external'||v.contentTypes?.includes('external'))&&(!externalType||externalKind(v)===externalType)&&(!excludeMode||!v.groupIds.some(id=>excludedGroups.includes(id))));
+ const externalRows=rows.filter(v=>matchesContentTab(v,'external')&&(!externalType||externalKind(v)===externalType)&&(!excludeMode||!v.groupIds.some(id=>excludedGroups.includes(id))));
  const channels=commonChannels(externalRows,selected);
  const archiveYears=useMemo(()=>{
   const groups=(catalog?.groups||[]).filter(group=>indexGroups.includes(group.id));
@@ -220,9 +236,20 @@ function App(){
  const shareTimer=useRef(null);
  useEffect(()=>()=>clearTimeout(shareTimer.current),[]);
  const copyVideoUrl=async()=>{try{await navigator.clipboard.writeText(`https://www.youtube.com/watch?v=${encodeURIComponent(playing.platformId)}`);setShareStatus('영상 주소를 복사했습니다.');}catch{setShareStatus('복사하지 못했습니다. YouTube에서 열어 주소를 복사해주세요.');}clearTimeout(shareTimer.current);shareTimer.current=setTimeout(()=>setShareStatus(''),4000);};
- const open=v=>{setMobile(false);setPlayerMinimized(false);if(v.id!==playing?.id){setEmbedLoading(!v.demo);setPlaying(v);setShareStatus('');}};
+ const open=v=>{
+  if(v.platform&&v.platform!=='youtube'){
+   const url=videoSourceUrl(v);
+   if(url)window.open(url,'_blank','noopener,noreferrer');
+   return;
+  }
+  setMobile(false);setPlayerMinimized(false);if(v.id!==playing?.id){setEmbedLoading(!v.demo);setPlaying(v);setShareStatus('');}};
  const groupsById=useMemo(()=>new Map((catalog?.groups||[]).map(group=>[group.id,group])),[catalog]);
  const groupName=id=>groupsById.get(id)?.name||id;
+ const calendarGroupName=group=>{
+  const names=group.related.size?[...group.related].map(id=>'前 '+groupName(id)):
+   (catalog?.members||[]).filter(member=>member.groupId===group.id&&group.members.has(member.id)).map(member=>member.name);
+  return groupName(group.id)+(names.length?' ('+names.join(', ')+')':'');
+ };
  const visibleRegistered=useMemo(()=>{
   const groups=catalog?.groups||[];
   return visibleArtistIds(groups,groups.map(group=>group.id),enabledArtistTypes,excludedGroups);
@@ -241,14 +268,20 @@ function App(){
   return groupSort==='default'?groups:sortGroups(groups,groupSort);
  },[sidebarGroupIds,groupsById,groupSort]);
  const showSidebarGroups=view=>{setSidebarGroupView(view);setSwipedGroup(null);};
+ const selectSidebarGroups=(view,ids)=>{
+  setExcludeMode(false);
+  showSidebarGroups(view);
+  const clear=lastSidebarSelection.current===view&&ids.every(id=>checkedIds.has(id));
+  lastSidebarSelection.current=view;
+  dispatchSelection({type:'sidebar',ids:clear?[]:ids});
+ };
  const chooseSidebarPreset=key=>{
-  if(sidebarGroupView!=='favorites'&&viewPresets.includes(key)){showSidebarGroups('favorites');return;}
+  lastSidebarSelection.current=null;
   setExcludeMode(false);setActivePreset(key);showSidebarGroups('favorites');
-  const next=viewPresets.includes(key)?viewPresets.filter(id=>id!==key):[...viewPresets,key];
+  const next=sidebarGroupView!=='favorites'?[key]:viewPresets.includes(key)?viewPresets.filter(id=>id!==key):[...viewPresets,key];
   setViewPresets(next);
   const ids=[...new Set(next.flatMap(id=>favoritePresets[id]))];
-  setSaved(current=>[...new Set([...current,...ids])]);
-  dispatchSelection({type:'change',ids});
+  dispatchSelection({type:'sidebar',ids});
  };
  const removeSidebarGroup=id=>{
   const fromSelection=sidebarGroupView!=='all';
@@ -274,8 +307,8 @@ function App(){
  <section className="mygroups-section"><h2>MY GROUPS<button className="mygroups-edit-toggle" onClick={openGroupEditor}>편집</button></h2>
 
  <div className="favorite-presets sidebar-group-views" role="group" aria-label="MY GROUPS 목록과 프리셋">
-  <button type="button" aria-label={`등록된 전체 그룹 (${catalog?.groups.length||0}개)`} title="등록된 그룹 목록" aria-pressed={sidebarGroupView==='all'} disabled={!catalog} onClick={()=>showSidebarGroups('all')}>전체<small>{catalog?.groups.length||0}</small></button>
-  <button type="button" aria-label={`선택 그룹 (${visibleListed.length}개)`} title="선택 목록에 담긴 그룹" aria-pressed={sidebarGroupView==='selected'} disabled={!catalog} onClick={()=>showSidebarGroups('selected')}>선택<small>{visibleListed.length}</small></button>
+  <button type="button" aria-label={`등록된 전체 그룹 (${catalog?.groups.length||0}개)`} title="등록된 그룹 목록" aria-pressed={sidebarGroupView==='all'} disabled={!catalog} onClick={()=>selectSidebarGroups('all',visibleRegistered)}>전체<small>{catalog?.groups.length||0}</small></button>
+  <button type="button" aria-label={`선택 그룹 (${visibleListed.length}개)`} title="선택 목록에 담긴 그룹" aria-pressed={sidebarGroupView==='selected'} disabled={!catalog} onClick={()=>selectSidebarGroups('selected',visibleListed)}>선택<small>{visibleListed.length}</small></button>
   {presetOptions.map(([key,name,Icon])=><button type="button" key={key} data-preset={key}
    aria-label={`${name} 프리셋 (${favoritePresets[key].length}개 그룹)`} aria-pressed={viewPresets.includes(key)}
    title={`${name} 프리셋 선택 (${favoritePresets[key].length}개 그룹)`} onClick={()=>chooseSidebarPreset(key)}><Icon size={15} fill={key==='clover'?'none':'currentColor'}/><small>{favoritePresets[key].length}</small></button>)}
@@ -351,7 +384,7 @@ function App(){
  {browse&&request.preview&&!loading&&indexesEnabled&&<p className="index-loading-note">
   최근 {browse.days}일 우선{request.wide?'':' · 부족한 항목은 이전 기록 포함'} · {pageRows.length}개 표시
  </p>}
- {loading?<div className="empty" role="status">흩어진 순간들을 모아오는 중…</div>:error?<div className="empty" role="alert">{error}<button onClick={()=>{cache.clear();setRetry(x=>x+1);setIndexRetry(x=>x+1);setError('');}}>다시 시도</button></div> :category==='uploads'?<div className="upload-calendar"><p className="upload-calendar-note">유튜브 업로드 날짜 · 한국 시간 · 롱폼은 자체·외부 콘텐츠</p>{!calendarRows.length?<div className="empty">선택한 기간에 업로드된 영상이 없어요.</div>:uploadDays(calendarRows).map(day=><section className="upload-day" key={day.date}><div className="upload-day-heading"><time dateTime={day.date}>{day.date}</time><span>{day.items.length}</span></div><div className="upload-day-groups">{uploadGroupSummary(day.items,selected,includeIndividual).map(group=><div className="upload-group-summary" key={group.id} style={favoriteCardStyle([group.id],protectedGroups,favoriteColors,theme)}><div className="upload-group-line"><b className="upload-group-name" data-no-translate><span className="upload-group-presets">{presetOptions.filter(([key])=>favoritePresets[key].includes(group.id)).map(([key,name,Icon])=><span key={key} data-preset={key} role="img" aria-label={`${name} 선호그룹`} title={`${name} 선호그룹`}><Icon size={14} aria-hidden="true" fill={key==='clover'?'none':'currentColor'}/></span>)}</span><span>{groupName(group.id)}</span></b><div className="upload-type-counts">{[['live','LIVE',Radio],['short','Shorts',Smartphone],['long','롱폼',Clapperboard]].map(([kind,label,Icon])=>{const key=`${day.date}-${group.id}-${kind}`;return <button key={kind} className={`upload-type upload-type-${kind}`} disabled={!group[kind].length} title={`${label} · ${group[kind].length}`} aria-label={`${groupName(group.id)} ${label} · ${group[kind].length}`} aria-expanded={uploadExpansion===key} onClick={()=>setUploadExpansion(s=>s===key?'':key)}><Icon size={16}/><span>{group[kind].length}</span><span className="sr-only">{label}</span></button>;})}</div></div>{['live','short','long'].map(kind=>uploadExpansion===`${day.date}-${group.id}-${kind}`&&<div className="upload-expanded" key={kind}>{group[kind].map(v=><button key={v.id} className="upload-entry" onClick={()=>{open(v);}}><time>{new Date(v.publishedAt).toLocaleTimeString({ko:'ko-KR',ja:'ja-JP',en:'en-US',es:'es-ES'}[language],{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',hour12:false})}</time><span><b data-no-translate>{v.title}</b><small data-no-translate>{v.channelName}</small></span><Play size={15}/></button>)}</div>)}</div>)}</div></section>)}</div>:!pageRows.length?<div className="empty">{selected.length?'조건에 맞는 영상이 없어요.':'표시할 그룹을 선택해주세요.'}<small>{selected.length?'그룹이나 필터를 바꿔보세요.':'왼쪽 MY GROUPS에서 체크하거나 그룹을 추가해주세요.'}</small>{!selected.length&&<button className="empty-add-group" onClick={openGroups}><Plus size={15}/> 그룹 추가하기</button>}</div>:<div className="video-grid">{pageRows.map((v,i)=><article className="video-card" style={favoriteCardStyle(v.groupIds,[...new Set(Object.values(favoritePresets).flat())],favoriteColors,theme)} key={v.id}><button className={`thumbnail tone-${i%6}`} onClick={()=>open(v)} aria-label={`${v.title} 보기`}>{v.thumbnail?<img src={v.thumbnail} loading="lazy" alt="" onError={e=>{e.currentTarget.style.display='none';}}/>:<div className="sample-art"><span className="sample-word">{groupName(v.groupIds[0])}</span><span className="sample-type">{v.subtypes[0]}<br/><b>{String(i+1+(page-1)*24).padStart(2,'0')}</b></span><Disc3 size={85}/></div>}<span className="category-badge">{category==='station'?'LIVE STATION':v.demo?'SAMPLE':isMusicBroadcast(v)?'음악방송':isShortContent(v)?(v.format==='short'||v.category==='shorts'?'쇼츠':'짧은 클립'):v.format==='live'?'라이브':v.subtypes[0]}</span><span className="play-circle"><Play size={21} fill="currentColor"/></span><span className="duration">{v.durationLabel||'VIDEO'}</span></button><div className="video-meta"><VideoArtistTags video={v} groupsById={groupsById} onSearch={setQuery}/><small>{new Date(v.publishedAt).toLocaleDateString('ko-KR')}</small></div><button className="video-title" data-no-translate onClick={()=>open(v)}>{v.title}</button><p className="channel-name">{v.channelName}<span> · {isMusicBroadcast(v)?'음악방송':isShortContent(v)?(v.format==='short'||v.category==='shorts'?'쇼츠':'짧은 클립'):v.format==='live'?'라이브':v.subtypes[0]}</span></p>{v.format==='live'&&<div className="card-member-tags">{v.memberIds.length?v.memberIds.map(id=><button key={id} onClick={()=>{go('live');setFilterGroup(catalog?.members.find(m=>m.id===id)?.groupId||'');setMember(id);}}>{memberName(id)}</button>):<span>미분류</span>}</div>}</article>)}</div>}
+ {loading?<div className="empty" role="status">흩어진 순간들을 모아오는 중…</div>:error?<div className="empty" role="alert">{error}<button onClick={()=>{cache.clear();setRetry(x=>x+1);setIndexRetry(x=>x+1);setError('');}}>다시 시도</button></div> :category==='uploads'?<div className="upload-calendar"><p className="upload-calendar-note">업로드 날짜 · 한국 시간 · 롱폼은 자체·외부 콘텐츠</p>{!calendarRows.length?<div className="empty">선택한 기간에 업로드된 영상이 없어요.</div>:uploadDays(calendarRows).map(day=><section className="upload-day" key={day.date}><div className="upload-day-heading"><time dateTime={day.date}>{day.date}</time><span>{day.items.length}</span></div><div className="upload-day-groups">{uploadGroupSummary(day.items,selected,includeIndividual,groupsById,calendarRows).map(group=><div className="upload-group-summary" key={group.id} style={favoriteCardStyle([group.id],protectedGroups,favoriteColors,theme)}><div className="upload-group-line"><b className="upload-group-name" data-no-translate><span className="upload-group-presets">{presetOptions.filter(([key])=>favoritePresets[key].includes(group.id)).map(([key,name,Icon])=><span key={key} data-preset={key} role="img" aria-label={`${name} 선호그룹`} title={`${name} 선호그룹`}><Icon size={14} aria-hidden="true" fill={key==='clover'?'none':'currentColor'}/></span>)}</span><span>{calendarGroupName(group)}</span></b><div className="upload-type-counts">{[['live','LIVE',Radio],['short','Shorts',Smartphone],['long','롱폼',Clapperboard]].map(([kind,label,Icon])=>{const key=`${day.date}-${group.id}-${kind}`;return <button key={kind} className={`upload-type upload-type-${kind}`} disabled={!group[kind].length} title={`${label} · ${group[kind].length}`} aria-label={`${groupName(group.id)} ${label} · ${group[kind].length}`} aria-expanded={uploadExpansion===key} onClick={()=>setUploadExpansion(s=>s===key?'':key)}><Icon size={16}/><span>{group[kind].length}</span><span className="sr-only">{label}</span></button>;})}</div></div>{['live','short','long'].map(kind=>uploadExpansion===`${day.date}-${group.id}-${kind}`&&<div className="upload-expanded" key={kind}>{group[kind].map(v=><button key={v.id} className="upload-entry" onClick={()=>{open(v);}}><time>{new Date(v.publishedAt).toLocaleTimeString({ko:'ko-KR',ja:'ja-JP',en:'en-US',es:'es-ES'}[language],{timeZone:'Asia/Seoul',hour:'2-digit',minute:'2-digit',hour12:false})}</time><span><b data-no-translate>{v.title}</b><small data-no-translate>{v.channelName}</small></span><Play size={15}/></button>)}</div>)}</div>)}</div></section>)}</div>:!pageRows.length?<div className="empty">{selected.length?'조건에 맞는 영상이 없어요.':'표시할 그룹을 선택해주세요.'}<small>{selected.length?'그룹이나 필터를 바꿔보세요.':'왼쪽 MY GROUPS에서 체크하거나 그룹을 추가해주세요.'}</small>{!selected.length&&<button className="empty-add-group" onClick={openGroups}><Plus size={15}/> 그룹 추가하기</button>}</div>:<div className="video-grid">{pageRows.map((v,i)=><article className="video-card" style={favoriteCardStyle(v.groupIds,[...new Set(Object.values(favoritePresets).flat())],favoriteColors,theme)} key={v.id}><div className="video-thumbnail-wrap"><button className={`thumbnail tone-${i%6}`} onClick={()=>open(v)} aria-label={`${v.title} 보기`}>{v.thumbnail?<img src={v.thumbnail} loading="lazy" alt="" onError={e=>{e.currentTarget.style.display='none';}}/>:<div className="sample-art"><span className="sample-word">{groupName(v.groupIds[0])}</span><span className="sample-type">{v.subtypes[0]}<br/><b>{String(i+1+(page-1)*24).padStart(2,'0')}</b></span><Disc3 size={85}/></div>}<span className="category-badge">{category==='station'?'LIVE STATION':v.demo?'SAMPLE':v.contentTabs?.includes('radio')?'RADIO':v.contentTabs?.includes('teaser')?'TEASER':isMusicBroadcast(v)?'음악방송':isShortContent(v)?(v.format==='short'||v.category==='shorts'?'쇼츠':'짧은 클립'):v.format==='live'?'라이브':v.subtypes[0]}</span><span className="play-circle"><Play size={21} fill="currentColor"/></span><span className="duration">{v.durationLabel||'VIDEO'}</span></button>{videoSourceUrl(v)&&<a className="video-platform-badge" data-platform={v.platform||'youtube'} href={videoSourceUrl(v)} target="_blank" rel="noopener noreferrer" aria-label={(PLATFORM_LABELS[v.platform||'youtube']||v.platform)+' 원본 열기'}>{(!v.platform||v.platform==='youtube')&&<Youtube size={14} aria-hidden="true"/>}<span data-no-translate>{(PLATFORM_LABELS[v.platform||'youtube']||v.platform).toUpperCase()}</span></a>}</div><div className="video-meta"><VideoArtistTags video={v} groupsById={groupsById} onSearch={setQuery}/><small>{new Date(v.publishedAt).toLocaleDateString('ko-KR')}</small></div><button className="video-title" data-no-translate onClick={()=>open(v)}>{v.title}</button><p className="channel-name">{v.channelName}<span> · {v.contentTabs?.includes('radio')?'RADIO':v.contentTabs?.includes('teaser')?'TEASER':isMusicBroadcast(v)?'음악방송':isShortContent(v)?(v.format==='short'||v.category==='shorts'?'쇼츠':'짧은 클립'):v.format==='live'?'라이브':v.subtypes[0]}</span></p>{v.format==='live'&&<div className="card-member-tags">{v.memberIds.length?v.memberIds.map(id=><button key={id} onClick={()=>{go('live');setFilterGroup(catalog?.members.find(m=>m.id===id)?.groupId||'');setMember(id);}}>{memberName(id)}</button>):<span>미분류</span>}</div>}</article>)}</div>}
  {!loading&&(showMore||pageRows.length>6)&&<div className="archive-load-more">{showMore&&<button type="button" disabled={indexLoading} onClick={moreVideos}>이전 영상 더 보기</button>}{pageRows.length>6&&<button type="button" onClick={()=>document.getElementById('collection')?.scrollIntoView({block:'start'})}>맨 위로</button>}</div>}
  {(!compactBrowse&&category!=='uploads')&&filtered.length>PAGE_SIZE&&<div className="pagination"><button aria-label="이전 페이지" disabled={page===1} onClick={()=>setPage(p=>p-1)}><ChevronLeft size={18}/></button><span>{page} <small>/ {Math.ceil(filtered.length/PAGE_SIZE)}</small></span><button aria-label="다음 페이지" disabled={page>=Math.ceil(filtered.length/PAGE_SIZE)} onClick={()=>setPage(p=>p+1)}><ChevronRight size={18}/></button><small>페이지당 {PAGE_SIZE}개</small></div>}</>
 </section>}<footer>SONAR <span>흩어진 K-POP 콘텐츠를 찾아 모으는 곳, SONAR.</span><small>Fan-made · 영상 저작권은 각 권리자에게 있습니다.</small></footer></div></main>

@@ -641,3 +641,9 @@ footer{border-color:#e0e8ef;margin-top:35px;color:#7893a8}
 [data-theme="dark"] .directory-bulk button{background:#233b4e;border-color:#49697e;color:#d1e6f2}
 [data-theme="dark"] .directory-bulk button:not(:disabled):hover{background:#30536b}
 @media(max-width:760px){.directory-bulk button{min-height:40px}}
+
+.video-thumbnail-wrap{position:relative}
+.video-platform-badge{position:absolute;z-index:2;top:7px;right:7px;display:inline-flex;align-items:center;gap:4px;padding:4px 6px;border-radius:5px;background:#101722e8;color:#fff;font-size:9px;font-weight:750;text-decoration:none}
+.video-platform-badge[data-platform="youtube"] svg{color:#ff6262}
+.video-platform-badge[data-platform="chzzk"]{color:#73f5a2}
+.video-platform-badge:hover,.video-platform-badge:focus-visible{outline:2px solid #9ed6ef}

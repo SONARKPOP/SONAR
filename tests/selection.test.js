@@ -70,7 +70,7 @@ test('selection list is restored independently of checked videos and drops unsav
  assert.deepEqual(listedGroupPreferences({getItem:()=>null},saved,selected),selected);
  const storage={getItem:()=>JSON.stringify(['kiiikiii','removed'])};
  const listed=listedGroupPreferences(storage,saved,selected);
- assert.deepEqual(selectionReducer({},{type:'hydrate',selected,listed}),{selected,listed:['kiiikiii','rescene']});
+ assert.deepEqual(selectionReducer({},{type:'hydrate',selected,listed}),{selected,listed:['kiiikiii']});
 });
 test('saved favorites ignore selection and obsolete previous-selection records',()=>{
  const catalog={groups:[{id:'rescene'},{id:'uspeer'}]};
@@ -88,4 +88,11 @@ test('new or invalid favorite storage stays empty instead of adopting defaults o
  assert.deepEqual(favoriteGroupSelection({getItem:()=>'broken'},catalog),[]);
  assert.deepEqual(favoriteGroupSelection({getItem:()=>{throw Error('blocked');}},catalog),[]);
  assert.deepEqual(favoriteGroupSelection({getItem:()=>JSON.stringify([])},catalog),[]);
+});
+
+test('sidebar bulk checks only change the viewing selection',()=>{
+ const state={selected:['a'],listed:['a']};
+ const all=selectionReducer(state,{type:'sidebar',ids:['a','b']});
+ assert.deepEqual(all,{selected:['a','b'],listed:['a']});
+ assert.deepEqual(selectionReducer(all,{type:'sidebar',ids:[]}),{selected:[],listed:['a']});
 });

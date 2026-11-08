@@ -3,7 +3,7 @@ import re
 from datetime import datetime, timedelta, timezone
 from .live_policy import is_continuous_live
 
-LIMITS = {'home':24, 'music':12, 'broadcast':18, 'own':18, 'external':18, 'live':12, 'shorts':18}
+LIMITS = {'home':24, 'music':12, 'broadcast':18, 'own':18, 'external':18, 'live':12, 'shorts':18, 'teaser':12, 'radio':12}
 DAYS = 30
 KST = timezone(timedelta(hours=9))
 SHORT_DURATION = re.compile(r'(?:pt)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+(?:\.\d+)?)s)?', re.I)
@@ -20,6 +20,8 @@ def stamp(item):
 def tabs(item):
     if is_continuous_live(item):
         return ()
+    if 'contentTabs' in item:
+        return tuple(item['contentTabs'])
     if item.get('musicBroadcast'):
         return ('broadcast',)
     fmt, category = item.get('format'), item.get('category')

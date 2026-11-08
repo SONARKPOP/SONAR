@@ -15,8 +15,8 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
  const selectedPresets=PRESETS.filter(([key])=>favorites[key].has(artist.id));
  const legacy=legacyGroupState(artist,clock);
  const visibleLegacy=LEGACY_LABELS[legacy];
- const lastUpload=expanded?lastKnownUpload(artist,clock):null;
- const summary=[artist.debutYear||'데뷔 미확인',visibleLegacy].filter(Boolean).join(' · ');
+ const lastUpload=lastKnownUpload(artist,clock);
+ const summary=[artist.debutYear||'데뷔 미확인',lastUpload===null?null:dateFormat.format(lastUpload),visibleLegacy].filter(Boolean).join(' · ');
  const roster=artist.memberRoster;
  const memberSections=artist.artistType==='solo'?[]:[
   [roster?.lineup==='last'?'마지막 활동 멤버':roster?'현재 멤버':'등록 멤버 · 일부',roster?.current||registeredMembers,roster?.evidenceUrl],
@@ -49,6 +49,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
     {QuickIcon&&<button type="button" className="directory-control directory-icon" data-preset={quickId}
      aria-label={`${name} ${quickLabel} 선호 지정`} aria-pressed={favorites[quickId].has(artist.id)}
      onClick={()=>onFavorite(quickId,artist.id)}><QuickIcon size={16}/></button>}
+    <OfficialLinks artist={artist} channels={channels}/>
     <button type="button" className="directory-control directory-icon directory-save-icon"
      aria-label={`${name} ${selectionEdit?(saved?'영상 선택 해제':'영상 선택'):(saved?'MY GROUPS 제거':'MY GROUPS 추가')}`} aria-pressed={saved} onClick={()=>onSave(artist.id)}>
      {saved?<Check size={17}/>:<Plus size={17}/>}
@@ -60,10 +61,6 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
   </div>
   {expanded&&<div className="directory-row-details" id={detailsId}>
    <div className="directory-row-detail-main">
-    <div className="directory-row-detail-meta">
-     <small>{lastUpload===null?'마지막 공식 업로드 확인 대기':`마지막 공식 업로드 ${dateFormat.format(lastUpload)}`}</small>
-    </div>
-    <OfficialLinks artist={artist} channels={channels}/>
     {memberSections.filter(([,names])=>names.length>0).map(([label,names,evidence])=>
      <div className="directory-member-section" key={label} role="group" aria-label={label}>
       <div className="directory-member-label">

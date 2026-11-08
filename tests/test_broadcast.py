@@ -11,3 +11,20 @@ class BroadcastTests(unittest.TestCase):
         self.assertFalse(is_music_broadcast(dict(title='Music Bank 직캠',channelId='fan')))
         tagged=apply_tags(dict(title='Music Bank RESCENE',channelId='kbs-kpop'),False)
         self.assertTrue(tagged['musicBroadcast']);self.assertIn('음악방송',tagged['tags'])
+
+    def test_platform_neutral_tab_membership(self):
+        cases = [
+            ({'title':'[Music Bank] RESCENE'}, ['home','broadcast']),
+            ({'title':'[MPD Fancam] RESCENE','channelId':'m2'}, ['broadcast']),
+            ({'title':'[Inkigayo] RESCENE','format':'short','channelId':'sbs-kpop'}, ['broadcast','shorts']),
+            ({'title':'[Inkigayo] RESCENE interview','channelId':'sbs-kpop'}, ['broadcast','external']),
+            ({'title':'Leemujin Service live cover','channelId':'kbs-kpop'}, ['broadcast','external']),
+            ({'title':'RESCENE official cover','official':True}, ['home','music','own']),
+            ({'title':'RESCENE trailer','format':'short'}, ['teaser','shorts']),
+            ({'title':'RESCENE cover','format':'short','externalType':'radio'}, ['radio']),
+            ({'title':'Official MV','description':'Watch the teaser below','category':'music'}, ['home','music']),
+        ]
+        for fields, expected in cases:
+            with self.subTest(fields=fields):
+                row={'channelId':'kbs-kpop','format':'video','platform':'chzzk',**fields}
+                self.assertEqual(apply_tags(row,fields.get('official',False))['contentTabs'], expected)

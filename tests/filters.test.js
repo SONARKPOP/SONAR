@@ -49,8 +49,10 @@ test('sample selection has more than one full page and canonical records are pla
 test('defaults come from catalog; saved and explicitly empty selections survive',()=>{
  const catalog={groups:[{id:'rescene'},{id:'uspeer'},{id:'added-later'}],defaultGroupIds:['added-later','missing']};
  assert.deepEqual(groupPreferences({getItem:()=>null},catalog),{saved:['added-later'],selected:['added-later']});
- const storage={getItem:key=>key==='sonar.groups.v2'?JSON.stringify(['rescene','missing']):JSON.stringify(['rescene','uspeer','missing'])};
+ const storage={getItem:key=>key==='sonar.groups.v2'?JSON.stringify(['rescene','missing']):key==='sonar.selected.v2'?JSON.stringify(['rescene','uspeer','missing']):null};
  assert.deepEqual(groupPreferences(storage,catalog),{saved:['rescene'],selected:['rescene']});
+ const wide={getItem:key=>key==='sonar.view-checked.v1'?'["rescene","uspeer"]':storage.getItem(key)};
+ assert.deepEqual(groupPreferences(wide,catalog),{saved:['rescene'],selected:['rescene','uspeer']});
  assert.deepEqual(groupPreferences({getItem:()=>JSON.stringify([])},catalog),{saved:[],selected:[]});
  assert.deepEqual(groupPreferences({getItem:()=>{throw Error('denied');}},catalog),{saved:['added-later'],selected:['added-later']});
 });

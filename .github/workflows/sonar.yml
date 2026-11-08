@@ -97,6 +97,12 @@ jobs:
             fi
             python -m collectors.youtube --refresh-uploads
           fi
+      - name: Refresh reviewed platform sources
+        if: steps.collect_data.outcome == 'success' && (github.event_name != 'schedule' || github.event.schedule == '2-52/10 * * * *' || github.event.schedule == '17 */6 * * *')
+        env:
+          CHZZK_CLIENT_ID: ${{ secrets.CHZZK_CLIENT_ID }}
+          CHZZK_CLIENT_SECRET: ${{ secrets.CHZZK_CLIENT_SECRET }}
+        run: python -m collectors.chzzk
       - name: Commit data or quota ledger
         id: commit
         if: always()
