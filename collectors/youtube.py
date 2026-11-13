@@ -79,6 +79,8 @@ def mentions(text, alias):
     return bool(alias_pattern(alias).search(text)) if alias.isascii() else alias.casefold() in text.casefold()
 
 def member_match(member, snippet, groups):
+    if member.get('taggingPolicy') == 'explicit-group-context' and member['groupId'] not in groups:
+        return False
     title = snippet['title']
     cautious = {a.casefold() for a in member.get('ambiguousAliases', [])}
     for alias in member['aliases']:

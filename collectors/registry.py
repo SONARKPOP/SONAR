@@ -126,6 +126,8 @@ def validate(bundles, shared, taxonomy):
                 raise ValueError(f'{mid}: member must link to its owning group {gid}.')
             text(member.get('name'), mid)
             strings(member.get('aliases'), mid)
+            if member.get('taggingPolicy') not in (None, 'explicit-group-context'):
+                raise ValueError(f'{mid}: invalid member tagging policy.')
             if 'ambiguousAliases' in member:
                 strings(member['ambiguousAliases'], f'{mid}.ambiguousAliases')
                 if set(member['ambiguousAliases']) - set(member['aliases']):
