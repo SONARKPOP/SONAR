@@ -14,6 +14,21 @@ test('common appearance channels precede single-group channels',()=>{
  assert.equal(commonChannels(rows,['aespa','ive'])[0].id,'studio');
  assert.equal(commonChannels([rows[0],rows[0]],['aespa','ive'])[0].count,1);
 });
+
+test('external channel choices share video filters without selecting one channel',()=>{
+ const rows=[
+  row('a',['aespa'],{category:'external',memberIds:['winter'],channelId:'one'}),
+  row('b',['aespa'],{category:'external',memberIds:['winter'],channelId:'two'}),
+  row('other-member',['aespa'],{category:'external',memberIds:['karina'],channelId:'three'}),
+  row('other-group',['ive'],{category:'external',memberIds:['winter'],channelId:'four'}),
+  row('old',['aespa'],{category:'external',memberIds:['winter'],channelId:'five',publishedAt:'2025-01-01'})
+ ];
+ const options={groups:['aespa'],category:'external',member:'winter',year:'2026'};
+ const choices=commonChannels(filterContent(rows,options),options.groups);
+ assert.deepEqual(choices.map(choice=>choice.id),['one','two']);
+ assert.equal(filterContent(rows,{...options,channel:'one'}).length,1);
+ assert.equal(choices.reduce((sum,choice)=>sum+choice.count,0),2);
+});
 test('live gate excludes external, ended, sample and stale streams',()=>{
  const start='2026-11-05T00:00:00Z',now=Date.parse(start);
  const v={id:'a',channelId:'official',groupIds:['aespa'],liveStatus:'live',actualStartTime:start};

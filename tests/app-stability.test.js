@@ -41,8 +41,11 @@ test('App settles after initial detail loading and repeated content-tab clicks',
   globalThis.window={location:{hash:'#collection'},matchMedia:()=>({matches:false})};
   globalThis.localStorage={getItem:()=>null};
   globalThis.__sonarTestHooks=harness.hooks;
-  const server=await createServer({server:{middlewareMode:true,hmr:false,ws:false},plugins:[{
-    name:'app-interaction-harness',enforce:'pre',transform(source,id){
+  const server=await createServer({server:{middlewareMode:true,hmr:false,ws:false,watch:null},plugins:[{
+    name:'app-interaction-harness',enforce:'pre',
+    resolveId(source){if(source.endsWith('.css'))return '\0sonar-test-style';},
+    load(id){if(id==='\0sonar-test-style')return 'export default {};';},
+    transform(source,id){
       const path=id.replaceAll('\\','/');
       if(path.endsWith('/src/useGroupVideos.js')){
         return source.replace("import {useEffect,useState} from 'react';",'const {useEffect,useState}=globalThis.__sonarTestHooks;');

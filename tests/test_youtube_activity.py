@@ -47,11 +47,13 @@ class ActivityTests(unittest.TestCase):
         self.assertEqual(effective_upload(live,NOW)['at'],iso(NOW-60))
         self.assertIsNone(effective_upload({**raw,'status':{'privacyStatus':'private'}},NOW))
     def test_shared_channel_and_secondary_failure(self):
-        g={'id':'g'};source={'id':'official','official':True,'platform':'youtube','groupIds':['g'],'verification':{'basis':'checked'}}
+        g={'id':'g'};source={'id':'official','official':True,'platform':'youtube','groupIds':['g'],'verification':{'basis':'checked'},'verificationStatus':'VERIFIED'}
         cache={'official':{'complete':True,'checkedAt':iso(NOW),'uploads':rows(4,0)}}
         self.assertEqual(group_snapshot(g,[source],cache,NOW)['activity_status'],'SURGE')
         self.assertEqual(group_snapshot(g,[{**source,'groupIds':['g','other']}],cache,NOW)['activity_status'],'UNKNOWN')
         self.assertEqual(group_snapshot(g,[source,{**source,'id':'missing'}],cache,NOW)['activity_status'],'UNKNOWN')
+        unreviewed={key:value for key,value in source.items() if key!='verificationStatus'}
+        self.assertEqual(group_snapshot(g,[unreviewed],cache,NOW)['activity_status'],'UNKNOWN')
     def test_pagination_checks_more_than_ten_items(self):
         api=Mock();source={'id':'g-official','platformId':'UC'+'1'*22,'expectedChannelNames':['Group']}
         api.get.side_effect=[{'items':[{'id':source['platformId'],'snippet':{'title':'Group'},'contentDetails':{'relatedPlaylists':{'uploads':'UU1'}}}]},
@@ -64,7 +66,7 @@ class ActivityTests(unittest.TestCase):
         self.assertEqual(api.videos.call_count,2)
         self.assertEqual(api.get.call_args.kwargs['pageToken'],'next')
     def test_api_failure_is_unknown_and_cache_reused(self):
-        config={'groups':[{'id':'g','gender':'girl','artistType':'group','debutYear':2024}], 'channels':[{'id':'s','platform':'youtube','platformId':'UC'+'1'*22,'official':True,'groupIds':['g'],'verification':{'basis':'checked'}}]}
+        config={'groups':[{'id':'g','gender':'girl','artistType':'group','debutYear':2024}], 'channels':[{'id':'s','platform':'youtube','platformId':'UC'+'1'*22,'official':True,'groupIds':['g'],'verification':{'basis':'checked'},'verificationStatus':'VERIFIED'}]}
         api=Mock();api.budget=None;api.get.side_effect=RuntimeError('API error')
         with TemporaryDirectory() as tmp:
             self.assertEqual(refresh(api,config,Path(tmp),NOW)['g']['activity_status'],'UNKNOWN')

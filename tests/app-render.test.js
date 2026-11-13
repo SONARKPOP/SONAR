@@ -10,8 +10,11 @@ test('real application renders its initial screen without initialization errors'
   globalThis.window={location:{hash:'#collection'},matchMedia:()=>({matches:false})};
   globalThis.localStorage={getItem:()=>null};
   const server=await createServer({
-    server:{middlewareMode:true,hmr:false,ws:false},
-    plugins:[{name:'app-render-test',enforce:'pre',transform(source,id){
+    server:{middlewareMode:true,hmr:false,ws:false,watch:null},
+    plugins:[{name:'app-render-test',enforce:'pre',
+      resolveId(source){if(source.endsWith('.css'))return '\0sonar-test-style';},
+      load(id){if(id==='\0sonar-test-style')return 'export default {};';},
+      transform(source,id){
       if(id.replaceAll('\\','/').endsWith('/src/main.jsx'))return source.replace("createRoot(document.getElementById('root')).render(<App/>);",'export {App};');
     }}],
   });

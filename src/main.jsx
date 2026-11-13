@@ -171,8 +171,12 @@ function App(){
  const lives=catalog?withoutExcludedGroups([...activeLives(feed,catalog.channels,clock),...platformLives],excludedGroups).filter(v=>v.groupIds.some(id=>artistCategories(catalog.groups.find(g=>g.id===id)||{}).some(type=>enabledArtistTypes.includes(type)))):[];
  useEffect(()=>{if(!livePanel)return;const dismiss=e=>{if(!liveStatusRef.current?.contains(e.target))setLivePanel(false);};const escape=e=>{if(e.key==='Escape'){setLivePanel(false);liveStatusButtonRef.current?.focus();}};document.addEventListener('pointerdown',dismiss);document.addEventListener('keydown',escape);return()=>{document.removeEventListener('pointerdown',dismiss);document.removeEventListener('keydown',escape);};},[livePanel]);
  useEffect(()=>{if(!lives.length)setLivePanel(false);},[lives.length]);
- const externalRows=rows.filter(v=>matchesContentTab(v,'external')&&(!externalType||externalKind(v)===externalType)&&(!excludeMode||!v.groupIds.some(id=>excludedGroups.includes(id))));
- const channels=commonChannels(externalRows,selected);
+ const channels=useMemo(()=>selected.length?commonChannels(filterContent(
+  excludeMode?withoutExcludedGroups(rows,excludedGroups):rows,
+  {groups:filterGroup?[filterGroup]:selected,category:'external',query,member,subtype,format,
+   year:archiveYear,month:archiveMonth,includeIndividual,artistNames,externalType}
+ ),filterGroup?[filterGroup]:selected):[],
+ [rows,selected,filterGroup,excludeMode,excludedGroups,query,member,subtype,format,archiveYear,archiveMonth,includeIndividual,artistNames,externalType]);
  const archiveYears=useMemo(()=>{
   const groups=(catalog?.groups||[]).filter(group=>indexGroups.includes(group.id));
   const years=groups.flatMap(group=>group.archiveYears||[]);

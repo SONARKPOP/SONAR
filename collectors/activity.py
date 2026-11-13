@@ -61,7 +61,7 @@ def eligible_group(group):
     return group.get('gender')=='girl' and group.get('artistType','group')=='group' and isinstance(year,int) and 2000<=year<=datetime.now(timezone.utc).year and group.get('directoryVisibility')!='agency-only'
 
 def dedicated_sources(group, channels):
-    return [c for c in channels if c.get('official') and c.get('collectionEnabled', True) and c.get('platform')=='youtube' and c.get('groupIds')==[group['id']] and not c.get('shared') and c.get('verification') and c.get('verificationStatus','VERIFIED') in ('VERIFIED','SUPPORTED')]
+    return [c for c in channels if c.get('official') and c.get('collectionEnabled', True) and c.get('platform')=='youtube' and c.get('groupIds')==[group['id']] and not c.get('shared') and c.get('verification') and c.get('verificationStatus') in ('VERIFIED','SUPPORTED')]
 
 def group_snapshot(group, channels, cache, current):
     sources=dedicated_sources(group,channels)
