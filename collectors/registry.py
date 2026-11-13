@@ -3,6 +3,7 @@ import json
 import re
 from urllib.parse import urlparse
 from pathlib import Path
+from .member_metadata import validate_member_metadata
 
 CONFIG = Path(__file__).resolve().parents[1] / 'config'
 RESERVED = {'con', 'prn', 'aux', 'nul', *(f'com{i}' for i in range(1, 10)), *(f'lpt{i}' for i in range(1, 10))}
@@ -126,6 +127,7 @@ def validate(bundles, shared, taxonomy):
                 raise ValueError(f'{mid}: member must link to its owning group {gid}.')
             text(member.get('name'), mid)
             strings(member.get('aliases'), mid)
+            validate_member_metadata(member)
             if member.get('taggingPolicy') not in (None, 'explicit-group-context'):
                 raise ValueError(f'{mid}: invalid member tagging policy.')
             if 'ambiguousAliases' in member:
