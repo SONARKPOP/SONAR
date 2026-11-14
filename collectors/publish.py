@@ -129,6 +129,8 @@ def publish(records, config, events=(), output=DATA, demo=False):
         if eligible_group(group):
             group['youtubeActivity']=group_snapshot(group,config['channels'],activity_cache,time.time())
     write(output / 'catalog.json', {'schemaVersion': 1, 'updatedAt': updated, 'demo': demo, **public_config})
+    from .activity_comparison import build_comparison
+    write(output / 'activity-comparison.json', build_comparison(ordered,{**config,'groups':public_config['groups']},time.time()))
     official = {c['id'] for c in config['channels'] if c['official']}
     live = [v for v in ordered if v.get('liveStatus') == 'live' and v['channelId'] in official and v.get('actualStartTime') and not v.get('actualEndTime') and not v.get('demo')]
     write(output / 'live.json', {'updatedAt': updated, 'items': [v for v in live if not is_continuous_live(v)], 'stations':[v for v in live if is_continuous_live(v)]})
