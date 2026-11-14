@@ -3,6 +3,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from .upload_cadence import stamp, upload_interval_hours
+from .source_policy import public_artist
 
 RULES=json.loads((Path(__file__).resolve().parents[1]/'config/activity-rules.json').read_text(encoding='utf-8'))
 DAY=86400
@@ -57,16 +58,36 @@ def calculate_activity(uploads, current, *, complete=True, official=True, checke
     return result
 
 def eligible_group(group):
-    year=group.get('debutYear')
-    return group.get('gender')=='girl' and group.get('artistType','group')=='group' and isinstance(year,int) and 2000<=year<=datetime.now(timezone.utc).year and group.get('directoryVisibility')!='agency-only'
+    return public_artist(group) and group.get('directoryVisibility')!='agency-only'
 
 def dedicated_sources(group, channels):
-    return [c for c in channels if c.get('official') and c.get('collectionEnabled', True) and c.get('platform')=='youtube' and c.get('groupIds')==[group['id']] and not c.get('shared') and c.get('verification') and c.get('verificationStatus') in ('VERIFIED','SUPPORTED')]
+    return [c for c in channels if c.get('official') and c.get('collectionEnabled', True) and not c.get('unavailableReason') and c.get('platform')=='youtube' and c.get('groupIds')==[group['id']] and not c.get('shared') and c.get('verification') and c.get('verificationStatus') in ('VERIFIED','SUPPORTED')]
 
 def group_snapshot(group, channels, cache, current):
     sources=dedicated_sources(group,channels)
-    entries=[cache.get(c['id'],{}) for c in sources]
+    if not sources:
+        owned=[c for c in channels if c.get('official') and c.get('platform')=='youtube'
+               and c.get('groupIds')==[group['id']] and not c.get('shared')]
+        reviewed=[c for c in owned if c.get('verification') and c.get('verificationStatus') in ('VERIFIED','SUPPORTED')]
+        if not owned:
+            reason='no-dedicated-channel'
+        elif not reviewed:
+            reason='channel-review-required'
+        elif any(c.get('unavailableReason') for c in reviewed):
+            reason='channel-unavailable'
+        else:
+            reason='collection-disabled'
+        return {**calculate_activity([],current,official=False,error=reason), 'channel_ids':[], 'uploads':[]}
+    entries=[]
+    for source in sources:
+        entry=cache.get(source['id'],{})
+        identities={value for value in (source.get('platformId'),source.get('handle')) if value} or {None}
+        if entry.get('configuredIdentity') not in identities or (source.get('platformId') and entry.get('channelId')!=source['platformId']):
+            entry={}
+        entries.append(entry)
     errors=[entry.get('error') for entry in entries if entry.get('error')]
+    if any(not entry for entry in entries):
+        errors.append('awaiting-first-scan')
     checked=[entry.get('checkedAt') for entry in entries]
     complete=bool(entries) and all(entry.get('complete') for entry in entries)
     # Missing/failed secondary channels must not silently lower the group's counts.

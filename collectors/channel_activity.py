@@ -1,4 +1,4 @@
-"""Cached, bounded official girl-group upload activity collection. No search.list."""
+"""Cached, bounded official artist upload activity collection. No search.list."""
 import argparse
 import json
 import os
@@ -65,14 +65,21 @@ def refresh(api, config, output=DATA, current=None):
     checked=0
     for source in due:
         if api.budget and api.budget.remaining('read')<4:break
-        try:cache[source['id']]=collect_channel(api,source,current);checked+=1
+        try:cache[source['id']]=collect_channel(api,source,current)
         except BudgetExceeded:break
         except (RuntimeError,ValueError,KeyError,OSError) as exc:
             cache[source['id']]={'configuredIdentity':source.get('platformId') or source.get('handle'),'checkedAt':iso(current),'channelId':source.get('platformId'),'complete':False,'uploads':[],'error':str(exc)}
+        checked+=1
     cache={key:value for key,value in cache.items() if key in sources}
     snapshots={g['id']:group_snapshot(g,config['channels'],cache,current) for g in groups}
     write(path,{'schemaVersion':1,'updatedAt':iso(current),'channels':cache,'groups':snapshots,'checkedThisRun':checked,'dueRemaining':max(0,len(due)-checked)})
-    print(f'Activity: {len(groups)} girl groups; {checked} channels checked; '+str(sum(v['activity_status']!='UNKNOWN' for v in snapshots.values()))+' classified. Unknown is retained for missing, stale or incomplete data.')
+    reasons={}
+    for snapshot in snapshots.values():
+        if snapshot['activity_status']=='UNKNOWN':
+            reason=snapshot.get('reason') or 'unknown'
+            reasons[reason]=reasons.get(reason,0)+1
+    print(f'Activity: {len(groups)} artists; {checked} channels checked; '+str(sum(v['activity_status']!='UNKNOWN' for v in snapshots.values()))+' classified. Unknown is retained for missing, stale or incomplete data.')
+    print('Activity pending reasons: '+json.dumps(reasons,sort_keys=True))
     return snapshots
 
 def main():

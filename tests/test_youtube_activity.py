@@ -1,7 +1,7 @@
 import unittest
-from collectors.activity import calculate_activity, effective_upload, group_snapshot, iso, DAY
+from collectors.activity import calculate_activity, effective_upload, group_snapshot, eligible_group, iso, DAY
 from collectors.channel_activity import collect_channel, refresh
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 from tempfile import TemporaryDirectory
 from pathlib import Path
 
@@ -10,6 +10,59 @@ def rows(count,age):return [{'id':str(i),'at':iso(NOW-age)} for i in range(count
 def calc(values,**kwargs):return calculate_activity(values,NOW,checked_at=iso(NOW),**kwargs)
 
 class ActivityTests(unittest.TestCase):
+    def test_public_artist_scope_includes_solo_duo_mixed_and_unknown_debut(self):
+        for profile in ({'gender':'girl'}, {'gender':'mixed','artistType':'duo'},
+                        {'gender':'girl','artistType':'solo'}, {'gender':'girl','debutYear':1995}):
+            self.assertTrue(eligible_group(profile))
+        self.assertFalse(eligible_group({'gender':'boy','artistType':'group'}))
+        self.assertFalse(eligible_group({'gender':'girl','directoryVisibility':'agency-only'}))
+
+    def test_unknown_reasons_distinguish_channels_from_pending_counts(self):
+        group={'id':'g'}
+        source={'id':'s','platform':'youtube','groupIds':['g'],'official':True,
+                'verification':{'basis':'reviewed'},'verificationStatus':'SUPPORTED'}
+        for sources,reason in (([], 'no-dedicated-channel'),
+                               ([{**source,'shared':True}], 'no-dedicated-channel'),
+                               ([{**source,'verificationStatus':'UNVERIFIED'}], 'channel-review-required'),
+                               ([{**source,'collectionEnabled':False}], 'collection-disabled'),
+                               ([{**source,'unavailableReason':'channel-not-found'}], 'channel-unavailable'),
+                               ([source], 'awaiting-first-scan')):
+            snapshot=group_snapshot(group,sources,{},NOW)
+            self.assertEqual(snapshot['activity_status'],'UNKNOWN')
+            self.assertEqual(snapshot['reason'],reason)
+
+    def test_handle_cache_survives_resolved_id_but_not_a_different_channel(self):
+        source={'id':'s','platform':'youtube','groupIds':['g'],'official':True,
+                'handle':'@artist','platformId':'UC'+'1'*22,
+                'verification':{'basis':'reviewed'},'verificationStatus':'VERIFIED'}
+        cache={'s':{'configuredIdentity':'@artist','channelId':source['platformId'],
+                    'complete':True,'checkedAt':iso(NOW),'uploads':rows(3,0)}}
+        self.assertEqual(group_snapshot({'id':'g'},[source],cache,NOW)['activity_status'],'SURGE')
+        self.assertEqual(group_snapshot({'id':'g'},[{**source,'platformId':'UC'+'2'*22}],cache,NOW)['reason'],'awaiting-first-scan')
+
+    def test_new_artist_types_reuse_cache_and_respect_read_budget(self):
+        profiles=[{'id':'solo','gender':'girl','artistType':'solo'},
+                  {'id':'duo','gender':'mixed','artistType':'duo'}]
+        sources=[{'id':p['id'],'platform':'youtube','platformId':'UC'+str(i)*22,
+                  'groupIds':[p['id']],'official':True,'verification':{'basis':'reviewed'},
+                  'verificationStatus':'VERIFIED'} for i,p in enumerate(profiles,1)]
+        config={'groups':profiles,'channels':sources}
+        api=Mock();api.budget=None
+        def collected(api,source,current):
+            return {'configuredIdentity':source['platformId'],'channelId':source['platformId'],
+                    'complete':True,'checkedAt':iso(current),'uploads':rows(1,0)}
+        with TemporaryDirectory() as tmp, patch('collectors.channel_activity.collect_channel',side_effect=collected) as collect:
+            snapshots=refresh(api,config,Path(tmp),NOW)
+            self.assertEqual({v['activity_status'] for v in snapshots.values()},{'SAILING'})
+            self.assertEqual(collect.call_count,2)
+            refresh(api,config,Path(tmp),NOW+60)
+            self.assertEqual(collect.call_count,2)
+        with TemporaryDirectory() as tmp, patch('collectors.channel_activity.collect_channel') as collect:
+            api.budget=Mock()
+            api.budget.remaining.return_value=3
+            snapshots=refresh(api,config,Path(tmp),NOW)
+            collect.assert_not_called()
+            self.assertEqual(snapshots['solo']['reason'],'awaiting-first-scan')
     def test_surge_count_boundaries(self):
         for age,threshold in [(DAY,3),(3*DAY,10),(5*DAY,15)]:
             # One fresh upload satisfies the required 48-hour gate.

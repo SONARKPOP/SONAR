@@ -2,7 +2,7 @@ import React,{useEffect,useId,useMemo,useRef,useState} from 'react';
 import {ArrowUp,ArrowDownUp,ChevronLeft,Heart,ListChecks,Search,SlidersHorizontal,Sprout,Star,X} from 'lucide-react';
 import {artistCategories,artistsInDebutRange,debutYearRanges,recommendedArtists} from './lib';
 import {DIRECTORY_ACTIVITY_STATES,directoryResults,isArtistSearch,legacyGroupState} from './directory';
-import {ACTIVITY_META,activityView} from './youtube-activity';
+import {ACTIVITY_META,activityView,unknownActivityReason,UNKNOWN_ACTIVITY_LABELS} from './youtube-activity';
 import {officialLinksFor} from './official-links';
 import {ActivityGlyph} from './ActivityIcon';
 import ArtistDirectoryRow from './ArtistDirectoryRow';
@@ -103,13 +103,18 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   const yearRows=typed.filter(inStatus);
   const base=artistsInDebutRange(typed,year);
   const statusCounts={all:base.length,unknown:0,...Object.fromEntries(DIRECTORY_ACTIVITY_STATES.map(key=>[key,0]))};
+  const unknownReasons={};
   for(const group of base){
    const key=activity.get(group.id);
    if(recommendationMode&&RECOMMEND.includes(key)&&excludedIds.has(group.id))continue;
    statusCounts[key]++;
+   if(key==='unknown'){
+    const reason=unknownActivityReason(group,clock);
+    unknownReasons[reason]=(unknownReasons[reason]||0)+1;
+   }
   }
   return {
-   base,activity,archiveCount,
+   base,activity,archiveCount,unknownReasons,
    types:Object.fromEntries(TYPES.map(([id])=>[id,typeRows.filter(group=>inType(group,id)).length])),
    years:Object.fromEntries(years.map(([id])=>[id,artistsInDebutRange(yearRows,id).length])),
    statuses:statusCounts,
@@ -201,6 +206,9 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
     <ActivityFilterButton key={state} state={state} count={facets.statuses[state]} status={status} onChange={changeActivity}/>)}
   </div>}
   {!editorTitle&&<DirectoryFilters inline filters={filters} years={years} counts={facets} update={updateFilters} reset={resetFilters}/>}
+  {status==='unknown'&&<p className="directory-unknown-reasons" role="status" aria-label="활동 상태 미확인 사유">
+   {Object.entries(facets.unknownReasons).map(([reason,count])=><span key={reason}>{UNKNOWN_ACTIVITY_LABELS[reason]} {count}명</span>)}
+  </p>}
   {recommendationMode&&<div className="directory-favorite-panel">
    {favoriteEdit&&<div className="directory-favorite-options" aria-label="담을 선호 목록"><small>담을 곳</small>{PRESETS.map(([key,label,Icon])=>
     <button key={key} type="button" className="directory-control" aria-pressed={preset===key} onClick={()=>setPreset(key)}><Icon size={14}/>{label}<small className="directory-option-count">{favoriteIds[key].size}</small></button>)}</div>}

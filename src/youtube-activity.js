@@ -1,5 +1,29 @@
 import rules from '../config/activity-rules.json' with {type:'json'};
 export const ACTIVITY_META={SURGE:{color:'#ef4444',icon:'flame'},SAILING:{color:'#22c55e',icon:'ship'},COASTING:{color:'#eab308',icon:'waves'},ANCHORED:{color:'#f97316',icon:'anchor'},'LOST SIGNAL':{color:'#94a3b8',icon:'wifi-off'}};
+export const UNKNOWN_ACTIVITY_LABELS={
+ 'no-dedicated-channel':'공식 전용 채널 미연결',
+ 'shared-channel-excluded':'소속사 공용 채널 제외',
+ 'channel-review-required':'공식 채널 검증 대기',
+ 'channel-unavailable':'채널 이용 불가',
+ 'collection-disabled':'수집 중지',
+ 'awaiting-first-scan':'첫 집계 대기',
+ 'pagination-incomplete':'업로드 목록 집계 미완료',
+ 'incomplete-data':'업로드 데이터 부족',
+ 'no-valid-upload':'집계 가능한 업로드 없음',
+ 'data-expired':'데이터 갱신 대기',
+ 'unverified-or-stale':'최근 데이터 재확인',
+ 'channel-identity-changed':'채널 변경 확인 필요',
+ 'topic-channel-excluded':'Topic 채널 제외',
+ 'collection-error':'수집 오류·재시도 대기',
+};
+
+export function unknownActivityReason(group,now=Date.now()){
+ if(activityView(group,now))return null;
+ const data=group?.youtubeActivity;
+ if(!data)return group?.directoryVisibility==='agency-only'?'shared-channel-excluded':'awaiting-first-scan';
+ if(data.activity_status!=='UNKNOWN')return 'data-expired';
+ return Object.hasOwn(UNKNOWN_ACTIVITY_LABELS,data.reason)?data.reason:'collection-error';
+}
 // Counts are collected from complete official upload scans, never card samples.
 export function activityView(group,now=Date.now()){
  const data=group?.youtubeActivity;
