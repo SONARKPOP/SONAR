@@ -1,0 +1,55 @@
+name: SONAR · Namuwiki connection and collection
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/namuwiki-check.yml']
+  workflow_dispatch:
+concurrency:
+  group: sonar-namuwiki-check
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check key and collect supplementary profile candidates
+        env:
+          NAMUWIKI_API_KEY: ${{ secrets.NAMUWIKI_API_KEY }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from collectors.namuwiki import collect
+          from collectors.registry import load_bundles
+          bundles, *_ = load_bundles()
+          evidence = json.loads(Path('config/channel-survey.json').read_text(encoding='utf-8')).get('artists', [])
+          result = collect(bundles, Path('public/data/namuwiki-connection-check.json'),
+                           key=os.environ.get('NAMUWIKI_API_KEY', ''), limit=12, evidence=evidence)
+          print('Namuwiki:', result['status'], 'requests:', result.get('requestsThisRun', 0),
+                'cached:', result.get('cacheReused', False), 'reason:', result.get('reason') or 'none')
+          print('Articles found:', sum(item.get('found') is True for item in result['items']))
+          print('Profiles with extracted candidates:', sum(bool(item.get('candidates')) for item in result['items']))
+          if result['status'] == 'source_unavailable':
+              raise SystemExit('Namuwiki connection unavailable: ' + result['reason'])
+          PY
+      - name: Preserve collected evidence separately from video indexes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/data/namuwiki-connection-check.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'data: verify Namuwiki connection and save profile candidates'
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
