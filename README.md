@@ -181,7 +181,15 @@ Run `python -m collectors.channel_activity` with `YOUTUBE_API_KEY` configured, t
 
 Use python -m collectors.channel_review to refresh the channel review queue in public/data/channel-review.json. To inspect one candidate, supply its artist ID and YouTube handle. After verifying dedicated artist ownership, add --apply --evidence URL to record the evidence, and add --official-evidence for an artist or agency source. The review command uses the same environment variable for the API key.
 
-### 치지직 및 공식 원본 링크
+### 나무위키 보조 프로필 조사
+
+GitHub Actions Secret에 `NAMUWIKI_API_KEY`를 등록합니다. 키는 수집기 환경 변수로만 전달되며 `VITE_` 환경 변수나 공개 JSON에 넣지 않습니다. 기본 전체 수집(6시간 주기)에서 최대 12개 아티스트를 조사하며, 요청 간격 2.1초와 7일 캐시를 적용합니다. 로컬 실행은 `python -m collectors.namuwiki --limit 12`입니다.
+
+결과는 `public/data/namuwiki-research.json`의 후보·비교 상태로 저장합니다. 누락 필드가 많은 여성 그룹·솔로부터 순환 조회하고, 기존 공식 값과 다르면 `conflict`로 남깁니다. 조사 장부의 Wikidata/Fandom 생년월일과 같아도 보조 검증이며 자동으로 기존 프로필을 덮어쓰지 않습니다. API 키 누락·401·403·429·네트워크 오류는 `source_unavailable`이고, 아티스트나 채널 없음 판정이 아닙니다. 외부 서비스가 실패해도 YouTube 수집·배포는 계속합니다.
+
+전체 여성 채널 조사 결과와 미해결 사유는 [조사 보고서](docs/FEMALE-CHANNEL-SURVEY.md), 데이터 구조는 `config/channel-survey.json`과 생성된 `public/data/artist-channel-survey.json`을 참고합니다. 물리 채널은 UC ID로 중복 제거하고 인물은 기존 멤버 ID를 재사용합니다. 개인 프로필과 그룹 활동 주체를 구분하며, 원본 영상은 기존 platform+video ID로 한 번만 보관합니다.
+
+### 치지직 및 공식 원본 링크 설정
 
 GitHub Actions 저장소 시크릿에 CHZZK_CLIENT_ID와 CHZZK_CLIENT_SECRET을 설정합니다. 이어 config/platform-content.json의 chzzkChannels에 공식 근거를 확인한 channelId, groupIds, evidenceUrl을 등록합니다. 정기 실행은 치지직 Open API의 채널 조회와 진행 중인 라이브 목록을 사용합니다. 라이브 조회는 회차당 최대 10페이지이며, 등록 채널이 없으면 API 호출을 건너뜁니다.
 

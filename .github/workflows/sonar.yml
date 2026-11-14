@@ -103,6 +103,12 @@ jobs:
           CHZZK_CLIENT_ID: ${{ secrets.CHZZK_CLIENT_ID }}
           CHZZK_CLIENT_SECRET: ${{ secrets.CHZZK_CLIENT_SECRET }}
         run: python -m collectors.chzzk
+      - name: Refresh optional Namuwiki profile research
+        if: steps.collect_data.outcome == 'success' && (github.event_name == 'push' || inputs.collect || github.event.schedule == '17 */6 * * *')
+        continue-on-error: true
+        env:
+          NAMUWIKI_API_KEY: ${{ secrets.NAMUWIKI_API_KEY }}
+        run: python -m collectors.namuwiki --limit 12
       - name: Commit data or quota ledger
         id: commit
         if: always()

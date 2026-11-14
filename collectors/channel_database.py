@@ -57,6 +57,9 @@ def export_database(config_dir=CONFIG, output=DATA, report_dir=None):
         'exactDebutDateMissing':sum(not g['debut_date'] for g in groups),'realWorldStatusUnknown':sum(g['group_status']=='unknown' for g in groups)}
     report={'updatedAt':now(),'scope':'Registered public female and mixed groups, duos and solo artists with dedicated artist-channel review; incomplete registry, not an exhaustive census.','summary':summary,
             'groups':groups,'youtubeChannels':channels,'reviewQueue':pending}
+    from .channel_survey import export_survey
+    survey=export_survey(bundles,config_dir,output)
+    report['femaleChannelSurveySummary']=survey['summary']
     write(Path(output)/'girl-group-database.json',report)
     if report_dir:
         write(Path(report_dir)/'OFFICIAL-CHANNEL-CENSUS.json',report)
