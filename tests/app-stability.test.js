@@ -32,6 +32,9 @@ function text(node){if(node==null||typeof node==='boolean')return '';if(typeof n
 function findButton(node,label){
   if(!node||typeof node!=='object')return;
   if(Array.isArray(node)){for(const child of node){const found=findButton(child,label);if(found)return found;}return;}
+  // Navigation is now a hook-free presentation component; keep exercising
+  // the real parent callbacks across render cycles rather than a copied menu.
+  if(node.type?.name==='WorkspaceNavigation')return findButton(node.type(node.props),label);
   if(node.type==='button'&&text(node)===label)return node;
   return findButton(node.props?.children,label);
 }

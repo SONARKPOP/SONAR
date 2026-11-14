@@ -13,6 +13,8 @@ import SidebarGroupRow from './SidebarGroupRow';
 import MyGroupControls from './MyGroupControls';
 import FilterChoices from './FilterChoices';
 import VideoCard from './VideoCard';
+import MyGroupsPage from './MyGroupsPage';
+import {WorkspaceNavigation,ContentSearch,HomeOverview,ExternalExplorer} from './BrowseWorkspace';
 import {createDataClient} from './data';
 import {videoSourceUrl,mergePlatformRows,currentChzzkLives} from './platforms';
 import {useGroupVideos} from './useGroupVideos';
@@ -35,7 +37,8 @@ function DataRefreshTime({value}){
 }
 function App(){
  const [directoryPage,setDirectoryPage]=useState(()=>window.location.hash==='#artists');
- useEffect(()=>{const sync=()=>setDirectoryPage(window.location.hash==='#artists');window.addEventListener('hashchange',sync);return()=>window.removeEventListener('hashchange',sync);},[]);
+ const [groupsPage,setGroupsPage]=useState(()=>window.location.hash==='#groups');
+ useEffect(()=>{const sync=()=>{setDirectoryPage(window.location.hash==='#artists');setGroupsPage(window.location.hash==='#groups');};window.addEventListener('hashchange',sync);return()=>window.removeEventListener('hashchange',sync);},[]);
  const [enabledArtistTypes,setEnabledArtistTypes]=useState(()=>enabledArtistTypePreferences({getItem:key=>localStorage.getItem(key)}));
  useEffect(()=>{try{localStorage.setItem('sonar.enabled-artist-types.v1',JSON.stringify(enabledArtistTypes));}catch{}},[enabledArtistTypes]);
  const [language,setLanguage]=useState(()=>readScreenPreference('sonar.language.v1',['ko','ja','en','es'],'ko'));
@@ -129,7 +132,7 @@ function App(){
  const browseKey=[indexKey,category,archiveYear,archiveMonth,query,channel,member,subtype,format,externalType,ownType,includeIndividual].join('|');
  const progress=archiveProgress.key===browseKey?archiveProgress:{pages:0,months:0};
  const request=archiveRequest(browse,indexGroups,category,archiveYear,archiveMonth,progress);
- const indexesEnabled=Boolean(catalog)&&!directoryPage&&category!=='station';
+ const indexesEnabled=Boolean(catalog)&&!directoryPage&&!groupsPage&&category!=='station';
  const {rows:youtubeRows,failed:indexFailures,loading:indexLoading}=useGroupVideos(json,request.paths,{
   enabled:indexesEnabled,version:catalog?.updatedAt,retry:indexRetry
  });
@@ -218,7 +221,7 @@ function App(){
  };
  const openViewSettings=()=>{openGroups();setViewSettings(true);setSettingsPage('favorites');};
 
- const go=id=>{if(directoryPage)window.location.hash='collection';if(id==='uploads'&&!archiveYear&&!archiveMonth){const newest=[...rows].sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt))[0];const period=monthKey(newest?.publishedAt||Date.now());setArchiveYear(period.slice(0,4));setArchiveMonth(period.slice(5,7));}setOpenFilter('');setCategory(id);setOwnType('');setExternalType('');setChannel('');setMember('');setSubtype('');setFormat('');setMobile(false);};
+ const go=id=>{if(directoryPage||groupsPage)window.location.hash='collection';if(id==='uploads'&&!archiveYear&&!archiveMonth){const newest=[...rows].sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt))[0];const period=monthKey(newest?.publishedAt||Date.now());setArchiveYear(period.slice(0,4));setArchiveMonth(period.slice(5,7));}setOpenFilter('');setCategory(id);setOwnType('');setExternalType('');setChannel('');setMember('');setSubtype('');setFormat('');setMobile(false);};
  const [embedLoading,setEmbedLoading]=useState(false);
  const [playerMinimized,setPlayerMinimized]=useState(false);
  const [playerPosition,setPlayerPosition]=useState('top');
@@ -309,7 +312,7 @@ function App(){
    badges={presetOptions.filter(([key])=>favoritePresets[key].includes(group.id))} color={favoriteColors[group.id]}
    swiped={swipedGroup===group.id} onSwipe={setSwipedGroup} onToggle={id=>{setSwipedGroup(null);setSidebarUndo(null);toggle(id);}} onRemove={removeSidebarGroup}/>)}
  </div>
-<button className="add-group" onClick={openGroups}><Plus size={15}/> 그룹 추가하기</button><button className="view-settings-open" onClick={openViewSettings}><Settings2 size={14}/> 보기 설정</button></section>
+<button className="add-group" onClick={openGroups}><Plus size={15}/> 그룹 추가하기</button><button className="view-settings-open" onClick={openViewSettings}><Settings2 size={14}/> 보기 설정</button><button type="button" className="view-settings-open" onClick={()=>{window.location.hash='groups';setMobile(false);}}><Layers size={14}/> MY GROUPS 관리</button></section>
 
  <div className="sidebar-bottom"><div className="voyage-mini"><Disc3 size={23}/><span className="sonar-on-label">SONAR ON</span></div><small>SONAR · FAN-MADE ARCHIVE<br/>콘텐츠의 바다를 탐색하는 소나</small></div></aside>
  <main><h1 className="sr-only">SONAR · 비공식 K-POP 팬페이지</h1>
@@ -352,7 +355,11 @@ function App(){
  <div className="main-content">
 
  <div className="fan-page-note"><span>FAN PAGE</span><p>비공식 K-POP 팬페이지 · 아티스트·소속사와 무관한 팬 제작 아카이브입니다.</p>{lives.length>0&&<div className="top-live-status" ref={liveStatusRef}><button type="button" ref={liveStatusButtonRef} className="live-status-trigger" aria-expanded={livePanel} aria-controls="top-live-panel" aria-label={`현재 진행 중인 공식 라이브 ${lives.length}개 보기`} onClick={()=>setLivePanel(s=>!s)}><span className="live-status-dot" aria-hidden="true"/><span data-no-translate>LIVE ON</span><span className="live-status-count">{lives.length}</span></button>{livePanel&&<section id="top-live-panel" className="live-status-panel" aria-label="현재 진행 중인 라이브"><div className="live-status-heading"><strong>LIVE NOW</strong><small>{lives.length}개 진행 중</small></div>{lives.map(v=><button type="button" className="live-status-entry" key={v.id} onClick={()=>{setLivePanel(false);open(v);}}><Radio size={17}/><span><b data-no-translate>{v.groupIds.map(groupName).join(' · ')}</b><small data-no-translate>{v.title}</small></span><Play size={14}/></button>)}</section>}</div>}<DataRefreshTime value={catalog?.contentUpdatedAt}/></div>
- {directoryPage?<ArtistDirectory {...artistDirectoryProps}/>:<section className="library" id="collection"><div className="content-navigation"><nav className="content-tabs" aria-label="콘텐츠 종류">{menus.map(([id,name,Icon])=><button key={id} type="button" aria-current={category===id?'page':undefined} onClick={()=>go(id)} className={category===id?'content-tab active':'content-tab'}><Icon size={18}/><span>{name}</span></button>)}</nav></div><div className="section-title"><div><h2>{category==='uploads'?'업로드 달력':category==='home'?'모아보기':menus.find(m=>m[0]===category)?.[1]}<span>{category==='uploads'?calendarRows.length:filtered.length}</span></h2><p>{selected.length?selected.length>3?`${selected.slice(0,3).map(groupName).join(' · ')} 외 ${selected.length-3}개`:selected.map(groupName).join(' · '):'보고 싶은 그룹의 체크박스를 켜주세요'}</p></div><span className="sort-label">최신 업로드순 ↓</span></div>
+ <WorkspaceNavigation menus={menus} page={groupsPage?'groups':directoryPage?'artists':'content'} category={category} onGo={go} onGroups={()=>{window.location.hash='groups';setMobile(false);setOpenFilter('');}}/>
+ {groupsPage?(catalog?<MyGroupsPage groups={catalog.groups} saved={saved} checked={rawSelected} enabled={selected} favorites={favoritePresets} excluded={excludedGroups} clock={clock}
+  onToggleViewing={id=>editCheckedGroups([id],!rawSelected.includes(id))} onToggleSaved={id=>setSaved(current=>current.includes(id)?current.filter(g=>g!==id):[...current,id])} onFavorite={toggleFavorite} onEdit={openGroupEditor} onSettings={openViewSettings}/>:<div className="empty" role="status">{error||'그룹 목록을 불러오는 중…'}</div>):directoryPage?<ArtistDirectory {...artistDirectoryProps}/>:<section className="library" id="collection">
+ {category==='home'&&<HomeOverview selectedCount={selected.length} videoCount={filtered.length} favoriteCount={protectedGroups.length} onGo={go} onGroups={()=>{window.location.hash='groups';}}/>}<div className="section-title"><div><h2>{category==='uploads'?'업로드 달력':category==='home'?'최신 콘텐츠':menus.find(m=>m[0]===category)?.[1]}<span>{category==='uploads'?calendarRows.length:filtered.length}</span></h2><p>{selected.length?selected.length>3?`${selected.slice(0,3).map(groupName).join(' · ')} 외 ${selected.length-3}개`:selected.map(groupName).join(' · '):'보고 싶은 그룹의 체크박스를 켜주세요'}</p></div><span className="sort-label">최신 업로드순 ↓</span></div>
+ <ContentSearch query={query} onChange={setQuery}/>
  <div className="compact-filters" ref={compactFilterRef}><div className="compact-filter-toolbar"><div className="compact-filter-primary">{[['period',archiveYear||archiveMonth?[archiveYear,archiveMonth&&`${Number(archiveMonth)}월`].filter(Boolean).join(' · '):'전체 기간',CalendarDays],['group',filterGroup?groupName(filterGroup):'전체 그룹',Layers],['member',member?memberName(member):'멤버',Heart]].map(([id,label,Icon])=><button key={id} ref={el=>{filterTriggerRefs.current[id]=el;}} className="compact-filter-trigger" aria-expanded={openFilter===id} aria-controls={`filter-popover-${id}`} disabled={id==='member'&&!filterGroup} title={id==='member'&&!filterGroup?'그룹을 먼저 선택':undefined} onClick={()=>setOpenFilter(s=>s===id?'':id)}><Icon size={14}/><span>{label}</span><ChevronRight size={12} className={openFilter===id?'picker-chevron is-open':'picker-chevron'}/></button>)}</div><button ref={el=>{filterTriggerRefs.current.details=el;}} className="compact-filter-trigger compact-details-trigger" aria-expanded={openFilter==='details'} aria-controls="filter-popover-details" onClick={()=>setOpenFilter(s=>s==='details'?'':'details')}><SlidersHorizontal size={14}/><span>상세 필터</span>{[subtype,format,channel,externalType,ownType].filter(Boolean).length>0&&<small>{[subtype,format,channel,externalType,ownType].filter(Boolean).length}</small>}</button></div>
 
  {openFilter&&<div className="filter-popover" id={`filter-popover-${openFilter}`} role="region" aria-label={{period:'기간별 보기',group:'그룹 선택',member:'멤버 선택',details:'상세 필터'}[openFilter]}><div className="filter-popover-heading"><b>{{period:'기간별 보기',group:'그룹 선택',member:'멤버 선택',details:'상세 필터'}[openFilter]}</b><button className="icon-button" aria-label="닫기" onClick={closeFilter}><X size={16}/></button></div>
@@ -361,11 +368,12 @@ function App(){
  {openFilter==='member'&&filterGroup&&<>{filterButtons('멤버',member,[['','멤버 전체'],...(catalog?.members||[]).filter(m=>m.groupId===filterGroup).map(m=>[m.id,m.name,m.aliases||[]])],id=>{setMember(id);closeFilter();})}<small className="member-tag-policy">확인된 이름만 태그 · 미확인 영상은 미분류</small></>}
  {openFilter==='details'&&<div className="individual-filter"><button type="button" role="switch" aria-checked={includeIndividual} onClick={()=>setIncludeIndividual(value=>!value)}><span className="switch-track" aria-hidden="true"/>멤버 단독 활동 포함</button></div>}
  {openFilter==='details'&&<div className="compact-detail-options" onClick={e=>{if(e.target.closest('button'))closeFilter();}}>{category==='own'&&<div className="external-type-tabs" aria-label="자체 콘텐츠 분류"><button className={!ownType?'chip selected':'chip'} onClick={()=>setOwnType('')}>전체</button>{OWN_TYPES.map(([id,name])=><button key={id} className={ownType===id?'chip selected':'chip'} onClick={()=>setOwnType(id)}>{name}</button>)}</div>}
- {category==='external'&&<><div className="external-type-tabs" aria-label="외부 콘텐츠 분류"><button className={!externalType?'chip selected':'chip'} onClick={()=>{setExternalType('');setChannel('');}}>전체</button>{EXTERNAL_TYPES.map(([id,name])=><button key={id} className={externalType===id?'chip selected':'chip'} onClick={()=>{setExternalType(id);setChannel('');}}>{name}</button>)}</div><div className="channel-tabs" aria-label="프로그램 및 채널"><button className={!channel?'chip selected':'chip'} onClick={()=>setChannel('')}>전체 채널</button>{channels.map(c=><button className={channel===c.id?'chip selected':'chip'} key={c.id} onClick={()=>setChannel(c.id)}>{c.groups.size>1?'✳ ':''}{c.name} <small>{c.count}</small></button>)}</div></>}
  {filterButtons('분류',subtype,[['','모든 세부 분류'],...[...new Set(rows.flatMap(v=>v.subtypes))].map(t=>[t,t])],setSubtype)}{filterButtons('형식',format,[['','모든 형식'],['video','영상'],...(category==='shorts'||category==='uploads'?[['short','쇼츠']]:[]),['live','라이브']],setFormat)}</div>}
  </div>}
  {(archiveYear||archiveMonth||filterGroup||member||subtype||format||channel||externalType||ownType)&&<div className="applied-filter-tags" aria-label="선택한 필터">{[[archiveYear,archiveYear,()=>setArchiveYear('')],[archiveMonth,`${Number(archiveMonth)}월`,()=>setArchiveMonth('')],[filterGroup,groupName(filterGroup),()=>{setFilterGroup('');setMember('');}],[member,memberName(member),()=>setMember('')],[subtype,subtype,()=>setSubtype('')],[format,{video:'영상',short:'쇼츠',live:'라이브'}[format],()=>setFormat('')],[channel,channels.find(c=>c.id===channel)?.name||channel,()=>setChannel('')],[externalType,EXTERNAL_TYPES.find(([id])=>id===externalType)?.[1],()=>setExternalType('')],[ownType,OWN_TYPES.find(([id])=>id===ownType)?.[1],()=>setOwnType('')]].filter(([value])=>value).map(([value,label,remove],index)=><button key={index} onClick={remove}><span>{label}</span><X size={11}/></button>)}<button className="clear-all-filters" onClick={()=>{setArchiveYear('');setArchiveMonth('');setFilterGroup('');setMember('');setSubtype('');setFormat('');setChannel('');setExternalType('');setOwnType('');setOpenFilter('');}}>초기화</button></div>}
  </div><>
+ {category==='external'&&<ExternalExplorer types={EXTERNAL_TYPES} type={externalType} channel={channel} channels={channels}
+  onType={id=>{setExternalType(id);setChannel('');}} onChannel={setChannel}/>}
  {indexesEnabled&&indexFailures.length>0&&<div className="index-notice" role="status"><span>{indexFailures.length}개 영상 목록을 불러오지 못했습니다.</span><button type="button" onClick={()=>setIndexRetry(value=>value+1)}>다시 시도</button></div>}
  {indexesEnabled&&indexLoading&&rows.length>0&&<p className="index-loading-note" role="status">{request.preview?'선택 그룹의 최신 영상을 불러오는 중…':'이전 영상을 불러오는 중…'}</p>}
  {browse&&request.preview&&!loading&&indexesEnabled&&<p className="index-loading-note">
