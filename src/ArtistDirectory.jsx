@@ -8,6 +8,8 @@ import {ActivityGlyph} from './ActivityIcon';
 import ArtistDirectoryRow from './ArtistDirectoryRow';
 import DirectoryFilters,{DEFAULT_DIRECTORY_FILTERS} from './DirectoryFilters';
 import {artistInitials,INITIAL_ROWS} from './directory-shortcuts';
+import PeopleDirectory,{AlphabetIndex} from './PeopleDirectory';
+import {initialSections,personDirectory} from './person-directory';
 import './directory-compact.css';
 
 const TYPES=[['all','전체'],['girl','여자'],['mixed','혼성'],['duo-solo','솔로']];
@@ -32,9 +34,29 @@ function ActivityFilterButton({state,count,status,onChange}){
  </button>;
 }
 
-export default function ArtistDirectory({catalog,clock,saved,favorites,colors,excluded,allowed,protectedGroups,
+export default function ArtistDirectory(props){
+ const [kind,setKind]=useState('groups'),[personTarget,setPersonTarget]=useState(''),[groupTarget,setGroupTarget]=useState(null);
+ const people=useMemo(()=>personDirectory(props.catalog),[props.catalog]);
+ const groupCatalog=useMemo(()=>props.catalog?{...props.catalog,groups:props.catalog.groups.filter(group=>group.artistType!=='solo')}:null,[props.catalog]);
+ if(props.editorTitle)return <ArtistDirectoryList {...props}/>;
+ const memberOpen=(groupId,name)=>{
+  const normalized=value=>value.normalize('NFKC').toLowerCase();
+  const person=props.catalog?.members.find(member=>member.groupId===groupId&&[member.name,...member.aliases||[]].some(alias=>normalized(alias)===normalized(name)));
+  if(!person)return false;
+  setKind('members');setPersonTarget(person.id);return true;
+ };
+ return <section className="artist-index directory-compact">
+  <nav className="artist-index-tabs" aria-label="아티스트 목록 구분">{[['groups','그룹',groupCatalog?.groups.length||0],['members','개별 멤버',people.members.length],['solo','솔로 아티스트',people.solos.length]].map(([id,label,count])=>
+   <button type="button" key={id} aria-pressed={kind===id} onClick={()=>{setKind(id);setPersonTarget('');}}>{label}<small>{count}</small></button>)}</nav>
+  {kind==='groups'?<ArtistDirectoryList {...props} catalog={groupCatalog} compact onMemberOpen={memberOpen} focusGroup={groupTarget}/>:
+   <PeopleDirectory key={kind} data={people} mode={kind} targetPerson={personTarget} channels={props.catalog?.channels||EMPTY} clock={props.clock} options={props}
+    onGroup={id=>{setKind('groups');setGroupTarget({name:people.groups.get(id)?.name||id});}}/>}
+ </section>;
+}
+
+function ArtistDirectoryList({catalog,clock,saved,favorites,colors,excluded,allowed,protectedGroups,
  onToggleGroup,onBulkGroups,onFavorite,onExclude,onAllow,editorTitle,initialSavedOnly=false,editorSort,onEditorSort,
- selected=EMPTY,onBulkSelection}){
+ selected=EMPTY,onBulkSelection,compact=false,onMemberOpen,focusGroup}){
  const [query,setQuery]=useState(''),[type,setType]=useState('all'),[directorySort,setDirectorySort]=useState('az');
  const sort=editorSort??directorySort;
  const setSort=onEditorSort??setDirectorySort;
@@ -167,11 +189,13 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
   dialog.style.setProperty('--directory-filter-top',`${box.bottom+8}px`);
   dialog.showModal();
  };
- return <section className={`artist-directory-page directory-compact${editorTitle?' directory-editor':''}`} aria-label={editorTitle||'전체 아티스트 목록'}>
+ useEffect(()=>{if(focusGroup)searchTag(focusGroup.name);},[focusGroup]);
+ const sections=compact&&sort==='az'?initialSections(results,initial):[{letter:compact?(initial||SORTS.find(([id])=>id===sort)?.[1]||'전체'):'',items:results}];
+ return <section className={`artist-directory-page directory-compact${editorTitle?' directory-editor':''}${compact?' directory-name-index':''}`} aria-label={editorTitle||'전체 아티스트 목록'}>
   <header className="directory-compact-heading">
    {editorTitle?<h2>{editorTitle} <small>{saved.length}개 저장</small></h2>:<>
     <a href="#collection"><ChevronLeft size={16}/><span>영상으로</span></a>
-    <h2>전체 아티스트 <small>{groups.length}</small></h2>
+    <h2>{compact?'전체 그룹':'전체 아티스트'} <small>{groups.length}</small></h2>
    </>}
   </header>
   <div className="directory-search">
@@ -179,12 +203,14 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
     placeholder="아티스트·출신 그룹 검색" aria-label={editorTitle?'그룹 검색':'전체 아티스트 검색'}/></label>
    {query&&<button type="button" className="directory-control directory-icon" aria-label="검색 지우기" onClick={()=>search('')}><X size={16}/></button>}
   </div>
+  {compact&&<AlphabetIndex value={initial} onChange={letter=>{setInitial(letter);setExpanded('');}}/>}
+  <details className="directory-extra-filters" open={editorTitle?true:undefined}><summary>활동·유형·연도 필터{[status!=='all',year!=='all',savedOnly,archiveOnly,type!=='all'].filter(Boolean).length>0&&' · 적용 중'}</summary>
   <nav className="directory-type-tabs" aria-label="목록 아티스트 유형">
    {TYPES.map(([id,label])=><button type="button" key={id} aria-pressed={type===id}
-    onClick={()=>{setExpanded('');setType(id);}}>{label}<small className="directory-option-count">{facets.types[id]}</small></button>)}
+    onClick={()=>{setExpanded('');setType(id);}}>{compact&&id==='duo-solo'?'듀오':label}<small className="directory-option-count">{facets.types[id]}</small></button>)}
   </nav>
   <div className="directory-shortcuts">
-   <button type="button" className="directory-control" aria-expanded={initialOpen} aria-controls={initialsId} onClick={()=>setInitialOpen(value=>!value)}>이름 첫 글자{initial?' · '+initial:''}</button>
+   {!compact&&<button type="button" className="directory-control" aria-expanded={initialOpen} aria-controls={initialsId} onClick={()=>setInitialOpen(value=>!value)}>이름 첫 글자{initial?' · '+initial:''}</button>}
    {!editorTitle&&<button type="button" className="directory-control" aria-pressed={archiveOnly}
     onClick={()=>updateFilters({archiveOnly:!archiveOnly,status:'all'})}>레거시 <small className="directory-option-count">{facets.archiveCount}</small></button>}
    {editorTitle&&<button type="button" className="directory-control" aria-pressed={favoriteEdit}
@@ -206,6 +232,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
     <ActivityFilterButton key={state} state={state} count={facets.statuses[state]} status={status} onChange={changeActivity}/>)}
   </div>}
   {!editorTitle&&<DirectoryFilters inline filters={filters} years={years} counts={facets} update={updateFilters} reset={resetFilters}/>}
+  </details>
   {status==='unknown'&&<p className="directory-unknown-reasons" role="status" aria-label="활동 상태 미확인 사유">
    {Object.entries(facets.unknownReasons).map(([reason,count])=><span key={reason}>{UNKNOWN_ACTIVITY_LABELS[reason]} {count}명</span>)}
   </p>}
@@ -229,7 +256,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
     {editorTitle&&<button type="button" className="directory-control" aria-haspopup="dialog" onClick={showFilters}>
      <SlidersHorizontal size={15}/>필터{chips.length>0&&<small className="directory-filter-count">{chips.length}</small>}
     </button>}
-    {editorTitle&&!selectionEdit&&<button type="button" className="directory-control" aria-expanded={editing} aria-controls={editing?bulkId:undefined}
+    {(editorTitle||compact)&&!selectionEdit&&<button type="button" className="directory-control" aria-expanded={editing} aria-controls={editing?bulkId:undefined}
      onClick={()=>setEditing(value=>!value)}><ListChecks size={15}/><span>일괄 작업</span></button>}
    </div>
   </div>
@@ -237,7 +264,7 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
    {chips.map(([label,remove])=><button type="button" key={label} aria-label={`${label} 필터 해제`} onClick={remove}><span>{label}</span><X size={12}/></button>)}
    <button type="button" className="directory-chip-reset" onClick={resetFilters}>초기화</button>
   </div>}
-  {(!editorTitle||editing||selectionEdit)&&<div className="directory-bulk-panel" id={bulkId}>
+  {(!editorTitle||editing||selectionEdit)&&(!compact||editing)&&<div className="directory-bulk-panel" id={bulkId}>
    <div className="directory-bulk-counts" aria-live="polite" aria-atomic="true">
     {selectionEdit&&<strong>전체 선택 {selectedIds.size}개</strong>}
     <small>현재 결과 {results.length}명 중 {editedCount}명 {selectionEdit?'선택':'저장'}</small>
@@ -252,12 +279,16 @@ export default function ArtistDirectory({catalog,clock,saved,favorites,colors,ex
    <button type="button" onClick={()=>{undo.restore?.();setUndo(null);}}>실행 취소</button>
   </div>}
   <div className="directory-rows" ref={listRef} onScroll={editorTitle?event=>setShowTop(event.currentTarget.scrollTop>220):undefined}>
-   {results.map(artist=><ArtistDirectoryRow key={artist.id} artist={artist} detailsId={`${instanceId}-${artist.id}`} groups={groupMap} channels={channels} clock={clock}
+   {sections.map(({letter,items})=><section className={compact?'artist-letter-section':undefined} key={letter||'all'}>
+    {compact&&<header><h3>{letter==='기호'?'#':letter}</h3><button type="button" onClick={()=>document.querySelector('.artist-index')?.scrollIntoView({block:'start'})}><ArrowUp size={12}/>맨 위로</button></header>}
+   {items.map(artist=><ArtistDirectoryRow key={artist.id} artist={artist} detailsId={`${instanceId}-${artist.id}`} groups={groupMap} channels={channels} clock={clock}
+    compact={compact} onMemberOpen={onMemberOpen}
     saved={editingIds.has(artist.id)} selectionEdit={selectionEdit} favorites={favoriteIds} color={colors[artist.id]} locked={lockedIds.has(artist.id)}
     excluded={excluded.includes(artist.id)} allowed={allowed.includes(artist.id)} expanded={expanded===artist.id}
     registeredMembers={membersByGroup.get(artist.id)||EMPTY} connected={connected.has(artist.id)} onExpand={id=>setExpanded(current=>current===id?'':id)}
     onSave={id=>{setUndo(null);if(selectionEdit)onBulkSelection([id],!selectedIds.has(id));else onToggleGroup(id);}} onFavorite={onFavorite} onExclude={onExclude}
     onAllow={onAllow} onCareerSearch={searchTag} quickPreset={favoriteEdit?PRESETS.find(([key])=>key===preset):null}/>)}
+   </section>)}
   </div>
   {!catalog?<p role="status">아티스트 목록을 불러오는 중…</p>:!results.length&&<div className="empty">
    조건에 맞는 아티스트가 없습니다.

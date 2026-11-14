@@ -8,10 +8,13 @@ const PRESETS=[['heart','하트',Heart],['star','별',Star],['clover','새싹',S
 const dateFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul'});
 
 export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clock,saved,selectionEdit,favorites,color,locked,
- excluded,allowed,expanded,connected,registeredMembers,onExpand,onSave,onFavorite,onExclude,onAllow,onCareerSearch,quickPreset}){
+ excluded,allowed,expanded,connected,registeredMembers,onExpand,onSave,onFavorite,onExclude,onAllow,onCareerSearch,quickPreset,compact=false,onMemberOpen}){
  const name=artist.name;
  const korean=koreanArtistName(artist);
  const tags=careerTagsFor(artist,groups);
+ const tagItems=tags.map(tag=>tag.affiliation?<button type="button" className="directory-tag" key={tag.id}
+  onClick={()=>onCareerSearch(tag.label)} aria-label={tag.label+' 관련 아티스트 검색'} data-no-translate>{tag.label}</button>:
+  <span className="directory-tag" key={tag.id}>{tag.label}</span>);
  const selectedPresets=PRESETS.filter(([key])=>favorites[key].has(artist.id));
  const legacy=legacyGroupState(artist,clock);
  const visibleLegacy=LEGACY_LABELS[legacy];
@@ -23,33 +26,32 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
   ['탈퇴 멤버',roster?.former||[],roster?.formerEvidenceUrl],
  ];
  const [quickId,quickLabel,QuickIcon]=quickPreset||[];
- return <article className="directory-list-row" data-favorite={locked||undefined}
+ return <article className={`directory-list-row${compact?' directory-index-row':''}`} data-favorite={locked||undefined}
   style={locked?{'--directory-favorite-color':color||'#729ca8'}:undefined}>
   <div className="directory-row-main">
    <div className="directory-row-text">
     <div className="directory-row-name">
-     <h3 title={name} data-no-translate>{name}</h3>
+     <h3 title={name} data-no-translate>{compact?<button type="button" className="directory-name-button" aria-expanded={expanded} aria-controls={expanded?detailsId:undefined} onClick={()=>onExpand(artist.id)}>{name}</button>:name}</h3>
      {korean&&<small lang="ko" title={korean} data-no-translate>{korean}</small>}
      <ActivityIcon group={artist} clock={clock}/>
      {selectedPresets.length>0&&<span className="directory-row-favorites" aria-label={selectedPresets.map(([,label])=>label).join(', ')}>
       {selectedPresets.map(([key,,Icon])=><Icon key={key} size={11} data-preset={key} aria-hidden="true" fill={key==='clover'?'none':'currentColor'}/>)}
      </span>}
     </div>
-    <div className="directory-row-meta">
+    {!compact&&<div className="directory-row-meta">
      <p className="directory-row-summary" title={summary}>{summary}</p>
      {!connected&&legacy!=='channel-unavailable'&&<span className="directory-source-pending">YouTube 확인 대기</span>}
-    </div>
-    {tags.length>0&&<div className="directory-row-tags" aria-label="아티스트 태그">
-     {tags.map(tag=>tag.affiliation?<button type="button" className="directory-tag" key={tag.id}
-      onClick={()=>onCareerSearch(tag.label)} aria-label={tag.label+' 관련 아티스트 검색'} data-no-translate>{tag.label}</button>:
-      <span className="directory-tag" key={tag.id}>{tag.label}</span>)}
+    </div>}
+    {!compact&&tags.length>0&&<div className="directory-row-tags" aria-label="아티스트 태그">
+     {tagItems}
     </div>}
    </div>
    <div className="directory-row-actions">
+    {compact&&!connected&&<span className="directory-source-state" role="img" title={legacy==='channel-unavailable'?'YouTube 연결 불가':'YouTube 공식 채널 확인 대기'} aria-label={legacy==='channel-unavailable'?'YouTube 연결 불가':'YouTube 공식 채널 확인 대기'}>YT?</span>}
     {QuickIcon&&<button type="button" className="directory-control directory-icon" data-preset={quickId}
      aria-label={`${name} ${quickLabel} 선호 지정`} aria-pressed={favorites[quickId].has(artist.id)}
      onClick={()=>onFavorite(quickId,artist.id)}><QuickIcon size={16}/></button>}
-    <OfficialLinks artist={artist} channels={channels}/>
+    <OfficialLinks artist={artist} channels={channels} platforms={compact?['youtube']:undefined}/>
     <button type="button" className="directory-control directory-icon directory-save-icon"
      aria-label={`${name} ${selectionEdit?(saved?'영상 선택 해제':'영상 선택'):(saved?'MY GROUPS 제거':'MY GROUPS 추가')}`} aria-pressed={saved} onClick={()=>onSave(artist.id)}>
      {saved?<Check size={17}/>:<Plus size={17}/>}
@@ -61,6 +63,8 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
   </div>
   {expanded&&<div className="directory-row-details" id={detailsId}>
    <div className="directory-row-detail-main">
+    {compact&&<><p className="directory-index-summary">{summary}{!connected&&' · YouTube 확인 대기'}</p><OfficialLinks artist={artist} channels={channels}/>
+     {tags.length>0&&<div className="directory-row-tags">{tagItems}</div>}</>}
     {memberSections.filter(([,names])=>names.length>0).map(([label,names,evidence])=>
      <div className="directory-member-section" key={label} role="group" aria-label={label}>
       <div className="directory-member-label">
@@ -68,7 +72,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
        {evidence&&<a href={evidence} target="_blank" rel="noopener noreferrer" aria-label={label+' 출처 (새 탭)'}>출처</a>}
       </div>
       <div className="directory-row-tags">{names.map(name=><button type="button" className="directory-tag" key={name}
-       onClick={()=>onCareerSearch(name)} aria-label={name+' 관련 아티스트 검색'} data-no-translate>{name}</button>)}</div>
+       onClick={()=>{if(!onMemberOpen?.(artist.id,name))onCareerSearch(name);}} aria-label={name+(onMemberOpen?' 멤버 정보 보기':' 관련 아티스트 검색')} data-no-translate>{name}</button>)}</div>
      </div>)}
    </div>
    <div className="editor-group-policies" role="group" aria-label="선호 그룹 및 보기 설정">
