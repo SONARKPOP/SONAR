@@ -6,6 +6,7 @@ from tempfile import TemporaryDirectory
 from pathlib import Path
 
 NOW=1804507200
+EVIDENCE={'basis':'reviewed','evidenceUrl':'https://official.example/artist','checkedAt':'2026-11-14'}
 def rows(count,age):return [{'id':str(i),'at':iso(NOW-age)} for i in range(count)]
 def calc(values,**kwargs):return calculate_activity(values,NOW,checked_at=iso(NOW),**kwargs)
 
@@ -20,7 +21,7 @@ class ActivityTests(unittest.TestCase):
     def test_unknown_reasons_distinguish_channels_from_pending_counts(self):
         group={'id':'g'}
         source={'id':'s','platform':'youtube','groupIds':['g'],'official':True,
-                'verification':{'basis':'reviewed'},'verificationStatus':'SUPPORTED'}
+                'verification':EVIDENCE,'verificationStatus':'SUPPORTED'}
         for sources,reason in (([], 'no-dedicated-channel'),
                                ([{**source,'shared':True}], 'no-dedicated-channel'),
                                ([{**source,'verificationStatus':'UNVERIFIED'}], 'channel-review-required'),
@@ -34,7 +35,7 @@ class ActivityTests(unittest.TestCase):
     def test_handle_cache_survives_resolved_id_but_not_a_different_channel(self):
         source={'id':'s','platform':'youtube','groupIds':['g'],'official':True,
                 'handle':'@artist','platformId':'UC'+'1'*22,
-                'verification':{'basis':'reviewed'},'verificationStatus':'VERIFIED'}
+                'verification':EVIDENCE,'verificationStatus':'VERIFIED'}
         cache={'s':{'configuredIdentity':'@artist','channelId':source['platformId'],
                     'complete':True,'checkedAt':iso(NOW),'uploads':rows(3,0)}}
         self.assertEqual(group_snapshot({'id':'g'},[source],cache,NOW)['activity_status'],'SURGE')
@@ -44,7 +45,7 @@ class ActivityTests(unittest.TestCase):
         profiles=[{'id':'solo','gender':'girl','artistType':'solo'},
                   {'id':'duo','gender':'mixed','artistType':'duo'}]
         sources=[{'id':p['id'],'platform':'youtube','platformId':'UC'+str(i)*22,
-                  'groupIds':[p['id']],'official':True,'verification':{'basis':'reviewed'},
+                  'groupIds':[p['id']],'official':True,'verification':EVIDENCE,
                   'verificationStatus':'VERIFIED'} for i,p in enumerate(profiles,1)]
         config={'groups':profiles,'channels':sources}
         api=Mock();api.budget=None
@@ -100,7 +101,7 @@ class ActivityTests(unittest.TestCase):
         self.assertEqual(effective_upload(live,NOW)['at'],iso(NOW-60))
         self.assertIsNone(effective_upload({**raw,'status':{'privacyStatus':'private'}},NOW))
     def test_shared_channel_and_secondary_failure(self):
-        g={'id':'g'};source={'id':'official','official':True,'platform':'youtube','groupIds':['g'],'verification':{'basis':'checked'},'verificationStatus':'VERIFIED'}
+        g={'id':'g'};source={'id':'official','official':True,'platform':'youtube','groupIds':['g'],'verification':EVIDENCE,'verificationStatus':'VERIFIED'}
         cache={'official':{'complete':True,'checkedAt':iso(NOW),'uploads':rows(4,0)}}
         self.assertEqual(group_snapshot(g,[source],cache,NOW)['activity_status'],'SURGE')
         self.assertEqual(group_snapshot(g,[{**source,'groupIds':['g','other']}],cache,NOW)['activity_status'],'UNKNOWN')
@@ -119,7 +120,7 @@ class ActivityTests(unittest.TestCase):
         self.assertEqual(api.videos.call_count,2)
         self.assertEqual(api.get.call_args.kwargs['pageToken'],'next')
     def test_api_failure_is_unknown_and_cache_reused(self):
-        config={'groups':[{'id':'g','gender':'girl','artistType':'group','debutYear':2024}], 'channels':[{'id':'s','platform':'youtube','platformId':'UC'+'1'*22,'official':True,'groupIds':['g'],'verification':{'basis':'checked'},'verificationStatus':'VERIFIED'}]}
+        config={'groups':[{'id':'g','gender':'girl','artistType':'group','debutYear':2024}], 'channels':[{'id':'s','platform':'youtube','platformId':'UC'+'1'*22,'official':True,'groupIds':['g'],'verification':EVIDENCE,'verificationStatus':'VERIFIED'}]}
         api=Mock();api.budget=None;api.get.side_effect=RuntimeError('API error')
         with TemporaryDirectory() as tmp:
             self.assertEqual(refresh(api,config,Path(tmp),NOW)['g']['activity_status'],'UNKNOWN')

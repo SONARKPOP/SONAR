@@ -3,7 +3,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from .upload_cadence import stamp, upload_interval_hours
-from .source_policy import public_artist
+from .source_policy import public_artist, reviewed_dedicated_channel
 
 RULES=json.loads((Path(__file__).resolve().parents[1]/'config/activity-rules.json').read_text(encoding='utf-8'))
 DAY=86400
@@ -61,14 +61,15 @@ def eligible_group(group):
     return public_artist(group) and group.get('directoryVisibility')!='agency-only'
 
 def dedicated_sources(group, channels):
-    return [c for c in channels if c.get('official') and c.get('collectionEnabled', True) and not c.get('unavailableReason') and c.get('platform')=='youtube' and c.get('groupIds')==[group['id']] and not c.get('shared') and c.get('verification') and c.get('verificationStatus') in ('VERIFIED','SUPPORTED')]
+    return [c for c in channels if reviewed_dedicated_channel(c,group['id'])
+            and c.get('collectionEnabled',True) and not c.get('unavailableReason')]
 
 def group_snapshot(group, channels, cache, current):
     sources=dedicated_sources(group,channels)
     if not sources:
         owned=[c for c in channels if c.get('official') and c.get('platform')=='youtube'
                and c.get('groupIds')==[group['id']] and not c.get('shared')]
-        reviewed=[c for c in owned if c.get('verification') and c.get('verificationStatus') in ('VERIFIED','SUPPORTED')]
+        reviewed=[c for c in owned if reviewed_dedicated_channel(c,group['id'])]
         if not owned:
             reason='no-dedicated-channel'
         elif not reviewed:

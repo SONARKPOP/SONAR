@@ -1,7 +1,25 @@
 """Only reviewed original publishers may supply SONAR records."""
+from datetime import date
+from urllib.parse import urlparse
 
 ORIGINAL_KINDS = {'broadcaster', 'production', 'program', 'brand', 'artist-label',
                   'creator', 'public-institution'}
+
+
+def reviewed_dedicated_channel(channel, group_id):
+    if (not channel.get('official') or channel.get('platform') != 'youtube'
+            or channel.get('shared') or channel.get('groupIds') != [group_id]
+            or channel.get('verificationStatus') not in ('VERIFIED', 'SUPPORTED')):
+        return False
+    evidence = channel.get('verification')
+    if not isinstance(evidence, dict):
+        return False
+    try:
+        url = urlparse(evidence['evidenceUrl'])
+        date.fromisoformat(evidence['checkedAt'][:10])
+        return url.scheme == 'https' and bool(url.hostname) and not url.username and not url.password
+    except (KeyError, TypeError, ValueError, AttributeError):
+        return False
 
 
 def approved_original(channel):

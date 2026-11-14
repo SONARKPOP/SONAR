@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 from .groups import save_bundle, youtube_identity
 from .publish import DATA, now, write
 from .registry import CONFIG, load_bundles, read
-from .source_policy import public_artist
+from .source_policy import public_artist, reviewed_dedicated_channel
 from .youtube import YouTube
 
 
@@ -21,13 +21,16 @@ def export_queue(output=DATA,config_dir=CONFIG):
         if not group.get('supported',True) or not public_artist(group):
             continue
         dedicated=[source for source in group['channels'] if source.get('official') and
-                   source.get('platform')=='youtube' and source.get('groupIds')==[group['id']]]
-        if any(source.get('verification',{}).get('evidenceUrl') for source in dedicated):
+                   source.get('platform')=='youtube' and source.get('groupIds')==[group['id']] and not source.get('shared')]
+        unresolved=[source for source in dedicated if not reviewed_dedicated_channel(source,group['id'])]
+        if dedicated and not unresolved:
             continue
         found=candidates.get(group['id'],[])
-        stage='needs-source' if dedicated else 'candidate' if found else 'no-candidate'
+        stage='needs-verification' if dedicated else 'candidate' if found else 'no-candidate'
         queue.append({'id':group['id'],'name':group['name'],'stage':stage,'candidates':found,
-                      'existing':[source.get('platformId') or source.get('handle') for source in dedicated]})
+                      'existing':[source.get('platformId') or source.get('handle') for source in dedicated],
+                      'sources':[{'id':source['id'],'verificationStatus':source.get('verificationStatus','UNVERIFIED'),
+                                  'verification':source.get('verification')} for source in unresolved]})
     write(output/'channel-review.json',{'updatedAt':now(),'items':queue})
     return queue
 

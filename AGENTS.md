@@ -9,3 +9,13 @@
 - Keep P0 registry work separate from P1 presentation changes when assigning parallel tasks.
 - Run relevant Python and frontend tests and a production build before publishing.
 - Never replace current GitHub data indexes with older local snapshots.
+
+## Task skills
+
+Load only the relevant `.agents/skills/*/SKILL.md`.
+- Identity and profile data. `sonar-core`
+- Official channel evidence and review. `sonar-channel-discovery`
+- Appearances and video tabs. `sonar-content-classification`
+- Focused fixes and verification. `sonar-code-quality`
+- Upload statistics and API cadence. `sonar-activity-engine`
+- Artist/video filters and MY GROUPS. `sonar-ui-filtering`
