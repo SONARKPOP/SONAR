@@ -25,7 +25,9 @@ def export_queue(output=DATA,config_dir=CONFIG):
         unresolved=[source for source in dedicated if not reviewed_dedicated_channel(source,group['id'])]
         if dedicated and not unresolved:
             continue
-        found=candidates.get(group['id'],[])
+        found=list(candidates.get(group['id'],[]))
+        known={item.get('channelUrl') for item in found}
+        found.extend(item for item in group.get('youtubeCandidates',[]) if item.get('channelUrl') not in known)
         stage='needs-verification' if dedicated else 'candidate' if found else 'no-candidate'
         queue.append({'id':group['id'],'name':group['name'],'stage':stage,'candidates':found,
                       'existing':[source.get('platformId') or source.get('handle') for source in dedicated],

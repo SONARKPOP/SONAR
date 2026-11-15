@@ -1,0 +1,28 @@
+/* Fixed geometry overrides the legacy preset rules without changing the video subtree. */
+.app-shell .docked-player.adjustable-player{
+ position:fixed;right:auto;bottom:auto;max-width:none;margin:0;padding:6px 12px 12px;
+ border:1px solid #c6dce8;border-radius:12px;z-index:30;box-sizing:border-box;
+ display:flex;flex-direction:column;min-width:0;overflow:hidden;
+}
+.adjustable-player [data-player-drag]{touch-action:none;cursor:grab;user-select:none;flex-shrink:0}
+.adjustable-player[data-adjusting="true"] [data-player-drag]{cursor:grabbing}
+.adjustable-player [data-player-drag]:focus-visible,.player-resize-handle:focus-visible{outline:2px solid #1884bd;outline-offset:-2px}
+.app-shell .adjustable-player .docked-player-media{flex:1;min-height:0;display:flex;align-items:center}
+.app-shell .adjustable-player .video-player-frame,.app-shell .adjustable-player .sample-preview{
+ width:100%;height:100%;min-height:0;max-height:100%;aspect-ratio:auto;margin:0;
+}
+.adjustable-player .docked-player-tools{flex-shrink:0;padding-right:16px}
+.app-shell .adjustable-player[data-minimized="true"] .docked-player-media{position:absolute;flex:0;clip-path:inset(50%);pointer-events:none}
+.adjustable-player[data-adjusting="true"] iframe{pointer-events:none}
+.player-resize-handle{position:absolute;bottom:0;right:0;width:28px;height:28px;padding:0;border:0;background:transparent;color:inherit;cursor:nwse-resize;touch-action:none;font-size:23px;line-height:1}
+@media(max-width:760px){
+ .app-shell .docked-player.adjustable-player{padding:4px 8px 10px}
+ .app-shell .adjustable-player .docked-player-heading{padding-left:40px}
+ .adjustable-player .docked-player-tools{gap:4px}
+}
+
+@media(max-width:760px){[data-player-minimized] .mobile-menu{position:fixed;z-index:35}[data-player-minimized] .sidebar.is-open{z-index:40}[data-player-minimized] .sidebar-scrim{z-index:39}}
+
+.player-short-swipe{display:flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0;min-height:30px;border:1px solid #a8c7d8;border-radius:6px;background:#e5f2f8;color:#365e74;font-size:10px;touch-action:none;cursor:ns-resize;user-select:none}
+.player-short-swipe:focus-visible{outline:2px solid #78b8d2;outline-offset:2px}.docked-player-heading button:disabled{opacity:.3;cursor:default}
+[data-theme="dark"] .player-short-swipe{background:#20394b;border-color:#44647c;color:#d4eaf7}

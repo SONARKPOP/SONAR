@@ -1,5 +1,6 @@
 import React from 'react';
-import {Ban,Check,ChevronDown,Heart,Plus,ShieldCheck,Biohazard,Sprout,Star} from 'lucide-react';
+import {Ban,Check,ChevronDown,Heart,Plus,ShieldCheck,Biohazard,Sprout,Star,Play} from 'lucide-react';
+import {debutValue} from './directory-debut';
 import {localize,useLanguage} from './i18n';
 import ActivityIcon from './ActivityIcon';
 import OfficialLinks from './OfficialLinks';
@@ -9,9 +10,10 @@ const PRESETS=[['heart','하트',Heart],['star','별',Star],['clover','새싹',S
 const dateFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul'});
 
 export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clock,saved,selectionEdit,favorites,color,locked,
- excluded,allowed,expanded,connected,registeredMembers,onExpand,onSave,onFavorite,onExclude,onAllow,onCareerSearch,quickPreset,compact=false,onMemberOpen,favoritesOnly=false,hardBlocked=false,onHardBlock,extraDetails,onColor}){
+ excluded,allowed,expanded,connected,registeredMembers,onExpand,onSave,onFavorite,onExclude,onAllow,onCareerSearch,quickPreset,compact=false,onMemberOpen,favoritesOnly=false,hardBlocked=false,onHardBlock,extraDetails,onColor,onVideos}){
  const language=useLanguage();
  const name=artist.name;
+ const debut=debutValue(artist.debutDate,artist.debutYear);
  const korean=koreanArtistName(artist);
  const tags=careerTagsFor(artist,groups);
  const tagItems=tags.map(tag=>tag.affiliation?<button type="button" className="directory-tag" key={tag.id}
@@ -37,6 +39,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
       {selectedPresets.map(([key,,Icon])=><Icon key={key} size={11} data-preset={key} aria-hidden="true" fill={key==='clover'?'none':'currentColor'}/>)}
      </span>}
      <h3 title={name} data-no-translate>{compact?<button type="button" className="directory-name-button" aria-expanded={expanded} aria-controls={expanded?detailsId:undefined} onClick={()=>onExpand(artist.id)}>{name}</button>:name}</h3>
+     {debut&&<span className="directory-debut"><span>{artist.artistType==='solo'?'솔로 데뷔':'데뷔'}</span> <time dateTime={debut} data-no-translate>{debut}</time></span>}
      <ActivityIcon group={artist} clock={clock}/>
      {korean&&<small lang="ko" title={korean} data-no-translate>{korean}</small>}
 
@@ -50,6 +53,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
     </div>}
    </div>
    <div className="directory-row-actions">
+    {onVideos&&<button type="button" className="directory-control directory-video-link" onClick={()=>onVideos(artist)}><Play size={13}/><span>영상</span></button>}
     {compact&&!connected&&<span className="directory-source-state" role="img" title={legacy==='channel-unavailable'?'YouTube 연결 불가':'YouTube 공식 채널 확인 대기'} aria-label={legacy==='channel-unavailable'?'YouTube 연결 불가':'YouTube 공식 채널 확인 대기'}>YT?</span>}
     {QuickIcon&&<button type="button" className="directory-control directory-icon" data-preset={quickId}
      aria-label={`${name} ${quickLabel} 선호 지정`} aria-pressed={favorites[quickId].has(artist.id)}

@@ -23,19 +23,18 @@ export function ContentSearch({query,onChange}){
 export function HomeOverview({selectedCount,videoCount,favoriteCount,onGroups}){
  const language=useLanguage();
  return localize(<section className="workspace-overview" aria-label="홈 콘텐츠 요약">
-  <div><small>SONAR ON</small><h3>흩어진 순간을, 한곳에서.</h3><p>관심 아티스트의 최신 콘텐츠를 이어서 탐색하세요.</p></div>
   <div className="workspace-overview-stats"><button type="button" onClick={onGroups}><b>{selectedCount}</b><span>영상 표시 그룹</span></button>
    <span><b>{videoCount}</b><span>불러온 결과</span></span><button type="button" onClick={onGroups}><b>{favoriteCount}</b><span>선호 그룹</span></button></div>
  </section>,language);
 }
 
-export function ExternalExplorer({types,type,channel,channels,onType,onChannel}){
+export function ExternalExplorer({showTypes=true,types,type,channel,channels,onType,onChannel}){
  const language=useLanguage();
  return localize(<section className="external-explorer" aria-label="외부 출연 탐색">
-  <div className="workspace-explorer-heading"><h3><Layers size={16}/>출연 유형·채널 탐색</h3><small>불러온 영상 기준 · 공통 출연 채널 우선</small></div>
-  <div className="workspace-types" role="group" aria-label="외부 출연 유형">
+  <div className="workspace-explorer-heading"><h3><Layers size={16}/>{showTypes?'출연 유형·채널 탐색':'외부 채널 탐색'}</h3><small>불러온 영상 기준 · 공통 출연 채널 우선</small></div>
+  {showTypes&&<div className="workspace-types" role="group" aria-label="외부 출연 유형">
    {[['','전체'],...types].map(([id,label])=><button type="button" key={id} aria-pressed={type===id} onClick={()=>onType(id)}>{label}</button>)}
-  </div>
+  </div>}
   <div className="workspace-channels" role="group" aria-label="외부 프로그램 및 채널">
    <button type="button" className="workspace-channel" aria-pressed={!channel} onClick={()=>onChannel('')}><b>전체 채널</b><span>{channels.length}개 탐색</span></button>
    {channels.map(item=><button type="button" className="workspace-channel" key={item.id} aria-pressed={channel===item.id} onClick={()=>onChannel(item.id)}>

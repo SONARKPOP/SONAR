@@ -33,3 +33,7 @@ The broken optional Namuwiki API workflow has been retired. Existing YouTube col
 ## Source conditions
 
 Archive metadata labels the snapshot CC BY-NC-ND 4.0, while document front matter says CC BY-NC-SA 2.0 KR. These provider labels conflict. Preserve both in source metadata; do not redistribute the raw dump or article bodies. This project stores structured factual fields and citations. Recheck provider terms before redistributing source text.
+
+## YouTube links
+
+Applying dump registration now also extracts profile channel URLs and resolves live YouTube root channel metadata with a disk cache (four workers, no API key). Matching dedicated identities register as SUPPORTED, not VERIFIED; Topic/fan/company channels and ownership conflicts remain candidates. Collection settings are preserved. Use `--skip-youtube` to omit this stage. Standalone: `python -m collectors.dump_youtube --documents <cache>/documents.sqlite --online --apply`. Candidates stay in canonical `youtubeCandidates` and the channel review export.

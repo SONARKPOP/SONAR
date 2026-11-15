@@ -380,11 +380,16 @@ def main():
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--config',type=Path,default=ROOT/'config');parser.add_argument('--cache',type=Path,default=ROOT/'work/namuwiki-latest')
  parser.add_argument('--targets',type=Path,default=ROOT/'config/namuwiki-targets.json');parser.add_argument('--source',type=Path,default=ROOT/'config/namuwiki-latest-sqlite.json')
+ parser.add_argument('--skip-youtube',action='store_true',help='Skip the separate dump-linked YouTube identity stage')
  parser.add_argument('--report',type=Path,default=ROOT/'reports/namuwiki-registration.json');parser.add_argument('--online',action='store_true');parser.add_argument('--apply',action='store_true')
  args=parser.parse_args();source=json.loads(args.source.read_text(encoding='utf-8'));targets=json.loads(args.targets.read_text(encoding='utf-8'))
  docs=Documents(args.cache,source,args.online)
  try:report=firstline(args.config,targets,docs,args.report,apply=args.apply)
  finally:docs.close()
+ if args.apply and not args.skip_youtube:
+  from .dump_youtube import collect
+  links=collect(args.config,args.cache/'documents.sqlite',report,ROOT/'work/youtube-channel-metadata.json',args.report.parent/'namuwiki-youtube-links.json',apply=True,online=args.online)
+  print(json.dumps({'youtubeLinks':links['summary']},ensure_ascii=False))
  print(json.dumps(report['summary'],ensure_ascii=False))
 
 if __name__=='__main__':main()

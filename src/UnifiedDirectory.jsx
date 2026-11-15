@@ -1,5 +1,6 @@
 import React,{useId,useMemo,useState} from 'react';
-import {ArrowUp,Ban,ChevronDown,Heart,Search,Biohazard,SlidersHorizontal,Sprout,Star} from 'lucide-react';
+import {ArrowUp,ArrowLeft,Play,Ban,ChevronDown,Heart,Search,Biohazard,SlidersHorizontal,Sprout,Star} from 'lucide-react';
+import {personDebut} from './directory-debut';
 import ArtistDirectoryRow from './ArtistDirectoryRow';
 import {AlphabetIndex,PersonProfile} from './PeopleDirectory';
 import OfficialLinks from './OfficialLinks';
@@ -14,7 +15,7 @@ import {localize,useLanguage} from './i18n';
 import './directory-compact.css';
 import './unified-artists.css';
 const PRESETS=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];
-export default function UnifiedDirectory({catalog,clock,favorites,colors,excluded,protectedGroups,onFavorite,onExclude,hardBlocked=[],onHardBlock,onColor,editor=false}){
+export default function UnifiedDirectory({catalog,clock,favorites,colors,excluded,protectedGroups,onFavorite,onExclude,hardBlocked=[],onHardBlock,onColor,editor=false,onVideos,onReturnVideos}){
  const language=useLanguage(),instance=useId();
  const [filtersOpen,setFiltersOpen]=useState(false),[pending,setPending]=useState(null),[notice,setNotice]=useState(null);
  const [kind,setKind]=useState('groups'),[query,setQuery]=useState(''),[initial,setInitial]=useState(''),[status,setStatus]=useState('all'),[year,setYear]=useState('all'),[scope,setScope]=useState('all'),[presets,setPresets]=useState([]),[expanded,setExpanded]=useState(''),[role,setRole]=useState('all');
@@ -44,7 +45,7 @@ export default function UnifiedDirectory({catalog,clock,favorites,colors,exclude
  };
  const confirmPolicy=()=>{if(!pending)return;pending.ids.forEach(id=>(pending.kind==='hard'?onHardBlock:onExclude)(id));setNotice({name:pending.name,text:pending.kind==='hard'?'절대차단을 적용했습니다.':'금지를 적용했습니다.'});setPending(null);};
  return localize(<section className="unified-artists artist-index directory-compact" aria-label={editor?'선호 관리':'전체 아티스트 목록'}>
-  <header className="unified-heading"><div><small>SONAR ARCHIVE</small><h2>{editor?'선호 관리':'아티스트'} <small>{all.length}</small></h2></div><a href="#collection">영상으로</a></header>
+  <header className="unified-heading"><div><small>SONAR ARCHIVE</small><h2>{editor?'선호 관리':'아티스트'} <small>{all.length}</small></h2></div>{onReturnVideos?<button type="button" className="directory-control directory-return-videos" onClick={onReturnVideos}><ArrowLeft size={15}/>영상 목록으로 돌아가기</button>:<a className="directory-control directory-return-videos" href="#collection"><ArrowLeft size={15}/>영상 목록으로 돌아가기</a>}</header>
   <nav className="artist-index-tabs" aria-label="아티스트 목록 구분">{[['groups','그룹'],['people','개인']].map(([id,label])=><button key={id} aria-pressed={kind===id} onClick={()=>{setKind(id);reset();setExpanded('');}}>{label}<small>{id==='groups'?(catalog?.groups||[]).filter(g=>g.artistType!=='solo').length:uniquePeople(directory).length}</small></button>)}</nav>
   <label className="search directory-search"><Search size={16}/><input aria-label="아티스트 검색" placeholder="활동명 · 본명 · 출신 그룹 검색" value={query} onChange={e=>{setQuery(e.target.value);setInitial('');}}/></label>
   <div className="directory-filter-toolbar"><div className="unified-filter-row directory-primary-filters" aria-label="목록 범위">{[['all','전체'],['active','활동']].map(([id,label])=><button key={id} aria-pressed={scope===id&&!presets.length} onClick={()=>{setScope(id);setPresets([]);}}>{label}</button>)}
@@ -66,10 +67,12 @@ export default function UnifiedDirectory({catalog,clock,favorites,colors,exclude
     favorites={favoriteSets} color={colors[row.id]} locked={fav} excluded={excluded.includes(row.id)} expanded={open} hardBlocked={blocked} onHardBlock={()=>requestPolicy(row,'hard')}
     registeredMembers={(catalog.members||[]).filter(m=>m.groupId===row.id).map(m=>m.name)} connected={(catalog.channels||[]).some(c=>c.official&&c.groupIds?.includes(row.id)&&!c.unavailableReason)}
     onExpand={id=>setExpanded(expanded===id?'':id)} onFavorite={onFavorite} onExclude={()=>requestPolicy(row,'soft')} onMemberOpen={openPerson} onCareerSearch={setQuery}
-    extraDetails={<AgencyHistory artist={row}/>} onColor={onColor}/>;
+    extraDetails={<AgencyHistory artist={row}/>} onColor={onColor} onVideos={onVideos}/>;
+   const debut=personDebut(row);
    return <article key={row.id} className="unified-person-row" data-favorite={fav||undefined} style={fav?{'--directory-favorite-color':colors[policyId]||'#729ca8'}:undefined}>
     <div className="person-index-heading"><span className="directory-row-favorites">{PRESETS.filter(([key])=>hasPreset(row,key)).map(([key,,Icon])=><Icon key={key} data-preset={key} size={13} fill={key==='clover'?'none':'currentColor'}/>)}</span><button className="person-name-button" aria-expanded={open} onClick={()=>setExpanded(open?'':row.id)}><span data-no-translate>{row.name}</span>{row.nameKo&&row.nameKo!==row.name&&<small data-no-translate>{row.nameKo}</small>}</button><ActivityIcon group={row.soloArtists[0]} clock={clock}/>
-     <div className="person-index-actions">{row.soloArtists.map(artist=><OfficialLinks key={artist.id} artist={artist} channels={catalog.channels} platforms={['youtube']}/>)}<button className="directory-control" aria-label="상세 보기" aria-expanded={open} onClick={()=>setExpanded(open?'':row.id)}><ChevronDown size={16}/></button></div></div>
+     {debut&&<span className="directory-debut"><span>{debut.label}</span> <time dateTime={debut.value} data-no-translate>{debut.value}</time></span>}
+     <div className="person-index-actions">{onVideos&&<button type="button" className="directory-control directory-video-link" onClick={()=>onVideos(row)}><Play size={13}/><span>영상</span></button>}{row.soloArtists.map(artist=><OfficialLinks key={artist.id} artist={artist} channels={catalog.channels} platforms={['youtube']}/>)}<button className="directory-control" aria-label="상세 보기" aria-expanded={open} onClick={()=>setExpanded(open?'':row.id)}><ChevronDown size={16}/></button></div></div>
     {open&&<div className="unified-person-details"><div className="unified-filter-row">{PRESETS.map(([key,label,Icon])=><button key={key} data-preset={key} aria-label={label} aria-pressed={hasPreset(row,key)} onClick={()=>onFavorite(key,policyId)}><Icon size={16}/></button>)}<button aria-label="개별 제외" aria-pressed={excluded.includes(policyId)} onClick={()=>requestPolicy(row,'soft')}><Ban size={16}/></button><button className="policy-toxic" aria-label="절대 차단" aria-pressed={blocked} onClick={()=>requestPolicy(row,'hard')}><Biohazard size={16}/></button>{fav&&<input type="color" aria-label="선호 색상" value={colors[policyId]||'#729ca8'} onChange={e=>onColor(policyId,e.target.value)}/>}</div>
      <PersonProfile person={{...row,channels:catalog.channels}} groups={directory.groups} onGroup={id=>{setKind('groups');reset();setQuery(directory.groups.get(id)?.name||'');setExpanded(id);}}/>
      <AgencyHistory artist={row}/>{row.soloArtists.map(artist=><OfficialLinks key={artist.id} artist={artist} channels={catalog.channels}/>)}</div>}

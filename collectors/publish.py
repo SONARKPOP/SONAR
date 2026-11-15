@@ -54,7 +54,7 @@ def publish(records, config, events=(), output=DATA, demo=False):
     events = ()
     from .content_tags import apply_tags
     from .individual_activity import classify_individual, solo_review_candidates
-    from .source_policy import approved_original, public_artist_scope, scope_video
+    from .source_policy import approved_original, public_artist_scope, scope_video, reviewed_dedicated_channel
     from .browse_index import build_indexes
     config = public_artist_scope(config)
     sources = {c['id']:c for c in config['channels']}
@@ -119,7 +119,7 @@ def publish(records, config, events=(), output=DATA, demo=False):
                  if not v.get('demo') and v.get('liveStatus')!='upcoming' and v['channelId'] in official_ids and g['id'] in v['groupIds']]
         source_review = next((c['unavailableReason'] for c in config['channels'] if c['id'] in official_ids and c.get('unavailableReason')), '')
         public_config['groups'].append({**g, 'contentCount':len(group_indexes[g['id']]), 'archiveYears':archive_years(group_indexes[g['id']]),
-            'lastOfficialUploadAt':max(dates, default=None), 'officialSourceReviewReason':source_review, 'officialSourceConnected':any(c['id'] in official_ids and c.get('collectionEnabled',True) and not c.get('unavailableReason') for c in config['channels'])})
+            'lastOfficialUploadAt':max(dates, default=None), 'officialSourceReviewReason':source_review, 'officialSourceConnected':any(c['id'] in official_ids and not c.get('unavailableReason') and (c.get('collectionEnabled',True) or any(reviewed_dedicated_channel(c,owner) for owner in owners)) for c in config['channels'])})
     public_config['defaultGroupIds'] = config.get('defaultGroupIds', [])
     public_config['collectionGroupIds'] = config.get('collectionGroupIds', [])
     from .activity import eligible_group, group_snapshot

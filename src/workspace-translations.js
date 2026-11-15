@@ -1,5 +1,14 @@
 // [Japanese, English, Spanish]; Korean keys are the canonical interface copy.
 export const workspaceTranslations={
+ '이전 영상':['前の動画','Previous video','Vídeo anterior'],
+ '다음 영상':['次の動画','Next video','Siguiente vídeo'],
+ '위로 다음 · 아래로 이전':['上へ次・下へ前','Swipe up: next · down: previous','Arriba: siguiente · abajo: anterior'],
+ '쇼츠 이동: 위로 스와이프하면 다음 영상, 아래로 스와이프하면 이전 영상':['ショート移動：上にスワイプで次、下で前','Shorts: swipe up for next video, down for previous','Shorts: desliza arriba para siguiente y abajo para anterior'],
+ '외부 채널 탐색':['外部チャンネル探索','Browse external channels','Explorar canales externos'],
+ '영상 목록으로 돌아가기':['動画一覧へ戻る','Back to videos','Volver a los vídeos'],
+ '제목줄을 끌어 이동 · 두 손가락으로 크기 조절':['タイトルをドラッグして移動・2本指でサイズ変更','Drag the title to move · pinch the header to resize','Arrastra el título para mover · pellizca la cabecera para ajustar'],
+ '플레이어 크기 조절. 방향키로 조절':['プレーヤーサイズ変更。矢印キーで調節','Resize player. Use arrow keys','Ajustar reproductor. Usa las flechas'],
+ '드래그하여 크기 조절':['ドラッグしてサイズ変更','Drag to resize','Arrastra para ajustar el tamaño'],
  '생년월일 등록':['生年月日登録','Birth date registered','Fecha de nacimiento registrada'],
  '생년월일 등록 / 현재 멤버':['生年月日登録 / 現メンバー','Registered birth dates / current members','Fechas registradas / miembros actuales'],
  '위키 최초 수집 정보가 포함됩니다. 필드별 출처를 확인해 주세요. 미확인 정보는 추정하지 않습니다.':['ウィキの初期収集情報を含みます。項目ごとの出典を確認してください。不明な情報は推測しません。','Includes initial wiki data. Check each field’s source. Unknown facts are not inferred.','Incluye datos iniciales de wikis. Consulte la fuente de cada campo. No se infieren datos desconocidos.'],

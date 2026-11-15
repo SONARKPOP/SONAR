@@ -29,3 +29,12 @@ class ActivityTests(unittest.TestCase):
    publish([],config,output=Path(temporary))
    group=json.loads((Path(temporary)/'catalog.json').read_text(encoding='utf-8'))['groups'][0]
    self.assertFalse(group['officialSourceConnected'])
+
+ def test_reviewed_link_stays_connected_when_upload_collection_is_paused(self):
+  with tempfile.TemporaryDirectory() as temporary:
+   source={'id':'paused','platform':'youtube','platformId':'UC'+'a'*22,'official':True,'groupIds':['a'],'collectionEnabled':False,'verificationStatus':'SUPPORTED','verification':{'checkedAt':'2026-11-16','evidenceUrl':'https://namu.wiki/w/Artist'}}
+   config={'groups':[{'id':'a'}],'members':[],'taxonomy':{},'channels':[source]}
+   publish([],config,output=Path(temporary))
+   group=json.loads((Path(temporary)/'catalog.json').read_text(encoding='utf-8'))['groups'][0]
+   self.assertTrue(group['officialSourceConnected'])
+   self.assertIsNone(group['lastOfficialUploadAt'])
