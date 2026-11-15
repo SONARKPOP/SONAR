@@ -4,6 +4,7 @@ import {isMusicBroadcast} from './broadcast';
 import {isShortContent} from './lib';
 import {PLATFORM_LABELS,videoSourceUrl} from './platforms';
 import './video-card.css';
+import {localize,useLanguage} from './i18n';
 
 const dateFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'});
 
@@ -21,6 +22,7 @@ function VideoArtistTags({video,groupsById,onSearch}){
 }
 
 export default function VideoCard({video,index=0,number=index+1,groupsById,style,station=false,onOpen,onSearch,onMemberSelect,memberName}){
+ const language=useLanguage();
  const [failedImage,setFailedImage]=useState('');
  const date=new Date(video.publishedAt),sourceUrl=videoSourceUrl(video);
  const platform=video.platform||'youtube';
@@ -32,7 +34,7 @@ export default function VideoCard({video,index=0,number=index+1,groupsById,style
  else if(isMusicBroadcast(video))kind='음악방송';
  else if(isShortContent(video))kind=video.format==='short'||video.category==='shorts'?'쇼츠':'짧은 클립';
  else if(video.format==='live')kind='라이브';
- return <article className="video-card" style={style} data-favorite={Boolean(style)||undefined}>
+ return localize(<article className="video-card" style={style} data-favorite={Boolean(style)||undefined}>
   <div className="video-thumbnail-wrap">
    <button type="button" className={`thumbnail tone-${index%6}`} onClick={()=>onOpen(video)} aria-label={`${video.title} 보기`}>
     {video.thumbnail&&failedImage!==video.thumbnail?<img src={video.thumbnail} loading="lazy" decoding="async" alt="" onError={()=>setFailedImage(video.thumbnail)}/>:
@@ -54,5 +56,5 @@ export default function VideoCard({video,index=0,number=index+1,groupsById,style
   <p className="channel-name" data-no-translate title={video.channelName}>{video.channelName}</p>
   {video.format==='live'&&<div className="card-member-tags">{video.memberIds?.length?video.memberIds.map(id=>
    <button type="button" key={id} onClick={()=>onMemberSelect(id)}>{memberName(id)}</button>):<span>미분류</span>}</div>}
- </article>;
+ </article>,language);
 }

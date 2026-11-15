@@ -1,12 +1,14 @@
 import React,{useState} from 'react';
 import {Search,X} from 'lucide-react';
 import './filter-choices.css';
+import {localize,useLanguage} from './i18n';
 
 export default function FilterChoices({label,value,options,onChange}){
+ const language=useLanguage();
  const [query,setQuery]=useState('');
  const needle=query.normalize('NFKC').toLowerCase().trim();
  const visible=needle?options.filter(([,name,aliases=[]])=>[name,...aliases].some(text=>String(text).normalize('NFKC').toLowerCase().includes(needle))):options;
- return <div className="filter-button-row">
+ return localize(<div className="filter-button-row">
   <span className="filter-row-label">{label}</span>
   {(options.length>12||query)&&<label className="filter-choice-search"><Search size={14}/>
    <input aria-label={label+' 검색'} placeholder={label+' 검색'} value={query} onChange={event=>setQuery(event.target.value)}/>
@@ -21,5 +23,5 @@ export default function FilterChoices({label,value,options,onChange}){
    })}
   </div>
   {!visible.length&&<small className="filter-choice-empty" role="status">검색 결과가 없습니다.</small>}
- </div>;
+ </div>,language);
 }

@@ -5,33 +5,37 @@ import ActivityIcon from './ActivityIcon';
 import {INITIAL_ROWS,artistInitials} from './directory-shortcuts';
 import {initialSections,legalNamesFor,nationalityView,personMatches} from './person-directory';
 import './artist-index.css';
+import {localize,useLanguage,translate} from './i18n';
 
 const membershipLabels={current:'현재 멤버',former:'이전 멤버','last-known':'마지막 활동 멤버',linked:'소속 이력',unknown:'소속 상태 미확인'};
 const presets=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];
-const dateLabel=(date,year)=>date?date.replaceAll('-','.'):year?`${year}년 · 일자 미확인`:'미확인';
+const dateLabel=(date,year,language='ko')=>date?date.replaceAll('-','.'):year?`${year} · ${translate('일자 미확인',language)}`:translate('미확인',language);
 const safeSource=url=>{try{return new URL(url).protocol==='https:';}catch{return false;}};
 
 export function AlphabetIndex({value,onChange}){
- return <nav className="artist-alphabet" aria-label="이름 첫 글자">
+ const language=useLanguage();
+ return localize(<nav className="artist-alphabet" aria-label="이름 첫 글자">
   <button type="button" aria-pressed={!value} onClick={()=>onChange('')}>전체</button>
   {INITIAL_ROWS.map(([label,letters])=><div className="artist-alphabet-row" key={label} role="group" aria-label={label}>
    {letters.map(letter=><button type="button" key={letter} aria-pressed={value===letter} onClick={()=>onChange(value===letter?'':letter)}>{letter==='기호'?'#':letter}</button>)}
   </div>)}
- </nav>;
+ </nav>,language);
 }
 
 export function PersonProfile({person,groups,onGroup}){
+ const language=useLanguage();
+ const date=(value,year)=>dateLabel(value,year,language);
  const legal=legalNamesFor(person);
- const nationalities=(person.nationalities||[]).map(nationalityView);
+ const nationalities=(person.nationalities||[]).map(value=>nationalityView(value,language));
  const place=person.birthPlace;
  const birthplace=typeof place==='string'?place:place?[place.countryCode?nationalityView(place.countryCode).name:place.country,place.region,place.city].filter(Boolean).join(' · '):'';
  const fields=[['활동명',person.nameKo&&person.nameKo!==person.name?<><span data-no-translate>{person.name}</span> · <span lang="ko" data-no-translate>{person.nameKo}</span></>:person.name],
   ['본명',legal.length?legal.map((name,index)=><span className="person-legal-name" key={name.lang+index} lang={name.lang==='und'?undefined:name.lang} data-no-translate>{name.text}</span>):'미확인'],
-  ['생년월일',dateLabel(person.birthDate)],
+  ['생년월일',date(person.birthDate)],
   ['국적',nationalities.length?nationalities.map((nation,index)=><span className="person-nationality" key={nation.code+index}><span aria-hidden="true">{nation.flag}</span>{nation.name}</span>):'미확인'],
   ['출생 지역',birthplace||'미확인'],
-  ['솔로 데뷔',person.soloDebuts.length?person.soloDebuts.map(debut=><span className="person-debut" key={debut.artistId}><span data-no-translate>{debut.name}</span> · {dateLabel(debut.date,debut.year)}</span>):'확인된 솔로 데뷔 정보 없음']];
- return <section className="person-profile" aria-label={`${person.name} 개인 프로필`}>
+  ['솔로 데뷔',person.soloDebuts.length?person.soloDebuts.map(debut=><span className="person-debut" key={debut.artistId}><span data-no-translate>{debut.name}</span> · {date(debut.date,debut.year)}</span>):'확인된 솔로 데뷔 정보 없음']];
+ return localize(<section className="person-profile" aria-label={`${person.name} 개인 프로필`}>
   {person.identityPending&&<p className="person-profile-notice">기존 멤버 ID 연결을 확인 중입니다. 다른 인물과 임의로 합치지 않습니다.</p>}
   {person.profileConflicts?.length>0&&<p className="person-profile-notice">일부 프로필 값이 출처 간 달라 기존 등록 정보를 유지하고 있습니다. 추가 확인이 필요합니다.</p>}
   <dl className="person-profile-fields">{fields.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
@@ -40,14 +44,14 @@ export function PersonProfile({person,groups,onGroup}){
     const group=groups.get(relation.groupId);
     return <div className="person-membership" key={relation.groupId}>
      <div><button type="button" className="directory-tag" data-no-translate onClick={()=>onGroup?.(relation.groupId)}>{relation.name}</button><span>{membershipLabels[relation.status]||'소속 상태 미확인'}</span></div>
-     <small>그룹 데뷔 {dateLabel(relation.debutDate,relation.debutYear)}{relation.joinedAt&&` · 합류 ${dateLabel(relation.joinedAt)}`}{relation.leftAt&&` · 탈퇴 ${dateLabel(relation.leftAt)}`}</small>
+     <small><span>그룹 데뷔</span> {date(relation.debutDate,relation.debutYear)}{relation.joinedAt&&<> · <span>합류</span> {date(relation.joinedAt)}</>}{relation.leftAt&&<> · <span>탈퇴</span> {date(relation.leftAt)}</>}</small>
      {group&&<div className="person-group-source"><span>그룹 공식</span><OfficialLinks artist={group} channels={person.channels||[]}/></div>}
     </div>;
    }):<p className="person-profile-note">확인된 그룹 소속 이력 없음</p>}
   </div>
   {Object.values(person.profileSources||{}).some(source=>safeSource(source?.sourceUrl))&&<div className="person-profile-sources"><small>프로필 출처</small>{Object.entries(person.profileSources).filter(([,source])=>safeSource(source?.sourceUrl)).map(([field,source])=><a key={field} href={source.sourceUrl} target="_blank" rel="noopener noreferrer">{({birthDate:'생년월일',legalNames:'본명',nationalities:'국적',birthPlace:'출생지'})[field]||'공식 프로필'}</a>)}</div>}
   <p className="person-profile-note">확인된 정보만 표시합니다. 본명은 공식 원어 표기를 유지하며, 미확인 날짜·국적·출생지는 추정하지 않습니다.</p>
- </section>;
+ </section>,language);
 }
 
 export default function PeopleDirectory({data,mode,targetPerson,channels,clock,onGroup,options}){

@@ -19,3 +19,6 @@ Load only the relevant `.agents/skills/*/SKILL.md`.
 - Focused fixes and verification. `sonar-code-quality`
 - Upload statistics and API cadence. `sonar-activity-engine`
 - Artist/video filters and MY GROUPS. `sonar-ui-filtering`
+
+- KR/JP/EN/ES interface copy. `sonar-language`
+- Unused code and focused simplification. `sonar-code-cleanup`

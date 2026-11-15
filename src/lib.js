@@ -110,7 +110,7 @@ export function selectionReducer(state,action){
 const GROUP_COLORS=['#729ca8','#aa8eae','#8ea782','#b69a76','#8d99bd','#b88491','#78a69a','#aa9e72','#918ab3','#81a1bc','#b39481','#90aaa0','#a58d9b','#9aab73','#ac997f','#b0a2bf','#91b0ae','#bd9b9f','#a1ac90'];
 export function favoriteColorPreferences(storage,catalog){
  let saved={};try{const value=JSON.parse(storage.getItem('sonar.favorite-colors.v1'));if(value&&!Array.isArray(value)&&typeof value==='object')saved=value;}catch{}
- return Object.fromEntries(catalog.groups.map((g,i)=>[g.id,/^#[0-9a-f]{6}$/i.test(saved[g.id]||'')?saved[g.id]:GROUP_COLORS[i%GROUP_COLORS.length]]));
+ return Object.fromEntries([...catalog.groups,...catalog.members||[]].map((g,i)=>[g.id,/^#[0-9a-f]{6}$/i.test(saved[g.id]||'')?saved[g.id]:GROUP_COLORS[i%GROUP_COLORS.length]]));
 }
 export function themePreference(storage,systemDark=false){try{const value=storage.getItem('sonar.theme.v1');if(value==='light'||value==='dark')return value;}catch{}return systemDark?'dark':'light';}
 export function favoriteCardStyle(ids,favorites,colors,theme){
@@ -125,13 +125,13 @@ export function favoriteCardStyle(ids,favorites,colors,theme){
 export const FAVORITE_PRESETS=['heart','star','clover'];
 export function favoritePresetPreferences(storage,catalog){
  let data=null,active='star';try{data=JSON.parse(storage.getItem('sonar.favorite-presets.v1'));const value=storage.getItem('sonar.favorite-preset-active.v1');if(FAVORITE_PRESETS.includes(value))active=value;}catch{}
- const valid=ids=>[...new Set((Array.isArray(ids)?ids:[]).filter(id=>catalog.groups.some(g=>g.id===id)))];
+ const valid=ids=>[...new Set((Array.isArray(ids)?ids:[]).filter(id=>[...catalog.groups,...catalog.members||[]].some(g=>g.id===id)))];
  const presets=Object.fromEntries(FAVORITE_PRESETS.map(key=>[key,valid(data?.[key])]));
  if(!data||typeof data!=='object'||Array.isArray(data))presets.star=favoriteGroupSelection(storage,catalog);
  return {presets,active};
 }
 
-export function excludedGroupPreferences(storage,catalog){return [...new Set(loadSaved(storage,'sonar.excluded-groups.v1',[]).filter(id=>catalog.groups.some(g=>g.id===id)))];}
+export function excludedGroupPreferences(storage,catalog){return [...new Set(loadSaved(storage,'sonar.excluded-groups.v1',[]).filter(id=>[...catalog.groups,...catalog.members||[]].some(g=>g.id===id)))];}
 export function withoutExcludedGroups(rows,excluded){return rows.filter(row=>!row.groupIds.some(id=>excluded.includes(id)));}
 
 export function prioritizeGroups(groups,preferred){const ids=new Set(preferred);return [...groups.filter(g=>ids.has(g.id)),...groups.filter(g=>!ids.has(g.id))];}

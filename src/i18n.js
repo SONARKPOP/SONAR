@@ -1,4 +1,7 @@
 import React from 'react';
+import {workspaceTranslations} from './workspace-translations.js';
+export const LanguageContext=React.createContext('ko');
+export const useLanguage=()=>React.useContext(LanguageContext);
 export const LANGUAGES=[['ko','KR'],['ja','JP'],['en','EN'],['es','ES']];
 const entries={
  '멤버 단독 활동 포함':['メンバーの個人活動を含める','Include individual member activity','Incluir actividades individuales'],
@@ -178,7 +181,7 @@ const entries={
 export function translate(value,language){
  const index={ja:0,en:1,es:2}[language];
  if(index===undefined||typeof value!=='string')return value;
- const trimmed=value.trim(),found=entries[trimmed]?.[index];
+ const trimmed=value.trim(),found=(workspaceTranslations[trimmed]||entries[trimmed])?.[index];
  if(found!==undefined)return value.replace(trimmed,found);
  if(/^\d{4}년$/.test(trimmed))return trimmed.slice(0,4);
  const month=trimmed.match(/^(\d{1,2})월$/);
@@ -194,7 +197,7 @@ export function translate(value,language){
 export function localize(node,language){
  if(language==='ko')return node;
  if(typeof node==='string')return translate(node,language);
- if(Array.isArray(node))return node.map(child=>localize(child,language));
+ if(Array.isArray(node))return node.map((child,index)=>{const value=localize(child,language);return React.isValidElement(value)&&value.key===null?React.cloneElement(value,{key:`ui-${index}`}):value;});
  if(!React.isValidElement(node))return node;
  if(node.props['data-no-translate'])return node;
  const props={};
