@@ -4,7 +4,7 @@ export function videoAspect(video){
  if(Number.isFinite(ratio)&&ratio>0)return ratio;
  const width=Number(video?.videoWidth||video?.width),height=Number(video?.videoHeight||video?.height);
  if(width>0&&height>0)return width/height;
- if(['portrait','vertical'].includes(video?.orientation)||/세로\s*(?:캠|라이브|영상)|\bvertical\b/i.test(video?.title||'')||video?.format==='short'||video?.category==='shorts')return 9/16;
+ if(['portrait','vertical'].includes(video?.orientation)||/세로\s*(?:직캠|캠|라이브|영상|버전|ver\.)|\bvertical\b/i.test(video?.title||'')||video?.format==='short'||video?.category==='shorts')return 9/16;
  return 16/9;
 }
 export function videoQueue(rows,current){

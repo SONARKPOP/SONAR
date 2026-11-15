@@ -10,6 +10,8 @@ test('portrait uses explicit dimensions first and Shorts defaults to 9:16',()=>{
  assert.equal(videoAspect({orientation:'portrait'}),9/16);
  assert.equal(videoAspect({format:'video',title:'[4K] 세로캠'}),9/16);
  assert.equal(videoAspect({format:'video',title:'Vertical live'}),9/16);
+ assert.equal(videoAspect({format:'video',title:'[세로 직캠] stage'}),9/16);
+ assert.equal(videoAspect({format:'video',title:'MV 세로버전'}),9/16);
 });
 test('player keeps displayed order, deduplicates and bounds previous/next',()=>{
  const rows=[{id:'b',platform:'youtube'},{id:'a',platform:'youtube'},{id:'a',platform:'youtube'},{id:'external',platform:'chzzk'}];
