@@ -33,7 +33,7 @@ def save_bundle(bundle, config_dir=CONFIG, create=True):
     validate(candidates, shared, taxonomy)
     write(config_dir / 'groups' / f"{bundle['id']}.json", bundle)
 
-def sync_catalog(config_dir=CONFIG, output=DATA):
+def sync_catalog(config_dir=CONFIG, output=DATA, *, reclassify=True):
     """Re-index retained content without API calls or refreshing live freshness."""
     from .youtube import ambiguous_artist_links, prune_stale_attribution
     from .source_policy import public_artist_scope, scope_video
@@ -45,12 +45,17 @@ def sync_catalog(config_dir=CONFIG, output=DATA):
     channels = {c['id']:c for c in config['channels']}
     overrides_path = Path(config_dir) / 'overrides.json'
     overrides = read(overrides_path).get('videos', {}) if overrides_path.exists() else {}
-    ambiguous_links = ambiguous_artist_links(attribution_config)
+    # First-line registration is profile evidence, not evidence of video appearances.
+    # Keep new uncollected artist aliases out of automatic archive reclassification.
+    enabled=set(attribution_config.get('collectionGroupIds',[]))
+    matching_config={**attribution_config,'groups':[g for g in attribution_config['groups']
+                     if g.get('registrationStatus')!='namuwiki_collected' or g['id'] in enabled]}
+    ambiguous_links = ambiguous_artist_links(matching_config)
 
     def clean(record):
         channel = channels.get(record['channelId'])
-        if channel:
-            record = prune_stale_attribution(record, channel, attribution_config, overrides.get(record.get('platformId')), ambiguous_links)
+        if channel and reclassify:
+            record = prune_stale_attribution(record, channel, matching_config, overrides.get(record.get('platformId')), ambiguous_links)
             return scope_video(record, groups, members)
         return record
     records = []
@@ -123,7 +128,8 @@ def main(argv=None, config_dir=CONFIG, output=DATA):
     sub = parser.add_subparsers(dest='command', required=True)
     sub.add_parser('validate')
     sub.add_parser('list')
-    sub.add_parser('sync')
+    sync = sub.add_parser('sync')
+    sync.add_argument('--preserve-attribution', action='store_true', help='Rebuild metadata without reclassifying archived videos')
     sub.add_parser('wizard')
     add = sub.add_parser('add')
     add.add_argument('--id', required=True)
@@ -168,7 +174,7 @@ def main(argv=None, config_dir=CONFIG, output=DATA):
             save_bundle(bundle, config_dir, create=False)
             config = sync_catalog(config_dir, output)
         else:
-            config = sync_catalog(config_dir, output)
+            config = sync_catalog(config_dir, output, reclassify=not getattr(args,'preserve_attribution',False))
         print(f"Registry OK: {len(config['groups'])} supported groups; {len(config['defaultGroupIds'])} defaults; {len(config['collectionGroupIds'])} collecting. No YouTube API calls made.")
     except (ValueError, KeyError, TypeError, EOFError) as exc:
         parser.exit(1, f'{exc}\n')

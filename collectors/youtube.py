@@ -78,8 +78,12 @@ def mentions(text, alias):
     # Latin word boundaries prevent IVE matching "live" or REI matching other words.
     return bool(alias_pattern(alias).search(text)) if alias.isascii() else alias.casefold() in text.casefold()
 
+def member_group_ids(member):
+    return {member['groupId'], *(h['groupId'] for h in member.get('membershipHistory', []) if h.get('groupId'))}
+
+
 def member_match(member, snippet, groups):
-    if member.get('taggingPolicy') == 'explicit-group-context' and member['groupId'] not in groups:
+    if member.get('taggingPolicy') == 'explicit-group-context' and not member_group_ids(member).intersection(groups):
         return False
     title = snippet['title']
     cautious = {a.casefold() for a in member.get('ambiguousAliases', [])}
@@ -89,7 +93,7 @@ def member_match(member, snippet, groups):
             # Only explicit title mentions or editorial overrides assign members.
             if re.search(r'#' + re.escape(alias) + r'(?![\w])', title, re.I):
                 return True
-            if alias.isascii() and alias.upper()==alias and member['groupId'] in groups and re.search(r'(?<![\w])' + re.escape(alias) + r'(?![\w])', title):
+            if alias.isascii() and alias.upper()==alias and member_group_ids(member).intersection(groups) and re.search(r'(?<![\w])' + re.escape(alias) + r'(?![\w])', title):
                 return True
         elif re.search(r'(?<![\w])' + re.escape(alias) + r'(?![\w])', title, re.I):
             return True
@@ -100,7 +104,7 @@ def infer_members(snippet, groups, config):
     matched=[m for m in config['members'] if member_match(m,snippet,groups)]
     if groups:
         # Group-owned videos never imply another group from a bare member name.
-        return [m['id'] for m in matched if m['groupId'] in groups]
+        return [m['id'] for m in matched if member_group_ids(m).intersection(groups)]
     result=[]
     for member in matched:
         aliases=[a for a in member['aliases'] if re.search(r'(?<![\w])'+re.escape(a)+r'(?![\w])',snippet['title'],re.I)]
@@ -191,7 +195,9 @@ def normalize(raw, channel, config, override=None):
     # A name unique in our catalog may still belong to an unrelated artist.
     members = infer_members({**snippet, 'title':text}, groups, config) if groups else []
     members = sorted(set(members + scoped_members))
-    groups.update(m['groupId'] for m in config['members'] if m['id'] in members)
+    for member in config['members']:
+        if member['id'] in members and not member_group_ids(member).intersection(groups):
+            groups.add(member['groupId'])
     for artist in config['groups']:
         tagged_members = set(artist.get('relatedMemberIds', [])).intersection(members)
         if artist.get('artistType') == 'solo' and tagged_members and len(members) == 1 and (
@@ -225,8 +231,8 @@ def normalize(raw, channel, config, override=None):
         v.update(override)
     v['memberTagging'] = {'policy':'title-only-v1', 'source':'manual-override' if override and 'memberIds' in override else 'publisher-program-title' if scoped_members else 'title' if v['memberIds'] else 'unclassified', 'appearanceVerified':False}
     valid_groups = {g['id'] for g in config['groups']}
-    valid_members = {m['id']:m['groupId'] for m in config['members']}
-    if set(v['groupIds']) - valid_groups or any(m not in valid_members or valid_members[m] not in v['groupIds'] for m in v['memberIds']):
+    valid_members = {m['id']:member_group_ids(m) for m in config['members']}
+    if set(v['groupIds']) - valid_groups or any(m not in valid_members or not valid_members[m].intersection(v['groupIds']) for m in v['memberIds']):
         raise ValueError('Override refers to an unknown group/member or unlinked member group')
     if v['category'] not in config['taxonomy']['categories'] or v['format'] not in config['taxonomy']['formats']:
         raise ValueError('Invalid category or format')
@@ -245,10 +251,10 @@ def prune_stale_attribution(record, channel, config, override=None, ambiguous_li
     """Remove unsupported automatic group tags from retained videos."""
     if override and 'groupIds' in override:
         keep = set(override['groupIds'])
-        member_groups = {m['id']:m['groupId'] for m in config['members']}
+        member_groups = {m['id']:member_group_ids(m) for m in config['members']}
         return {**record, 'groupIds':override['groupIds'],
                 'memberIds':[mid for mid in override.get('memberIds', record['memberIds'])
-                             if member_groups.get(mid) in keep]}
+                             if member_groups.get(mid,set()).intersection(keep)]}
     groups = set(record['groupIds'])
     owners = set(channel['groupIds']) if channel['official'] else set()
     links = ambiguous_links if ambiguous_links is not None else ambiguous_artist_links(config)
@@ -265,12 +271,12 @@ def prune_stale_attribution(record, channel, config, override=None, ambiguous_li
         keep |= groups - risky
     if keep == groups:
         return record
-    member_groups = {m['id']:m['groupId'] for m in config['members']}
+    member_groups = {m['id']:member_group_ids(m) for m in config['members']}
     cleaned = {**record, 'groupIds':sorted(keep),
-               'memberIds':[mid for mid in record['memberIds'] if member_groups.get(mid) in keep]}
+               'memberIds':[mid for mid in record['memberIds'] if member_groups.get(mid,set()).intersection(keep)]}
     if 'appearanceEvidence' in cleaned:
         cleaned['appearanceEvidence'] = [e for e in cleaned['appearanceEvidence']
-                                         if e.get('groupId') in keep or member_groups.get(e.get('memberId')) in keep]
+                                         if e.get('groupId') in keep or member_groups.get(e.get('memberId'),set()).intersection(keep)]
     return cleaned
 
 
@@ -458,7 +464,7 @@ def collect(api, pages=1, *, incremental=False):
             break
     if api.budget and not incremental:api.budget.advance_discovery(checked,len(official))
     enabled = set(config.get('collectionGroupIds', [g['id'] for g in config['groups']]))
-    matching_config = {**config, 'groups':[g for g in config['groups'] if g['id'] in enabled], 'members':[m for m in config['members'] if m['groupId'] in enabled]}
+    matching_config = {**config, 'groups':[g for g in config['groups'] if g['id'] in enabled], 'members':[m for m in config['members'] if member_group_ids(m).intersection(enabled)]}
     records = paused + [old for old in cadence_retained if old['platformId'] not in ids]
     seed_sources = {vid:c.get('platformId') for c in config['channels'] for vid in c.get('seedVideoIds', [])}
     # Refresh requested metadata. Channels waiting for their next upload check retain their archive.

@@ -49,8 +49,8 @@ export function PersonProfile({person,groups,onGroup}){
     </div>;
    }):<p className="person-profile-note">확인된 그룹 소속 이력 없음</p>}
   </div>
-  {Object.values(person.profileSources||{}).some(source=>safeSource(source?.sourceUrl))&&<div className="person-profile-sources"><small>프로필 출처</small>{Object.entries(person.profileSources).filter(([,source])=>safeSource(source?.sourceUrl)).map(([field,source])=><a key={field} href={source.sourceUrl} target="_blank" rel="noopener noreferrer">{({birthDate:'생년월일',legalNames:'본명',nationalities:'국적',birthPlace:'출생지'})[field]||'공식 프로필'}</a>)}</div>}
-  <p className="person-profile-note">확인된 정보만 표시합니다. 본명은 공식 원어 표기를 유지하며, 미확인 날짜·국적·출생지는 추정하지 않습니다.</p>
+  {Object.values(person.profileSources||{}).some(source=>safeSource(source?.sourceUrl))&&<div className="person-profile-sources"><small>프로필 출처</small>{Object.entries(person.profileSources).filter(([,source])=>safeSource(source?.sourceUrl)).map(([field,source])=><a key={field} href={source.sourceUrl} target="_blank" rel="noopener noreferrer">{({birthDate:'생년월일',legalNames:'본명',nationalities:'국적',birthPlace:'출생지'})[field]||'프로필 출처'}</a>)}</div>}
+  <p className="person-profile-note">위키 최초 수집 정보가 포함됩니다. 필드별 출처를 확인해 주세요. 미확인 정보는 추정하지 않습니다.</p>
  </section>,language);
 }
 

@@ -24,9 +24,11 @@ def audit(bundles, catalog=None, candidates=()):
     unresolved = set()
     reviewed_channels = 0
     for group in bundles:
-        names = {normalized_name(name) for member in group.get('members', [])
+        names = {normalized_name(name) for member in members if member in group.get('members',[]) or member.get('groupId')==group['id'] or any(h.get('groupId')==group['id'] for h in member.get('membershipHistory',[]))
                  for name in [member['name'], *member.get('aliases', [])]}
         roster = group.get('memberRoster', {})
+        related_ids={m['id'] for m in members if m.get('groupId')==group['id'] or any(h.get('groupId')==group['id'] for h in m.get('membershipHistory',[]))}
+        names.update(normalized_name(e['name']) for e in roster.get('entrySources',[]) if e.get('memberId') in related_ids and e.get('name'))
         for section in ('current', 'former'):
             for name in roster.get(section, []):
                 if normalized_name(name) not in names:

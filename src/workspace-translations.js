@@ -1,5 +1,8 @@
 // [Japanese, English, Spanish]; Korean keys are the canonical interface copy.
 export const workspaceTranslations={
+ '생년월일 등록':['生年月日登録','Birth date registered','Fecha de nacimiento registrada'],
+ '생년월일 등록 / 현재 멤버':['生年月日登録 / 現メンバー','Registered birth dates / current members','Fechas registradas / miembros actuales'],
+ '위키 최초 수집 정보가 포함됩니다. 필드별 출처를 확인해 주세요. 미확인 정보는 추정하지 않습니다.':['ウィキの初期収集情報を含みます。項目ごとの出典を確認してください。不明な情報は推測しません。','Includes initial wiki data. Check each field’s source. Unknown facts are not inferred.','Incluye datos iniciales de wikis. Consulte la fuente de cada campo. No se infieren datos desconocidos.'],
  '필터':['フィルター','Filters','Filtros'],
  '취소':['キャンセル','Cancel','Cancelar'],
  '활동':['活動','Active','Activos'],

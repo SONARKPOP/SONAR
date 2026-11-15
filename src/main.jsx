@@ -261,7 +261,7 @@ function App(){
  {filterButtons('연도',archiveYear,[['','전체 연도'],...archiveYears.map(y=>[y,`${y}년`])],setArchiveYear)}
  {filterButtons('월',archiveMonth,[['','전체 월'],...Array.from({length:12},(_,i)=>[String(i+1).padStart(2,'0'),`${i+1}월`])],setArchiveMonth)}
  {filterButtons('그룹',filterGroup,[['','전체 그룹'],...(catalog?.groups||[]).filter(g=>selected.includes(g.id)).map(g=>[g.id,g.name,g.aliases||[]])],id=>{setFilterGroup(id);setMember('');})}
- {filterGroup&&filterButtons('멤버',member,[['','멤버 전체'],...(catalog?.members||[]).filter(m=>m.groupId===filterGroup).map(m=>[m.id,m.name,m.aliases||[]])],setMember)}
+ {filterGroup&&filterButtons('멤버',member,[['','멤버 전체'],...(catalog?.members||[]).filter(m=>(m.groupId===filterGroup||m.membershipHistory?.some(h=>h.groupId===filterGroup))).map(m=>[m.id,m.name,m.aliases||[]])],setMember)}
  {category==='own'&&filterButtons('분류',ownType,[['','전체'],...OWN_TYPES],setOwnType)}
  {filterButtons('분류',subtype,[['','모든 세부 분류'],...[...new Set(rows.flatMap(v=>v.subtypes))].map(t=>[t,t])],setSubtype)}
  {filterButtons('형식',format,[['','모든 형식'],['video','영상'],...(category==='shorts'||category==='uploads'?[['short','쇼츠']]:[]),['live','라이브']],setFormat)}

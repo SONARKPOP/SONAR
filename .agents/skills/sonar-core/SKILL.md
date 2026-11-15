@@ -8,3 +8,6 @@ description: SONAR Core. Repair artist/member metadata and registry completeness
 - Store field-specific profileSources and date precision. Retain membershipHistory with unknown dates as null.
 - Inspect only the relevant group files and registry validators. Validate actual source changes before publishing.
 
+
+- Namuwiki first-line registration is allowed before official review. Preserve fieldEvidence/profileSources and label namuwiki_collected; never promote a wiki fact to official_verified without official evidence.
+- Reject non-artist list links and non-person table cells; reuse canonical document identity before aliases.

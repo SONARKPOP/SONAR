@@ -31,3 +31,10 @@ class CompletenessTests(unittest.TestCase):
         self.assertEqual(report['channelVerification'], {'MISSING': 1})
         self.assertEqual(report['catalogMismatch']['missingMemberIds'], ['a-one'])
         self.assertEqual(report['catalogMismatch']['missingGroupIds'], [])
+
+    def test_shared_person_membership_counts_as_linked_roster(self):
+        person={'id':'person-a','groupId':'first','name':'A','aliases':[],
+                'membershipHistory':[{'groupId':'second','status':'current'}]}
+        groups=[{'id':'first','members':[person],'channels':[]},
+                {'id':'second','members':[],'channels':[],'memberRoster':{'current':['A']}}]
+        self.assertEqual(audit(groups)['counts']['unlinkedRosterEntries'],0)
