@@ -14,11 +14,12 @@ PERIODS=(7,30,90)
 TYPES=('music','broadcast','radio','officialContent','externalConfirmed','externalInferred','live','shorts','unclassified')
 KST=timezone(timedelta(hours=9))
 def type_for(video,official,evidence):
- if video.get('format')=='short' or video.get('category')=='shorts' or 'shorts' in video.get('contentTabs',[]):return 'shorts'
+ tabs=set(video.get('contentTypes',[]))|set(video.get('contentTabs',[]))
+ if video.get('format')=='short' or video.get('category')=='shorts' or 'shorts' in tabs:return 'shorts'
  if video.get('format')=='live' or video.get('liveStatus') in ('live','ended'):return 'live'
  if is_music_broadcast(video):return 'broadcast'
- if video.get('externalType')=='radio' or 'radio' in video.get('contentTabs',[]):return 'radio'
- if video.get('category')=='music' or 'music' in video.get('contentTabs',[]):return 'music'
+ if video.get('externalType')=='radio' or 'radio' in tabs:return 'radio'
+ if video.get('category')=='music' or 'music' in tabs:return 'music'
  if official:return 'officialContent'
  return 'externalConfirmed' if any(confirmed(e) for e in evidence) else 'externalInferred'
 

@@ -1,5 +1,5 @@
 import unittest
-from collectors.analysis_activity import build_analysis,source_history
+from collectors.analysis_activity import build_analysis,source_history,type_for
 from collectors.activity import DAY,iso
 NOW=1804507200
 class AnalysisTests(unittest.TestCase):
@@ -19,6 +19,9 @@ class AnalysisTests(unittest.TestCase):
  def test_short_and_live_types_are_disjoint_and_kst_day(self):
   row=build_analysis([self.video('short',format='short'),self.video('live',format='live',actualStartTime=iso(NOW-DAY))],self.config(),NOW)['artists'][0]
   self.assertEqual(row['windows']['7']['types']['shorts'],1);self.assertEqual(row['windows']['7']['types']['live'],1);self.assertEqual(sum(r['observedUploads'] for r in row['series']),2)
+ def test_existing_content_type_tags_are_reused(self):
+  self.assertEqual(type_for({'contentTypes':['music','external']},False,[]),'music')
+  self.assertEqual(type_for({'contentTypes':['radio','external']},False,[]),'radio')
  def test_zero_and_unknown_rows_are_not_positive(self):
   row=build_analysis([],self.config(),NOW)['artists'][0];self.assertFalse(row['hasPositive90d']);self.assertIsNone(row['windows']['90']['confirmed'])
 if __name__=='__main__':unittest.main()
