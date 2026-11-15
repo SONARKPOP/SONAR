@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {hardBlockContent,softBlockContent,favoriteContent,agencyHistory,comparisonRows,uniquePeople,fullAge,groupDemographics,browsingArtistIds,visibleLiveRows,favoriteArtistIds} from '../src/artist-insights.js';
+import {hardBlockContent,softBlockContent,favoriteContent,agencyHistory,comparisonRows,uniquePeople,fullAge,groupDemographics,ageSummary,artistProfileRows,peopleForArtists,browsingArtistIds,visibleLiveRows,favoriteArtistIds} from '../src/artist-insights.js';
 test('hard block suppresses favorite co-stars and individual appearances',()=>{
  const rows=[{id:'a',groupIds:['favorite','blocked']},{id:'b',groupIds:['favorite'],memberIds:['person']},{id:'c',groupIds:['favorite']},{id:'d',individualActivity:{artistId:'solo',memberIds:['person']}}];
  assert.deepEqual(hardBlockContent(rows,['blocked','person']).map(v=>v.id),['c']);
@@ -64,4 +64,15 @@ test('soft group ban retains only a separately favorited member appearance',()=>
  const rows=[{id:'favorite-person',groupIds:['g'],memberIds:['person-a']},{id:'other-person',groupIds:['g'],memberIds:['person-b']}];
  assert.deepEqual(softBlockContent(rows,['g'],['person-a']).map(row=>row.id),['favorite-person']);
  assert.deepEqual(hardBlockContent(rows,['g']).map(row=>row.id),[]);
+});
+
+test('age summary uses known people only, population deviation and explicit debut membership',()=>{
+ assert.deepEqual(ageSummary([20,22,null,24]),{count:3,mean:22,median:22,min:20,max:24,stdDev:1.63});
+ const group={id:'g',debutDate:'2020-01-01',memberRoster:{current:['a','b'],former:[]}};
+ const people=[{id:'a',birthDate:'2000-01-01',memberships:[{groupId:'g',status:'current',joinedAt:'2019-01-01'}],nationalities:['KR','US'],soloIds:['solo']},{id:'b',memberships:[{groupId:'g',status:'current'}],soloIds:[]}];
+ const row=groupDemographics([group],people,'2026-01-01')[0];
+ assert.equal(row.birthDateCoverage,.5);assert.equal(row.meanDebutAge,20);assert.equal(row.debutAgeKnown,1);assert.equal(row.foreignNationalityShare,1);
+ assert.equal(row.soloActivityMembers,1);assert.equal(row.currentAgeStdDev,0);
+ assert.equal(groupDemographics([{id:'missing'}],[],'2026-01-01')[0].currentMembers,null);
+ const ended=groupDemographics([{...group,groupStatus:'disbanded'}],people,'2026-01-01')[0];assert.equal(ended.currentMembers,0);assert.equal(ended.meanCurrentAge,null);
 });

@@ -1,8 +1,30 @@
 {
-  "name": "sonar-kpop", "version": "1.0.0", "private": true, "type": "module",
-  "scripts": {"dev":"vite --host 127.0.0.1", "build":"vite build", "preview":"vite preview --host 127.0.0.1", "test":"node --test --test-concurrency=1 tests/*.test.js"},
-  "dependencies": {"react":"^19.2.0", "react-dom":"^19.2.0", "lucide-react":"^0.468.0"},
-  "devDependencies": {"vite":"^7.2.0", "@vitejs/plugin-react":"^5.1.0", "tailwindcss":"^4.1.0", "@tailwindcss/vite":"^4.1.0"},
-  "engines": {"node":">=22.12.0"},
+  "name": "sonar-kpop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "analysis:features": "node scripts/analysis-features.mjs"
+  },
+  "dependencies": {
+    "d3-geo": "3.1.1",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "topojson-client": "3.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "tailwindcss": "^4.1.0",
+    "vite": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "packageManager": "pnpm@11.25.0"
 }

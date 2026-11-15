@@ -1,5 +1,6 @@
 import {artistCategories,visibleArtistIds} from './lib.js';
 import {activityView} from './youtube-activity.js';
+import {nationalityView} from './person-directory.js';
 const safe=url=>{try{return new URL(url).protocol==='https:';}catch{return false;}};
 function participantIds(row){
  const individual=row.individualActivity||{};
@@ -59,15 +60,53 @@ export function fullAge(birth,at){
  if(!valid(birth)||!valid(at)||birth>at)return null;
  return Number(at.slice(0,4))-Number(birth.slice(0,4))-(at.slice(5)<birth.slice(5)?1:0);
 }
+export function ageSummary(values){
+ const ages=values.filter(Number.isFinite).sort((a,b)=>a-b),n=ages.length;
+ if(!n)return {count:0,mean:null,median:null,min:null,max:null,stdDev:null};
+ const mean=ages.reduce((a,b)=>a+b,0)/n,round=value=>Math.round(value*100)/100;
+ return {count:n,mean:round(mean),median:round(n%2?ages[(n-1)/2]:(ages[n/2-1]+ages[n/2])/2),min:ages[0],max:ages[n-1],stdDev:round(Math.sqrt(ages.reduce((sum,v)=>sum+(v-mean)**2,0)/n))};
+}
+export function analysisDate(value){
+ const at=Date.parse(value||'');
+ return Number.isFinite(at)?new Date(at+9*3600000).toISOString().slice(0,10):null;
+}
 export function groupDemographics(groups,people,today=new Date().toISOString().slice(0,10)){
- const mean=values=>values.length?Math.round(values.reduce((sum,value)=>sum+value,0)/values.length*10)/10:null;
  return groups.filter(group=>group.artistType!=='solo').map(group=>{
-  const current=people.filter(person=>person.memberships.some(relation=>relation.groupId===group.id&&relation.status==='current'));
-  const expected=group.memberRoster?.lineup==='last'?0:group.memberRoster?.current?.length||current.length;
-  const ages=current.map(person=>fullAge(person.birthDate,today)).filter(value=>value!==null);
-  // Current membership is not proof of debut membership: require an explicit join date.
-  const debut=people.filter(person=>person.memberships.some(relation=>relation.groupId===group.id&&relation.joinedAt&&relation.joinedAt<=group.debutDate&&(!relation.leftAt||relation.leftAt>group.debutDate)))
-   .map(person=>fullAge(person.birthDate,group.debutDate)).filter(value=>value!==null);
-  return {id:group.id,name:group.name,currentMembers:expected,knownBirthDates:ages.length,meanCurrentAge:mean(ages),meanDebutAge:mean(debut),ageRange:ages.length?Math.max(...ages)-Math.min(...ages):null};
+  const relations=person=>person.memberships?.filter(h=>h.groupId===group.id)||[];
+  const ended=group.memberRoster?.lineup==='last'||group.groupStatus==='disbanded';
+  const listed=people.filter(p=>relations(p).some(h=>h.status==='current'));
+  const current=ended?[]:listed;
+  const expected=ended?0:Array.isArray(group.memberRoster?.current)?group.memberRoster.current.length:current.length||null;
+  const former=people.filter(p=>relations(p).some(h=>h.status==='former'));
+  const lastKnown=people.filter(p=>relations(p).some(h=>h.status==='last-known')||(ended&&listed.includes(p)));
+  const ages=ageSummary(current.map(p=>fullAge(p.birthDate,today)));
+  // Only explicit start/end dates establish membership on debut day.
+  const debutPeople=people.filter(person=>relations(person).some(h=>h.joinedAt&&h.joinedAt<=group.debutDate&&(!h.leftAt||h.leftAt>group.debutDate)));
+  const debut=ageSummary(debutPeople.map(person=>fullAge(person.birthDate,group.debutDate)));
+  const knownNationality=current.filter(p=>p.nationalities?.length&&p.nationalities.every(n=>nationalityView(n).code)),foreign=knownNationality.filter(p=>p.nationalities.some(n=>nationalityView(n).code!=='KR'));
+  const debutDate=fullAge(group.debutDate,today)!==null?Date.parse(group.debutDate):null;
+  return {id:group.id,name:group.name,kind:'group',currentMembers:expected,formerMembers:former.length,lastKnownMembers:lastKnown.length,knownBirthDates:ages.count,
+   birthDateCoverage:expected?Math.min(1,ages.count/expected):null,meanCurrentAge:ages.mean,medianCurrentAge:ages.median,minCurrentAge:ages.min,maxCurrentAge:ages.max,currentAgeStdDev:ages.stdDev,
+   meanDebutAge:debut.mean,debutAgeKnown:debut.count,debutMembershipKnown:debutPeople.length,ageRange:ages.count?ages.max-ages.min:null,
+   yearsSinceDebut:debutDate===null?null:Math.round((Date.parse(today)-debutDate)/86400000/365.2425*100)/100,
+   knownNationalities:knownNationality.length,nationalityCoverage:expected?Math.min(1,knownNationality.length/expected):null,
+   foreignNationalityShare:knownNationality.length?foreign.length/knownNationality.length:null,
+   soloActivityMembers:current.filter(p=>p.soloIds?.length).length};
  });
+}
+export function artistProfileRows(artists,people,today){
+ const groupRows=groupDemographics(artists,people,today);
+ const solos=artists.filter(a=>a.artistType==='solo').map(artist=>{
+  const person=people.find(p=>p.soloIds?.includes(artist.id)||(artist.relatedMemberIds||[]).includes(p.id));
+  const known=person&&!person.identityPending?person:null,age=fullAge(known?.birthDate,today),date=artist.soloDebutDate||artist.debutDate;
+  const nationality=known?.nationalities?.length&&known.nationalities.every(n=>nationalityView(n).code)?known.nationalities:null;
+  return {id:artist.id,name:artist.name,kind:'solo',currentMembers:1,formerMembers:0,lastKnownMembers:0,knownBirthDates:age===null?0:1,birthDateCoverage:age===null?0:1,
+   meanCurrentAge:age,medianCurrentAge:age,minCurrentAge:age,maxCurrentAge:age,currentAgeStdDev:age===null?null:0,meanDebutAge:fullAge(known?.birthDate,date),debutAgeKnown:fullAge(known?.birthDate,date)===null?0:1,ageRange:age===null?null:0,
+   yearsSinceDebut:fullAge(date,today)===null?null:Math.round((Date.parse(today)-Date.parse(date))/86400000/365.2425*100)/100,
+   knownNationalities:nationality?1:0,nationalityCoverage:nationality?1:0,foreignNationalityShare:nationality?(nationality.some(n=>nationalityView(n).code!=='KR')?1:0):null,soloActivityMembers:1};
+ });return [...groupRows,...solos];
+}
+export function peopleForArtists(artists,people){
+ const ids=new Set(artists.map(a=>a.id));
+ return people.filter(person=>(person.memberships||[]).some(h=>ids.has(h.groupId))||(person.soloIds||[]).some(id=>ids.has(id)));
 }

@@ -1,0 +1,36 @@
+import React,{useEffect,useMemo,useState} from 'react';
+import {geoEqualEarth,geoMercator,geoPath} from 'd3-geo';
+import {personDirectory} from './person-directory';
+import {uniquePeople,peopleForArtists} from './artist-insights';
+import {createBirthplaceGazetteer,birthplaceRows,filterBirthplaceRows} from './birthplace-data';
+import './birthplace-maps.css';
+const mapUrl=name=>`${import.meta.env.BASE_URL}data/maps/${name}.geojson`;
+export default function BirthplaceMaps({catalog}){
+ const [assets,setAssets]=useState(null),[error,setError]=useState(''),[view,setView]=useState('world'),[level,setLevel]=useState('sido'),[query,setQuery]=useState(''),[kind,setKind]=useState('all'),[groupId,setGroupId]=useState(''),[selected,setSelected]=useState(''),[zoom,setZoom]=useState(1),[pan,setPan]=useState([0,0]);
+ useEffect(()=>{const abort=new AbortController();Promise.all(['world','korea-sido','korea-sigungu'].map(name=>fetch(mapUrl(name),{signal:abort.signal}).then(r=>{if(!r.ok)throw Error('지도 파일을 불러오지 못했습니다.');return r.json();}))).then(setAssets).catch(e=>{if(e.name!=='AbortError')setError(e.message);});return()=>abort.abort();},[]);
+ const people=useMemo(()=>peopleForArtists(catalog.groups,uniquePeople(personDirectory(catalog))),[catalog]);
+ const gazetteer=useMemo(()=>assets?createBirthplaceGazetteer(...assets):null,[assets]);
+ const allRows=useMemo(()=>gazetteer?birthplaceRows(people,gazetteer):[],[people,gazetteer]);
+ const rows=useMemo(()=>filterBirthplaceRows(allRows,{query,kind,groupId}),[allRows,query,kind,groupId]);
+ const features=assets?.[view==='world'?0:level==='sido'?1:2];
+ const path=useMemo(()=>features?geoPath((view==='world'?geoEqualEarth():geoMercator()).fitExtent([[12,12],[948,488]],features)):null,[features,view]);
+ const keyFor=f=>view==='world'?(f.properties.ISO_A2_EH||f.properties.ISO_A2):f.properties.name;
+ const matching=(key)=>rows.filter(r=>view==='world'?r.location.country===key:r.location.country==='KR'&&(level==='sido'?r.location.region:r.location.district)===key);
+ const selection=selected==='unknown'?rows.filter(r=>!r.location.country):selected?matching(selected):view==='korea'?rows.filter(r=>r.location.country==='KR'):rows;
+ const switchView=value=>{setView(value);setSelected('');setZoom(1);setPan([0,0]);};
+ const choose=key=>{if(view==='world'&&key==='KR')switchView('korea');else setSelected(key);};
+ const groups=(catalog?.groups||[]).filter(g=>kind==='all'||(kind==='solo'?g.artistType==='solo':g.artistType!=='solo'));
+ return <section className="birthplace-maps" aria-label="출생지 지도">
+  <header><div><h2>출생지 아틀라스</h2><p>공개된 출생지 기록을 지역별로 살펴보세요.</p></div><div className="birthplace-tabs"><button aria-pressed={view==='world'} onClick={()=>switchView('world')}>세계</button><button aria-pressed={view==='korea'} onClick={()=>switchView('korea')}>대한민국</button></div></header>
+  <div className="birthplace-filters"><input aria-label="출생지 인물 검색" placeholder="이름 · 그룹 · 출생지 검색" value={query} onChange={e=>setQuery(e.target.value)}/><select aria-label="활동 구분" value={kind} onChange={e=>{setKind(e.target.value);setGroupId('');}}><option value="all">전체 아티스트</option><option value="group">그룹 소속 인물</option><option value="solo">솔로 활동 인물</option></select><select aria-label="그룹 선택" value={groupId} onChange={e=>setGroupId(e.target.value)}><option value="">모든 그룹 / 솔로</option>{groups.map(g=><option key={g.id} value={g.id}>{g.name}</option>)}</select></div>
+  <div className="birthplace-stats"><span>선택한 인물 <b>{rows.length}</b></span><span>국가 확인 <b>{rows.filter(r=>r.location.country).length}</b></span><button aria-pressed={selected==='unknown'} onClick={()=>setSelected('unknown')}>출생국 미확인 {rows.filter(r=>!r.location.country).length}</button></div>
+  {error?<p role="alert">{error}</p>:!assets?<p role="status">지도를 불러오는 중…</p>:<>
+   <div className="birthplace-map-tools">{view==='korea'&&<select aria-label="대한민국 지도 상세 수준" value={level} onChange={e=>{setLevel(e.target.value);setSelected('');}}><option value="sido">시·도</option><option value="sigungu">시·군·구</option></select>}<button aria-label="지도 확대" onClick={()=>setZoom(z=>Math.min(6,z*1.4))}>＋</button><button aria-label="지도 축소" onClick={()=>setZoom(z=>Math.max(1,z/1.4))}>−</button><button onClick={()=>{setZoom(1);setPan([0,0]);}}>원래 크기</button>{zoom>1&&[['←',-80,0],['→',80,0],['↑',0,-60],['↓',0,60]].map(([label,x,y])=><button key={label} aria-label={`지도 이동 ${label}`} onClick={()=>setPan(([a,b])=>[a+x,b+y])}>{label}</button>)}</div>
+   <div className="birthplace-canvas"><svg viewBox="0 0 960 500" aria-label={view==='world'?'세계 출생국 지도':'대한민국 출생 지역 지도'}><g transform={`translate(${480+pan[0]},${250+pan[1]}) scale(${zoom}) translate(-480,-250)`}>{features.features.map((f,i)=>{const key=keyFor(f),items=matching(key),label=view==='world'?f.properties.NAME_KO||f.properties.NAME_EN:f.properties.name;return <path key={`${key}-${i}`} d={path(f)||''} fill={items.length?`hsl(186 65% ${Math.max(28,68-Math.log2(items.length+1)*6)}%)`:'var(--birthplace-land)'} className={key===selected?'selected':''} tabIndex={0} role="button" aria-label={`${label} ${items.length}명`} onClick={()=>choose(key)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(key);}}}><title>{`${label} · ${items.length}명\n${items.slice(0,12).map(r=>`${r.person.name} · ${r.person.memberships?.map(g=>g.name).join(', ')||'솔로'} · ${r.location.raw}`).join('\n')}${items.length>12?'\n…':''}`}</title></path>;})}</g></svg></div>
+   <p className="birthplace-note">색이 진할수록 인물이 많습니다. 지역을 선택하면 목록이 열립니다. 대한민국을 선택하면 상세 지도로 이동합니다.</p>
+   <div className="birthplace-region-list" aria-label="지역별 인원">{[...new Set(rows.map(r=>view==='world'?r.location.country:level==='sido'?r.location.region:r.location.district).filter(Boolean))].sort((a,b)=>matching(b).length-matching(a).length).map(key=><button key={key} aria-pressed={selected===key} onClick={()=>choose(key)}>{view==='world'?gazetteer.countries.find(c=>c.code===key)?.name||key:key} <b>{matching(key).length}</b></button>)}</div>
+  </>}
+  <div className="birthplace-results"><h3>{selected==='unknown'?'출생국 미확인':selected|| (view==='korea'?'대한민국 출생 인물':'전체 인물')} <small>{selection.length}명</small></h3>{selected&&<button onClick={()=>setSelected('')}>지역 선택 해제</button>}<ul>{selection.map(({person:p,location:l})=><li key={p.id}><strong>{p.name}</strong><span>{p.memberships?.map(g=>g.name).join(' · ')||'솔로'}</span><span>{l.raw||'출생지 미확인'}{l.country==='KR'&&!l.district&&' · 시·군·구 미확인'}</span><small>{l.uncertain?'출처 검토 필요':'공식 출처 확인'}{l.source?.verificationStatus==='namuwiki_collected'?' · 위키 수집':''}</small>{/^https:\/\//.test(l.source?.sourceUrl||'')&&<a href={l.source.sourceUrl} target="_blank" rel="noreferrer">출생지 출처</a>}</li>)}</ul>{!selection.length&&<p>이 조건에 해당하는 인물이 없습니다.</p>}</div>
+  <footer>출생지는 국적·거주지·고향과 다릅니다. 미확인 지역은 임의 배치하지 않습니다. 지도는 행정구역 집계이며 개인의 출생 주소를 표시하지 않습니다.<br/>세계: <a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noreferrer">Natural Earth (Public Domain)</a> · 한국: <a href="https://sgis.kostat.go.kr" target="_blank" rel="noreferrer">통계청 SGIS (공공누리 1유형)</a> / <a href="https://github.com/vuski/admdongkor" target="_blank" rel="noreferrer">vuski/admdongkor (CC BY 4.0)</a> · 2025-01-01 경계를 시·도 / 시·군·구로 병합·단순화</footer>
+ </section>;
+}

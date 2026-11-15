@@ -15,6 +15,7 @@ def empty_counts():
 def evidence_for(evidence, group, members):
     return (evidence.get('groupId')==group['id'] or
             members.get(evidence.get('memberId'),{}).get('groupId')==group['id'] or
+            any(h.get('groupId')==group['id'] for h in members.get(evidence.get('memberId'),{}).get('membershipHistory',[])) or
             evidence.get('memberId') in group.get('relatedMemberIds',[]))
 
 

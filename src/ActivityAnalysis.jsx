@@ -1,0 +1,10 @@
+import React,{useState} from 'react';
+import {analyticsRows} from './analysis-data';
+import ActivityCharts from './ActivityCharts';
+const columns=[['observedUploads','관측 영상'],['official','공식 업로드'],['confirmed','외부 출연 확인'],['inferred','외부 출연 추정'],['member','개인 활동']];
+export default function ActivityAnalysis({data,artists}){
+ const [days,setDays]=useState(30),[query,setQuery]=useState(''),[sort,setSort]=useState('observedUploads'),[expanded,setExpanded]=useState(null);
+ const rows=analyticsRows(data,artists,days,query,sort);
+ const inactive=(data?.artists||[]).filter(r=>artists.some(a=>a.id===r.artistId)&&r.knownInactiveDays>0);
+ return <section><div className="analysis-controls"><input aria-label="활동량 아티스트 검색" placeholder="아티스트 검색 · 한글 / 영문" value={query} onChange={e=>setQuery(e.target.value)}/>{[7,30,90].map(n=><button key={n} aria-pressed={days===n} onClick={()=>setDays(n)}>{n}일</button>)}</div><p className="analysis-note">{rows.length}개 아티스트 · ≥는 수집된 기록의 하한, —는 미수집 또는 확인 불가입니다. 외부 출연은 전체 인터넷이 아닌 수집 아카이브 기준입니다. 열 제목을 누르면 내림차순으로 정렬합니다.</p><div className="analysis-table-wrap"><table className="analysis-table"><thead><tr><th>아티스트</th>{columns.map(([key,label])=><th key={key}><button aria-pressed={sort===key} onClick={()=>setSort(key)}>{label} ↓</button></th>)}</tr></thead><tbody>{rows.map(row=><React.Fragment key={row.id}><tr><th><button className="analysis-name" aria-expanded={expanded===row.id} onClick={()=>setExpanded(expanded===row.id?null:row.id)}>{row.name} {expanded===row.id?'−':'+'}</button></th>{columns.map(([key])=><td key={key}>{key==='official'&&row.officialPartial?'≥ ':''}{row[key]??'—'}</td>)}</tr>{expanded===row.id&&<tr><td colSpan="6"><ActivityCharts row={row} days={days} asOf={data.asOf}/></td></tr>}</React.Fragment>)}</tbody></table></div>{!rows.length&&<p>이 조건에 확인된 양의 활동 기록이 없습니다. 미수집을 활동 0으로 판단하지 않습니다.</p>}<details><summary>업로드 공백 확인 · {inactive.length}개</summary><p>최신 공식 채널 확인이 있는 경우만 표시합니다.</p>{inactive.map(r=><p key={r.artistId}>{artists.find(a=>a.id===r.artistId)?.name} · {r.knownInactiveDays}일</p>)}</details></section>;
+}

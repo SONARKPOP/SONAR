@@ -158,11 +158,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: pip install -r requirements-analysis.txt
       - run: pnpm install --frozen-lockfile
       - run: python -m collectors.groups validate
       - run: python -m collectors.channel_activity --recalculate
       - run: python -m collectors.groups sync
       - run: python -m collectors.channel_database
+      - run: python -m collectors.music_credits
+      - run: python -m collectors.analysis_activity
+      - run: node scripts/analysis-features.mjs
+      - run: python -m collectors.multivariate --input public/data/analysis-features.json --output public/data/multivariate.json > /tmp/multivariate-build.log
       - run: pnpm test
       - run: python -m unittest discover -s tests -p 'test_*.py' -q
       - run: pnpm build
