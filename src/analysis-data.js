@@ -8,7 +8,7 @@ export function analyticsRows(data,artists,days,query='',sort='observedUploads')
   const official=values.official??(values.officialObserved>0?values.officialObserved:null);
   const result={...row,...values,id:artist.id,name:artist.name,official,officialPartial:values.official===null&&official!==null};
   return ['official','confirmed','inferred','member'].some(key=>(result[key]??0)>0)?result:null;
- }).filter(Boolean).sort((a,b)=>(Number.isFinite(b[sort])?b[sort]:-1)-(Number.isFinite(a[sort])?a[sort]:-1)||a.name.localeCompare(b.name,'ko'));
+ }).filter(Boolean).sort((a,b)=>{const value=r=>sort.startsWith('type:')?r.types?.[sort.slice(5)]:r[sort];return (Number.isFinite(value(b))?value(b):-1)-(Number.isFinite(value(a))?value(a):-1)||a.name.localeCompare(b.name,'ko');});
 }
 const day=86400000;
 export function activitySeries(row,days,bucket='day',asOf,metric='observedUploads'){

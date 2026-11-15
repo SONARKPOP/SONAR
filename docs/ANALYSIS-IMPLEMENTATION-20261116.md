@@ -44,3 +44,5 @@ See ANALYSIS.md for local refresh commands and the individual feature documents 
 
 pnpm test: 118 passed. Python unittest discovery: 180 tests, OK with 12 skips for unavailable optional dump/parser dependencies. Production build passed (1,696 modules). Focused UI SSR checks cover route loading, missing artifacts and credit provenance. No real API collection was performed for this analytical refresh.
 
+Supplementary checks: the previously skipped dump/parser modules passed separately with the existing optional dependencies (15 tests). Category-specific descending sort and official daily mean/deviation display were then added; focused activity/UI tests and the production build passed again.
+

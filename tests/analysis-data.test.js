@@ -13,3 +13,7 @@ test('unknown chart dates remain null and known official coverage can establish 
  row.windows[7].officialCoverage='complete';assert.ok(activitySeries(row,7,'day','2026-11-16T00:00:00+09:00','official').some(p=>p.value===0));
  assert.equal(activitySeries(row,7,'month','2026-11-16T00:00:00+09:00')[0].partial,true);
 });
+test('type rankings reuse the same eligible artists and descend by observed category',()=>{
+ const make=(id,n)=>({artistId:id,windows:{30:{official:null,officialObserved:1,observedUploads:1,types:{shorts:n}}}});
+ assert.deepEqual(analyticsRows({artists:[make('a',1),make('b',4)]},[{id:'a',name:'A'},{id:'b',name:'B'}],30,'','type:shorts').map(r=>r.id),['b','a']);
+});

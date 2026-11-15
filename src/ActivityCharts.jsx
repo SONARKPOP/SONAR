@@ -18,7 +18,7 @@ export default function ActivityCharts({row,days,asOf}){
   </svg>:<p>이 기간에 확인된 시계열 자료가 없습니다.</p>}
   <div className="analysis-type-bars">{Object.entries(ACTIVITY_TYPES).map(([key,label])=><div key={key}><span>{label}</span><div><i style={{width:`${bars[key]/barMax*100}%`}}/></div><b>{bars[key]}</b></div>)}</div>
   <p className="analysis-note">유형 막대는 관측 영상만 집계하며 Shorts → LIVE → 음악방송 → 라디오 → 음악 → 기타 순으로 한 번씩 분류합니다.</p>
-  <p>개별 업로드 {row.observedUploads}개 · 출연 묶음 확인 {row.linkedAppearanceEvents}건 · 출연 연결 대기 {row.unlinkedAppearanceUploads}개</p>
+  <p>공식 일평균 {row.officialPerDayMean?.toFixed(2)??"—"}개 · 일별 업로드 표준편차 {row.officialPerDayStdDev?.toFixed(2)??"—"} · 수집 범위가 확인된 기간만 계산합니다.</p><p>개별 업로드 {row.observedUploads}개 · 출연 묶음 확인 {row.linkedAppearanceEvents}건 · 출연 연결 대기 {row.unlinkedAppearanceUploads}개</p>
   <p className="analysis-note">출연·이벤트 ID가 명시된 파생 영상만 묶습니다. 제목이 비슷하다는 이유로 같은 출연으로 합치지 않습니다. 출연 연결 대기가 있으면 총 출연 수는 미확정입니다.</p>
  </section>;
 }
