@@ -1,5 +1,5 @@
 import React from 'react';
-import {Ban,Check,ChevronDown,Heart,Plus,ShieldCheck,Skull,Sprout,Star} from 'lucide-react';
+import {Ban,Check,ChevronDown,Heart,Plus,ShieldCheck,Biohazard,Sprout,Star} from 'lucide-react';
 import {localize,useLanguage} from './i18n';
 import ActivityIcon from './ActivityIcon';
 import OfficialLinks from './OfficialLinks';
@@ -33,12 +33,13 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
   <div className="directory-row-main">
    <div className="directory-row-text">
     <div className="directory-row-name">
-     <h3 title={name} data-no-translate>{compact?<button type="button" className="directory-name-button" aria-expanded={expanded} aria-controls={expanded?detailsId:undefined} onClick={()=>onExpand(artist.id)}>{name}</button>:name}</h3>
-     {korean&&<small lang="ko" title={korean} data-no-translate>{korean}</small>}
-     <ActivityIcon group={artist} clock={clock}/>
      {selectedPresets.length>0&&<span className="directory-row-favorites" aria-label={selectedPresets.map(([,label])=>label).join(', ')}>
       {selectedPresets.map(([key,,Icon])=><Icon key={key} size={11} data-preset={key} aria-hidden="true" fill={key==='clover'?'none':'currentColor'}/>)}
      </span>}
+     <h3 title={name} data-no-translate>{compact?<button type="button" className="directory-name-button" aria-expanded={expanded} aria-controls={expanded?detailsId:undefined} onClick={()=>onExpand(artist.id)}>{name}</button>:name}</h3>
+     <ActivityIcon group={artist} clock={clock}/>
+     {korean&&<small lang="ko" title={korean} data-no-translate>{korean}</small>}
+
     </div>
     {!compact&&<div className="directory-row-meta">
      <p className="directory-row-summary" title={summary}>{summary}</p>
@@ -83,8 +84,8 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
      aria-label={`${name} ${label}`} aria-pressed={favorites[key].has(artist.id)}
      onClick={()=>onFavorite(key,artist.id)}><Icon size={16} fill={key!=='clover'&&favorites[key].has(artist.id)?'currentColor':'none'}/></button>)}
     <button type="button" className="policy-ban" aria-label={`${name} 개별 제외`}
-     aria-pressed={!locked&&excluded} disabled={locked} onClick={()=>onExclude(artist.id)}><Ban size={16}/></button>
-    {favoritesOnly?<><button type="button" aria-label="절대 차단" aria-pressed={hardBlocked} onClick={()=>onHardBlock(artist.id)}><Skull size={16}/></button>{locked&&<input type="color" aria-label="선호 색상" value={color||'#729ca8'} onChange={e=>onColor(artist.id,e.target.value)}/>}</>:<button type="button" className="policy-allow" aria-label={`${name} 예외 허용`}
+     aria-pressed={excluded} disabled={!favoritesOnly&&locked} onClick={()=>onExclude(artist.id)}><Ban size={16}/></button>
+    {favoritesOnly?<><button type="button" className="policy-toxic" aria-label="절대 차단" aria-pressed={hardBlocked} onClick={()=>onHardBlock(artist.id)}><Biohazard size={16}/></button>{locked&&<input type="color" aria-label="선호 색상" value={color||'#729ca8'} onChange={e=>onColor(artist.id,e.target.value)}/>}</>:<button type="button" className="policy-allow" aria-label={`${name} 예외 허용`}
      aria-pressed={locked||allowed} disabled={locked} onClick={()=>onAllow(artist.id)}><ShieldCheck size={16}/><span>{locked?'자동 허용':'예외'}</span></button>
     }
    </div>

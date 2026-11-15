@@ -55,3 +55,13 @@ test('LIVE NOW follows enabled types independently of favorite filters and share
  assert.deepEqual(visibleLiveRows(lives,catalog,{types:['girl'],favorites:[]}).map(v=>v.id),['a','joint']);
  assert.deepEqual(visibleLiveRows(lives,catalog,{types:['girl'],favorites:['a'],hardBlocked:['b']}).map(v=>v.id),['a']);
 });
+test('active browsing includes ANCHORED and excludes LOST SIGNAL',()=>{
+ const now=Date.parse('2026-11-15T12:00:00Z'),snapshot=(days,state)=>({activity_status:state,checked_at:new Date(now).toISOString(),last_upload_at:new Date(now-days*86400000).toISOString(),valid_until:new Date(now+86400000).toISOString(),uploads:[]});
+ const catalog={groups:[{id:'anchor',gender:'girl',youtubeActivity:snapshot(100,'ANCHORED')},{id:'lost',gender:'girl',youtubeActivity:snapshot(400,'LOST SIGNAL')}]};
+ assert.deepEqual(browsingArtistIds(catalog,{types:['girl'],activeOnly:true,now}),['anchor']);
+});
+test('soft group ban retains only a separately favorited member appearance',()=>{
+ const rows=[{id:'favorite-person',groupIds:['g'],memberIds:['person-a']},{id:'other-person',groupIds:['g'],memberIds:['person-b']}];
+ assert.deepEqual(softBlockContent(rows,['g'],['person-a']).map(row=>row.id),['favorite-person']);
+ assert.deepEqual(hardBlockContent(rows,['g']).map(row=>row.id),[]);
+});

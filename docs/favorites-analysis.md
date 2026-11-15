@@ -32,3 +32,12 @@ Use `sonar-language` for KR/JP/EN/ES labels. User names, titles, IDs and English
 activity-state names remain unchanged. Use `sonar-code-cleanup` for read-only
 unused-binding audits and focused removal; collector/migration public entry points
 must not be deleted solely because they lack frontend imports.
+
+The compact revision keeps one management control beside MY GROUPS, folds artist
+filters behind one button, and orders favorite icons before the name and upload
+state. Active scope includes ANCHORED in addition to SURGE/SAILING/COASTING. A
+Biohazard icon represents hard blocks. Enabling either exclusion requires an
+outcome confirmation; restoring an existing block is immediate and resolves old
+solo aliases through the same person ID. The preference dialog's header supports
+pointer dragging. Group type controls and the individual-activity switch are hidden;
+their prior stored values are retained without being erased.

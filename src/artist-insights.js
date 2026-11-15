@@ -30,7 +30,7 @@ export function favoriteArtistIds(catalog,ids){
 }
 export function browsingArtistIds(catalog,{types,excluded=[],muted=[],hardBlocked=[],favoriteIds=[],favoritesOnly=false,activeOnly=false,now=Date.now()}){
  const preferred=new Set(favoriteArtistIds(catalog,favoriteIds)),off=new Set([...muted,...hardBlocked]);
- const rows=(catalog?.groups||[]).filter(group=>!off.has(group.id)&&(!favoritesOnly||preferred.has(group.id))&&(!activeOnly||['SURGE','SAILING','COASTING'].includes(activityView(group,now)?.state)));
+ const rows=(catalog?.groups||[]).filter(group=>!off.has(group.id)&&(!favoritesOnly||preferred.has(group.id))&&(!activeOnly||['SURGE','SAILING','COASTING','ANCHORED'].includes(activityView(group,now)?.state)));
  return visibleArtistIds(rows,rows.map(row=>row.id),types,excluded);
 }
 export function visibleLiveRows(rows,catalog,{types,hardBlocked=[],excluded=[],favorites=[]}){
