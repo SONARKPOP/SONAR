@@ -10,7 +10,12 @@ test('analysis route keeps navigation, tolerates missing artifacts and renders t
   const {default:Activity}=await server.ssrLoadModule('/src/ActivityAnalysis.jsx');
   const catalog={groups:[],members:[],updatedAt:'2026-11-16T00:00:00Z'};
   const html=renderToStaticMarkup(React.createElement(Page,{catalog,load:async()=>null,favorites:{}}));
-  assert.match(html,/음악 크레딧/);assert.match(html,/출생지 지도/);assert.match(html,/PCA/);
+  assert.match(html,/콘텐츠 활동량/);assert.match(html,/출생지 지도/);
+  assert.doesNotMatch(html,/음악 크레딧|PCA|FAMD|군집/);
+  assert.match(html,/aria-label="데뷔 연도"/);assert.match(html,/>1년</);assert.match(html,/>5년</);
+  assert.match(html,/aria-label="활동 그룹 상태"/);assert.match(html,/SURGE/);assert.match(html,/ANCHORED/);
+  const legacy=renderToStaticMarkup(React.createElement(Page,{catalog,load:async()=>null,favorites:{},mode:'records'}));
+  assert.match(legacy,/aria-pressed="true">콘텐츠 활동량/);assert.doesNotMatch(legacy,/캘린더|aria-label="데뷔 연도"/);
   const data={asOf:catalog.updatedAt,artists:[{artistId:'g',windows:{30:{official:null,officialObserved:2,observedUploads:2,confirmed:null,inferred:null,member:null}}}]};
   const activity=renderToStaticMarkup(React.createElement(Activity,{data,artists:[{id:'g',name:'Example'}]}));
   assert.match(activity,/≥/);assert.match(activity,/Example/);assert.match(activity,/아티스트 검색/);

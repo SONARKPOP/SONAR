@@ -2,8 +2,10 @@ import React,{useRef} from 'react';
 import {Check,X} from 'lucide-react';
 import ActivityIcon from './ActivityIcon';
 import {koreanArtistName} from './directory';
+import {localize,useLanguage,formatMessage} from './i18n';
 
 export default function SidebarGroupRow({group,clock,checked,saved,removeFrom,badges,color,swiped,onSwipe,onToggle,onRemove}){
+ const language=useLanguage();
  const gesture=useRef(null),suppressClick=useRef(0);
  const korean=koreanArtistName(group);
  const startSwipe=event=>{
@@ -25,10 +27,10 @@ export default function SidebarGroupRow({group,clock,checked,saved,removeFrom,ba
   if(swiped){onSwipe(null);return;}
   onToggle(group.id);
  };
- return <div className="mygroup-item" data-swiped={swiped||undefined}>
+ return localize(<div className="mygroup-item" data-swiped={swiped||undefined}>
   <button type="button" className="mygroup-select" data-favorite={badges.length>0||undefined}
    style={badges.length?{'--favorite-accent':color||'#729ca8'}:undefined} aria-pressed={checked} onClick={toggle}
-   title={checked?'모아보기에서 선택 해제':saved?'모아보기에 포함':'MY GROUPS에 저장하고 모아보기에 포함'}
+   title={checked?'모아보기에서 선택 해제':'모아보기에 포함'}
    onPointerDown={startSwipe} onPointerUp={endSwipe} onPointerCancel={()=>{gesture.current=null;}}>
    <span className="mygroup-check" aria-hidden="true">{checked&&<Check size={14}/>}</span>
    {badges.length>0&&<span className="mygroup-badges" aria-hidden="true">{badges.map(([key,,Icon])=><Icon key={key} data-preset={key} size={11} fill={key==='clover'?'none':'currentColor'}/>)}</span>}
@@ -38,7 +40,7 @@ export default function SidebarGroupRow({group,clock,checked,saved,removeFrom,ba
 
    {group.contentCount===0&&<span className="mygroup-pending-dot" title="수집 대기"/>}
   </button>
-  {removeFrom&&<button type="button" className="mygroup-remove-action" aria-label={`${group.name} ${removeFrom}에서 제거`}
+  {removeFrom&&<button type="button" className="mygroup-remove-action" aria-label={formatMessage('{name} · {list}에서 제거',{name:group.name,list:removeFrom},language)}
    onClick={()=>onRemove(group.id)}><X size={15}/><span>제거</span></button>}
- </div>;
+ </div>,language);
 }

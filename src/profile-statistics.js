@@ -33,4 +33,9 @@ export function sortProfileRows(rows,{query='',key='name',direction='asc'}={}){
   return sign*compared||String(a.id).localeCompare(String(b.id));
  });
 }
-export function formatDebutElapsed(row){return row.yearsSinceDebut==null||row.daysSinceDebut==null?'—':`${row.yearsSinceDebut.toFixed(2)}년 (${row.daysSinceDebut.toLocaleString('ko-KR')}일)`;}
+export function formatDebutElapsed(row,language='ko'){
+ if(row.yearsSinceDebut==null||row.daysSinceDebut==null)return '—';
+ const locale={ko:'ko-KR',ja:'ja-JP',en:'en-US',es:'es-ES'}[language]||'ko-KR';
+ const years=row.yearsSinceDebut.toLocaleString(locale,{minimumFractionDigits:2,maximumFractionDigits:2}),days=row.daysSinceDebut.toLocaleString(locale);
+ return language==='ja'?`${years}年 (${days}日)`:language==='en'?`${years} years (${days} days)`:language==='es'?`${years} años (${days} días)`:`${years}년 (${days}일)`;
+}

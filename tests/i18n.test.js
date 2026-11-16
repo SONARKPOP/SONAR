@@ -7,6 +7,10 @@ test('language controls use ES and key interface strings translate',()=>{
  assert.equal(translate('그룹 추가하기','en'),'Add groups');
  assert.equal(translate('스케줄','es'),'Agenda');
  assert.equal(translate('홈','ja'),'ホーム');
+ assert.equal(translate('11월','ja'),'11月');
+ assert.equal(translate('2026년','ja'),'2026年');
+ assert.equal(translate('11월','en'),'November');
+ assert.equal(translate('11월','es'),'noviembre');
  assert.equal(translate('RESCENE title','es'),'RESCENE title');
 });
 test('localization preserves keys, interaction, values and explicitly original content',()=>{

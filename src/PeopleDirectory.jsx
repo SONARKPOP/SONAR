@@ -5,11 +5,17 @@ import ActivityIcon from './ActivityIcon';
 import {INITIAL_ROWS,artistInitials} from './directory-shortcuts';
 import {initialSections,legalNamesFor,nationalityView,personMatches} from './person-directory';
 import './artist-index.css';
-import {localize,useLanguage,translate} from './i18n';
+import {localize,useLanguage,translate,formatMessage} from './i18n';
 
 const membershipLabels={current:'현재 멤버',former:'이전 멤버','last-known':'마지막 활동 멤버',linked:'소속 이력',unknown:'소속 상태 미확인'};
 const presets=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];
-const dateLabel=(date,year,language='ko')=>date?date.replaceAll('-','.'):year?`${year} · ${translate('일자 미확인',language)}`:translate('미확인',language);
+const dateLabel=(date,year,language='ko')=>{
+ if(date){
+  if(language!=='ko'&&/^\d{4}-\d{2}-\d{2}$/.test(date)&&!Number.isNaN(Date.parse(date)))return new Intl.DateTimeFormat(language,{year:'numeric',month:'2-digit',day:'2-digit',timeZone:'UTC'}).format(new Date(date+'T00:00:00Z'));
+  return date.replaceAll('-','.');
+ }
+ return year?`${year} · ${translate('일자 미확인',language)}`:translate('미확인',language);
+};
 const safeSource=url=>{try{return new URL(url).protocol==='https:';}catch{return false;}};
 
 export function AlphabetIndex({value,onChange}){
@@ -28,14 +34,14 @@ export function PersonProfile({person,groups,onGroup}){
  const legal=legalNamesFor(person);
  const nationalities=(person.nationalities||[]).map(value=>nationalityView(value,language));
  const place=person.birthPlace;
- const birthplace=typeof place==='string'?place:place?[place.countryCode?nationalityView(place.countryCode).name:place.country,place.region,place.city].filter(Boolean).join(' · '):'';
- const fields=[['활동명',person.nameKo&&person.nameKo!==person.name?<><span data-no-translate>{person.name}</span> · <span lang="ko" data-no-translate>{person.nameKo}</span></>:person.name],
+ const birthplace=typeof place==='string'?place:place?[place.countryCode?nationalityView(place.countryCode,language).name:place.country,place.region,place.city].filter(Boolean).join(' · '):'';
+ const fields=[['활동명',person.nameKo&&person.nameKo!==person.name?<><span data-no-translate>{person.name}</span> · <span lang="ko" data-no-translate>{person.nameKo}</span></>:<span data-no-translate>{person.name}</span>],
   ['본명',legal.length?legal.map((name,index)=><span className="person-legal-name" key={name.lang+index} lang={name.lang==='und'?undefined:name.lang} data-no-translate>{name.text}</span>):'미확인'],
   ['생년월일',date(person.birthDate)],
   ['국적',nationalities.length?nationalities.map((nation,index)=><span className="person-nationality" key={nation.code+index}><span aria-hidden="true">{nation.flag}</span>{nation.name}</span>):'미확인'],
-  ['출생 지역',birthplace||'미확인'],
+  ['출생 지역',birthplace?<span data-no-translate>{birthplace}</span>:'미확인'],
   ['솔로 데뷔',person.soloDebuts.length?person.soloDebuts.map(debut=><span className="person-debut" key={debut.artistId}><span data-no-translate>{debut.name}</span> · {date(debut.date,debut.year)}</span>):'확인된 솔로 데뷔 정보 없음']];
- return localize(<section className="person-profile" aria-label={`${person.name} 개인 프로필`}>
+ return localize(<section className="person-profile" aria-label={formatMessage('{name} 개인 프로필',{name:person.name},language)}>
   {person.identityPending&&<p className="person-profile-notice">기존 멤버 ID 연결을 확인 중입니다. 다른 인물과 임의로 합치지 않습니다.</p>}
   {person.profileConflicts?.length>0&&<p className="person-profile-notice">일부 프로필 값이 출처 간 달라 기존 등록 정보를 유지하고 있습니다. 추가 확인이 필요합니다.</p>}
   <dl className="person-profile-fields">{fields.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
