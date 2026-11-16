@@ -110,3 +110,8 @@ export function peopleForArtists(artists,people){
  const ids=new Set(artists.map(a=>a.id));
  return people.filter(person=>(person.memberships||[]).some(h=>ids.has(h.groupId))||(person.soloIds||[]).some(id=>ids.has(id)));
 }
+
+export function bulkViewingChecks(muted,artistIds,checked){
+ const targets=new Set(artistIds);
+ return checked?muted.filter(id=>!targets.has(id)):[...new Set([...muted,...targets])];
+}
