@@ -39,6 +39,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install document parser test dependencies
+        if: github.event_name == 'push'
+        run: python -m pip install -r requirements-dump.txt
       - name: Collector tests
         if: github.event_name == 'push'
         run: python -m unittest discover -s tests -p 'test_*.py' -q
@@ -158,7 +161,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install -r requirements-analysis.txt
+      - run: pip install -r requirements-analysis.txt -r requirements-dump.txt
       - run: pnpm install --frozen-lockfile
       - run: python -m collectors.groups validate
       - run: python -m collectors.channel_activity --recalculate
