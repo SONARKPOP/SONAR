@@ -1,3 +1,4 @@
+import {teaserType,musicType,durationSeconds,contentSectionMatches,broadcasterFor} from './content-sections.js';
 import {activityView} from './youtube-activity.js';
 import {isMusicBroadcast} from './broadcast.js';
 import {isContinuousLive} from './live-policy.js';
@@ -8,12 +9,23 @@ export function matchesContentTab(video,category){
  if(category==='station')return isContinuousLive(video);
  if(isContinuousLive(video))return false;
  if(category==='uploads')return true;
- if(Array.isArray(video.contentTabs))return video.contentTabs.includes(category);
+ const teaser=teaserType(video),short=isShortContent(video),types=video.contentTypes||[video.category==='own'?'own':'external'];
+ if(category==='teaser')return Boolean(teaser);
+ if(category==='shorts')return short;
  if(isMusicBroadcast(video))return category==='broadcast';
+ if(teaser){
+  if(teaser==='music')return category==='music';
+  return category==='radio'&&video.externalType==='radio'||['own','external'].includes(category)&&types.includes(category)&&video.externalType!=='radio';
+ }
+ if(category==='live')return video.format==='live';
+ if(category==='radio'&&(video.contentTabs?.includes('radio')||video.externalType==='radio'))return true;
+ if(['own','external'].includes(category)&&(short||video.format==='live'))return types.includes(category);
+ if(short)return false;
+ if(category==='music'&&musicType({...video,subtypes:[]}))return true;
+ if(Array.isArray(video.contentTabs))return video.contentTabs.includes(category);
  if(category==='broadcast')return false;
- if(category==='shorts')return isShortContent(video);
- if(isShortContent(video))return false;
- return category==='home'||(category==='live'?video.format==='live':category===video.category||video.contentTypes?.includes(category));
+ if(short)return false;
+ return category==='home'||category===video.category||types.includes(category);
 }
 export function videoMatchesArtist(video,id,includeIndividual=true){
  const activity=video.individualActivity;
@@ -21,7 +33,7 @@ export function videoMatchesArtist(video,id,includeIndividual=true){
  if(!includeIndividual&&fromGroup&&id!==activity.artistId)return false;
  return video.groupIds.includes(id)||(includeIndividual&&fromGroup);
 }
-export function filterContent(rows,{groups=[],category='home',query='',channel='',member='',subtype='',format='',year='',month='',externalType='',ownType='',includeIndividual=true,artistNames}){
+export function filterContent(rows,{groups=[],category='home',query='',channel='',member='',subtype='',format='',year='',month='',externalType='',ownType='',section='',broadcaster='',includeIndividual=true,artistNames}){
  const q=query.trim().toLocaleLowerCase();
  return dedupe(rows).filter(v=>{
   const activity=v.individualActivity;
@@ -30,11 +42,11 @@ export function filterContent(rows,{groups=[],category='home',query='',channel='
    const names=[...new Set([...v.groupIds,...(activity?.groupIds||[])])].flatMap(id=>artistNames?.get(id)||[]);
    if(![v.title,v.channelName,...v.tags,...names].join(' ').toLocaleLowerCase().includes(q))return false;
   }
-  return matchesContentTab(v,category)&&(!channel||(v.programId||v.channelId)===channel)&&
+  return matchesContentTab(v,category)&&(!channel||v.programId===channel||v.channelId===channel)&&
    (!member||v.memberIds.includes(member))&&(!subtype||v.subtypes.includes(subtype))&&
    (!format||v.format===format)&&(!year||monthKey(v.publishedAt).slice(0,4)===year)&&
    (!month||monthKey(v.publishedAt).slice(5,7)===month)&&(!externalType||externalKind(v)===externalType)&&
-   (!ownType||ownKind(v)===ownType);
+   (!ownType||ownKind(v)===ownType)&&contentSectionMatches(v,category,section)&&(!broadcaster||broadcasterFor(v,category)===broadcaster);
  }).sort((a,b)=>Date.parse(b.publishedAt)-Date.parse(a.publishedAt));
 }
 export function commonChannels(rows,groups){
@@ -154,7 +166,13 @@ export function uploadDays(rows){
  return [...groups].sort(([a],[b])=>b.localeCompare(a)).map(([date,items])=>({date,items}));
 }
 
-export function uploadKind(row){return row.format==='live'?'live':row.format==='short'?'short':(['own','external'].includes(row.category)||row.contentTypes?.some(t=>['own','external'].includes(t)))?'long':null;}
+export function uploadKind(row){
+ if(row.format==='live'||row.actualStartTime||['live','ended'].includes(row.liveStatus))return 'live';
+ if(row.category==='music'||musicType(row))return 'music';
+ const seconds=durationSeconds(row);
+ if(seconds!==null)return seconds>=180?'content':'short';
+ return row.format==='short'||row.category==='shorts'?'short':null;
+}
 export function uploadGroupSummary(rows,selected,includeIndividual=true,artists,history=rows){
  const allowed=new Set(selected), groups=new Map(), popularity=new Map();
  const latest=history.reduce((n,v)=>Math.max(n,Date.parse(v.publishedAt)||0),0);
@@ -171,8 +189,8 @@ export function uploadGroupSummary(rows,selected,includeIndividual=true,artists,
   }
  }
  for(const row of dedupe(rows)){
-  const kind=uploadKind(row), ids=identities(row);
-  if(!kind||!ids.length)continue;
+  const kind=uploadKind(row)||'unknown', ids=identities(row);
+  if(!ids.length)continue;
   const solo=row.individualActivity?.artistId;
   const ranked=ids.sort((a,b)=>{
    const [ac,at]=popularity.get(a)||[0,0], [bc,bt]=popularity.get(b)||[0,0];
@@ -180,7 +198,7 @@ export function uploadGroupSummary(rows,selected,includeIndividual=true,artists,
    return priority(b)-priority(a)||bc-ac||bt-at;
   });
   const id=ranked[0], artist=artists?.get(id);
-  if(!groups.has(id))groups.set(id,{id,live:[],short:[],long:[],related:new Set(),members:new Set()});
+  if(!groups.has(id))groups.set(id,{id,live:[],music:[],content:[],short:[],unknown:[],related:new Set(),members:new Set()});
   const group=groups.get(id);
   group[kind].push(row);
   for(const old of [...(artist?.relatedGroupIds||[]),...(artist?.previousGroupIds||[])])group.related.add(old);

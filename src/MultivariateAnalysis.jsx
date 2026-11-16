@@ -1,14 +1,14 @@
 import React,{useState} from 'react';
 import './multivariate.css';
 
-const labels = {meanAge:'평균 나이',medianAge:'중앙 나이',yearsSinceDebut:'데뷔 후 연수',currentMembers:'현재 멤버 수',foreignNationalityShare:'외국 국적 비율',uploads30d:'30일 업로드',shortsShare:'쇼츠 비율',liveShare:'라이브 비율',musicShare:'음악 비율',creditDiversity:'크레딧 다양성',selfCreditShare:'자체 참여 비율'};
+const labels = {agency:'소속사',label:'레이블',ageStdDev:'나이 표준편차',meanAge:'평균 나이',medianAge:'중앙 나이',yearsSinceDebut:'데뷔 후 연수',currentMembers:'현재 멤버 수',foreignNationalityShare:'외국 국적 비율',uploads30d:'30일 업로드',shortsShare:'쇼츠 비율',liveShare:'라이브 비율',musicShare:'음악 비율',creditDiversity:'크레딧 다양성',selfCreditShare:'자체 참여 비율'};
 const label = name => labels[name] || name;
 const colors = ['#60a5fa','#fb7185','#4ade80','#c084fc','#facc15','#2dd4bf'];
 const pct = n => `${(n * 100).toFixed(1)}%`;
 
 export default function MultivariateAnalysis({ data }) {
   const [kind, setKind] = useState('group');
-  const [method, setMethod] = useState('pca');
+  const [method, setMethod] = useState('famd');
   const [selected, setSelected] = useState(null);
   const result = data?.analyses?.[kind]?.[method];
   const points = result?.points || [];

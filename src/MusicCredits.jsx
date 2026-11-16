@@ -33,10 +33,10 @@ export default function MusicCredits({data,catalog}) {
     <label className="music-credits-search">곡 · 음반 · 참여자 검색<input type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="곡명 또는 작가명"/></label>
     <p aria-live="polite">{rows.length} 곡</p>
     <div className="music-credits-grid">{rows.map(song=><article key={song.id}>
-      <h3>{song.title}</h3><p>{song.artistIds.map(id=>artists.get(id)||id).join(', ')}</p>
+      <h3>{song.title}</h3>{song.releaseContext&&<p>{song.promotionRole==='title'?'타이틀곡 1차 수집':'타이틀/후속곡 1차 수집'} · {song.releaseContext.title}{song.releaseContext.releaseDate?' · '+song.releaseContext.releaseDate:''}</p>}<p>{song.artistIds.map(id=>artists.get(id)||id).join(', ')}</p>
       <dl>{[['lyricist','작사'],['composer','작곡'],['arranger','편곡'],['producer','프로듀서']].map(([role,label])=><React.Fragment key={role}><dt>{label}</dt><dd>{song.roles[role]?.join(', ')||'미확인'}</dd></React.Fragment>)}</dl>
       <details><summary>수록 음반 {song.releases.length}개 · 녹음 {song.recordings.length}개</summary><ul>{song.releases.map(album=><li key={album.id}>{album.title} · {album.releaseDate||'발매일 미확인'}{album.country?' · '+album.country:''}{!album.tracklistComplete?' · 일부 트랙 수집':''}</li>)}</ul><p>ISRC: {song.recordings.flatMap(r=>r.isrcs||[]).join(', ')||'미확인'} · ISWC: {song.work?.iswcs?.join(', ')||'미확인'}</p></details>
-      <footer>{song.sourceIds.map(id=>{const source=sources.get(id);return source&&/^https:\/\/musicbrainz\.org\//.test(source.url)?<a key={id} href={source.url} target="_blank" rel="noreferrer">MusicBrainz · {source.retrievedAt}</a>:null;})}<span>커뮤니티 데이터 · 공식 검증 아님</span></footer>
+      <footer>{song.sourceIds.map(id=>{const source=sources.get(id);return source&&/^https:\/\/(musicbrainz\.org|namu\.wiki|music\.bugs\.co\.kr)\//.test(source.url)?<a key={id} href={source.url} target="_blank" rel="noreferrer">{source.publisher} · {source.verification==='namuwiki_collected'?'나무위키 1차 수집':source.verification==='retailer_published_credits'?'유통사 게재 크레딧':'공개 메타데이터'} · {source.retrievedAt}</a>:null;})}<span>출처별 수집 자료 · 공식 검증 아님</span></footer>
     </article>)}</div>
     {!rows.length&&<p>조건에 맞는 수집 곡이 없습니다.</p>}
   </section>;

@@ -43,7 +43,16 @@ def build_catalog(seed, registry_ids):
     for artist in seed.get('artists',[]):
         if artist['artistId'] not in registry_ids:
             raise ValueError('Unknown registry artist: '+artist['artistId'])
+    sources={row['id'] for row in seed.get('sources',[])}
+    if len(sources)!=len(seed.get('sources',[])):
+        raise ValueError('Duplicate source ID')
     tables={key:seed.get(key,[]) for key in ('albums','tracks','recordings','works','persons','songs')}
+    for rows in tables.values():
+        for row in rows:
+            if not row.get('sourceIds') or any(s not in sources for s in row['sourceIds']):
+                raise ValueError('Missing or unknown evidence source')
+            if any(a not in registry_ids for a in row.get('artistIds',[])):
+                raise ValueError('Unknown entity artist')
     indexes={}
     for key,rows in tables.items():
         indexes[key]={row['id']:row for row in rows}
@@ -61,7 +70,10 @@ def build_catalog(seed, registry_ids):
         if any(r not in indexes['recordings'] for r in song['recordingIds']):
             raise ValueError('Dangling song recording')
     for row in tables['works']+tables['recordings']:
+        allowed=('lyricist','composer') if row['id'] in indexes['works'] else ('arranger','producer')
         for role,people in row.get('roles',{}).items():
+            if role not in allowed or (people is not None and (not isinstance(people,list) or len(people)!=len(set(people)))):
+                raise ValueError('Invalid role layer or duplicate contributor')
             if role not in ROLES or (people is not None and any(p not in indexes['persons'] for p in people)):
                 raise ValueError('Invalid person-role relation')
     return {'schemaVersion':1,'generatedAt':datetime.now(timezone.utc).isoformat(),
@@ -81,6 +93,8 @@ def main():
             parser.error('MUSICBRAINZ_USER_AGENT with operator contact is required for network refresh')
         client=MusicBrainzClient(ROOT/'work/musicbrainz-cache',ua)
         for album in seed['albums']:
+            if not album.get('externalIds',{}).get('musicbrainzRelease'):
+                continue
             payload=client.get('release',album['externalIds']['musicbrainzRelease'],'recordings+artist-credits',refresh=True)
             expected={a['externalIds']['musicbrainzArtist'] for a in seed['artists'] if a['artistId'] in album['artistIds']}
             actual={a['artist']['id'] for a in payload.get('artist-credit',[]) if isinstance(a,dict) and 'artist' in a}

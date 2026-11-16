@@ -1,24 +1,41 @@
-import React,{useState} from 'react';
-import {ACTIVITY_TYPES,activitySeries} from './analysis-data';
+import React,{useRef,useState} from 'react';
+import {gestureSnapshot,gestureViewport} from './activity-gesture';
+import {ACTIVITY_TYPES,activitySeries,activityTypeCounts} from './analysis-data';
 export default function ActivityCharts({row,days,asOf}){
- const [bucket,setBucket]=useState('day'),[metric,setMetric]=useState('observedUploads');
- const series=activitySeries(row,days,bucket,asOf,metric),known=series.filter(p=>p.value!==null),max=Math.max(1,...known.map(p=>p.value));
- const width=760,height=210,x=i=>42+i/Math.max(1,series.length-1)*(width-64),y=n=>height-28-n/max*(height-55);
- const parts=[];let segment=[];
- series.forEach((p,i)=>{if(p.value===null){if(segment.length)parts.push(segment);segment=[];}else segment.push([x(i),y(p.value)]);});if(segment.length)parts.push(segment);
- const bars=row.windows[String(days)].types,barMax=Math.max(1,...Object.values(bars));
+ const [bucket,setBucket]=useState('day'),[metric,setMetric]=useState('observedUploads'),[count,setCount]=useState(12),[offset,setOffset]=useState(0);
+ const gesture=useRef(new Map()),baseline=useRef(null);
+ const series=activitySeries(row,row.seriesDays||400,bucket,asOf,metric),end=Math.max(count,series.length-offset),visible=series.slice(Math.max(0,end-count),end),max=Math.max(1,...visible.map(p=>p.value??0));
+ const move=n=>setOffset(v=>Math.max(0,Math.min(Math.max(0,series.length-count),v+n)));
+ const zoom=n=>setCount(v=>Math.max(4,Math.min(series.length,Math.round(v*n))));
+ function start(e){
+  if((e.pointerType==='mouse'&&e.button!==0)||e.target.closest('button,input,select,a'))return;
+  gesture.current.set(e.pointerId,{x:e.clientX,y:e.clientY});baseline.current=gestureSnapshot(gesture.current,offset,count);
+ }
+ function drag(e){
+  if(!gesture.current.has(e.pointerId))return;
+  gesture.current.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  const b=baseline.current;if(!b)return;
+  if(gesture.current.size===1&&Math.hypot(e.clientX-b.x,e.clientY-b.y)<5)return;
+  if(!e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.setPointerCapture(e.pointerId);
+  const next=gestureViewport(gesture.current,b,e.currentTarget.clientWidth,series.length);
+  if(next){setCount(next.count);setOffset(next.offset);}
+ }
+ function stop(e){
+  gesture.current.delete(e.pointerId);
+  baseline.current=gesture.current.size?gestureSnapshot(gesture.current,offset,count):null;
+ }
+ const types=activityTypeCounts(row.windows[String(days)].types);
  return <section className="activity-detail" aria-label={`${row.name} 활동량 상세`}>
-  <div className="analysis-controls"><label>집계 단위<select value={bucket} onChange={e=>setBucket(e.target.value)}><option value="day">일별</option><option value="week">주별</option><option value="month">월별</option></select></label><label>선 그래프<select value={metric} onChange={e=>setMetric(e.target.value)}><option value="observedUploads">관측 업로드</option><option value="official">공식 채널 기록</option></select></label></div>
-  <p className="analysis-note">빈 날짜는 미확인으로 선을 끊습니다. 주·월은 관측값의 합계이며, 공식 수집 범위가 확인된 기간만 빈 날짜를 0으로 표시합니다.</p>
-  {known.length?<svg className="analysis-line-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${row.name} ${days}일 업로드 추이`}>
-   {[0,max/2,max].map(n=><g key={n}><line x1="42" x2={width-20} y1={y(n)} y2={y(n)} stroke="currentColor" opacity=".13"/><text x="35" y={y(n)+4} textAnchor="end">{n.toFixed(n%1?1:0)}</text></g>)}
-   {parts.map((points,i)=><polyline key={i} points={points.map(p=>p.join(',')).join(' ')} fill="none" stroke="#63a6d4" strokeWidth="2.5"/>)}
-   {series.map((p,i)=>p.value!==null?<circle key={p.date} cx={x(i)} cy={y(p.value)} r="3.5" fill={p.partial?'#eab308':'#63a6d4'}><title>{p.date}: {p.partial?'관측 하한 ':''}{p.value}</title></circle>:null)}
-   {series.filter((_,i)=>i===0||i===series.length-1||i===Math.floor(series.length/2)).map(p=><text key={p.date} x={x(series.indexOf(p))} y={height-7} textAnchor="middle">{p.date}</text>)}
-  </svg>:<p>이 기간에 확인된 시계열 자료가 없습니다.</p>}
-  <div className="analysis-type-bars">{Object.entries(ACTIVITY_TYPES).map(([key,label])=><div key={key}><span>{label}</span><div><i style={{width:`${bars[key]/barMax*100}%`}}/></div><b>{bars[key]}</b></div>)}</div>
-  <p className="analysis-note">유형 막대는 관측 영상만 집계하며 Shorts → LIVE → 음악방송 → 라디오 → 음악 → 기타 순으로 한 번씩 분류합니다.</p>
-  <p>공식 일평균 {row.officialPerDayMean?.toFixed(2)??"—"}개 · 일별 업로드 표준편차 {row.officialPerDayStdDev?.toFixed(2)??"—"} · 수집 범위가 확인된 기간만 계산합니다.</p><p>개별 업로드 {row.observedUploads}개 · 출연 묶음 확인 {row.linkedAppearanceEvents}건 · 출연 연결 대기 {row.unlinkedAppearanceUploads}개</p>
-  <p className="analysis-note">출연·이벤트 ID가 명시된 파생 영상만 묶습니다. 제목이 비슷하다는 이유로 같은 출연으로 합치지 않습니다. 출연 연결 대기가 있으면 총 출연 수는 미확정입니다.</p>
+ <div className="analysis-controls"><label>집계 단위<select value={bucket} onChange={e=>{setBucket(e.target.value);setCount(12);setOffset(0);}}><option value="day">일별</option><option value="week">주별</option><option value="month">월별</option></select></label><label>업로드 추이<select value={metric} onChange={e=>setMetric(e.target.value)}><option value="observedUploads">관측 업로드</option><option value="official">공식 채널 기록</option></select></label><button onClick={()=>move(count)} disabled={offset>=series.length-count}>이전</button><button onClick={()=>move(-count)} disabled={!offset}>최근</button><button aria-label="기간 확대" onClick={()=>zoom(.75)}>＋</button><button aria-label="기간 축소" onClick={()=>zoom(1.25)}>−</button><button onClick={()=>{setCount(12);setOffset(0);}}>최근 12구간</button></div>
+ <p className="analysis-note">좌우로 드래그해 이전 날짜를 보고 두 손가락으로 확대·축소합니다. 빗금은 미확인, ≥는 일부만 관측된 합계입니다. 수집 범위가 확인된 공식 기간에만 0을 표시합니다.</p>
+ <div className="activity-timeline" onPointerDown={start} onPointerMove={drag} onPointerUp={stop} onPointerCancel={stop} onLostPointerCapture={stop} onPointerLeave={e=>{if(!e.currentTarget.hasPointerCapture(e.pointerId))stop(e);}}>
+ <div className="activity-timeline-bars" role="img" aria-label={`${row.name} ${visible[0]?.date||''}부터 ${visible.at(-1)?.date||''}까지 업로드 막대 그래프`}>
+ {visible.map(p=><div className={`activity-timeline-bin ${p.value===null?'unknown':''}`} key={p.date} title={`${p.date}: ${p.value===null?'미확인':`${p.partial?'≥ ':''}${p.value}`}`}><span className="activity-timeline-number">{p.value===null?'—':`${p.partial?'≥':''}${p.value}`}</span><div className="activity-timeline-track">{p.value!==null&&<i style={{height:`${p.value/max*100}%`}}/>}</div><span className="activity-timeline-date">{p.date}</span></div>)}
+ </div></div>
+ <p className="analysis-note">보관된 기록 최대 {row.seriesDays||400}일을 탐색합니다. 과거 자료가 없는 구간은 미확인으로 남습니다. 외부 출연 확인 {row.confirmed??'—'}개 · 추정 {row.inferred??'—'}개</p>
+ <dl className="activity-type-numbers">{Object.entries(ACTIVITY_TYPES).map(([key,label])=><div key={key}><dt>{label}</dt><dd>{types[key]??0}</dd></div>)}</dl>
+ <p className="analysis-note">유형은 중복 없이 집계합니다. Shorts → LIVE → 음악방송 → 라디오 → 음악 → 공식·외부 순입니다.</p>
+ <details><summary>개인 활동 · {row.member??'—'}개</summary>{row.windows[String(days)].members?.length?<ul>{row.windows[String(days)].members.map(m=><li key={m.memberId}>{m.name} · {m.count}개</li>)}</ul>:<p>멤버별 ID 연결 자료가 없습니다.</p>}<p className="analysis-note">명시된 멤버 ID를 기준으로 집계하며, 여러 멤버가 연결된 영상은 각 멤버에 포함됩니다.</p></details>
+ <p>공식 일평균 {row.officialPerDayMean?.toFixed(2)??'—'}개 · 일별 업로드 표준편차 {row.officialPerDayStdDev?.toFixed(2)??'—'}</p><p>개별 업로드 {row.observedUploads}개 · 출연 묶음 확인 {row.linkedAppearanceEvents}건 · 출연 연결 대기 {row.unlinkedAppearanceUploads}개</p><p className="analysis-note">명시된 출연·이벤트 ID만 묶습니다. 제목 유사성으로 합치지 않습니다.</p>
  </section>;
 }

@@ -23,6 +23,6 @@ test('workspace separates saved membership from viewing and exposes external fac
    channels:[{id:'p',name:'Program',count:3,groups:new Set(['a','b'])}],onType(){},onChannel(){}}));
   assert.match(external,/Program/);assert.match(external,/공통 출연/);assert.match(external,/불러온 영상 기준/);
   const nav=renderToString(React.createElement(WorkspaceNavigation,{menus:[['home','홈',()=>null]],page:'groups',category:'home',onGo(){},onGroups(){}}));
-  assert.match(nav,/aria-current="page"[^>]*>[^]*선호 관리/);
+  assert.match(nav,/aria-current="page"[^>]*>[^]*선호관리/);
  }finally{await server.close();}
 });

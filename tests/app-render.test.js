@@ -22,7 +22,7 @@ test('real application renders its initial screen without initialization errors'
     const {App}=await server.ssrLoadModule('/src/main.jsx');
     const html=renderToString(React.createElement(App));
     assert.match(html,/SONAR/);
-    assert.match(html,/LIVE STATION/);
+    assert.match(html,/라이브스테이션/);
     assert.match(html,/<details class="content-period-filter"><summary/);
     assert.doesNotMatch(html,/흩어진 순간을, 한곳에서\./);
     assert.doesNotMatch(html,/role="group" aria-label="(?:그룹|분류|형식)"/);

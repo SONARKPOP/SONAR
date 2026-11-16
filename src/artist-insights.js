@@ -9,7 +9,12 @@ function participantIds(row){
 }
 export function uniquePeople(directory){return [...new Map([...directory.members,...directory.solos].map(person=>[person.id,person])).values()];}
 export function agencyHistory(artist){
- return (artist?.agencyHistory||artist?.personProfile?.agencyHistory||[]).filter(row=>row.name&&safe(row.sourceUrl)&&['current','former'].includes(row.status));
+ const seen=new Set();
+ return [...(artist?.agencyHistory||[]),...(artist?.personProfile?.agencyHistory||[])].filter(row=>{
+  if(!row.name||!safe(row.sourceUrl)||!['current','former'].includes(row.status))return false;
+  const key=[row.agencyId||row.labelId||row.name,row.role||'agency',row.status].join('|');
+  if(seen.has(key))return false;seen.add(key);return true;
+ });
 }
 export function hardBlockContent(rows,blocked=[],catalog={}){
  const ids=new Set(blocked),people=new Map((catalog.members||[]).map(person=>[person.id,person]));
@@ -60,6 +65,23 @@ export function fullAge(birth,at){
  if(!valid(birth)||!valid(at)||birth>at)return null;
  return Number(at.slice(0,4))-Number(birth.slice(0,4))-(at.slice(5)<birth.slice(5)?1:0);
 }
+// Calendar-anniversary fractional years: exact birthdays remain integer ages.
+export function fractionalAge(birth,at){
+ const age=fullAge(birth,at);
+ if(age===null)return null;
+ const anniversary=year=>{
+  const month=Number(birth.slice(5,7))-1,day=Number(birth.slice(8));
+  const last=new Date(Date.UTC(year,month+1,0)).getUTCDate();
+  return Date.UTC(year,month,Math.min(day,last));
+ };
+ const year=Number(at.slice(0,4)),startYear=at.slice(5)<birth.slice(5)?year-1:year;
+ const start=anniversary(startYear),end=anniversary(startYear+1);
+ return age+(Date.parse(at)-start)/(end-start);
+}
+export function debutTiming(date,today){
+ const days=fullAge(date,today)===null?null:Math.round((Date.parse(today)-Date.parse(date))/86400000);
+ return {debutDate:date||null,daysSinceDebut:days,yearsSinceDebut:days===null?null:Math.round(days/365.2425*100)/100};
+}
 export function ageSummary(values){
  const ages=values.filter(Number.isFinite).sort((a,b)=>a-b),n=ages.length;
  if(!n)return {count:0,mean:null,median:null,min:null,max:null,stdDev:null};
@@ -81,14 +103,13 @@ export function groupDemographics(groups,people,today=new Date().toISOString().s
   const lastKnown=people.filter(p=>relations(p).some(h=>h.status==='last-known')||(ended&&listed.includes(p)));
   const ages=ageSummary(current.map(p=>fullAge(p.birthDate,today)));
   // Only explicit start/end dates establish membership on debut day.
-  const debutPeople=people.filter(person=>relations(person).some(h=>h.joinedAt&&h.joinedAt<=group.debutDate&&(!h.leftAt||h.leftAt>group.debutDate)));
-  const debut=ageSummary(debutPeople.map(person=>fullAge(person.birthDate,group.debutDate)));
+  const debutPeople=people.filter(person=>relations(person).some(h=>fullAge(h.joinedAt,group.debutDate)!==null&&(!h.leftAt||(fullAge(group.debutDate,h.leftAt)!==null&&h.leftAt>group.debutDate))));
+  const debut=ageSummary(debutPeople.map(person=>fractionalAge(person.birthDate,group.debutDate)));
   const knownNationality=current.filter(p=>p.nationalities?.length&&p.nationalities.every(n=>nationalityView(n).code)),foreign=knownNationality.filter(p=>p.nationalities.some(n=>nationalityView(n).code!=='KR'));
-  const debutDate=fullAge(group.debutDate,today)!==null?Date.parse(group.debutDate):null;
   return {id:group.id,name:group.name,kind:'group',currentMembers:expected,formerMembers:former.length,lastKnownMembers:lastKnown.length,knownBirthDates:ages.count,
    birthDateCoverage:expected?Math.min(1,ages.count/expected):null,meanCurrentAge:ages.mean,medianCurrentAge:ages.median,minCurrentAge:ages.min,maxCurrentAge:ages.max,currentAgeStdDev:ages.stdDev,
    meanDebutAge:debut.mean,debutAgeKnown:debut.count,debutMembershipKnown:debutPeople.length,ageRange:ages.count?ages.max-ages.min:null,
-   yearsSinceDebut:debutDate===null?null:Math.round((Date.parse(today)-debutDate)/86400000/365.2425*100)/100,
+   ...debutTiming(group.debutDate,today),
    knownNationalities:knownNationality.length,nationalityCoverage:expected?Math.min(1,knownNationality.length/expected):null,
    foreignNationalityShare:knownNationality.length?foreign.length/knownNationality.length:null,
    soloActivityMembers:current.filter(p=>p.soloIds?.length).length};
@@ -101,17 +122,16 @@ export function artistProfileRows(artists,people,today){
   const known=person&&!person.identityPending?person:null,age=fullAge(known?.birthDate,today),date=artist.soloDebutDate||artist.debutDate;
   const nationality=known?.nationalities?.length&&known.nationalities.every(n=>nationalityView(n).code)?known.nationalities:null;
   return {id:artist.id,name:artist.name,kind:'solo',currentMembers:1,formerMembers:0,lastKnownMembers:0,knownBirthDates:age===null?0:1,birthDateCoverage:age===null?0:1,
-   meanCurrentAge:age,medianCurrentAge:age,minCurrentAge:age,maxCurrentAge:age,currentAgeStdDev:age===null?null:0,meanDebutAge:fullAge(known?.birthDate,date),debutAgeKnown:fullAge(known?.birthDate,date)===null?0:1,ageRange:age===null?null:0,
-   yearsSinceDebut:fullAge(date,today)===null?null:Math.round((Date.parse(today)-Date.parse(date))/86400000/365.2425*100)/100,
+   meanCurrentAge:age,medianCurrentAge:age,minCurrentAge:age,maxCurrentAge:age,currentAgeStdDev:age===null?null:0,meanDebutAge:fractionalAge(known?.birthDate,date),debutAgeKnown:fractionalAge(known?.birthDate,date)===null?0:1,ageRange:age===null?null:0,
+   ...debutTiming(date,today),
    knownNationalities:nationality?1:0,nationalityCoverage:nationality?1:0,foreignNationalityShare:nationality?(nationality.some(n=>nationalityView(n).code!=='KR')?1:0):null,soloActivityMembers:1};
  });return [...groupRows,...solos];
+}
+export function bulkViewingChecks(muted,artistIds,checked){
+ const targets=new Set(artistIds);
+ return checked?muted.filter(id=>!targets.has(id)):[...new Set([...muted,...targets])];
 }
 export function peopleForArtists(artists,people){
  const ids=new Set(artists.map(a=>a.id));
  return people.filter(person=>(person.memberships||[]).some(h=>ids.has(h.groupId))||(person.soloIds||[]).some(id=>ids.has(id)));
-}
-
-export function bulkViewingChecks(muted,artistIds,checked){
- const targets=new Set(artistIds);
- return checked?muted.filter(id=>!targets.has(id)):[...new Set([...muted,...targets])];
 }

@@ -14,14 +14,14 @@ class BroadcastTests(unittest.TestCase):
 
     def test_platform_neutral_tab_membership(self):
         cases = [
-            ({'title':'[Music Bank] RESCENE'}, ['home','broadcast']),
+            ({'title':'[Music Bank] RESCENE'}, ['broadcast']),
             ({'title':'[MPD Fancam] RESCENE','channelId':'m2'}, ['broadcast']),
             ({'title':'[Inkigayo] RESCENE','format':'short','channelId':'sbs-kpop'}, ['broadcast','shorts']),
             ({'title':'[Inkigayo] RESCENE interview','channelId':'sbs-kpop'}, ['broadcast','external']),
-            ({'title':'Leemujin Service live cover','channelId':'kbs-kpop'}, ['broadcast','external']),
+            ({'title':'Leemujin Service live cover','channelId':'kbs-kpop'}, ['music','external']),
             ({'title':'RESCENE official cover','official':True}, ['home','music','own']),
-            ({'title':'RESCENE trailer','format':'short'}, ['teaser','shorts']),
-            ({'title':'RESCENE cover','format':'short','externalType':'radio'}, ['radio']),
+            ({'title':'RESCENE trailer','format':'short'}, ['external','shorts']),
+            ({'title':'RESCENE cover','format':'short','externalType':'radio'}, ['radio','shorts']),
             ({'title':'Official MV','description':'Watch the teaser below','category':'music'}, ['home','music']),
         ]
         for fields, expected in cases:

@@ -24,7 +24,7 @@ test('ambiguous and unmapped city names remain unknown',()=>{
 });
 test('structured location and field-specific source remain independent',()=>{
  const p=resolveBirthplace({birthPlace:{countryCode:'US',region:'California',city:'Los Angeles'},profileSources:{nationalities:{verificationStatus:'official_verified'}}});
- assert.equal(p.countryCode,'US');assert.equal(p.precision,'country');assert.equal(p.source,null);assert.equal(p.uncertain,true);
+ assert.equal(p.countryCode,'US');assert.equal(p.precision,'region');assert.equal(p.adm1Id,'adm1:US:US-CA');assert.equal(p.source,null);assert.equal(p.uncertain,true);
 });
 test('filters preserve person counts and combine group and solo membership',()=>{
  const rows=[{person:{id:'one',name:'One',aliases:[],memberships:[{groupId:'g',name:'Band'}],soloIds:['s']},location:{raw:'Seoul'}},{person:{id:'two',name:'Two',aliases:[],memberships:[],soloIds:[]},location:{raw:''}}];

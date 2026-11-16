@@ -61,7 +61,7 @@ test('App settles after initial detail loading and repeated content-tab clicks',
   try{
     const {App}=await server.ssrLoadModule('/src/main.jsx');
     let tree=await harness.settle(App);
-    for(const label of ['LIVE STATION','MUSIC','LIVE STATION','Shorts']){
+    for(const label of ['라이브스테이션','MUSIC','라이브스테이션','쇼츠']){
       const button=findButton(tree,label);assert.ok(button,`Missing tab: ${label}`);
       button.props.onClick();tree=await harness.settle(App);
       assert.ok(findButton(tree,label));

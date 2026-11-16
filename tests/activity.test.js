@@ -20,10 +20,11 @@ test('month end and leap year dates clamp and archived records stay recoverable'
  assert.deepEqual(activityDirectory(groups,true,now).map(g=>g.id),['old']);
  assert.equal(groups.length,3);
 });
-test('shorts including legacy category records appear only under Shorts across video tabs',()=>{
+test('related Shorts stay in own/external but are excluded from home and music',()=>{
  const base={groupIds:['a'],title:'x',tags:[],subtypes:[],memberIds:[],channelName:'c',publishedAt:'2026-01-01',contentTypes:['own','external','music']};
  const rows=[{...base,id:'normal',format:'video',category:'own'},{...base,id:'short',format:'short',category:'own'},{...base,id:'legacy',format:'video',category:'shorts'}];
- for(const category of ['home','own','external','music'])assert.deepEqual(filterContent(rows,{category}).map(v=>v.id),['normal']);
+ for(const category of ['home','music'])assert.deepEqual(filterContent(rows,{category}).map(v=>v.id),['normal']);
+ for(const category of ['own','external'])assert.deepEqual(filterContent(rows,{category}).map(v=>v.id),['normal','short','legacy']);
  assert.deepEqual(filterContent(rows,{category:'shorts'}).map(v=>v.id),['short','legacy']);
  assert.deepEqual(filterContent(rows,{category:'home',format:'short'}),[]);
 });

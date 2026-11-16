@@ -19,9 +19,9 @@ test('live archive filters by format independently of original category',()=>{
  const rows=[row('live',{format:'live'}),row('normal')];
  assert.deepEqual(filterContent(rows,{category:'live'}).map(v=>v.id),['live']);
 });
-test('own tab excludes shorts even with own tags, and shorts tab includes them by format',()=>{
+test('related Shorts overlap own and Shorts while home excludes them',()=>{
  const rows=[row('normal',{contentTypes:['own']}),row('short',{category:'shorts',format:'short',contentTypes:['own']}),row('legacy-short',{category:'own',format:'short',contentTypes:['own']})];
- assert.deepEqual(filterContent(rows,{category:'own'}).map(v=>v.id),['normal']);
+ assert.deepEqual(filterContent(rows,{category:'own'}).map(v=>v.id),['normal','short','legacy-short']);
  assert.deepEqual(filterContent(rows,{category:'shorts'}).map(v=>v.id),['short','legacy-short']);
  assert.equal(filterContent(rows,{category:'home'}).length,1);
 });
@@ -31,13 +31,18 @@ test('upload calendar groups records by Korean publication date',()=>{
  assert.deepEqual(days.map(day=>day.date),['2026-01-01','2025-12-31']);
  assert.deepEqual(days[0].items.map(row=>row.id),['a','c']);
 });
-test('calendar summarizes each selected group by live/short/combined own and external long-form',()=>{
- const rows=[row('own'),row('external',{category:'external',groupIds:['a','b']}),row('short',{format:'short',category:'shorts'}),row('live',{format:'live'}),row('music',{category:'music'})];
+test('calendar separates live, music, content and duration-based short form',()=>{
+ const rows=[row('own',{durationSeconds:180}),row('external',{durationLabel:'PT4M',category:'external',groupIds:['a','b']}),row('short',{format:'short',category:'shorts'}),row('live',{format:'live'}),row('music',{category:'music'})];
  const groups=uploadGroupSummary(rows,['a','b','empty']);
  assert.deepEqual(groups.map(g=>g.id),['a']);
- assert.deepEqual(groups[0].long.map(v=>v.id),['own','external']);
+ assert.deepEqual(groups[0].content.map(v=>v.id),['own','external']);
  assert.equal(groups[0].short.length,1);assert.equal(groups[0].live.length,1);
- assert.equal(uploadKind(rows[4]),null);
+ assert.equal(uploadKind(rows[4]),'music');
+ assert.equal(uploadKind(row('unknown')),null);
+ assert.equal(uploadGroupSummary([row('unknown')],['a'])[0].unknown[0].id,'unknown');
+ assert.equal(uploadKind(row('179',{durationSeconds:179})),'short');
+ assert.equal(uploadKind(row('180',{durationSeconds:180})),'content');
+ assert.equal(uploadKind(row('music-short',{category:'music',durationSeconds:60})),'music');
 });
 test('external dimensions use explicit classification first and unknown stays unclassified',()=>{
  assert.equal(externalKind(row('x',{title:'라디오 방송'})),'radio');
@@ -48,11 +53,11 @@ test('external dimensions use explicit classification first and unknown stays un
  assert.deepEqual(commonChannels(rows,['a']).map(c=>c.id).sort(),['p','q']);
 });
 
-test('explicit content tabs apply radio precedence and preserve stage overlap',()=>{
+test('radio precedence stays intact and stages remain isolated from home',()=>{
  const rows=[row('stage',{contentTabs:['home','broadcast']}),row('radio',{contentTabs:['radio'],format:'short'}),
   row('teaser',{contentTabs:['teaser','shorts'],format:'short'}),row('interview',{contentTabs:['broadcast','external']})];
- assert.deepEqual(filterContent(rows,{category:'home'}).map(v=>v.id),['stage']);
+ assert.deepEqual(filterContent(rows,{category:'home'}).map(v=>v.id),[]);
  assert.deepEqual(filterContent(rows,{category:'radio'}).map(v=>v.id),['radio']);
- assert.deepEqual(filterContent(rows,{category:'shorts'}).map(v=>v.id),['teaser']);
+ assert.deepEqual(filterContent(rows,{category:'shorts'}).map(v=>v.id),['radio','teaser']);
  assert.deepEqual(filterContent(rows,{category:'broadcast'}).map(v=>v.id),['stage','interview']);
 });

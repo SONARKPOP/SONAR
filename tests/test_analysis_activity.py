@@ -25,3 +25,15 @@ class AnalysisTests(unittest.TestCase):
  def test_zero_and_unknown_rows_are_not_positive(self):
   row=build_analysis([],self.config(),NOW)['artists'][0];self.assertFalse(row['hasPositive90d']);self.assertIsNone(row['windows']['90']['confirmed'])
 if __name__=='__main__':unittest.main()
+
+class HistoricalAnalysisTests(AnalysisTests):
+ def test_archive_horizon_does_not_extend_rankings_or_official_coverage(self):
+  row=build_analysis([self.video('old',publishedAt=iso(NOW-300*DAY))],self.config(),NOW)['artists'][0]
+  self.assertEqual(row['seriesDays'],400)
+  self.assertEqual(sum(p['observedUploads'] for p in row['series']),1)
+  self.assertEqual(row['windows']['90']['observedUploads'],0)
+  self.assertIsNone(row['windows']['90']['official'])
+ def test_members_are_aggregated_by_explicit_id(self):
+  config=self.config();config['members']=[{'id':'m','name':'Member','groupId':'g'}]
+  row=build_analysis([self.video('solo',memberIds=['m'],individualActivity={'memberId':'m','groupIds':['g']})],config,NOW)['artists'][0]
+  self.assertEqual(row['windows']['30']['members'],[{'memberId':'m','name':'Member','count':1}])

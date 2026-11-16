@@ -5,9 +5,9 @@ import {localize,useLanguage} from './i18n';
 
 export function WorkspaceNavigation({menus,page,category,onGo,onGroups,onAnalysis,language='ko'}){
  return localize(<nav className="workspace-navigation" aria-label="SONAR 화면">
-  {menus.map(([id,name,Icon])=><button type="button" key={id} aria-current={page==='content'&&category===id?'page':undefined}
+  {menus.map(([id,name,Icon])=><button type="button" key={id} aria-current={(page==='content'&&category===id||page==='records'&&id==='uploads')?'page':undefined}
    onClick={()=>onGo(id)}><Icon size={16}/><span>{name}</span></button>)}
-  <button type="button" aria-current={page==='groups'?'page':undefined} onClick={onGroups}><Users size={16}/><span>선호 관리</span></button>
+  <button type="button" aria-current={page==='groups'?'page':undefined} onClick={onGroups}><Users size={16}/><span>선호관리</span></button>
   {onAnalysis&&<button type="button" aria-current={page==='analysis'?'page':undefined} onClick={onAnalysis}><Layers size={16}/><span>활동량·분석</span></button>}
  </nav>,language);
 }

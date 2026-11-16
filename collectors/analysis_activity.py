@@ -1,4 +1,4 @@
-"""Observed 90-day archive analytics, separate from official activity state rules."""
+"""Observed archive analytics, separate from official activity state rules."""
 import argparse,json,math
 from collections import defaultdict
 from datetime import datetime,timedelta,timezone
@@ -11,6 +11,7 @@ from .live_policy import is_continuous_live
 from .publish import DATA,write
 
 PERIODS=(7,30,90)
+SERIES_DAYS=400
 TYPES=('music','broadcast','radio','officialContent','externalConfirmed','externalInferred','live','shorts','unclassified')
 KST=timezone(timedelta(hours=9))
 def type_for(video,official,evidence):
@@ -69,7 +70,7 @@ def build_analysis(videos,config,current,channel_cache=None):
    person=gid in individual.get('groupIds',[]) and gid!=individual.get('artistId')
    outside=not own and not person
    event=video.get('appearanceEventId') or video.get('appearanceId') or video.get('eventId')
-   records[gid][identity]={'id':identity,'at':at,'official':own,'individual':person,'outside':outside,'confirmed':outside and any(confirmed(e) for e in evidence),'type':type_for(video,own,evidence),'event':str(event) if event else None,'metadata':True}
+   records[gid][identity]={'id':identity,'at':at,'official':own,'individual':person,'outside':outside,'confirmed':outside and any(confirmed(e) for e in evidence),'type':type_for(video,own,evidence),'event':str(event) if event else None,'metadata':True,'memberIds':sorted(mid for mid in set(video.get('memberIds',[]))|{individual.get('memberId')}|set(groups.get(individual.get('artistId'),{}).get('relatedMemberIds',[])) if mid in members)}
  # Include known official upload IDs absent from retained video metadata, without
  # inventing their content type or participants.
  for gid,group in groups.items():
@@ -103,14 +104,14 @@ def build_analysis(videos,config,current,channel_cache=None):
    periods[str(days)]={'officialPerDayMean':mean,'officialPerDayStdDev':math.sqrt(sum((n-mean)**2 for n in bins)/days) if mean is not None else None,'official':official,'officialObserved':observed if everOfficial else None,'confirmed':sum(v['confirmed'] for v in external) if everOutside else None,'inferred':sum(not v['confirmed'] for v in external) if everOutside else None,
     'member':len(individual) if everIndividual else None,'observedUploads':len(sample),'types':{kind:sum(v['type']==kind for v in sample) for kind in TYPES},
     'linkedAppearanceEvents':len({v['event'] for v in linked}),'unlinkedAppearanceUploads':unlinked,'distinctAppearances':len({v['event'] for v in linked}) if external and not unlinked else None,
-    'officialCoverage':'complete' if official is not None else 'partial' if everOfficial else 'uncollected','series':daily_series(sample)}
+    'officialCoverage':'complete' if official is not None else 'partial' if everOfficial else 'uncollected','series':daily_series(sample),'members':[{'memberId':mid,'name':members[mid].get('name',mid),'count':sum(mid in v.get('memberIds',[]) for v in individual)} for mid in sorted({mid for v in individual for mid in v.get('memberIds',[])})]}
   positive=any((periods['90'].get(key) or 0)>0 for key in ('official','officialObserved','confirmed','inferred','member'))
   last=max((v['at'] for v in values if v['official']),default=None)
-  rows.append({'artistId':gid,'name':group.get('name',gid),'kind':'solo' if group.get('artistType')=='solo' else 'group','windows':periods,'series':daily_series([v for v in values if 0<=current-v['at']<=90*DAY]),
+  rows.append({'artistId':gid,'name':group.get('name',gid),'kind':'solo' if group.get('artistType')=='solo' else 'group','windows':periods,'series':daily_series([v for v in values if 0<=current-v['at']<=SERIES_DAYS*DAY]),'seriesDays':SERIES_DAYS,
    'lastObservedOfficialAt':iso(last) if last is not None else None,'hasObservedHistory':bool(values),'hasPositive90d':positive,
    'officialCheckedAt':min((cache.get(s['id'],{}).get('checkedAt') for s in owned if cache.get(s['id'],{}).get('checkedAt')),default=None),
    'knownInactiveDays':max((days for days in PERIODS if periods[str(days)]['official']==0),default=None)})
- return {'schemaVersion':1,'generatedAt':iso(current),'asOf':iso(current),'periodDays':list(PERIODS),'dateBasis':'publishedAt; actualStartTime for live; Asia/Seoul buckets','typePriority':list(TYPES),'coverage':'retained public archive plus checked official upload IDs; external universe incomplete',
+ return {'schemaVersion':1,'generatedAt':iso(current),'asOf':iso(current),'seriesDays':SERIES_DAYS,'periodDays':list(PERIODS),'dateBasis':'publishedAt; actualStartTime for live; Asia/Seoul buckets','typePriority':list(TYPES),'coverage':'retained public archive plus checked official upload IDs; external universe incomplete',
   'eventPolicy':'Only explicit appearance/event IDs link derived uploads. Similar titles are never merged.','excluded':dict(excluded),'artists':rows}
 
 def main():

@@ -1,6 +1,7 @@
 """Broad, non-exclusive content tags. No appearance or whole-group inference."""
 import re
 from .broadcast import broadcast_context, broadcast_excluded
+from .content_sections import teaser_type,music_type,content_length,PATTERNS
 
 OWN_LABELS={'behind':'비하인드','daily':'일상·브이로그','variety':'자체 예능','practice':'연습·퍼포먼스','other':'기타·미분류'}
 EXTERNAL_LABELS={'song':'노래·퍼포먼스','radio':'라디오','variety':'예능','interview':'인터뷰','ad':'광고·홍보','other':'기타·미분류'}
@@ -33,10 +34,14 @@ def content_tabs(video, official):
     h, m, sec = (float(n or 0) for n in duration.groups()) if duration else (0, 0, 0)
     short = fmt == 'short' or video.get('category') == 'shorts'
     clip = not short and fmt != 'live' and 0 < h * 3600 + m * 60 + sec <= 60
+    is_teaser=bool(PATTERNS['teaserPattern'].search(title) or (not FULL.search(title) and any(TEASER.match(line.strip()) for line in description)))
+    owner_types=video.get('contentTypes',['own' if official else 'external'])
+    if is_teaser:
+        kind=teaser_type(video)
+        primary=['music'] if kind=='music' else ['radio'] if video.get('externalType')=='radio' else ['broadcast'] if broadcast_context(video) and not PATTERNS['broadcastTeaserVarietyPattern'].search(title) else owner_types
+        return list(dict.fromkeys([*primary,*(['shorts'] if short or clip else [])]))
     if video.get('externalType') == 'radio' or RADIO.search(' '.join((title, program, video.get('channelName') or ''))):
-        return ['radio']
-    if TEASER.search(title) or (not FULL.search(title) and any(TEASER.match(line.strip()) for line in description)):
-        return ['teaser', 'shorts'] if short else ['teaser']
+        return ['radio',*(['shorts'] if short or clip else []),*(owner_types if fmt=='live' else [])]
     show = broadcast_context(video)
     if show and (short or clip) and (not broadcast_excluded(video) or CAM.search(title) or SEGMENT.search(title)):
         return ['broadcast', 'shorts']
@@ -45,13 +50,13 @@ def content_tabs(video, official):
     if show and SEGMENT.search(title):
         return ['broadcast', 'external']
     if show and not broadcast_excluded(video):
-        return ['home', 'broadcast']
+        return ['broadcast']
     if short or clip:
-        return ['shorts']
+        return ['shorts',*owner_types]
     if SINGING.search(context) or (video.get('externalType') == 'song' and re.search(r'\blive\b|\ub77c\uc774\ube0c|\uac00\ucc3d', context, re.I)):
-        return ['home', 'music', 'own'] if official else ['broadcast', 'external']
+        return ['home', 'music', 'own'] if official else ['music', 'external']
     if video.get('category') == 'music':
-        return ['home', 'music']
+        return ['home', 'music',*(owner_types if fmt=='live' else [])]
     tabs = ['home', *video.get('contentTypes', ['own' if official else 'external'])]
     if fmt == 'live':
         tabs.append('live')
@@ -88,6 +93,10 @@ def apply_tags(record, official):
         v['tags']=['쇼츠' if t=='기타' else t for t in v.get('tags',[])]
         labels.append('쇼츠')
     v['contentTabs']=content_tabs(v, official)
+    v['musicType']=music_type(v)
+    v['teaserType']=teaser_type(v)
+    v['contentLength']=content_length(v)
+    v['hierarchyVersion']=2
     v['musicBroadcast']='broadcast' in v['contentTabs']
     if v['musicBroadcast']:
         labels.append('음악방송')

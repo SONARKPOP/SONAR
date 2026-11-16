@@ -9,9 +9,9 @@ test('real credits preserve distinct roles, deduplicate repeated release and ren
   const server=await createServer({optimizeDeps:{noDiscovery:true,include:[]},server:{middlewareMode:true,hmr:false,ws:false,watch:null}});
   try{
     const {default:MusicCredits,musicSongRows}=await server.ssrLoadModule('/src/MusicCredits.jsx');
-    const data=JSON.parse(readFileSync(new URL('../public/data/music-credits.json',import.meta.url),'utf8'));
+    const data=JSON.parse(readFileSync(new URL('../config/music-credits.json',import.meta.url),'utf8'));
     const rows=musicSongRows(data);
-    assert.equal(rows.length,2);
+    assert.equal(rows.length,350);
     assert.equal(rows[0].releases.length,2);
     assert.equal(rows[0].recordings.length,1);
     assert.equal(rows[0].roles.lyricist.length,4);
@@ -24,6 +24,10 @@ test('real credits preserve distinct roles, deduplicate repeated release and ren
     assert.match(html,/미확인/);
     assert.match(html,/MusicBrainz/);
     assert.match(html,/공식 검증 아님/);
+    const expanded=renderToStaticMarkup(React.createElement(MusicCredits,{data}));
+    assert.match(expanded,/나무위키 1차 수집/);
+    assert.match(expanded,/유통사 게재 크레딧/);
+    assert.match(expanded,/https:\/\/music\.bugs\.co\.kr\/album\/17460776/);
     assert.doesNotThrow(()=>renderToStaticMarkup(React.createElement(MusicCredits)));
   }finally{await server.close();}
 });

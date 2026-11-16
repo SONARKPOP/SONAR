@@ -6,10 +6,10 @@ class MusicCreditsTests(unittest.TestCase):
         import json
         from pathlib import Path
         seed=json.loads(Path('config/music-credits.json').read_text(encoding='utf-8'))
-        data=build_catalog(seed, {'twice','blackpink'})
-        self.assertEqual(len(data['songs']), 2)
-        self.assertEqual(len(data['tracks']), 3)
-        self.assertEqual(len({x['recordingId'] for x in data['tracks'] if x['albumId'] != data['albums'][2]['id']}), 1)
+        data=build_catalog(seed, {a['artistId'] for a in seed['artists']})
+        self.assertEqual(len(data['songs']), 350)
+        self.assertEqual(len(data['tracks']), 35)
+        self.assertEqual(len({x['recordingId'] for x in data['tracks'] if x['albumId'] in {a['id'] for a in data['albums'][:2]}}), 1)
         self.assertIsNone(data['recordings'][0]['roles']['producer'])
         self.assertEqual(len(data['works'][0]['roles']['lyricist']), 4)
         self.assertNotEqual(data['works'][0]['roles']['composer'],data['works'][0]['roles']['lyricist'])
@@ -41,3 +41,27 @@ class MusicCreditsTests(unittest.TestCase):
                 client=MusicBrainzClient(directory,'SONAR/1.0 (operator@example.org)')
                 self.assertEqual(client.get('recording',mbid)['id'],mbid)
                 network.assert_not_called()
+
+    def test_expansion_keeps_firstline_status_and_primary_conflict(self):
+        import json
+        from pathlib import Path
+        seed=json.loads(Path('config/music-credits.json').read_text(encoding='utf-8'))
+        sources={s['id']:s for s in seed['sources']}
+        self.assertEqual(sources['namu-credits-suran']['verification'],'namuwiki_collected')
+        wish=next(w for w in seed['works'] if w['title']=='Wish i could')
+        people={p['id']:p['name'] for p in seed['persons']}
+        self.assertEqual([people[p] for p in wish['roles']['composer']],['전용준','philtre'])
+        self.assertIn('bugs-album-17460776',wish['sourceIds'])
+        self.assertTrue(any('Dump adds SURAN' in r['reason'] for r in seed['review']))
+
+    def test_unknown_source_and_wrong_role_layer_rejected(self):
+        import json, copy
+        from pathlib import Path
+        seed=json.loads(Path('config/music-credits.json').read_text(encoding='utf-8'))
+        artists={a['artistId'] for a in seed['artists']}
+        bad=copy.deepcopy(seed);bad['works'][0]['sourceIds']=['invented-source']
+        with self.assertRaisesRegex(ValueError,'evidence source'):
+            build_catalog(bad,artists)
+        bad=copy.deepcopy(seed);bad['recordings'][0]['roles']['composer']=[]
+        with self.assertRaisesRegex(ValueError,'role layer'):
+            build_catalog(bad,artists)

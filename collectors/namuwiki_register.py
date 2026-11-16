@@ -149,7 +149,7 @@ class Documents:
  def structured(self,title,text,kind,aliases=()):
   key=kind+':'+title;digest=hashlib.sha256(text.encode()).hexdigest();signature=sorted(aliases)
   old=self.parsed.get(key,{})
-  version=7
+  version=8
   if old.get('version')==version and old.get('sha256')==digest and old.get('aliases')==signature:return old['values']
   values=personal_facts(text) if kind=='person' else {'profile':profile_candidates(text),'roster':roster_entries(text,title,aliases)}
   self.parsed[key]={'version':version,'sha256':digest,'aliases':signature,'values':values}
@@ -164,7 +164,7 @@ def personal_facts(text):
  if values.get('birthDate'):result.update(birthDate=values['birthDate'],birthDatePrecision='day')
  if values.get('legalName'):result['legalNames']={'und':values['legalName']}
  if values.get('nationalitiesText'):
-  countries=list(dict.fromkeys(code for name,code in COUNTRIES.items() if name in values['nationalitiesText']))
+  countries=list(dict.fromkeys(code for name,code in COUNTRIES.items() if re.search(r'(?<![가-힣A-Za-z])'+re.escape(name)+r'(?![가-힣A-Za-z])',values['nationalitiesText'])))
   if countries:result['nationalities']=countries
  if values.get('birthPlaceText'):result['birthPlace']=values['birthPlaceText']
  for row in soup(prefix).find_all('tr'):
