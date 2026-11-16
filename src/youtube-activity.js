@@ -1,3 +1,4 @@
+export const ACTIVE_BROWSE_STATES=['SURGE','SAILING','COASTING','ANCHORED'];
 import rules from '../config/activity-rules.json' with {type:'json'};
 export const ACTIVITY_META={SURGE:{color:'#ef4444',icon:'flame'},SAILING:{color:'#22c55e',icon:'ship'},COASTING:{color:'#eab308',icon:'waves'},ANCHORED:{color:'#f97316',icon:'anchor'},'LOST SIGNAL':{color:'#94a3b8',icon:'wifi-off'}};
 export const UNKNOWN_ACTIVITY_LABELS={

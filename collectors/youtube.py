@@ -71,12 +71,14 @@ class YouTube:
 
 @lru_cache(maxsize=4096)
 def alias_pattern(alias):
-    return re.compile(r'(?<![\w])' + re.escape(alias) + r'(?![\w])', re.IGNORECASE)
+    if alias.isascii():return re.compile(r'(?<![\w])'+re.escape(alias)+r'(?![\w])',re.I)
+    suffix=r'(?:의|은|는|이|가|을|를|와|과|도|님|에게|에서|랑|이랑|만|까지)'
+    return re.compile(r'(?<![^\W_])'+re.escape(alias)+r'(?:'+suffix+r'(?![^\W_])|(?![^\W_]))',re.I)
 
 
 def mentions(text, alias):
     # Latin word boundaries prevent IVE matching "live" or REI matching other words.
-    return bool(alias_pattern(alias).search(text)) if alias.isascii() else alias.casefold() in text.casefold()
+    return bool(alias_pattern(alias).search(text))
 
 def member_group_ids(member):
     return {member['groupId'], *(h['groupId'] for h in member.get('membershipHistory', []) if h.get('groupId'))}
@@ -88,6 +90,8 @@ def member_match(member, snippet, groups):
     title = snippet['title']
     cautious = {a.casefold() for a in member.get('ambiguousAliases', [])}
     for alias in member['aliases']:
+        if len(alias)==1 and not alias.isascii() and not member_group_ids(member).intersection(groups):
+            continue
         if alias.casefold() in cautious:
             # Descriptions often contain a boilerplate list of every member.
             # Only explicit title mentions or editorial overrides assign members.
@@ -135,6 +139,18 @@ def group_title_aliases(group):
     return [alias for alias in group['aliases'] if alias.casefold() not in ambiguous]
 
 
+def title_appearance_mention(title, alias):
+    if not mentions(title,alias):return False
+    # Nicknames/comparisons describe another person, not the named artist.
+    nickname=r'(?:제\s*2\s*의|리틀|닮은꼴|[가-힣]{2,}(?:동|촌)(?:의)?|PC방)\s*'+re.escape(alias)
+    return not re.search(nickname,title,re.I)
+
+
+def guest_only_title(title,channel):
+    pattern=channel.get('guestOnlyTitlePattern')
+    return bool(pattern and re.search(pattern,title,re.I))
+
+
 def has_collaboration_title(title, owner_aliases, guest_aliases):
     separator = r'(?:\s*×\s*|\s+[xX]\s+)'
     for owner in owner_aliases:
@@ -154,7 +170,8 @@ ORIGINAL_ARTIST_CREDIT = re.compile(
 def normalize(raw, channel, config, override=None):
     snippet = raw['snippet']
     text = ORIGINAL_ARTIST_CREDIT.sub(' ', snippet['title'])
-    groups = set(channel['groupIds'] if channel['official'] else [])
+    guest_only=guest_only_title(text,channel)
+    groups = set(channel['groupIds'] if channel['official'] and not guest_only else [])
     owner_groups = set(groups)
     credit_lines = [line for line in snippet.get('description', '').splitlines()
                     if re.match(r'^\s*(?:\uCD9C\uC5F0(?:\uC9C4)?|\uAC8C\uC2A4\uD2B8|guests?|starring)\s*[:\uFF1A-]', line, re.I)]
@@ -172,8 +189,8 @@ def normalize(raw, channel, config, override=None):
             groups.add(gid)
             appearance_evidence.append({'groupId':gid, 'source':'publisher-credit-line',
                 'role':'participant', 'url':'https://www.youtube.com/watch?v=' + raw['id']})
-        elif any(mentions(text, alias) for alias in aliases) and (
-                not channel['official'] or (related and
+        elif any(title_appearance_mention(text, alias) for alias in aliases) and (
+                guest_only or not channel['official'] or (related and
                  (group.get('artistType') != 'solo' or personal_title_kind(text, aliases, True))) or
                 (group.get('artistType') != 'solo' and has_collaboration_title(text, owner_aliases, aliases))):
             groups.add(gid)
@@ -244,7 +261,7 @@ def read_config():
 
 def ambiguous_artist_links(config):
     return {g['id']: {g['id'], *g.get('relatedGroupIds', []), *g.get('previousGroupIds', [])}
-            for g in config['groups'] if g.get('ambiguousAliases')}
+            for g in config['groups'] if g.get('ambiguousAliases') or g.get('titleBoundaryReview')}
 
 
 def prune_stale_attribution(record, channel, config, override=None, ambiguous_links=None):
@@ -256,17 +273,23 @@ def prune_stale_attribution(record, channel, config, override=None, ambiguous_li
                 'memberIds':[mid for mid in override.get('memberIds', record['memberIds'])
                              if member_groups.get(mid,set()).intersection(keep)]}
     groups = set(record['groupIds'])
+    guest_only=guest_only_title(record.get('title',''),channel)
     owners = set(channel['groupIds']) if channel['official'] else set()
     links = ambiguous_links if ambiguous_links is not None else ambiguous_artist_links(config)
     risky = set().union(*(links[gid] for gid in groups & links.keys() - owners))
     if (record.get('demo') or record.get('platform') != 'youtube' or not record.get('title') or
-            not ((owners and groups - owners) or risky)):
+            not ((owners and groups - owners) or risky or guest_only)):
         return record
     raw = {'id':record['platformId'], 'snippet':{
         'title':record['title'], 'description':record.get('description', ''),
         'publishedAt':record['publishedAt'], 'channelTitle':record.get('channelName', channel['name'])}}
     inferred = normalize(raw, channel, config)
     keep = groups.intersection(inferred['groupIds'])
+    if guest_only:keep.update(inferred['groupIds'])
+    # Keep reviewed participation evidence even when a short title omits names.
+    from .activity_comparison import confirmed,evidence_for
+    known_members={m['id']:m for m in config['members']}
+    keep.update(g['id'] for g in config['groups'] if g['id'] in groups and any(confirmed(e) and evidence_for(e,g,known_members) for e in record.get('appearanceEvidence',[])))
     if not owners:
         keep |= groups - risky
     if keep == groups:

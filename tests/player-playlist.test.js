@@ -29,3 +29,10 @@ test('new hard blocks also exclude cached playlist neighbors',()=>{
  const allowed=hardBlockContent(rows,['blocked'],{groups:[{id:'safe'},{id:'blocked'}],members:[]});
  assert.equal(adjacentVideos(allowed,'a').next.id,'c');
 });
+import {playlistKeyDirection} from '../src/player-playlist.js';
+test('shorts arrow navigation ignores search, player geometry and modifier keys',()=>{
+ for(const [key,expected] of [['ArrowLeft',-1],['ArrowUp',-1],['ArrowRight',1],['ArrowDown',1],['Space',0]])assert.equal(playlistKeyDirection({key}),expected);
+ assert.equal(playlistKeyDirection({key:'ArrowRight',ctrlKey:true}),0);
+ assert.equal(playlistKeyDirection({key:'ArrowRight',target:{closest:()=>true}}),0);
+ assert.equal(playlistKeyDirection({key:'ArrowRight',defaultPrevented:true}),0);
+});

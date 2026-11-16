@@ -1,5 +1,5 @@
 import {artistCategories,visibleArtistIds} from './lib.js';
-import {activityView} from './youtube-activity.js';
+import {activityView,ACTIVE_BROWSE_STATES} from './youtube-activity.js';
 import {nationalityView} from './person-directory.js';
 const safe=url=>{try{return new URL(url).protocol==='https:';}catch{return false;}};
 function participantIds(row){
@@ -29,9 +29,9 @@ export function favoriteArtistIds(catalog,ids){
  const preferred=new Set(ids),parents=new Set((catalog?.members||[]).filter(person=>preferred.has(person.id)).map(person=>person.groupId));
  return (catalog?.groups||[]).filter(group=>preferred.has(group.id)||parents.has(group.id)||(group.relatedMemberIds||[]).some(id=>preferred.has(id))).map(group=>group.id);
 }
-export function browsingArtistIds(catalog,{types,excluded=[],muted=[],hardBlocked=[],favoriteIds=[],favoritesOnly=false,activeOnly=false,now=Date.now()}){
+export function browsingArtistIds(catalog,{types,excluded=[],muted=[],hardBlocked=[],favoriteIds=[],favoritesOnly=false,activeOnly=false,activeStates=ACTIVE_BROWSE_STATES,now=Date.now()}){
  const preferred=new Set(favoriteArtistIds(catalog,favoriteIds)),off=new Set([...muted,...hardBlocked]);
- const rows=(catalog?.groups||[]).filter(group=>!off.has(group.id)&&(!favoritesOnly||preferred.has(group.id))&&(!activeOnly||['SURGE','SAILING','COASTING','ANCHORED'].includes(activityView(group,now)?.state)));
+ const rows=(catalog?.groups||[]).filter(group=>!off.has(group.id)&&(!favoritesOnly||preferred.has(group.id))&&(!activeOnly||activeStates.includes(activityView(group,now)?.state)));
  return visibleArtistIds(rows,rows.map(row=>row.id),types,excluded);
 }
 export function visibleLiveRows(rows,catalog,{types,hardBlocked=[],excluded=[],favorites=[]}){

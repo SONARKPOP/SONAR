@@ -8,7 +8,7 @@ import {localize,useLanguage} from './i18n';
 
 const dateFormat=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'});
 
-function VideoArtistTags({video,groupsById,onSearch}){
+function VideoArtistTags({video,groupsById,onSearch,onGroupSelect}){
  const soloId=video.individualActivity?.artistId;
  const careerIds=video.individualActivity?.groupIds||[];
  const ids=[...new Set([...(soloId?[soloId]:[]),...video.groupIds,...careerIds])];
@@ -17,11 +17,11 @@ function VideoArtistTags({video,groupsById,onSearch}){
   if(id===soloId||artist?.artistType==='solo')return <span className="video-solo-name" key={id} data-no-translate>{name}</span>;
   const former=groupsById.get(soloId)?.previousGroupIds?.includes(id);
   return <button type="button" className="video-group-tag" key={id} data-no-translate
-   aria-label={`${name}${former?' 출신':''} 검색`} onClick={()=>onSearch(name)}>{name}{former&&<small> 출신</small>}</button>;
+   aria-label={`${name}${former?' 출신':''} 검색`} onClick={()=>onGroupSelect?onGroupSelect(id):onSearch(name)}>{name}{former&&<small> 출신</small>}</button>;
  })}</div>;
 }
 
-export default function VideoCard({video,index=0,number=index+1,groupsById,style,station=false,onOpen,onSearch,onMemberSelect,memberName}){
+export default function VideoCard({video,index=0,number=index+1,groupsById,style,station=false,onOpen,onSearch,onGroupSelect,onMemberSelect,memberName}){
  const language=useLanguage();
  const [failedImage,setFailedImage]=useState('');
  const date=new Date(video.publishedAt),sourceUrl=videoSourceUrl(video);
@@ -49,7 +49,7 @@ export default function VideoCard({video,index=0,number=index+1,groupsById,style
     {platform==='youtube'&&<Youtube size={14} aria-hidden="true"/>}<span data-no-translate>{(PLATFORM_LABELS[platform]||platform).toUpperCase()}</span>
    </a>}
   </div>
-  <div className="video-meta"><VideoArtistTags video={video} groupsById={groupsById} onSearch={onSearch}/>
+  <div className="video-meta"><VideoArtistTags video={video} groupsById={groupsById} onSearch={onSearch} onGroupSelect={onGroupSelect}/>
    <time dateTime={Number.isFinite(date.getTime())?video.publishedAt:undefined}>{Number.isFinite(date.getTime())?dateFormat.format(date):'날짜 미확인'}</time>
   </div>
   <button type="button" className="video-title" data-no-translate title={video.title} onClick={()=>onOpen(video)}>{video.title}</button>

@@ -48,7 +48,7 @@ def archive_years(items):
         years.add(str(stamp.replace(tzinfo=stamp.tzinfo or timezone.utc).astimezone(KST).year))
     return sorted(years, reverse=True)
 
-def publish(records, config, events=(), output=DATA, demo=False):
+def publish(records, config, events=(), output=DATA, demo=False, attribution_cleaned=False):
     output = Path(output)
     # Events remain an empty schema field for compatibility; schedules are disabled.
     events = ()
@@ -60,11 +60,19 @@ def publish(records, config, events=(), output=DATA, demo=False):
     sources = {c['id']:c for c in config['channels']}
     artists = {group['id']:group for group in config['groups']}
     members = {member['id']:member for member in config['members']}
+    from .youtube import ambiguous_artist_links,prune_stale_attribution,read_overrides,guest_only_title
+    attribution_links=ambiguous_artist_links(config)
+    attribution_overrides=read_overrides().get('videos',{})
     indexed = {}
     for record in records:
         source = sources.get(record['channelId'], {})
         if not approved_original(source):
             continue
+        if not attribution_cleaned and (set(record.get('groupIds',[])).intersection(attribution_links) or guest_only_title(record.get('title',''),source)):
+            override=attribution_overrides.get(record.get('platformId'))
+            if override is None and record.get('memberTagging',{}).get('source')=='manual-override':
+                override={'groupIds':record['groupIds'],'memberIds':record.get('memberIds',[])}
+            record=prune_stale_attribution(record,source,config,override,attribution_links)
         record = scope_video(record, artists, members)
         if not record['groupIds']:
             continue

@@ -49,7 +49,7 @@ def sync_catalog(config_dir=CONFIG, output=DATA, *, reclassify=True):
     # Keep new uncollected artist aliases out of automatic archive reclassification.
     enabled=set(attribution_config.get('collectionGroupIds',[]))
     matching_config={**attribution_config,'groups':[g for g in attribution_config['groups']
-                     if g.get('registrationStatus')!='namuwiki_collected' or g['id'] in enabled]}
+                     if g.get('registrationStatus')!='namuwiki_collected' or g['id'] in enabled or g.get('titleBoundaryReview')]}
     ambiguous_links = ambiguous_artist_links(matching_config)
 
     def clean(record):
@@ -92,7 +92,7 @@ def sync_catalog(config_dir=CONFIG, output=DATA, *, reclassify=True):
     candidates = read(output / 'live-candidates.json') if (output / 'live-candidates.json').exists() else {'ids':[]}
     retained = {v['platformId'] for v in records if v['channelId'] in official}
     candidates['ids'] = [i for i in candidates['ids'] if i in retained]
-    publish(records, config, events, output=output, demo=previous.get('demo', False))
+    publish(records, config, events, output=output, demo=previous.get('demo', False), attribution_cleaned=True)
     write(output / 'live.json', live)
     write(output / 'live-candidates.json', candidates)
     return config

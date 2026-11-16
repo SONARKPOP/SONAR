@@ -42,3 +42,40 @@ test('locally bundled Korea boundaries project into a meaningful regional map',(
  const districts=JSON.parse(fs.readFileSync(new URL('../public/data/maps/korea-sigungu.geojson',import.meta.url)));
  assert.ok(districts.features.length>200);
 });
+import {geographyRows,geographySummary} from '../src/birthplace-data.js';
+test('Bangkok and reviewed foreign administrative labels establish geography independently of nationality',()=>{
+ for(const [birthPlace,country] of [['방콕','TH'],['도쿄도','JP'],['아이치현 나고야시','JP'],['타이베이시','TW'],['캘리포니아 주 로스앤젤레스','US']]){
+  const location=resolveBirthplace({birthPlace,nationalities:['KR']});assert.equal(location.countryCode,country);assert.ok(location.geographySource.sourceUrl.startsWith('https://www.wikidata.org/'));
+ }
+});
+test('nationality overlay keeps uncertain birthplace separate and never invents an administrative region',()=>{
+ const person={id:'p',nationalities:['TH'],profileSources:{nationalities:{sourceUrl:'https://source.example'}}};
+ const row=geographyRows([person])[0];assert.equal(row.location.basis,'nationality');assert.equal(row.location.country,'TH');assert.equal(row.location.region,null);assert.equal(row.location.district,null);assert.equal(row.location.source,person.profileSources.nationalities);assert.equal(person.birthPlace,undefined);
+ assert.equal(resolveBirthplace(person).countryCode,null);
+ assert.equal(geographyRows([person],undefined,{nationalityFallback:false})[0].location.country,null);
+});
+test('dual citizenship is shown per country but counted as one person, without overriding known birthplace',()=>{
+ const rows=geographyRows([{id:'dual',nationalities:['KR','US','US']},{id:'known',birthPlace:'Japan',nationalities:['KR']}]);
+ assert.equal(rows.filter(r=>r.person.id==='dual').length,2);assert.deepEqual(geographySummary(rows),{people:2,birthplace:1,nationality:1,unknown:0,unresolvedBirthplace:1});
+ assert.equal(rows.find(r=>r.person.id==='known').location.country,'JP');
+});
+test('registered Minnie is restored to Thailand without creating a new person ID',()=>{
+ const catalog=JSON.parse(fs.readFileSync(new URL('../public/data/catalog.json',import.meta.url)));
+ const person=catalog.members.find(p=>p.id==='gidle-minnie');assert.ok(person);assert.equal(resolveBirthplace(person).countryCode,'TH');assert.equal(geographyRows([person])[0].location.basis,'birthplace');
+});
+import {koreaMapCollection} from '../src/korea-map.js';
+test('Korea view includes both geographic outlines while preserving original region identities',()=>{
+ const world=JSON.parse(fs.readFileSync(new URL('../public/data/maps/world.geojson',import.meta.url)));
+ const south=JSON.parse(fs.readFileSync(new URL('../public/data/maps/korea-sido.geojson',import.meta.url)));
+ const combined=koreaMapCollection(world,south);
+ assert.equal(combined.features.length,18);assert.equal(combined.features.filter(f=>f.properties._country==='KP').length,1);assert.equal(south.features.length,17);
+ assert.equal(combined.features[0],south.features[0]);
+});
+test('Chorong maps to Sejong and later administrative names preserve historical birthplace text',()=>{
+ const catalog=JSON.parse(fs.readFileSync(new URL('../public/data/catalog.json',import.meta.url)));
+ const chorong=catalog.members.find(p=>p.name==='박초롱');assert.ok(chorong);
+ const location=resolveBirthplace(chorong);assert.equal(location.regionCode,'세종특별자치시');assert.match(location.raw,/청원군/);assert.match(location.administrativeChange.sourceUrl,/sejong\.go\.kr/);
+ assert.equal(resolveBirthplace({birthPlace:'인천광역시 남구 용현동'}).city,'인천광역시 미추홀구');
+ assert.equal(resolveBirthplace({birthPlace:'경상북도 군위군'}).regionCode,'대구광역시');
+ assert.notEqual(resolveBirthplace({birthPlace:'충청북도 청원군 부용면 외천리'}).regionCode,'세종특별자치시');
+});

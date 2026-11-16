@@ -9,6 +9,11 @@ from collectors.publish import publish
 
 
 class SourcePolicyTests(unittest.TestCase):
+    def test_user_excluded_source_never_reenters_public_catalog(self):
+        source={'id':'excluded','official':False,'groupIds':[],'catalogExcluded':True,'publisherReview':{'status':'approved','kind':'program','evidenceUrl':'https://publisher.example'}}
+        self.assertFalse(approved_original(source))
+        self.assertEqual(public_artist_scope({'groups':[],'members':[],'channels':[source]})['channels'],[])
+
     def test_creator_brand_and_public_sources_require_explicit_review(self):
         for kind in ('creator', 'brand', 'public-institution'):
             source = {'official':False, 'publisherReview':{

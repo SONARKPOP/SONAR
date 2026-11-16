@@ -244,7 +244,9 @@
   },
   {
     "id": "mbc-radio",
-    "seedVideoIds": ["AOOK60Yvtgc"],
+    "seedVideoIds": [
+      "AOOK60Yvtgc"
+    ],
     "platform": "youtube",
     "handle": "@radiombc",
     "name": "MBC Radio",
@@ -765,7 +767,7 @@
     "platform": "youtube",
     "official": false,
     "groupIds": [],
-    "collectionEnabled": true,
+    "collectionEnabled": false,
     "collectionPages": 2,
     "archivePages": 1,
     "externalType": "radio",
@@ -792,7 +794,9 @@
     "seedVideoIds": [
       "gtK6kSDYlgI",
       "4W_lrGeb3XQ"
-    ]
+    ],
+    "catalogExcluded": true,
+    "excludedReason": "User excluded 코빨간배춘기; use CHZZK when available, otherwise the approved 난아메리카노 program partner."
   },
   {
     "id": "dony-untitled",
@@ -1059,5 +1063,41 @@
       "checkedAt": "2026-11-08",
       "evidenceUrl": "https://www.youtube.com/watch?v=JYS9I-SDnoQ"
     }
+  },
+  {
+    "id": "bae-ten-americano",
+    "name": "난아메리카노 [배성재의 텐]",
+    "platform": "youtube",
+    "platformId": "UC5AvCi0P9NtXsdLfzzfXgJw",
+    "handle": "@im_americano",
+    "official": false,
+    "groupIds": [],
+    "collectionEnabled": true,
+    "collectionPages": 2,
+    "archivePages": 2,
+    "externalType": "radio",
+    "expectedChannelNames": [
+      "난아메리카노",
+      "im_americano"
+    ],
+    "publisherReview": {
+      "status": "approved",
+      "kind": "program",
+      "checkedAt": "2026-11-16",
+      "evidenceUrl": "https://www.youtube.com/channel/UC5AvCi0P9NtXsdLfzzfXgJw",
+      "basis": "User-requested program partner channel. Public channel description identifies it as the official partner for 배성재의 텐. Include artist-attributed original program uploads only.",
+      "sources": [
+        "https://www.youtube.com/@im_americano/about",
+        "https://programs.sbs.co.kr/radio/ten/main"
+      ]
+    },
+    "programs": [
+      {
+        "id": "bae-ten",
+        "name": "배성재의 텐",
+        "titlePattern": "배성재의\\s*텐|배텐|BaeSungJae|마피아\\s*게임",
+        "externalType": "radio"
+      }
+    ]
   }
 ]

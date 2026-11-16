@@ -20,3 +20,9 @@ export function swipeDirection(start,end){
  const dx=end.x-start.x,dy=end.y-start.y;
  return Math.abs(dy)>=55&&Math.abs(dy)>Math.abs(dx)*1.4?(dy<0?1:-1):0;
 }
+
+export function playlistKeyDirection(event){
+ if(event.defaultPrevented||event.altKey||event.ctrlKey||event.metaKey||event.shiftKey)return 0;
+ if(event.target?.isContentEditable||event.target?.closest?.('input,textarea,select,[contenteditable="true"],[data-player-drag],[data-player-resize]'))return 0;
+ return ({ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1})[event.key]||0;
+}

@@ -23,6 +23,7 @@ def reviewed_dedicated_channel(channel, group_id):
 
 
 def approved_original(channel):
+    if channel.get('catalogExcluded'):return False
     if channel.get('official') is True:
         return True
     review = channel.get('publisherReview', {})
@@ -44,6 +45,7 @@ def public_artist_scope(config):
     member_ids = {m['id'] for m in members}
     channels = []
     for source in config['channels']:
+        if source.get('catalogExcluded'):continue
         owners = [gid for gid in source.get('groupIds', []) if gid in group_ids]
         if source.get('groupIds') and not owners:
             continue
