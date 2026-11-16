@@ -1,7 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {artistProfileRows,uniquePeople,agencyHistory,analysisDate} from '../src/artist-insights.js';
+import {artistProfileRows,uniquePeople,analysisDate} from '../src/artist-insights.js';
+import {affiliationCategories} from '../src/profile-statistics.js';
 import {personDirectory} from '../src/person-directory.js';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=name=>JSON.parse(fs.readFileSync(path.join(root,'public/data',name),'utf8'));
@@ -17,18 +18,18 @@ const creatorCount=artist=>{
 const rows=catalog.groups.map(artist=>{
  const row=stats.get(artist.id),observed=observations.get(artist.id)?.windows['30'];
  const knownTypes=observed&&observed.observedUploads>0&&observed.types.unclassified===0;
- const agency=agencyHistory(artist).filter(a=>a.status==='current').map(a=>a.agencyId||a.name).sort();
+ const affiliations=affiliationCategories(artist);
  return {id:artist.id,name:artist.name,kind:artist.artistType==='solo'?'solo':'group',numeric:{
   meanAge:row?.birthDateCoverage>=.7?row.meanCurrentAge:null,medianAge:row?.birthDateCoverage>=.7?row.medianCurrentAge:null,
-  yearsSinceDebut:row?.yearsSinceDebut??null,currentMembers:row?.currentMembers??null,foreignNationalityShare:row?.nationalityCoverage>=.7?row.foreignNationalityShare:null,
+  ageStdDev:row?.birthDateCoverage>=.7?row.currentAgeStdDev:null,yearsSinceDebut:row?.yearsSinceDebut??null,currentMembers:row?.currentMembers??null,foreignNationalityShare:row?.nationalityCoverage>=.7?row.foreignNationalityShare:null,
   uploads30d:observed?.official??null,
   // Content-type proportions of an incomplete archive are not population proportions.
   shortsShare:null,
   liveShare:null,
   musicShare:null,
-  // Two reviewed songs cannot establish an artist's career-wide diversity or self-credit rate.
+  // A partial reviewed catalog cannot establish an artist's career-wide diversity or self-credit rate.
   creditDiversity:null,selfCreditShare:null},
-  categorical:{agency:agency.length===1?agency[0]:null,status:artist.groupStatus&&artist.groupStatus!=='unknown'?artist.groupStatus:null,multinational:row?.nationalityCoverage>=.7?(row.foreignNationalityShare>0?'foreign-nationality-present':'KR-only'):null},
+  categorical:{...affiliations,status:artist.groupStatus&&artist.groupStatus!=='unknown'?artist.groupStatus:null,multinational:row?.nationalityCoverage>=.7?(row.foreignNationalityShare>0?'foreign-nationality-present':'KR-only'):null},
   coverage:{birthDates:row?.birthDateCoverage??null,nationalities:row?.nationalityCoverage??null,official30d:observed?.officialCoverage||'uncollected',reviewedCreatorCount:creatorCount(artist),creditCatalogComplete:false}};
 });
 fs.writeFileSync(path.join(root,'public/data/analysis-features.json'),JSON.stringify({schemaVersion:1,asOf,referenceDate:date,policy:{minimumProfileCoverage:.7,missing:'null',creditFeatures:'excluded until artist catalog completeness is verified'},rows},null,2)+'\n');
