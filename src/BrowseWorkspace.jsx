@@ -1,7 +1,7 @@
 import React from 'react';
 import {Layers,Search,Users,X} from 'lucide-react';
 import './browse-workspace.css';
-import {localize,useLanguage} from './i18n';
+import {localize,useLanguage,formatMessage} from './i18n';
 
 export function WorkspaceNavigation({menus,page,category,onGo,onGroups,onAnalysis,language='ko'}){
  return localize(<nav className="workspace-navigation" aria-label="SONAR 화면">
@@ -38,7 +38,7 @@ export function ExternalExplorer({showTypes=true,types,type,channel,channels,onT
   <div className="workspace-channels" role="group" aria-label="외부 프로그램 및 채널">
    <button type="button" className="workspace-channel" aria-pressed={!channel} onClick={()=>onChannel('')}><b>전체 채널</b><span>{channels.length}개 탐색</span></button>
    {channels.map(item=><button type="button" className="workspace-channel" key={item.id} aria-pressed={channel===item.id} onClick={()=>onChannel(item.id)}>
-    <b data-no-translate>{item.name}</b><span>{item.count}개 영상{item.groups.size>1&&<em>공통 출연 {item.groups.size}그룹</em>}</span>
+    <b data-no-translate>{item.name}</b><span>{formatMessage('{count}개 영상',{count:item.count},language)}{item.groups.size>1&&<em>{formatMessage('공통 출연 {count}그룹',{count:item.groups.size},language)}</em>}</span>
    </button>)}
   </div>
   {!channels.length&&<p className="workspace-muted">현재 조건의 외부 출연 영상이 아직 없습니다. 그룹이나 기간을 바꿔보세요.</p>}

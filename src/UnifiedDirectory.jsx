@@ -11,7 +11,7 @@ import {ArtistPolicyDialog} from './ArtistPolicyDialog';
 import {artistInitials} from './directory-shortcuts';
 import {ACTIVITY_META,activityView} from './youtube-activity';
 import ActivityIcon,{ActivityGlyph} from './ActivityIcon';
-import {localize,useLanguage} from './i18n';
+import {localize,useLanguage,formatMessage} from './i18n';
 import './directory-compact.css';
 import './unified-artists.css';
 const PRESETS=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];
@@ -59,7 +59,7 @@ export default function UnifiedDirectory({catalog,clock,favorites,colors,exclude
   <AlphabetIndex value={initial} onChange={setInitial}/>
   <div className="unified-filter-row" aria-label="데뷔 연도"><button aria-pressed={year==='all'} onClick={()=>setYear('all')}>전체 연도</button>{years.map(start=><button key={start} aria-pressed={year===String(start)} onClick={()=>setYear(year===String(start)?'all':String(start))}>{start}–{start+4}</button>)}</div>
   <button className="directory-filter-reset" onClick={reset}>필터 초기화</button></div>
-  <p className="unified-results" role="status">결과 <b>{rows.length}</b> · 선호 <b>{protectedGroups.length}</b></p>
+  <p className="unified-results" role="status">{formatMessage('결과 {count} · 선호 {favorites}',{count:rows.length,favorites:protectedGroups.length},language)}</p>
   <div className="unified-list">{rows.map(row=>{
    const open=expanded===row.id,blocked=artists(row).some(id=>hardBlocked.includes(id)),fav=PRESETS.some(([key])=>hasPreset(row,key));
    const policyId=kind==='groups'?row.id:row.personId||row.id;

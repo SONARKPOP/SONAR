@@ -1,5 +1,9 @@
 import React from 'react';
 import {workspaceTranslations} from './workspace-translations.js';
+import {analysisTranslations} from './analysis-translations.js';
+import {navigationTranslations} from './navigation-translations.js';
+import {directoryTranslations} from './directory-translations.js';
+import {mapTranslations} from './map-translations.js';
 export const LanguageContext=React.createContext('ko');
 export const useLanguage=()=>React.useContext(LanguageContext);
 export const LANGUAGES=[['ko','KR'],['ja','JP'],['en','EN'],['es','ES']];
@@ -178,19 +182,23 @@ const entries={
  '공식 달력을 갱신하지 못했습니다. 마지막으로 확인한 일정이 있으면 유지하며, 표시된 일정이 전체 일정을 뜻하지는 않습니다.':['公式カレンダーを更新できませんでした。以前の予定がある場合は保持します。すべての予定が表示されているとは限りません。','Official calendars could not be refreshed. Previously confirmed events are retained when available; this list may be incomplete.','No se pudieron actualizar los calendarios oficiales. Se conservan los eventos anteriores si existen; la lista puede estar incompleta.'],
  '각 그룹 옆 하트·별·새싹으로 프리셋에 바로 저장·해제합니다. 한 그룹을 여러 프리셋에 저장할 수 있습니다. 금지 아이콘은 전체 보기에서 제외할 그룹입니다.':['各グループのアイコンで保存・解除できます。複数のプリセットに保存できます。禁止アイコンは全体表示から除外します。','Use the icons to save or remove groups in multiple presets. The block icon excludes a group from All.','Usa los iconos para guardar o quitar grupos de varios preajustes. El icono de bloqueo excluye un grupo de All.'],
 };
+export const UI_TRANSLATIONS={...entries,...workspaceTranslations,...navigationTranslations,...analysisTranslations,...directoryTranslations,...mapTranslations};
 export function translate(value,language){
  const index={ja:0,en:1,es:2}[language];
  if(index===undefined||typeof value!=='string')return value;
- const trimmed=value.trim(),found=(workspaceTranslations[trimmed]||entries[trimmed])?.[index];
+ const trimmed=value.trim(),found=UI_TRANSLATIONS[trimmed]?.[index];
  if(found!==undefined)return value.replace(trimmed,found);
- if(/^\d{4}년$/.test(trimmed))return trimmed.slice(0,4);
+ if(/^\d{4}년$/.test(trimmed))return trimmed.slice(0,4)+(language==='ja'?'年':'');
  const month=trimmed.match(/^(\d{1,2})월$/);
- if(month)return language==='ja'?trimmed:new Intl.DateTimeFormat(language,{month:'long',timeZone:'UTC'}).format(new Date(Date.UTC(2000,Number(month[1])-1,1)));
+ if(month)return language==='ja'?`${Number(month[1])}月`:new Intl.DateTimeFormat(language,{month:'long',timeZone:'UTC'}).format(new Date(Date.UTC(2000,Number(month[1])-1,1)));
  const count=trimmed.match(/^(\d+)개 그룹 선택$/);
  if(count)return [count[1]+'グループを選択',count[1]+' groups selected',count[1]+' grupos seleccionados'][index];
  const favorites=trimmed.match(/^선호그룹 선택 \((\d+)\)$/);
  if(favorites)return ['プリセットを選択','Select preset','Elegir preajuste'][index]+` (${favorites[1]})`;
  return value;
+}
+export function formatMessage(key,values={},language='ko'){
+ return translate(key,language).replace(/\{(\w+)\}/g,(token,name)=>Object.hasOwn(values,name)?(typeof values[name]==='number'?new Intl.NumberFormat(language).format(values[name]):String(values[name])):token);
 }
 // Translate interface text emitted by App while preserving event handlers,
 // values, keys, refs and third-party content that has no interface dictionary key.
