@@ -2,7 +2,7 @@ import {artistInitials} from './directory-shortcuts.js';
 
 const regions=new Intl.DisplayNames(['ko'],{type:'region'});
 const countries={'대한민국':'KR','한국':'KR','South Korea':'KR','Korea':'KR','일본':'JP','Japan':'JP','중국':'CN','중화인민공화국':'CN','China':'CN',
- '대만':'TW','중화민국':'TW','Taiwan':'TW','태국':'TH','Thailand':'TH','미국':'US','United States':'US','캐나다':'CA','Canada':'CA','호주':'AU','Australia':'AU'};
+ '홍콩':'HK','Hong Kong':'HK','마카오':'MO','Macau':'MO','싱가포르':'SG','Singapore':'SG','대만':'TW','중화민국':'TW','Taiwan':'TW','태국':'TH','Thailand':'TH','미국':'US','United States':'US','캐나다':'CA','Canada':'CA','호주':'AU','Australia':'AU'};
 const normalize=value=>String(value||'').normalize('NFKC').toLowerCase().replace(/\s+/g,'');
 export function nationalityView(value,language='ko'){
  const supplied=typeof value==='string'?value:value?.code||value?.countryCode||value?.name||'';

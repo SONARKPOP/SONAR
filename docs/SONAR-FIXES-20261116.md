@@ -25,15 +25,14 @@ Sources: https://chzzk.gitbook.io/chzzk/chzzk-api/live , https://www.youtube.com
 
 Minnie already existed as `gidle-minnie`; her recorded birthplace was Bangkok, which the old country resolver did not recognize. A source-linked geographic alias table restores country resolution without creating another person. Reviewed foreign place labels restore 119 records. Nationality-only map overlays remain separate from birthplace facts and cannot assign a city/province. Multiple citizenships count once per person in coverage and once in each associated country.
 
-Current audit: 1,955 distinct persons; 1,334 resolved birth countries, 429 nationality-only overlays and 192 unresolved countries. These are data-resolution counts, not official-biography verification counts. See geography-restored-20261116.json for source-linked records.
+Current audit: 1,955 distinct persons; 1,335 resolved birth countries, 429 nationality-only overlays and 191 unresolved countries. These are data-resolution counts, not official-biography verification counts. See geography-restored-20261116.json for source-linked records.
 
 Park Chorong's original Cheongwon/Buyong/Bugang birthplace is retained and mapped to Sejong using the municipal boundary-history source. Other supported cases include Incheon Nam-gu → Michuhol-gu, Gunwi → Daegu, and Masan/Jinhae → Changwon. Only the specifically verified part of old Buyong-myeon is mapped to Sejong; the rest of old Cheongwon is not blindly reassigned. Source-provided current names are separately identified and only used when present in the bundled boundary index. Unrecognized current names remain in review. See admin-geography-restored-20261116.json; map boundaries are dated 2025-01-01.
 
-Conventional display names are 대만 / 중국; raw source values and separate TW/CN identities are preserved. The Korea view includes the northern outline from the existing licensed world dataset, retaining detailed southern provinces/districts. Northern subnational detail is unavailable and explicitly labeled. Birth-country records and statistics remain distinct.
+Conventional display names are 대만 / 중국; raw source values and separate TW/CN identities are preserved. The Korea view includes the northern outline from the existing licensed world dataset, retaining detailed southern provinces/districts. Northern subnational detail is unavailable and explicitly labeled. Hong Kong, Macau and Singapore are retained in country/territory lists even though the coarse base geometry omits their outlines. Birth-country records and statistics remain distinct.
 
 Maps support drag, cursor-anchored wheel zoom and two-finger pinch/pan. Button and keyboard alternatives remain. Gesture math, country identities, Minnie, Chorong, partial-boundary exclusions and northern extent have automated regression coverage. Interactive browser preview could not be opened in this environment; physical mobile touch testing is not claimed.
 
 ## Validation
 
-pnpm test: 131 passed. Python unittest discovery with existing optional dump dependencies: 188 passed, no skips. Production build passed (1,700 modules). Supplied false-attribution cases were also checked against the rebuilt real group indexes. Existing preferences and artist/member IDs were preserved.
-
+pnpm test: 132 passed. Python unittest discovery with existing optional dump dependencies: 188 passed, no skips. Production build passed (1,700 modules). Supplied false-attribution cases were also checked against the rebuilt real group indexes. Existing preferences and artist/member IDs were preserved.

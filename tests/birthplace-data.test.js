@@ -79,3 +79,8 @@ test('Chorong maps to Sejong and later administrative names preserve historical 
  assert.equal(resolveBirthplace({birthPlace:'경상북도 군위군'}).regionCode,'대구광역시');
  assert.notEqual(resolveBirthplace({birthPlace:'충청북도 청원군 부용면 외천리'}).regionCode,'세종특별자치시');
 });
+test('small territories remain discoverable even when the base world geometry omits them',()=>{
+ for(const [birthPlace,country] of [['홍콩','HK'],['마카오','MO'],['싱가포르','SG']])assert.equal(resolveBirthplace({birthPlace}).countryCode,country);
+ assert.equal(geographyRows([{id:'hk',nationalities:['HK']}])[0].location.country,'HK');
+ assert.equal(geographyRows([{id:'unknown',nationalities:['ZZ']}])[0].location.country,null);
+});

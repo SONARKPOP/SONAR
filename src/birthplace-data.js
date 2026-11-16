@@ -64,7 +64,7 @@ export function geographyRows(people,gazetteer=defaultGazetteer,{nationalityFall
  return birthplaceRows(people,gazetteer).flatMap(row=>{
   const location={...row.location,basis:'birthplace'};
   if(location.country||!nationalityFallback)return [{...row,location}];
-  const nationalities=[...new Map((row.person.nationalities||[]).map(n=>nationalityView(n)).filter(n=>n.code&&gazetteer.countries.some(c=>c.code===n.code)).map(n=>[n.code,n])).values()];
+  const nationalities=[...new Map((row.person.nationalities||[]).map(n=>nationalityView(n)).filter(n=>{if(!n.code||['EU','UN','XA','XB','ZZ','QO'].includes(n.code))return false;try{return new Intl.DisplayNames(['en'],{type:'region'}).of(n.code)!==n.code;}catch{return false;}}).map(n=>[n.code,n])).values()];
   if(!nationalities.length)return [{...row,location}];
   return nationalities.map(n=>({person:row.person,location:{...location,country:n.code,countryName:n.name,region:null,district:null,basis:'nationality',source:row.person.profileSources?.nationalities||null,uncertain:true,reason:'nationality-only',originalBirthPlace:location.raw,raw:`${n.flag} ${n.name} · 국적 기준 · 출생지 미확인${location.raw?' ('+location.raw+')':''}`}}));
  });
