@@ -2,7 +2,16 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {geoMercator,geoPath} from 'd3-geo';
-import {resolveBirthplace,filterBirthplaceRows} from '../src/birthplace-data.js';
+import {normalizeBirthplace,resolveBirthplace,filterBirthplaceRows} from '../src/birthplace-data.js';
+
+test('Australian country aliases and evidenced compound places color Australia without nationality inference',()=>{
+ for(const [birthPlace,region] of [['호주',null],['호주 뉴사우스웨일스주 뉴캐슬','뉴사우스웨일스'],['빅토리아주 멜버른','빅토리아'],['뉴사우스웨일스 주 시드니','뉴사우스웨일스'],['퀸즐랜드 브리즈번','퀸즐랜드']]){
+  const place=normalizeBirthplace({birthPlace,nationalities:['KR']});
+  assert.equal(place.country,'AU',birthPlace);assert.equal(place.region,region,birthPlace);
+ }
+ assert.equal(normalizeBirthplace({birthPlace:'Victoria',nationalities:['AU']}).country,null);
+ assert.equal(normalizeBirthplace({birthPlace:'서울특별시',nationalities:['AU']}).country,'KR');
+});
 test('birthplace matches exact Korean province and longest district prefix, retaining evidence',()=>{
  const source={sourceUrl:'https://example.org/person',verificationStatus:'namuwiki_collected'};
  const p=resolveBirthplace({birthPlace:'경기도 수원시 권선구 구운동',profileSources:{birthPlace:source}});
