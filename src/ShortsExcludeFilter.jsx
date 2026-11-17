@@ -23,6 +23,6 @@ export function filterShortVideos(videos,enabled) {
   if(!enabled)return videos;
   return videos.filter(video=>{
     const seconds=durationSeconds(video);
-    return seconds===null||seconds>=60;
+    return video.format!=='short' && video.category!=='shorts' && (seconds===null||seconds>=60);
   });
 }
