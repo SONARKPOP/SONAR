@@ -152,7 +152,7 @@ def live_candidate_index(videos, waiting=None):
     starts = dict(waiting or {})
     ids = list(starts)
     for video in videos:
-        if video['liveStatus'] not in ('live', 'upcoming'):
+        if is_continuous_live(video) or video['liveStatus'] not in ('live', 'upcoming'):
             continue
         video_id = video['platformId']
         ids.append(video_id)

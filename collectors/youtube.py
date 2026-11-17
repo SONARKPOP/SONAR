@@ -530,11 +530,12 @@ def refresh_live(api):
     from .upload_cadence import stamp
     index = json.loads((DATA / 'live-candidates.json').read_text(encoding='utf-8'))
     old_feed = json.loads((DATA/'live.json').read_text(encoding='utf-8'))
-    old_live = {video['platformId'] for key in ('items', 'stations') for video in old_feed.get(key, [])}
+    old_live = {video['platformId'] for video in old_feed.get('items', [])}
+    station_ids = {video['platformId'] for video in old_feed.get('stations', [])}
     horizon = time.time() + 3600
     waiting = {video_id: start for video_id, start in index.get('scheduledStarts', {}).items()
                if video_id in index['ids'] and video_id not in old_live and (stamp(start) or 0) > horizon}
-    ids = (set(index['ids']) | old_live) - waiting.keys()
+    ids = (set(index['ids']) | old_live) - waiting.keys() - station_ids
     if not ids:
         print('No known live candidates due; no YouTube calls or data changes.')
         return
