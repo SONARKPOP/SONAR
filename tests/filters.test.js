@@ -50,7 +50,14 @@ test('all shipped group indexes resolve to a unique canonical record',()=>{
  for(const name of readdirSync(new URL('groups/',data))){
   const index=JSON.parse(readFileSync(new URL(`groups/${name}`,data),'utf8'));
   assert.equal(dedupe(index.items).length,index.items.length);
-  for(const v of index.items){const canonical=JSON.parse(readFileSync(new URL(`content/${v.id}.json`,data),'utf8'));assert.equal(canonical.id,v.id);assert.ok(v.groupIds.includes(name.slice(0,-5)));}
+  for(const v of index.items){
+   const canonical=JSON.parse(readFileSync(new URL(`content/${v.id}.json`,data),'utf8'));
+   assert.equal(canonical.id,v.id);
+   assert.deepEqual(v.groupIds,canonical.groupIds);
+   assert.deepEqual(v.careerGroupIds,canonical.careerGroupIds);
+   const searchable=new Set([...canonical.groupIds,...canonical.careerGroupIds||[],...canonical.individualActivity?.groupIds||[]]);
+   assert.ok(searchable.has(name.slice(0,-5)),`${name}: ${v.id} has no appearance or career relationship`);
+  }
  }
 });
 test('sample selection has more than one full page and canonical records are platform keyed',()=>{
