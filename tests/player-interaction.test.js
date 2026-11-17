@@ -23,6 +23,7 @@ test('real player pointer handlers drag, pinch, cancel, and retain video childre
   const iframe=React.createElement('iframe',{key:'stable-video',src:'about:blank'});
   const render=()=>{cursor=0;return Player({children:iframe}).props.children[1];};
   let tree=render();const start=tree.props.style;
+  assert.deepEqual(tree.props.children[1].map(handle=>handle.props['data-player-resize']),['nw','ne','sw','se']);
   const capture={setPointerCapture(){}};
   const target={closest(selector){return selector==='[data-player-drag]'?{}:null;}};
   const event=(id,x,y)=>({pointerId:id,clientX:x,clientY:y,button:0,target,currentTarget:capture,preventDefault(){}});

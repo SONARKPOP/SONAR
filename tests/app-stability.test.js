@@ -50,6 +50,9 @@ test('App settles after initial detail loading and repeated content-tab clicks',
     load(id){if(id==='\0sonar-test-style')return 'export default {};';},
     transform(source,id){
       const path=id.replaceAll('\\','/');
+      if(path.endsWith('/src/useFilterHistory.js')){
+        return source.replace("import {useEffect,useRef} from 'react';",'const {useEffect,useRef}=globalThis.__sonarTestHooks;');
+      }
       if(path.endsWith('/src/useGroupVideos.js')){
         return source.replace("import {useEffect,useState} from 'react';",'const {useEffect,useState}=globalThis.__sonarTestHooks;');
       }

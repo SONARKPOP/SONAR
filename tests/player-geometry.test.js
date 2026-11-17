@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {clampPlayer, initialPlayer} from '../src/playerGeometry.js';
+import {clampPlayer, initialPlayer, fitPlayer, resizePlayer} from '../src/playerGeometry.js';
 test('player starts at the top and fits desktop and mobile viewports',()=>{
  for(const viewport of [{width:1440,height:900},{width:390,height:844},{width:320,height:240}]){
   const rect=initialPlayer(viewport);
@@ -34,5 +34,27 @@ test('portrait default is taller than wide and preserves room for controls',()=>
   assert.ok(rect.height>rect.width);
   assert.ok(rect.y+rect.height<=viewport.height-8);
   assert.ok(Math.abs((rect.width-24)/(rect.height-150)-9/16)<0.001);
+ }
+});
+
+test('mobile portrait defaults retain 9:16 media and corners can resize freely',()=>{
+ for(const viewport of [{width:390,height:844},{width:320,height:568},{width:844,height:390}]){
+  const rect=fitPlayer({x:8,y:8,width:900,height:900},viewport,9/16,150);
+  assert.ok(Math.abs((rect.width-24)/(rect.height-150)-9/16)<0.001);
+  assert.ok(rect.width<=viewport.width-16&&rect.height<=viewport.height-16);
+  const smaller=resizePlayer(rect,-60,0,viewport,9/16,150);
+  assert.ok(smaller.width<rect.width);
+  assert.equal(smaller.height,rect.height);
+  const vertical=resizePlayer(rect,0,-60,viewport,9/16,150);
+  if(rect.height>220)assert.ok(vertical.height<rect.height);
+ }
+});
+
+test('all four resize corners anchor the opposite corner',()=>{
+ const rect={x:200,y:150,width:400,height:500},viewport={width:1000,height:1000};
+ for(const corner of ['nw','ne','sw','se']){
+  const next=resizePlayer(rect,20,30,viewport,9/16,150,corner);
+  assert.equal(corner.includes('w')?next.x+next.width:next.x,corner.includes('w')?rect.x+rect.width:rect.x);
+  assert.equal(corner.includes('n')?next.y+next.height:next.y,corner.includes('n')?rect.y+rect.height:rect.y);
  }
 });
