@@ -7,8 +7,7 @@
   "description": "✦ More information about CHUU\nINSTAGRAM | https://www.instagram.com/chuu_atrp/\nX | https://twitter.com/chuu_atrp\nTIKTOK | https://www.tiktok.com/@chuu.atrp\nWEVERSE | https://weverse.io/chuu/\nFACEBOOK | https://www.facebook.com/chuu.atrp",
   "publishedAt": "2026-05-22T09:00:36Z",
   "groupIds": [
-    "chuu",
-    "loona"
+    "chuu"
   ],
   "memberIds": [
     "loona-chuu"
@@ -35,8 +34,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "contentTypes": [
@@ -46,9 +45,7 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "chuu",
-    "groupIds": [
-      "loona"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
@@ -62,7 +59,34 @@
   "teaserType": "",
   "contentLength": "regular",
   "hierarchyVersion": 2,
-  "careerGroupIds": [
-    "loona"
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "loona-chuu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "CHUU",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chuu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "CHUU",
+          "source": "title"
+        }
+      ]
+    }
   ]
 }

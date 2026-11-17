@@ -7,7 +7,6 @@
   "description": "#WENDY #웬디 \n#WEALIVE\n#WENDY_WORLDTOUR_ENCORE",
   "publishedAt": "2026-04-08T10:36:40Z",
   "groupIds": [
-    "red-velvet",
     "wendy"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "hkwe2HoYa6Q",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "wendy",
-    "groupIds": [
-      "red-velvet"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "wendy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 13,
+          "text": "WENDY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-wendy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 13,
+          "text": "WENDY",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -7,7 +7,6 @@
   "description": "淚之女王Ost/Queen of Tears Ost\n原唱: Crush\nMixed 混音: KY Studio \nDirector of photography 拍攝: @keymaxii\nEditor / Colorist 後製: JY\nSub 字幕: JY",
   "publishedAt": "2024-05-10T10:00:05Z",
   "groupIds": [
-    "clc",
     "elkie"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "5rd2HjOxPNQ",
@@ -54,14 +53,42 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "elkie",
-    "groupIds": [
-      "clc"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "cover",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "clc-elkie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 72,
+          "end": 77,
+          "text": "Elkie",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "elkie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 72,
+          "end": 77,
+          "text": "Elkie",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

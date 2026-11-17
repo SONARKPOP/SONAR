@@ -8,13 +8,9 @@
   "publishedAt": "2026-08-17T02:00:13Z",
   "groupIds": [
     "artms",
-    "heejin",
-    "loona"
+    "heejin"
   ],
-  "memberIds": [
-    "artms-heejin",
-    "loona-heejin"
-  ],
+  "memberIds": [],
   "channelId": "kbs-kpop",
   "channelName": "KBS Kpop",
   "category": "external",
@@ -35,17 +31,113 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:39:48.193946Z",
+    "collectedAt": "2026-11-17T17:18:47.649031Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "heejin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "희진",
+          "source": "title"
+        },
+        {
+          "start": 41,
+          "end": 47,
+          "text": "HeeJin",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-785f24419fb37180",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "희진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "loona-heejin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "희진",
+          "source": "title"
+        },
+        {
+          "start": 41,
+          "end": 47,
+          "text": "HeeJin",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "artms-heejin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "희진",
+          "source": "title"
+        },
+        {
+          "start": 41,
+          "end": 47,
+          "text": "HeeJin",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "artms",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 15,
+          "text": "아르테미스",
+          "source": "title"
+        },
+        {
+          "start": 35,
+          "end": 40,
+          "text": "ARTMS",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "RLrQOAlKIhc",
   "sourceUrl": "https://www.youtube.com/watch?v=RLrQOAlKIhc",
   "externalType": "other",

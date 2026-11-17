@@ -7,7 +7,6 @@
   "description": "2025 WENDY 1st WORLD TOUR\n[W:EALIVE] IN USA\n\nLet’s 𝒓𝒖𝒏 𝒊𝒏𝒕𝒐 𝒕𝒉𝒆 𝒔𝒖𝒏𝒌𝒊𝒔𝒔 with WENDY☀️\n\n📍 TICKET \n10/30 San Francisco – bit.ly/41Lg3Yq\n11/01 Pasadena - bit.ly/3I6GUYe\n11/04 Sugar Land - bit.ly/3VdTc42\n11/06 Chicago - bit.ly/47F8R3E\n11/09 Brooklyn - bit.ly/3VeWwf9\n11/11 Washington DC - bit.ly/4ph1oxV\n\n#WENDY #웬디\n#WEALIVE\n#WENDY_WORLDTOUR",
   "publishedAt": "2025-10-28T16:01:27Z",
   "groupIds": [
-    "red-velvet",
     "wendy"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "843-T2ATKGU",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "wendy",
-    "groupIds": [
-      "red-velvet"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "wendy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 10,
+          "text": "WENDY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-wendy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 10,
+          "text": "WENDY",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

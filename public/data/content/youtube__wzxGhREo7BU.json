@@ -7,7 +7,6 @@
   "description": "팬미팅 하러 홍콩에 다녀왔습니다🫶",
   "publishedAt": "2026-06-26T09:00:05Z",
   "groupIds": [
-    "gfriend",
     "yuju"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "wzxGhREo7BU",
@@ -57,10 +56,52 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "yuju",
-    "groupIds": [
-      "gfriend"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "yuju",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "유주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-f07a58ca3f31f17c",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "유주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "gfriend-yuju",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "유주",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

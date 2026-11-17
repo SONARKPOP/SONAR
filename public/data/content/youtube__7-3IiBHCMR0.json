@@ -9,10 +9,7 @@
   "groupIds": [
     "ive"
   ],
-  "memberIds": [
-    "ive-yujin",
-    "person-a8d2c786d580bbbc"
-  ],
+  "memberIds": [],
   "channelId": "m2",
   "channelName": "M2",
   "category": "external",
@@ -33,17 +30,81 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:38:42.752192Z",
+    "collectedAt": "2026-11-17T17:17:36.220818Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 43,
+          "text": "IVE",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "아이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a8d2c786d580bbbc",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "안유진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-yujin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "안유진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-0f7db83541a0c03e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "안유진",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "7-3IiBHCMR0",
   "sourceUrl": "https://www.youtube.com/watch?v=7-3IiBHCMR0",
   "externalType": "other",

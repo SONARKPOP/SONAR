@@ -44,7 +44,37 @@
       "musicType": "mv",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "akmu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "AKMU",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-c73ce5fb2451dbbf",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 8,
+              "end": 9,
+              "text": "봄",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__SNn_H_Q2moo",
@@ -54,9 +84,12 @@
       "title": "AKMU - '기쁨, 슬픔, 아름다운 마음 (Joy, Sorrow, A Beautiful Heart)' M/V",
       "publishedAt": "2026-04-07T09:00:06Z",
       "groupIds": [
-        "akmu"
+        "akmu",
+        "red-velvet"
       ],
-      "memberIds": [],
+      "memberIds": [
+        "red-velvet-joy"
+      ],
       "channelId": "akmu-official",
       "channelName": "AKMU",
       "category": "music",
@@ -92,7 +125,51 @@
       "musicType": "mv",
       "teaserType": "",
       "contentLength": "live",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "red-velvet-joy",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 25,
+              "end": 28,
+              "text": "Joy",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "joy",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 25,
+              "end": 28,
+              "text": "Joy",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "akmu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "AKMU",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__D54StAZFUrc",
@@ -140,7 +217,23 @@
       "musicType": "mv",
       "teaserType": "",
       "contentLength": "live",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "akmu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "AKMU",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

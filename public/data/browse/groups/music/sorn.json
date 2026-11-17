@@ -8,7 +8,6 @@
       "title": "SORN - Good Luck! (Official Music Video)",
       "publishedAt": "2026-06-04T16:00:20Z",
       "groupIds": [
-        "clc",
         "sorn"
       ],
       "memberIds": [
@@ -29,8 +28,8 @@
       "thumbnail": "https://i.ytimg.com/vi/hjiNdWNvanc/hqdefault.jpg",
       "durationLabel": "2m34s",
       "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
+        "policy": "title-context-v2",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "externalId": "hjiNdWNvanc",
@@ -46,74 +45,44 @@
       "musicBroadcast": false,
       "individualActivity": {
         "artistId": "sorn",
-        "groupIds": [
-          "clc"
-        ],
+        "groupIds": [],
         "kind": "individual",
         "evidence": "official-solo-channel"
       },
       "musicType": "mv",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
-    },
-    {
-      "id": "youtube__cAKSKi_KbcQ",
-      "platform": "youtube",
-      "platformId": "cAKSKi_KbcQ",
-      "demo": false,
-      "title": "손(SORN) - 'RUN' Official Music Video",
-      "publishedAt": "2021-03-23T09:00:31Z",
-      "groupIds": [
-        "clc",
-        "sorn"
-      ],
-      "memberIds": [
-        "clc-sorn"
-      ],
-      "channelId": "clc-official",
-      "channelName": "CLC 씨엘씨 (Official YouTube Channel)",
-      "category": "music",
-      "subtypes": [
-        "MV"
-      ],
-      "tags": [
-        "MV",
-        "자체 콘텐츠",
-        "기타·미분류"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/cAKSKi_KbcQ/hqdefault.jpg",
-      "durationLabel": "3m8s",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "cAKSKi_KbcQ",
-      "sourceUrl": "https://www.youtube.com/watch?v=cAKSKi_KbcQ",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicBroadcast": false,
-      "individualActivity": {
-        "memberId": "clc-sorn",
-        "groupIds": [
-          "clc"
-        ],
-        "kind": "solo-music",
-        "evidence": "explicit-title",
-        "artistId": "sorn"
-      },
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "clc-sorn",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "SORN",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "sorn",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "SORN",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

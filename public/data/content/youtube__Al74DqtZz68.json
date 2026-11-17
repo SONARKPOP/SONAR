@@ -7,8 +7,7 @@
   "description": "먹어보고 싶었던 것 & 가보고 싶었던 곳 마구마구 추천해 줘 원스! 🍴🧳\n\n#NAYEON #나연 #IMNAYEON \n\nⓒ 2025 JYP Entertainment. All Rights Reserved",
   "publishedAt": "2026-10-08T08:00:04Z",
   "groupIds": [
-    "nayeon",
-    "twice"
+    "nayeon"
   ],
   "memberIds": [
     "tw-nayeon"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "Al74DqtZz68",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "nayeon",
-    "groupIds": [
-      "twice"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 38,
+          "text": "NAYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tw-nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 38,
+          "text": "NAYEON",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

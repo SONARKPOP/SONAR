@@ -8,7 +8,6 @@
   "publishedAt": "2025-09-25T10:00:01Z",
   "groupIds": [
     "ive",
-    "sistar",
     "soyou"
   ],
   "memberIds": [
@@ -33,17 +32,61 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:39:16.227105Z",
+    "collectedAt": "2026-11-17T17:18:13.925413Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "sistar-soyou",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "소유",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "soyou",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "소유",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 19,
+          "end": 22,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "HfG5FeFFupY",
   "sourceUrl": "https://www.youtube.com/watch?v=HfG5FeFFupY",
   "externalType": "song",

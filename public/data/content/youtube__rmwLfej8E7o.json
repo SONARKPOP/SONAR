@@ -7,7 +7,6 @@
   "description": "권은비 (KWON EUNBI)가 전하는 2026 추석 인사 메시지\n\nX : http://x.com/kwoneunbi_offcl\nInstagram : http://instagram.com/kwoneunbi.official\nFacebook : http://facebook.com/kwoneunbi.offcl/\nTikTok : http://tiktok.com/@kwoneunbi.official\nWeverse : https://link.weverse.io/kwoneunbi_yt\n\n#권은비 #KWONEUNBI \n#추석 #한가위",
   "publishedAt": "2026-09-24T03:00:22Z",
   "groupIds": [
-    "izone",
     "kwon-eun-bi"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "rmwLfej8E7o",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "kwon-eun-bi",
-    "groupIds": [
-      "izone"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "izone-kwon-eun-bi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 20,
+          "text": "EUNBI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kwon-eun-bi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 20,
+          "text": "EUNBI",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

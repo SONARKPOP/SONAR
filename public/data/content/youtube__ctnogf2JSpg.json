@@ -7,7 +7,6 @@
   "description": "🐎Happy New Year 2026🐎 휘인(Whee In)이 무무(MOOMOO)에게 전하는 2026 새해 인사\n\n#휘인 #WheeIn",
   "publishedAt": "2025-12-31T15:01:26Z",
   "groupIds": [
-    "mamamoo",
     "wheein"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "ctnogf2JSpg",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "wheein",
-    "groupIds": [
-      "mamamoo"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

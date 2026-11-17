@@ -7,8 +7,7 @@
   "description": "#인생렌즈 #연예인렌즈 #렌즈추천\n자세한 내용은 본영상을 참고해 주세요",
   "publishedAt": "2026-07-22T09:00:34Z",
   "groupIds": [
-    "jeon-hyo-seong",
-    "secret"
+    "jeon-hyo-seong"
   ],
   "memberIds": [
     "secret-jeon-hyo-seong"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "jwgu8UICOwI",
@@ -53,14 +52,98 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "jeon-hyo-seong",
-    "groupIds": [
-      "secret"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 21,
+          "end": 24,
+          "text": "시크릿",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "secret-jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-93f1f4e0118a5b58",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "여름",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-507e18325fa70402",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "여름",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a62ad8bf482db100",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "여름",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

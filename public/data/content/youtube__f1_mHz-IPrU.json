@@ -7,8 +7,7 @@
   "description": "'IM NAYEON' 에 놀러온 걸 환영해🐰\n앞으로 즐겁게 놀아보장ㅎㅎㅎ\n\n#TWICE #NAYEON #IMNAYEON \n\nⓒ 2025 JYP Entertainment. All Rights Reserved",
   "publishedAt": "2026-09-22T09:00:03Z",
   "groupIds": [
-    "nayeon",
-    "twice"
+    "nayeon"
   ],
   "memberIds": [
     "tw-nayeon"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "f1_mHz-IPrU",
@@ -57,10 +56,50 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "nayeon",
-    "groupIds": [
-      "twice"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 16,
+          "text": "NAYEON",
+          "source": "title"
+        },
+        {
+          "start": 43,
+          "end": 49,
+          "text": "NAYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tw-nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 16,
+          "text": "NAYEON",
+          "source": "title"
+        },
+        {
+          "start": 43,
+          "end": 49,
+          "text": "NAYEON",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -8,7 +8,6 @@
   "publishedAt": "2023-11-03T17:39:09Z",
   "groupIds": [
     "kiss",
-    "mamamoo",
     "wheein"
   ],
   "memberIds": [
@@ -33,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:41:13.326356Z",
+    "collectedAt": "2026-11-17T17:20:23.389232Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,10 +40,54 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 35,
+          "end": 37,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "wheein",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-wheein",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "qlZt8KpJb-s",
   "sourceUrl": "https://www.youtube.com/watch?v=qlZt8KpJb-s",
   "contentTabs": [

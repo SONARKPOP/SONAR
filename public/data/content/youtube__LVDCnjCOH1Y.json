@@ -7,7 +7,6 @@
   "description": "Official MV Behind The Scenes for “ExtraL” from the album ‘Ruby’ out now: https://jennie.lnk.to/ruby\n\nFollow JENNIE -\nInstagram: https://www.instagram.com/jennierubyjane\nTikTok: https://www.tiktok.com/@jennierubyjane\nTwitter: https://twitter.com/jennierubyjane\nhttps://jenn.ie\n\nFollow Doechii -\nInstagram: https://www.instagram.com/doechii/\nTikTok: https://www.tiktok.com/@iamdoechii_\nTwitter: https://twitter.com/officialdoechii\n\n#JENNIE #Doechii #ExtraL",
   "publishedAt": "2025-06-27T15:00:43Z",
   "groupIds": [
-    "blackpink",
     "jennie"
   ],
   "memberIds": [
@@ -35,8 +34,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "contentTypes": [
@@ -46,9 +45,7 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "jennie",
-    "groupIds": [
-      "blackpink"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
@@ -61,5 +58,35 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "jennie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "JENNIE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "bp-jennie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "JENNIE",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

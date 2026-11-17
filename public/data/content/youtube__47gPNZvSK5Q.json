@@ -7,8 +7,7 @@
   "description": "SUNMI Digital Single [Forever July] \n🎧 linktr.ee/SUNMI_ForeverJuly\n\n#SUNMI #선미 \n#ForeverJuly",
   "publishedAt": "2026-08-13T09:30:21Z",
   "groupIds": [
-    "sunmi",
-    "wonder-girls"
+    "sunmi"
   ],
   "memberIds": [
     "wonder-girls-sunmi"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "47gPNZvSK5Q",
@@ -57,10 +56,50 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "sunmi",
-    "groupIds": [
-      "wonder-girls"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "wonder-girls-sunmi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 3,
+          "end": 8,
+          "text": "SUNMI",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "text": "선미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "sunmi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 3,
+          "end": 8,
+          "text": "SUNMI",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "text": "선미",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

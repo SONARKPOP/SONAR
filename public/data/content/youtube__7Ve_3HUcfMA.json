@@ -7,8 +7,7 @@
   "description": "-\nhttps://www.youtube.com/@KeiOffcl\nhttps://www.instagram.com/_flower_kei/\nhttps://twitter.com/Kei_offcl",
   "publishedAt": "2024-11-08T03:00:07Z",
   "groupIds": [
-    "kei",
-    "lovelyz"
+    "kei"
   ],
   "memberIds": [
     "lovelyz-kei"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "7Ve_3HUcfMA",
@@ -57,10 +56,64 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "kei",
-    "groupIds": [
-      "lovelyz"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "lovelyz",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "러블리즈",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-kei",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 23,
+          "text": "케이",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 28,
+          "text": "Kei",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kei",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 23,
+          "text": "케이",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 28,
+          "text": "Kei",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

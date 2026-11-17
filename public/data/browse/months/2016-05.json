@@ -44,7 +44,8 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "regular",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": []
     },
     {
       "id": "youtube__s1WtEPpObtI",
@@ -91,7 +92,23 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "person-63cb0e2badcb0e46",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "우희",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__pm1r5MtU08s",
@@ -136,7 +153,23 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "regular",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "dal-shabet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 25,
+              "end": 28,
+              "text": "달샤벳",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__30FBA0x114g",
@@ -146,7 +179,6 @@
       "title": "제시카 - Fly [세로라이브] Jessica - Fly",
       "publishedAt": "2016-05-29T03:00:01Z",
       "groupIds": [
-        "girls-generation",
         "jessica"
       ],
       "memberIds": [
@@ -171,12 +203,51 @@
       ],
       "externalType": "song",
       "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
+        "policy": "title-context-v2",
+        "source": "unclassified",
         "appearanceVerified": false
       },
-      "careerGroupIds": [
-        "girls-generation"
+      "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "girls-generation-jessica",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 18,
+              "end": 25,
+              "text": "Jessica",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "text": "제시카",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "jessica",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 18,
+              "end": 25,
+              "text": "Jessica",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "text": "제시카",
+              "source": "title"
+            }
+          ]
+        }
       ],
       "externalId": "30FBA0x114g",
       "sourceUrl": "https://www.youtube.com/watch?v=30FBA0x114g",
@@ -199,9 +270,12 @@
       "publishedAt": "2016-05-27T10:03:49Z",
       "groupIds": [
         "baek-a-yeon",
+        "hearts2hearts",
         "iu"
       ],
-      "memberIds": [],
+      "memberIds": [
+        "hearts2hearts-yeon"
+      ],
       "channelId": "dingo-music",
       "channelName": "딩고 뮤직 / dingo music",
       "category": "external",
@@ -225,6 +299,50 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "iu",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 51,
+              "end": 53,
+              "text": "IU",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "baek-a-yeon",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 15,
+              "end": 26,
+              "text": "Baek A Yeon",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "hearts2hearts-yeon",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 22,
+              "end": 26,
+              "text": "Yeon",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "k7o7Sq4tvRM",
       "sourceUrl": "https://www.youtube.com/watch?v=k7o7Sq4tvRM",
       "contentTabs": [
@@ -271,6 +389,22 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "gfriend",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 19,
+              "end": 26,
+              "text": "GFRIEND",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "epqn3dftnYA",
       "sourceUrl": "https://www.youtube.com/watch?v=epqn3dftnYA",
       "contentTabs": [
@@ -319,6 +453,36 @@
         "source": "title",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "gfriend",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 24,
+              "end": 28,
+              "text": "여자친구",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a62f6751637129dd",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 29,
+              "end": 31,
+              "text": "은하",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "qfd048Y1W2c",
       "sourceUrl": "https://www.youtube.com/watch?v=qfd048Y1W2c",
       "contentTabs": [
@@ -339,9 +503,12 @@
       "title": "백아연 - 쏘쏘 [세로라이브] Baek A Yeon - So-So",
       "publishedAt": "2016-05-25T09:00:00Z",
       "groupIds": [
-        "baek-a-yeon"
+        "baek-a-yeon",
+        "hearts2hearts"
       ],
-      "memberIds": [],
+      "memberIds": [
+        "hearts2hearts-yeon"
+      ],
       "channelId": "dingo-music",
       "channelName": "딩고 뮤직 / dingo music",
       "category": "external",
@@ -365,6 +532,42 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "baek-a-yeon",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 17,
+              "end": 28,
+              "text": "Baek A Yeon",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "text": "백아연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "hearts2hearts-yeon",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 24,
+              "end": 28,
+              "text": "Yeon",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "Dno2DiMZK-Y",
       "sourceUrl": "https://www.youtube.com/watch?v=Dno2DiMZK-Y",
       "contentTabs": [
@@ -421,7 +624,8 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": []
     },
     {
       "id": "youtube__5Y7mS6ki0no",
@@ -467,7 +671,8 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": []
     },
     {
       "id": "youtube__6wZfYlvbX_M",
@@ -477,7 +682,6 @@
       "title": "[캘리가사집] 제시카 - FLY",
       "publishedAt": "2016-05-22T10:00:00Z",
       "groupIds": [
-        "girls-generation",
         "jessica"
       ],
       "memberIds": [
@@ -502,12 +706,39 @@
       ],
       "externalType": "song",
       "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
+        "policy": "title-context-v2",
+        "source": "unclassified",
         "appearanceVerified": false
       },
-      "careerGroupIds": [
-        "girls-generation"
+      "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "girls-generation-jessica",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 8,
+              "end": 11,
+              "text": "제시카",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "jessica",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 8,
+              "end": 11,
+              "text": "제시카",
+              "source": "title"
+            }
+          ]
+        }
       ],
       "externalId": "6wZfYlvbX_M",
       "sourceUrl": "https://www.youtube.com/watch?v=6wZfYlvbX_M",
@@ -555,6 +786,22 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "gfriend",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 18,
+              "end": 25,
+              "text": "GFRIEND",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "GTIDf7IEbAU",
       "sourceUrl": "https://www.youtube.com/watch?v=GTIDf7IEbAU",
       "contentTabs": [
@@ -602,6 +849,36 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "twice",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 35,
+              "end": 40,
+              "text": "TWICE",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "lovelyz",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 58,
+              "end": 65,
+              "text": "LOVELYZ",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "a-jn9fngbDo",
       "sourceUrl": "https://www.youtube.com/watch?v=a-jn9fngbDo",
       "contentTabs": [
@@ -658,7 +935,8 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "regular",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": []
     },
     {
       "id": "youtube__gZusjfI8PdQ",
@@ -704,7 +982,23 @@
       "musicType": "mv",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__VE6YvVwc3R4",
@@ -740,6 +1034,36 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 29,
+              "end": 30,
+              "text": "s",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gfriend",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 10,
+              "end": 17,
+              "text": "GFRIEND",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "VE6YvVwc3R4",
       "sourceUrl": "https://www.youtube.com/watch?v=VE6YvVwc3R4",
       "contentTabs": [
@@ -796,7 +1120,23 @@
       "musicType": "teaser",
       "teaserType": "music",
       "contentLength": "teaser",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__Acu9kDa-mOk",
@@ -842,7 +1182,29 @@
       "musicType": "",
       "teaserType": "content",
       "contentLength": "teaser",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "AOA",
+              "source": "title"
+            },
+            {
+              "start": 27,
+              "end": 30,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__PK92N0EPUcA",
@@ -888,7 +1250,43 @@
       "musicType": "",
       "teaserType": "content",
       "contentLength": "teaser",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "AOA",
+              "source": "title"
+            },
+            {
+              "start": 16,
+              "end": 19,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 20,
+              "end": 21,
+              "text": "S",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__wVzHfMK9OAs",
@@ -934,7 +1332,8 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "regular",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": []
     },
     {
       "id": "youtube__VHuyWagDenc",
@@ -973,6 +1372,64 @@
         "source": "title",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "twice",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 5,
+              "text": "TWICE",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 38,
+              "end": 39,
+              "text": "s",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "nayeon",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 6,
+              "end": 12,
+              "text": "Nayeon",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "tw-nayeon",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 6,
+              "end": 12,
+              "text": "Nayeon",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "VHuyWagDenc",
       "sourceUrl": "https://www.youtube.com/watch?v=VHuyWagDenc",
       "contentTabs": [
@@ -1029,7 +1486,23 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "regular",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "melody-day",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 7,
+              "end": 16,
+              "text": "MelodyDay",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -7,7 +7,6 @@
   "description": "TAEYEON Official\nhttps://www.youtube.com/taeyeonofficial\nhttps://www.instagram.com/taeyeon.smofficial/\nhttps://twitter.com/TAEYEONsmtown\nhttps://www.facebook.com/TAEYEON.smofficial/\n\n#태연 #TAEYEON #TAENGLOG\n#Behind #마데카솔 #Madecassol",
   "publishedAt": "2026-05-13T11:00:55Z",
   "groupIds": [
-    "girls-generation",
     "taeyeon"
   ],
   "memberIds": [
@@ -35,8 +34,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "gIp7O8Egpu8",
@@ -56,10 +55,50 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "taeyeon",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 43,
+          "end": 45,
+          "text": "태연",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 67,
+          "text": "TAEYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 43,
+          "end": 45,
+          "text": "태연",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 67,
+          "text": "TAEYEON",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

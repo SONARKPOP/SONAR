@@ -8,9 +8,10 @@
   "publishedAt": "2026-03-30T13:30:42Z",
   "groupIds": [
     "irene",
-    "red-velvet"
+    "sunny-hill"
   ],
   "memberIds": [
+    "person-c50c1d5da305252d",
     "red-velvet-irene"
   ],
   "channelId": "irene-official",
@@ -36,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -55,12 +56,60 @@
   "contentLength": "short",
   "hierarchyVersion": 2,
   "musicBroadcast": false,
-  "individualActivity": {
-    "artistId": "irene",
-    "groupIds": [
-      "red-velvet"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  }
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-c50c1d5da305252d",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "빛나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "irene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 30,
+          "text": "아이린",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 25,
+          "text": "IRENE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-irene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 30,
+          "text": "아이린",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 25,
+          "text": "IRENE",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

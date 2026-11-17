@@ -7,8 +7,7 @@
   "description": "HWASA Single [So Cute] OUT NOW\n\n💿 Stream : https://linktr.ee/official.HWASA\n\n#화사 #HWASA\n#SoCute\n#PNATION #피네이션\n\n- HWASA Official Instagram: https://www.instagram.com/_mariahwasa\n- HWASA Official TikTok: https://www.tiktok.com/@official.hwasa\n- HWASA Official Fan Community: https://hwasa.bstage.in/\n\n- P NATION Official YouTube: https://www.youtube.com/PNATIONOfficial\n- P NATION Official Instagram: https://www.instagram.com/pnation.official/\n- P NATION Official Facebook: https://www.facebook.com/pnation.official/\n- P NATION Official X: https://twitter.com/OfficialPnation \n\nCopyrights 2026 ⓒ P NATION All Rights Reserved",
   "publishedAt": "2026-04-09T10:00:21Z",
   "groupIds": [
-    "hwasa",
-    "mamamoo"
+    "hwasa"
   ],
   "memberIds": [
     "mamamoo-hwasa"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "EDC2AH0G0Gg",
@@ -57,10 +56,50 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "hwasa",
-    "groupIds": [
-      "mamamoo"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "hwasa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "화사",
+          "source": "title"
+        },
+        {
+          "start": 4,
+          "end": 9,
+          "text": "HWASA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-hwasa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "화사",
+          "source": "title"
+        },
+        {
+          "start": 4,
+          "end": 9,
+          "text": "HWASA",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

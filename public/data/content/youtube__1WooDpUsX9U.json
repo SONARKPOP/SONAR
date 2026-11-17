@@ -7,7 +7,6 @@
   "description": "Tiffany Young Official\n\nhttps://www.youtube.com/c/TiffanyYoungOfficial \nhttps://twitter.com/teampmg_kr\nhttps://www.instagram.com/tiffanyyoungofficial",
   "publishedAt": "2026-10-10T15:00:32Z",
   "groupIds": [
-    "girls-generation",
     "tiffany-young"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "1WooDpUsX9U",
@@ -62,5 +61,57 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-tiffany-young",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 34,
+          "text": "Tiffany Young",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "tiffany-young",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 34,
+          "text": "Tiffany Young",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-5035c2dc85c0c21e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "수",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "gg-8abb39c3ffbbe8b2",
+    "girls-generation"
+  ],
+  "displayCareerGroupIds": [
+    "gg-8abb39c3ffbbe8b2",
+    "girls-generation"
+  ]
 }

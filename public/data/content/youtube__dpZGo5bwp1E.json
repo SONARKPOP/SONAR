@@ -7,7 +7,6 @@
   "description": "2023.08.16 KBS Cool FM 89.1MHz 매일 22:00~24:00\n데이식스의 키스 더 라디오 (Day6 kiss the radio)\n콩츄초대석 with 전소미",
   "publishedAt": "2023-08-16T19:13:33Z",
   "groupIds": [
-    "ioi",
     "jeon-somi",
     "kiss"
   ],
@@ -33,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:31.263480Z",
+    "collectedAt": "2026-11-17T17:19:36.281002Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,10 +40,54 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 28,
+          "end": 30,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jeon-somi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "전소미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-jeon-somi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "전소미",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "dpZGo5bwp1E",
   "sourceUrl": "https://www.youtube.com/watch?v=dpZGo5bwp1E",
   "contentTabs": [

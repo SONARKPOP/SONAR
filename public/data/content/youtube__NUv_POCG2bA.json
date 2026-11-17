@@ -7,7 +7,6 @@
   "description": "정식 버스킹도 고려해 보겠습니다..",
   "publishedAt": "2026-11-17T07:00:08Z",
   "groupIds": [
-    "mamamoo",
     "wheein"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "NUv_POCG2bA",
@@ -62,5 +61,41 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "mamamoo"
+  ],
+  "displayCareerGroupIds": [
+    "mamamoo"
+  ]
 }

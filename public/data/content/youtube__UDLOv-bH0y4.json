@@ -7,7 +7,6 @@
   "description": "[TEASER] 송지은(SONG JI EUN) - 피어나:開花(BLOOM)\n\nhttps://www.instagram.com/bimil_jieun\nhttps://www.twitter.com/songjieun_55\nhttps://www.youtube.com/ForSongJiEun\n\n\n#송지은 #피어나 #BLOOM",
   "publishedAt": "2020-10-21T09:00:07Z",
   "groupIds": [
-    "secret",
     "song-ji-eun"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "UDLOv-bH0y4",
@@ -53,9 +52,7 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "song-ji-eun",
-    "groupIds": [
-      "secret"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
@@ -63,7 +60,46 @@
   "teaserType": "content",
   "contentLength": "teaser",
   "hierarchyVersion": 2,
-  "careerGroupIds": [
-    "secret"
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "secret-song-ji-eun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 12,
+          "text": "송지은",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 24,
+          "text": "SONG JI EUN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "song-ji-eun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 12,
+          "text": "송지은",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 24,
+          "text": "SONG JI EUN",
+          "source": "title"
+        }
+      ]
+    }
   ]
 }

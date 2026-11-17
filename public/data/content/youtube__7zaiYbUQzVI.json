@@ -7,8 +7,7 @@
   "description": "-\nOFFICIAL WEBSITE | https://rehent.com\nhttps://www.instagram.com/rehyolyn.official/\nhttps://www.instagram.com/xhyolynx/\nhttps://twitter.com/officialhyolyn_\nhttps://tiktok.com/@_hyolyn_ \nhttps://music.apple.com/us/artist/hyolyn/766141963\nhttps://weverse.io/hyolyn\n\nⓒ 2026 ReH Entertainment. All Rights Reserved",
   "publishedAt": "2026-08-02T08:00:31Z",
   "groupIds": [
-    "hyolyn",
-    "sistar"
+    "hyolyn"
   ],
   "memberIds": [
     "sistar-hyolyn"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "7zaiYbUQzVI",
@@ -53,14 +52,80 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "hyolyn",
-    "groupIds": [
-      "sistar"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kard",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "KARD",
+          "source": "title"
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "text": "KARD",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 29,
+          "text": "카드",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "sistar-hyolyn",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "효린",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 25,
+          "text": "HYOLYN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyolyn",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "효린",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 25,
+          "text": "HYOLYN",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

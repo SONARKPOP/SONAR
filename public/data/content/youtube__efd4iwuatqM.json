@@ -7,7 +7,6 @@
   "description": "휘인(Whee In) 2025 추석 인사 | 휘인이와 함께 풍성한 한가휘 보내세요!\n\n[2025 한가휘 휜잘알고사 이벤트 안내]\n\n참여기간\n: 2025년 10월 6일(월) 오후 2시 15분 ~ 2025년 10월 12일(일) 오후 11시 59분까지\n\n참여방법\n: 아래 링크에 접속하여 휜잘알고사 진행\nhttps://forms.gle/9nMUwY83viA5L3FT9\n\n정답자 선물\n: 영상 속 손글씨 덕담&폴라로이드 (3명)\n\n\n#휘인 #WheeIn",
   "publishedAt": "2025-10-06T05:00:34Z",
   "groupIds": [
-    "mamamoo",
     "wheein"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "efd4iwuatqM",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "wheein",
-    "groupIds": [
-      "mamamoo"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

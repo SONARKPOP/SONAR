@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2024-03-14T08:07:43Z",
   "groupIds": [
-    "red-velvet",
     "wendy"
   ],
   "memberIds": [
@@ -32,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:38:32.928308Z",
+    "collectedAt": "2026-11-17T17:17:25.047446Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,10 +39,66 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "wendy",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 13,
+          "end": 15,
+          "text": "웬디",
+          "source": "title"
+        },
+        {
+          "start": 92,
+          "end": 94,
+          "text": "웬디",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-wendy",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 13,
+          "end": 15,
+          "text": "웬디",
+          "source": "title"
+        },
+        {
+          "start": 92,
+          "end": 94,
+          "text": "웬디",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "s",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "3m6IvKmGL4A",
   "sourceUrl": "https://www.youtube.com/watch?v=3m6IvKmGL4A",
   "contentTabs": [

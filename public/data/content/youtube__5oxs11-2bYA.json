@@ -9,7 +9,9 @@
   "groupIds": [
     "bbgirls"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "person-ad73a6c022a8838f"
+  ],
   "channelId": "bbgirls-official",
   "channelName": "브브걸 (BBGIRLS)",
   "category": "shorts",
@@ -33,7 +35,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -51,5 +53,35 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-ad73a6c022a8838f",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 10,
+          "text": "방지민",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izna",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "izna",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

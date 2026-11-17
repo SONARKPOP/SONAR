@@ -7,8 +7,7 @@
   "description": "에이티즈 눈 감아...\n#시크릿 #전효성 #시크릿전효성 #ateez #ateez_bad",
   "publishedAt": "2026-09-04T09:00:27Z",
   "groupIds": [
-    "jeon-hyo-seong",
-    "secret"
+    "jeon-hyo-seong"
   ],
   "memberIds": [
     "secret-jeon-hyo-seong"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "NC7py5cPWRU",
@@ -62,5 +61,55 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 37,
+          "end": 40,
+          "text": "시크릿",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "secret-jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "secret"
+  ],
+  "displayCareerGroupIds": [
+    "secret"
+  ]
 }

@@ -7,7 +7,6 @@
   "description": "🎁깜짝선물🎁\n슬라임 마스터의 멋진 슬라임 놀이 공개합니다\n여러분도 힐링했으면 좋겠다!\n\n#SEULGI #슬기 #ASMR #슬라임\nCopyright ⓒ 2026 Studio Episode & SM Entertainment - All Rights Reserved",
   "publishedAt": "2026-08-22T10:00:21Z",
   "groupIds": [
-    "red-velvet",
     "seulgi"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "T0qvTcq89WU",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "seulgi",
-    "groupIds": [
-      "red-velvet"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-seulgi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "슬기",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "seulgi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "슬기",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

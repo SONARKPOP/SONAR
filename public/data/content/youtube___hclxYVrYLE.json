@@ -7,7 +7,6 @@
   "description": "#이은지 님과 현란하게 CLOSER👐\n\n#JEONSOMI #전소미\n#CLOSERchallenge #CLOSER #JEONSOMI_CLOSER\n#ChaoticandConfused\n#THEBLACKLABEL #더블랙레이블",
   "publishedAt": "2025-08-21T10:00:58Z",
   "groupIds": [
-    "ioi",
     "jeon-somi"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "_hclxYVrYLE",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "jeon-somi",
-    "groupIds": [
-      "ioi"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "jeon-somi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 35,
+          "text": "전소미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-jeon-somi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 35,
+          "text": "전소미",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

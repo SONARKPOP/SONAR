@@ -7,7 +7,6 @@
   "description": "JISOO Official\n📱 / https://www.jisoo.app\nhttps://www.youtube.com/@sooyaaa__\nhttps://www.instagram.com/sooyaaa__\nhttps://www.tiktok.com/@jisoo\nhttps://twitter.com/officialBLISSOO\nhttps://weibo.com/u/7458000931\nhttp://www.jisoo.io \n\n\n#JISOO #ADDICTED #JISOO_ADDICTED",
   "publishedAt": "2026-10-24T04:00:04Z",
   "groupIds": [
-    "blackpink",
     "jisoo"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "5g5_HH9aidQ",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "jisoo",
-    "groupIds": [
-      "blackpink"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "bp-jisoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "JISOO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jisoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "JISOO",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -9,7 +9,9 @@
   "groupIds": [
     "adya"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "person-c106c83bb31bc610"
+  ],
   "channelId": "adya-official",
   "channelName": "ADYA",
   "category": "own",
@@ -33,7 +35,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -51,5 +53,35 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-c106c83bb31bc610",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "시온",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "geenius",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 0,
+          "end": 7,
+          "text": "Geenius",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

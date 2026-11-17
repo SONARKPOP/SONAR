@@ -7,7 +7,6 @@
   "description": "이채연 (LEE CHAEYEON)  'ボクノコエ (My Voice)' Cheering Guide\n-\nhttps://www.instagram.com/chaestival_\nhttps://www.instagram.com/official.lcy\nhttps://twitter.com/official_LCY \nhttps://www.tiktok.com/@official.lcy\n\nCopyright © 2026 by DayOneDream. All rights reserved.",
   "publishedAt": "2026-10-08T10:00:29Z",
   "groupIds": [
-    "izone",
     "lee-chae-yeon"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "GlQ9GcdHCsM",
@@ -62,5 +61,41 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "izone-lee-chae-yeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "이채연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lee-chae-yeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "이채연",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "izone"
+  ],
+  "displayCareerGroupIds": [
+    "izone"
+  ]
 }

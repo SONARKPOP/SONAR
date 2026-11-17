@@ -7,7 +7,6 @@
   "description": "SUBSCRIBE NOW.\r\nhttps://bit.ly/2tmvGES\r\n\r\n#솔라시도 #Solarsido",
   "publishedAt": "2026-11-09T08:00:35Z",
   "groupIds": [
-    "mamamoo",
     "solar"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "LkiCM5H1Tvg",
@@ -62,5 +61,69 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-c89a1ed57ca11f55",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "린",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-f0ea67b3704d2129",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "린",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "solar",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 33,
+          "end": 38,
+          "text": "Solar",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-solar",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 33,
+          "end": 38,
+          "text": "Solar",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "mamamoo"
+  ],
+  "displayCareerGroupIds": [
+    "mamamoo"
+  ]
 }

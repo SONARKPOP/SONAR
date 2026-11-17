@@ -9,7 +9,9 @@
   "groupIds": [
     "loona"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "loona-yves"
+  ],
   "channelId": "loona-official",
   "channelName": "loonatheworld",
   "category": "own",
@@ -33,7 +35,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -52,5 +54,49 @@
   "musicType": "cover",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "loona-yves",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yves",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "loona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 15,
+          "text": "이달의 소녀",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

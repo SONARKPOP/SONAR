@@ -7,8 +7,7 @@
   "description": "weak.\n(rec & mix by me)",
   "publishedAt": "2026-04-25T11:00:00Z",
   "groupIds": [
-    "lunedi",
-    "weeekly"
+    "lunedi"
   ],
   "memberIds": [
     "weeekly-lunedi"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "contentTypes": [
@@ -47,9 +46,7 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "lunedi",
-    "groupIds": [
-      "weeekly"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
@@ -63,5 +60,35 @@
   "musicType": "cover",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "weeekly-lunedi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 42,
+          "text": "LUNEDI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lunedi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 42,
+          "text": "LUNEDI",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -7,7 +7,6 @@
   "description": "JISOO Digital Single [ADDICTED] \nOUT NOW\n\nListen & Watch Now.\n🔗https://youtu.be/Pksr9T8m_aA\n🎧 jisoo.lnk.to/ADDICTED\n\n#JISOO #ADDICTED #JISOO_ADDICTED",
   "publishedAt": "2026-10-29T23:00:04Z",
   "groupIds": [
-    "blackpink",
     "jisoo"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "PaSvRDtfZiQ",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "jisoo",
-    "groupIds": [
-      "blackpink"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "bp-jisoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "JISOO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jisoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "JISOO",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

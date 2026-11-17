@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2024-11-06T12:01:10Z",
   "groupIds": [
-    "girls-generation",
     "hyo"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "snQNMdFHXvQ",
@@ -53,14 +52,80 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "hyo",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-hyo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 56,
+          "end": 59,
+          "text": "HYO",
+          "source": "title"
+        },
+        {
+          "start": 61,
+          "end": 63,
+          "text": "효연",
+          "source": "title"
+        },
+        {
+          "start": 65,
+          "end": 72,
+          "text": "HYOYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 56,
+          "end": 59,
+          "text": "HYO",
+          "source": "title"
+        },
+        {
+          "start": 61,
+          "end": 63,
+          "text": "효연",
+          "source": "title"
+        },
+        {
+          "start": 65,
+          "end": 72,
+          "text": "HYOYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 74,
+          "end": 78,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

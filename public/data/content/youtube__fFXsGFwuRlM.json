@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-04-13T14:05:02Z",
   "groupIds": [
-    "irene",
-    "red-velvet"
+    "irene"
   ],
   "memberIds": [
     "red-velvet-irene"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "fFXsGFwuRlM",
@@ -57,10 +56,50 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "irene",
-    "groupIds": [
-      "red-velvet"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "irene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 26,
+          "text": "아이린",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 21,
+          "text": "IRENE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-irene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 26,
+          "text": "아이린",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 21,
+          "text": "IRENE",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

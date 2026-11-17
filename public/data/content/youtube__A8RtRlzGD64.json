@@ -7,11 +7,12 @@
   "description": "",
   "publishedAt": "2026-01-19T11:00:30Z",
   "groupIds": [
-    "chuu",
-    "loona"
+    "baby-dont-cry",
+    "chuu"
   ],
   "memberIds": [
-    "loona-chuu"
+    "loona-chuu",
+    "person-c42b3c594c6d7492"
   ],
   "channelId": "chuu-official",
   "channelName": "CHUU Official",
@@ -36,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -45,14 +46,6 @@
   ],
   "ownType": "other",
   "musicBroadcast": false,
-  "individualActivity": {
-    "artistId": "chuu",
-    "groupIds": [
-      "loona"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  },
   "externalId": "A8RtRlzGD64",
   "sourceUrl": "https://www.youtube.com/watch?v=A8RtRlzGD64",
   "contentTabs": [
@@ -63,7 +56,60 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "careerGroupIds": [
-    "loona"
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "loona-chuu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "CHUU",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 29,
+          "text": "츄",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chuu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "CHUU",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 29,
+          "text": "츄",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c42b3c594c6d7492",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "이현",
+          "source": "title"
+        }
+      ]
+    }
   ]
 }

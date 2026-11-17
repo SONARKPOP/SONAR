@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-04-21T11:16:38Z",
   "groupIds": [
-    "hwasa",
-    "mamamoo"
+    "hwasa"
   ],
   "memberIds": [
     "mamamoo-hwasa"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "Fqo8nRMGRkc",
@@ -57,10 +56,50 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "hwasa",
-    "groupIds": [
-      "mamamoo"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "hwasa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 16,
+          "text": "화사",
+          "source": "title"
+        },
+        {
+          "start": 18,
+          "end": 23,
+          "text": "HWASA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-hwasa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 16,
+          "text": "화사",
+          "source": "title"
+        },
+        {
+          "start": 18,
+          "end": 23,
+          "text": "HWASA",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

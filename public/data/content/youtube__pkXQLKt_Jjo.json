@@ -7,7 +7,6 @@
   "description": "#yesx4 #dalsooobin #dj # suvin",
   "publishedAt": "2026-08-20T15:05:15Z",
   "groupIds": [
-    "dal-shabet",
     "dalsooobin"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "pkXQLKt_Jjo",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "dalsooobin",
-    "groupIds": [
-      "dal-shabet"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "dalsooobin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 18,
+          "text": "DALsooobin",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "dal-shabet-dalsooobin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 18,
+          "text": "DALsooobin",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

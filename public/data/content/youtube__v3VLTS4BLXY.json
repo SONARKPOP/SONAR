@@ -9,7 +9,9 @@
   "groupIds": [
     "young-posse"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "kara-jy"
+  ],
   "channelId": "young-posse-official",
   "channelName": "YOUNG POSSE • 영파씨",
   "category": "own",
@@ -33,7 +35,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -51,5 +53,55 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false
+  "musicBroadcast": false,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "kara-jy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 26,
+          "text": "강지영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jy",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 23,
+          "end": 26,
+          "text": "강지영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kara",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 19,
+          "end": 21,
+          "text": "카라",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "kara"
+  ],
+  "displayCareerGroupIds": [
+    "kara"
+  ]
 }

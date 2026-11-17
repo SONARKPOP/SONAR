@@ -7,7 +7,6 @@
   "description": "수지(Suzy) \"Yes No Maybe\" Dance Practice\n\nDownload Suzy's \"Yes? No?\" on iTunes: https://itunes.apple.com/us/album/yes-no-ep/id1198422830\n\nSuzy Official Facebook: http://www.facebook.com/JYPESuzy\nSuzy Official Fan's: http://fans.jype.com/Suzy\nSuzy Official Homepage: http://suzy.jype.com\nJYPnation Official Twitter: http://www.twitter.com/jypnation\n\nCopyrights 2017 ⓒ JYP Entertainment. All Rights Reserved.",
   "publishedAt": "2017-01-24T12:00:00Z",
   "groupIds": [
-    "miss-a",
     "suzy"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "D06IjyMoco4",
@@ -53,14 +52,68 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "suzy",
-    "groupIds": [
-      "miss-a"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "dance",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "suzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "수지",
+          "source": "title"
+        },
+        {
+          "start": 3,
+          "end": 7,
+          "text": "Suzy",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "miss-a-suzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "수지",
+          "source": "title"
+        },
+        {
+          "start": 3,
+          "end": 7,
+          "text": "Suzy",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-5d3278b90509163f",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "수지",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

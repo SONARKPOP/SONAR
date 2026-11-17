@@ -7,7 +7,6 @@
   "description": "원곡) izna - SIGN\n\n** If you prefer the original Korean audio, please change the audio track to 'Korean (Original)'\n\n\n#미연 #miyeon #izna \n\nCopyright © 2025 Studio Episode - All Rights Reserved",
   "publishedAt": "2025-10-02T09:30:17Z",
   "groupIds": [
-    "gidle",
     "miyeon"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "TT--75sUly8",
@@ -53,14 +52,42 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "miyeon",
-    "groupIds": [
-      "gidle"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "gidle-miyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "미연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "miyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "미연",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

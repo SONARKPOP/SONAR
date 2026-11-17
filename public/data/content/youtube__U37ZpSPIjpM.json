@@ -9,10 +9,7 @@
   "groupIds": [
     "ive"
   ],
-  "memberIds": [
-    "ive-wonyoung",
-    "person-a114078617030613"
-  ],
+  "memberIds": [],
   "channelId": "kbs-coolfm",
   "channelName": "KBS CoolFM",
   "category": "external",
@@ -31,7 +28,7 @@
   "actualEndTime": "2025-08-29T09:10:06Z",
   "scheduledStartTime": "2025-08-29T09:00:00Z",
   "source": {
-    "collectedAt": "2026-11-17T09:39:56.780698Z",
+    "collectedAt": "2026-11-17T17:18:57.245061Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -39,10 +36,98 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 26,
+          "end": 29,
+          "text": "IVE",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 63,
+          "text": "IVE",
+          "source": "title"
+        },
+        {
+          "start": 22,
+          "end": 25,
+          "text": "아이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 64,
+          "end": 65,
+          "text": "s",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-wonyoung",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 66,
+          "end": 79,
+          "text": "Jang Wonyoung",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "text": "장원영",
+          "source": "title"
+        },
+        {
+          "start": 31,
+          "end": 34,
+          "text": "장원영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a114078617030613",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "장원영",
+          "source": "title"
+        },
+        {
+          "start": 31,
+          "end": 34,
+          "text": "장원영",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "U37ZpSPIjpM",
   "sourceUrl": "https://www.youtube.com/watch?v=U37ZpSPIjpM",
   "contentTabs": [

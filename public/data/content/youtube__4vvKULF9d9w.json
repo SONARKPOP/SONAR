@@ -8,8 +8,7 @@
   "publishedAt": "2021-05-10T10:00:03Z",
   "groupIds": [
     "chungha",
-    "hot-issue",
-    "ioi"
+    "hot-issue"
   ],
   "memberIds": [
     "ioi-chungha",
@@ -34,17 +33,81 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:38:36.265454Z",
+    "collectedAt": "2026-11-17T17:17:28.903048Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "hot-issue",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 31,
+          "text": "HOT ISSUE",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 35,
+          "text": "핫이슈",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "청하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "청하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-70b44a0d97a2f506",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 38,
+          "text": "형신",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "4vvKULF9d9w",
   "sourceUrl": "https://www.youtube.com/watch?v=4vvKULF9d9w",
   "externalType": "song",

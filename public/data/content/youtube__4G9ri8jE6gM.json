@@ -9,10 +9,7 @@
   "groupIds": [
     "ive"
   ],
-  "memberIds": [
-    "ive-wonyoung",
-    "person-a114078617030613"
-  ],
+  "memberIds": [],
   "channelId": "m2",
   "channelName": "M2",
   "category": "external",
@@ -33,17 +30,67 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:38:34.208475Z",
+    "collectedAt": "2026-11-17T17:17:26.506811Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 35,
+          "end": 38,
+          "text": "IVE",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "아이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-wonyoung",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "장원영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a114078617030613",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "장원영",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "4G9ri8jE6gM",
   "sourceUrl": "https://www.youtube.com/watch?v=4G9ri8jE6gM",
   "externalType": "other",

@@ -7,7 +7,6 @@
   "description": "#사투리 #경상도",
   "publishedAt": "2026-09-07T10:45:03Z",
   "groupIds": [
-    "sistar",
     "soyou"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "Kz5qxeqla0M",
@@ -62,5 +61,41 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "sistar-soyou",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 13,
+          "text": "소유",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "soyou",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 13,
+          "text": "소유",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "sistar"
+  ],
+  "displayCareerGroupIds": [
+    "sistar"
+  ]
 }

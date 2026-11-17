@@ -7,7 +7,6 @@
   "description": "SANDARA PARK – 2026 Chuncheon Universities Joint Festival [PIEOBOM:來]",
   "publishedAt": "2026-09-13T12:00:14Z",
   "groupIds": [
-    "2ne1",
     "sandara-park"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "iZO72l3lwIc",
@@ -62,5 +61,41 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "sandara-park",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 18,
+          "end": 22,
+          "text": "산다라박",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "2ne1-sandara-park",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 18,
+          "end": 22,
+          "text": "산다라박",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "2ne1"
+  ],
+  "displayCareerGroupIds": [
+    "2ne1"
+  ]
 }

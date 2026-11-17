@@ -8,7 +8,6 @@
   "publishedAt": "2024-01-22T10:00:27Z",
   "groupIds": [
     "kiss",
-    "kiss-of-life",
     "natty"
   ],
   "memberIds": [
@@ -33,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:41:14.015653Z",
+    "collectedAt": "2026-11-17T17:20:24.269571Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,10 +40,74 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 1,
+          "end": 13,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 43,
+          "text": "키스오브라이프",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 32,
+          "end": 34,
+          "text": "나띠",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 32,
+          "end": 34,
+          "text": "나띠",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "r1GXzDQ_tpQ",
   "sourceUrl": "https://www.youtube.com/watch?v=r1GXzDQ_tpQ",
   "contentTabs": [

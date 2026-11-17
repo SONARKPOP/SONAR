@@ -47,9 +47,7 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "lunedi",
-    "groupIds": [
-      "weeekly"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
@@ -62,5 +60,49 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "weeekly-lunedi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 21,
+          "text": "LUNEDI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lunedi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 21,
+          "text": "LUNEDI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "weeekly",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 31,
+          "text": "Weeekly",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

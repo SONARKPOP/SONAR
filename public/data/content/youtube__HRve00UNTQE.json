@@ -7,7 +7,6 @@
   "description": "2025.12.01_KBS Cool FM 89.1MHz 매일 12:00~14:00\n이은지의 가요광장\nhttps://program.kbs.co.kr/2fm/radio/ejgayo\n가광 초대석, 누구세요? with tripleS(트리플에스) 미소녀즈 (스페셜 DJ 이미주)\n\nCopyright ⓒ KBS. All rights reserved. 무단 전재, 재배포 및 이용(AI 학습 포함) 금지",
   "publishedAt": "2025-12-01T07:35:36Z",
   "groupIds": [
-    "lovelyz",
     "mijoo",
     "triples"
   ],
@@ -32,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:39:15.533386Z",
+    "collectedAt": "2026-11-17T17:18:13.100394Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,10 +39,60 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "triples",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 32,
+          "text": "트리플에스",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 26,
+          "text": "tripleS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "mijoo",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 47,
+          "end": 50,
+          "text": "이미주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-mijoo",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 47,
+          "end": 50,
+          "text": "이미주",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "HRve00UNTQE",
   "sourceUrl": "https://www.youtube.com/watch?v=HRve00UNTQE",
   "contentTabs": [

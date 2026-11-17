@@ -7,10 +7,11 @@
   "description": "",
   "publishedAt": "2026-04-08T10:00:43Z",
   "groupIds": [
-    "irene",
-    "red-velvet"
+    "girls-generation",
+    "irene"
   ],
   "memberIds": [
+    "girls-generation-hyo",
     "red-velvet-irene"
   ],
   "channelId": "irene-official",
@@ -36,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -55,12 +56,74 @@
   "contentLength": "short",
   "hierarchyVersion": 2,
   "musicBroadcast": false,
-  "individualActivity": {
-    "artistId": "irene",
-    "groupIds": [
-      "red-velvet"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  }
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-hyo",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 20,
+          "text": "HYO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyo",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 17,
+          "end": 20,
+          "text": "HYO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "irene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 39,
+          "end": 44,
+          "text": "IRENE",
+          "source": "title"
+        },
+        {
+          "start": 46,
+          "end": 49,
+          "text": "아이린",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-irene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 39,
+          "end": 44,
+          "text": "IRENE",
+          "source": "title"
+        },
+        {
+          "start": 46,
+          "end": 49,
+          "text": "아이린",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

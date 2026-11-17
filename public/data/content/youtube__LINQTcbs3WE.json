@@ -7,7 +7,6 @@
   "description": "HYO Official\nhttp://www.youtube.com/HYOYEONofficial\nhttp://www.facebook.com/girlsgeneration \nhttp://twitter.com/girlsgeneration \nhttps://www.instagram.com/girlsgeneration\n\n#HYO #효연 #RetroRomance",
   "publishedAt": "2024-10-10T11:00:21Z",
   "groupIds": [
-    "girls-generation",
     "hyo"
   ],
   "memberIds": [
@@ -35,8 +34,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "LINQTcbs3WE",
@@ -52,14 +51,66 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "hyo",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "regular",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-hyo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "HYO",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "text": "효연",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 22,
+          "text": "효연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "HYO",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "text": "효연",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 22,
+          "text": "효연",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -7,10 +7,11 @@
   "description": "Tiffany Young Official\n\nhttps://www.youtube.com/c/TiffanyYoungOfficial \nhttps://twitter.com/teampmg_kr\nhttps://www.instagram.com/tiffanyyoungofficial",
   "publishedAt": "2026-11-02T15:00:38Z",
   "groupIds": [
-    "girls-generation",
+    "gidle",
     "tiffany-young"
   ],
   "memberIds": [
+    "gidle-miyeon",
     "girls-generation-tiffany-young"
   ],
   "channelId": "tiffany-young-official",
@@ -36,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -55,12 +56,82 @@
   "contentLength": "short",
   "hierarchyVersion": 2,
   "musicBroadcast": false,
-  "individualActivity": {
-    "artistId": "tiffany-young",
-    "groupIds": [
-      "girls-generation"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  }
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "gidle-miyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 38,
+          "end": 40,
+          "text": "미연",
+          "source": "title"
+        },
+        {
+          "start": 42,
+          "end": 48,
+          "text": "MIYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "miyeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 38,
+          "end": 40,
+          "text": "미연",
+          "source": "title"
+        },
+        {
+          "start": 42,
+          "end": 48,
+          "text": "MIYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-tiffany-young",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 13,
+          "text": "Tiffany Young",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "tiffany-young",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 13,
+          "text": "Tiffany Young",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "gg-8abb39c3ffbbe8b2",
+    "girls-generation"
+  ],
+  "displayCareerGroupIds": [
+    "gg-8abb39c3ffbbe8b2",
+    "girls-generation"
+  ]
 }

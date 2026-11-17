@@ -7,9 +7,13 @@
   "description": "",
   "publishedAt": "2026-03-25T09:01:14Z",
   "groupIds": [
-    "bibi"
+    "bibi",
+    "loona"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "loona-yves",
+    "person-2bcd73e04ace2548"
+  ],
   "channelId": "bibi-official",
   "channelName": "BIBI",
   "category": "own",
@@ -33,8 +37,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "unclassified",
+    "policy": "title-context-v2",
+    "source": "title",
     "appearanceVerified": false
   },
   "externalId": "uonJF07ntXU",
@@ -51,5 +55,101 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "loona-yves",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yves",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "bibi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 33,
+          "end": 37,
+          "text": "BIBI",
+          "source": "title"
+        },
+        {
+          "start": 15,
+          "end": 17,
+          "text": "비비",
+          "source": "title"
+        },
+        {
+          "start": 39,
+          "end": 41,
+          "text": "비비",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "hitgs-vv",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "비비",
+          "source": "title"
+        },
+        {
+          "start": 39,
+          "end": 41,
+          "text": "비비",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-2bcd73e04ace2548",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "비비",
+          "source": "title"
+        },
+        {
+          "start": 39,
+          "end": 41,
+          "text": "비비",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

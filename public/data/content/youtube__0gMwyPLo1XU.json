@@ -7,9 +7,12 @@
   "description": "",
   "publishedAt": "2022-03-30T23:29:59Z",
   "groupIds": [
-    "majors"
+    "majors",
+    "miss-a"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "miss-a-suzy"
+  ],
   "channelId": "majors-official",
   "channelName": "MAJORS",
   "category": "own",
@@ -50,5 +53,61 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "majors",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 35,
+          "end": 39,
+          "text": "메이져스",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 6,
+          "text": "MAJORS",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 33,
+          "text": "MAJORS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "suzy",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 80,
+          "end": 84,
+          "text": "Suzy",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "miss-a-suzy",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 80,
+          "end": 84,
+          "text": "Suzy",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

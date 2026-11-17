@@ -10,6 +10,7 @@
     "tuide"
   ],
   "memberIds": [
+    "ive-rei",
     "tuide-saki",
     "tuide-seah"
   ],
@@ -36,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -54,5 +55,77 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false
+  "musicBroadcast": false,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 25,
+          "end": 30,
+          "text": "TUIDE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tuide-saki",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 36,
+          "text": "SAKI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-rei",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 20,
+          "text": "REI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tuide-seah",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 38,
+          "end": 42,
+          "text": "SEAH",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

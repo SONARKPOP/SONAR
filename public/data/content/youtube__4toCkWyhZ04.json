@@ -7,7 +7,6 @@
   "description": "2025.11.04_KBS Cool FM 89.1MHz 매일 12:00~14:00\n이은지의 가요광장\nhttps://program.kbs.co.kr/2fm/radio/ejgayo\n가광 초대석, 누구세요? with 미연(MIYEON)\n\nCopyright ⓒ KBS. All rights reserved. 무단 전재, 재배포 및 이용(AI 학습 포함) 금지",
   "publishedAt": "2025-11-04T07:37:21Z",
   "groupIds": [
-    "gidle",
     "miyeon",
     "say-my-name"
   ],
@@ -32,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:38:36.138465Z",
+    "collectedAt": "2026-11-17T17:17:28.788844Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,10 +39,66 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "gidle-miyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "미연",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 19,
+          "text": "MIYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "miyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "미연",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 19,
+          "text": "MIYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 33,
+          "text": "Say My Name",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "4toCkWyhZ04",
   "sourceUrl": "https://www.youtube.com/watch?v=4toCkWyhZ04",
   "contentTabs": [

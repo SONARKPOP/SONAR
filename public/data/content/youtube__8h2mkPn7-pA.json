@@ -7,7 +7,6 @@
   "description": "TAEYEON 태연 The 4th Album 〖Unspecial〗\n➫ 2026.11.30 6PM (KST)\n\nTAEYEON Official\nhttps://www.youtube.com/taeyeonofficial\nhttps://www.instagram.com/taeyeon.smofficial/\nhttps://twitter.com/TAEYEONsmtown\nhttps://www.facebook.com/TAEYEON.smofficial/ \n\nS♡NE Official  \nhttps://weverse.io/girlsgeneration/\n\n#TAEYEON #태연 #Unspecial\n#TAEYEON_Unspecial\n#GirlsGeneration #소녀시대",
   "publishedAt": "2026-11-15T15:00:12Z",
   "groupIds": [
-    "girls-generation",
     "taeyeon"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "8h2mkPn7-pA",
@@ -61,5 +60,55 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "태연",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 7,
+          "text": "TAEYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "태연",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 7,
+          "text": "TAEYEON",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "girls-generation",
+    "got-the-beat"
+  ],
+  "displayCareerGroupIds": [
+    "girls-generation",
+    "got-the-beat"
+  ]
 }

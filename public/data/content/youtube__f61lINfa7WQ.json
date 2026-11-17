@@ -7,7 +7,6 @@
   "description": "SAAY - SLOW\nFRIDAY, JULY 24TH · 6 PM KST · 5 AM EDT · 2 AM PDT\n\nFollow SAAY \n- Official Instagram:   / https://www.instagram.com/saayworld \n- Official TikTok:   /  https://www.tiktok.com/@saayworld \n- Official X :   / https://x.com/SAAYworld \n\n#SAAY #SLOW",
   "publishedAt": "2026-07-22T14:00:23Z",
   "groupIds": [
-    "evol",
     "saay"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "f61lINfa7WQ",
@@ -53,14 +52,42 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "saay",
-    "groupIds": [
-      "evol"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "teaser",
   "teaserType": "music",
   "contentLength": "teaser",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "saay",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "SAAY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "evol-saay",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "SAAY",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

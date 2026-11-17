@@ -10,6 +10,7 @@
     "tuide"
   ],
   "memberIds": [
+    "meovv-anna",
     "tuide-seah"
   ],
   "channelId": "tuide-official",
@@ -35,7 +36,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -53,5 +54,63 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false
+  "musicBroadcast": false,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 30,
+          "end": 35,
+          "text": "TUIDE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "meovv-anna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 19,
+          "end": 23,
+          "text": "ANNA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "meovv",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 12,
+          "end": 17,
+          "text": "MEOVV",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tuide-seah",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 37,
+          "end": 41,
+          "text": "SEAH",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

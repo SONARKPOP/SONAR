@@ -9,7 +9,9 @@
   "groupIds": [
     "fromis9"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "nmixx-member-7261890fd0f9"
+  ],
   "channelId": "fromis9-official",
   "channelName": "Official fromis_9",
   "category": "shorts",
@@ -33,7 +35,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -51,5 +53,49 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "nmixx-member-7261890fd0f9",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "LILY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "nmixx",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 28,
+          "end": 33,
+          "text": "NMIXX",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "fromis9",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 35,
+          "end": 43,
+          "text": "fromis_9",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

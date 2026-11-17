@@ -8,10 +8,11 @@
   "publishedAt": "2026-02-03T01:30:05Z",
   "groupIds": [
     "chuu",
-    "loona"
+    "gfriend"
   ],
   "memberIds": [
-    "loona-chuu"
+    "loona-chuu",
+    "person-92dca0d431ec333d"
   ],
   "channelId": "chuu-official",
   "channelName": "CHUU Official",
@@ -36,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -45,14 +46,6 @@
   ],
   "ownType": "other",
   "musicBroadcast": false,
-  "individualActivity": {
-    "artistId": "chuu",
-    "groupIds": [
-      "loona"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  },
   "externalId": "hxN2NNa26G0",
   "sourceUrl": "https://www.youtube.com/watch?v=hxN2NNa26G0",
   "contentTabs": [
@@ -63,7 +56,74 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "careerGroupIds": [
-    "loona"
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "loona-chuu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "CHUU",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 29,
+          "text": "츄",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chuu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "CHUU",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 29,
+          "text": "츄",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "viviz",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 46,
+          "end": 51,
+          "text": "VIVIZ",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-92dca0d431ec333d",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "엄지",
+          "source": "title"
+        }
+      ]
+    }
   ]
 }

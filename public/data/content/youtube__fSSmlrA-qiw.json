@@ -7,7 +7,6 @@
   "description": "#SEULGI #슬기 #여름 #lookbook #여름코디\nCopyright ⓒ 2026 Studio Episode & SM Entertainment - All Rights Reserved",
   "publishedAt": "2026-07-11T03:00:26Z",
   "groupIds": [
-    "red-velvet",
     "seulgi"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "fSSmlrA-qiw",
@@ -57,10 +56,80 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "seulgi",
-    "groupIds": [
-      "red-velvet"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-seulgi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 9,
+          "text": "슬기",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "seulgi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 9,
+          "text": "슬기",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-93f1f4e0118a5b58",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 11,
+          "end": 13,
+          "text": "여름",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-507e18325fa70402",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 11,
+          "end": 13,
+          "text": "여름",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a62ad8bf482db100",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 11,
+          "end": 13,
+          "text": "여름",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

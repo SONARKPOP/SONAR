@@ -9,10 +9,7 @@
   "groupIds": [
     "kep1er"
   ],
-  "memberIds": [
-    "kep1er-member-10930741a88e",
-    "person-30ec6615e2398468"
-  ],
+  "memberIds": [],
   "channelId": "kep1er-official",
   "channelName": "Kep1er",
   "category": "own",
@@ -36,7 +33,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -54,5 +51,55 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false
+  "musicBroadcast": false,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "kep1er-member-10930741a88e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 29,
+          "end": 32,
+          "text": "최유진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-30ec6615e2398468",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 29,
+          "end": 32,
+          "text": "최유진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kep1er",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 23,
+          "text": "Kep1er",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 28,
+          "text": "케플러",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -7,15 +7,10 @@
   "description": "데이식스의 키스 더 라디오 with 김세정 230913",
   "publishedAt": "2023-09-13T15:09:02Z",
   "groupIds": [
-    "gugudan",
-    "ioi",
     "kim-sejeong",
     "kiss"
   ],
-  "memberIds": [
-    "gugudan-kim-sejeong",
-    "ioi-kim-sejeong"
-  ],
+  "memberIds": [],
   "channelId": "kbs-coolfm",
   "channelName": "KBS CoolFM",
   "category": "external",
@@ -34,7 +29,7 @@
   "actualEndTime": "2023-09-13T14:53:42Z",
   "scheduledStartTime": "2023-09-13T13:00:00Z",
   "source": {
-    "collectedAt": "2026-11-17T09:39:55.167974Z",
+    "collectedAt": "2026-11-17T17:18:55.232800Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,9 +38,67 @@
   "externalType": "radio",
   "memberTagging": {
     "policy": "title-only-v1",
-    "source": "title",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 8,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "김세정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kim-sejeong",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "김세정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "gugudan-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "김세정",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "TTwAoXm6L5c",
   "sourceUrl": "https://www.youtube.com/watch?v=TTwAoXm6L5c",
   "contentTabs": [

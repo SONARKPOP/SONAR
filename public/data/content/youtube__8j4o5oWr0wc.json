@@ -9,10 +9,7 @@
   "groupIds": [
     "ive"
   ],
-  "memberIds": [
-    "ive-yujin",
-    "person-a8d2c786d580bbbc"
-  ],
+  "memberIds": [],
   "channelId": "kbs-kpop",
   "channelName": "KBS Kpop",
   "category": "external",
@@ -33,17 +30,87 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:38:48.202175Z",
+    "collectedAt": "2026-11-17T17:17:42.515839Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 31,
+          "end": 34,
+          "text": "IVE",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "text": "아이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-yujin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 35,
+          "end": 43,
+          "text": "AN YUJIN",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 17,
+          "text": "안유진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a8d2c786d580bbbc",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 14,
+          "end": 17,
+          "text": "안유진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-0f7db83541a0c03e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 14,
+          "end": 17,
+          "text": "안유진",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "8j4o5oWr0wc",
   "sourceUrl": "https://www.youtube.com/watch?v=8j4o5oWr0wc",
   "externalType": "other",

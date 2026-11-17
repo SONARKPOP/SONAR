@@ -8,7 +8,6 @@
   "publishedAt": "2025-05-27T12:01:54Z",
   "groupIds": [
     "triples",
-    "wonder-girls",
     "yubin"
   ],
   "memberIds": [
@@ -33,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:29.546281Z",
+    "collectedAt": "2026-11-17T17:19:33.931602Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,10 +40,54 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "triples",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 28,
+          "text": "tripleS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "wonder-girls-yubin",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 29,
+          "end": 34,
+          "text": "YuBin",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yubin",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 29,
+          "end": 34,
+          "text": "YuBin",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "dFRzFZ83dps",
   "sourceUrl": "https://www.youtube.com/watch?v=dFRzFZ83dps",
   "contentTabs": [

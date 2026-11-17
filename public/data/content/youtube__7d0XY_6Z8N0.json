@@ -7,7 +7,6 @@
   "description": "듀공 아니고 대공입니다..",
   "publishedAt": "2026-11-05T09:45:27Z",
   "groupIds": [
-    "mamamoo",
     "wheein"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "7d0XY_6Z8N0",
@@ -62,5 +61,41 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "휘인",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "mamamoo"
+  ],
+  "displayCareerGroupIds": [
+    "mamamoo"
+  ]
 }

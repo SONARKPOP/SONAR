@@ -8,13 +8,9 @@
   "publishedAt": "2012-10-22T00:53:01Z",
   "groupIds": [
     "4minute",
-    "hyuna",
-    "wonder-girls"
+    "hyuna"
   ],
-  "memberIds": [
-    "4minute-hyuna",
-    "wonder-girls-hyuna"
-  ],
+  "memberIds": [],
   "channelId": "4minute-official",
   "channelName": "4Minute 포미닛(Official YouTube Channel)",
   "category": "music",
@@ -38,7 +34,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -57,7 +53,48 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "careerGroupIds": [
-    "wonder-girls"
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "hyuna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "HYUNA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "4minute-hyuna",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "HYUNA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "wonder-girls-hyuna",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "HYUNA",
+          "source": "title"
+        }
+      ]
+    }
   ]
 }

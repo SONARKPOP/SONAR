@@ -8,7 +8,6 @@
   "publishedAt": "2023-04-16T16:00:10Z",
   "groupIds": [
     "h1-key",
-    "ioi",
     "jeon-somi"
   ],
   "memberIds": [
@@ -32,7 +31,7 @@
   "actualEndTime": "2023-04-16T16:36:29Z",
   "scheduledStartTime": "2023-04-16T16:00:00Z",
   "source": {
-    "collectedAt": "2026-11-17T09:40:24.456105Z",
+    "collectedAt": "2026-11-17T17:19:28.642132Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,10 +39,54 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "jeon-somi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 41,
+          "end": 44,
+          "text": "전소미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-jeon-somi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 41,
+          "end": 44,
+          "text": "전소미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "h1-key",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 46,
+          "end": 49,
+          "text": "하이키",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "bi3oatSsLtQ",
   "sourceUrl": "https://www.youtube.com/watch?v=bi3oatSsLtQ",
   "contentTabs": [

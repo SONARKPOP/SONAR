@@ -7,8 +7,7 @@
   "description": "[Special] La Perla (Cover by 화사) Original song by. ROSALÍA, Yahritza Y Su Esencia\n\n#화사 #HWASA\n#PNATION #피네이션 #HBD",
   "publishedAt": "2026-07-22T18:06:38Z",
   "groupIds": [
-    "hwasa",
-    "mamamoo"
+    "hwasa"
   ],
   "memberIds": [
     "mamamoo-hwasa"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "yJtdcockIwU",
@@ -58,10 +57,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "hwasa",
-    "groupIds": [
-      "mamamoo"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "hwasa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 29,
+          "end": 31,
+          "text": "화사",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-hwasa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 29,
+          "end": 31,
+          "text": "화사",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -7,8 +7,7 @@
   "description": "추억의 2세대 굿즈 몰아보기",
   "publishedAt": "2026-07-01T10:04:13Z",
   "groupIds": [
-    "jeon-hyo-seong",
-    "secret"
+    "jeon-hyo-seong"
   ],
   "memberIds": [
     "secret-jeon-hyo-seong"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "XN4b7mbZ9gI",
@@ -53,14 +52,56 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "jeon-hyo-seong",
-    "groupIds": [
-      "secret"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 36,
+          "end": 39,
+          "text": "시크릿",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "secret-jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

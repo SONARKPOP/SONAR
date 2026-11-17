@@ -7,7 +7,6 @@
   "description": "_\n상해에서 인기 있는 디저트도 먹고\n키린 미라클 가든 이벤트에 다녀온 이야기💎\n\n\n\n#임윤아 #윤아 #limyoona #Qeelin",
   "publishedAt": "2025-04-24T09:01:17Z",
   "groupIds": [
-    "girls-generation",
     "yoona"
   ],
   "memberIds": [
@@ -35,8 +34,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "onfm_TUjmNY",
@@ -52,14 +51,42 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "yoona",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "regular",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "yoona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 12,
+          "text": "YOONA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-yoona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 12,
+          "text": "YOONA",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

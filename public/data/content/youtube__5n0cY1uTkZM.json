@@ -7,7 +7,6 @@
   "description": "#인사 #TAEYEON인사 #소녀시대 #GirlsGeneration",
   "publishedAt": "2025-12-03T07:02:12Z",
   "groupIds": [
-    "girls-generation",
     "taeyeon"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "5n0cY1uTkZM",
@@ -57,10 +56,50 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "taeyeon",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 11,
+          "text": "태연",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 20,
+          "text": "TAEYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 11,
+          "text": "태연",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 20,
+          "text": "TAEYEON",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

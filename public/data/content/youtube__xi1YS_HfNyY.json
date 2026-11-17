@@ -7,7 +7,6 @@
   "description": "LISA - My Only Wish (Britney Spears cover)\n \n#LISA #리사 #Lilifilm #Cover #MyOnlyWish #BritneySpears",
   "publishedAt": "2023-12-24T23:02:58Z",
   "groupIds": [
-    "blackpink",
     "lisa"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "contentTypes": [
@@ -47,9 +46,7 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "lisa",
-    "groupIds": [
-      "blackpink"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
@@ -63,5 +60,35 @@
   "musicType": "cover",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "bp-lisa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "LISA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lisa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "LISA",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

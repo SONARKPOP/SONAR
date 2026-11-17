@@ -7,7 +7,6 @@
   "description": "2023.09.06 KBS Cool FM 89.1MHz 매일 22:00~24:00\n데이식스의 키스 더 라디오 (Day6 kiss the radio)\n콩츄초대석 with 예린 & 이채연",
   "publishedAt": "2023-09-06T14:30:51Z",
   "groupIds": [
-    "izone",
     "kiss",
     "lee-chae-yeon"
   ],
@@ -32,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:41:41.992251Z",
+    "collectedAt": "2026-11-17T17:20:56.093131Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,10 +39,68 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 41,
+          "end": 43,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "izone-lee-chae-yeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "이채연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lee-chae-yeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "이채연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 19,
+          "end": 20,
+          "text": "S",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "zvtk2-11Qjw",
   "sourceUrl": "https://www.youtube.com/watch?v=zvtk2-11Qjw",
   "contentTabs": [

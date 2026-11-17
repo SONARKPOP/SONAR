@@ -7,7 +7,6 @@
   "description": "#Shorts #서현 #SEOHYUN",
   "publishedAt": "2023-03-31T11:00:04Z",
   "groupIds": [
-    "girls-generation",
     "seohyun"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "irwlQGbqK7c",
@@ -53,14 +52,74 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "seohyun",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "seohyun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "서현",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 31,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-d70508a044bfe45b",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "서현",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 31,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-seohyun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "서현",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 31,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

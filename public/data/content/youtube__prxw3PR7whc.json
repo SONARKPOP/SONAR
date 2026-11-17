@@ -7,7 +7,6 @@
   "description": "Suzy Official Facebook: http://www.facebook.com/JYPESuzy\nSuzy Official Fan's: http://fans.jype.com/Suzy\nSuzy Official Homepage: http://suzy.jype.com\nJYPnation Official Twitter: http://www.twitter.com/jypnation\n\nCopyrights 2017 ⓒ JYP Entertainment. All Rights Reserved.",
   "publishedAt": "2017-11-26T12:00:02Z",
   "groupIds": [
-    "miss-a",
     "suzy"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "prxw3PR7whc",
@@ -53,14 +52,56 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "suzy",
-    "groupIds": [
-      "miss-a"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "suzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "SUZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "miss-a-suzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "SUZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 18,
+          "text": "S",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

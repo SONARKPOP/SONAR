@@ -7,10 +7,11 @@
   "description": "",
   "publishedAt": "2023-05-19T14:02:47Z",
   "groupIds": [
-    "lovelyz",
+    "izone",
     "mijoo"
   ],
   "memberIds": [
+    "izone-lee-chae-yeon",
     "lovelyz-mijoo"
   ],
   "channelId": "mijoo-official",
@@ -36,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -51,16 +52,66 @@
     "own"
   ],
   "musicBroadcast": false,
-  "individualActivity": {
-    "artistId": "mijoo",
-    "groupIds": [
-      "lovelyz"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "mijoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 38,
+          "end": 43,
+          "text": "MIJOO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-mijoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 38,
+          "end": 43,
+          "text": "MIJOO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "izone-lee-chae-yeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 45,
+          "end": 48,
+          "text": "이채연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lee-chae-yeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 45,
+          "end": 48,
+          "text": "이채연",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

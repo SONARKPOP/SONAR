@@ -8,7 +8,6 @@
       "title": "이 스트레칭 꼭 한번 해보세요",
       "publishedAt": "2026-11-16T10:15:07Z",
       "groupIds": [
-        "sistar",
         "soyou"
       ],
       "memberIds": [],
@@ -53,7 +52,8 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      }
+      },
+      "appearanceLinks": []
     },
     {
       "id": "youtube__S_95H-hI8_4",
@@ -63,7 +63,6 @@
       "title": "퉁퉁 부었다? 바로 하세요 🔥붓기타파 전신운동 15분🔥",
       "publishedAt": "2026-11-16T10:00:19Z",
       "groupIds": [
-        "sistar",
         "soyou"
       ],
       "memberIds": [],
@@ -108,7 +107,8 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      }
+      },
+      "appearanceLinks": []
     },
     {
       "id": "youtube__Ah_8gFUm7eA",
@@ -118,10 +118,12 @@
       "title": "어묵 안에 두부김치랑 치즈가 들어있다고? | 🍽️식단레시피 '어묵'편",
       "publishedAt": "2026-11-02T10:00:30Z",
       "groupIds": [
-        "sistar",
+        "gg-5511284d31a466c4",
         "soyou"
       ],
-      "memberIds": [],
+      "memberIds": [
+        "person-4f64ae113d07b9e8"
+      ],
       "channelId": "soyou-official",
       "channelName": "소유기 SOYOUGI",
       "category": "own",
@@ -156,14 +158,28 @@
       "contentLength": "regular",
       "hierarchyVersion": 2,
       "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "soyou",
-        "groupIds": [
-          "sistar"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      }
+      "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "person-4f64ae113d07b9e8",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 12,
+              "end": 14,
+              "text": "치즈",
+              "source": "title"
+            }
+          ]
+        }
+      ],
+      "careerGroupIds": [
+        "gg-5511284d31a466c4"
+      ],
+      "displayCareerGroupIds": [
+        "gg-5511284d31a466c4"
+      ]
     },
     {
       "id": "youtube__iZ3yRcBWAHs",
@@ -173,7 +189,6 @@
       "title": "와. 나쁜 X네 진짜 ..👹 | 소유의 썰 상담소 '연애'편",
       "publishedAt": "2026-10-19T10:00:05Z",
       "groupIds": [
-        "sistar",
         "soyou"
       ],
       "memberIds": [
@@ -194,8 +209,8 @@
       "thumbnail": "https://i.ytimg.com/vi/iZ3yRcBWAHs/hqdefault.jpg",
       "durationLabel": "21m10s",
       "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
+        "policy": "title-context-v2",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "externalId": "iZ3yRcBWAHs",
@@ -220,7 +235,43 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      }
+      },
+      "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "sistar-soyou",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 18,
+              "end": 20,
+              "text": "소유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "soyou",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 18,
+              "end": 20,
+              "text": "소유",
+              "source": "title"
+            }
+          ]
+        }
+      ],
+      "careerGroupIds": [
+        "sistar"
+      ],
+      "displayCareerGroupIds": [
+        "sistar"
+      ]
     }
   ]
 }

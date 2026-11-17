@@ -7,7 +7,6 @@
   "description": "Coachella 2025 live perfromance for \"ZEN\" from the album ‘Ruby’ out now: https://jennie.lnk.to/ruby\n\n#CoachellaOnYouTube\n\nFollow JENNIE -\nInstagram: https://www.instagram.com/jennierubyjane\nTikTok: https://www.tiktok.com/@jennierubyjane\nTwitter: https://twitter.com/jennierubyjane\nhttps://jenn.ie\n\nFollow JENNIE HQ -\nInstagram: https://www.instagram.com/jennie_hq\nTikTok: https://www.tiktok.com/@jennie_hq\nTwitter: https://twitter.com/jennie_hq\n\n#JENNIE #ZEN #Coachella",
   "publishedAt": "2025-04-23T02:34:36Z",
   "groupIds": [
-    "blackpink",
     "jennie"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "contentTypes": [
@@ -47,9 +46,7 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "jennie",
-    "groupIds": [
-      "blackpink"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
@@ -63,5 +60,35 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "jennie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "JENNIE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "bp-jennie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "JENNIE",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

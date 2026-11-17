@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2026-05-01T08:05:00Z",
   "groupIds": [
-    "sistar",
     "soyou"
   ],
   "memberIds": [
@@ -32,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:38:30.530861Z",
+    "collectedAt": "2026-11-17T17:17:22.230792Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,10 +39,54 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "sistar-soyou",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 79,
+          "end": 81,
+          "text": "소유",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "soyou",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 79,
+          "end": 81,
+          "text": "소유",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 71,
+          "end": 72,
+          "text": "s",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "2zwfBheHAu8",
   "sourceUrl": "https://www.youtube.com/watch?v=2zwfBheHAu8",
   "contentTabs": [

@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2024-12-24T15:16:00Z",
   "groupIds": [
-    "girls-generation",
     "yoona"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "vCcOaxe9-JM",
@@ -53,14 +52,68 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "yoona",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "yoona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 25,
+          "text": "임윤아",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 29,
+          "text": "윤아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-yoona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 25,
+          "text": "임윤아",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 29,
+          "text": "윤아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "illit-member-59036fd87f0e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 29,
+          "text": "윤아",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

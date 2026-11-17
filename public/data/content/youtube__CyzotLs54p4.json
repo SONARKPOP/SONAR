@@ -7,7 +7,6 @@
   "description": "🎧 Stream/Download [NAIL] by Yves: https://ada.lnk.to/NAIL\n💿 4th EP [NAIL] Buy Now: https://ada.lnk.to/NAIL_CD\n\n🎟️ YVES 2026 TOUR THE AMERICAS: https://paixpermil.com/tickets",
   "publishedAt": "2026-05-16T18:02:01Z",
   "groupIds": [
-    "loona",
     "yves"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "CyzotLs54p4",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "yves",
-    "groupIds": [
-      "loona"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "loona-yves",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 40,
+          "text": "Yves",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yves",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 40,
+          "text": "Yves",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -7,7 +7,6 @@
   "description": "춤추고💃 노래하는🎤 앞니 빠진 8살 서주현 어린이의 운동회날⛹‍♀ 이 아이.. 가수가 될 상인가??👀\n\n#Shorts #서현 #SEOHYUN #어린이날",
   "publishedAt": "2023-05-05T03:00:10Z",
   "groupIds": [
-    "girls-generation",
     "seohyun"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "Pvc1b0xJJdc",
@@ -53,14 +52,74 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "seohyun",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "seohyun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "서현",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 26,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-d70508a044bfe45b",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "서현",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 26,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-seohyun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "서현",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 26,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

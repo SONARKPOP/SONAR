@@ -8,8 +8,7 @@
   "publishedAt": "2019-03-24T03:36:23Z",
   "groupIds": [
     "bvndit",
-    "chungha",
-    "ioi"
+    "chungha"
   ],
   "memberIds": [
     "ioi-chungha"
@@ -33,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:55.963298Z",
+    "collectedAt": "2026-11-17T17:20:03.564688Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,10 +40,66 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "bvndit",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 58,
+          "end": 61,
+          "text": "밴디트",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 55,
+          "end": 57,
+          "text": "청하",
+          "source": "title"
+        },
+        {
+          "start": 66,
+          "end": 74,
+          "text": "CHUNG HA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 55,
+          "end": 57,
+          "text": "청하",
+          "source": "title"
+        },
+        {
+          "start": 66,
+          "end": 74,
+          "text": "CHUNG HA",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "lGaFN6poAAM",
   "sourceUrl": "https://www.youtube.com/watch?v=lGaFN6poAAM",
   "contentTabs": [

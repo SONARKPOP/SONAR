@@ -7,7 +7,6 @@
   "description": "MIJOO (미주) 'Movie Star' Interview\n\n#미주 #MIJOO  \n#무비스타 #MovieStar \n#보고싶어 #MissYou\n# 20230517_6PM\n\n[Movie Star] Pre-order👇\n📍yes24: http://www.yes24.com/Product/Goods/118700614\n📍aladin: https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=316080617\n📍hottracks: https://hottracks.kyobobook.co.kr/ht/record/detail/8804775255762\n\nMIJOO YouTube: https://www.youtube.com/@MIJOO_official \nMIJOO Instagram: https://www.instagram.com/queen.chu_s/\nMIJOO Twitter: https://twitter.com/LeeMiJoo\nMIJOO TikTok: https://www.tiktok.com/@official_mijoo\n\nAntenna YouTube: https://www.youtube.com/@Antenna\nAntenna Instagram: https://www.instagram.com/antenna_official/\nAntenna Twitter: https://twitter.com/antennamusic?s=20",
   "publishedAt": "2023-05-13T10:00:42Z",
   "groupIds": [
-    "lovelyz",
     "mijoo"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "wCQusQ1sQgg",
@@ -53,14 +52,54 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "mijoo",
-    "groupIds": [
-      "lovelyz"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "mijoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "MIJOO",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": "미주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-mijoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "MIJOO",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": "미주",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

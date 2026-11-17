@@ -8,8 +8,7 @@
       "title": "IRENE 아이린 'Biggest Fan' Highlight Medley",
       "publishedAt": "2026-03-23T15:00:19Z",
       "groupIds": [
-        "irene",
-        "red-velvet"
+        "irene"
       ],
       "memberIds": [
         "red-velvet-irene"
@@ -29,8 +28,8 @@
       "thumbnail": "https://i.ytimg.com/vi/v5X0P-kM21s/hqdefault.jpg",
       "durationLabel": "3m35s",
       "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
+        "policy": "title-context-v2",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "externalId": "v5X0P-kM21s",
@@ -49,12 +48,52 @@
       "musicBroadcast": false,
       "individualActivity": {
         "artistId": "irene",
-        "groupIds": [
-          "red-velvet"
-        ],
+        "groupIds": [],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      }
+      },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "irene",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 6,
+              "end": 9,
+              "text": "아이린",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 5,
+              "text": "IRENE",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "red-velvet-irene",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 6,
+              "end": 9,
+              "text": "아이린",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 5,
+              "text": "IRENE",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

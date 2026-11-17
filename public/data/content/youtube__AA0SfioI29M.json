@@ -7,8 +7,7 @@
   "description": "🎥 시구 비하인드가 궁금하다면?!\n\n7년 만에 다시 돌아온 전효성의 두산 시구⚾\n패대기를 피하기 위한 특급 훈련부터 시구 당일까지의 비하인드,\n그리고 박치국 선수와의 특별한 인연까지!\n\n👉 시구 비하인드 풀버전은 여기서 확인해주세요! 🤍\nhttps://youtu.be/D65UI-p2_y8?si=VUMqz4g2XvUBE_ih\n\n#전효성 #시크릿 #두산시구 #두플래쉬 #두산베어스 #박치국 #신재영",
   "publishedAt": "2026-08-07T10:00:15Z",
   "groupIds": [
-    "jeon-hyo-seong",
-    "secret"
+    "jeon-hyo-seong"
   ],
   "memberIds": [
     "secret-jeon-hyo-seong"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "AA0SfioI29M",
@@ -53,14 +52,74 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "jeon-hyo-seong",
-    "groupIds": [
-      "secret"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "secret-jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "전효성",
+          "source": "title"
+        },
+        {
+          "start": 64,
+          "end": 67,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "전효성",
+          "source": "title"
+        },
+        {
+          "start": 64,
+          "end": 67,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 20,
+          "end": 22,
+          "text": "키스",
+          "source": "title"
+        },
+        {
+          "start": 35,
+          "end": 39,
+          "text": "Kiss",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -7,15 +7,10 @@
   "description": "2023.09.13 KBS Cool FM 89.1MHz 매일 22:00~24:00\n데이식스의 키스 더 라디오 (Day6 kiss the radio)\n콩츄초대석 with 김세정",
   "publishedAt": "2023-09-13T17:44:55Z",
   "groupIds": [
-    "gugudan",
-    "ioi",
     "kim-sejeong",
     "kiss"
   ],
-  "memberIds": [
-    "gugudan-kim-sejeong",
-    "ioi-kim-sejeong"
-  ],
+  "memberIds": [],
   "channelId": "kbs-coolfm",
   "channelName": "KBS CoolFM",
   "category": "external",
@@ -34,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:59.270626Z",
+    "collectedAt": "2026-11-17T17:20:07.364057Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,9 +38,67 @@
   "externalType": "radio",
   "memberTagging": {
     "policy": "title-only-v1",
-    "source": "title",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 44,
+          "end": 46,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "김세정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kim-sejeong",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "김세정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "gugudan-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "김세정",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "mL4Jw-1MVJM",
   "sourceUrl": "https://www.youtube.com/watch?v=mL4Jw-1MVJM",
   "contentTabs": [

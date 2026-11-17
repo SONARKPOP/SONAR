@@ -9,7 +9,6 @@
   "groupIds": [
     "adora",
     "kiss",
-    "kiss-of-life",
     "natty"
   ],
   "memberIds": [
@@ -34,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:38:21.861844Z",
+    "collectedAt": "2026-11-17T17:17:12.482517Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,10 +41,100 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 61,
+          "end": 73,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "adora",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 8,
+          "end": 13,
+          "text": "ADORA",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 17,
+          "text": "아도라",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 48,
+          "end": 50,
+          "text": "나띠",
+          "source": "title"
+        },
+        {
+          "start": 51,
+          "end": 56,
+          "text": "NATTY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 48,
+          "end": 50,
+          "text": "나띠",
+          "source": "title"
+        },
+        {
+          "start": 51,
+          "end": 56,
+          "text": "NATTY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 61,
+          "end": 65,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "0DRI-vluaOk",
   "sourceUrl": "https://www.youtube.com/watch?v=0DRI-vluaOk",
   "contentTabs": [

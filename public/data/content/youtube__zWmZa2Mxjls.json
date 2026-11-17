@@ -7,7 +7,6 @@
   "description": "https://youtube.com/@UC7lBEp1OH6utmXAfnraXuhw \n\nhttps://www.instagram.com/iloveryu._\n\nhttps://www.instagram.com/house_of_dreams._\n\nhttps://x.com/houseofdreams_",
   "publishedAt": "2025-08-14T09:01:33Z",
   "groupIds": [
-    "lovelyz",
     "ryu-su-jeong"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "zWmZa2Mxjls",
@@ -53,14 +52,56 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "ryu-su-jeong",
-    "groupIds": [
-      "lovelyz"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "regular",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-ryu-su-jeong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 43,
+          "text": "류수정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ryu-su-jeong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 43,
+          "text": "류수정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-5035c2dc85c0c21e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 26,
+          "end": 27,
+          "text": "수",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -9,10 +9,7 @@
   "groupIds": [
     "artms"
   ],
-  "memberIds": [
-    "artms-heejin",
-    "loona-heejin"
-  ],
+  "memberIds": [],
   "channelId": "artms-official",
   "channelName": "Official ARTMS",
   "category": "own",
@@ -36,7 +33,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -54,5 +51,49 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false
+  "musicBroadcast": false,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "heejin",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 6,
+          "end": 12,
+          "text": "HeeJin",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "loona-heejin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 6,
+          "end": 12,
+          "text": "HeeJin",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "artms-heejin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 6,
+          "end": 12,
+          "text": "HeeJin",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

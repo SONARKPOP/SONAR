@@ -7,11 +7,12 @@
   "description": "",
   "publishedAt": "2024-10-16T11:00:42Z",
   "groupIds": [
-    "girls-generation",
+    "gg-39901f9f99d7997a",
     "hyo"
   ],
   "memberIds": [
-    "girls-generation-hyo"
+    "girls-generation-hyo",
+    "person-e95126af840a28eb"
   ],
   "channelId": "hyo-official",
   "channelName": "HYOYEON",
@@ -36,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -51,16 +52,90 @@
     "own"
   ],
   "musicBroadcast": false,
-  "individualActivity": {
-    "artistId": "hyo",
-    "groupIds": [
-      "girls-generation"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-hyo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 39,
+          "text": "HYO",
+          "source": "title"
+        },
+        {
+          "start": 41,
+          "end": 43,
+          "text": "효연",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 52,
+          "text": "HYOYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 39,
+          "text": "HYO",
+          "source": "title"
+        },
+        {
+          "start": 41,
+          "end": 43,
+          "text": "효연",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 52,
+          "text": "HYOYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e95126af840a28eb",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 30,
+          "text": "하리무",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 54,
+          "end": 58,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

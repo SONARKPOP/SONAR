@@ -9,7 +9,9 @@
   "groupIds": [
     "bewave"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "person-857510a15a2fa92c"
+  ],
   "channelId": "bewave-official",
   "channelName": "BEWAVE",
   "category": "own",
@@ -33,7 +35,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -51,5 +53,49 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-857510a15a2fa92c",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 13,
+          "end": 15,
+          "text": "미카",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "geenius",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 39,
+          "end": 43,
+          "text": "지니어스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "bewave",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 26,
+          "end": 32,
+          "text": "BEWAVE",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -8,7 +8,6 @@
   "publishedAt": "2019-12-06T10:00:24Z",
   "groupIds": [
     "chungha",
-    "ioi",
     "itzy",
     "mamamoo"
   ],
@@ -34,17 +33,75 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:39:08.275900Z",
+    "collectedAt": "2026-11-17T17:18:05.084309Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 62,
+          "end": 66,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 76,
+          "end": 78,
+          "text": "청하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 76,
+          "end": 78,
+          "text": "청하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "mamamoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 67,
+          "end": 70,
+          "text": "마마무",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "F4Fcn0MP-so",
   "sourceUrl": "https://www.youtube.com/watch?v=F4Fcn0MP-so",
   "externalType": "interview",

@@ -7,8 +7,7 @@
   "description": "이거 진지하게 어떤가요..?",
   "publishedAt": "2026-09-24T09:00:34Z",
   "groupIds": [
-    "jeon-hyo-seong",
-    "secret"
+    "jeon-hyo-seong"
   ],
   "memberIds": [
     "secret-jeon-hyo-seong"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "VaFkd8wxeHw",
@@ -62,5 +61,41 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "secret-jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 19,
+          "end": 22,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 19,
+          "end": 22,
+          "text": "전효성",
+          "source": "title"
+        }
+      ]
+    }
+  ],
+  "careerGroupIds": [
+    "secret"
+  ],
+  "displayCareerGroupIds": [
+    "secret"
+  ]
 }

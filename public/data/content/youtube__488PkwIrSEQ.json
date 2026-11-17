@@ -7,8 +7,7 @@
   "description": "#케이 #Kei\n\n-\nhttps://www.youtube.com/@KeiOffcl\nhttps://www.instagram.com/_flower_kei/\nhttps://twitter.com/Kei_offcl",
   "publishedAt": "2024-10-28T09:00:03Z",
   "groupIds": [
-    "kei",
-    "lovelyz"
+    "kei"
   ],
   "memberIds": [
     "lovelyz-kei"
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "488PkwIrSEQ",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "kei",
-    "groupIds": [
-      "lovelyz"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-kei",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 27,
+          "text": "Kei",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kei",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 27,
+          "text": "Kei",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

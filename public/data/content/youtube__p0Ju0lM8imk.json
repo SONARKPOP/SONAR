@@ -7,7 +7,6 @@
   "description": "2025-26 WENDY 1st WORLD TOUR\n[W:EALIVE] ENCORE D-DAY💙\n\n📆 2026.02.28 6PM / 03.01 4PM\n📍 TICKETLINK LIVE ARENA\n\n#WENDY #웬디 \n#WEALIVE\n#WENDY_WORLDTOUR_ENCORE",
   "publishedAt": "2026-02-28T14:00:01Z",
   "groupIds": [
-    "red-velvet",
     "wendy"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "p0Ju0lM8imk",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "wendy",
-    "groupIds": [
-      "red-velvet"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "wendy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 13,
+          "text": "WENDY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-wendy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 13,
+          "text": "WENDY",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

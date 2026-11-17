@@ -7,13 +7,9 @@
   "description": "2023.10.24 KBS Cool FM 89.1MHz 매일 22:00~24:00\n데이식스의 키스 더 라디오 (Day6 kiss the radio)\n콩츄초대석 with 츄",
   "publishedAt": "2023-10-24T17:23:38Z",
   "groupIds": [
-    "chuu",
-    "kiss",
-    "loona"
+    "kiss"
   ],
-  "memberIds": [
-    "loona-chuu"
-  ],
+  "memberIds": [],
   "channelId": "kbs-coolfm",
   "channelName": "KBS CoolFM",
   "category": "external",
@@ -32,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:36.340885Z",
+    "collectedAt": "2026-11-17T17:19:41.711230Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,11 +37,64 @@
   "externalType": "radio",
   "memberTagging": {
     "policy": "title-only-v1",
-    "source": "title",
+    "source": "unclassified",
     "appearanceVerified": false
   },
-  "careerGroupIds": [
-    "loona"
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "loona-chuu",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 16,
+          "text": "CHUU",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "text": "츄",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chuu",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 16,
+          "text": "CHUU",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "text": "츄",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 38,
+          "end": 40,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    }
   ],
   "externalId": "fMctAG1d5WE",
   "sourceUrl": "https://www.youtube.com/watch?v=fMctAG1d5WE",

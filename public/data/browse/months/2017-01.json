@@ -43,7 +43,29 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "regular",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "hello-venus",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 18,
+              "end": 23,
+              "text": "헬로비너스",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 17,
+              "text": "HELLOVENUS",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__fMepe_sNMSw",
@@ -53,7 +75,6 @@
       "title": "수지(Suzy) \"Yes No Maybe\" Dance Practice (Close Up Ver.)",
       "publishedAt": "2017-01-29T04:39:34Z",
       "groupIds": [
-        "miss-a",
         "suzy"
       ],
       "memberIds": [
@@ -74,8 +95,8 @@
       "thumbnail": "https://i.ytimg.com/vi/fMepe_sNMSw/hqdefault.jpg",
       "durationLabel": "3m12s",
       "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
+        "policy": "title-context-v2",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "externalId": "fMepe_sNMSw",
@@ -91,16 +112,70 @@
       "musicBroadcast": false,
       "individualActivity": {
         "artistId": "suzy",
-        "groupIds": [
-          "miss-a"
-        ],
+        "groupIds": [],
         "kind": "individual",
         "evidence": "official-solo-channel"
       },
       "musicType": "dance",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "suzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "수지",
+              "source": "title"
+            },
+            {
+              "start": 3,
+              "end": 7,
+              "text": "Suzy",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "miss-a-suzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "수지",
+              "source": "title"
+            },
+            {
+              "start": 3,
+              "end": 7,
+              "text": "Suzy",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-5d3278b90509163f",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "수지",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube___Ug6w8tQm9A",
@@ -136,6 +211,28 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "akmu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 6,
+              "end": 10,
+              "text": "AKMU",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 5,
+              "text": "악동뮤지션",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "_Ug6w8tQm9A",
       "sourceUrl": "https://www.youtube.com/watch?v=_Ug6w8tQm9A",
       "contentTabs": [
@@ -192,105 +289,29 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
-    },
-    {
-      "id": "youtube__XCjAjaCyFE8",
-      "platform": "youtube",
-      "platformId": "XCjAjaCyFE8",
-      "demo": false,
-      "title": "수지 X 샘김 - Yes No Maybe [어쿠스틱 라이브] SUZY X Sam Kim Acoustic LIVE",
-      "publishedAt": "2017-01-26T01:59:16Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/XCjAjaCyFE8/hqdefault.jpg",
-      "durationLabel": "1m49s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "XCjAjaCyFE8",
-      "sourceUrl": "https://www.youtube.com/watch?v=XCjAjaCyFE8",
-      "contentTabs": [
-        "music",
-        "external"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
-    },
-    {
-      "id": "youtube__eZAKUQXiPYc",
-      "platform": "youtube",
-      "platformId": "eZAKUQXiPYc",
-      "demo": false,
-      "title": "수지 SUZY - EP 04 [오프 더 레코드]",
-      "publishedAt": "2017-01-25T10:59:36Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/eZAKUQXiPYc/hqdefault.jpg",
-      "durationLabel": "10m58s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "eZAKUQXiPYc",
-      "sourceUrl": "https://www.youtube.com/watch?v=eZAKUQXiPYc",
-      "contentTabs": [
-        "home",
-        "external"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "hello-venus",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 11,
+              "end": 16,
+              "text": "헬로비너스",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 10,
+              "text": "HELLOVENUS",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__D06IjyMoco4",
@@ -300,7 +321,6 @@
       "title": "수지(Suzy) \"Yes No Maybe\" Dance Practice",
       "publishedAt": "2017-01-24T12:00:00Z",
       "groupIds": [
-        "miss-a",
         "suzy"
       ],
       "memberIds": [
@@ -321,8 +341,8 @@
       "thumbnail": "https://i.ytimg.com/vi/D06IjyMoco4/hqdefault.jpg",
       "durationLabel": "3m11s",
       "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
+        "policy": "title-context-v2",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "externalId": "D06IjyMoco4",
@@ -338,65 +358,70 @@
       "musicBroadcast": false,
       "individualActivity": {
         "artistId": "suzy",
-        "groupIds": [
-          "miss-a"
-        ],
+        "groupIds": [],
         "kind": "individual",
         "evidence": "official-solo-channel"
       },
       "musicType": "dance",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
-    },
-    {
-      "id": "youtube__UE0fkgFDANI",
-      "platform": "youtube",
-      "platformId": "UE0fkgFDANI",
-      "demo": false,
-      "title": "수지 SUZY - EP 03 [오프 더 레코드]",
-      "publishedAt": "2017-01-22T02:44:56Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/UE0fkgFDANI/hqdefault.jpg",
-      "durationLabel": "8m55s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "UE0fkgFDANI",
-      "sourceUrl": "https://www.youtube.com/watch?v=UE0fkgFDANI",
-      "contentTabs": [
-        "home",
-        "external"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "suzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "수지",
+              "source": "title"
+            },
+            {
+              "start": 3,
+              "end": 7,
+              "text": "Suzy",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "miss-a-suzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "수지",
+              "source": "title"
+            },
+            {
+              "start": 3,
+              "end": 7,
+              "text": "Suzy",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-5d3278b90509163f",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "수지",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__wEkLHC7l25w",
@@ -442,7 +467,23 @@
       "musicType": "mv",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "2ne1",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "2NE1",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__S9xV62oN50A",
@@ -487,7 +528,29 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "hello-venus",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 18,
+              "end": 23,
+              "text": "헬로비너스",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 17,
+              "text": "HELLOVENUS",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__HhhUp5z1Ul4",
@@ -533,56 +596,23 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
-    },
-    {
-      "id": "youtube__2iNybOwhei8",
-      "platform": "youtube",
-      "platformId": "2iNybOwhei8",
-      "demo": false,
-      "title": "수지 SUZY - EP 02 [오프 더 레코드]",
-      "publishedAt": "2017-01-18T21:44:16Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/2iNybOwhei8/hqdefault.jpg",
-      "durationLabel": "12m15s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "2iNybOwhei8",
-      "sourceUrl": "https://www.youtube.com/watch?v=2iNybOwhei8",
-      "contentTabs": [
-        "home",
-        "external"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 5,
+              "end": 8,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__z6Xo7ofr_3s",
@@ -628,56 +658,23 @@
       "musicType": "",
       "teaserType": "content",
       "contentLength": "teaser",
-      "hierarchyVersion": 2
-    },
-    {
-      "id": "youtube__ZqOg_wqGGWk",
-      "platform": "youtube",
-      "platformId": "ZqOg_wqGGWk",
-      "demo": false,
-      "title": "수지 SUZY - 행복한 척 LIVE [세로라이브]",
-      "publishedAt": "2017-01-16T12:00:02Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/ZqOg_wqGGWk/hqdefault.jpg",
-      "durationLabel": "3m44s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "ZqOg_wqGGWk",
-      "sourceUrl": "https://www.youtube.com/watch?v=ZqOg_wqGGWk",
-      "contentTabs": [
-        "music",
-        "external"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 5,
+              "end": 8,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__aosoF2_kI3I",
@@ -687,7 +684,6 @@
       "title": "수지(Suzy) 세로라이브 \"행복한 척\" 티저",
       "publishedAt": "2017-01-16T06:00:47Z",
       "groupIds": [
-        "miss-a",
         "suzy"
       ],
       "memberIds": [
@@ -708,8 +704,8 @@
       "thumbnail": "https://i.ytimg.com/vi/aosoF2_kI3I/hqdefault.jpg",
       "durationLabel": "16s",
       "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
+        "policy": "title-context-v2",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "externalId": "aosoF2_kI3I",
@@ -725,65 +721,70 @@
       "musicBroadcast": false,
       "individualActivity": {
         "artistId": "suzy",
-        "groupIds": [
-          "miss-a"
-        ],
+        "groupIds": [],
         "kind": "individual",
         "evidence": "official-solo-channel"
       },
       "musicType": "",
       "teaserType": "content",
       "contentLength": "teaser",
-      "hierarchyVersion": 2
-    },
-    {
-      "id": "youtube__SqEr5KH3K6Y",
-      "platform": "youtube",
-      "platformId": "SqEr5KH3K6Y",
-      "demo": false,
-      "title": "수지 SUZY - EP 01 [오프 더 레코드]",
-      "publishedAt": "2017-01-15T03:00:02Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/SqEr5KH3K6Y/hqdefault.jpg",
-      "durationLabel": "7m28s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "SqEr5KH3K6Y",
-      "sourceUrl": "https://www.youtube.com/watch?v=SqEr5KH3K6Y",
-      "contentTabs": [
-        "home",
-        "external"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "suzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "수지",
+              "source": "title"
+            },
+            {
+              "start": 3,
+              "end": 7,
+              "text": "Suzy",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "miss-a-suzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "수지",
+              "source": "title"
+            },
+            {
+              "start": 3,
+              "end": 7,
+              "text": "Suzy",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-5d3278b90509163f",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "수지",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__YJnTEEEPcNo",
@@ -829,105 +830,29 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
-    },
-    {
-      "id": "youtube__9E1fTLMtFRs",
-      "platform": "youtube",
-      "platformId": "9E1fTLMtFRs",
-      "demo": false,
-      "title": "수지 SUZY - 티저 #4 [오프 더 레코드]",
-      "publishedAt": "2017-01-13T13:00:00Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "티저"
-      ],
-      "tags": [
-        "티저",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/9E1fTLMtFRs/hqdefault.jpg",
-      "durationLabel": "16s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "9E1fTLMtFRs",
-      "sourceUrl": "https://www.youtube.com/watch?v=9E1fTLMtFRs",
-      "contentTabs": [
-        "external",
-        "shorts"
-      ],
-      "musicType": "",
-      "teaserType": "content",
-      "contentLength": "teaser",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
-    },
-    {
-      "id": "youtube__ilmVg49xe78",
-      "platform": "youtube",
-      "platformId": "ilmVg49xe78",
-      "demo": false,
-      "title": "수지 SUZY - 티저 #3 [오프 더 레코드]",
-      "publishedAt": "2017-01-12T14:00:06Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "티저"
-      ],
-      "tags": [
-        "티저",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/ilmVg49xe78/hqdefault.jpg",
-      "durationLabel": "21s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "ilmVg49xe78",
-      "sourceUrl": "https://www.youtube.com/watch?v=ilmVg49xe78",
-      "contentTabs": [
-        "external",
-        "shorts"
-      ],
-      "musicType": "",
-      "teaserType": "content",
-      "contentLength": "teaser",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "hello-venus",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 11,
+              "end": 16,
+              "text": "헬로비너스",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 10,
+              "text": "HELLOVENUS",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__2A2QheB-wS4",
@@ -973,105 +898,29 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
-    },
-    {
-      "id": "youtube__1GsFW8Akv98",
-      "platform": "youtube",
-      "platformId": "1GsFW8Akv98",
-      "demo": false,
-      "title": "수지 SUZY - 티저 #2 [오프 더 레코드]",
-      "publishedAt": "2017-01-12T11:56:12Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "티저"
-      ],
-      "tags": [
-        "티저",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/1GsFW8Akv98/hqdefault.jpg",
-      "durationLabel": "27s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "1GsFW8Akv98",
-      "sourceUrl": "https://www.youtube.com/watch?v=1GsFW8Akv98",
-      "contentTabs": [
-        "external",
-        "shorts"
-      ],
-      "musicType": "",
-      "teaserType": "content",
-      "contentLength": "teaser",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
-    },
-    {
-      "id": "youtube__3UHsRL9FN54",
-      "platform": "youtube",
-      "platformId": "3UHsRL9FN54",
-      "demo": false,
-      "title": "수지 SUZY - 티저 #1 [오프 더 레코드]",
-      "publishedAt": "2017-01-12T09:56:11Z",
-      "groupIds": [
-        "miss-a",
-        "suzy"
-      ],
-      "memberIds": [
-        "miss-a-suzy"
-      ],
-      "channelId": "dingo-music",
-      "channelName": "딩고 뮤직 / dingo music",
-      "category": "external",
-      "subtypes": [
-        "티저"
-      ],
-      "tags": [
-        "티저",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/3UHsRL9FN54/hqdefault.jpg",
-      "durationLabel": "26s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "externalId": "3UHsRL9FN54",
-      "sourceUrl": "https://www.youtube.com/watch?v=3UHsRL9FN54",
-      "contentTabs": [
-        "external",
-        "shorts"
-      ],
-      "musicType": "",
-      "teaserType": "content",
-      "contentLength": "teaser",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "hello-venus",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 11,
+              "end": 16,
+              "text": "헬로비너스",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 10,
+              "text": "HELLOVENUS",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__EynHx9uC_Q4",
@@ -1117,7 +966,23 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 5,
+              "end": 8,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__4y9RJeS42Oc",
@@ -1163,7 +1028,23 @@
       "musicType": "dance",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__1tIddwVpNyw",
@@ -1209,7 +1090,8 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": []
     },
     {
       "id": "youtube__5Lx301NJTn8",
@@ -1255,7 +1137,23 @@
       "musicType": "dance",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 5,
+              "end": 8,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__VAxe640V0y0",
@@ -1301,7 +1199,23 @@
       "musicType": "mv",
       "teaserType": "",
       "contentLength": "regular",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 18,
+              "end": 21,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__AbtDYzP4l_I",
@@ -1347,7 +1261,23 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__WhXefyLs-uw",
@@ -1393,7 +1323,23 @@
       "musicType": "mv",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__e50F8MreYig",
@@ -1439,7 +1385,23 @@
       "musicType": "mv",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__JAhruWIc228",
@@ -1485,7 +1447,37 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "aoa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 1,
+              "end": 4,
+              "text": "AOA",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 20,
+              "end": 21,
+              "text": "s",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

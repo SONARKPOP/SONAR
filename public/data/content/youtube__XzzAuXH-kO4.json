@@ -7,7 +7,6 @@
   "description": "#Shorts #서현 #SEOHYUN",
   "publishedAt": "2023-05-19T11:00:22Z",
   "groupIds": [
-    "girls-generation",
     "seohyun"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "XzzAuXH-kO4",
@@ -53,14 +52,88 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "seohyun",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "highteen",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "하이틴",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "seohyun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "서현",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 27,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-d70508a044bfe45b",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "서현",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 27,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-seohyun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "서현",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 27,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

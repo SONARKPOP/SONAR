@@ -8,7 +8,6 @@
   "publishedAt": "2020-06-17T16:32:20Z",
   "groupIds": [
     "izone",
-    "purple-kiss",
     "swan"
   ],
   "memberIds": [
@@ -33,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:36.892350Z",
+    "collectedAt": "2026-11-17T17:19:42.382347Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,10 +40,68 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 47,
+          "end": 51,
+          "text": "Swan",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 47,
+          "end": 51,
+          "text": "Swan",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 20,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 33,
+          "text": "Secret",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "fXSXUKXuqu8",
   "sourceUrl": "https://www.youtube.com/watch?v=fXSXUKXuqu8",
   "contentTabs": [

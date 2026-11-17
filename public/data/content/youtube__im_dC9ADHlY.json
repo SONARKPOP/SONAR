@@ -9,7 +9,9 @@
   "groupIds": [
     "izna"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "ive-rei"
+  ],
   "channelId": "izna-official",
   "channelName": "izna (이즈나)",
   "category": "own",
@@ -33,7 +35,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -51,5 +53,55 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false
+  "musicBroadcast": false,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "ive-rei",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 24,
+          "text": "REI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 50,
+          "end": 53,
+          "text": "이즈나",
+          "source": "title"
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "text": "izna",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2025-11-04T08:05:00Z",
   "groupIds": [
-    "gidle",
     "miyeon"
   ],
   "memberIds": [
@@ -32,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:41:12.322263Z",
+    "collectedAt": "2026-11-17T17:20:22.180895Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,10 +39,54 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "gidle-miyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 32,
+          "end": 34,
+          "text": "미연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "miyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 32,
+          "end": 34,
+          "text": "미연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 25,
+          "text": "s",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "qQouOWsPySA",
   "sourceUrl": "https://www.youtube.com/watch?v=qQouOWsPySA",
   "contentTabs": [

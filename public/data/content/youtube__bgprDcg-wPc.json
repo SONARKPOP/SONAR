@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2026-03-27T08:07:00Z",
   "groupIds": [
-    "izone",
     "yena"
   ],
   "memberIds": [
@@ -32,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:24.388676Z",
+    "collectedAt": "2026-11-17T17:19:28.593059Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,10 +39,72 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "izone-yena",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 11,
+          "end": 15,
+          "text": "YENA",
+          "source": "title"
+        },
+        {
+          "start": 35,
+          "end": 38,
+          "text": "최예나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yena",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 11,
+          "end": 15,
+          "text": "YENA",
+          "source": "title"
+        },
+        {
+          "start": 35,
+          "end": 38,
+          "text": "최예나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "s",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 28,
+          "text": "s",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "bgprDcg-wPc",
   "sourceUrl": "https://www.youtube.com/watch?v=bgprDcg-wPc",
   "contentTabs": [

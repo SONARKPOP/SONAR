@@ -7,11 +7,12 @@
   "description": "",
   "publishedAt": "2026-01-28T12:00:29Z",
   "groupIds": [
-    "loona",
+    "tri-be",
     "yves"
   ],
   "memberIds": [
-    "loona-yves"
+    "loona-yves",
+    "person-d0a95a6b4d1c9eaf"
   ],
   "channelId": "yves-official",
   "channelName": "YVES 이브",
@@ -36,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -55,12 +56,48 @@
   "contentLength": "short",
   "hierarchyVersion": 2,
   "musicBroadcast": false,
-  "individualActivity": {
-    "artistId": "yves",
-    "groupIds": [
-      "loona"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  }
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-d0a95a6b4d1c9eaf",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "미레",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "loona-yves",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 10,
+          "text": "Yves",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yves",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 10,
+          "text": "Yves",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

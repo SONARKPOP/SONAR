@@ -7,7 +7,6 @@
   "description": "[🎧] [#speedup ]\nYoutube Music: https://reurl.cc/eD1yg7\nSpotify: https://reurl.cc/v7Vvx1\nKKbox: https://kkbox.fm/Qi1EJes\nMyMusic: https://reurl.cc/DAGlpO\n\n\n[ELKIE official]\nInstagram: https://www.instagram.com/chongtingyanelkie/\n\nWeibo: https://weibo.com/u/7014823596​​\n\nFB:https://www.facebook.com/elkie.official/\n\n抖音:https://v.douyin.com/eVbeprC/\n\nmail: elkie.official@gmail.com",
   "publishedAt": "2023-08-25T10:00:29Z",
   "groupIds": [
-    "clc",
     "elkie"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "YKZEoypt6cU",
@@ -53,14 +52,42 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "elkie",
-    "groupIds": [
-      "clc"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "dance",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "clc-elkie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "ELKIE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "elkie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "ELKIE",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

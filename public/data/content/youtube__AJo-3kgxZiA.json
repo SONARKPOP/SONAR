@@ -9,7 +9,9 @@
   "groupIds": [
     "bbgirls"
   ],
-  "memberIds": [],
+  "memberIds": [
+    "person-3a73f1cd0bfce652"
+  ],
   "channelId": "bbgirls-official",
   "channelName": "브브걸 (BBGIRLS)",
   "category": "shorts",
@@ -33,7 +35,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -51,5 +53,35 @@
   "musicType": "",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-3a73f1cd0bfce652",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 14,
+          "text": "이채영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "fromis9",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 1,
+          "end": 9,
+          "text": "fromis_9",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2026-09-17T11:00:35Z",
   "groupIds": [
-    "blackpink",
     "jisoo"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "g8naNP0wTOA",
@@ -57,10 +56,50 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "jisoo",
-    "groupIds": [
-      "blackpink"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "bp-jisoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "JISOO",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 24,
+          "text": "JISOO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jisoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "JISOO",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 24,
+          "text": "JISOO",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

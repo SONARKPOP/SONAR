@@ -7,7 +7,6 @@
   "description": "#미연 #MIYEON #IDLE\n\nCopyright © 2025 Studio Episode - All Rights Reserved",
   "publishedAt": "2025-08-21T09:00:34Z",
   "groupIds": [
-    "gidle",
     "miyeon"
   ],
   "memberIds": [
@@ -37,7 +36,7 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "title",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "MIwUfnPWxr4",
@@ -53,14 +52,42 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "miyeon",
-    "groupIds": [
-      "gidle"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "cover",
   "teaserType": "",
   "contentLength": "short",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "gidle-miyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 11,
+          "text": "미연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "miyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 11,
+          "text": "미연",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

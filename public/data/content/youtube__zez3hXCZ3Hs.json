@@ -8,10 +8,11 @@
   "publishedAt": "2026-02-06T09:01:28Z",
   "groupIds": [
     "chuu",
-    "loona"
+    "everglow"
   ],
   "memberIds": [
-    "loona-chuu"
+    "loona-chuu",
+    "person-97230eee8a140bd9"
   ],
   "channelId": "chuu-official",
   "channelName": "CHUU Official",
@@ -35,7 +36,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -44,14 +45,6 @@
   ],
   "ownType": "behind",
   "musicBroadcast": false,
-  "individualActivity": {
-    "artistId": "chuu",
-    "groupIds": [
-      "loona"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  },
   "externalId": "zez3hXCZ3Hs",
   "sourceUrl": "https://www.youtube.com/watch?v=zez3hXCZ3Hs",
   "contentTabs": [
@@ -62,7 +55,48 @@
   "teaserType": "",
   "contentLength": "regular",
   "hierarchyVersion": 2,
-  "careerGroupIds": [
-    "loona"
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "loona-chuu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "CHUU",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chuu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "CHUU",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-97230eee8a140bd9",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 11,
+          "end": 13,
+          "text": "이런",
+          "source": "title"
+        }
+      ]
+    }
   ]
 }

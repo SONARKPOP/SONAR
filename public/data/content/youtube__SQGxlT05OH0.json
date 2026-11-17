@@ -7,7 +7,6 @@
   "description": "_\nBon appétit, Your Majesty\nYOONA Drama Fan Meeting IN HOCHIMINH CITY&TAIPEI\n\n\n#임윤아 #LIMYOONA #YOONA_FANMEETING_TOUR",
   "publishedAt": "2025-12-11T09:00:45Z",
   "groupIds": [
-    "girls-generation",
     "yoona"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "SQGxlT05OH0",
@@ -53,14 +52,42 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "yoona",
-    "groupIds": [
-      "girls-generation"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
   },
   "musicType": "",
   "teaserType": "",
   "contentLength": "regular",
-  "hierarchyVersion": 2
+  "hierarchyVersion": 2,
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "yoona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 17,
+          "text": "YOONA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-yoona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 17,
+          "text": "YOONA",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }

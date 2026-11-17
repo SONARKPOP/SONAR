@@ -7,7 +7,6 @@
   "description": "Check out the Official MV for 'Break it (feat.Lexie Liu)' by Yves at the PAIX PER MIL YouTube channel.\n\n🔗 https://youtu.be/5KOzD-S1B-4?si=6PuMTsv2eAiabtIB",
   "publishedAt": "2026-06-22T12:00:24Z",
   "groupIds": [
-    "loona",
     "yves"
   ],
   "memberIds": [
@@ -36,8 +35,8 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
-    "source": "title",
+    "policy": "title-context-v2",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "xs_UjjXFRIo",
@@ -57,10 +56,38 @@
   "musicBroadcast": false,
   "individualActivity": {
     "artistId": "yves",
-    "groupIds": [
-      "loona"
-    ],
+    "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  }
+  },
+  "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "loona-yves",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 41,
+          "end": 45,
+          "text": "Yves",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yves",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 41,
+          "end": 45,
+          "text": "Yves",
+          "source": "title"
+        }
+      ]
+    }
+  ]
 }
