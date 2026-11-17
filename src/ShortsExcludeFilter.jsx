@@ -1,9 +1,8 @@
-
 import React from 'react';
-import {Check} from 'lucide-react';
+import {durationSeconds} from './content-sections.js';
 
 export default function ShortsExcludeFilter({
-  enabled = false,
+  enabled,
   onChange
 }) {
   return (
@@ -13,8 +12,15 @@ export default function ShortsExcludeFilter({
       aria-pressed={enabled}
       onClick={() => onChange(!enabled)}
     >
-      {enabled && <Check size={14}/>}
-      <span>쇼츠 제외</span>
+      {enabled ? '✓ 쇼츠 제외' : '쇼츠 제외'}
     </button>
   );
+}
+
+export function filterShortVideos(videos, enabled) {
+  if (!enabled) return videos;
+  return videos.filter(video => {
+    const seconds = durationSeconds(video);
+    return seconds === null || seconds >= 60;
+  });
 }
