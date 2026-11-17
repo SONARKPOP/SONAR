@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:17:48.669934Z",
+    "collectedAt": "2026-11-17T19:25:14.685209Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,20 +45,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "bibi",
+      "artistId": "min",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 66,
-          "end": 70,
-          "text": "BIBI",
+          "start": 5,
+          "end": 8,
+          "text": "Min",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "miss-a-min",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 71,
-          "end": 73,
-          "text": "비비",
+          "start": 5,
+          "end": 8,
+          "text": "Min",
           "source": "title"
         }
       ]
@@ -92,29 +100,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "miss-a-min",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 8,
-          "text": "Min",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "min",
+      "artistId": "bibi",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 5,
-          "end": 8,
-          "text": "Min",
+          "start": 71,
+          "end": 73,
+          "text": "비비",
+          "source": "title"
+        },
+        {
+          "start": 66,
+          "end": 70,
+          "text": "BIBI",
           "source": "title"
         }
       ]

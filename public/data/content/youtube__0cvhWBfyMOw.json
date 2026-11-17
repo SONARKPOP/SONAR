@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:17:13.761548Z",
+    "collectedAt": "2026-11-17T19:24:41.059505Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-5a6b088d6653fbbd",
+      "artistType": "group",
+      "artistId": "min",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 41,
-          "end": 43,
-          "text": "나비",
+          "start": 9,
+          "end": 12,
+          "text": "Min",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "miss-a-min",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 9,
+          "end": 12,
+          "text": "Min",
           "source": "title"
         }
       ]
@@ -75,42 +89,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-55aca1823bded05b",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 8,
-          "text": "Jin",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "miss-a-min",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 9,
-          "end": 12,
-          "text": "Min",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "min",
+      "artistId": "person-5a6b088d6653fbbd",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 9,
-          "end": 12,
-          "text": "Min",
+          "start": 41,
+          "end": 43,
+          "text": "나비",
           "source": "title"
         }
       ]
@@ -125,6 +111,20 @@
           "start": 33,
           "end": 34,
           "text": "s",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-55aca1823bded05b",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 8,
+          "text": "Jin",
           "source": "title"
         }
       ]

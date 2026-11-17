@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:20:40.651417Z",
+    "collectedAt": "2026-11-17T19:27:54.915592Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,20 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "nmixx",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 55,
+          "end": 60,
+          "text": "NMIXX",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "ive-liz",
       "state": "inferred",
@@ -58,34 +72,6 @@
           "start": 50,
           "end": 52,
           "text": "리즈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-2300f45a248fc299",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 2,
-          "text": "세계",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 46,
-          "end": 49,
-          "text": "IVE",
           "source": "title"
         }
       ]
@@ -106,14 +92,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "nmixx",
+      "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 55,
-          "end": 60,
-          "text": "NMIXX",
+          "start": 46,
+          "end": 49,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-2300f45a248fc299",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "세계",
           "source": "title"
         }
       ]

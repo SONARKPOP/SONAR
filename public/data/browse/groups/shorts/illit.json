@@ -55,8 +55,7 @@
       "title": "#체포하겠어 🚨 with @ITZY  #CHAERYEONG #You_re_Under_Arrest #ILLIT #아일릿",
       "publishedAt": "2026-11-17T11:30:23Z",
       "groupIds": [
-        "illit",
-        "itzy"
+        "illit"
       ],
       "memberIds": [
         "itzy-member-608992372543"
@@ -76,7 +75,7 @@
       "thumbnail": "https://i.ytimg.com/vi/Fk526q1hOwg/hqdefault.jpg",
       "durationLabel": "21s",
       "memberTagging": {
-        "policy": "title-only-v1",
+        "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
       },
@@ -117,20 +116,6 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "itzy",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 19,
-              "text": "ITZY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "itzy-member-608992372543",
           "state": "inferred",
@@ -140,6 +125,20 @@
               "start": 22,
               "end": 32,
               "text": "CHAERYEONG",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "itzy",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 15,
+              "end": 19,
+              "text": "ITZY",
               "source": "title"
             }
           ]
@@ -284,7 +283,8 @@
       "title": "Akali & Katarina 삐걱삐삐걱 w/ #민주 #MINJU #아일릿 #ILLIT @ILLIT_official",
       "publishedAt": "2026-11-16T10:00:22Z",
       "groupIds": [
-        "gidle"
+        "gidle",
+        "illit"
       ],
       "memberIds": [
         "illit-member-a5c02f904155"
@@ -325,22 +325,28 @@
       "musicBroadcast": false,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-68d4509149a9c415",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "illit",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 27,
-              "end": 29,
-              "text": "민주",
+              "start": 43,
+              "end": 48,
+              "text": "ILLIT",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 41,
+              "text": "아일릿",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-8078e40995871510",
+          "artistId": "person-68d4509149a9c415",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -368,9 +374,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "illit-member-a5c02f904155",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-8078e40995871510",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 27,
@@ -381,21 +387,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "illit",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "illit-member-a5c02f904155",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 43,
-              "end": 48,
-              "text": "ILLIT",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 41,
-              "text": "아일릿",
+              "start": 27,
+              "end": 29,
+              "text": "민주",
               "source": "title"
             }
           ]

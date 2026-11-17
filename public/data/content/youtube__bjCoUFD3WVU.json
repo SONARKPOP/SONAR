@@ -31,30 +31,29 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-14T19:04:24.109052Z",
+    "collectedAt": "2026-11-17T19:26:48.503553Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
-  "externalId": "bjCoUFD3WVU",
-  "sourceUrl": "https://www.youtube.com/watch?v=bjCoUFD3WVU",
-  "contentTypes": [
-    "own"
-  ],
-  "ownType": "other",
-  "contentTabs": [
-    "shorts",
-    "own"
-  ],
-  "musicBroadcast": false,
-  "musicType": "",
-  "teaserType": "",
-  "contentLength": "short",
-  "hierarchyVersion": 2,
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "luv",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "Luv",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "loveone",
@@ -62,29 +61,15 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 18,
-          "end": 25,
-          "text": "LOVEONE",
-          "source": "title"
-        },
-        {
           "start": 27,
           "end": 30,
           "text": "러브원",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-2ace1caaaf037595",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 39,
-          "end": 41,
-          "text": "아연",
+          "start": 18,
+          "end": 25,
+          "text": "LOVEONE",
           "source": "title"
         }
       ]
@@ -118,18 +103,33 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "luv",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "person-2ace1caaaf037595",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "Luv",
+          "start": 39,
+          "end": 41,
+          "text": "아연",
           "source": "title"
         }
       ]
     }
-  ]
+  ],
+  "externalId": "bjCoUFD3WVU",
+  "sourceUrl": "https://www.youtube.com/watch?v=bjCoUFD3WVU",
+  "contentTypes": [
+    "own"
+  ],
+  "ownType": "other",
+  "contentTabs": [
+    "shorts",
+    "own"
+  ],
+  "musicType": "",
+  "teaserType": "",
+  "contentLength": "short",
+  "hierarchyVersion": 2,
+  "musicBroadcast": false
 }

@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:17:19.969362Z",
+    "collectedAt": "2026-11-17T19:24:47.000380Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,34 +43,14 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
-        {
-          "start": 15,
-          "end": 22,
-          "text": "키스오브라이프",
-          "source": "title"
-        },
         {
           "start": 23,
-          "end": 35,
-          "text": "KISS OF LIFE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "younha",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
-      "matches": [
-        {
-          "start": 57,
-          "end": 59,
-          "text": "윤하",
+          "end": 27,
+          "text": "KISS",
           "source": "title"
         }
       ]
@@ -105,14 +85,34 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "younha",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
+          "start": 57,
+          "end": 59,
+          "text": "윤하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 22,
+          "text": "키스오브라이프",
+          "source": "title"
+        },
+        {
           "start": 23,
-          "end": 27,
-          "text": "KISS",
+          "end": 35,
+          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]

@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:17:12.482517Z",
+    "collectedAt": "2026-11-17T19:24:39.835361Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,14 +48,14 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 61,
-          "end": 73,
-          "text": "KISS OF LIFE",
+          "end": 65,
+          "text": "KISS",
           "source": "title"
         }
       ]
@@ -67,35 +67,29 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 8,
-          "end": 13,
-          "text": "ADORA",
-          "source": "title"
-        },
-        {
           "start": 14,
           "end": 17,
           "text": "아도라",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 13,
+          "text": "ADORA",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "kiss-of-life-natty",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 48,
-          "end": 50,
-          "text": "나띠",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 56,
-          "text": "NATTY",
+          "start": 61,
+          "end": 73,
+          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]
@@ -121,15 +115,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 61,
-          "end": 65,
-          "text": "KISS",
+          "start": 48,
+          "end": 50,
+          "text": "나띠",
+          "source": "title"
+        },
+        {
+          "start": 51,
+          "end": 56,
+          "text": "NATTY",
           "source": "title"
         }
       ]

@@ -29,7 +29,7 @@
   "actualEndTime": "2024-02-06T14:55:47Z",
   "scheduledStartTime": "2024-02-06T13:30:00Z",
   "source": {
-    "collectedAt": "2026-11-17T17:18:42.698297Z",
+    "collectedAt": "2026-11-17T19:26:05.035897Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 25,
+          "end": 28,
+          "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 21,
+          "end": 28,
+          "text": "(여자)아이들",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -52,26 +72,6 @@
           "start": 6,
           "end": 8,
           "text": "키스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 21,
-          "end": 28,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 25,
-          "end": 28,
-          "text": "아이들",
           "source": "title"
         }
       ]

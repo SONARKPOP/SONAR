@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:19:19.569362Z",
+    "collectedAt": "2026-11-17T19:26:39.930469Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,20 +46,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "person-ad73a6c022a8838f",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 35,
-          "end": 38,
-          "text": "방지민",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "izna",
@@ -82,9 +68,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "miss-a-min",
+      "artistId": "person-ad73a6c022a8838f",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 35,
+          "end": 38,
+          "text": "방지민",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "min",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 31,
@@ -95,10 +95,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "min",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "miss-a-min",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 31,

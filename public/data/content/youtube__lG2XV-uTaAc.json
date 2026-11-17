@@ -31,7 +31,7 @@
   "actualEndTime": "2025-05-07T09:59:42Z",
   "scheduledStartTime": "2025-05-07T09:29:00Z",
   "source": {
-    "collectedAt": "2026-11-17T17:20:03.535483Z",
+    "collectedAt": "2026-11-17T19:27:21.658286Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "aespa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 39,
+          "end": 42,
+          "text": "에스파",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "aespa-giselle",
@@ -61,6 +75,26 @@
     {
       "artistType": "group",
       "artistId": "nayeon",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 9,
+          "end": 11,
+          "text": "나연",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 35,
+          "text": "나연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b7086b233a866c09",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -114,40 +148,6 @@
           "start": 33,
           "end": 35,
           "text": "나연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-b7086b233a866c09",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 9,
-          "end": 11,
-          "text": "나연",
-          "source": "title"
-        },
-        {
-          "start": 33,
-          "end": 35,
-          "text": "나연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "aespa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 39,
-          "end": 42,
-          "text": "에스파",
           "source": "title"
         }
       ]

@@ -8,6 +8,7 @@
   "publishedAt": "2020-03-01T03:00:01Z",
   "groupIds": [
     "dreamnote",
+    "oh-my-girl",
     "yooa"
   ],
   "memberIds": [
@@ -33,28 +34,34 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:17:57.061143Z",
+    "collectedAt": "2026-11-17T19:25:22.529368Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "yooa",
+      "artistId": "dreamnote",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "유아",
+          "start": 0,
+          "end": 4,
+          "text": "드림노트",
+          "source": "title"
+        },
+        {
+          "start": 22,
+          "end": 31,
+          "text": "DreamNote",
           "source": "title"
         }
       ]
@@ -75,20 +82,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "dreamnote",
+      "artistId": "yooa",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "드림노트",
-          "source": "title"
-        },
-        {
-          "start": 22,
-          "end": 31,
-          "text": "DreamNote",
+          "start": 5,
+          "end": 7,
+          "text": "유아",
           "source": "title"
         }
       ]

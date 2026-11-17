@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:17:11.950704Z",
+    "collectedAt": "2026-11-17T19:24:39.331516Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "lee-hi",
+      "artistType": "person",
+      "artistId": "aespa-karina",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 11,
-          "end": 17,
-          "text": "LEE HI",
+          "start": 0,
+          "end": 3,
+          "text": "카리나",
+          "source": "title"
+        },
+        {
+          "start": 48,
+          "end": 51,
+          "text": "카리나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 20,
+          "end": 24,
+          "text": "ROSE",
           "source": "title"
         }
       ]
@@ -75,34 +95,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 20,
-          "end": 24,
-          "text": "ROSE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "aespa-karina",
+      "artistId": "lee-hi",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "카리나",
-          "source": "title"
-        },
-        {
-          "start": 48,
-          "end": 51,
-          "text": "카리나",
+          "start": 11,
+          "end": 17,
+          "text": "LEE HI",
           "source": "title"
         }
       ]

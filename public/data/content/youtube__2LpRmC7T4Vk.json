@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:17:19.913745Z",
+    "collectedAt": "2026-11-17T19:24:46.945952Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,20 +45,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "red-velvet",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 28,
-          "end": 38,
-          "text": "Red Velvet",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "gidle",
@@ -80,10 +66,24 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "wonder-girls-sunmi",
+      "artistType": "group",
+      "artistId": "red-velvet",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 28,
+          "end": 38,
+          "text": "Red Velvet",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "sunmi",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 48,
@@ -94,10 +94,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "sunmi",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "wonder-girls-sunmi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 48,

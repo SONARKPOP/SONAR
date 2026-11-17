@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T17:19:01.425460Z",
+    "collectedAt": "2026-11-17T19:26:22.574676Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-e431bf31c4a3ed87",
+      "artistType": "group",
+      "artistId": "alice",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 37,
-          "end": 39,
-          "text": "우주",
+          "start": 5,
+          "end": 10,
+          "text": "ALICE",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 14,
+          "text": "앨리스",
           "source": "title"
         }
       ]
@@ -87,21 +93,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "alice",
+      "artistType": "person",
+      "artistId": "person-e431bf31c4a3ed87",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 11,
-          "end": 14,
-          "text": "앨리스",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 10,
-          "text": "ALICE",
+          "start": 37,
+          "end": 39,
+          "text": "우주",
           "source": "title"
         }
       ]
