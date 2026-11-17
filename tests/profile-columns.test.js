@@ -32,4 +32,3 @@ test('table renders saved visibility order and accessible mobile reorder control
   assert.doesNotMatch(table,/profile-affiliation-cell/);assert.match(table,/draggable="true"/);assert.match(table,/aria-sort="ascending"/);assert.match(table,/data-no-translate="true"/);assert.match(html,/아티스트 왼쪽으로 이동/);assert.match(html,/type="checkbox" disabled=""/);
  }finally{if(oldWindow===undefined)delete globalThis.window;else globalThis.window=oldWindow;await server.close();}
 });
-
