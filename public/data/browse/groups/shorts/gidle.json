@@ -39,20 +39,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "gidle",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 73,
-              "end": 76,
-              "text": "아이들",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-a3d469a9e79693d5",
           "state": "inferred",
@@ -62,6 +48,20 @@
               "start": 62,
               "end": 65,
               "text": "김신영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gidle",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 73,
+              "end": 76,
+              "text": "아이들",
               "source": "title"
             }
           ]
@@ -140,8 +140,7 @@
       "title": "Akali & Katarina 삐걱삐삐걱 w/ #민주 #MINJU #아일릿 #ILLIT @ILLIT_official",
       "publishedAt": "2026-11-16T10:00:22Z",
       "groupIds": [
-        "gidle",
-        "illit"
+        "gidle"
       ],
       "memberIds": [
         "illit-member-a5c02f904155"
@@ -182,44 +181,10 @@
       "musicBroadcast": false,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "illit",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 43,
-              "end": 48,
-              "text": "ILLIT",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 41,
-              "text": "아일릿",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "illit-member-a5c02f904155",
           "state": "inferred",
           "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 27,
-              "end": 29,
-              "text": "민주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-8078e40995871510",
-          "state": "needs_review",
-          "reason": "shared-name",
           "matches": [
             {
               "start": 27,
@@ -253,6 +218,40 @@
               "start": 27,
               "end": 29,
               "text": "민주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8078e40995871510",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 27,
+              "end": 29,
+              "text": "민주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "illit",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 38,
+              "end": 41,
+              "text": "아일릿",
+              "source": "title"
+            },
+            {
+              "start": 43,
+              "end": 48,
+              "text": "ILLIT",
               "source": "title"
             }
           ]
@@ -409,21 +408,15 @@
       "musicBroadcast": false,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "illit",
+          "artistType": "person",
+          "artistId": "gidle-soyeon",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 60,
-              "end": 65,
-              "text": "ILLIT",
-              "source": "title"
-            },
-            {
-              "start": 67,
-              "end": 70,
-              "text": "아일릿",
+              "start": 31,
+              "end": 37,
+              "text": "SOYEON",
               "source": "title"
             }
           ]
@@ -443,15 +436,21 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "gidle-soyeon",
+          "artistType": "group",
+          "artistId": "illit",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 31,
-              "end": 37,
-              "text": "SOYEON",
+              "start": 67,
+              "end": 70,
+              "text": "아일릿",
+              "source": "title"
+            },
+            {
+              "start": 60,
+              "end": 65,
+              "text": "ILLIT",
               "source": "title"
             }
           ]
