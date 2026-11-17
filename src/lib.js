@@ -169,7 +169,7 @@ export function uploadDays(rows){
 
 export function uploadKind(row){
  if(row.format==='live'||row.actualStartTime||['live','ended'].includes(row.liveStatus))return 'live';
- if(row.category==='music'||musicType(row))return 'music';
+ if(row.category==='music'||row.category==='broadcast'||row.contentTabs?.includes('broadcast')||musicType(row))return 'music';
  const seconds=durationSeconds(row);
  if(seconds!==null)return seconds>=180?'content':'short';
  return row.format==='short'||row.category==='shorts'?'short':null;
