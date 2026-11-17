@@ -35,7 +35,7 @@ def summary(v):
 
 
 def discovery_groups(video):
-    return set(video['groupIds']) | set(video.get('individualActivity', {}).get('groupIds', []))
+    return set(video['groupIds']) | set(video.get('individualActivity', {}).get('groupIds', [])) | set(video.get('careerGroupIds', []))
 
 
 def archive_years(items):
@@ -60,7 +60,7 @@ def publish(records, config, events=(), output=DATA, demo=False, attribution_cle
     sources = {c['id']:c for c in config['channels']}
     artists = {group['id']:group for group in config['groups']}
     members = {member['id']:member for member in config['members']}
-    from .youtube import ambiguous_artist_links,prune_stale_attribution,read_overrides,guest_only_title
+    from .youtube import ambiguous_artist_links,prune_stale_attribution,read_overrides,guest_only_title,refresh_member_tags
     attribution_links=ambiguous_artist_links(config)
     attribution_overrides=read_overrides().get('videos',{})
     indexed = {}
@@ -76,6 +76,8 @@ def publish(records, config, events=(), output=DATA, demo=False, attribution_cle
         record = scope_video(record, artists, members)
         if not record['groupIds']:
             continue
+        if not attribution_cleaned:
+            record=refresh_member_tags(record,config)
         video = apply_tags(record, source.get('official', False))
         activity = classify_individual(video, source, artists, members)
         if activity:

@@ -73,6 +73,8 @@ def public_artist_scope(config):
 def scope_video(record, groups, members):
     record = {**record, 'groupIds':[gid for gid in record['groupIds'] if gid in groups],
               'memberIds':[mid for mid in record.get('memberIds', []) if mid in members]}
+    if 'careerGroupIds' in record:
+        record['careerGroupIds']=[gid for gid in record['careerGroupIds'] if gid in groups]
     if 'appearanceEvidence' in record:
         record['appearanceEvidence'] = [
             evidence for evidence in record['appearanceEvidence']

@@ -1,4 +1,5 @@
 import StationDirectory from './StationDirectory';
+import ContentPeriodFilter from './ContentPeriodFilter';
 import useFilterHistory from './useFilterHistory';
 import FeedbackLink from './FeedbackLink';
 import React,{useEffect,useMemo,useRef,useState} from 'react';
@@ -17,7 +18,6 @@ import FavoritesSidebar from './FavoritesSidebar';
 import {ACTIVE_BROWSE_STATES} from './youtube-activity';
 import AnalysisPage from './AnalysisRoute';
 import {hardBlockContent,softBlockContent,favoriteContent,favoriteArtistIds,browsingArtistIds,visibleLiveRows,bulkViewingChecks} from './artist-insights';
-import FilterChoices from './FilterChoices';
 import VideoCard from './VideoCard';
 import ContentSections from './ContentSections';
 import {WorkspaceNavigation,ContentSearch,HomeOverview,ExternalExplorer} from './BrowseWorkspace';
@@ -26,11 +26,11 @@ import {videoSourceUrl,mergePlatformRows,currentChzzkLives} from './platforms';
 import {useGroupVideos} from './useGroupVideos';
 import {archiveRequest,balancedPreview} from './browse';
 import {LANGUAGES,LanguageContext,localize,readScreenPreference,translate,formatMessage} from './i18n';
+import './ui-polish.css';
 const base=import.meta.env.BASE_URL;
 const {json,cache}=createDataClient({base});
 const presetOptions=[['heart','하트',Heart],['star','별',Star],['clover','새싹',Sprout]];
-const menus=[['music','MUSIC',Music2],['broadcast','음악방송',Tv],['radio','RADIO',Radio],['own','자체콘텐츠',Clapperboard],['external','외부콘텐츠',Layers],['shorts','쇼츠',Play],['station','라이브스테이션',Disc3],['uploads','업로드달력',CalendarDays]];
-function filterButtons(label,value,options,onChange){return <FilterChoices label={label} value={value} options={options} onChange={onChange}/>;}
+const menus=[['all','전체',Layers],['music','MUSIC',Music2],['broadcast','음악방송',Tv],['radio','RADIO',Radio],['own','자체콘텐츠',Clapperboard],['external','외부콘텐츠',Layers],['shorts','쇼츠',Play],['station','라이브스테이션',Disc3],['uploads','업로드달력',CalendarDays]];
 function scrollToVideos(){requestAnimationFrame(()=>{const target=document.getElementById('collection');if(!target)return;const bounds=document.querySelector('.adjustable-player')?.getBoundingClientRect();target.style.scrollMarginTop=`${bounds&&bounds.top<=48?bounds.bottom+12:12}px`;target.scrollIntoView({block:'start'});});}
 function DataRefreshTime({value}){
  const date=new Date(value||'');
@@ -283,11 +283,7 @@ function App(){
  {<ContentSections category={category} section={contentSection} onSection={setContentSection} rows={sectionRows} broadcaster={broadcaster} onBroadcaster={setBroadcaster} channel={channel} onChannel={setChannel}/>}
  <ContentSearch query={query} onChange={setQuery}/>
  <div className="compact-filters content-period-controls">
- <details className="content-period-filter"><summary><CalendarDays size={15}/><span>기간</span><small>{[archiveYear&&`${archiveYear}년`,archiveMonth&&`${Number(archiveMonth)}월`].filter(Boolean).join(' · ')||'전체 기간'}</small></summary>
- <div className="content-period-options">
- {filterButtons('연도',archiveYear,[['','전체 연도'],...archiveYears.map(y=>[y,`${y}년`])],setArchiveYear)}
- {filterButtons('월',archiveMonth,[['','전체 월'],...Array.from({length:12},(_,i)=>[String(i+1).padStart(2,'0'),`${i+1}월`])],setArchiveMonth)}
- </div></details>
+ <ContentPeriodFilter years={archiveYears} year={archiveYear} month={archiveMonth} onYear={setArchiveYear} onMonth={setArchiveMonth}/>
  {(archiveYear||archiveMonth||filterGroup||member||subtype||format||channel||externalType||ownType||contentSection||broadcaster)&&<div className="applied-filter-tags" aria-label="선택한 필터">{[[contentSection,contentSection,()=>setContentSection('')],[broadcaster,broadcaster,()=>{setBroadcaster('');setChannel('');}],[archiveYear,archiveYear,()=>setArchiveYear('')],[archiveMonth,`${Number(archiveMonth)}월`,()=>setArchiveMonth('')],[filterGroup,groupName(filterGroup),()=>{setFilterGroup('');setMember('');}],[member,memberName(member),()=>setMember('')],[subtype,subtype,()=>setSubtype('')],[format,{video:'영상',short:'쇼츠',live:'라이브'}[format],()=>setFormat('')],[channel,channels.find(c=>c.id===channel)?.name||channel,()=>setChannel('')],[externalType,EXTERNAL_TYPES.find(([id])=>id===externalType)?.[1],()=>setExternalType('')],[ownType,OWN_TYPES.find(([id])=>id===ownType)?.[1],()=>setOwnType('')]].filter(([value])=>value).map(([value,label,remove],index)=><button key={index} onClick={remove}><span>{label}</span><X size={11}/></button>)}<button className="clear-all-filters" onClick={()=>{setArchiveYear('');setArchiveMonth('');setFilterGroup('');setMember('');setSubtype('');setFormat('');setChannel('');setExternalType('');setOwnType('');setContentSection('');setBroadcaster('');}}>초기화</button></div>}
  </div><>
  {category==='external'&&<ExternalExplorer showTypes={false} types={EXTERNAL_TYPES} type={externalType} channel={channel} channels={channels}

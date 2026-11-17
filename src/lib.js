@@ -8,6 +8,7 @@ export function dedupe(rows){return [...new Map(rows.map(x=>[x.id,x])).values()]
 export function matchesContentTab(video,category){
  if(category==='station')return isContinuousLive(video);
  if(isContinuousLive(video))return false;
+ if(category==='all')return true;
  if(category==='uploads')return true;
  const teaser=teaserType(video),short=isShortContent(video),types=video.contentTypes||[video.category==='own'?'own':'external'];
  if(category==='teaser')return Boolean(teaser);
@@ -31,7 +32,7 @@ export function videoMatchesArtist(video,id,includeIndividual=true){
  const activity=video.individualActivity;
  const fromGroup=activity?.groupIds.includes(id);
  if(!includeIndividual&&fromGroup&&id!==activity.artistId)return false;
- return video.groupIds.includes(id)||(includeIndividual&&fromGroup);
+ return video.groupIds.includes(id)||(includeIndividual&&(fromGroup||video.careerGroupIds?.includes(id)));
 }
 export function filterContent(rows,{groups=[],category='home',query='',channel='',member='',subtype='',format='',year='',month='',externalType='',ownType='',section='',broadcaster='',includeIndividual=true,artistNames}){
  const q=query.trim().toLocaleLowerCase();
@@ -39,7 +40,7 @@ export function filterContent(rows,{groups=[],category='home',query='',channel='
   const activity=v.individualActivity;
   if(groups.length&&!groups.some(g=>videoMatchesArtist(v,g,includeIndividual)))return false;
   if(q){
-   const names=[...new Set([...v.groupIds,...(activity?.groupIds||[])])].flatMap(id=>artistNames?.get(id)||[]);
+   const names=[...new Set([...v.groupIds,...(v.careerGroupIds||[]),...(activity?.groupIds||[])])].flatMap(id=>artistNames?.get(id)||[]);
    if(![v.title,v.channelName,...v.tags,...names].join(' ').toLocaleLowerCase().includes(q))return false;
   }
   return matchesContentTab(v,category)&&(!channel||v.programId===channel||v.channelId===channel)&&
