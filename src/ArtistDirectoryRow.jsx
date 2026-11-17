@@ -17,7 +17,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
  const name=artist.name;
  const debut=debutValue(artist.debutDate,artist.debutYear);
  const korean=koreanArtistName(artist);
- const tags=careerTagsFor(artist,groups);
+ const tags=careerTagsFor(artist,groups,language);
  const tagItems=tags.map(tag=>tag.affiliation?<button type="button" className="directory-tag" key={tag.id}
   onClick={()=>onCareerSearch(tag.label)} aria-label={message('{name} 관련 아티스트 검색',{name:tag.label})}><span data-no-translate>{tag.label}</span></button>:
   <span className="directory-tag" key={tag.id}>{tag.label}</span>);
@@ -75,7 +75,7 @@ export default function ArtistDirectoryRow({artist,detailsId,groups,channels,clo
     {roster?.hasUnverifiedChanges&&<p className="person-profile-note">위키 최초 수집 정보가 포함됩니다. 필드별 출처를 확인해 주세요. 미확인 정보는 추정하지 않습니다.</p>}
     {compact&&<><p className="directory-index-summary">{summary}{!connected&&<> · <span>YouTube 확인 대기</span></>}</p><OfficialLinks artist={artist} channels={channels}/>
      {tags.length>0&&<div className="directory-row-tags">{tagItems}</div>}</>}
-    {memberSections.filter(([,names])=>names.length>0).map(([label,names,evidence])=>
+    {memberSections.some(([,names])=>names.length>0)&&<h4>그룹 구성원 목록</h4>}{memberSections.filter(([,names])=>names.length>0).map(([label,names,evidence])=>
      <div className="directory-member-section" key={label} role="group" aria-label={label}>
       <div className="directory-member-label">
        <small>{label}</small>

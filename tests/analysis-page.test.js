@@ -12,8 +12,13 @@ test('analysis route keeps navigation, tolerates missing artifacts and renders t
   const html=renderToStaticMarkup(React.createElement(Page,{catalog,load:async()=>null,favorites:{}}));
   assert.match(html,/콘텐츠 활동량/);assert.match(html,/출생지 지도/);
   assert.doesNotMatch(html,/음악 크레딧|PCA|FAMD|군집/);
-  assert.match(html,/aria-label="데뷔 연도"/);assert.match(html,/>1년</);assert.match(html,/>5년</);
-  assert.match(html,/aria-label="활동 그룹 상태"/);assert.match(html,/SURGE/);assert.match(html,/ANCHORED/);
+  assert.match(html,/aria-pressed="true">콘텐츠 활동량/);
+  assert.ok(html.indexOf('콘텐츠 활동량')<html.indexOf('아티스트 통계'));
+  assert.doesNotMatch(html,/그룹 · 솔로/);assert.match(html,/aria-pressed="true">그룹/);
+  const {default:Filters}=await server.ssrLoadModule('/src/AnalysisArtistFilters.jsx');
+  const stats=renderToStaticMarkup(React.createElement(Filters,{filters:{scope:'all',kind:'group',year:'',step:1,states:[],presets:[]},onChange:()=>{},profile:true,years:[],stateCounts:{},total:0}));
+  assert.match(stats,/aria-label="데뷔 연도"/);assert.match(stats,/>1년</);assert.match(stats,/>5년</);
+  assert.match(stats,/aria-expanded="false"[^>]*>활동/);assert.doesNotMatch(stats,/SURGE/);
   const legacy=renderToStaticMarkup(React.createElement(Page,{catalog,load:async()=>null,favorites:{},mode:'records'}));
   assert.match(legacy,/aria-pressed="true">콘텐츠 활동량/);assert.doesNotMatch(legacy,/캘린더|aria-label="데뷔 연도"/);
   const data={asOf:catalog.updatedAt,artists:[{artistId:'g',windows:{30:{official:null,officialObserved:2,observedUploads:2,confirmed:null,inferred:null,member:null}}}]};

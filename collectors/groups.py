@@ -59,9 +59,10 @@ def sync_catalog(config_dir=CONFIG, output=DATA, *, reclassify=True):
             return scope_video(record, groups, members)
         return record
     records = []
-    for path in (output / 'content').glob('*.json'):
+    paths=[*(output/'content').glob('*.json'),*(output/'review-content').glob('*.json')]
+    for path in paths:
         record = clean(read(path))
-        if record['groupIds'] and record['channelId'] in channels:
+        if (record['groupIds'] or record.get('appearanceLinks')) and record['channelId'] in channels:
             records.append(record)
     previous = read(output / 'catalog.json') if (output / 'catalog.json').exists() else {'demo':True}
     # Preserve resolved channel IDs from a previous collection for lightweight live updates.

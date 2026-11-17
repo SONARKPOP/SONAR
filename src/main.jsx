@@ -1,5 +1,6 @@
 import StationDirectory from './StationDirectory';
 import ContentPeriodFilter from './ContentPeriodFilter';
+import ShortsExcludeFilter,{filterShortVideos} from './ShortsExcludeFilter';
 import useFilterHistory from './useFilterHistory';
 import FeedbackLink from './FeedbackLink';
 import React,{useEffect,useMemo,useRef,useState} from 'react';
@@ -67,6 +68,7 @@ function App(){
  const [uploadExpansion,setUploadExpansion]=useState('');
  const [filterGroup,setFilterGroup]=useState('');
  const [archiveYear,setArchiveYear]=useState(''),[archiveMonth,setArchiveMonth]=useState(''),[externalType,setExternalType]=useState(''),[ownType,setOwnType]=useState('');
+ const [excludeShorts,setExcludeShorts]=useState(false);
  const [page,setPage]=useState(1),[indexRetry,setIndexRetry]=useState(0);
  const [archiveProgress,setArchiveProgress]=useState({key:'',pages:0,months:0});
  const [includeIndividual]=useState(()=>readScreenPreference('sonar.individual-activity.v1',['on','off'],'on')==='on');
@@ -151,9 +153,10 @@ function App(){
  const artistNames=useMemo(()=>new Map((catalog?.groups||[]).map(group=>[
   group.id,[group.name,group.nameKo,group.nameEn,...(group.aliases||[])].filter(Boolean)
  ])),[catalog]);
- useEffect(()=>{setPage(1);},[selected.join(','),category,query,channel,member,subtype,format,archiveYear,archiveMonth,externalType,ownType,filterGroup,includeIndividual,contentSection,broadcaster]);
+ useEffect(()=>{setPage(1);},[selected.join(','),category,query,channel,member,subtype,format,archiveYear,archiveMonth,externalType,ownType,filterGroup,includeIndividual,contentSection,broadcaster,excludeShorts]);
  const livePolicy=useMemo(()=>({types:enabledArtistTypes,hardBlocked,excluded:excludedGroups,favorites:protectedGroups}),[enabledArtistTypes,hardBlocked,excludedGroups,protectedGroups]);
- const filtered=useMemo(()=>selected.length?filterContent(rows,{groups:filterGroup?[filterGroup]:selected,category,query,channel,member,subtype,format,year:archiveYear,month:archiveMonth,includeIndividual,artistNames,externalType:category==='external'?externalType:'',ownType:category==='own'?ownType:'',section:contentSection,broadcaster}):[],[rows,selected,category,query,channel,member,subtype,format,archiveYear,archiveMonth,externalType,ownType,filterGroup,includeIndividual,artistNames,contentSection,broadcaster]);
+ const baseFiltered=useMemo(()=>selected.length?filterContent(rows,{groups:filterGroup?[filterGroup]:selected,category,query,channel,member,subtype,format,year:archiveYear,month:archiveMonth,includeIndividual,artistNames,externalType:category==='external'?externalType:'',ownType:category==='own'?ownType:'',section:contentSection,broadcaster}):[],[rows,selected,category,query,channel,member,subtype,format,archiveYear,archiveMonth,externalType,ownType,filterGroup,includeIndividual,artistNames,contentSection,broadcaster]);
+ const filtered=useMemo(()=>filterShortVideos(baseFiltered,excludeShorts&&category!=='shorts'),[baseFiltered,excludeShorts,category]);
  const sectionRows=useMemo(()=>filterContent(rows,{groups:filterGroup?[filterGroup]:selected,category,query,member,year:archiveYear,month:archiveMonth,includeIndividual,artistNames,section:contentSection}),[rows,selected,category,query,member,archiveYear,archiveMonth,includeIndividual,artistNames,filterGroup,contentSection]);
  const calendarRows=filtered.filter(v=>uploadKind(v));
  const compactBrowse=Boolean(browse)&&category!=='station'&&category!=='uploads';
@@ -284,6 +287,7 @@ function App(){
  <ContentSearch query={query} onChange={setQuery}/>
  <div className="compact-filters content-period-controls">
  <ContentPeriodFilter years={archiveYears} year={archiveYear} month={archiveMonth} onYear={setArchiveYear} onMonth={setArchiveMonth}/>
+ {category!=='shorts'&&<ShortsExcludeFilter enabled={excludeShorts} onChange={setExcludeShorts}/>}
  {(archiveYear||archiveMonth||filterGroup||member||subtype||format||channel||externalType||ownType||contentSection||broadcaster)&&<div className="applied-filter-tags" aria-label="선택한 필터">{[[contentSection,contentSection,()=>setContentSection('')],[broadcaster,broadcaster,()=>{setBroadcaster('');setChannel('');}],[archiveYear,archiveYear,()=>setArchiveYear('')],[archiveMonth,`${Number(archiveMonth)}월`,()=>setArchiveMonth('')],[filterGroup,groupName(filterGroup),()=>{setFilterGroup('');setMember('');}],[member,memberName(member),()=>setMember('')],[subtype,subtype,()=>setSubtype('')],[format,{video:'영상',short:'쇼츠',live:'라이브'}[format],()=>setFormat('')],[channel,channels.find(c=>c.id===channel)?.name||channel,()=>setChannel('')],[externalType,EXTERNAL_TYPES.find(([id])=>id===externalType)?.[1],()=>setExternalType('')],[ownType,OWN_TYPES.find(([id])=>id===ownType)?.[1],()=>setOwnType('')]].filter(([value])=>value).map(([value,label,remove],index)=><button key={index} onClick={remove}><span>{label}</span><X size={11}/></button>)}<button className="clear-all-filters" onClick={()=>{setArchiveYear('');setArchiveMonth('');setFilterGroup('');setMember('');setSubtype('');setFormat('');setChannel('');setExternalType('');setOwnType('');setContentSection('');setBroadcaster('');}}>초기화</button></div>}
  </div><>
  {category==='external'&&<ExternalExplorer showTypes={false} types={EXTERNAL_TYPES} type={externalType} channel={channel} channels={channels}

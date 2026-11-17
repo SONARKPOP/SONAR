@@ -53,3 +53,20 @@ body{font-family:var(--font-sans);font-size:14px;line-height:1.55}
 [data-theme="dark"] .compact-period button[aria-pressed=true]{background:#294c63;border-color:#9bccdf;color:#edf8ff;box-shadow:inset 0 -2px #9bccdf}
 .compact-period :is(summary,button,select):focus-visible{outline:2px solid #4a91b7;outline-offset:2px}
 @media(max-width:760px){.section-title h2,.unified-heading h2,.analysis-page>h2{font-size:21px}.compact-period{width:min(100%,296px)}.compact-period-controls{min-width:0}}
+
+/* Shorts exclusion control beside the period selector */
+.shorts-exclude-filter{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;gap:5px;min-height:36px;padding:7px 13px;border:1px solid var(--line,#c5d4df);border-radius:8px;background:var(--surface,#f8fafc);color:var(--ink,#243c50);font:inherit;font-size:12px;font-weight:600;line-height:1.4;white-space:nowrap;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
+.shorts-exclude-filter:hover{border-color:#407c9d;background:var(--sidebar-selected,#d5e7f0)}
+.shorts-exclude-filter[aria-pressed="true"]{background:#256582;color:#fff;border-color:#256582}
+.shorts-exclude-filter[aria-pressed="true"]:hover{background:#1d526d;border-color:#1d526d}
+.shorts-exclude-filter:focus-visible{outline:2px solid #4a91b7;outline-offset:2px}
+[data-theme="dark"] .shorts-exclude-filter[aria-pressed="true"]{background:#9bccdf;color:#10283a;border-color:#9bccdf}
+
+/* Keep the two triggers in one compact row; the expanded period panel retains its width. */
+.content-period-controls{display:grid;grid-template-columns:minmax(0,296px) max-content;align-items:start;gap:6px}
+.content-period-controls>.compact-period{position:relative;width:100%;min-width:0;max-width:296px}
+.content-period-controls>.compact-period>summary{height:40px;min-height:40px;padding-top:0;padding-bottom:0;box-sizing:border-box}
+.content-period-controls>.shorts-exclude-filter{height:42px;min-height:42px;padding-top:0;padding-bottom:0;align-self:flex-start}
+.content-period-controls>.compact-period .compact-period-panel{position:absolute;left:-1px;top:calc(100% + 6px);z-index:24;width:296px;max-width:calc(100vw - 32px);box-sizing:border-box;padding:12px;border:1px solid var(--line,#c5d4df);border-radius:9px;background:var(--surface,#f8fafc);box-shadow:0 8px 24px #1023351a}
+.content-period-controls>.applied-filter-tags{grid-column:1/-1}
+.content-period-controls>.compact-period:only-child{max-width:100%}

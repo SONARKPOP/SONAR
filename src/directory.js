@@ -1,3 +1,4 @@
+import {representativeAffiliations} from './affiliation-policy.js';
 import {artistCategories,groupActivity,sortGroups,artistsInDebutRange,monthsAfter} from './lib.js';
 import {ACTIVITY_META,activityView} from './youtube-activity.js';
 
@@ -50,15 +51,10 @@ export function matchesDirectoryActivity(artist,status,now){
  return groupActivity(artist,now)===status;
 }
 
-export function careerTagsFor(artist,groups){
+export function careerTagsFor(artist,groups,language='ko'){
  const previous=artist.previousGroupIds||[];
- const affiliations=[...new Set([...previous,...(artist.relatedGroupIds||[])])];
- const name=id=>{
-  const group=groups instanceof Map?groups.get(id):groups.find(g=>g.id===id);
-  return group?koreanArtistName(group)||group.name:id;
- };
  const kind=artist.artistType==='solo'?{id:'solo',label:'솔로'}:previous.length?{id:'redebut',label:'재데뷔'}:null;
- return [...(kind?[kind]:[]),...affiliations.map(id=>({id,label:name(id),affiliation:true}))];
+ return [...(kind?[kind]:[]),...representativeAffiliations(artist,{groups,language})];
 }
 
 export function directoryResults(groups,{query='',type='all',status='general',year='all',sort='az',now=Date.now(),narrowSearch=false,memberNames}={}){

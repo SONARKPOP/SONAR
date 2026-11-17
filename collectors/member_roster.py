@@ -7,6 +7,7 @@ from urllib.parse import urlparse
 from .completeness import normalized_name
 from .registry import CONFIG, load_bundles, validate
 from .publish import write
+from .person_identity import resolve_person
 
 
 def reconcile(bundles):
@@ -19,12 +20,15 @@ def reconcile(bundles):
         for section in ('current', 'former'):
             source = roster.get('formerEvidenceUrl' if section == 'former' else 'evidenceUrl')
             parsed = urlparse(source or '')
-            for name in roster.get(section, []):
-                matches = [member for member in group['members'] if normalized_name(name) in
-                           {normalized_name(value) for value in [member['name'], *member['aliases']]}]
-                if len(matches) > 1 or parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
+            for observation in roster.get(section, []):
+                person = {**observation, 'groupId': group['id']} if isinstance(observation, dict) else {'name': observation, 'groupId': group['id']}
+                name = person.get('name', '')
+                decision = resolve_person(person, group['members'])
+                matches = [member for member in group['members'] if member['id'] == decision.get('memberId')]
+                if not name or decision['decision']=='review' or parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
                     review.append({'groupId': group['id'], 'name': name,
-                                   'reason': 'ambiguous-identity' if len(matches) > 1 else 'missing-source'})
+                                   'reason': decision['reason'] if decision['decision']=='review' else 'missing-source',
+                                   'identity': decision})
                     continue
                 if matches:
                     member = matches[0]

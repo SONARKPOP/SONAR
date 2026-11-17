@@ -29,7 +29,7 @@ test('navigation, filters, feedback, cards and sidebar render in four languages 
   const noop=()=>{},render=(Component,props,language)=>renderToStaticMarkup(React.createElement(LanguageContext.Provider,{value:language},React.createElement(Component,props)));
   for(const [language,yearLabel,feedbackLabel,channelLabel]of [['ko','1년','개선 의견 보내기','전체 채널'],['ja','1年','改善意見を送る','すべてのチャンネル'],['en','1 year','Send feedback','All channels'],['es','1 año','Enviar sugerencias','Todos los canales']]){
    const filters=render(Filters,{filters:{scope:'all',kind:'all',year:'',step:1,states:[]},onChange:noop,profile:true,years:[],stateCounts:{SAILING:1},total:1},language);
-   assert.ok(filters.includes(yearLabel));assert.match(filters,/SURGE/);assert.match(filters,/ANCHORED/);if(language!=='ko')assert.doesNotMatch(filters,/[가-힣]/);
+   assert.ok(filters.includes(yearLabel));assert.match(filters,/aria-expanded="false"/);assert.doesNotMatch(filters,/analysis-state-filters/);if(language!=='ko')assert.doesNotMatch(filters,/[가-힣]/);
    const feedback=render(Feedback,{},language);assert.ok(feedback.includes(feedbackLabel));assert.doesNotMatch(feedback,/\/edit/);
    const sections=render(Sections,{category:'radio',section:'',rows:[video],broadcaster:'SBS',channel:'',onSection:noop,onBroadcaster:noop,onChannel:noop},language);
    assert.ok(sections.includes(channelLabel));assert.match(sections,/data-no-translate="true">전체 채널/);

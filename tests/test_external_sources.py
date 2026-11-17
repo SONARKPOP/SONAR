@@ -47,7 +47,9 @@ class ExternalSourcesTests(unittest.TestCase):
         self.assertEqual(video['groupIds'],['nmixx'])
         self.assertEqual(video['memberIds'],['nmixx-haewon'])
         other = next(c for c in config['channels'] if c['id']=='its-live')
-        self.assertEqual(normalize(raw,other,config)['groupIds'],[])
+        inferred=normalize(raw,other,config)
+        self.assertEqual(inferred['groupIds'],['nmixx'])
+        self.assertTrue(any(link['state']=='inferred' for link in inferred['appearanceLinks']))
         raw['snippet']['title']='Workman HAEWON mentioned'
         self.assertEqual(normalize(raw,source,config)['groupIds'],[])
         raw['snippet']['title']='Workdol new host'
@@ -61,4 +63,6 @@ class ExternalSourcesTests(unittest.TestCase):
         self.assertEqual(video['groupIds'],['aespa'])
         self.assertEqual(video['memberIds'],['aespa-karina'])
         raw['snippet']['description']='aespa KARINA, IVE, NMIXX social links'
-        self.assertEqual(normalize(raw,channel,config)['groupIds'],[])
+        inferred=normalize(raw,channel,config)
+        self.assertEqual(inferred['groupIds'],['aespa'])
+        self.assertEqual(inferred['memberIds'],['aespa-karina'])

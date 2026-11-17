@@ -1,6 +1,5 @@
 """YouTube adapter. Uses stdlib only; secrets never appear in URLs in logs."""
 import argparse
-from functools import lru_cache
 import json
 import os
 import re
@@ -13,6 +12,8 @@ from .registry import load_config
 from .quota import QuotaGuard, BudgetExceeded
 from .source_policy import approved_original, public_artist_scope
 from .individual_activity import personal_title_kind
+from .name_matching import alias_pattern, mentions
+from .appearance_review import apply_resolution, load_decisions
 
 class YouTubeHTTPError(RuntimeError):
     def __init__(self, resource, status):
@@ -68,17 +69,6 @@ class YouTube:
         for start in range(0, len(ids), 50):
             result.extend(self.get('videos', part='snippet,contentDetails,liveStreamingDetails,status', id=','.join(ids[start:start + 50])).get('items', []))
         return result
-
-@lru_cache(maxsize=4096)
-def alias_pattern(alias):
-    if alias.isascii():return re.compile(r'(?<![\w])'+re.escape(alias)+r'(?![\w])',re.I)
-    suffix=r'(?:의|은|는|이|가|을|를|와|과|도|님|에게|에서|랑|이랑|만|까지)'
-    return re.compile(r'(?<![^\W_])'+re.escape(alias)+r'(?:'+suffix+r'(?![^\W_])|(?![^\W_]))',re.I)
-
-
-def mentions(text, alias):
-    # Latin word boundaries prevent IVE matching "live" or REI matching other words.
-    return bool(alias_pattern(alias).search(text))
 
 def member_group_ids(member):
     return {member['groupId'], *(h['groupId'] for h in member.get('membershipHistory', []) if h.get('groupId'))}
@@ -156,12 +146,13 @@ def with_member_careers(record, config):
     # Former affiliation is searchable metadata, not evidence of that group's appearance.
     ids=set(record.get('memberIds', []))
     groups={g['id'] for g in config['groups']}
-    former=sorted({h['groupId'] for m in config['members'] if m['id'] in ids
-                   for h in m.get('membershipHistory', [])
-                   if h.get('groupId') in groups and h.get('status') == 'former'})
+    from .affiliation_policy import career_group_ids,representative_career_group_ids
+    people=[m for m in config['members'] if m['id'] in ids]
+    former=sorted({gid for m in people for gid in career_group_ids(m,record.get('publishedAt'),config['groups']) if gid in groups})
+    display=sorted({gid for m in people for gid in representative_career_group_ids(m,record.get('publishedAt'),config['groups']) if gid in groups})
     result={**record}
-    if former: result['careerGroupIds']=former
-    else: result.pop('careerGroupIds',None)
+    if former: result['careerGroupIds']=former;result['displayCareerGroupIds']=display
+    else: result.pop('careerGroupIds',None);result.pop('displayCareerGroupIds',None)
     return result
 
 
@@ -242,9 +233,7 @@ def normalize(raw, channel, config, override=None):
                  (group.get('artistType') != 'solo' or personal_title_kind(text, aliases, True))) or
                 (group.get('artistType') != 'solo' and has_collaboration_title(text, owner_aliases, aliases))):
             groups.add(gid)
-    for artist in config['groups']:
-        if artist['id'] in groups and artist.get('artistType') == 'solo':
-            groups.update(artist.get('relatedGroupIds', []))
+    # Career relations are added as dated search metadata, never whole-group appearances.
     if not channel['official']:
         known_members = {m['id']: m for m in config['members']}
         for program in channel.get('programs', []):
@@ -268,7 +257,6 @@ def normalize(raw, channel, config, override=None):
         if artist.get('artistType') == 'solo' and tagged_members and len(members) == 1 and (
                 personal_title_kind(text, artist['aliases'], bool(owner_groups)) or artist['id'] in groups):
             groups.add(artist['id'])
-            groups.update(artist.get('relatedGroupIds', []))
     live = raw.get('liveStreamingDetails', {})
     status = 'ended' if live.get('actualEndTime') else 'live' if live.get('actualStartTime') else 'upcoming' if live.get('scheduledStartTime') else 'none'
     category, subtype, short = classify(snippet['title'], snippet.get('description', ''), channel['official'])
@@ -301,7 +289,7 @@ def normalize(raw, channel, config, override=None):
         raise ValueError('Override refers to an unknown group/member or unlinked member group')
     if v['category'] not in config['taxonomy']['categories'] or v['format'] not in config['taxonomy']['formats']:
         raise ValueError('Invalid category or format')
-    return with_member_careers(v,config)
+    return with_member_careers(apply_resolution(v,channel,config),config)
 
 
 def read_config():
@@ -360,7 +348,7 @@ def _prune_group_attribution(record, channel, config, override=None, ambiguous_l
 
 def prune_stale_attribution(record, channel, config, override=None, ambiguous_links=None):
     cleaned=_prune_group_attribution(record,channel,config,override,ambiguous_links)
-    return cleaned if override else refresh_member_tags(cleaned,config)
+    return cleaned if override else with_member_careers(apply_resolution(refresh_member_tags(cleaned,config),channel,config),config)
 
 
 def read_overrides():
@@ -442,9 +430,9 @@ def collect(api, pages=1, *, incremental=False):
         return
     supported = {g['id'] for g in config['groups']}
     sources = {c['id']:c for c in config['channels']}
-    retained = [record for path in (DATA/'content').glob('youtube__*.json')
+    retained = [record for path in [*(DATA/'content').glob('youtube__*.json'),*(DATA/'review-content').glob('youtube__*.json')]
                 if (record:=json.loads(path.read_text(encoding='utf-8')))['channelId'] in sources
-                and supported.intersection(record['groupIds'])]
+                and (supported.intersection(record['groupIds']) or record.get('appearanceLinks'))]
     retained_ids = {record['platformId'] for record in retained
                     if record['channelId'] not in deferred or record.get('liveStatus') in ('live','upcoming')}
     if incremental:
@@ -521,10 +509,10 @@ def collect(api, pages=1, *, incremental=False):
                 old['groupIds'] = [g for g in old['groupIds'] if g in supported]
                 # Pausing collection retains the archive, never asserts a continuing live.
                 old['liveStatus'] = 'none'
-                if old['groupIds']:paused.append(old)
+                if old['groupIds'] or old.get('appearanceLinks'):paused.append(old)
             elif (incremental or source['id'] in deferred) and old.get('liveStatus') not in ('live','upcoming'):
                 cleaned=prune_stale_attribution(old,source,attribution_config,overrides['videos'].get(old['platformId']),ambiguous_links)
-                if cleaned['groupIds']:cadence_retained.append(cleaned)
+                if cleaned['groupIds'] or cleaned.get('appearanceLinks'):cadence_retained.append(cleaned)
             else:
                 ids.add(old['platformId'])
     # Any official source can still contribute live IDs via its uploads playlist.
@@ -558,7 +546,7 @@ def collect(api, pages=1, *, incremental=False):
         if not channel or raw.get('status', {}).get('privacyStatus') != 'public':
             continue
         v = normalize(raw, channel, attribution_config, overrides['videos'].get(raw['id']))
-        if supported.intersection(v['groupIds']):
+        if supported.intersection(v['groupIds']) or v.get('appearanceLinks'):
             records.append(v)
     if incremental:
         # A newly seen ID can be private or unrelated; avoid rebuilding Pages

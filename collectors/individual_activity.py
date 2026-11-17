@@ -28,11 +28,15 @@ def classify_individual(video, channel, artists, members):
     if len(people) > 1:
         return None
     owners = channel.get('groupIds', []) if channel.get('official') else []
+    from .affiliation_policy import career_group_ids
+    dated_careers={gid for member in people for gid in career_group_ids(member,video.get('publishedAt'))}
     if len(owners) == 1:
         artist = artists.get(owners[0], {})
         parents = set(artist.get('relatedGroupIds', [])) | set(artist.get('previousGroupIds', []))
         if artist.get('artistType') == 'solo' and parents and linked <= parents | {owners[0]}:
-            return {'artistId': owners[0], 'groupIds': sorted(parents), 'kind': 'individual',
+            profile_people=[members[mid] for mid in artist.get('relatedMemberIds',[]) if mid in members]
+            dated_parents={gid for member in profile_people for gid in career_group_ids(member,video.get('publishedAt'))}
+            return {'artistId': owners[0], 'groupIds': sorted(parents&dated_parents), 'kind': 'individual',
                     'evidence': 'official-solo-channel'}
     if len(people) != 1:
         return None
@@ -48,9 +52,9 @@ def classify_individual(video, channel, artists, members):
         return None
     kind = personal_title_kind(video.get('title', ''), member.get('aliases', []), parent in owners)
     if kind:
-        result = {'memberId': member['id'], 'groupIds': sorted({parent} | {
+        result = {'memberId': member['id'], 'groupIds': sorted({parent} | ({
             gid for profile in profiles for gid in [*profile.get('relatedGroupIds', []), *profile.get('previousGroupIds', [])]
-        }), 'kind': kind, 'evidence': 'explicit-title'}
+        }&dated_careers)), 'kind': kind, 'evidence': 'explicit-title'}
         if len(profiles) == 1:
             result['artistId'] = profiles[0]['id']
         return result

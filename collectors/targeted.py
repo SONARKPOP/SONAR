@@ -56,7 +56,7 @@ def collect_pending(api, config, overrides, output, previous, *, attribution_con
         if not source or raw.get('status',{}).get('privacyStatus')!='public':continue
         if raw['id'] in seeds and seeds[raw['id']]!=source['platformId']:continue
         record=scope_video(normalize(raw,source,attribution_config or staged,overrides['videos'].get(raw['id'])),groups,members)
-        if record['groupIds']:new_records.append(record)
+        if record['groupIds'] or record.get('appearanceLinks'):new_records.append(record)
     old_sources={c['id']:c for c in previous.get('channels',[])}
     for c in staged['channels']:
         prior=old_sources.get(c['id'],{})
@@ -65,8 +65,8 @@ def collect_pending(api, config, overrides, output, previous, *, attribution_con
                 if prior.get(field):c[field]=prior[field]
             if prior.get('unavailableReason'):c['collectionEnabled']=False
     retained=(scope_video(json.loads(p.read_text(encoding='utf-8')),groups,members)
-              for p in (output/'content').glob('*.json'))
-    merged={v['id']:v for v in retained if not v.get('demo') and v['groupIds'] and v['channelId'] in stage_sources}
+              for p in [*(output/'content').glob('*.json'),*(output/'review-content').glob('*.json')])
+    merged={v['id']:v for v in retained if not v.get('demo') and (v['groupIds'] or v.get('appearanceLinks')) and v['channelId'] in stage_sources}
     merged.update({v['id']:v for v in new_records})
     live_path=output/'live.json';candidate_path=output/'live-candidates.json'
     live=json.loads(live_path.read_text(encoding='utf-8')) if live_path.exists() else {'updatedAt':None,'items':[]}

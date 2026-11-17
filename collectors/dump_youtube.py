@@ -4,6 +4,7 @@ from concurrent.futures import ThreadPoolExecutor,as_completed
 from pathlib import Path
 from .publish import write,now
 from .registry import load_bundles,validate
+from .channel_registration import register_channel
 
 ROOT=Path(__file__).resolve().parents[1]
 def normalize_url(value):
@@ -78,22 +79,19 @@ def collect(config,documents,registration,cache,report_path,apply=False,online=F
   group=groups[item['groupId']];observed=state.get(item['channelUrl'],{});cid=observed.get('channelId');owner=owners.get(cid)
   own=next((c for c in group['channels'] if c.get('platformId')==cid or normalize_url('https://www.youtube.com/'+c.get('handle',''))==item['channelUrl']),None)
   status='existing' if own and own.get('platformId') else 'pending'
-  if own and cid and not own.get('platformId'):
-   own['platformId']=cid;report['filledChannelIds'].append(own['id']);status='id_filled'
-  candidate={**item,'verificationStatus':'UNVERIFIED','observedName':observed.get('name'),'channelId':cid,'lastCheckedAt':observed.get('checkedAt') or now(),'reason':observed.get('error') or 'Dedicated ownership requires review.'}
-  if not own and cid and identity_matches(group,observed):
-   if owner and (not owner.get('official') or owner.get('shared') or group['id'] not in owner.get('groupIds',[])):
-    status='shared_or_other_artist';candidate['reason']='Channel identity already belongs to another source; manual relationship review required.'
-   else:
-    source={'id':group['id']+'-dump-youtube-'+hashlib.sha256(cid.encode()).hexdigest()[:8], 'platform':'youtube','name':observed['name'],'official':True,'groupIds':[group['id']],
-     'platformId':cid,'collectionEnabled':False,'verificationStatus':'SUPPORTED','verification':{'checkedAt':now()[:10],'evidenceUrl':item['sourceUrl'],'sources':[item['sourceUrl'],observed['channelUrl']],
-     'basis':'Dump profile channel link and live YouTube channel metadata agree on dedicated artist identity; no official-site cross-link verification performed.'},'expectedChannelNames':[observed['name']]}
-    # Existing sources stay primary. New identities are visible but do not silently increase API collection.
-    group['channels'].append(source);owners[cid]=source;status='linked';report['newSourceIds'].append(source['id']);report['linkedArtists'].append(group['id'])
-  elif not own and cid: candidate['reason']='YouTube title does not establish this artist identity; may be shared, renamed or unrelated.'
-  if status in ('pending','shared_or_other_artist'):
-   previous=group.setdefault('youtubeCandidates',[])
-   if not any(c.get('channelUrl')==item['channelUrl'] for c in previous):previous.append(candidate)
+  candidate={**item,'verificationStatus':'UNVERIFIED','observedName':observed.get('name'),'channelId':cid,'handle':observed.get('handleUrl'),'lastCheckedAt':observed.get('checkedAt'),'reason':observed.get('error') or 'Dedicated ownership requires review.'}
+  # A registry fallback is not a fresh observation. Do not invent checked dates.
+  if observed.get('checkedAt') or status!='existing':
+   previous_id=own.get('platformId') if own else None
+   decision=register_channel(group,{**observed,'channelUrl':item['channelUrl']},bundles,existing)
+   candidate.update(decision)
+   status='existing' if own and decision['decision']=='approve' else 'linked' if decision['decision']=='approve' else 'pending'
+   if status=='linked':
+    source=next(c for c in group['channels'] if c['id']==decision['sourceId'])
+    existing.append(source);owners[cid]=source
+    report['newSourceIds'].append(source['id']);report['linkedArtists'].append(group['id'])
+   elif status=='existing' and not previous_id:
+    report['filledChannelIds'].append(own['id'])
   report['items'].append({**candidate,'status':status})
  validate(bundles,shared,taxonomy)
  changed=[g for old,g in zip(before,bundles) if old!=g]

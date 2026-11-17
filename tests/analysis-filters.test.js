@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {analysisYearOptions,filterAnalysisArtists,analysisDataFiles} from '../src/analysis-filters.js';
+import {analysisYearOptions,filterAnalysisArtists,analysisDataFiles,normalizeAnalysisFilters,analysisFavoriteIds,ANALYSIS_TABS} from '../src/analysis-filters.js';
 const now=Date.parse('2026-11-17T00:00:00Z');
 const artist=(id,year,state='SAILING')=>({id,name:id,debutYear:year,artistType:'group',youtubeActivity:{activity_status:state,last_upload_at:new Date(now-({SURGE:1,SAILING:2,COASTING:30,ANCHORED:100,'LOST SIGNAL':400}[state])*86400000).toISOString(),checked_at:new Date(now-3600000).toISOString(),valid_until:new Date(now+3600000).toISOString()}});
 const rows=[artist('a',2020,'SURGE'),artist('b',2024,'SAILING'),artist('c',2025,'COASTING'),artist('d',2010,'ANCHORED'),artist('e',null,'LOST SIGNAL'),{...artist('solo',2008),artistType:'solo',soloDebutDate:'2023-08-01'}];
@@ -27,4 +27,18 @@ test('unfinished analysis artifacts are never requested, activity loads only on 
  assert.deepEqual(analysisDataFiles('profiles'),{});assert.deepEqual(analysisDataFiles('maps'),{});
  assert.deepEqual(analysisDataFiles('credits'),{});assert.deepEqual(analysisDataFiles('advanced'),{});
  assert.deepEqual(analysisDataFiles('activity'),{activity:'analysis-activity.json',legacy:'activity-comparison.json'});
+});
+
+test('analysis defaults and legacy combined kind normalize without touching preferences',()=>{
+ const legacy={kind:'all',scope:'favorites',states:['SURGE','invalid'],presets:['heart','star','invalid']};
+ const copy=JSON.stringify(legacy),normalized=normalizeAnalysisFilters(legacy);
+ assert.equal(normalized.kind,'group');assert.equal(normalizeAnalysisFilters().kind,'group');
+ assert.deepEqual(normalized.states,['SURGE']);assert.deepEqual(normalized.presets,['heart','star']);assert.equal(JSON.stringify(legacy),copy);
+ assert.deepEqual(ANALYSIS_TABS.map(([id])=>id),['activity','profiles','maps']);
+});
+test('favorite categories combine with OR, then year/type/activity with AND',()=>{
+ const favorites={heart:['a'],star:['b','a'],clover:['d']};
+ const ids=analysisFavoriteIds(favorites,['heart','star']);assert.deepEqual(ids,['a','b']);
+ assert.deepEqual(filterAnalysisArtists(rows,{favoriteIds:ids,kind:'group',year:'2020',step:5,states:['SURGE','SAILING'],now}).map(a=>a.id),['a','b']);
+ assert.deepEqual(analysisFavoriteIds(favorites,[]),['a','b','d']);
 });
