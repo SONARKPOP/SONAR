@@ -64,7 +64,13 @@ def publish(records, config, events=(), output=DATA, demo=False, attribution_cle
     attribution_links=ambiguous_artist_links(config)
     attribution_overrides=read_overrides().get('videos',{})
     indexed = {}
+    from .appearance_review import apply_resolution,review_items
+    review_rows={};review_videos={}
     for record in records:
+        if record['id'] != f"{record['platform']}__{record['platformId']}":
+            raise ValueError('Invalid canonical ID')
+        if not all(c.isalnum() or c in '_-' for c in record['id']):
+            raise ValueError('Unsafe content ID')
         source = sources.get(record['channelId'], {})
         if not approved_original(source):
             continue
@@ -74,10 +80,17 @@ def publish(records, config, events=(), output=DATA, demo=False, attribution_cle
                 override={'groupIds':record['groupIds'],'memberIds':record.get('memberIds',[])}
             record=prune_stale_attribution(record,source,config,override,attribution_links)
         record = scope_video(record, artists, members)
-        if not record['groupIds']:
-            continue
         if not attribution_cleaned:
             record=refresh_member_tags(record,config)
+        record=apply_resolution(record,source,config)
+        from .youtube import with_member_careers
+        record=with_member_careers(record,config)
+        pending=review_items(record)
+        if pending:
+            review_rows.update({item['key']:item for item in pending})
+            if not record['groupIds']:review_videos[record['id']]=record
+        if not record['groupIds']:
+            continue
         video = apply_tags(record, source.get('official', False))
         activity = classify_individual(video, source, artists, members)
         if activity:
@@ -87,6 +100,10 @@ def publish(records, config, events=(), output=DATA, demo=False, attribution_cle
         indexed[video['id']] = video
     records = indexed
     updated = now()
+    write(output/'appearance-review.json',{'updatedAt':updated,'items':list(review_rows.values())})
+    for identity,record in review_videos.items():write(output/'review-content'/f'{identity}.json',record)
+    for old in (output/'review-content').glob('*.json'):
+        if old.stem not in review_videos:old.unlink()
     ordered = sorted(records.values(), key=lambda v: v['publishedAt'], reverse=True)
     write(output / 'solo-review.json', {'updatedAt':updated,'candidates':solo_review_candidates(ordered,sources,artists)})
     for v in ordered:

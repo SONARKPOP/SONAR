@@ -1,5 +1,5 @@
 import {activityView} from './youtube-activity.js';
-export const ANALYSIS_TABS=[['profiles','아티스트 통계'],['activity','콘텐츠 활동량'],['maps','출생지 지도']];
+export const ANALYSIS_TABS=[['activity','콘텐츠 활동량'],['profiles','아티스트 통계'],['maps','출생지 지도']];
 export function analysisDataFiles(tab){return tab==='activity'?{activity:'analysis-activity.json',legacy:'activity-comparison.json'}:{};}
 function debutYear(artist){
  const date=artist.artistType==='solo'?(artist.soloDebutDate||artist.debutDate):artist.debutDate;
@@ -22,3 +22,7 @@ export function filterAnalysisArtists(artists,{favoriteIds=null,kind='all',year=
   return !states.length||states.includes(activityView(artist,now)?.state);
  });
 }
+
+export const ANALYSIS_PRESETS=['heart','star','clover'];
+export function normalizeAnalysisFilters(value={}){return {...value,scope:value.scope==='favorites'?'favorites':'all',kind:value.kind==='solo'?'solo':'group',year:value.year||'',step:value.step===5?5:1,states:Array.isArray(value.states)?value.states.filter(s=>['SURGE','SAILING','COASTING','ANCHORED'].includes(s)):[],presets:Array.isArray(value.presets)?value.presets.filter(s=>ANALYSIS_PRESETS.includes(s)):[]};}
+export function analysisFavoriteIds(favorites={},presets=[]){return [...new Set((presets.length?presets:ANALYSIS_PRESETS).flatMap(p=>favorites[p]||[]))];}

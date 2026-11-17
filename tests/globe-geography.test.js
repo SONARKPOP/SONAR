@@ -7,7 +7,7 @@ import {mapCopy,MAP_COPY} from '../src/map-copy.js';
 test('India and Indonesia use whole country names and exact ISO codes',()=>{
  for(const [name,code] of [['인도','IN'],['India','IN'],['인도네시아','ID'],['Indonesia','ID'],['INDONESIA','ID'],['ID','ID'],['IN','IN']])assert.equal(nationalityView(name).code,code);
  for(const [birthPlace,code] of [['인도네시아','ID'],['인도네시아 반둥','ID'],['Indonesia Bandung','ID'],['인도 뉴델리','IN'],['India New Delhi','IN']])assert.equal(resolveBirthplace({birthPlace}).countryCode,code);
- const row=geographyRows([{id:'id',nationalities:['인도네시아']}])[0];assert.equal(row.location.country,'ID');assert.equal(row.location.basis,'nationality');
+ const row=geographyRows([{id:'id',nationalities:['인도네시아']}],undefined,{nationalityFallback:true})[0];assert.equal(row.location.country,'ID');assert.equal(row.location.basis,'nationality');
 });
 test('structured US, China and Japan regions resolve only within their explicit birth country',()=>{
  const source={sourceUrl:'https://example.org/birthplace',verificationStatus:'namuwiki_collected'};
@@ -32,7 +32,7 @@ test('Korean ADM3 matches published administrative names, with safe upper-level 
  assert.equal(geographyRegionKey(unknown,{view:'korea',level:'adm3'}),unknown.adm1Id);
 });
 test('nationality-only facts never acquire ADM1 or ADM3 positions',()=>{
- const row=geographyRows([{id:'us',nationalities:['US']}])[0];
+ const row=geographyRows([{id:'us',nationalities:['US']}],undefined,{nationalityFallback:true})[0];
  assert.equal(geographyRegionKey(row.location,{view:'world',level:'adm1'}),'US');assert.equal(row.location.adm1Id,undefined);
  assert.equal(geographyRegionKey({country:'KR',basis:'nationality',adm3Id:'untrusted'},{view:'korea',level:'adm3'}),'KR');
 });

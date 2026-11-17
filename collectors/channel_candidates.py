@@ -10,6 +10,50 @@ from .registry import load_config
 from .activity import eligible_group, stamp
 from .profile_links import profile_candidates, wikipedia_group_titles, INDEX_URL
 
+
+def register_candidates(config_dir, output=DATA, metadata=None, resolver=None, apply=False, group_ids=None):
+    """Review candidates using observed metadata; persist approvals only when requested.
+
+    Offline cache entries retain their actual checked dates. Missing entries remain
+    queued unless a caller explicitly supplies a live metadata resolver.
+    """
+    from pathlib import Path
+    from .registry import load_bundles, validate
+    from .groups import save_bundle
+    from .channel_registration import register_channel
+    bundles, shared, taxonomy, _ = load_bundles(config_dir)
+    groups = {g['id']: g for g in bundles}
+    sources = [c for g in bundles for c in g['channels']] + shared
+    path = Path(output) / 'channel-candidates.json'
+    candidates = json.loads(path.read_text(encoding='utf-8')).get('candidates', []) if path.exists() else []
+    candidates += [{**c, 'groupId':g['id']} for g in bundles for c in g.get('youtubeCandidates', [])]
+    results, seen, changed = [], set(), set()
+    metadata = metadata or {}
+    for candidate in candidates:
+        gid, url = candidate.get('groupId'), candidate.get('channelUrl')
+        if group_ids and gid not in group_ids: continue
+        if gid not in groups or not url or (gid, url) in seen: continue
+        seen.add((gid, url))
+        observed = metadata.get(url, {})
+        if not observed and resolver:
+            try: observed = resolver(url)
+            except (OSError, ValueError, KeyError) as exc: observed = {'error': type(exc).__name__}
+        observed = {**observed, 'channelUrl': url}
+        decision = register_channel(groups[gid], observed, bundles, sources)
+        results.append({**candidate, **decision})
+        changed.add(gid)
+        if decision['decision'] == 'approve':
+            source = next(c for c in groups[gid]['channels'] if c['id'] == decision['sourceId'])
+            if source not in sources: sources.append(source)
+    validate(bundles, shared, taxonomy)
+    if apply:
+        for gid in sorted(changed): save_bundle(groups[gid], config_dir=config_dir, create=False)
+    report = {'updatedAt': now(), 'applied': apply, 'items': results,
+              'summary': {'reviewed': len(results), 'approved': sum(r['decision']=='approve' for r in results),
+                          'unresolved': sum(r['decision']!='approve' for r in results)}}
+    write(Path(output)/'channel-registration-review.json', report)
+    return report
+
 def fetch(url):
     request=urllib.request.Request(url,headers={'User-Agent':'SONARChannelReview/1.0 (https://github.com/SONARKPOP/SONAR)'})
     with urllib.request.urlopen(request,timeout=20) as response:
@@ -78,5 +122,21 @@ def discover(config,output=DATA,fetcher=fetch,current=None):
     write(path,state);return state
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.parse_args()
-    discover(load_config())
+    from pathlib import Path
+    from .registry import CONFIG
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--register',action='store_true',help='Evaluate discovered candidates for automatic dedicated registration')
+    parser.add_argument('--metadata-cache',type=Path,help='Observed metadata keyed by candidate URL; checkedAt must be the actual observation date')
+    parser.add_argument('--online',action='store_true',help='Resolve missing metadata from public YouTube channel pages')
+    parser.add_argument('--apply',action='store_true')
+    parser.add_argument('--output',type=Path,default=DATA,help='Candidate input and review report directory')
+    parser.add_argument('--group',action='append',help='Limit registration/review to these artist IDs (repeatable)')
+    args=parser.parse_args()
+    if args.register:
+        from .dump_youtube import resolve
+        metadata=json.loads(args.metadata_cache.read_text(encoding='utf-8')) if args.metadata_cache else {}
+        report=register_candidates(CONFIG,output=args.output,metadata=metadata,resolver=resolve if args.online else None,apply=args.apply,group_ids=set(args.group or []))
+        print(json.dumps(report['summary']))
+    else:
+        if args.apply or args.online or args.metadata_cache: parser.error('Registration options require --register.')
+        discover(load_config())

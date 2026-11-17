@@ -11,14 +11,14 @@ const dateFormats=Object.fromEntries(['ko','ja','en','es'].map(language=>[langua
 function VideoArtistTags({video,groupsById,onSearch,onGroupSelect}){
  const language=useLanguage();
  const soloId=video.individualActivity?.artistId;
- const careerIds=[...(video.individualActivity?.groupIds||[]),...(video.careerGroupIds||[])];
+ const careerIds=video.displayCareerGroupIds||[...(video.individualActivity?.groupIds||[]),...(video.careerGroupIds||[])];
  const ids=[...new Set([...(soloId?[soloId]:[]),...video.groupIds,...careerIds])];
  return <div className="video-artist-tags">{ids.map(id=>{
   const artist=groupsById.get(id),name=artist?.name||id;
   if(id===soloId||artist?.artistType==='solo')return <span className="video-solo-name" key={id} data-no-translate>{name}</span>;
   const former=groupsById.get(soloId)?.previousGroupIds?.includes(id)||video.careerGroupIds?.includes(id)&&!video.groupIds.includes(id);
   return <button type="button" className="video-group-tag" key={id} data-no-translate
-   aria-label={formatMessage(former?'{name} 출신 그룹 검색':'{name} 검색',{name},language)} onClick={()=>onGroupSelect?onGroupSelect(id):onSearch(name)}>{name}{former&&<small> {translate('출신',language)}</small>}</button>;
+   aria-label={formatMessage(former?'{name} 출신 그룹 검색':'{name} 검색',{name},language)} onClick={()=>onGroupSelect?onGroupSelect(id):onSearch(name)}>{former&&<small>{({ko:'전 ',ja:'元 ',en:'Former ',es:'Ex '}[language])}</small>}{name}</button>;
  })}</div>;
 }
 

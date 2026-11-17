@@ -37,9 +37,10 @@ class SoloRelationshipsTests(unittest.TestCase):
         config=load_config()
         source=next(c for c in config['channels'] if c['id']=='hwasa-official')
         raw={'id':'abc123DEF45','snippet':{'title':'HWASA MV','description':'',
-             'publishedAt':'2026-01-01T00:00:00Z','channelTitle':'HWASA'}}
+             'publishedAt':'2026-11-17T00:00:00Z','channelTitle':'HWASA'}}
         video=normalize(raw,source,config)
-        self.assertEqual(set(video['groupIds']),{'hwasa','mamamoo'})
+        self.assertEqual(set(video['groupIds']),{'hwasa'})
+        self.assertIn('mamamoo',video['careerGroupIds'])
         with tempfile.TemporaryDirectory() as tmp:
             publish([video,video],config,output=tmp)
             self.assertEqual(len(list((Path(tmp)/'content').glob('*.json'))),1)

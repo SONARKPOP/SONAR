@@ -1,3 +1,4 @@
+import {representativeAffiliations} from './affiliation-policy.js';
 import React,{useEffect,useId,useMemo,useRef,useState} from 'react';
 import {ArrowUp,ChevronDown,Heart,Search,Sprout,Star} from 'lucide-react';
 import OfficialLinks from './OfficialLinks';
@@ -41,11 +42,11 @@ export function PersonProfile({person,groups,onGroup}){
   ['국적',nationalities.length?nationalities.map((nation,index)=><span className="person-nationality" key={nation.code+index}><span aria-hidden="true">{nation.flag}</span>{nation.name}</span>):'미확인'],
   ['출생 지역',birthplace?<span data-no-translate>{birthplace}</span>:'미확인'],
   ['솔로 데뷔',person.soloDebuts.length?person.soloDebuts.map(debut=><span className="person-debut" key={debut.artistId}><span data-no-translate>{debut.name}</span> · {date(debut.date,debut.year)}</span>):'확인된 솔로 데뷔 정보 없음']];
- return localize(<section className="person-profile" aria-label={formatMessage('{name} 개인 프로필',{name:person.name},language)}>
+ return localize(<section className="person-profile" aria-label={formatMessage('{name} 인물 프로필',{name:person.name},language)}>
   {person.identityPending&&<p className="person-profile-notice">기존 멤버 ID 연결을 확인 중입니다. 다른 인물과 임의로 합치지 않습니다.</p>}
   {person.profileConflicts?.length>0&&<p className="person-profile-notice">일부 프로필 값이 출처 간 달라 기존 등록 정보를 유지하고 있습니다. 추가 확인이 필요합니다.</p>}
   <dl className="person-profile-fields">{fields.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-  <div className="person-membership-history"><h4>그룹 소속·출신 이력</h4>
+  <div className="person-membership-history"><h4>소속 이력</h4>
    {person.memberships.length?person.memberships.map(relation=>{
     const group=groups.get(relation.groupId);
     return <div className="person-membership" key={relation.groupId}>
@@ -89,7 +90,7 @@ export default function PeopleDirectory({data,mode,targetPerson,channels,clock,o
     const ownProfiles=[...(person.officialLinks?.length?[{id:person.personId,name:person.name,officialLinks:person.officialLinks}]:[]),...person.soloArtists];
     const favorite=artist&&options.protectedGroups.includes(artist.id);
     return <article className="person-index-row" key={person.id} data-person-id={person.personId||undefined} data-favorite={favorite||undefined} style={favorite?{'--directory-favorite-color':options.colors?.[artist.id]||'#729ca8'}:undefined}>
-     <div className="person-index-heading"><div className="person-name-area"><button type="button" className="person-name-button" id={`${instance}-person-${person.id}`} aria-expanded={open} aria-controls={open?`${instance}-details-${person.id}`:undefined} onClick={()=>setExpanded(open?'':person.id)}><span data-no-translate>{person.name}</span>{person.nameKo&&person.nameKo!==person.name&&<small data-no-translate>{person.nameKo}</small>}</button>{artist&&<ActivityIcon group={artist} clock={clock}/>}</div>
+     <div className="person-index-heading"><div className="person-name-area"><button type="button" className="person-name-button" id={`${instance}-person-${person.id}`} aria-expanded={open} aria-controls={open?`${instance}-details-${person.id}`:undefined} onClick={()=>setExpanded(open?'':person.id)}><span data-no-translate>{person.name}</span>{person.nameKo&&person.nameKo!==person.name&&<small data-no-translate>{person.nameKo}</small>}</button>{artist&&<ActivityIcon group={artist} clock={clock}/>}<div className="person-affiliation-tags">{artist&&<span className="directory-tag">솔로</span>}{representativeAffiliations(person,{groups,language}).map(relation=><button type="button" key={relation.groupId} className="directory-tag" onClick={()=>onGroup?.(relation.groupId)} data-no-translate>{relation.label}</button>)}</div></div>
       <div className="person-index-actions">{ownProfiles.map(profile=><OfficialLinks key={profile.id} artist={profile} channels={channels} platforms={['youtube']}/>)}<button type="button" className="directory-control directory-icon" aria-label={`${person.name} ${open?'상세 닫기':'상세 보기'}`} aria-expanded={open} onClick={()=>setExpanded(open?'':person.id)}><ChevronDown size={16}/></button></div>
      </div>
      {open&&<div className="person-index-details" id={`${instance}-details-${person.id}`}><div className="person-all-links">{ownProfiles.map(profile=><OfficialLinks key={profile.id} artist={profile} channels={channels}/>)}</div>

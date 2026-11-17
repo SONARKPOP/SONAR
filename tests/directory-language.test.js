@@ -23,7 +23,7 @@ test('active directory, expanded rows and personal profiles translate without ch
   const {LanguageContext}=await server.ssrLoadModule('/src/i18n.js');
   const artist={id:'star',name:'별',aliases:[],debutYear:2020,memberRoster:{current:['별'],former:['김고은'],evidenceUrl:'https://example.com/source'},officialLinks:[{platform:'website',url:'https://example.com'}]};
   const person={id:'person',name:'별',legalNames:{ko:'김고은',ja:'山田花子'},nationalities:['KR'],soloDebuts:[],memberships:[]};
-  for(const [language,back,member,profile,result] of [['ko','영상 목록으로 돌아가기','현재 멤버','개인 프로필','결과 1 · 선호 0'],['ja','動画一覧に戻る','現メンバー','個人プロフィール','結果 1 · お気に入り 0'],['en','Return to videos','Current members','Personal profile','Results 1 · Favorites 0'],['es','Volver a los vídeos','Integrantes actuales','Perfil personal','Resultados 1 · Favoritos 0']]){
+  for(const [language,back,member,profile,result] of [['ko','영상 목록으로 돌아가기','현재 멤버','인물 프로필','결과 1 · 선호 0'],['ja','動画一覧に戻る','現メンバー','人物プロフィール','結果 1 · お気に入り 0'],['en','Return to videos','Current members','Person profile','Results 1 · Favorites 0'],['es','Volver a los vídeos','Integrantes actuales','Perfil personal','Resultados 1 · Favoritos 0']]){
    const render=element=>renderToString(React.createElement(LanguageContext.Provider,{value:language},element)).replace(/<!--[\s\S]*?-->/g,'');
    const directory=render(React.createElement(Directory,{catalog:{groups:[artist],members:[],channels:[]},clock:Date.now(),favorites:{heart:[],star:[],clover:[]},colors:{},excluded:[],protectedGroups:[],onReturnVideos(){}}));
    assert.ok(directory.includes(back),language);assert.ok(directory.includes(result),language);assert.match(directory,/>별<\/button>/);

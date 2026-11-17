@@ -71,7 +71,7 @@ export function normalizeBirthplace(person,gazetteer=defaultGazetteer){
  result.reason=result.country?'matched':'unmapped';
  return result;
 }
-export function birthplaceRows(people,gazetteer){return people.map(person=>({person,location:normalizeBirthplace(person,gazetteer)}));}
+export function birthplaceRows(people,gazetteer){return [...new Map(people.map(p=>[p.id,p])).values()].map(person=>({person,location:normalizeBirthplace(person,gazetteer)}));}
 export function resolveBirthplace(person){const place=normalizeBirthplace(person);return {...place,countryCode:place.country,regionCode:place.region,city:place.district,precision:place.ward?'ward':place.district?'district':place.region?'region':place.country?'country':'unknown'};}
 export function filterBirthplaceRows(rows,{query='',kind='all',groupId=''}={}){
  const q=clean(query);
@@ -79,7 +79,7 @@ export function filterBirthplaceRows(rows,{query='',kind='all',groupId=''}={}){
 }
 
 // Optional map overlay. Nationality never changes the stored birthplace or birthplace totals.
-export function geographyRows(people,gazetteer=defaultGazetteer,{nationalityFallback=true}={}){
+export function geographyRows(people,gazetteer=defaultGazetteer,{nationalityFallback=false}={}){
  return birthplaceRows(people,gazetteer).flatMap(row=>{
   const location={...row.location,basis:'birthplace'};
   if(location.country||!nationalityFallback)return [{...row,location}];
@@ -99,9 +99,15 @@ export const geographyLabel=value=>String(value||'').replaceAll('중화인민공
 export function geographyRegionKey(location,{view='world',level='country'}={}){
  if(!location.country)return null;
  if(location.basis==='nationality')return location.country;
- if(view==='world')return level==='adm1'?(location.adm1Id||location.country):location.country;
+ if(view==='world'||level==='country')return level==='adm1'?(location.adm1Id||location.country):location.country;
  if(location.country!=='KR')return location.country;
  if(level==='adm3')return location.adm3Id||location.adm2Id||location.adm1Id||location.country;
  if(level==='sigungu')return location.adm2Id||location.adm1Id||location.country;
  return location.adm1Id||location.country;
 }
+
+export function countryBirthplaceStats(rows){const countries=new Map();for(const row of rows){const l=row.location;if(!l.country||l.basis==='nationality')continue;if(!countries.has(l.country))countries.set(l.country,new Map());countries.get(l.country).set(row.person.id,row);}return new Map([...countries].map(([country,people])=>{const all=[...people.values()],known=all.filter(r=>r.location.adm1Id);return [country,{total:all.length,known:known.length,unknown:all.length-known.length}];}));}
+export function countryDetailAsset(country,available={}){return available[country]?.replace(/\.geojson$/,'')||null;}
+
+// Explicit citizenship mode includes every known citizenship, including people with known birthplaces.
+export function citizenshipRows(people,gazetteer=defaultGazetteer){const byId=new Map(people.map(person=>[person.id,person]));return geographyRows(people.map(person=>({...person,birthPlace:undefined})),gazetteer,{nationalityFallback:true}).map(row=>({...row,person:byId.get(row.person.id)||row.person,location:{...row.location,citizenshipMode:true}}));}

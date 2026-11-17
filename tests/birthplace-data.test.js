@@ -50,12 +50,12 @@ test('Bangkok and reviewed foreign administrative labels establish geography ind
 });
 test('nationality overlay keeps uncertain birthplace separate and never invents an administrative region',()=>{
  const person={id:'p',nationalities:['TH'],profileSources:{nationalities:{sourceUrl:'https://source.example'}}};
- const row=geographyRows([person])[0];assert.equal(row.location.basis,'nationality');assert.equal(row.location.country,'TH');assert.equal(row.location.region,null);assert.equal(row.location.district,null);assert.equal(row.location.source,person.profileSources.nationalities);assert.equal(person.birthPlace,undefined);
+ const row=geographyRows([person],undefined,{nationalityFallback:true})[0];assert.equal(row.location.basis,'nationality');assert.equal(row.location.country,'TH');assert.equal(row.location.region,null);assert.equal(row.location.district,null);assert.equal(row.location.source,person.profileSources.nationalities);assert.equal(person.birthPlace,undefined);
  assert.equal(resolveBirthplace(person).countryCode,null);
  assert.equal(geographyRows([person],undefined,{nationalityFallback:false})[0].location.country,null);
 });
 test('dual citizenship is shown per country but counted as one person, without overriding known birthplace',()=>{
- const rows=geographyRows([{id:'dual',nationalities:['KR','US','US']},{id:'known',birthPlace:'Japan',nationalities:['KR']}]);
+ const rows=geographyRows([{id:'dual',nationalities:['KR','US','US']},{id:'known',birthPlace:'Japan',nationalities:['KR']}],undefined,{nationalityFallback:true});
  assert.equal(rows.filter(r=>r.person.id==='dual').length,2);assert.deepEqual(geographySummary(rows),{people:2,birthplace:1,nationality:1,unknown:0,unresolvedBirthplace:1});
  assert.equal(rows.find(r=>r.person.id==='known').location.country,'JP');
 });
@@ -81,6 +81,29 @@ test('Chorong maps to Sejong and later administrative names preserve historical 
 });
 test('small territories remain discoverable even when the base world geometry omits them',()=>{
  for(const [birthPlace,country] of [['홍콩','HK'],['마카오','MO'],['싱가포르','SG']])assert.equal(resolveBirthplace({birthPlace}).countryCode,country);
- assert.equal(geographyRows([{id:'hk',nationalities:['HK']}])[0].location.country,'HK');
+ assert.equal(geographyRows([{id:'hk',nationalities:['HK']}],undefined,{nationalityFallback:true})[0].location.country,'HK');
  assert.equal(geographyRows([{id:'unknown',nationalities:['ZZ']}])[0].location.country,null);
 });
+
+import {countryBirthplaceStats,countryDetailAsset} from '../src/birthplace-data.js';
+for(const size of [9,10,11])test('country statistics '+size+' stay unique without limiting map availability',()=>{
+ const people=Array.from({length:size},(_,i)=>({id:'p'+i,birthPlace:i?'Japan':{countryCode:'JP',region:'Tokyo'},memberships:[{groupId:'a'},{groupId:'b'}]}));
+ const rows=geographyRows([...people,people[0],{id:'nationality',nationalities:['JP']}]);const stats=countryBirthplaceStats(rows);assert.equal(stats.get('JP').total,size);assert.equal(stats.get('JP').known+stats.get('JP').unknown,size);assert.equal(countryDetailAsset('JP',{JP:'JP-adm1.geojson'}),'JP-adm1');filterBirthplaceRows(rows,{groupId:'none'});assert.equal(stats.get('JP').total,size);assert.equal(rows.filter(r=>r.person.id==='p0').length,1);assert.equal(rows.find(r=>r.person.id==='nationality').location.country,null);
+});
+test('map detail requests are scoped rather than global',()=>{const source=fs.readFileSync(new URL('../src/BirthplaceMaps.jsx',import.meta.url),'utf8');assert.doesNotMatch(source,/mapUrl\('world-adm1'\)/);assert.match(source,/setDetailError\(t\('detailFailure'\)\)/);assert.match(source,/detailAssets\[detailName\]/);});
+
+import {loadCountryDetail} from '../src/country-map-detail.js';
+import {citizenshipRows} from '../src/birthplace-data.js';
+test('boundary fetch failure retains country list, retries successfully, and cache avoids another request',async()=>{
+ const rows=geographyRows([{id:'one',birthPlace:'Japan'},{id:'one',birthPlace:'Japan'},{id:'other',birthPlace:'China'}]);let calls=0;
+ const args={country:'JP',rows,assetName:'JP-adm1',fetcher:async()=>{calls++;throw Error('offline');}};
+ const failed=await loadCountryDetail(args);assert.equal(failed.detail,null);assert.equal(failed.people.length,1);assert.equal(failed.people[0].person.id,'one');assert.match(failed.error.message,/offline/);
+ const detail={type:'FeatureCollection',features:[]};const recovered=await loadCountryDetail({...args,fetcher:async()=>{calls++;return {ok:true,json:async()=>detail};}});assert.equal(recovered.error,null);assert.equal(recovered.detail,detail);assert.equal(recovered.people.length,1);
+ const cached=await loadCountryDetail({...args,cache:{'JP-adm1':detail}});assert.equal(cached.detail,detail);assert.equal(calls,2);
+ const httpFailure=await loadCountryDetail({...args,fetcher:async()=>({ok:false})});assert.equal(httpFailure.people.length,1);assert.equal(httpFailure.detail,null);assert.ok(httpFailure.error);
+});
+test('citizenship is an explicit separate mode and never changes birthplace totals',()=>{const people=[{id:'dual',birthPlace:'Japan',nationalities:['KR','US','US']},{id:'country',birthPlace:'Japan'},{id:'unknown',nationalities:['JP']}];const births=geographyRows(people);assert.deepEqual(births.map(r=>r.location.country),['JP','JP',null]);const citizenship=citizenshipRows(people);assert.deepEqual(citizenship.filter(r=>r.person.id==='dual').map(r=>r.location.country),['KR','US']);const stat=countryBirthplaceStats(births).get('JP');assert.equal(stat.total,2);assert.equal(stat.known+stat.unknown,2);assert.equal(stat.unknown,2);assert.equal(geographySummary(citizenship).people,3);});
+
+test('world boot requests no Korean detail geometry and manifest has only ISO-style country keys',()=>{const source=fs.readFileSync(new URL('../src/BirthplaceMaps.jsx',import.meta.url),'utf8');assert.match(source,/fetch\(mapUrl\('world'\)/);assert.doesNotMatch(source,/Promise.all\(\['world','korea/);const manifest=JSON.parse(fs.readFileSync(new URL('../public/data/maps/country-adm1-manifest.json',import.meta.url)));for(const code of Object.keys(manifest.countries))assert.match(code,/^[A-Z]{2}$/);assert.equal(fs.existsSync(new URL('../public/data/maps/-1-adm1.geojson',import.meta.url)),false);});
+
+test('Korean birth country total equals known province plus unknown province without citizenship inference',()=>{const rows=geographyRows([{id:'seoul',birthPlace:'서울특별시'},{id:'country',birthPlace:'대한민국'},{id:'onlyCitizenship',nationalities:['KR']}]);const stats=countryBirthplaceStats(rows).get('KR');assert.deepEqual(stats,{total:2,known:1,unknown:1});assert.equal(stats.total,stats.known+stats.unknown);});
