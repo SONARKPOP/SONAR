@@ -4,4 +4,5 @@ export const uiPolishTranslations={
  '월 선택':['月を選択','Choose month','Elegir mes'],
  '전체 월':['すべての月','All months','Todos los meses'],
  '전체 연도':['すべての年','All years','Todos los años'],
+ '쇼츠 제외':['ショートを除外','Exclude Shorts','Excluir Shorts'],
 };
