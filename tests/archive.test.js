@@ -43,6 +43,10 @@ test('calendar separates live, music, content and duration-based short form',()=
  assert.equal(uploadKind(row('179',{durationSeconds:179})),'short');
  assert.equal(uploadKind(row('180',{durationSeconds:180})),'content');
  assert.equal(uploadKind(row('music-short',{category:'music',durationSeconds:60})),'music');
+ assert.equal(uploadKind(row('broadcast',{category:'broadcast',durationSeconds:240})),'music');
+ assert.equal(uploadKind(row('broadcast-short',{contentTabs:['broadcast'],durationSeconds:60})),'music');
+ assert.equal(uploadKind(row('broadcast-live',{category:'broadcast',format:'live'})),'live');
+ assert.equal(uploadGroupSummary([row('stage',{category:'broadcast',durationSeconds:240})],['a'])[0].music[0].id,'stage');
 });
 test('external dimensions use explicit classification first and unknown stays unclassified',()=>{
  assert.equal(externalKind(row('x',{title:'라디오 방송'})),'radio');
