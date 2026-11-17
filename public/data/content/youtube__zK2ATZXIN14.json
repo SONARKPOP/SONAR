@@ -54,15 +54,21 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "loona-yves",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "csr",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "이브",
+          "start": 42,
+          "end": 45,
+          "text": "CSR",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 50,
+          "text": "첫사랑",
           "source": "title"
         }
       ]
@@ -82,21 +88,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "csr",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "loona-yves",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 42,
-          "end": 45,
-          "text": "CSR",
-          "source": "title"
-        },
-        {
-          "start": 47,
-          "end": 50,
-          "text": "첫사랑",
+          "start": 5,
+          "end": 7,
+          "text": "이브",
           "source": "title"
         }
       ]

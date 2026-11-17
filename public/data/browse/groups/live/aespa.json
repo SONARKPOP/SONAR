@@ -53,20 +53,6 @@
         },
         {
           "artistType": "group",
-          "artistId": "younha",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 23,
-              "end": 25,
-              "text": "윤하",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "aespa",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -75,6 +61,20 @@
               "start": 8,
               "end": 13,
               "text": "aespa",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "younha",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 23,
+              "end": 25,
+              "text": "윤하",
               "source": "title"
             }
           ]
@@ -129,25 +129,17 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-616071f17b051a7d",
-          "state": "mention",
-          "reason": "original-artist-or-comparison",
-          "matches": [
-            {
-              "start": 17,
-              "end": 19,
-              "text": "온다",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "aespa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
+            {
+              "start": 64,
+              "end": 69,
+              "text": "aespa",
+              "source": "title"
+            },
             {
               "start": 12,
               "end": 15,
@@ -159,11 +151,19 @@
               "end": 53,
               "text": "에스파",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-616071f17b051a7d",
+          "state": "mention",
+          "reason": "original-artist-or-comparison",
+          "matches": [
             {
-              "start": 64,
-              "end": 69,
-              "text": "aespa",
+              "start": 17,
+              "end": 19,
+              "text": "온다",
               "source": "title"
             }
           ]

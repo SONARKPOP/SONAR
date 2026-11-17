@@ -9,6 +9,7 @@
       "publishedAt": "2024-10-16T11:01:16Z",
       "groupIds": [
         "kiss",
+        "kiss-of-life",
         "natty"
       ],
       "memberIds": [
@@ -42,14 +43,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "kiss-of-life",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
+              "start": 14,
+              "end": 21,
+              "text": "키스오브라이프",
+              "source": "title"
+            },
+            {
               "start": 0,
-              "end": 4,
-              "text": "KISS",
+              "end": 12,
+              "text": "KISS OF LIFE",
               "source": "title"
             }
           ]
@@ -70,7 +77,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-dff6b18b1d4d3a3c",
+          "artistId": "person-ecfa150b92cf2ae4",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -84,7 +91,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-ecfa150b92cf2ae4",
+          "artistId": "person-dff6b18b1d4d3a3c",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -106,6 +113,34 @@
               "start": 88,
               "end": 89,
               "text": "벨",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "kiss-of-life-natty",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 85,
+              "end": 87,
+              "text": "나띠",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "natty",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 85,
+              "end": 87,
+              "text": "나띠",
               "source": "title"
             }
           ]
@@ -140,48 +175,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "kiss-of-life",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 14,
-              "end": 21,
-              "text": "키스오브라이프",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 12,
-              "text": "KISS OF LIFE",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "natty",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 85,
-              "end": 87,
-              "text": "나띠",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "kiss-of-life-natty",
+          "artistId": "kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 85,
-              "end": 87,
-              "text": "나띠",
+              "start": 0,
+              "end": 4,
+              "text": "KISS",
               "source": "title"
             }
           ]
@@ -253,8 +254,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "natty",
+          "artistType": "person",
+          "artistId": "kiss-of-life-natty",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -267,8 +268,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "kiss-of-life-natty",
+          "artistType": "group",
+          "artistId": "natty",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -361,15 +362,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "kiss",
+          "artistType": "person",
+          "artistId": "kiss-of-life-natty",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 61,
-              "end": 65,
-              "text": "KISS",
+              "start": 51,
+              "end": 56,
+              "text": "NATTY",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 50,
+              "text": "나띠",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "natty",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 51,
+              "end": 56,
+              "text": "NATTY",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 50,
+              "text": "나띠",
               "source": "title"
             }
           ]
@@ -396,6 +423,20 @@
         },
         {
           "artistType": "group",
+          "artistId": "kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 61,
+              "end": 65,
+              "text": "KISS",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "kiss-of-life",
           "state": "needs_review",
           "reason": "everyday-name",
@@ -404,46 +445,6 @@
               "start": 61,
               "end": 73,
               "text": "KISS OF LIFE",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "natty",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 48,
-              "end": 50,
-              "text": "나띠",
-              "source": "title"
-            },
-            {
-              "start": 51,
-              "end": 56,
-              "text": "NATTY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "kiss-of-life-natty",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 48,
-              "end": 50,
-              "text": "나띠",
-              "source": "title"
-            },
-            {
-              "start": 51,
-              "end": 56,
-              "text": "NATTY",
               "source": "title"
             }
           ]

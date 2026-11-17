@@ -55,7 +55,8 @@
       "title": "#체포하겠어 🚨 with @ITZY  #CHAERYEONG #You_re_Under_Arrest #ILLIT #아일릿",
       "publishedAt": "2026-11-17T11:30:23Z",
       "groupIds": [
-        "illit"
+        "illit",
+        "itzy"
       ],
       "memberIds": [
         "itzy-member-608992372543"
@@ -97,20 +98,34 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "itzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 19,
+              "text": "ITZY",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "illit",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 55,
-              "end": 60,
-              "text": "ILLIT",
-              "source": "title"
-            },
-            {
               "start": 62,
               "end": 65,
               "text": "아일릿",
+              "source": "title"
+            },
+            {
+              "start": 55,
+              "end": 60,
+              "text": "ILLIT",
               "source": "title"
             }
           ]
@@ -125,20 +140,6 @@
               "start": 22,
               "end": 32,
               "text": "CHAERYEONG",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "itzy",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 15,
-              "end": 19,
-              "text": "ITZY",
               "source": "title"
             }
           ]
@@ -346,23 +347,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-68d4509149a9c415",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 27,
-              "end": 29,
-              "text": "민주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-a6fddffa2d03e5bf",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "illit-member-a5c02f904155",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 27,
@@ -388,9 +375,23 @@
         },
         {
           "artistType": "person",
-          "artistId": "illit-member-a5c02f904155",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-68d4509149a9c415",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 27,
+              "end": 29,
+              "text": "민주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a6fddffa2d03e5bf",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 27,

@@ -55,35 +55,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "csr",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 12,
-              "end": 15,
-              "text": "첫사랑",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "gfriend-yuju",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 4,
+              "end": 8,
+              "text": "YUJU",
+              "source": "title"
+            },
+            {
               "start": 0,
               "end": 2,
               "text": "유주",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yuju",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 4,
               "end": 8,
               "text": "YUJU",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 2,
+              "text": "유주",
               "source": "title"
             }
           ]
@@ -104,20 +110,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "yuju",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "csr",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
-              "start": 0,
-              "end": 2,
-              "text": "유주",
-              "source": "title"
-            },
-            {
-              "start": 4,
-              "end": 8,
-              "text": "YUJU",
+              "start": 12,
+              "end": 15,
+              "text": "첫사랑",
               "source": "title"
             }
           ]
@@ -170,15 +170,15 @@
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 37,
-              "end": 39,
-              "text": "수란",
-              "source": "title"
-            },
-            {
               "start": 40,
               "end": 45,
               "text": "Suran",
+              "source": "title"
+            },
+            {
+              "start": 37,
+              "end": 39,
+              "text": "수란",
               "source": "title"
             }
           ]
@@ -318,9 +318,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "gfriend-yuju",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-f07a58ca3f31f17c",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 0,
@@ -332,9 +332,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-f07a58ca3f31f17c",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "gfriend-yuju",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 0,
