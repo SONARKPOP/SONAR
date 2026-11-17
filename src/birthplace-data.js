@@ -40,7 +40,7 @@ export function normalizeBirthplace(person,gazetteer=defaultGazetteer){
  const administrative=administrativePlace(display,gazetteer);
  if(administrative.change)result.administrativeChange={...administrative.change,sourceUrl:administrative.change.sourceUrl||source?.sourceUrl||null};
  if(administrative.review)result.administrativeReview=administrative.review;
- let text=clean(administrative.text).replace(/^중화인민공화국(?=\s|,|$)/,'중국').replace(/^중화민국(?=\s|,|$)/,'대만');
+ let text=clean(administrative.text).replace(/^중화인민공화국(?=\s|,|$)/,'중국').replace(/^중화민국(?=\s|,|$)/,'대만').replace(/^호주(?=\s|,|$)/,'오스트레일리아');
  if(/^광주(?:\s|,|$)/.test(text)){result.country=object.countryCode==='KR'?'KR':null;result.reason='ambiguous-region';return result;}
  const renamed=Object.entries(krAliases).find(([old])=>prefix(text,clean(old)));if(renamed)text=clean(renamed[1])+text.slice(clean(renamed[0]).length);
  const explicit=clean(object.countryCode||(/^[a-z]{2}$/i.test(object.country||'')?object.country:''));
@@ -59,7 +59,8 @@ export function normalizeBirthplace(person,gazetteer=defaultGazetteer){
  }
  if(result.country&&result.country!=='KR'){
   const regional=clean(object.regionName||object.region||object.province||object.adm1||object.regionCode||text);
-  const regions=(byCountry.get(result.country)||[]).filter(r=>r.aliases.some(alias=>districtPrefix(regional,alias)));
+  const australianNames={'빅토리아':['빅토리아주','빅토리아 주'],'뉴사우스웨일스':['뉴사우스웨일스주','뉴사우스웨일스 주']};
+  const regions=(byCountry.get(result.country)||[]).filter(r=>[...r.aliases,...(result.country==='AU'?australianNames[r.name]||[]:[])].some(alias=>districtPrefix(regional,alias)));
   if(regions.length===1){const region=regions[0];result.region=region.name;result.adm1Id=region.mapKey;result.adm1Name=region.name;result.boundarySource={name:'Natural Earth',sourceUrl:'https://www.naturalearthdata.com/about/terms-of-use/',license:'Public Domain'};}
  }
  if(result.country==='KR'&&result.region){

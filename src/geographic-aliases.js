@@ -16,4 +16,7 @@ export const GEOGRAPHIC_ALIASES=[
  ['HK','Q8646',['홍콩','Hong Kong','香港']],
  ['MO','Q14773',['마카오','Macau','Macao','澳門']],
  ['SG','Q334',['싱가포르','Singapore','新加坡']]
-].map(([country,id,aliases])=>({country,aliases,sourceUrl:`https://www.wikidata.org/wiki/${id}`,checkedAt:'2026-11-16',license:'CC0'}));
+].map(([country,id,aliases])=>({country,aliases,sourceUrl:`https://www.wikidata.org/wiki/${id}`,checkedAt:'2026-11-16',license:'CC0'})).concat({
+ country:'AU',aliases:['빅토리아주 멜버른','빅토리아 주 멜버른','뉴사우스웨일스 주 시드니','뉴사우스웨일스주 시드니','퀸즐랜드 브리즈번'],
+ sourceUrl:'https://www.abs.gov.au/statistics/people/population/regional-population/2023-24',checkedAt:'2026-11-18'
+});

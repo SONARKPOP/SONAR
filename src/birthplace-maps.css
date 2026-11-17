@@ -5,3 +5,19 @@
 
 /* Native offscreen rendering retains every searchable, accessible row and remembers measured row heights. */
 .country-panel-people.large-list li{content-visibility:auto;contain-intrinsic-block-size:auto 150px}
+
+/* Match the site's saved theme, including MapLibre's controls and overlays. */
+.birthplace-maps{--map-panel:#f6fbfc;--map-control:#ffffff;--map-floating:#fffffff7;--map-ink:#172e3b;--map-muted:#526873;--map-line:#bfd0d8;--map-accent:#126978;--map-selected:#176c7a;--map-selected-ink:#fff;--map-ocean:#dcecf2;background:var(--map-panel);color:var(--map-ink);border-color:var(--map-line)}
+[data-theme="dark"] .birthplace-maps{--map-panel:#102030;--map-control:#1a3042;--map-floating:#13283bf5;--map-ink:#e3edf5;--map-muted:#acc1ce;--map-line:#3e5b70;--map-accent:#9ddce3;--map-selected:#95ced5;--map-selected-ink:#102b37;--map-ocean:#0b1725}
+.birthplace-maps p,.country-panel-people li small{color:var(--map-muted)}
+.birthplace-maps :is(button,select,input){background:var(--map-control);color:var(--map-ink);border-color:var(--map-line)}
+.birthplace-maps input::placeholder{color:var(--map-muted);opacity:1}
+.birthplace-maps button[aria-pressed=true]{background:var(--map-selected);color:var(--map-selected-ink)}
+.birthplace-maps :is(a,.maplibregl-ctrl-attrib a){color:var(--map-accent)}
+.birthplace-maps footer,.country-panel-people li{border-color:var(--map-line)}
+.birthplace-globe-wrap{background:var(--map-ocean);border-color:var(--map-line)}
+.birthplace-country-panel,.birthplace-globe-status,.birthplace-globe-error{background:var(--map-floating);color:var(--map-ink);border-color:var(--map-line)}
+.birthplace-globe :is(.maplibregl-ctrl-group,.maplibregl-ctrl-attrib){background:var(--map-control);color:var(--map-muted)}
+.birthplace-globe .maplibregl-ctrl-group button+button{border-color:var(--map-line)}
+.birthplace-globe .maplibregl-ctrl-group button:hover{background:color-mix(in srgb,var(--map-selected) 18%,var(--map-control))}
+[data-theme="dark"] .birthplace-globe .maplibregl-ctrl-icon{filter:invert(1)}
