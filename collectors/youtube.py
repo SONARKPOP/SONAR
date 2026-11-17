@@ -89,7 +89,7 @@ def member_match(member, snippet, groups):
         return False
     title = snippet['title']
     cautious = {a.casefold() for a in member.get('ambiguousAliases', [])}
-    for alias in member['aliases']:
+    for alias in member.get('aliases', []):
         if len(alias)==1 and not alias.isascii() and not member_group_ids(member).intersection(groups):
             continue
         if alias.casefold() in cautious:
@@ -99,7 +99,7 @@ def member_match(member, snippet, groups):
                 return True
             if alias.isascii() and alias.upper()==alias and member_group_ids(member).intersection(groups) and re.search(r'(?<![\w])' + re.escape(alias) + r'(?![\w])', title):
                 return True
-        elif re.search(r'(?<![\w])' + re.escape(alias) + r'(?![\w])', title, re.I):
+        elif mentions(title, alias):
             return True
     return False
 
@@ -137,6 +137,52 @@ def classify(title, description, official):
 def group_title_aliases(group):
     ambiguous = {alias.casefold() for alias in group.get('ambiguousAliases', [])}
     return [alias for alias in group['aliases'] if alias.casefold() not in ambiguous]
+
+
+def solo_alias_has_context(group, alias, title, config):
+    """A shared stage name needs the correct group context, never first-match wins."""
+    if group.get('artistType') != 'solo':
+        return True
+    family={group['id'], *group.get('relatedGroupIds', []), *group.get('previousGroupIds', [])}
+    rivals=[m for m in config['members'] if not member_group_ids(m).intersection(family)
+            and alias.casefold() in {a.casefold() for a in m['aliases']}]
+    if not rivals:
+        return True
+    return any(g['id'] in family and any(mentions(title,a) for a in group_title_aliases(g))
+               for g in config['groups'] if g.get('artistType') != 'solo')
+
+
+def with_member_careers(record, config):
+    # Former affiliation is searchable metadata, not evidence of that group's appearance.
+    ids=set(record.get('memberIds', []))
+    groups={g['id'] for g in config['groups']}
+    former=sorted({h['groupId'] for m in config['members'] if m['id'] in ids
+                   for h in m.get('membershipHistory', [])
+                   if h.get('groupId') in groups and h.get('status') == 'former'})
+    result={**record}
+    if former: result['careerGroupIds']=former
+    else: result.pop('careerGroupIds',None)
+    return result
+
+
+def refresh_member_tags(record, config):
+    if record.get('memberTagging',{}).get('source') == 'manual-override':
+        return with_member_careers(record,config)
+    groups=set(record.get('groupIds',[]))
+    candidates=[m for m in config['members'] if member_group_ids(m).intersection(groups)]
+    inferred=infer_members({'title':ORIGINAL_ARTIST_CREDIT.sub(' ',record.get('title',''))},groups,{**config,'members':candidates}) if groups else []
+    # Preserve publisher-cast/editorial evidence even if a title omits the host's name.
+    from .activity_comparison import confirmed
+    evidenced={e.get('memberId') for e in record.get('appearanceEvidence',[]) if confirmed(e)}
+    evidenced.update(m['id'] for m in candidates if not m.get('aliases') and m['id'] in record.get('memberIds',[]))
+    if record.get('memberTagging',{}).get('appearanceVerified'):
+        evidenced.update(record.get('memberIds',[]))
+    if record.get('memberTagging',{}).get('source')=='publisher-program-title':evidenced.update(record.get('memberIds',[]))
+    valid={m['id'] for m in candidates}
+    result={**record,'memberIds':sorted(set(inferred)|(evidenced&valid))}
+    if result['memberIds']!=record.get('memberIds',[]):
+        result['memberTagging']={**record.get('memberTagging',{}),'policy':'title-context-v2','source':'title' if result['memberIds'] else 'unclassified','appearanceVerified':False}
+    return with_member_careers(result,config)
 
 
 def title_appearance_mention(title, alias):
@@ -184,7 +230,9 @@ def normalize(raw, channel, config, override=None):
         related = owner_groups.intersection(group.get('relatedGroupIds', []))
         if group.get('ambiguousName') and not related:
             continue
-        aliases = group_title_aliases(group)
+        context=text+'\n'+'\n'.join(credit_lines)
+        aliases = [a for a in group_title_aliases(group)
+                   if not mentions(context,a) or solo_alias_has_context(group,a,context,config)]
         if any(alias_pattern(alias).search(line) for line in credit_lines for alias in aliases):
             groups.add(gid)
             appearance_evidence.append({'groupId':gid, 'source':'publisher-credit-line',
@@ -253,18 +301,25 @@ def normalize(raw, channel, config, override=None):
         raise ValueError('Override refers to an unknown group/member or unlinked member group')
     if v['category'] not in config['taxonomy']['categories'] or v['format'] not in config['taxonomy']['formats']:
         raise ValueError('Invalid category or format')
-    return v
+    return with_member_careers(v,config)
 
 
 def read_config():
     return load_config()
 
 def ambiguous_artist_links(config):
-    return {g['id']: {g['id'], *g.get('relatedGroupIds', []), *g.get('previousGroupIds', [])}
-            for g in config['groups'] if g.get('ambiguousAliases') or g.get('titleBoundaryReview')}
+    aliases={}
+    for m in config['members']:
+        for alias in m.get('aliases',[]):aliases.setdefault(alias.casefold(),set()).update(member_group_ids(m))
+    links={}
+    for g in config['groups']:
+        family={g['id'],*g.get('relatedGroupIds',[]),*g.get('previousGroupIds',[])}
+        shared=g.get('artistType')=='solo' and any(aliases.get(a.casefold(),set())-family for a in g.get('aliases',[]))
+        if g.get('ambiguousAliases') or g.get('titleBoundaryReview') or shared:links[g['id']]=family
+    return links
 
 
-def prune_stale_attribution(record, channel, config, override=None, ambiguous_links=None):
+def _prune_group_attribution(record, channel, config, override=None, ambiguous_links=None):
     """Remove unsupported automatic group tags from retained videos."""
     if override and 'groupIds' in override:
         keep = set(override['groupIds'])
@@ -301,6 +356,11 @@ def prune_stale_attribution(record, channel, config, override=None, ambiguous_li
         cleaned['appearanceEvidence'] = [e for e in cleaned['appearanceEvidence']
                                          if e.get('groupId') in keep or member_groups.get(e.get('memberId'),set()).intersection(keep)]
     return cleaned
+
+
+def prune_stale_attribution(record, channel, config, override=None, ambiguous_links=None):
+    cleaned=_prune_group_attribution(record,channel,config,override,ambiguous_links)
+    return cleaned if override else refresh_member_tags(cleaned,config)
 
 
 def read_overrides():

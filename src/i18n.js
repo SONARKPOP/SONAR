@@ -1,3 +1,5 @@
+import {profileColumnTranslations} from './profile-column-translations.js';
+import {uiPolishTranslations} from './ui-polish-translations.js';
 import React from 'react';
 import {workspaceTranslations} from './workspace-translations.js';
 import {analysisTranslations} from './analysis-translations.js';
@@ -182,7 +184,7 @@ const entries={
  '공식 달력을 갱신하지 못했습니다. 마지막으로 확인한 일정이 있으면 유지하며, 표시된 일정이 전체 일정을 뜻하지는 않습니다.':['公式カレンダーを更新できませんでした。以前の予定がある場合は保持します。すべての予定が表示されているとは限りません。','Official calendars could not be refreshed. Previously confirmed events are retained when available; this list may be incomplete.','No se pudieron actualizar los calendarios oficiales. Se conservan los eventos anteriores si existen; la lista puede estar incompleta.'],
  '각 그룹 옆 하트·별·새싹으로 프리셋에 바로 저장·해제합니다. 한 그룹을 여러 프리셋에 저장할 수 있습니다. 금지 아이콘은 전체 보기에서 제외할 그룹입니다.':['各グループのアイコンで保存・解除できます。複数のプリセットに保存できます。禁止アイコンは全体表示から除外します。','Use the icons to save or remove groups in multiple presets. The block icon excludes a group from All.','Usa los iconos para guardar o quitar grupos de varios preajustes. El icono de bloqueo excluye un grupo de All.'],
 };
-export const UI_TRANSLATIONS={...entries,...workspaceTranslations,...navigationTranslations,...analysisTranslations,...directoryTranslations,...mapTranslations};
+export const UI_TRANSLATIONS={...entries,...workspaceTranslations,...navigationTranslations,...analysisTranslations,...directoryTranslations,...mapTranslations,...profileColumnTranslations,...uiPolishTranslations};
 export function translate(value,language){
  const index={ja:0,en:1,es:2}[language];
  if(index===undefined||typeof value!=='string')return value;

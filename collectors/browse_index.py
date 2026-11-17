@@ -3,7 +3,7 @@ import re
 from datetime import datetime, timedelta, timezone
 from .live_policy import is_continuous_live
 
-LIMITS = {'home':24, 'music':12, 'broadcast':18, 'own':18, 'external':18, 'live':12, 'shorts':18, 'teaser':12, 'radio':12}
+LIMITS = {'all':24, 'home':24, 'music':12, 'broadcast':18, 'own':18, 'external':18, 'live':12, 'shorts':18, 'teaser':12, 'radio':12}
 DAYS = 30
 KST = timezone(timedelta(hours=9))
 SHORT_DURATION = re.compile(r'(?:pt)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+(?:\.\d+)?)s)?', re.I)
@@ -21,16 +21,16 @@ def tabs(item):
     if is_continuous_live(item):
         return ()
     if 'contentTabs' in item:
-        return tuple(item['contentTabs'])
+        return tuple(dict.fromkeys(['all',*item['contentTabs']]))
     if item.get('musicBroadcast'):
-        return ('broadcast',)
+        return ('all','broadcast')
     fmt, category = item.get('format'), item.get('category')
     duration = SHORT_DURATION.fullmatch(str(item.get('durationLabel','')))
     h,m,s = (float(value or 0) for value in duration.groups()) if duration else (0,0,0)
     if fmt == 'short' or category == 'shorts' or (fmt != 'live' and 0 < h*3600+m*60+s <= 60):
-        return ('shorts',)
+        return ('all','shorts')
     types = set(item.get('contentTypes', [])) | {category}
-    return tuple(tab for tab in LIMITS if tab == 'home' or tab in types or (tab == 'live' and fmt == 'live'))
+    return tuple(tab for tab in LIMITS if tab in ('all','home') or tab in types or (tab == 'live' and fmt == 'live'))
 
 
 def build_indexes(ordered, group_indexes, output, write, summary, discovery_groups, current):

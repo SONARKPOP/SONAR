@@ -11,12 +11,12 @@ const dateFormats=Object.fromEntries(['ko','ja','en','es'].map(language=>[langua
 function VideoArtistTags({video,groupsById,onSearch,onGroupSelect}){
  const language=useLanguage();
  const soloId=video.individualActivity?.artistId;
- const careerIds=video.individualActivity?.groupIds||[];
+ const careerIds=[...(video.individualActivity?.groupIds||[]),...(video.careerGroupIds||[])];
  const ids=[...new Set([...(soloId?[soloId]:[]),...video.groupIds,...careerIds])];
  return <div className="video-artist-tags">{ids.map(id=>{
   const artist=groupsById.get(id),name=artist?.name||id;
   if(id===soloId||artist?.artistType==='solo')return <span className="video-solo-name" key={id} data-no-translate>{name}</span>;
-  const former=groupsById.get(soloId)?.previousGroupIds?.includes(id);
+  const former=groupsById.get(soloId)?.previousGroupIds?.includes(id)||video.careerGroupIds?.includes(id)&&!video.groupIds.includes(id);
   return <button type="button" className="video-group-tag" key={id} data-no-translate
    aria-label={formatMessage(former?'{name} 출신 그룹 검색':'{name} 검색',{name},language)} onClick={()=>onGroupSelect?onGroupSelect(id):onSearch(name)}>{name}{former&&<small> {translate('출신',language)}</small>}</button>;
  })}</div>;
@@ -55,7 +55,7 @@ export default function VideoCard({video,index=0,number=index+1,groupsById,style
   </div>
   <button type="button" className="video-title" data-no-translate title={video.title} onClick={()=>onOpen(video)}>{video.title}</button>
   <p className="channel-name" data-no-translate title={video.channelName}>{video.channelName}</p>
-  {video.format==='live'&&<div className="card-member-tags">{video.memberIds?.length?video.memberIds.map(id=>
+  {(video.format==='live'||video.memberIds?.length>0)&&<div className="card-member-tags">{video.memberIds?.length?video.memberIds.map(id=>
    <button type="button" key={id} data-no-translate onClick={()=>onMemberSelect(id)}>{memberName(id)}</button>):<span>미분류</span>}</div>}
  </article>,language);
 }
