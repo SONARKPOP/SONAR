@@ -247,17 +247,18 @@ class CollectorTests(unittest.TestCase):
                 pub.assert_not_called()
                 self.assertIn('aespa-official',api.budget.state['uploadChecks'])
 
-    def test_station_refresh_is_separate_and_clears_ended_station(self):
+    def test_station_is_not_polled_by_live_refresh(self):
         self.channel['platformId']='resolved'
         normal={**self.raw,'snippet':{**self.raw['snippet'],'title':'aespa birthday live'},'liveStreamingDetails':{'actualStartTime':'2026-11-06T00:00:00Z'}}
         station={**normal,'id':'station1234','snippet':{**normal['snippet'],'title':'aespa Playlist Station'}}
         with tempfile.TemporaryDirectory() as tmp:
             publish([normalize(v,self.channel,self.config) for v in [normal,station]],self.config,output=tmp)
             api=YouTube('test-not-a-secret')
-            with patch('collectors.youtube.DATA',Path(tmp)),patch.object(api,'videos',return_value=[normal,station]):
+            with patch('collectors.youtube.DATA',Path(tmp)),patch.object(api,'videos',return_value=[normal]) as videos:
                 refresh_live(api)
                 feed=json.loads((Path(tmp)/'live.json').read_text(encoding='utf-8'))
-                self.assertEqual(len(feed['items']),1);self.assertEqual(len(feed['stations']),1)
+                self.assertEqual(len(feed['items']),1)
+                self.assertNotIn(station['id'], videos.call_args.args[0])
                 station['liveStreamingDetails']={**station['liveStreamingDetails'],'actualEndTime':'2026-11-06T01:00:00Z'}
                 refresh_live(api)
                 feed=json.loads((Path(tmp)/'live.json').read_text(encoding='utf-8'))
