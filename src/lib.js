@@ -286,5 +286,13 @@ export function modalHistory(history,target,onBack,token){
  history.pushState({...previous,sonarVideoModal:token},'');
  const pop=()=>{if(history.state?.sonarVideoModal!==token)onBack();};
  target.addEventListener('popstate',pop);
- return ()=>{target.removeEventListener('popstate',pop);if(history.state?.sonarVideoModal===token)history.back();};
+ return ()=>{
+  target.removeEventListener('popstate',pop);
+  if(history.state?.sonarVideoModal!==token)return;
+  // Filters can change while the floating player stays open. Dismissing it
+  // must not undo the newest filter instead of removing its overlay marker.
+  if(history.replaceState&&JSON.stringify(history.state?.sonarFilters)!==JSON.stringify(previous?.sonarFilters)){
+   const {sonarVideoModal,...rest}=history.state;history.replaceState(rest,'');
+  }else history.back();
+ };
 }

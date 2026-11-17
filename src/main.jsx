@@ -1,4 +1,5 @@
 import StationDirectory from './StationDirectory';
+import useFilterHistory from './useFilterHistory';
 import FeedbackLink from './FeedbackLink';
 import React,{useEffect,useMemo,useRef,useState} from 'react';
 import {createRoot} from 'react-dom/client';
@@ -80,6 +81,10 @@ function App(){
  const excludedGroups=useMemo(()=>excludedArtistIds(catalog?.groups||[],individualExcluded,blockedTypes,allowedGroups,favoriteArtistIds(catalog,protectedGroups)),[catalog,individualExcluded,blockedTypes,allowedGroups,protectedGroups]);
  const favoriteIdsForView=useMemo(()=>[...new Set(viewPresets.flatMap(key=>favoritePresets[key]))],[viewPresets,favoritePresets]);
  const selected=useMemo(()=>browsingArtistIds(catalog,{types:enabledArtistTypes,excluded:excludedGroups,muted:mutedArtists,hardBlocked,favoriteIds:favoriteIdsForView,favoritesOnly:Boolean(viewPresets.length),activeOnly:favoriteScope==='active',activeStates:activeBrowseStates,now:clock}),[catalog,enabledArtistTypes,excludedGroups,hardBlocked,mutedArtists,viewPresets,favoriteIdsForView,favoriteScope,activeBrowseStates,clock]);
+ useFilterHistory({category,query,channel,member,subtype,format,filterGroup,archiveYear,archiveMonth,externalType,ownType,contentSection,broadcaster,favoriteScope,viewPresets,mutedArtists,activeBrowseStates},snapshot=>{
+  const setters={category:setCategory,query:setQuery,channel:setChannel,member:setMember,subtype:setSubtype,format:setFormat,filterGroup:setFilterGroup,archiveYear:setArchiveYear,archiveMonth:setArchiveMonth,externalType:setExternalType,ownType:setOwnType,contentSection:setContentSection,broadcaster:setBroadcaster,favoriteScope:setFavoriteScope,viewPresets:setViewPresets,mutedArtists:setMutedArtists,activeBrowseStates:setActiveBrowseStates};
+  for(const [key,setter]of Object.entries(setters))if(Object.hasOwn(snapshot,key))setter(snapshot[key]);
+ },preferencesReady);
  const toggleHardBlocked=id=>setHardBlocked(ids=>ids.includes(id)?ids.filter(value=>value!==id):[...ids,id]);
  useEffect(()=>{if(filterGroup&&catalog&&!catalog.groups.some(g=>g.id===filterGroup)){setFilterGroup('');setMember('');}},[catalog,filterGroup]);
 
