@@ -54,11 +54,17 @@
   "musicBroadcast": false,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-b1ac6c92f40f08e6",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "wooah",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 25,
+          "end": 30,
+          "text": "WOOAH",
+          "source": "title"
+        },
         {
           "start": 32,
           "end": 34,
@@ -68,21 +74,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "wooah",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-b1ac6c92f40f08e6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 32,
           "end": 34,
           "text": "우아",
-          "source": "title"
-        },
-        {
-          "start": 25,
-          "end": 30,
-          "text": "WOOAH",
           "source": "title"
         }
       ]

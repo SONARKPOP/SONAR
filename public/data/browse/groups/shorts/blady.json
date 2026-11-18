@@ -55,14 +55,28 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-a32484a53f28ff72",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-5a8cb899027f0ca9",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 23,
-              "end": 25,
-              "text": "세미",
+              "start": 20,
+              "end": 22,
+              "text": "지안",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "laysha",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 4,
+              "end": 10,
+              "text": "laysha",
               "source": "title"
             }
           ]
@@ -97,14 +111,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-5a8cb899027f0ca9",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "person-a32484a53f28ff72",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 20,
-              "end": 22,
-              "text": "지안",
+              "start": 23,
+              "end": 25,
+              "text": "세미",
               "source": "title"
             }
           ]
@@ -133,20 +147,6 @@
               "start": 17,
               "end": 19,
               "text": "혜리",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "laysha",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 4,
-              "end": 10,
-              "text": "laysha",
               "source": "title"
             }
           ]
@@ -255,20 +255,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "blady",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 1,
-              "end": 6,
-              "text": "blady",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "unchild-tina",
           "state": "inferred",
@@ -278,6 +264,20 @@
               "start": 11,
               "end": 13,
               "text": "티나",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "blady",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 1,
+              "end": 6,
+              "text": "blady",
               "source": "title"
             }
           ]

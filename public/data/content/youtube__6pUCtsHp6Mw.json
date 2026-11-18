@@ -60,6 +60,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "sis",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 50,
+          "end": 55,
+          "text": "S.I.S",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "red-velvet",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -108,23 +122,9 @@
     },
     {
       "artistType": "group",
-      "artistId": "sis",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 50,
-          "end": 55,
-          "text": "S.I.S",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "red-velvet-wendy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "wendy",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 23,
@@ -135,10 +135,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "wendy",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "red-velvet-wendy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 23,
