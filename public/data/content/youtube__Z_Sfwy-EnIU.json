@@ -59,15 +59,35 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "lsf-sakura",
+      "artistType": "group",
+      "artistId": "izone",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 72,
-          "end": 78,
-          "text": "SAKURA",
+          "start": 0,
+          "end": 6,
+          "text": "IZ*ONE",
+          "source": "title"
+        },
+        {
+          "start": 82,
+          "end": 88,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "red-velvet",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 43,
+          "end": 53,
+          "text": "Red Velvet",
           "source": "title"
         }
       ]
@@ -101,35 +121,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "red-velvet",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 43,
-          "end": 53,
-          "text": "Red Velvet",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
+      "artistType": "person",
+      "artistId": "lsf-sakura",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 6,
-          "text": "IZ*ONE",
-          "source": "title"
-        },
-        {
-          "start": 82,
-          "end": 88,
-          "text": "IZ*ONE",
+          "start": 72,
+          "end": 78,
+          "text": "SAKURA",
           "source": "title"
         }
       ]
