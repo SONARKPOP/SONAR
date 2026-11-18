@@ -40,15 +40,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-a3d469a9e79693d5",
+          "artistType": "group",
+          "artistId": "lisa",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 56,
-              "end": 59,
-              "text": "김신영",
+              "start": 78,
+              "end": 82,
+              "text": "LISA",
+              "source": "title"
+            },
+            {
+              "start": 10,
+              "end": 12,
+              "text": "리사",
               "source": "title"
             }
           ]
@@ -60,35 +66,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 10,
-              "end": 12,
-              "text": "리사",
-              "source": "title"
-            },
-            {
               "start": 78,
               "end": 82,
               "text": "LISA",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "lisa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
               "start": 10,
               "end": 12,
               "text": "리사",
-              "source": "title"
-            },
-            {
-              "start": 78,
-              "end": 82,
-              "text": "LISA",
               "source": "title"
             }
           ]
@@ -100,15 +86,29 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 61,
+              "end": 65,
+              "text": "블랙핑크",
+              "source": "title"
+            },
+            {
               "start": 67,
               "end": 76,
               "text": "BLACKPINK",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a3d469a9e79693d5",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
             {
-              "start": 61,
-              "end": 65,
-              "text": "블랙핑크",
+              "start": 56,
+              "end": 59,
+              "text": "김신영",
               "source": "title"
             }
           ]
@@ -139,7 +139,6 @@
       "title": "[입덕직캠] 큐티스트릿 후루사와 리사 직캠 4K '동글동글 동글이' (CUTIE STREET Risa Furusawa FanCam) | @MCOUNTDOWN_2026.10.22",
       "publishedAt": "2026-10-25T03:00:35Z",
       "groupIds": [
-        "blackpink",
         "gg-866d3f4af19cc6ca",
         "lisa"
       ],
@@ -166,8 +165,8 @@
         "external"
       ],
       "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "unclassified",
+        "policy": "title-context-v2",
+        "source": "title",
         "appearanceVerified": false
       },
       "appearanceLinks": [
@@ -186,15 +185,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "bp-lisa",
+          "artistType": "group",
+          "artistId": "gg-866d3f4af19cc6ca",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 18,
-              "end": 20,
-              "text": "리사",
+              "start": 39,
+              "end": 51,
+              "text": "CUTIE STREET",
               "source": "title"
             }
           ]
@@ -214,15 +213,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "gg-866d3f4af19cc6ca",
+          "artistType": "person",
+          "artistId": "bp-lisa",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 39,
-              "end": 51,
-              "text": "CUTIE STREET",
+              "start": 18,
+              "end": 20,
+              "text": "리사",
               "source": "title"
             }
           ]
@@ -254,7 +253,6 @@
       "title": "[FanCam] hrtz.wav(하츠웨이브) J-POP COVER 윤영준 직캠 #YYJ #YounYoungJun #LiSA #홍련화 #紅蓮華 #귀멸의칼날 #OST",
       "publishedAt": "2026-09-16T05:00:03Z",
       "groupIds": [
-        "blackpink",
         "lisa"
       ],
       "memberIds": [
@@ -278,16 +276,16 @@
         "external"
       ],
       "memberTagging": {
-        "policy": "title-only-v1",
+        "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "bp-lisa",
+          "artistType": "group",
+          "artistId": "lisa",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 64,
@@ -298,10 +296,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "lisa",
+          "artistType": "person",
+          "artistId": "bp-lisa",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 64,

@@ -57,10 +57,24 @@
   "musicBroadcast": false,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-eb73497ae0cc470f",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "apink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "에이핑크",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kwon-eun-bi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 31,
@@ -85,10 +99,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kwon-eun-bi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-eb73497ae0cc470f",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 31,
@@ -100,23 +114,9 @@
     },
     {
       "artistType": "group",
-      "artistId": "apink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 5,
-          "text": "에이핑크",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "apink-kim-nam-joo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "kim-nam-joo",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 7,
@@ -127,10 +127,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kim-nam-joo",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "apink-kim-nam-joo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 7,

@@ -258,7 +258,6 @@
       "title": "BESTie 다혜 팅팅컴피티션 출전합니다",
       "publishedAt": "2026-11-18T02:00:17Z",
       "groupIds": [
-        "bestie",
         "unchild"
       ],
       "memberIds": [
@@ -279,25 +278,11 @@
       "thumbnail": "https://i.ytimg.com/vi/UktC98aArvE/hqdefault.jpg",
       "durationLabel": "13s",
       "memberTagging": {
-        "policy": "title-only-v1",
+        "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
       },
       "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 6,
-              "text": "BESTie",
-              "source": "title"
-            }
-          ]
-        },
         {
           "artistType": "person",
           "artistId": "person-3ddfea2840d67f2f",
@@ -325,13 +310,21 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 0,
+              "end": 6,
+              "text": "BESTie",
+              "source": "title"
+            }
+          ]
         }
-      ],
-      "careerGroupIds": [
-        "bestie"
-      ],
-      "displayCareerGroupIds": [
-        "bestie"
       ],
       "externalId": "UktC98aArvE",
       "sourceUrl": "https://www.youtube.com/watch?v=UktC98aArvE",
@@ -347,7 +340,13 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "musicBroadcast": false,
+      "careerGroupIds": [
+        "bestie"
+      ],
+      "displayCareerGroupIds": [
+        "bestie"
+      ]
     },
     {
       "id": "youtube__YRXzQy1BvFw",
@@ -387,46 +386,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "unchild-yeeun",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 57,
-              "end": 60,
-              "text": "박예은",
-              "source": "title"
-            },
-            {
-              "start": 28,
-              "end": 33,
-              "text": "YEEUN",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "unchild",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 18,
-              "end": 25,
-              "text": "UNCHILD",
-              "source": "title"
-            },
-            {
-              "start": 52,
-              "end": 56,
-              "text": "언차일드",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "ye-eun",
           "state": "needs_review",
@@ -450,6 +409,46 @@
               "start": 28,
               "end": 33,
               "text": "YEEUN",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "unchild-yeeun",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 28,
+              "end": 33,
+              "text": "YEEUN",
+              "source": "title"
+            },
+            {
+              "start": 57,
+              "end": 60,
+              "text": "박예은",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "unchild",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 52,
+              "end": 56,
+              "text": "언차일드",
+              "source": "title"
+            },
+            {
+              "start": 18,
+              "end": 25,
+              "text": "UNCHILD",
               "source": "title"
             }
           ]
