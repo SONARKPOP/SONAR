@@ -55,14 +55,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "episode",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "highteen",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 17,
-          "text": "EPISODE",
+          "start": 19,
+          "end": 22,
+          "text": "하이틴",
+          "source": "title"
+        },
+        {
+          "start": 1,
+          "end": 9,
+          "text": "HIGHTEEN",
           "source": "title"
         }
       ]
@@ -97,20 +103,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "highteen",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "episode",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 1,
-          "end": 9,
-          "text": "HIGHTEEN",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 22,
-          "text": "하이틴",
+          "start": 10,
+          "end": 17,
+          "text": "EPISODE",
           "source": "title"
         }
       ]

@@ -45,6 +45,20 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "person",
+      "artistId": "person-25dff8797c83a601",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 17,
+          "text": "원",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "rescene",
       "state": "inferred",
@@ -60,14 +74,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-25dff8797c83a601",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "rescene-woni",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 19,
+          "end": 23,
+          "text": "WONI",
+          "source": "title"
+        },
+        {
           "start": 16,
-          "end": 17,
-          "text": "원",
+          "end": 18,
+          "text": "원이",
           "source": "title"
         }
       ]
@@ -82,26 +102,6 @@
           "start": 16,
           "end": 18,
           "text": "원이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "rescene-woni",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "원이",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 23,
-          "text": "WONI",
           "source": "title"
         }
       ]
