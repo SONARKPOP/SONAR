@@ -51,21 +51,29 @@
       "musicBroadcast": false,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gidle-miyeon",
+          "artistType": "group",
+          "artistId": "tiffany-young",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
+              "start": 0,
+              "end": 13,
+              "text": "Tiffany Young",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "girls-generation-tiffany-young",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
+              "start": 0,
+              "end": 13,
+              "text": "Tiffany Young",
               "source": "title"
             }
           ]
@@ -92,28 +100,20 @@
         },
         {
           "artistType": "person",
-          "artistId": "girls-generation-tiffany-young",
+          "artistId": "gidle-miyeon",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 0,
-              "end": 13,
-              "text": "Tiffany Young",
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "tiffany-young",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 0,
-              "end": 13,
-              "text": "Tiffany Young",
+              "start": 38,
+              "end": 40,
+              "text": "미연",
               "source": "title"
             }
           ]
@@ -248,15 +248,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 14,
-              "text": "아이들",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 10,
               "text": "i-dle",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 14,
+              "text": "아이들",
               "source": "title"
             }
           ]

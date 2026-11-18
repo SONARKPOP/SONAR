@@ -56,24 +56,30 @@
   "musicBroadcast": false,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-b7086b233a866c09",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "twice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 38,
-          "end": 40,
-          "text": "나연",
+          "start": 17,
+          "end": 22,
+          "text": "TWICE",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "text": "트와이스",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-nayeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "nayeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 38,
@@ -90,10 +96,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nayeon",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "tw-nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 38,
@@ -124,21 +130,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "twice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-b7086b233a866c09",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 17,
-          "end": 22,
-          "text": "TWICE",
-          "source": "title"
-        },
-        {
-          "start": 24,
-          "end": 28,
-          "text": "트와이스",
+          "start": 38,
+          "end": 40,
+          "text": "나연",
           "source": "title"
         }
       ]
