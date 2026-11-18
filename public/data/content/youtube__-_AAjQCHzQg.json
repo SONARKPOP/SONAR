@@ -57,20 +57,6 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-eb8aecf164f8f31f",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 26,
-          "end": 28,
-          "text": "도시",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "purple-kiss",
       "state": "inferred",
@@ -86,9 +72,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "purple-kiss-swan",
+      "artistId": "person-eb8aecf164f8f31f",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 26,
+          "end": 28,
+          "text": "도시",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 37,
@@ -105,10 +105,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "swan",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 37,
