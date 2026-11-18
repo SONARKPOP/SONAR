@@ -39,25 +39,17 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-2300f45a248fc299",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 50,
-              "end": 52,
-              "text": "세계",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "x-in",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
+            {
+              "start": 5,
+              "end": 9,
+              "text": "X:IN",
+              "source": "title"
+            },
             {
               "start": 10,
               "end": 12,
@@ -69,11 +61,19 @@
               "end": 60,
               "text": "엑신",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-2300f45a248fc299",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
             {
-              "start": 5,
-              "end": 9,
-              "text": "X:IN",
+              "start": 50,
+              "end": 52,
+              "text": "세계",
               "source": "title"
             }
           ]
@@ -159,15 +159,21 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-b550b1b601289b96",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "ive",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 66,
-              "end": 68,
-              "text": "보아",
+              "start": 29,
+              "end": 32,
+              "text": "아이브",
+              "source": "title"
+            },
+            {
+              "start": 33,
+              "end": 36,
+              "text": "IVE",
               "source": "title"
             }
           ]
@@ -187,21 +193,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "ive",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-b550b1b601289b96",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 29,
-              "end": 32,
-              "text": "아이브",
-              "source": "title"
-            },
-            {
-              "start": 33,
-              "end": 36,
-              "text": "IVE",
+              "start": 66,
+              "end": 68,
+              "text": "보아",
               "source": "title"
             }
           ]
