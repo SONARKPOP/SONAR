@@ -34,38 +34,57 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:33.541612Z",
+    "collectedAt": "2026-11-18T13:35:38.101439Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
-  "externalId": "eSwJyqlapE4",
-  "sourceUrl": "https://www.youtube.com/watch?v=eSwJyqlapE4",
-  "contentTypes": [
-    "own"
-  ],
-  "ownType": "variety",
-  "contentTabs": [
-    "shorts",
-    "own"
-  ],
-  "musicType": "",
-  "teaserType": "",
-  "contentLength": "short",
-  "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "careerGroupIds": [
-    "iii",
-    "s2it"
-  ],
-  "displayCareerGroupIds": [
-    "iii",
-    "s2it"
-  ],
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-ee6915b308b27021",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "연수",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e1d8f51047eba03b",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "연수",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "s2it",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "S2IT",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-88cfff142be9132c",
@@ -96,35 +115,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-ee6915b308b27021",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 10,
-          "text": "연수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-e1d8f51047eba03b",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 8,
-          "end": 10,
-          "text": "연수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-51e188656865ee40",
+      "artistId": "person-37a425bf9d905bb9",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -152,35 +143,21 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-37a425bf9d905bb9",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 17,
-          "end": 19,
-          "text": "하나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-73260343a374ac78",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 17,
-          "end": 19,
-          "text": "하나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-df9fcb4972db0d66",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 19,
+          "text": "하나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-51e188656865ee40",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -208,6 +185,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "person-73260343a374ac78",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 19,
+          "text": "하나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-d259f229831ee7de",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -219,20 +210,29 @@
           "source": "title"
         }
       ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "s2it",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "S2IT",
-          "source": "title"
-        }
-      ]
     }
-  ]
+  ],
+  "careerGroupIds": [
+    "iii",
+    "s2it"
+  ],
+  "displayCareerGroupIds": [
+    "iii",
+    "s2it"
+  ],
+  "externalId": "eSwJyqlapE4",
+  "sourceUrl": "https://www.youtube.com/watch?v=eSwJyqlapE4",
+  "contentTypes": [
+    "own"
+  ],
+  "ownType": "variety",
+  "contentTabs": [
+    "shorts",
+    "own"
+  ],
+  "musicType": "",
+  "teaserType": "",
+  "contentLength": "short",
+  "hierarchyVersion": 2,
+  "musicBroadcast": false
 }

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:39:47.467212Z",
+    "collectedAt": "2026-11-18T13:34:56.389864Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -39,6 +39,62 @@
     "source": "title",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "mamamoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 42,
+          "end": 45,
+          "text": "마마무",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "moonbyul",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 51,
+          "end": 59,
+          "text": "MoonByul",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 49,
+          "text": "문별",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-moonbyul",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 51,
+          "end": 59,
+          "text": "MoonByul",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 49,
+          "text": "문별",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "R2lIoi8c65E",
   "sourceUrl": "https://www.youtube.com/watch?v=R2lIoi8c65E",
   "contentTypes": [
@@ -53,61 +109,5 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "mamamoo-moonbyul",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 47,
-          "end": 49,
-          "text": "문별",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 59,
-          "text": "MoonByul",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "moonbyul",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 47,
-          "end": 49,
-          "text": "문별",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 59,
-          "text": "MoonByul",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "mamamoo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 42,
-          "end": 45,
-          "text": "마마무",
-          "source": "title"
-        }
-      ]
-    }
-  ]
+  "musicBroadcast": false
 }

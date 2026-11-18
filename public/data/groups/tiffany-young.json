@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-18T13:11:46.979343Z",
+  "updatedAt": "2026-11-18T13:37:59.073060Z",
   "items": [
     {
       "id": "youtube__6KbcSym9fS4",
@@ -33,29 +33,6 @@
         "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
-      },
-      "externalId": "6KbcSym9fS4",
-      "sourceUrl": "https://www.youtube.com/watch?v=6KbcSym9fS4",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "daily",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [
-          "girls-generation"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
       },
       "appearanceLinks": [
         {
@@ -94,7 +71,30 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "6KbcSym9fS4",
+      "sourceUrl": "https://www.youtube.com/watch?v=6KbcSym9fS4",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "daily",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [
+          "girls-generation"
+        ],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__CX_MxE3-p7U",
@@ -126,6 +126,22 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 4,
+              "end": 5,
+              "text": "s",
+              "source": "title"
+            }
+          ]
+        }
+      ],
       "externalId": "CX_MxE3-p7U",
       "sourceUrl": "https://www.youtube.com/watch?v=CX_MxE3-p7U",
       "contentTypes": [
@@ -148,23 +164,7 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 4,
-              "end": 5,
-              "text": "s",
-              "source": "title"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "youtube__ZlXNMGhjp4o",
@@ -196,6 +196,7 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [],
       "externalId": "ZlXNMGhjp4o",
       "sourceUrl": "https://www.youtube.com/watch?v=ZlXNMGhjp4o",
       "contentTypes": [
@@ -218,8 +219,7 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "appearanceLinks": []
+      }
     },
     {
       "id": "youtube__AKJfGhM9E8M",
@@ -251,6 +251,7 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [],
       "externalId": "AKJfGhM9E8M",
       "sourceUrl": "https://www.youtube.com/watch?v=AKJfGhM9E8M",
       "contentTypes": [
@@ -273,8 +274,7 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "appearanceLinks": []
+      }
     },
     {
       "id": "youtube__Hm37FYlfo5g",
@@ -309,22 +309,47 @@
         "source": "title",
         "appearanceVerified": false
       },
-      "externalId": "Hm37FYlfo5g",
-      "sourceUrl": "https://www.youtube.com/watch?v=Hm37FYlfo5g",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "behind",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
       "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "gidle-miyeon",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "miyeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "group",
           "artistId": "tiffany-young",
@@ -352,46 +377,6 @@
               "source": "title"
             }
           ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "miyeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "gidle-miyeon",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
-              "source": "title"
-            }
-          ]
         }
       ],
       "careerGroupIds": [
@@ -401,7 +386,22 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "Hm37FYlfo5g",
+      "sourceUrl": "https://www.youtube.com/watch?v=Hm37FYlfo5g",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "behind",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false
     },
     {
       "id": "youtube__t1S8uM8e8Ro",
@@ -437,22 +437,47 @@
         "source": "title",
         "appearanceVerified": false
       },
-      "externalId": "t1S8uM8e8Ro",
-      "sourceUrl": "https://www.youtube.com/watch?v=t1S8uM8e8Ro",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
       "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "gidle-miyeon",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "miyeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "group",
           "artistId": "tiffany-young",
@@ -480,46 +505,6 @@
               "source": "title"
             }
           ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "miyeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "gidle-miyeon",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
-              "source": "title"
-            }
-          ]
         }
       ],
       "careerGroupIds": [
@@ -529,7 +514,22 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "t1S8uM8e8Ro",
+      "sourceUrl": "https://www.youtube.com/watch?v=t1S8uM8e8Ro",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "mv",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false
     },
     {
       "id": "youtube__U7mQ88LNydE",
@@ -563,29 +563,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "U7mQ88LNydE",
-      "sourceUrl": "https://www.youtube.com/watch?v=U7mQ88LNydE",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "daily",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [
-          "girls-generation"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -623,7 +600,30 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "U7mQ88LNydE",
+      "sourceUrl": "https://www.youtube.com/watch?v=U7mQ88LNydE",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "daily",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [
+          "girls-generation"
+        ],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__iEHfaBosd2E",
@@ -657,29 +657,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "iEHfaBosd2E",
-      "sourceUrl": "https://www.youtube.com/watch?v=iEHfaBosd2E",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "daily",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [
-          "girls-generation"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -717,7 +694,30 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "iEHfaBosd2E",
+      "sourceUrl": "https://www.youtube.com/watch?v=iEHfaBosd2E",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "daily",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [
+          "girls-generation"
+        ],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__eRghRAIkQHw",
@@ -751,29 +751,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "eRghRAIkQHw",
-      "sourceUrl": "https://www.youtube.com/watch?v=eRghRAIkQHw",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "daily",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [
-          "girls-generation"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -811,7 +788,30 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "eRghRAIkQHw",
+      "sourceUrl": "https://www.youtube.com/watch?v=eRghRAIkQHw",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "daily",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [
+          "girls-generation"
+        ],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__1WooDpUsX9U",
@@ -845,30 +845,21 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "1WooDpUsX9U",
-      "sourceUrl": "https://www.youtube.com/watch?v=1WooDpUsX9U",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "daily",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [
-          "girls-generation"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "person-5035c2dc85c0c21e",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 6,
+              "end": 7,
+              "text": "수",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "group",
           "artistId": "tiffany-young",
@@ -896,20 +887,6 @@
               "source": "title"
             }
           ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-5035c2dc85c0c21e",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 6,
-              "end": 7,
-              "text": "수",
-              "source": "title"
-            }
-          ]
         }
       ],
       "careerGroupIds": [
@@ -919,7 +896,30 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "1WooDpUsX9U",
+      "sourceUrl": "https://www.youtube.com/watch?v=1WooDpUsX9U",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "daily",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [
+          "girls-generation"
+        ],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__1nfQ0ENqJBQ",
@@ -953,29 +953,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "1nfQ0ENqJBQ",
-      "sourceUrl": "https://www.youtube.com/watch?v=1nfQ0ENqJBQ",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "daily",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [
-          "girls-generation"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -1013,7 +990,30 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "1nfQ0ENqJBQ",
+      "sourceUrl": "https://www.youtube.com/watch?v=1nfQ0ENqJBQ",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "daily",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [
+          "girls-generation"
+        ],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__Z5_DGX-QjX8",
@@ -1045,6 +1045,7 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [],
       "externalId": "Z5_DGX-QjX8",
       "sourceUrl": "https://www.youtube.com/watch?v=Z5_DGX-QjX8",
       "contentTypes": [
@@ -1067,8 +1068,7 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "appearanceLinks": []
+      }
     },
     {
       "id": "youtube__t1g293sk0QA",
@@ -1102,30 +1102,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "t1g293sk0QA",
-      "sourceUrl": "https://www.youtube.com/watch?v=t1g293sk0QA",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "practice",
-      "contentTabs": [
-        "home",
-        "music",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [
-          "girls-generation"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -1163,7 +1139,31 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "t1g293sk0QA",
+      "sourceUrl": "https://www.youtube.com/watch?v=t1g293sk0QA",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "practice",
+      "contentTabs": [
+        "home",
+        "music",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [
+          "girls-generation"
+        ],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__bjeFvq-gfY4",
@@ -1243,6 +1243,14 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
+      "displayCareerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
       "externalId": "bjeFvq-gfY4",
       "sourceUrl": "https://www.youtube.com/watch?v=bjeFvq-gfY4",
       "contentTabs": [
@@ -1253,15 +1261,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ],
-      "displayCareerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__DkoMr_7sAf4",
@@ -1341,6 +1341,14 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
+      "displayCareerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
       "externalId": "DkoMr_7sAf4",
       "sourceUrl": "https://www.youtube.com/watch?v=DkoMr_7sAf4",
       "contentTabs": [
@@ -1351,15 +1359,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ],
-      "displayCareerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__i4TwQ_EDnGI",
@@ -1439,6 +1439,14 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
+      "displayCareerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
       "externalId": "i4TwQ_EDnGI",
       "sourceUrl": "https://www.youtube.com/watch?v=i4TwQ_EDnGI",
       "contentTabs": [
@@ -1449,15 +1457,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ],
-      "displayCareerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__vJ84JXJQ3BU",
@@ -1536,6 +1536,14 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
+      "displayCareerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
       "externalId": "vJ84JXJQ3BU",
       "sourceUrl": "https://www.youtube.com/watch?v=vJ84JXJQ3BU",
       "contentTabs": [
@@ -1545,15 +1553,7 @@
       "teaserType": "",
       "contentLength": "regular",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ],
-      "displayCareerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__9zEOHPUq6CM",
@@ -1586,29 +1586,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "9zEOHPUq6CM",
-      "sourceUrl": "https://www.youtube.com/watch?v=9zEOHPUq6CM",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "behind",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [
-          "girls-generation"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -1646,7 +1623,30 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "9zEOHPUq6CM",
+      "sourceUrl": "https://www.youtube.com/watch?v=9zEOHPUq6CM",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "behind",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [
+          "girls-generation"
+        ],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__7E_ShStlHDM",
@@ -1679,29 +1679,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "7E_ShStlHDM",
-      "sourceUrl": "https://www.youtube.com/watch?v=7E_ShStlHDM",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "behind",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [
-          "girls-generation"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -1739,7 +1716,30 @@
       "displayCareerGroupIds": [
         "gg-8abb39c3ffbbe8b2",
         "girls-generation"
-      ]
+      ],
+      "externalId": "7E_ShStlHDM",
+      "sourceUrl": "https://www.youtube.com/watch?v=7E_ShStlHDM",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "behind",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [
+          "girls-generation"
+        ],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__mbmNXUasccw",
@@ -1818,6 +1818,14 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
+      "displayCareerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
       "externalId": "mbmNXUasccw",
       "sourceUrl": "https://www.youtube.com/watch?v=mbmNXUasccw",
       "externalType": "other",
@@ -1829,15 +1837,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ],
-      "displayCareerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__jIGPYcsNSxo",
@@ -1868,6 +1868,7 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [],
       "externalId": "jIGPYcsNSxo",
       "sourceUrl": "https://www.youtube.com/watch?v=jIGPYcsNSxo",
       "contentTypes": [
@@ -1890,8 +1891,7 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "appearanceLinks": []
+      }
     },
     {
       "id": "youtube__c1fw0tHruu8",
@@ -1926,22 +1926,47 @@
         "source": "title",
         "appearanceVerified": false
       },
-      "externalId": "c1fw0tHruu8",
-      "sourceUrl": "https://www.youtube.com/watch?v=c1fw0tHruu8",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "behind",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
       "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "gidle-miyeon",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "miyeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "group",
           "artistId": "tiffany-young",
@@ -1969,48 +1994,23 @@
               "source": "title"
             }
           ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "miyeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "gidle-miyeon",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
-              "source": "title"
-            }
-          ]
         }
-      ]
+      ],
+      "externalId": "c1fw0tHruu8",
+      "sourceUrl": "https://www.youtube.com/watch?v=c1fw0tHruu8",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "behind",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false
     },
     {
       "id": "youtube__5xMAbeV6xp0",
@@ -2043,27 +2043,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "5xMAbeV6xp0",
-      "sourceUrl": "https://www.youtube.com/watch?v=5xMAbeV6xp0",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "behind",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -2093,7 +2072,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "5xMAbeV6xp0",
+      "sourceUrl": "https://www.youtube.com/watch?v=5xMAbeV6xp0",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "behind",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__mvm39vaffsM",
@@ -2127,27 +2127,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "mvm39vaffsM",
-      "sourceUrl": "https://www.youtube.com/watch?v=mvm39vaffsM",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -2177,7 +2156,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "mvm39vaffsM",
+      "sourceUrl": "https://www.youtube.com/watch?v=mvm39vaffsM",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "mv",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__OunXd55iKuA",
@@ -2211,27 +2211,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "OunXd55iKuA",
-      "sourceUrl": "https://www.youtube.com/watch?v=OunXd55iKuA",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "music",
-        "shorts"
-      ],
-      "musicType": "teaser",
-      "teaserType": "music",
-      "contentLength": "teaser",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -2261,7 +2240,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "OunXd55iKuA",
+      "sourceUrl": "https://www.youtube.com/watch?v=OunXd55iKuA",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "music",
+        "shorts"
+      ],
+      "musicType": "teaser",
+      "teaserType": "music",
+      "contentLength": "teaser",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube___hAbZ_uiyAw",
@@ -2294,27 +2294,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "_hAbZ_uiyAw",
-      "sourceUrl": "https://www.youtube.com/watch?v=_hAbZ_uiyAw",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "behind",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -2344,7 +2323,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "_hAbZ_uiyAw",
+      "sourceUrl": "https://www.youtube.com/watch?v=_hAbZ_uiyAw",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "behind",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__GqxpgBIioi8",
@@ -2378,27 +2378,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "GqxpgBIioi8",
-      "sourceUrl": "https://www.youtube.com/watch?v=GqxpgBIioi8",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -2428,7 +2407,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "GqxpgBIioi8",
+      "sourceUrl": "https://www.youtube.com/watch?v=GqxpgBIioi8",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__uE5MTNGzQI8",
@@ -2467,34 +2467,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-09015af26275a1c8",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 19,
-              "end": 22,
-              "text": "김예원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-9e16042dfb73607e",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 19,
-              "end": 22,
-              "text": "김예원",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "tiffany-young",
           "state": "inferred",
@@ -2530,6 +2502,34 @@
               "start": 12,
               "end": 17,
               "text": "티파니 영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-9e16042dfb73607e",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 19,
+              "end": 22,
+              "text": "김예원",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-09015af26275a1c8",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 19,
+              "end": 22,
+              "text": "김예원",
               "source": "title"
             }
           ]
@@ -2762,48 +2762,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-507e18325fa70402",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 12,
-              "end": 14,
-              "text": "여름",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-93f1f4e0118a5b58",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 12,
-              "end": 14,
-              "text": "여름",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-a62ad8bf482db100",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 12,
-              "end": 14,
-              "text": "여름",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "tiffany-young",
           "state": "inferred",
@@ -2839,6 +2797,48 @@
               "start": 0,
               "end": 5,
               "text": "티파니 영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a62ad8bf482db100",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 12,
+              "end": 14,
+              "text": "여름",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-93f1f4e0118a5b58",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 12,
+              "end": 14,
+              "text": "여름",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-507e18325fa70402",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 12,
+              "end": 14,
+              "text": "여름",
               "source": "title"
             }
           ]
@@ -3419,12 +3419,6 @@
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 23,
-              "end": 36,
-              "text": "Tiffany Young",
-              "source": "title"
-            },
-            {
               "start": 17,
               "end": 20,
               "text": "티파니",
@@ -3434,6 +3428,12 @@
               "start": 17,
               "end": 22,
               "text": "티파니 영",
+              "source": "title"
+            },
+            {
+              "start": 23,
+              "end": 36,
+              "text": "Tiffany Young",
               "source": "title"
             }
           ]
@@ -3445,12 +3445,6 @@
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 23,
-              "end": 36,
-              "text": "Tiffany Young",
-              "source": "title"
-            },
-            {
               "start": 17,
               "end": 20,
               "text": "티파니",
@@ -3460,6 +3454,12 @@
               "start": 17,
               "end": 22,
               "text": "티파니 영",
+              "source": "title"
+            },
+            {
+              "start": 23,
+              "end": 36,
+              "text": "Tiffany Young",
               "source": "title"
             }
           ]
@@ -5290,6 +5290,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 47,
+              "end": 48,
+              "text": "s",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "tiffany-young",
           "state": "inferred",
           "reason": "unambiguous-title-name",
@@ -5301,15 +5315,15 @@
               "source": "title"
             },
             {
-              "start": 24,
-              "end": 37,
-              "text": "TIFFANY YOUNG",
-              "source": "title"
-            },
-            {
               "start": 16,
               "end": 19,
               "text": "티파니",
+              "source": "title"
+            },
+            {
+              "start": 24,
+              "end": 37,
+              "text": "TIFFANY YOUNG",
               "source": "title"
             }
           ]
@@ -5327,29 +5341,15 @@
               "source": "title"
             },
             {
-              "start": 24,
-              "end": 37,
-              "text": "TIFFANY YOUNG",
-              "source": "title"
-            },
-            {
               "start": 16,
               "end": 19,
               "text": "티파니",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
+            },
             {
-              "start": 47,
-              "end": 48,
-              "text": "s",
+              "start": 24,
+              "end": 37,
+              "text": "TIFFANY YOUNG",
               "source": "title"
             }
           ]
@@ -5398,27 +5398,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "16BcYqV7n6w",
-      "sourceUrl": "https://www.youtube.com/watch?v=16BcYqV7n6w",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "behind",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -5462,7 +5441,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "16BcYqV7n6w",
+      "sourceUrl": "https://www.youtube.com/watch?v=16BcYqV7n6w",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "behind",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__HZOs_6AmtmE",
@@ -5496,28 +5496,21 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "HZOs_6AmtmE",
-      "sourceUrl": "https://www.youtube.com/watch?v=HZOs_6AmtmE",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 23,
+              "end": 24,
+              "text": "s",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "group",
           "artistId": "tiffany-young",
@@ -5545,22 +5538,29 @@
               "source": "title"
             }
           ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 23,
-              "end": 24,
-              "text": "s",
-              "source": "title"
-            }
-          ]
         }
-      ]
+      ],
+      "externalId": "HZOs_6AmtmE",
+      "sourceUrl": "https://www.youtube.com/watch?v=HZOs_6AmtmE",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "mv",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__h4UDd-izfc8",
@@ -5766,28 +5766,21 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "_ylsZMEcBbY",
-      "sourceUrl": "https://www.youtube.com/watch?v=_ylsZMEcBbY",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "music",
-        "shorts"
-      ],
-      "musicType": "teaser",
-      "teaserType": "music",
-      "contentLength": "teaser",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 23,
+              "end": 24,
+              "text": "s",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "group",
           "artistId": "tiffany-young",
@@ -5815,22 +5808,29 @@
               "source": "title"
             }
           ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 23,
-              "end": 24,
-              "text": "s",
-              "source": "title"
-            }
-          ]
         }
-      ]
+      ],
+      "externalId": "_ylsZMEcBbY",
+      "sourceUrl": "https://www.youtube.com/watch?v=_ylsZMEcBbY",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "music",
+        "shorts"
+      ],
+      "musicType": "teaser",
+      "teaserType": "music",
+      "contentLength": "teaser",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__wDIeu-Nczzc",
@@ -5864,28 +5864,21 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "wDIeu-Nczzc",
-      "sourceUrl": "https://www.youtube.com/watch?v=wDIeu-Nczzc",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "own",
-        "shorts"
-      ],
-      "musicType": "",
-      "teaserType": "content",
-      "contentLength": "teaser",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 23,
+              "end": 24,
+              "text": "s",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "group",
           "artistId": "tiffany-young",
@@ -5913,22 +5906,29 @@
               "source": "title"
             }
           ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 23,
-              "end": 24,
-              "text": "s",
-              "source": "title"
-            }
-          ]
         }
-      ]
+      ],
+      "externalId": "wDIeu-Nczzc",
+      "sourceUrl": "https://www.youtube.com/watch?v=wDIeu-Nczzc",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "own",
+        "shorts"
+      ],
+      "musicType": "",
+      "teaserType": "content",
+      "contentLength": "teaser",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__kw2SkfQAzWw",
@@ -5970,20 +5970,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "girls-generation",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 13,
-              "end": 17,
-              "text": "소녀시대",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "tiffany-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -6018,6 +6004,20 @@
               "start": 27,
               "end": 32,
               "text": "티파니 영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "girls-generation",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 13,
+              "end": 17,
+              "text": "소녀시대",
               "source": "title"
             }
           ]
@@ -6076,20 +6076,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "girls-generation",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 9,
-              "end": 13,
-              "text": "소녀시대",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "tiffany-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -6112,6 +6098,20 @@
               "start": 30,
               "end": 33,
               "text": "티파니",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "girls-generation",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 9,
+              "end": 13,
+              "text": "소녀시대",
               "source": "title"
             }
           ]
@@ -6162,27 +6162,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "zR7Z_hNSYT4",
-      "sourceUrl": "https://www.youtube.com/watch?v=zR7Z_hNSYT4",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -6212,7 +6191,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "zR7Z_hNSYT4",
+      "sourceUrl": "https://www.youtube.com/watch?v=zR7Z_hNSYT4",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__hW3ITGaH5vc",
@@ -6246,27 +6246,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "hW3ITGaH5vc",
-      "sourceUrl": "https://www.youtube.com/watch?v=hW3ITGaH5vc",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -6296,7 +6275,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "hW3ITGaH5vc",
+      "sourceUrl": "https://www.youtube.com/watch?v=hW3ITGaH5vc",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__uKYj1LobnUc",
@@ -6328,6 +6328,7 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [],
       "externalId": "uKYj1LobnUc",
       "sourceUrl": "https://www.youtube.com/watch?v=uKYj1LobnUc",
       "contentTypes": [
@@ -6348,8 +6349,7 @@
         "groupIds": [],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "appearanceLinks": []
+      }
     },
     {
       "id": "youtube__Rp8sVAr6yGY",
@@ -6384,28 +6384,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "Rp8sVAr6yGY",
-      "sourceUrl": "https://www.youtube.com/watch?v=Rp8sVAr6yGY",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music",
-        "own"
-      ],
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "live",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -6435,7 +6413,29 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "Rp8sVAr6yGY",
+      "sourceUrl": "https://www.youtube.com/watch?v=Rp8sVAr6yGY",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "music",
+        "own"
+      ],
+      "musicType": "mv",
+      "teaserType": "",
+      "contentLength": "live",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__AYv27pyRrvM",
@@ -6469,27 +6469,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "AYv27pyRrvM",
-      "sourceUrl": "https://www.youtube.com/watch?v=AYv27pyRrvM",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "music",
-        "shorts"
-      ],
-      "musicType": "teaser",
-      "teaserType": "music",
-      "contentLength": "teaser",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -6519,7 +6498,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "AYv27pyRrvM",
+      "sourceUrl": "https://www.youtube.com/watch?v=AYv27pyRrvM",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "music",
+        "shorts"
+      ],
+      "musicType": "teaser",
+      "teaserType": "music",
+      "contentLength": "teaser",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__pbu_5SIElwI",
@@ -6553,27 +6553,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "pbu_5SIElwI",
-      "sourceUrl": "https://www.youtube.com/watch?v=pbu_5SIElwI",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -6603,7 +6582,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "pbu_5SIElwI",
+      "sourceUrl": "https://www.youtube.com/watch?v=pbu_5SIElwI",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__MjLbVqauNxI",
@@ -6637,27 +6637,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "MjLbVqauNxI",
-      "sourceUrl": "https://www.youtube.com/watch?v=MjLbVqauNxI",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -6687,7 +6666,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "MjLbVqauNxI",
+      "sourceUrl": "https://www.youtube.com/watch?v=MjLbVqauNxI",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__oM_t7Y8gBwU",
@@ -6722,28 +6722,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "oM_t7Y8gBwU",
-      "sourceUrl": "https://www.youtube.com/watch?v=oM_t7Y8gBwU",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music",
-        "own"
-      ],
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "live",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -6773,7 +6751,29 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "oM_t7Y8gBwU",
+      "sourceUrl": "https://www.youtube.com/watch?v=oM_t7Y8gBwU",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "music",
+        "own"
+      ],
+      "musicType": "mv",
+      "teaserType": "",
+      "contentLength": "live",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__YfizlVR2eK0",
@@ -6807,27 +6807,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "YfizlVR2eK0",
-      "sourceUrl": "https://www.youtube.com/watch?v=YfizlVR2eK0",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "music",
-        "shorts"
-      ],
-      "musicType": "teaser",
-      "teaserType": "music",
-      "contentLength": "teaser",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -6857,7 +6836,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "YfizlVR2eK0",
+      "sourceUrl": "https://www.youtube.com/watch?v=YfizlVR2eK0",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "music",
+        "shorts"
+      ],
+      "musicType": "teaser",
+      "teaserType": "music",
+      "contentLength": "teaser",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__l8ooZdJeHgc",
@@ -6891,27 +6891,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "l8ooZdJeHgc",
-      "sourceUrl": "https://www.youtube.com/watch?v=l8ooZdJeHgc",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "shorts",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -6941,7 +6920,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "l8ooZdJeHgc",
+      "sourceUrl": "https://www.youtube.com/watch?v=l8ooZdJeHgc",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "shorts",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__rloIUIKLFfY",
@@ -6975,27 +6975,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "rloIUIKLFfY",
-      "sourceUrl": "https://www.youtube.com/watch?v=rloIUIKLFfY",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7025,7 +7004,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "rloIUIKLFfY",
+      "sourceUrl": "https://www.youtube.com/watch?v=rloIUIKLFfY",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "mv",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__DnpfpeP6bKU",
@@ -7059,27 +7059,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "DnpfpeP6bKU",
-      "sourceUrl": "https://www.youtube.com/watch?v=DnpfpeP6bKU",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "daily",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7109,7 +7088,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "DnpfpeP6bKU",
+      "sourceUrl": "https://www.youtube.com/watch?v=DnpfpeP6bKU",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "daily",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__joOyG26P23I",
@@ -7142,28 +7142,6 @@
         "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
-      },
-      "externalId": "joOyG26P23I",
-      "sourceUrl": "https://www.youtube.com/watch?v=joOyG26P23I",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "own",
-        "live"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "live",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
       },
       "appearanceLinks": [
         {
@@ -7208,7 +7186,29 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "joOyG26P23I",
+      "sourceUrl": "https://www.youtube.com/watch?v=joOyG26P23I",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "own",
+        "live"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "live",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__Qb2D6X3gDjA",
@@ -7242,27 +7242,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "Qb2D6X3gDjA",
-      "sourceUrl": "https://www.youtube.com/watch?v=Qb2D6X3gDjA",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7292,7 +7271,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "Qb2D6X3gDjA",
+      "sourceUrl": "https://www.youtube.com/watch?v=Qb2D6X3gDjA",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__-vKrJPJebWE",
@@ -7326,28 +7326,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "-vKrJPJebWE",
-      "sourceUrl": "https://www.youtube.com/watch?v=-vKrJPJebWE",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7377,7 +7355,29 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "-vKrJPJebWE",
+      "sourceUrl": "https://www.youtube.com/watch?v=-vKrJPJebWE",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "music",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__Th7IXezLbYU",
@@ -7411,27 +7411,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "Th7IXezLbYU",
-      "sourceUrl": "https://www.youtube.com/watch?v=Th7IXezLbYU",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7461,7 +7440,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "Th7IXezLbYU",
+      "sourceUrl": "https://www.youtube.com/watch?v=Th7IXezLbYU",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "mv",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__ZyESmkKEoVk",
@@ -7495,27 +7495,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "ZyESmkKEoVk",
-      "sourceUrl": "https://www.youtube.com/watch?v=ZyESmkKEoVk",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "practice",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7545,7 +7524,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "ZyESmkKEoVk",
+      "sourceUrl": "https://www.youtube.com/watch?v=ZyESmkKEoVk",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "practice",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__kWQPEHlsgtc",
@@ -7579,27 +7579,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "kWQPEHlsgtc",
-      "sourceUrl": "https://www.youtube.com/watch?v=kWQPEHlsgtc",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "practice",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7629,7 +7608,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "kWQPEHlsgtc",
+      "sourceUrl": "https://www.youtube.com/watch?v=kWQPEHlsgtc",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "practice",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__YA2YtAFORbA",
@@ -7663,27 +7663,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "YA2YtAFORbA",
-      "sourceUrl": "https://www.youtube.com/watch?v=YA2YtAFORbA",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "practice",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7713,7 +7692,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "YA2YtAFORbA",
+      "sourceUrl": "https://www.youtube.com/watch?v=YA2YtAFORbA",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "practice",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__GbkJx2jWUc8",
@@ -7745,6 +7745,7 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
+      "appearanceLinks": [],
       "externalId": "GbkJx2jWUc8",
       "sourceUrl": "https://www.youtube.com/watch?v=GbkJx2jWUc8",
       "contentTypes": [
@@ -7765,8 +7766,7 @@
         "groupIds": [],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "appearanceLinks": []
+      }
     },
     {
       "id": "youtube__gyehuLvIbzM",
@@ -7800,27 +7800,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "gyehuLvIbzM",
-      "sourceUrl": "https://www.youtube.com/watch?v=gyehuLvIbzM",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7850,7 +7829,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "gyehuLvIbzM",
+      "sourceUrl": "https://www.youtube.com/watch?v=gyehuLvIbzM",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__fFNozmPbfGk",
@@ -7884,27 +7884,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "fFNozmPbfGk",
-      "sourceUrl": "https://www.youtube.com/watch?v=fFNozmPbfGk",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "practice",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -7934,7 +7913,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "fFNozmPbfGk",
+      "sourceUrl": "https://www.youtube.com/watch?v=fFNozmPbfGk",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "practice",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__M8nwekVGEYc",
@@ -7967,27 +7967,6 @@
         "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
-      },
-      "externalId": "M8nwekVGEYc",
-      "sourceUrl": "https://www.youtube.com/watch?v=M8nwekVGEYc",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
       },
       "appearanceLinks": [
         {
@@ -8032,7 +8011,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "M8nwekVGEYc",
+      "sourceUrl": "https://www.youtube.com/watch?v=M8nwekVGEYc",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     },
     {
       "id": "youtube__gH0a_rcsQTU",
@@ -8066,27 +8066,6 @@
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "gH0a_rcsQTU",
-      "sourceUrl": "https://www.youtube.com/watch?v=gH0a_rcsQTU",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "tiffany-young",
-        "groupIds": [],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      },
       "appearanceLinks": [
         {
           "artistType": "group",
@@ -8116,7 +8095,28 @@
             }
           ]
         }
-      ]
+      ],
+      "externalId": "gH0a_rcsQTU",
+      "sourceUrl": "https://www.youtube.com/watch?v=gH0a_rcsQTU",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "other",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "mv",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false,
+      "individualActivity": {
+        "artistId": "tiffany-young",
+        "groupIds": [],
+        "kind": "individual",
+        "evidence": "official-solo-channel"
+      }
     }
   ],
   "events": []

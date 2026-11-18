@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:41:41.863944Z",
+    "collectedAt": "2026-11-18T13:36:20.942713Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "h1-key",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 18,
+          "text": "하이키",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 13,
+          "text": "H1-KEY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "rose",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -54,20 +74,6 @@
           "start": 22,
           "end": 26,
           "text": "Rose",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-6c94e077a885f432",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 47,
-          "end": 49,
-          "text": "장미",
           "source": "title"
         }
       ]
@@ -87,21 +93,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "h1-key",
+      "artistType": "person",
+      "artistId": "person-6c94e077a885f432",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 7,
-          "end": 13,
-          "text": "H1-KEY",
-          "source": "title"
-        },
-        {
-          "start": 15,
-          "end": 18,
-          "text": "하이키",
+          "start": 47,
+          "end": 49,
+          "text": "장미",
           "source": "title"
         }
       ]

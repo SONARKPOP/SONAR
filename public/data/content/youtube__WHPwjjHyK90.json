@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:40:36.591768Z",
+    "collectedAt": "2026-11-18T13:35:11.423073Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "skyle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 11,
+          "text": "스카이리",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 5,
+          "text": "SKYLE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "episode",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 20,
           "end": 27,
           "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "skyle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 5,
-          "text": "SKYLE",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 11,
-          "text": "스카이리",
           "source": "title"
         }
       ]

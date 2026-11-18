@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:40:38.077610Z",
+    "collectedAt": "2026-11-18T13:35:13.077374Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -39,6 +39,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "iiterniti",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 10,
+          "text": "IITERNITI",
+          "source": "title"
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "text": "이터니티",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "illit",
@@ -55,34 +75,6 @@
           "start": 85,
           "end": 90,
           "text": "illit",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-ba0a83311d8d9509",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
-      "matches": [
-        {
-          "start": 55,
-          "end": 57,
-          "text": "서아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-c3fac0c0cdc7aaed",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
-      "matches": [
-        {
-          "start": 55,
-          "end": 57,
-          "text": "서아",
           "source": "title"
         }
       ]
@@ -116,21 +108,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "iiterniti",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-ba0a83311d8d9509",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 50,
-          "end": 54,
-          "text": "이터니티",
+          "start": 55,
+          "end": 57,
+          "text": "서아",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c3fac0c0cdc7aaed",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
+      "matches": [
         {
-          "start": 1,
-          "end": 10,
-          "text": "IITERNITI",
+          "start": 55,
+          "end": 57,
+          "text": "서아",
           "source": "title"
         }
       ]

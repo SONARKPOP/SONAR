@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:40:15.163007Z",
+    "collectedAt": "2026-11-18T13:34:48.646976Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,33 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-b832aad57724cb63",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 53,
-          "end": 54,
-          "text": "달",
+          "start": 31,
+          "end": 34,
+          "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 25,
+          "text": "I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 25,
+          "text": "(G)I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 34,
+          "text": "(여자)아이들",
           "source": "title"
         }
       ]
@@ -99,33 +117,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-b832aad57724cb63",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 27,
-          "end": 34,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 17,
-          "end": 25,
-          "text": "(G)I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 25,
-          "text": "I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 31,
-          "end": 34,
-          "text": "아이들",
+          "start": 53,
+          "end": 54,
+          "text": "달",
           "source": "title"
         }
       ]

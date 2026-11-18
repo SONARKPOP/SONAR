@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-11-14T05:00:19Z",
   "groupIds": [
-    "itzy",
-    "tuide"
+    "itzy"
   ],
   "memberIds": [
     "itzy-member-608992372543",
@@ -34,11 +33,11 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:39:54.614087Z",
+    "collectedAt": "2026-11-18T13:34:26.426479Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -67,26 +66,6 @@
           "start": 73,
           "end": 75,
           "text": "세아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 62,
-          "end": 67,
-          "text": "TUIDE",
-          "source": "title"
-        },
-        {
-          "start": 12,
-          "end": 15,
-          "text": "튜이드",
           "source": "title"
         }
       ]
@@ -121,6 +100,26 @@
           "start": 69,
           "end": 71,
           "text": "사키",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "튜이드",
+          "source": "title"
+        },
+        {
+          "start": 62,
+          "end": 67,
+          "text": "TUIDE",
           "source": "title"
         }
       ]

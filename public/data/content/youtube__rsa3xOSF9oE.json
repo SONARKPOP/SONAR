@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:41:16.440283Z",
+    "collectedAt": "2026-11-18T13:36:16.986010Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -38,6 +38,62 @@
     "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ioi",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 20,
+          "end": 25,
+          "text": "I.O.I",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chungha",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 8,
+          "text": "CHUNG HA",
+          "source": "title"
+        },
+        {
+          "start": 26,
+          "end": 28,
+          "text": "청하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-chungha",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 8,
+          "text": "CHUNG HA",
+          "source": "title"
+        },
+        {
+          "start": 26,
+          "end": 28,
+          "text": "청하",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "rsa3xOSF9oE",
   "sourceUrl": "https://www.youtube.com/watch?v=rsa3xOSF9oE",
   "contentTypes": [
@@ -58,61 +114,5 @@
     "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  },
-  "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "ioi",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 20,
-          "end": 25,
-          "text": "I.O.I",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "ioi-chungha",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 26,
-          "end": 28,
-          "text": "청하",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 8,
-          "text": "CHUNG HA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "chungha",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 26,
-          "end": 28,
-          "text": "청하",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 8,
-          "text": "CHUNG HA",
-          "source": "title"
-        }
-      ]
-    }
-  ]
+  }
 }

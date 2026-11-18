@@ -7,6 +7,7 @@
   "description": "#RESCENE #리센느 #원이 #리브 #미나미 #메이 #제나 #WONI #LIV #MINAMI #MAY #ZENA #동방으로따라와 #itsLive",
   "publishedAt": "2024-05-08T11:00:24Z",
   "groupIds": [
+    "blackpink",
     "jennie",
     "rescene"
   ],
@@ -33,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:39:54.927192Z",
+    "collectedAt": "2026-11-18T13:34:26.766238Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,11 +42,31 @@
   ],
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 34,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 39,
+          "text": "리센느",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-48c4cb964a0f4b98",
@@ -76,20 +97,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-fd5f710fbd3fcb9b",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 20,
-          "end": 22,
-          "text": "제나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "rescene-zena",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -103,21 +110,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-fd5f710fbd3fcb9b",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 27,
-          "end": 34,
-          "text": "RESCENE",
-          "source": "title"
-        },
-        {
-          "start": 36,
-          "end": 39,
-          "text": "리센느",
+          "start": 20,
+          "end": 22,
+          "text": "제나",
           "source": "title"
         }
       ]

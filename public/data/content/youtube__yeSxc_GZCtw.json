@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:41:56.241861Z",
+    "collectedAt": "2026-11-18T13:36:36.311103Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 70,
+          "end": 73,
+          "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 66,
+          "end": 73,
+          "text": "(여자)아이들",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 25,
+          "text": "안",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "minnie",
@@ -68,40 +102,6 @@
           "start": 63,
           "end": 65,
           "text": "민니",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 66,
-          "end": 73,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 70,
-          "end": 73,
-          "text": "아이들",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 24,
-          "end": 25,
-          "text": "안",
           "source": "title"
         }
       ]

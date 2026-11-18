@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:39:56.516961Z",
+    "collectedAt": "2026-11-18T13:34:28.834767Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,41 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 35,
+          "end": 42,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 10,
+          "text": "리센느",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-dbe1e024b60849a5",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "rescene-may",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 11,
           "end": 13,
           "text": "메이",
+          "source": "title"
+        },
+        {
+          "start": 43,
+          "end": 46,
+          "text": "MAY",
           "source": "title"
         }
       ]
@@ -88,40 +114,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-may",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-dbe1e024b60849a5",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 11,
           "end": 13,
           "text": "메이",
-          "source": "title"
-        },
-        {
-          "start": 43,
-          "end": 46,
-          "text": "MAY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 35,
-          "end": 42,
-          "text": "RESCENE",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 10,
-          "text": "리센느",
           "source": "title"
         }
       ]

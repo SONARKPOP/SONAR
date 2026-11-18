@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:39:50.456009Z",
+    "collectedAt": "2026-11-18T13:34:22.451964Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,10 +48,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-541463fe20a0d62e",
+      "artistType": "group",
+      "artistId": "ioi",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 54,
+          "end": 59,
+          "text": "아이오아이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-67e210cea7126fd3",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 44,
@@ -63,9 +77,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-67e210cea7126fd3",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-541463fe20a0d62e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 44,
@@ -90,20 +104,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "ioi-jeon-somi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 49,
-          "end": 52,
-          "text": "전소미",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "jeon-somi",
       "state": "inferred",
@@ -118,15 +118,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ioi",
+      "artistType": "person",
+      "artistId": "ioi-jeon-somi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 54,
-          "end": 59,
-          "text": "아이오아이",
+          "start": 49,
+          "end": 52,
+          "text": "전소미",
           "source": "title"
         }
       ]

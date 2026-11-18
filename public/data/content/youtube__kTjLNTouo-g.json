@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:41:18.328270Z",
+    "collectedAt": "2026-11-18T13:35:55.949494Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-e202f1ad30e8b48a",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "madein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 9,
-          "end": 11,
-          "text": "사랑",
+          "start": 0,
+          "end": 6,
+          "text": "MADEIN",
+          "source": "title"
+        },
+        {
+          "start": 54,
+          "end": 60,
+          "text": "MADEIN",
           "source": "title"
         }
       ]
@@ -85,21 +91,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "madein",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-e202f1ad30e8b48a",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 0,
-          "end": 6,
-          "text": "MADEIN",
-          "source": "title"
-        },
-        {
-          "start": 54,
-          "end": 60,
-          "text": "MADEIN",
+          "start": 9,
+          "end": 11,
+          "text": "사랑",
           "source": "title"
         }
       ]

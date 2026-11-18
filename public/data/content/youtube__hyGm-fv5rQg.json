@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:41:11.491215Z",
+    "collectedAt": "2026-11-18T13:35:48.689137Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,14 +45,40 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-dbe1e024b60849a5",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "rescene-may",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
+        {
+          "start": 50,
+          "end": 53,
+          "text": "MAY",
+          "source": "title"
+        },
         {
           "start": 10,
           "end": 12,
           "text": "메이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "cherry-bullet",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 49,
+          "text": "Cherry Bullet",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 9,
+          "text": "체리블렛",
           "source": "title"
         }
       ]
@@ -87,40 +113,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-may",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-dbe1e024b60849a5",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 10,
           "end": 12,
           "text": "메이",
-          "source": "title"
-        },
-        {
-          "start": 50,
-          "end": 53,
-          "text": "MAY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "cherry-bullet",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 36,
-          "end": 49,
-          "text": "Cherry Bullet",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 9,
-          "text": "체리블렛",
           "source": "title"
         }
       ]

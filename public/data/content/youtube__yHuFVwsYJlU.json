@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:41:55.283556Z",
+    "collectedAt": "2026-11-18T13:36:35.299373Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,15 +49,29 @@
       "reason": "shared-name",
       "matches": [
         {
+          "start": 23,
+          "end": 27,
+          "text": "BIBI",
+          "source": "title"
+        },
+        {
           "start": 28,
           "end": 30,
           "text": "비비",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "sugar",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 23,
-          "end": 27,
-          "text": "BIBI",
+          "start": 33,
+          "end": 38,
+          "text": "Sugar",
           "source": "title"
         }
       ]
@@ -86,20 +100,6 @@
           "start": 28,
           "end": 30,
           "text": "비비",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "sugar",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 33,
-          "end": 38,
-          "text": "Sugar",
           "source": "title"
         }
       ]

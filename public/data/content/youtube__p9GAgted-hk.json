@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:41:31.302717Z",
+    "collectedAt": "2026-11-18T13:36:09.890644Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,20 +45,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 60,
-          "end": 64,
-          "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "purple-kiss",
@@ -81,20 +67,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-db461325cd947b43",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 65,
           "end": 67,
           "text": "수안",
-          "source": "title"
-        },
-        {
-          "start": 45,
-          "end": 49,
-          "text": "SWAN",
           "source": "title"
         }
       ]
@@ -121,14 +101,34 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-db461325cd947b43",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 65,
           "end": 67,
           "text": "수안",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 49,
+          "text": "SWAN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 60,
+          "end": 64,
+          "text": "KISS",
           "source": "title"
         }
       ]

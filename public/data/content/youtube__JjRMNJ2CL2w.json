@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:40:03.070243Z",
+    "collectedAt": "2026-11-18T13:34:35.901905Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "lsf-chaewon",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 35,
+          "text": "Kim Chaewon",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 39,
+          "text": "김채원",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-fde141675e2b215a",
@@ -61,7 +95,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "lsf-chaewon",
+      "artistId": "person-2d3be9b1d4b2db9b",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -69,12 +103,6 @@
           "start": 36,
           "end": 39,
           "text": "김채원",
-          "source": "title"
-        },
-        {
-          "start": 24,
-          "end": 35,
-          "text": "Kim Chaewon",
           "source": "title"
         }
       ]
@@ -82,20 +110,6 @@
     {
       "artistType": "person",
       "artistId": "person-a669d6c62ed7fcb9",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 36,
-          "end": 39,
-          "text": "김채원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-2d3be9b1d4b2db9b",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -137,21 +151,7 @@
     },
     {
       "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
+      "artistId": "swan",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
@@ -164,8 +164,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "swan",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [

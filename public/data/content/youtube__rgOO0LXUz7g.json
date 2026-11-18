@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:41:37.585222Z",
+    "collectedAt": "2026-11-18T13:36:16.422224Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-7f5eb7debfb3a9d6",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "stayc",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 16,
-          "end": 18,
-          "text": "시은",
+          "start": 11,
+          "end": 15,
+          "text": "스테이씨",
+          "source": "title"
+        },
+        {
+          "start": 51,
+          "end": 56,
+          "text": "STAYC",
           "source": "title"
         }
       ]
@@ -73,21 +79,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "stayc",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-7f5eb7debfb3a9d6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 11,
-          "end": 15,
-          "text": "스테이씨",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 56,
-          "text": "STAYC",
+          "start": 16,
+          "end": 18,
+          "text": "시은",
           "source": "title"
         }
       ]

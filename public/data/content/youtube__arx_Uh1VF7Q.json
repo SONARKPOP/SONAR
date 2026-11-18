@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T07:40:51.971508Z",
+    "collectedAt": "2026-11-18T13:35:27.877101Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,7 +48,27 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "yoona",
+      "artistId": "illit",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 70,
+          "end": 75,
+          "text": "ILLIT",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "아일릿",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-yoona",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -75,8 +95,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "girls-generation-yoona",
+      "artistType": "group",
+      "artistId": "yoona",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -90,27 +110,7 @@
     },
     {
       "artistType": "group",
-      "artistId": "illit",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 70,
-          "end": 75,
-          "text": "ILLIT",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 11,
-          "text": "아일릿",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "bp-jisoo",
+      "artistId": "jisoo",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
@@ -123,8 +123,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jisoo",
+      "artistType": "person",
+      "artistId": "bp-jisoo",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
