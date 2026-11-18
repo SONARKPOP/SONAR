@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:34:42.649588Z",
+    "collectedAt": "2026-11-18T19:19:01.592465Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -62,35 +62,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 27,
-          "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "bp-rose",
       "state": "mention",
       "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 54,
-          "end": 58,
-          "text": "ROSÉ",
-          "source": "title"
-        },
-        {
           "start": 51,
           "end": 53,
           "text": "로제",
+          "source": "title"
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "text": "ROSÉ",
           "source": "title"
         }
       ]
@@ -102,15 +88,29 @@
       "reason": "original-artist-or-comparison",
       "matches": [
         {
+          "start": 51,
+          "end": 53,
+          "text": "로제",
+          "source": "title"
+        },
+        {
           "start": 54,
           "end": 58,
           "text": "ROSÉ",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 51,
-          "end": 53,
-          "text": "로제",
+          "start": 23,
+          "end": 27,
+          "text": "KISS",
           "source": "title"
         }
       ]

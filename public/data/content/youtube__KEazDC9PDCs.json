@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:34:37.156915Z",
+    "collectedAt": "2026-11-18T19:18:56.012886Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-c24567c62b559e06",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 90,
+          "end": 92,
+          "text": "승희",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-8a50ea5c18115e1d",
@@ -61,48 +75,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c24567c62b559e06",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 90,
-          "end": 92,
-          "text": "승희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
+      "artistId": "person-e6f0dc1d3084a1cf",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 34,
-          "end": 35,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 53,
-          "end": 57,
-          "text": "오마이걸",
-          "source": "title"
-        },
-        {
-          "start": 58,
-          "end": 68,
-          "text": "OH MY GIRL",
+          "start": 93,
+          "end": 95,
+          "text": "아린",
           "source": "title"
         }
       ]
@@ -122,15 +102,35 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-e6f0dc1d3084a1cf",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 93,
-          "end": 95,
-          "text": "아린",
+          "start": 58,
+          "end": 68,
+          "text": "OH MY GIRL",
+          "source": "title"
+        },
+        {
+          "start": 53,
+          "end": 57,
+          "text": "오마이걸",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 34,
+          "end": 35,
+          "text": "s",
           "source": "title"
         }
       ]

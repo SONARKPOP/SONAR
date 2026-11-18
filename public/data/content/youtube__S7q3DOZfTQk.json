@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:34:59.709997Z",
+    "collectedAt": "2026-11-18T19:19:20.090216Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-20a90019d88c2eb1",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "triples",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 43,
-          "end": 45,
-          "text": "지니",
+          "start": 8,
+          "end": 13,
+          "text": "트리플에스",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 7,
+          "text": "tripleS",
           "source": "title"
         }
       ]
@@ -99,21 +105,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "triples",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-20a90019d88c2eb1",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 8,
-          "end": 13,
-          "text": "트리플에스",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 7,
-          "text": "tripleS",
+          "start": 43,
+          "end": 45,
+          "text": "지니",
           "source": "title"
         }
       ]

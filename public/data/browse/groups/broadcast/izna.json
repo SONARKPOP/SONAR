@@ -9,7 +9,8 @@
       "publishedAt": "2026-07-07T03:00:25Z",
       "groupIds": [
         "izna",
-        "min"
+        "min",
+        "miss-a"
       ],
       "memberIds": [
         "miss-a-min",
@@ -34,7 +35,7 @@
         "external"
       ],
       "memberTagging": {
-        "policy": "title-context-v2",
+        "policy": "title-only-v1",
         "source": "title",
         "appearanceVerified": false
       },
@@ -74,10 +75,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "min",
+          "artistType": "person",
+          "artistId": "miss-a-min",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 48,
@@ -88,10 +89,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "miss-a-min",
+          "artistType": "group",
+          "artistId": "min",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 48,

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:35:28.845899Z",
+    "collectedAt": "2026-11-18T19:19:51.821632Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 21,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "kiss-of-life",
@@ -61,14 +75,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "natty",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 17,
-          "end": 21,
-          "text": "KISS",
+          "start": 30,
+          "end": 35,
+          "text": "NATTY",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 38,
+          "text": "나띠",
           "source": "title"
         }
       ]
@@ -80,35 +100,15 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 36,
-          "end": 38,
-          "text": "나띠",
-          "source": "title"
-        },
-        {
           "start": 30,
           "end": 35,
           "text": "NATTY",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "natty",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
           "start": 36,
           "end": 38,
           "text": "나띠",
-          "source": "title"
-        },
-        {
-          "start": 30,
-          "end": 35,
-          "text": "NATTY",
           "source": "title"
         }
       ]

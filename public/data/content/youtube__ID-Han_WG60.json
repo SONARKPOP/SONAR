@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:34:31.520072Z",
+    "collectedAt": "2026-11-18T19:18:49.623859Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-4923df32028f63a5",
+      "artistType": "group",
+      "artistId": "triples",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 24,
+          "text": "tripleS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b1fad627ae09d5ab",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 35,
@@ -62,9 +76,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b1fad627ae09d5ab",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-4923df32028f63a5",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 35,
@@ -98,20 +112,6 @@
           "start": 25,
           "end": 27,
           "text": "VV",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "triples",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 24,
-          "text": "tripleS",
           "source": "title"
         }
       ]

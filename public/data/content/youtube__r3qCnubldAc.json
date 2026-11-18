@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2026-09-19T08:00:34Z",
   "groupIds": [
+    "gidle",
     "kwon-eun-bi"
   ],
   "memberIds": [
@@ -56,10 +57,24 @@
   "musicBroadcast": false,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "izone-kwon-eun-bi",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 4,
+          "text": "아이들",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kwon-eun-bi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 26,
@@ -70,10 +85,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kwon-eun-bi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "izone-kwon-eun-bi",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 26,
@@ -127,20 +142,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 6,
-          "end": 8,
-          "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "gidle-soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -154,24 +155,18 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 1,
-          "end": 4,
-          "text": "아이들",
+          "start": 6,
+          "end": 8,
+          "text": "소연",
           "source": "title"
         }
       ]
     }
-  ],
-  "individualActivity": {
-    "artistId": "kwon-eun-bi",
-    "groupIds": [],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  }
+  ]
 }

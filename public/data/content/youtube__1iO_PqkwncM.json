@@ -31,7 +31,7 @@
   "actualEndTime": "2026-03-27T08:05:17Z",
   "scheduledStartTime": "2026-03-27T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-18T13:33:44.985543Z",
+    "collectedAt": "2026-11-18T19:18:01.619135Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "yena",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 67,
-          "end": 68,
-          "text": "s",
+          "start": 5,
+          "end": 9,
+          "text": "YENA",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "text": "최예나",
           "source": "title"
         }
       ]
@@ -80,20 +86,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "yena",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 5,
-          "end": 9,
-          "text": "YENA",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 13,
-          "text": "최예나",
+          "start": 67,
+          "end": 68,
+          "text": "s",
           "source": "title"
         }
       ]

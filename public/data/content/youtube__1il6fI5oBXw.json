@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:33:45.063960Z",
+    "collectedAt": "2026-11-18T19:18:01.729914Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "billlie-member-2d4773df9974",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 16,
+          "text": "하람",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-67e210cea7126fd3",
@@ -73,35 +87,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "billlie",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 58,
-          "end": 65,
-          "text": "Billlie",
-          "source": "title"
-        },
-        {
-          "start": 67,
-          "end": 69,
-          "text": "빌리",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "billlie-member-2d4773df9974",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-0f8c819a53e4a7d2",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 14,
-          "end": 16,
-          "text": "하람",
+          "start": 22,
+          "end": 24,
+          "text": "유지",
           "source": "title"
         }
       ]
@@ -121,15 +115,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-0f8c819a53e4a7d2",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "billlie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 22,
-          "end": 24,
-          "text": "유지",
+          "start": 67,
+          "end": 69,
+          "text": "빌리",
+          "source": "title"
+        },
+        {
+          "start": 58,
+          "end": 65,
+          "text": "Billlie",
           "source": "title"
         }
       ]

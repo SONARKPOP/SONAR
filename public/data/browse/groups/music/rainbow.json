@@ -37,11 +37,17 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-9beac4d506c27cd3",
+          "artistType": "group",
+          "artistId": "hynn",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
+            {
+              "start": 10,
+              "end": 13,
+              "text": "박혜원",
+              "source": "title"
+            },
             {
               "start": 5,
               "end": 9,
@@ -51,8 +57,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "hynn",
+          "artistType": "person",
+          "artistId": "person-9beac4d506c27cd3",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -60,12 +66,6 @@
               "start": 5,
               "end": 9,
               "text": "HYNN",
-              "source": "title"
-            },
-            {
-              "start": 10,
-              "end": 13,
-              "text": "박혜원",
               "source": "title"
             }
           ]
@@ -136,28 +136,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "alice",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 34,
-              "end": 39,
-              "text": "Alice",
-              "source": "title"
-            },
-            {
-              "start": 40,
-              "end": 43,
-              "text": "앨리스",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
-          "artistId": "person-9dda2eae88d9d10c",
+          "artistId": "person-82c8dfffcc8a320b",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -170,8 +150,28 @@
           ]
         },
         {
+          "artistType": "group",
+          "artistId": "alice",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 40,
+              "end": 43,
+              "text": "앨리스",
+              "source": "title"
+            },
+            {
+              "start": 34,
+              "end": 39,
+              "text": "Alice",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
-          "artistId": "person-82c8dfffcc8a320b",
+          "artistId": "person-9dda2eae88d9d10c",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -212,72 +212,68 @@
       "musicBroadcast": false
     },
     {
-      "id": "youtube__URPYRLiGAnY",
+      "id": "youtube__ZvMlABxkpxk",
       "platform": "youtube",
-      "platformId": "URPYRLiGAnY",
+      "platformId": "ZvMlABxkpxk",
       "demo": false,
-      "title": "[MV] Rainbow(레인보우) - Whoo Music Video",
-      "publishedAt": "2016-02-15T02:59:54Z",
+      "title": "[MV] NIDA _ What If(만약에 말야) (Original Song by Jeon Woo Sung of Noel(노을 전우성))",
+      "publishedAt": "2021-11-04T09:00:25Z",
       "groupIds": [
         "rainbow"
       ],
-      "memberIds": [],
-      "channelId": "rainbow-official",
-      "channelName": "Rainbow Official",
+      "memberIds": [
+        "person-5ee9cac67b459167"
+      ],
+      "channelId": "1thek",
+      "channelName": "1theK (원더케이)",
       "category": "music",
       "subtypes": [
         "MV"
       ],
       "tags": [
         "MV",
-        "자체 콘텐츠",
+        "외부 콘텐츠",
         "기타·미분류"
       ],
       "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/URPYRLiGAnY/hqdefault.jpg",
-      "durationLabel": "3m10s",
+      "thumbnail": "https://i.ytimg.com/vi/ZvMlABxkpxk/hqdefault.jpg",
+      "durationLabel": "3m46s",
+      "contentTypes": [
+        "external"
+      ],
       "memberTagging": {
         "policy": "title-only-v1",
         "source": "unclassified",
         "appearanceVerified": false
       },
-      "externalId": "URPYRLiGAnY",
-      "sourceUrl": "https://www.youtube.com/watch?v=URPYRLiGAnY",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "home",
-        "music"
-      ],
-      "musicBroadcast": false,
-      "musicType": "mv",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "rainbow",
+          "artistType": "person",
+          "artistId": "person-5ee9cac67b459167",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 5,
-              "end": 12,
-              "text": "Rainbow",
-              "source": "title"
-            },
-            {
-              "start": 13,
-              "end": 17,
-              "text": "레인보우",
+              "start": 68,
+              "end": 70,
+              "text": "노을",
               "source": "title"
             }
           ]
         }
-      ]
+      ],
+      "externalId": "ZvMlABxkpxk",
+      "sourceUrl": "https://www.youtube.com/watch?v=ZvMlABxkpxk",
+      "externalType": "other",
+      "contentTabs": [
+        "home",
+        "music"
+      ],
+      "musicType": "mv",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false
     }
   ]
 }

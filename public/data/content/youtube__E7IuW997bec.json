@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:34:19.822455Z",
+    "collectedAt": "2026-11-18T19:18:37.320870Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,20 +42,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 47,
-          "text": "키스",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "bp-jennie",
@@ -99,6 +85,20 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "jennie",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "제니",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-6ec59eddfafab2fd",
       "state": "needs_review",
@@ -114,14 +114,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "jennie",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "제니",
+          "start": 45,
+          "end": 47,
+          "text": "키스",
           "source": "title"
         }
       ]

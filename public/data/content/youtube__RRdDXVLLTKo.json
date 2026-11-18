@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:34:57.259077Z",
+    "collectedAt": "2026-11-18T19:19:17.842263Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -63,21 +63,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "highteen",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 6,
-          "end": 9,
-          "text": "하이틴",
+          "start": 72,
+          "end": 76,
+          "text": "Swan",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 28,
-          "end": 31,
-          "text": "하이틴",
+          "start": 72,
+          "end": 76,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -98,28 +106,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "highteen",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 72,
-          "end": 76,
-          "text": "Swan",
+          "start": 6,
+          "end": 9,
+          "text": "하이틴",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
-          "start": 72,
-          "end": 76,
-          "text": "Swan",
+          "start": 28,
+          "end": 31,
+          "text": "하이틴",
           "source": "title"
         }
       ]

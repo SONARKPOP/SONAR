@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:36:24.911637Z",
+    "collectedAt": "2026-11-18T19:20:52.647812Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,24 +43,22 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 26,
-          "end": 27,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "artms",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 20,
+          "end": 25,
+          "text": "ARTMS",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 52,
+          "text": "ARTMS",
+          "source": "title"
+        },
         {
           "start": 0,
           "end": 5,
@@ -72,17 +70,19 @@
           "end": 59,
           "text": "아르테미스",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 20,
-          "end": 25,
-          "text": "ARTMS",
-          "source": "title"
-        },
-        {
-          "start": 47,
-          "end": 52,
-          "text": "ARTMS",
+          "start": 26,
+          "end": 27,
+          "text": "s",
           "source": "title"
         }
       ]
