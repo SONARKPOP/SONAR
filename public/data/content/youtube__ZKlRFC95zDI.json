@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2026-10-20T08:00:20Z",
   "groupIds": [
+    "ive",
     "tuide"
   ],
   "memberIds": [
@@ -33,30 +34,29 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:13.656338Z",
+    "collectedAt": "2026-11-18T07:40:45.090631Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
-  "externalId": "ZKlRFC95zDI",
-  "sourceUrl": "https://www.youtube.com/watch?v=ZKlRFC95zDI",
-  "contentTypes": [
-    "own"
-  ],
-  "ownType": "other",
-  "contentTabs": [
-    "shorts",
-    "own"
-  ],
-  "musicType": "",
-  "teaserType": "",
-  "contentLength": "short",
-  "hierarchyVersion": 2,
-  "musicBroadcast": false,
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "tuide-saki",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 36,
+          "text": "SAKI",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "tuide-seah",
@@ -72,15 +72,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tuide-saki",
+      "artistType": "group",
+      "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 32,
-          "end": 36,
-          "text": "SAKI",
+          "start": 12,
+          "end": 15,
+          "text": "IVE",
           "source": "title"
         }
       ]
@@ -101,20 +101,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "ive",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 12,
-          "end": 15,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "tuide",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -127,5 +113,20 @@
         }
       ]
     }
-  ]
+  ],
+  "externalId": "ZKlRFC95zDI",
+  "sourceUrl": "https://www.youtube.com/watch?v=ZKlRFC95zDI",
+  "contentTypes": [
+    "own"
+  ],
+  "ownType": "other",
+  "contentTabs": [
+    "shorts",
+    "own"
+  ],
+  "musicType": "",
+  "teaserType": "",
+  "contentLength": "short",
+  "hierarchyVersion": 2,
+  "musicBroadcast": false
 }

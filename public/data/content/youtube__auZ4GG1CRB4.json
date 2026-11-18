@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:41:23.994556Z",
+    "collectedAt": "2026-11-18T07:40:52.073783Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,10 +60,16 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-746b33daaff9c6fd",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "nj-haerin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 26,
+          "end": 32,
+          "text": "HAERIN",
+          "source": "title"
+        },
         {
           "start": 33,
           "end": 35,
@@ -74,20 +80,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "nj-haerin",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-746b33daaff9c6fd",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 33,
           "end": 35,
           "text": "해린",
-          "source": "title"
-        },
-        {
-          "start": 26,
-          "end": 32,
-          "text": "HAERIN",
           "source": "title"
         }
       ]

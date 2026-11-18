@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:40:23.082514Z",
+    "collectedAt": "2026-11-18T07:40:06.557947Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,63 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "소원",
+          "start": 38,
+          "end": 42,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "hearts2hearts-yuha",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 19,
+          "text": "유하",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 64,
+          "text": "YUHA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-550d966d7f578682",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 19,
+          "text": "유하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "youha",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 19,
+          "text": "유하",
           "source": "title"
         }
       ]
@@ -82,62 +130,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "hearts2hearts-yuha",
+      "artistId": "person-a1479c2cc95e8b6a",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 60,
-          "end": 64,
-          "text": "YUHA",
-          "source": "title"
-        },
-        {
-          "start": 17,
-          "end": 19,
-          "text": "유하",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
-      "matches": [
-        {
-          "start": 38,
-          "end": 42,
-          "text": "소녀시대",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "youha",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 17,
-          "end": 19,
-          "text": "유하",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-550d966d7f578682",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 17,
-          "end": 19,
-          "text": "유하",
+          "start": 24,
+          "end": 26,
+          "text": "소원",
           "source": "title"
         }
       ]

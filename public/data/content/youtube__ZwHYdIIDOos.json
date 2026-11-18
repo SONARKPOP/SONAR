@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T09:40:15.897592Z",
+    "collectedAt": "2026-11-18T07:40:46.619080Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -43,30 +43,55 @@
     "source": "title",
     "appearanceVerified": false
   },
-  "externalId": "ZwHYdIIDOos",
-  "sourceUrl": "https://www.youtube.com/watch?v=ZwHYdIIDOos",
-  "contentTypes": [
-    "own"
-  ],
-  "ownType": "other",
-  "contentTabs": [
-    "shorts",
-    "own"
-  ],
-  "musicType": "",
-  "teaserType": "",
-  "contentLength": "short",
-  "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "careerGroupIds": [
-    "apink",
-    "feverse"
-  ],
-  "displayCareerGroupIds": [
-    "apink",
-    "feverse"
-  ],
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "apink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 21,
+          "text": "에이핑크",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 28,
+          "text": "Apink",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kim-nam-joo",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 45,
+          "end": 48,
+          "text": "김남주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "apink-kim-nam-joo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 45,
+          "end": 48,
+          "text": "김남주",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "apink-oh-ha-young",
@@ -111,57 +136,9 @@
     },
     {
       "artistType": "group",
-      "artistId": "kim-nam-joo",
+      "artistId": "jung-eun-ji",
       "state": "mention",
       "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 45,
-          "end": 48,
-          "text": "김남주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "apink-kim-nam-joo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 48,
-          "text": "김남주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "apink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 28,
-          "text": "Apink",
-          "source": "title"
-        },
-        {
-          "start": 17,
-          "end": 21,
-          "text": "에이핑크",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "apink-jung-eun-ji",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 40,
@@ -172,10 +149,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jung-eun-ji",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "apink-jung-eun-ji",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 40,
@@ -199,5 +176,28 @@
         }
       ]
     }
-  ]
+  ],
+  "careerGroupIds": [
+    "apink",
+    "feverse"
+  ],
+  "displayCareerGroupIds": [
+    "apink",
+    "feverse"
+  ],
+  "externalId": "ZwHYdIIDOos",
+  "sourceUrl": "https://www.youtube.com/watch?v=ZwHYdIIDOos",
+  "contentTypes": [
+    "own"
+  ],
+  "ownType": "other",
+  "contentTabs": [
+    "shorts",
+    "own"
+  ],
+  "musicType": "",
+  "teaserType": "",
+  "contentLength": "short",
+  "hierarchyVersion": 2,
+  "musicBroadcast": false
 }

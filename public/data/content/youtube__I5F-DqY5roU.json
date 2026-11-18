@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:40:12.545778Z",
+    "collectedAt": "2026-11-18T07:39:58.648973Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,9 +48,23 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "solar",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "apink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 42,
+          "end": 46,
+          "text": "에이핑크",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-solar",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 49,
@@ -61,10 +75,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "mamamoo-solar",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "solar",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 49,
@@ -98,20 +112,6 @@
           "start": 78,
           "end": 82,
           "text": "ITZY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "apink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 42,
-          "end": 46,
-          "text": "에이핑크",
           "source": "title"
         }
       ]

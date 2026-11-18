@@ -54,35 +54,21 @@
   "musicBroadcast": false,
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 19,
-          "end": 22,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "loona-yves",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 4,
-          "end": 8,
-          "text": "YVES",
-          "source": "title"
-        },
-        {
           "start": 10,
           "end": 12,
           "text": "이브",
+          "source": "title"
+        },
+        {
+          "start": 4,
+          "end": 8,
+          "text": "YVES",
           "source": "title"
         }
       ]
@@ -94,15 +80,29 @@
       "reason": "everyday-name",
       "matches": [
         {
+          "start": 10,
+          "end": 12,
+          "text": "이브",
+          "source": "title"
+        },
+        {
           "start": 4,
           "end": 8,
           "text": "YVES",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 10,
-          "end": 12,
-          "text": "이브",
+          "start": 19,
+          "end": 22,
+          "text": "IVE",
           "source": "title"
         }
       ]

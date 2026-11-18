@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:40:08.823481Z",
+    "collectedAt": "2026-11-18T07:39:56.246123Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -63,6 +63,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "person-507e18325fa70402",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 25,
+          "text": "여름",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-93f1f4e0118a5b58",
       "state": "needs_review",
       "reason": "shared-name",
@@ -76,15 +90,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-507e18325fa70402",
+      "artistType": "group",
+      "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 23,
-          "end": 25,
-          "text": "여름",
+          "start": 51,
+          "end": 59,
+          "text": "(G)I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 54,
+          "end": 59,
+          "text": "I-DLE",
           "source": "title"
         }
       ]
@@ -118,20 +138,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "wjsn",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 44,
-          "end": 48,
-          "text": "WJSN",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-6d3affd6c44aebdd",
       "state": "inferred",
@@ -141,26 +147,6 @@
           "start": 11,
           "end": 13,
           "text": "엑시",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 54,
-          "end": 59,
-          "text": "I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 59,
-          "text": "(G)I-DLE",
           "source": "title"
         }
       ]
@@ -189,6 +175,20 @@
           "start": 3,
           "end": 5,
           "text": "우기",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "wjsn",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 44,
+          "end": 48,
+          "text": "WJSN",
           "source": "title"
         }
       ]

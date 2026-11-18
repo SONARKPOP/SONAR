@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:41:50.293206Z",
+    "collectedAt": "2026-11-18T07:41:11.244003Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,7 +43,27 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "hyuna",
+      "artistId": "stayc",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 55,
+          "end": 60,
+          "text": "STAYC",
+          "source": "title"
+        },
+        {
+          "start": 21,
+          "end": 25,
+          "text": "스테이씨",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "wonder-girls-hyuna",
       "state": "mention",
       "reason": "original-artist-or-comparison",
       "matches": [
@@ -70,8 +90,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "wonder-girls-hyuna",
+      "artistType": "group",
+      "artistId": "hyuna",
       "state": "mention",
       "reason": "original-artist-or-comparison",
       "matches": [
@@ -93,26 +113,6 @@
           "start": 4,
           "end": 6,
           "text": "현아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "stayc",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 55,
-          "end": 60,
-          "text": "STAYC",
-          "source": "title"
-        },
-        {
-          "start": 21,
-          "end": 25,
-          "text": "스테이씨",
           "source": "title"
         }
       ]

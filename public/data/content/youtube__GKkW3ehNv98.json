@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:40:06.425293Z",
+    "collectedAt": "2026-11-18T07:39:54.411673Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -59,6 +59,26 @@
     },
     {
       "artistType": "person",
+      "artistId": "rescene-woni",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 44,
+          "end": 48,
+          "text": "WONI",
+          "source": "title"
+        },
+        {
+          "start": 40,
+          "end": 42,
+          "text": "원이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-d8ccbbf9070691b4",
       "state": "needs_review",
       "reason": "shared-name",
@@ -72,41 +92,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "rescene-woni",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 40,
-          "end": 42,
-          "text": "원이",
-          "source": "title"
-        },
-        {
-          "start": 44,
-          "end": 48,
-          "text": "WONI",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "rescene",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 26,
-          "end": 33,
-          "text": "RESCENE",
-          "source": "title"
-        },
-        {
           "start": 35,
           "end": 38,
           "text": "리센느",
+          "source": "title"
+        },
+        {
+          "start": 26,
+          "end": 33,
+          "text": "RESCENE",
           "source": "title"
         }
       ]

@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:40:23.490239Z",
+    "collectedAt": "2026-11-18T07:40:06.855246Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "bugaboo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "버가부",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 31,
+          "text": "bugAboo",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "blackpink",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -55,20 +75,6 @@
           "start": 39,
           "end": 48,
           "text": "BLACKPINK",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "jeon-somi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 53,
-          "end": 56,
-          "text": "전소미",
           "source": "title"
         }
       ]
@@ -89,20 +95,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "bugaboo",
+      "artistId": "jeon-somi",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 24,
-          "end": 31,
-          "text": "bugAboo",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 23,
-          "text": "버가부",
+          "start": 53,
+          "end": 56,
+          "text": "전소미",
           "source": "title"
         }
       ]

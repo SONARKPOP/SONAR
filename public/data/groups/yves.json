@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-18T06:46:36.269505Z",
+  "updatedAt": "2026-11-18T07:43:17.614753Z",
   "items": [
     {
       "id": "youtube__RX1wXUxHH0A",
@@ -378,7 +378,6 @@
       "title": "Hysteric challenge with LEESEO🐯💗 of IVE #Hysteric #Yves",
       "publishedAt": "2026-10-30T14:47:40Z",
       "groupIds": [
-        "ive",
         "yves"
       ],
       "memberIds": [
@@ -401,7 +400,7 @@
       "durationLabel": "24s",
       "memberTagging": {
         "policy": "title-context-v2",
-        "source": "title",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "externalId": "0cAhrSnoxVc",
@@ -421,10 +420,24 @@
       "musicBroadcast": false,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ive",
+          "artistType": "person",
+          "artistId": "ive-leeseo",
           "state": "inferred",
           "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 24,
+              "end": 30,
+              "text": "LEESEO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ive",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 36,
@@ -458,20 +471,6 @@
               "start": 51,
               "end": 55,
               "text": "Yves",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "ive-leeseo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 24,
-              "end": 30,
-              "text": "LEESEO",
               "source": "title"
             }
           ]
@@ -1577,15 +1576,15 @@
           "reason": "everyday-name",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "Yves",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 7,
               "text": "이브",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "Yves",
               "source": "title"
             }
           ]
@@ -1597,15 +1596,15 @@
           "reason": "everyday-name",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "Yves",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 7,
               "text": "이브",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "Yves",
               "source": "title"
             }
           ]
@@ -4760,20 +4759,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-95d5214420c6d71a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 82,
-              "end": 84,
-              "text": "김립",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "loona-yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -4801,6 +4786,26 @@
           ]
         },
         {
+          "artistType": "group",
+          "artistId": "loona",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 6,
+              "text": "이달의 소녀",
+              "source": "title"
+            },
+            {
+              "start": 70,
+              "end": 75,
+              "text": "LOONA",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-e4699425a14e4b75",
           "state": "inferred",
@@ -4815,21 +4820,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "loona",
+          "artistType": "person",
+          "artistId": "person-95d5214420c6d71a",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 70,
-              "end": 75,
-              "text": "LOONA",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 6,
-              "text": "이달의 소녀",
+              "start": 82,
+              "end": 84,
+              "text": "김립",
               "source": "title"
             }
           ]
@@ -4839,6 +4838,20 @@
           "artistId": "artms-heejin",
           "state": "needs_review",
           "reason": "shared-name",
+          "matches": [
+            {
+              "start": 78,
+              "end": 80,
+              "text": "희진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "heejin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 78,
@@ -4867,20 +4880,6 @@
           "artistId": "person-785f24419fb37180",
           "state": "needs_review",
           "reason": "shared-name",
-          "matches": [
-            {
-              "start": 78,
-              "end": 80,
-              "text": "희진",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "heejin",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 78,
@@ -4954,110 +4953,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-95d5214420c6d71a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 51,
-              "end": 53,
-              "text": "김립",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "chuu",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 63,
-              "end": 64,
-              "text": "츄",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "loona-chuu",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 63,
-              "end": 64,
-              "text": "츄",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-8e99ce6b1c052a80",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 65,
-              "end": 67,
-              "text": "고원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e4699425a14e4b75",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 54,
-              "end": 56,
-              "text": "진솔",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "loona",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 7,
-              "end": 12,
-              "text": "LOONA",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 6,
-              "text": "이달의 소녀",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-c4444f0ef4ea326a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 45,
-              "end": 47,
-              "text": "여진",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "loona-yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -5086,34 +4981,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-897304d1e3afc053",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 68,
-              "end": 74,
-              "text": "올리비아 혜",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-8ba7931c791a7788",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 42,
-              "end": 44,
-              "text": "현진",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-9c6a1c729a5a077f",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -5122,6 +4989,20 @@
               "start": 57,
               "end": 59,
               "text": "최리",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-95d5214420c6d71a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 51,
+              "end": 53,
+              "text": "김립",
               "source": "title"
             }
           ]
@@ -5170,9 +5051,51 @@
         },
         {
           "artistType": "person",
+          "artistId": "person-c4444f0ef4ea326a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 47,
+              "text": "여진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8ba7931c791a7788",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "현진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "artms-heejin",
           "state": "needs_review",
           "reason": "shared-name",
+          "matches": [
+            {
+              "start": 39,
+              "end": 41,
+              "text": "희진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "heejin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 39,
@@ -5212,14 +5135,90 @@
         },
         {
           "artistType": "group",
-          "artistId": "heejin",
+          "artistId": "loona",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 39,
-              "end": 41,
-              "text": "희진",
+              "start": 0,
+              "end": 6,
+              "text": "이달의 소녀",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 12,
+              "text": "LOONA",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e4699425a14e4b75",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 54,
+              "end": 56,
+              "text": "진솔",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "chuu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 63,
+              "end": 64,
+              "text": "츄",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "loona-chuu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 63,
+              "end": 64,
+              "text": "츄",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-897304d1e3afc053",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 68,
+              "end": 74,
+              "text": "올리비아 혜",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8e99ce6b1c052a80",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 65,
+              "end": 67,
+              "text": "고원",
               "source": "title"
             }
           ]
@@ -5288,110 +5287,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-95d5214420c6d71a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 53,
-              "end": 55,
-              "text": "김립",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "chuu",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 65,
-              "end": 66,
-              "text": "츄",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "loona-chuu",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 65,
-              "end": 66,
-              "text": "츄",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-8e99ce6b1c052a80",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 67,
-              "end": 69,
-              "text": "고원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e4699425a14e4b75",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 56,
-              "end": 58,
-              "text": "진솔",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "loona",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 7,
-              "end": 12,
-              "text": "LOONA",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 6,
-              "text": "이달의 소녀",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-c4444f0ef4ea326a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 47,
-              "end": 49,
-              "text": "여진",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "loona-yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -5420,34 +5315,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-897304d1e3afc053",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 70,
-              "end": 76,
-              "text": "올리비아 혜",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-8ba7931c791a7788",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 44,
-              "end": 46,
-              "text": "현진",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-9c6a1c729a5a077f",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -5456,6 +5323,20 @@
               "start": 59,
               "end": 61,
               "text": "최리",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-95d5214420c6d71a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 53,
+              "end": 55,
+              "text": "김립",
               "source": "title"
             }
           ]
@@ -5504,9 +5385,51 @@
         },
         {
           "artistType": "person",
+          "artistId": "person-c4444f0ef4ea326a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 47,
+              "end": 49,
+              "text": "여진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8ba7931c791a7788",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 44,
+              "end": 46,
+              "text": "현진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "artms-heejin",
           "state": "needs_review",
           "reason": "shared-name",
+          "matches": [
+            {
+              "start": 41,
+              "end": 43,
+              "text": "희진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "heejin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 41,
@@ -5546,14 +5469,90 @@
         },
         {
           "artistType": "group",
-          "artistId": "heejin",
+          "artistId": "loona",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 41,
-              "end": 43,
-              "text": "희진",
+              "start": 0,
+              "end": 6,
+              "text": "이달의 소녀",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 12,
+              "text": "LOONA",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e4699425a14e4b75",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 56,
+              "end": 58,
+              "text": "진솔",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "chuu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 65,
+              "end": 66,
+              "text": "츄",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "loona-chuu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 65,
+              "end": 66,
+              "text": "츄",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-897304d1e3afc053",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 70,
+              "end": 76,
+              "text": "올리비아 혜",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8e99ce6b1c052a80",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 67,
+              "end": 69,
+              "text": "고원",
               "source": "title"
             }
           ]

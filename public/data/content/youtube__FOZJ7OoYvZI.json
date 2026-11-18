@@ -8,7 +8,8 @@
   "publishedAt": "2026-06-15T04:00:06Z",
   "groupIds": [
     "izna",
-    "min"
+    "min",
+    "miss-a"
   ],
   "memberIds": [
     "miss-a-min",
@@ -34,32 +35,18 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:40:03.139940Z",
+    "collectedAt": "2026-11-18T07:39:51.603324Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "person-ad73a6c022a8838f",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 14,
-          "text": "방지민",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "izna",
@@ -81,10 +68,24 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "min",
+      "artistType": "person",
+      "artistId": "person-ad73a6c022a8838f",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 14,
+          "text": "방지민",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "miss-a-min",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 45,
@@ -95,10 +96,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "miss-a-min",
+      "artistType": "group",
+      "artistId": "min",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 45,

@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:41:24.062505Z",
+    "collectedAt": "2026-11-18T07:40:52.126736Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -56,6 +56,40 @@
           "start": 71,
           "end": 75,
           "text": "YUNA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 26,
+          "end": 29,
+          "text": "IVE",
+          "source": "title"
+        },
+        {
+          "start": 38,
+          "end": 41,
+          "text": "아이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-0f7db83541a0c03e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 42,
+          "end": 45,
+          "text": "안유진",
           "source": "title"
         }
       ]
@@ -90,20 +124,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-0f7db83541a0c03e",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 42,
-          "end": 45,
-          "text": "안유진",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-2f65e197245d59d0",
       "state": "inferred",
       "reason": "unambiguous-title-name",
@@ -112,26 +132,6 @@
           "start": 80,
           "end": 83,
           "text": "김연아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 26,
-          "end": 29,
-          "text": "IVE",
-          "source": "title"
-        },
-        {
-          "start": 38,
-          "end": 41,
-          "text": "아이브",
           "source": "title"
         }
       ]

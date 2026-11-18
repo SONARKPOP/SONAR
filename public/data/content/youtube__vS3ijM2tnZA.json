@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T01:42:40.403420Z",
+    "collectedAt": "2026-11-18T07:41:47.591888Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 40,
+          "text": "(G)I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 35,
+          "end": 40,
+          "text": "I-DLE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 51,
+          "end": 52,
+          "text": "안",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "yuqi",
@@ -83,40 +117,6 @@
           "start": 41,
           "end": 43,
           "text": "우기",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 51,
-          "end": 52,
-          "text": "안",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 35,
-          "end": 40,
-          "text": "I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 32,
-          "end": 40,
-          "text": "(G)I-DLE",
           "source": "title"
         }
       ]

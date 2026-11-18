@@ -37,7 +37,7 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
@@ -70,8 +70,8 @@
     {
       "artistType": "group",
       "artistId": "wooah",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 29,
