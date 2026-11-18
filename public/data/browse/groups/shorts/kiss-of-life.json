@@ -211,6 +211,34 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "kiss-of-life",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 20,
+              "end": 27,
+              "text": "키스오브라이프",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "kiss-of-life-member-da7f28bccc9c",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 41,
+              "end": 42,
+              "text": "벨",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-dff6b18b1d4d3a3c",
           "state": "needs_review",
@@ -234,34 +262,6 @@
               "start": 41,
               "end": 42,
               "text": "벨",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "kiss-of-life-member-da7f28bccc9c",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 41,
-              "end": 42,
-              "text": "벨",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "kiss-of-life",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 20,
-              "end": 27,
-              "text": "키스오브라이프",
               "source": "title"
             }
           ]
@@ -423,8 +423,7 @@
       "title": "to the moon :) w/ #NATTY #나띠 #KISSOFLIFE #키스오브라이프  @KISSOFLIFE_official",
       "publishedAt": "2026-11-11T11:00:07Z",
       "groupIds": [
-        "gidle",
-        "kiss-of-life"
+        "gidle"
       ],
       "memberIds": [
         "kiss-of-life-natty"
@@ -466,34 +465,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "kiss-of-life",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 49,
-              "text": "키스오브라이프",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "natty",
           "state": "mention",
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 26,
-              "end": 28,
-              "text": "나띠",
-              "source": "title"
-            },
-            {
               "start": 19,
               "end": 24,
               "text": "NATTY",
+              "source": "title"
+            },
+            {
+              "start": 26,
+              "end": 28,
+              "text": "나띠",
               "source": "title"
             }
           ]
@@ -505,15 +490,29 @@
           "reason": "unambiguous-title-name",
           "matches": [
             {
+              "start": 19,
+              "end": 24,
+              "text": "NATTY",
+              "source": "title"
+            },
+            {
               "start": 26,
               "end": 28,
               "text": "나띠",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kiss-of-life",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
             {
-              "start": 19,
-              "end": 24,
-              "text": "NATTY",
+              "start": 42,
+              "end": 49,
+              "text": "키스오브라이프",
               "source": "title"
             }
           ]

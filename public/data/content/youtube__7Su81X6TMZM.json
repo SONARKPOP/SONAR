@@ -62,11 +62,17 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-2bcd73e04ace2548",
+      "artistType": "group",
+      "artistId": "bibi",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
+        {
+          "start": 9,
+          "end": 13,
+          "text": "BIBI",
+          "source": "title"
+        },
         {
           "start": 6,
           "end": 8,
@@ -77,20 +83,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "bibi",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "seohyun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 6,
-          "end": 8,
-          "text": "비비",
+          "start": 25,
+          "end": 32,
+          "text": "SEOHYUN",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-seohyun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 9,
-          "end": 13,
-          "text": "BIBI",
+          "start": 25,
+          "end": 32,
+          "text": "SEOHYUN",
           "source": "title"
         }
       ]
@@ -111,28 +125,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "girls-generation-seohyun",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-2bcd73e04ace2548",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 25,
-          "end": 32,
-          "text": "SEOHYUN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "seohyun",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 25,
-          "end": 32,
-          "text": "SEOHYUN",
+          "start": 6,
+          "end": 8,
+          "text": "비비",
           "source": "title"
         }
       ]

@@ -59,6 +59,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "blackpink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 34,
+          "end": 38,
+          "text": "블랙핑크",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "twice",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -72,15 +86,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "blackpink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "meovv-narin",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 34,
-          "end": 38,
-          "text": "블랙핑크",
+          "start": 56,
+          "end": 61,
+          "text": "Narin",
+          "source": "title"
+        },
+        {
+          "start": 53,
+          "end": 55,
+          "text": "나린",
           "source": "title"
         }
       ]
@@ -123,26 +143,6 @@
           "start": 53,
           "end": 55,
           "text": "나린",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "meovv-narin",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 53,
-          "end": 55,
-          "text": "나린",
-          "source": "title"
-        },
-        {
-          "start": 56,
-          "end": 61,
-          "text": "Narin",
           "source": "title"
         }
       ]

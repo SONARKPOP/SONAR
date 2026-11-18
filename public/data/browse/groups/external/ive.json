@@ -162,26 +162,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "ive",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 42,
-              "end": 45,
-              "text": "IVE",
-              "source": "title"
-            },
-            {
-              "start": 31,
-              "end": 34,
-              "text": "아이브",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "nmixx",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -196,6 +176,26 @@
               "start": 48,
               "end": 53,
               "text": "NMIXX",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ive",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 31,
+              "end": 34,
+              "text": "아이브",
+              "source": "title"
+            },
+            {
+              "start": 42,
+              "end": 45,
+              "text": "IVE",
               "source": "title"
             }
           ]
@@ -315,15 +315,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "ive-liz",
+          "artistType": "group",
+          "artistId": "ive",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 20,
-              "end": 22,
-              "text": "리즈",
+              "start": 16,
+              "end": 19,
+              "text": "아이브",
               "source": "title"
             }
           ]
@@ -357,27 +357,19 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "ive",
+          "artistType": "person",
+          "artistId": "ive-liz",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 16,
-              "end": 19,
-              "text": "아이브",
+              "start": 20,
+              "end": 22,
+              "text": "리즈",
               "source": "title"
             }
           ]
         }
-      ],
-      "careerGroupIds": [
-        "girls-generation",
-        "got-the-beat"
-      ],
-      "displayCareerGroupIds": [
-        "girls-generation",
-        "got-the-beat"
       ],
       "externalId": "JL5wpip8rvA",
       "sourceUrl": "https://www.youtube.com/watch?v=JL5wpip8rvA",
@@ -390,7 +382,15 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "musicBroadcast": false,
+      "careerGroupIds": [
+        "girls-generation",
+        "got-the-beat"
+      ],
+      "displayCareerGroupIds": [
+        "girls-generation",
+        "got-the-beat"
+      ]
     },
     {
       "id": "youtube___98af6oFf_c",
@@ -429,20 +429,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "ive-liz",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 4,
-              "end": 6,
-              "text": "리즈",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "ive",
           "state": "inferred",
@@ -452,6 +438,20 @@
               "start": 0,
               "end": 3,
               "text": "아이브",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "ive-liz",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 4,
+              "end": 6,
+              "text": "리즈",
               "source": "title"
             }
           ]
