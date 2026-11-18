@@ -98,20 +98,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "itzy",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 19,
-              "text": "ITZY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "illit",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -126,6 +112,20 @@
               "start": 62,
               "end": 65,
               "text": "아일릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "itzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 19,
+              "text": "ITZY",
               "source": "title"
             }
           ]
@@ -267,15 +267,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 6,
-              "end": 9,
-              "text": "아일릿",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 5,
               "text": "ILLIT",
+              "source": "title"
+            },
+            {
+              "start": 6,
+              "end": 9,
+              "text": "아일릿",
               "source": "title"
             }
           ]
@@ -352,7 +352,8 @@
       "title": "Akali & Katarina 삐걱삐삐걱 w/ #민주 #MINJU #아일릿 #ILLIT @ILLIT_official",
       "publishedAt": "2026-11-16T10:00:22Z",
       "groupIds": [
-        "gidle"
+        "gidle",
+        "illit"
       ],
       "memberIds": [
         "illit-member-a5c02f904155"
@@ -393,15 +394,21 @@
       "musicBroadcast": false,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "illit-member-a5c02f904155",
+          "artistType": "group",
+          "artistId": "illit",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 27,
-              "end": 29,
-              "text": "민주",
+              "start": 43,
+              "end": 48,
+              "text": "ILLIT",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 41,
+              "text": "아일릿",
               "source": "title"
             }
           ]
@@ -422,9 +429,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-a6fddffa2d03e5bf",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "illit-member-a5c02f904155",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 27,
@@ -449,21 +456,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "illit",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "person-a6fddffa2d03e5bf",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 38,
-              "end": 41,
-              "text": "아일릿",
-              "source": "title"
-            },
-            {
-              "start": 43,
-              "end": 48,
-              "text": "ILLIT",
+              "start": 27,
+              "end": 29,
+              "text": "민주",
               "source": "title"
             }
           ]

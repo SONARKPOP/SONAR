@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:26:59.570613Z",
+    "collectedAt": "2026-11-18T01:41:39.052287Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,15 +60,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-a03ed8929b5bad88",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 15,
-          "end": 17,
-          "text": "서연",
+          "start": 11,
+          "end": 14,
+          "text": "튜이드",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 38,
+          "text": "TUIDE",
           "source": "title"
         }
       ]
@@ -123,6 +129,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "person-53ac75592cc41944",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "서연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-f1bd11c84b90f90e",
       "state": "needs_review",
       "reason": "shared-name",
@@ -137,7 +157,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-53ac75592cc41944",
+      "artistId": "person-a03ed8929b5bad88",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -145,26 +165,6 @@
           "start": 15,
           "end": 17,
           "text": "서연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 14,
-          "text": "튜이드",
-          "source": "title"
-        },
-        {
-          "start": 33,
-          "end": 38,
-          "text": "TUIDE",
           "source": "title"
         }
       ]

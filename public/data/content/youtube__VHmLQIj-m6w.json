@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:26:22.918069Z",
+    "collectedAt": "2026-11-18T01:40:59.165977Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,9 +48,23 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "girls-generation-yuri",
+      "artistId": "person-95151adfa18496c3",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 9,
+          "end": 11,
+          "text": "편지",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b467f92429da48fc",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 58,
@@ -76,9 +90,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b467f92429da48fc",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "girls-generation-yuri",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 58,
@@ -126,20 +140,6 @@
           "start": 53,
           "end": 57,
           "text": "소녀시대",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-95151adfa18496c3",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 9,
-          "end": 11,
-          "text": "편지",
           "source": "title"
         }
       ]

@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:27:55.878571Z",
+    "collectedAt": "2026-11-18T01:42:42.214274Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -62,29 +62,41 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "izone-yena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 45,
-          "end": 51,
-          "text": "Secret",
+          "start": 29,
+          "end": 33,
+          "text": "Yena",
+          "source": "title"
+        },
+        {
+          "start": 34,
+          "end": 37,
+          "text": "최예나",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "yena",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 65,
-          "end": 69,
-          "text": "Swan",
+          "start": 29,
+          "end": 33,
+          "text": "Yena",
+          "source": "title"
+        },
+        {
+          "start": 34,
+          "end": 37,
+          "text": "최예나",
           "source": "title"
         }
       ]
@@ -105,40 +117,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "yena",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 34,
-          "end": 37,
-          "text": "최예나",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 33,
-          "text": "Yena",
+          "start": 65,
+          "end": 69,
+          "text": "Swan",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "izone-yena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 34,
-          "end": 37,
-          "text": "최예나",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 33,
-          "text": "Yena",
+          "start": 45,
+          "end": 51,
+          "text": "Secret",
           "source": "title"
         }
       ]

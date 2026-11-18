@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:26:07.357856Z",
+    "collectedAt": "2026-11-18T01:40:42.719133Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-110a6a07afa29cb8",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ourbirthday",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 6,
-          "end": 9,
-          "text": "정예인",
+          "start": 11,
+          "end": 22,
+          "text": "OURBIRTHDAY",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 29,
+          "text": "아워버스데이",
           "source": "title"
         }
       ]
@@ -90,34 +96,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-8c485ff8a3395678",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-110a6a07afa29cb8",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 36,
-          "end": 39,
-          "text": "신혜원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ourbirthday",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 22,
-          "text": "OURBIRTHDAY",
-          "source": "title"
-        },
-        {
-          "start": 23,
-          "end": 29,
-          "text": "아워버스데이",
+          "start": 6,
+          "end": 9,
+          "text": "정예인",
           "source": "title"
         }
       ]
@@ -132,6 +118,20 @@
           "start": 31,
           "end": 34,
           "text": "국초록",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-8c485ff8a3395678",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 39,
+          "text": "신혜원",
           "source": "title"
         }
       ]

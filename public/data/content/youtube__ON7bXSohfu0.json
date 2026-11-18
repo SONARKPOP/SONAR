@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:26:00.139835Z",
+    "collectedAt": "2026-11-18T01:40:34.941366Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,27 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "gidle-soojin",
+      "artistType": "group",
+      "artistId": "weeekly",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 51,
-          "end": 57,
-          "text": "SOOJIN",
+          "start": 9,
+          "end": 16,
+          "text": "Weeekly",
+          "source": "title"
+        },
+        {
+          "start": 39,
+          "end": 46,
+          "text": "Weeekly",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "text": "위클리",
           "source": "title"
         }
       ]
@@ -74,27 +86,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "weeekly",
+      "artistType": "person",
+      "artistId": "gidle-soojin",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 5,
-          "end": 8,
-          "text": "위클리",
-          "source": "title"
-        },
-        {
-          "start": 9,
-          "end": 16,
-          "text": "Weeekly",
-          "source": "title"
-        },
-        {
-          "start": 39,
-          "end": 46,
-          "text": "Weeekly",
+          "start": 51,
+          "end": 57,
+          "text": "SOOJIN",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:25:28.625270Z",
+    "collectedAt": "2026-11-18T01:40:00.758621Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,27 +44,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "ive",
+      "artistType": "person",
+      "artistId": "person-db56c112abc0387a",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 38,
+          "end": 40,
+          "text": "가을",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-gaeul",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 3,
-          "end": 6,
-          "text": "아이브",
-          "source": "title"
-        },
-        {
-          "start": 33,
-          "end": 36,
-          "text": "아이브",
-          "source": "title"
-        },
-        {
-          "start": 28,
-          "end": 31,
-          "text": "IVE",
+          "start": 38,
+          "end": 40,
+          "text": "가을",
           "source": "title"
         }
       ]
@@ -99,28 +101,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "ive-gaeul",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 38,
-          "end": 40,
-          "text": "가을",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-db56c112abc0387a",
+      "artistId": "ive-wonyoung",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 38,
-          "end": 40,
-          "text": "가을",
+          "start": 42,
+          "end": 45,
+          "text": "장원영",
           "source": "title"
         }
       ]
@@ -140,15 +128,27 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "ive-wonyoung",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 42,
-          "end": 45,
-          "text": "장원영",
+          "start": 3,
+          "end": 6,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 36,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 31,
+          "text": "IVE",
           "source": "title"
         }
       ]

@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:28:06.665532Z",
+    "collectedAt": "2026-11-18T01:42:54.078322Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "kara-jy",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 52,
+          "end": 55,
+          "text": "강지영",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "jy",
@@ -61,15 +75,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "kara-jy",
+      "artistType": "group",
+      "artistId": "itzy",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 52,
-          "end": 55,
-          "text": "강지영",
+          "start": 61,
+          "end": 65,
+          "text": "ITZY",
           "source": "title"
         }
       ]
@@ -90,20 +104,6 @@
           "start": 57,
           "end": 59,
           "text": "채령",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 61,
-          "end": 65,
-          "text": "ITZY",
           "source": "title"
         }
       ]

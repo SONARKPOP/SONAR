@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:26:09.147282Z",
+    "collectedAt": "2026-11-18T01:40:44.604197Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,15 +60,35 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "secret",
+      "artistType": "person",
+      "artistId": "ive-yujin",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 44,
-          "end": 50,
-          "text": "Secret",
+          "start": 24,
+          "end": 32,
+          "text": "An Yujin",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 36,
+          "text": "안유진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 64,
+          "end": 68,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -89,30 +109,10 @@
     },
     {
       "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 64,
-          "end": 68,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "ive-yujin",
+      "artistId": "person-0f7db83541a0c03e",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
-        {
-          "start": 24,
-          "end": 32,
-          "text": "An Yujin",
-          "source": "title"
-        },
         {
           "start": 33,
           "end": 36,
@@ -136,15 +136,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-0f7db83541a0c03e",
+      "artistType": "group",
+      "artistId": "secret",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 33,
-          "end": 36,
-          "text": "안유진",
+          "start": 44,
+          "end": 50,
+          "text": "Secret",
           "source": "title"
         }
       ]

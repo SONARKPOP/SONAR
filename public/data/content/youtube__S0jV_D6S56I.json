@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:26:12.233051Z",
+    "collectedAt": "2026-11-18T01:40:48.437182Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "clc-sorn",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "limelight",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 20,
-          "end": 21,
-          "text": "손",
+          "start": 1,
+          "end": 10,
+          "text": "LIMELIGHT",
+          "source": "title"
+        },
+        {
+          "start": 41,
+          "end": 45,
+          "text": "라임라잇",
           "source": "title"
         }
       ]
@@ -72,21 +78,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "limelight",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "clc-sorn",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 1,
-          "end": 10,
-          "text": "LIMELIGHT",
-          "source": "title"
-        },
-        {
-          "start": 41,
-          "end": 45,
-          "text": "라임라잇",
+          "start": 20,
+          "end": 21,
+          "text": "손",
           "source": "title"
         }
       ]

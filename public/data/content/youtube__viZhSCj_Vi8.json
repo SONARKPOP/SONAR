@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:27:55.161521Z",
+    "collectedAt": "2026-11-18T01:42:41.408295Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -62,20 +62,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-ecfa150b92cf2ae4",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 20,
-          "end": 21,
-          "text": "벨",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-dff6b18b1d4d3a3c",
       "state": "needs_review",
       "reason": "shared-name",
@@ -89,29 +75,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 11,
-          "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "kiss-of-life-member-4cd0df8d103d",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-ecfa150b92cf2ae4",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 22,
-          "end": 24,
-          "text": "하늘",
+          "start": 20,
+          "end": 21,
+          "text": "벨",
           "source": "title"
         }
       ]
@@ -131,21 +103,49 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "kiss-of-life-member-4cd0df8d103d",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "하늘",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "kiss-of-life",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
+          "start": 7,
+          "end": 19,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        },
+        {
           "start": 43,
           "end": 50,
           "text": "키스오브라이프",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
           "start": 7,
-          "end": 19,
-          "text": "KISS OF LIFE",
+          "end": 11,
+          "text": "KISS",
           "source": "title"
         }
       ]

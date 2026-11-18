@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-17T19:27:42.164516Z",
+    "collectedAt": "2026-11-18T01:42:26.081554Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,10 +45,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "hearts2hearts-yuha",
+      "artistType": "group",
+      "artistId": "hearts2hearts",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 14,
+          "text": "하츠투하츠",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-550d966d7f578682",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 15,
@@ -74,28 +88,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-550d966d7f578682",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hearts2hearts-yuha",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 15,
           "end": 17,
           "text": "유하",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hearts2hearts",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 9,
-          "end": 14,
-          "text": "하츠투하츠",
           "source": "title"
         }
       ]
