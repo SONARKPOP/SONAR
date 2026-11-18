@@ -46,10 +46,50 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "bp-jisoo",
+      "artistType": "group",
+      "artistId": "blackpink",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 9,
+          "text": "BLACKPINK",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jisoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "지수",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 22,
+          "text": "지수",
+          "source": "title"
+        },
+        {
+          "start": 58,
+          "end": 60,
+          "text": "지수",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-94eb4421c0847185",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 10,
@@ -99,33 +139,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-94eb4421c0847185",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 10,
-          "end": 12,
-          "text": "지수",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 22,
-          "text": "지수",
-          "source": "title"
-        },
-        {
-          "start": 58,
-          "end": 60,
-          "text": "지수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "jisoo",
+      "artistId": "bp-jisoo",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -171,20 +185,6 @@
           "start": 58,
           "end": 60,
           "text": "지수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "blackpink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 9,
-          "text": "BLACKPINK",
           "source": "title"
         }
       ]

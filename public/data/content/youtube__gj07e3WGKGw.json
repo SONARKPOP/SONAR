@@ -7,8 +7,7 @@
   "description": "Geenius 시온 & 안다미로와 함께 RIZZ ME UP🎈\n\n#에이디야 #ADYA \n#RIZZ #리즈 #리즈챌린지 #RIZZchallenge\n#연수 #세나 #YEONSU #SENA\n#지니어스 #Geenius #시온 #안다미로\n#Sion #Andamiro",
   "publishedAt": "2024-09-09T14:07:46Z",
   "groupIds": [
-    "adya",
-    "geenius"
+    "adya"
   ],
   "memberIds": [
     "person-1599094f7fb3f6b3",
@@ -37,11 +36,25 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-1599094f7fb3f6b3",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 13,
+          "end": 17,
+          "text": "안다미로",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-c106c83bb31bc610",
@@ -59,27 +72,13 @@
     {
       "artistType": "group",
       "artistId": "geenius",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 0,
           "end": 7,
           "text": "Geenius",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-1599094f7fb3f6b3",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 13,
-          "end": 17,
-          "text": "안다미로",
           "source": "title"
         }
       ]
