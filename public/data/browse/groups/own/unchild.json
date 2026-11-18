@@ -70,20 +70,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-e15f2801873c3186",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 12,
-              "end": 14,
-              "text": "이유",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-635192b2e655114d",
           "state": "needs_review",
           "reason": "shared-name",
@@ -99,6 +85,20 @@
         {
           "artistType": "person",
           "artistId": "hitgs-iyoo",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 12,
+              "end": 14,
+              "text": "이유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e15f2801873c3186",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -214,7 +214,6 @@
       "title": "OURBIRTHDAY 베이비 팅팅컴피티션 출전합니다",
       "publishedAt": "2026-11-17T07:00:24Z",
       "groupIds": [
-        "ourbirthday",
         "unchild"
       ],
       "memberIds": [
@@ -235,7 +234,7 @@
       "thumbnail": "https://i.ytimg.com/vi/O5_x_I7c2ns/hqdefault.jpg",
       "durationLabel": "26s",
       "memberTagging": {
-        "policy": "title-only-v1",
+        "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
       },
@@ -256,20 +255,6 @@
       "musicBroadcast": false,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 11,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
@@ -279,6 +264,20 @@
               "start": 12,
               "end": 15,
               "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 0,
+              "end": 11,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
