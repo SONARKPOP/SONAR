@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-19T11:45:41.994435Z",
+  "updatedAt": "2026-11-19T12:14:23.431729Z",
   "items": [
     {
       "id": "youtube__uGhdywaoAsc",
@@ -54,6 +54,20 @@
         },
         {
           "artistType": "group",
+          "artistId": "ily1",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 56,
+              "end": 61,
+              "text": "ILY:1",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "kiss-of-life",
           "state": "needs_review",
           "reason": "everyday-name",
@@ -76,20 +90,6 @@
               "start": 36,
               "end": 45,
               "text": "ARTBEAT v",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "ily1",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 56,
-              "end": 61,
-              "text": "ILY:1",
               "source": "title"
             }
           ]
@@ -276,14 +276,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "artbeat-v",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "yubin",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 8,
-              "end": 12,
-              "text": "아트비트",
+              "start": 38,
+              "end": 43,
+              "text": "Yubin",
+              "source": "title"
+            },
+            {
+              "start": 13,
+              "end": 15,
+              "text": "유빈",
               "source": "title"
             }
           ]
@@ -309,17 +315,11 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yubin",
+          "artistType": "person",
+          "artistId": "person-6117226ecd9c488c",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
-            {
-              "start": 38,
-              "end": 43,
-              "text": "Yubin",
-              "source": "title"
-            },
             {
               "start": 13,
               "end": 15,
@@ -333,20 +333,6 @@
           "artistId": "person-4a92114ac3b0fc73",
           "state": "inferred",
           "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 13,
-              "end": 15,
-              "text": "유빈",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-6117226ecd9c488c",
-          "state": "needs_review",
-          "reason": "shared-name",
           "matches": [
             {
               "start": 13,
@@ -380,6 +366,20 @@
               "start": 13,
               "end": 15,
               "text": "유빈",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "artbeat-v",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 8,
+              "end": 12,
+              "text": "아트비트",
               "source": "title"
             }
           ]
