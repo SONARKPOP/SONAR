@@ -40,22 +40,28 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-0f7db83541a0c03e",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "ive",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 42,
-              "end": 45,
-              "text": "안유진",
+              "start": 26,
+              "end": 29,
+              "text": "IVE",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 41,
+              "text": "아이브",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "ive-yujin",
+          "artistId": "person-0f7db83541a0c03e",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -83,6 +89,20 @@
         },
         {
           "artistType": "person",
+          "artistId": "ive-yujin",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 45,
+              "text": "안유진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "itzy-member-b14664ea78a4",
           "state": "inferred",
           "reason": "unambiguous-title-name",
@@ -91,26 +111,6 @@
               "start": 71,
               "end": 75,
               "text": "YUNA",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "ive",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 38,
-              "end": 41,
-              "text": "아이브",
-              "source": "title"
-            },
-            {
-              "start": 26,
-              "end": 29,
-              "text": "IVE",
               "source": "title"
             }
           ]
