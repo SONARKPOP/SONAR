@@ -7,7 +7,6 @@
   "description": "#izna #이즈나 \n#BANGJEEMIN #방지민 \n#DUMB_HOT",
   "publishedAt": "2026-10-22T12:00:05Z",
   "groupIds": [
-    "ive",
     "izna"
   ],
   "memberIds": [
@@ -36,45 +35,11 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "izna",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 50,
-          "end": 53,
-          "text": "이즈나",
-          "source": "title"
-        },
-        {
-          "start": 44,
-          "end": 48,
-          "text": "izna",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 19,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "ive-rei",
@@ -85,6 +50,40 @@
           "start": 21,
           "end": 24,
           "text": "REI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 44,
+          "end": 48,
+          "text": "izna",
+          "source": "title"
+        },
+        {
+          "start": 50,
+          "end": 53,
+          "text": "이즈나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "IVE",
           "source": "title"
         }
       ]

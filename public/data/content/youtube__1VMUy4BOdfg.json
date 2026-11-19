@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2026-11-14T13:00:30Z",
   "groupIds": [
-    "illit",
     "itzy"
   ],
   "memberIds": [
@@ -58,20 +57,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "illit",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 46,
-          "end": 51,
-          "text": "ILLIT",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "itzy",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -94,6 +79,20 @@
           "start": 11,
           "end": 13,
           "text": "원희",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "illit",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 46,
+          "end": 51,
+          "text": "ILLIT",
           "source": "title"
         }
       ]
