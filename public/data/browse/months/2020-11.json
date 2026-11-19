@@ -128,20 +128,6 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "boa",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 21,
-              "end": 24,
-              "text": "Boa",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e7d174768713a7ec",
           "state": "needs_review",
@@ -151,6 +137,20 @@
               "start": 18,
               "end": 19,
               "text": "씬",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "boa",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 21,
+              "end": 24,
+              "text": "Boa",
               "source": "title"
             }
           ]
@@ -199,20 +199,14 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "gidle",
+          "artistId": "yuqi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 7,
-              "end": 14,
-              "text": "(여자)아이들",
-              "source": "title"
-            },
-            {
-              "start": 11,
-              "end": 14,
-              "text": "아이들",
+              "start": 51,
+              "end": 53,
+              "text": "우기",
               "source": "title"
             }
           ]
@@ -233,14 +227,20 @@
         },
         {
           "artistType": "group",
-          "artistId": "yuqi",
+          "artistId": "gidle",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 51,
-              "end": 53,
-              "text": "우기",
+              "start": 11,
+              "end": 14,
+              "text": "아이들",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 14,
+              "text": "(여자)아이들",
               "source": "title"
             }
           ]
@@ -324,6 +324,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "gidle",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 66,
+              "end": 69,
+              "text": "아이들",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "akmu",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -338,20 +352,6 @@
               "start": 9,
               "end": 11,
               "text": "악뮤",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gidle",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 66,
-              "end": 69,
-              "text": "아이들",
               "source": "title"
             }
           ]
@@ -411,15 +411,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 13,
-              "end": 18,
-              "text": "TWICE",
-              "source": "title"
-            },
-            {
               "start": 25,
               "end": 29,
               "text": "트와이스",
+              "source": "title"
+            },
+            {
+              "start": 13,
+              "end": 18,
+              "text": "TWICE",
               "source": "title"
             }
           ]
@@ -503,41 +503,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gidle-yuqi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 8,
-              "end": 10,
-              "text": "우기",
-              "source": "title"
-            },
-            {
-              "start": 51,
-              "end": 55,
-              "text": "YUQI",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "yuqi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 51,
+              "end": 55,
+              "text": "YUQI",
+              "source": "title"
+            },
+            {
               "start": 8,
               "end": 10,
               "text": "우기",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gidle-yuqi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 51,
               "end": 55,
               "text": "YUQI",
+              "source": "title"
+            },
+            {
+              "start": 8,
+              "end": 10,
+              "text": "우기",
               "source": "title"
             }
           ]
@@ -549,15 +549,9 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 45,
-              "end": 50,
-              "text": "I-DLE",
-              "source": "title"
-            },
-            {
-              "start": 0,
+              "start": 4,
               "end": 7,
-              "text": "(여자)아이들",
+              "text": "아이들",
               "source": "title"
             },
             {
@@ -567,9 +561,15 @@
               "source": "title"
             },
             {
-              "start": 4,
+              "start": 0,
               "end": 7,
-              "text": "아이들",
+              "text": "(여자)아이들",
+              "source": "title"
+            },
+            {
+              "start": 45,
+              "end": 50,
+              "text": "I-DLE",
               "source": "title"
             }
           ]
@@ -766,6 +766,26 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "stayc",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 20,
+              "end": 25,
+              "text": "STAYC",
+              "source": "title"
+            },
+            {
+              "start": 26,
+              "end": 30,
+              "text": "스테이씨",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-287b4bd95d98a04a",
           "state": "needs_review",
@@ -775,26 +795,6 @@
               "start": 51,
               "end": 52,
               "text": "주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "stayc",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 26,
-              "end": 30,
-              "text": "스테이씨",
-              "source": "title"
-            },
-            {
-              "start": 20,
-              "end": 25,
-              "text": "STAYC",
               "source": "title"
             }
           ]
@@ -867,6 +867,20 @@
         },
         {
           "artistType": "person",
+          "artistId": "person-5f7e36bb589a5c26",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 31,
+              "end": 33,
+              "text": "지호",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-e6f0dc1d3084a1cf",
           "state": "needs_review",
           "reason": "shared-name",
@@ -889,20 +903,6 @@
               "start": 35,
               "end": 37,
               "text": "아린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-5f7e36bb589a5c26",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 31,
-              "end": 33,
-              "text": "지호",
               "source": "title"
             }
           ]
@@ -1031,15 +1031,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 30,
-              "end": 34,
-              "text": "스테이씨",
-              "source": "title"
-            },
-            {
               "start": 24,
               "end": 29,
               "text": "STAYC",
+              "source": "title"
+            },
+            {
+              "start": 30,
+              "end": 34,
+              "text": "스테이씨",
               "source": "title"
             }
           ]
@@ -1248,15 +1248,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 14,
-              "end": 16,
-              "text": "킴보",
-              "source": "title"
-            },
-            {
               "start": 7,
               "end": 13,
               "text": "KEEMBO",
+              "source": "title"
+            },
+            {
+              "start": 14,
+              "end": 16,
+              "text": "킴보",
               "source": "title"
             }
           ]
@@ -1412,15 +1412,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 8,
-              "end": 12,
-              "text": "프리즈마",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 6,
               "text": "PRISMA",
+              "source": "title"
+            },
+            {
+              "start": 8,
+              "end": 12,
+              "text": "프리즈마",
               "source": "title"
             }
           ]
@@ -1559,15 +1559,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "weeekly",
+          "artistType": "person",
+          "artistId": "weeekly-member-0a2f9dd400ad",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 59,
-              "end": 66,
-              "text": "WEEEKLY",
+              "start": 45,
+              "end": 47,
+              "text": "지한",
               "source": "title"
             }
           ]
@@ -1588,20 +1588,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "weeekly-member-0a2f9dd400ad",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 45,
-              "end": 47,
-              "text": "지한",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-897304d1e3afc053",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1610,6 +1596,20 @@
               "start": 12,
               "end": 18,
               "text": "올리비아 혜",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "weeekly",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 59,
+              "end": 66,
+              "text": "WEEEKLY",
               "source": "title"
             }
           ]
@@ -1759,6 +1759,78 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "yuqi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 56,
+              "end": 60,
+              "text": "YUQI",
+              "source": "title"
+            },
+            {
+              "start": 8,
+              "end": 10,
+              "text": "우기",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gidle-yuqi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 56,
+              "end": 60,
+              "text": "YUQI",
+              "source": "title"
+            },
+            {
+              "start": 8,
+              "end": 10,
+              "text": "우기",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gidle",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 4,
+              "end": 7,
+              "text": "아이들",
+              "source": "title"
+            },
+            {
+              "start": 47,
+              "end": 55,
+              "text": "(G)I-DLE",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 7,
+              "text": "(여자)아이들",
+              "source": "title"
+            },
+            {
+              "start": 50,
+              "end": 55,
+              "text": "I-DLE",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "miyeon",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1781,78 +1853,6 @@
               "start": 27,
               "end": 29,
               "text": "미연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "gidle-yuqi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 8,
-              "end": 10,
-              "text": "우기",
-              "source": "title"
-            },
-            {
-              "start": 56,
-              "end": 60,
-              "text": "YUQI",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yuqi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 8,
-              "end": 10,
-              "text": "우기",
-              "source": "title"
-            },
-            {
-              "start": 56,
-              "end": 60,
-              "text": "YUQI",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gidle",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 50,
-              "end": 55,
-              "text": "I-DLE",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 7,
-              "text": "(여자)아이들",
-              "source": "title"
-            },
-            {
-              "start": 47,
-              "end": 55,
-              "text": "(G)I-DLE",
-              "source": "title"
-            },
-            {
-              "start": 4,
-              "end": 7,
-              "text": "아이들",
               "source": "title"
             }
           ]
@@ -2050,20 +2050,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "alice",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 96,
-              "end": 99,
-              "text": "앨리스",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-82c8dfffcc8a320b",
           "state": "needs_review",
@@ -2082,6 +2068,20 @@
           "artistId": "person-9dda2eae88d9d10c",
           "state": "needs_review",
           "reason": "shared-name",
+          "matches": [
+            {
+              "start": 96,
+              "end": 99,
+              "text": "앨리스",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "alice",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 96,
@@ -2147,15 +2147,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 22,
-              "text": "GFRIEND",
-              "source": "title"
-            },
-            {
               "start": 23,
               "end": 27,
               "text": "여자친구",
+              "source": "title"
+            },
+            {
+              "start": 15,
+              "end": 22,
+              "text": "GFRIEND",
               "source": "title"
             }
           ]
@@ -2216,34 +2216,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 88,
-              "end": 92,
-              "text": "KISS",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 5,
-              "end": 8,
-              "text": "마마무",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "purple-kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -2280,6 +2252,34 @@
               "start": 76,
               "end": 78,
               "text": "화사",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 88,
+              "end": 92,
+              "text": "KISS",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 5,
+              "end": 8,
+              "text": "마마무",
               "source": "title"
             }
           ]
@@ -2433,15 +2433,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "킴보",
-              "source": "title"
-            },
-            {
               "start": 4,
               "end": 10,
               "text": "KEEMBO",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "킴보",
               "source": "title"
             }
           ]
@@ -2489,22 +2489,22 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 18,
-              "end": 22,
-              "text": "스테이씨",
-              "source": "title"
-            },
-            {
               "start": 12,
               "end": 17,
               "text": "STAYC",
+              "source": "title"
+            },
+            {
+              "start": 18,
+              "end": 22,
+              "text": "스테이씨",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-e15f2801873c3186",
+          "artistId": "hitgs-iyoo",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -2532,7 +2532,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "hitgs-iyoo",
+          "artistId": "person-e15f2801873c3186",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -2611,15 +2611,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "킴보",
-              "source": "title"
-            },
-            {
               "start": 4,
               "end": 10,
               "text": "KEEMBO",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "킴보",
               "source": "title"
             }
           ]
@@ -2733,104 +2733,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "gfriend-yerin",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 39,
-              "end": 41,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-a4391fa6c57189cf",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 39,
-              "end": 41,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yerin",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 39,
-              "end": 41,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e4ee489d355b1604",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 39,
-              "end": 41,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-936fea5dbf4b0c14",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 39,
-              "end": 41,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-fd0f6919c9668a17",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 39,
-              "end": 41,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-92dca0d431ec333d",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 51,
-              "end": 53,
-              "text": "엄지",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-a62f6751637129dd",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -2864,29 +2766,29 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-a1479c2cc95e8b6a",
+          "artistType": "group",
+          "artistId": "shinvi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 36,
-              "end": 38,
-              "text": "소원",
+              "start": 48,
+              "end": 50,
+              "text": "신비",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-f07a58ca3f31f17c",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-d0486a64061b31cd",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 45,
-              "end": 47,
-              "text": "유주",
+              "start": 48,
+              "end": 50,
+              "text": "신비",
               "source": "title"
             }
           ]
@@ -2920,29 +2822,127 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "shinvi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-f07a58ca3f31f17c",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 48,
-              "end": 50,
-              "text": "신비",
+              "start": 45,
+              "end": 47,
+              "text": "유주",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-d0486a64061b31cd",
+          "artistId": "person-936fea5dbf4b0c14",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 39,
+              "end": 41,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a4391fa6c57189cf",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 39,
+              "end": 41,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gfriend-yerin",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 48,
-              "end": 50,
-              "text": "신비",
+              "start": 39,
+              "end": 41,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e4ee489d355b1604",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 39,
+              "end": 41,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-fd0f6919c9668a17",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 39,
+              "end": 41,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yerin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 39,
+              "end": 41,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a1479c2cc95e8b6a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 36,
+              "end": 38,
+              "text": "소원",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-92dca0d431ec333d",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 51,
+              "end": 53,
+              "text": "엄지",
               "source": "title"
             }
           ]
@@ -3006,155 +3006,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-a1479c2cc95e8b6a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 35,
-              "end": 37,
-              "text": "소원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-f07a58ca3f31f17c",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 44,
-              "end": 46,
-              "text": "유주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "gfriend-yuju",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 44,
-              "end": 46,
-              "text": "유주",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "yuju",
+          "artistId": "gfriend",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 44,
-              "end": 46,
-              "text": "유주",
+              "start": 0,
+              "end": 4,
+              "text": "여자친구",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "gfriend-yerin",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 38,
-              "end": 40,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-a4391fa6c57189cf",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 38,
-              "end": 40,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yerin",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 38,
-              "end": 40,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e4ee489d355b1604",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 38,
-              "end": 40,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-936fea5dbf4b0c14",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 38,
-              "end": 40,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-fd0f6919c9668a17",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 38,
-              "end": 40,
-              "text": "예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-92dca0d431ec333d",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 50,
-              "end": 52,
-              "text": "엄지",
+              "start": 5,
+              "end": 12,
+              "text": "GFRIEND",
               "source": "title"
             }
           ]
@@ -3202,21 +3068,155 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "gfriend",
+          "artistType": "person",
+          "artistId": "gfriend-yuju",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 5,
-              "end": 12,
-              "text": "GFRIEND",
+              "start": 44,
+              "end": 46,
+              "text": "유주",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yuju",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "여자친구",
+              "start": 44,
+              "end": 46,
+              "text": "유주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-f07a58ca3f31f17c",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 44,
+              "end": 46,
+              "text": "유주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-936fea5dbf4b0c14",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 38,
+              "end": 40,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a4391fa6c57189cf",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 38,
+              "end": 40,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gfriend-yerin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 38,
+              "end": 40,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e4ee489d355b1604",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 38,
+              "end": 40,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-fd0f6919c9668a17",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 38,
+              "end": 40,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yerin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 38,
+              "end": 40,
+              "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a1479c2cc95e8b6a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 35,
+              "end": 37,
+              "text": "소원",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-92dca0d431ec333d",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 50,
+              "end": 52,
+              "text": "엄지",
               "source": "title"
             }
           ]
@@ -3484,7 +3484,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-8a50ea5c18115e1d",
+          "artistId": "person-c24567c62b559e06",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3498,7 +3498,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-c24567c62b559e06",
+          "artistId": "person-8a50ea5c18115e1d",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3565,20 +3565,100 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "킴보",
-              "source": "title"
-            },
-            {
               "start": 4,
               "end": 10,
               "text": "KEEMBO",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "킴보",
               "source": "title"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "youtube__Y5i28FzIsBI",
+      "platform": "youtube",
+      "platformId": "Y5i28FzIsBI",
+      "demo": false,
+      "title": "AKMU(악동뮤지션)의 컴백🎉 악뮤만의 감성을 담은 ‘HAPPENING’ 라이브🎤 | AKMU | 악뮤 | 1평콘서트 | Booth Concert | 가사 | LYRIC",
+      "publishedAt": "2020-11-16T09:00:10Z",
+      "groupIds": [
+        "akmu"
+      ],
+      "memberIds": [],
+      "channelId": "1thek-originals",
+      "channelName": "1theK Originals - 원더케이 오리지널",
+      "category": "external",
+      "subtypes": [
+        "기타"
+      ],
+      "tags": [
+        "기타",
+        "외부 콘텐츠",
+        "기타·미분류"
+      ],
+      "format": "video",
+      "thumbnail": "https://i.ytimg.com/vi/Y5i28FzIsBI/hqdefault.jpg",
+      "durationLabel": "4m46s",
+      "contentTypes": [
+        "external"
+      ],
+      "memberTagging": {
+        "policy": "title-only-v1",
+        "source": "unclassified",
+        "appearanceVerified": false
+      },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "akmu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 5,
+              "end": 10,
+              "text": "악동뮤지션",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "AKMU",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 52,
+              "text": "AKMU",
+              "source": "title"
+            },
+            {
+              "start": 55,
+              "end": 57,
+              "text": "악뮤",
+              "source": "title"
+            }
+          ]
+        }
+      ],
+      "externalId": "Y5i28FzIsBI",
+      "sourceUrl": "https://www.youtube.com/watch?v=Y5i28FzIsBI",
+      "externalType": "other",
+      "contentTabs": [
+        "home",
+        "external"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false
     },
     {
       "id": "youtube__l--rD5haq0A",
@@ -3633,100 +3713,20 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "킴보",
-              "source": "title"
-            },
-            {
               "start": 4,
               "end": 10,
               "text": "KEEMBO",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "킴보",
               "source": "title"
             }
           ]
         }
       ]
-    },
-    {
-      "id": "youtube__Y5i28FzIsBI",
-      "platform": "youtube",
-      "platformId": "Y5i28FzIsBI",
-      "demo": false,
-      "title": "AKMU(악동뮤지션)의 컴백🎉 악뮤만의 감성을 담은 ‘HAPPENING’ 라이브🎤 | AKMU | 악뮤 | 1평콘서트 | Booth Concert | 가사 | LYRIC",
-      "publishedAt": "2020-11-16T09:00:10Z",
-      "groupIds": [
-        "akmu"
-      ],
-      "memberIds": [],
-      "channelId": "1thek-originals",
-      "channelName": "1theK Originals - 원더케이 오리지널",
-      "category": "external",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "외부 콘텐츠",
-        "기타·미분류"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/Y5i28FzIsBI/hqdefault.jpg",
-      "durationLabel": "4m46s",
-      "contentTypes": [
-        "external"
-      ],
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "unclassified",
-        "appearanceVerified": false
-      },
-      "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "akmu",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 4,
-              "text": "AKMU",
-              "source": "title"
-            },
-            {
-              "start": 48,
-              "end": 52,
-              "text": "AKMU",
-              "source": "title"
-            },
-            {
-              "start": 5,
-              "end": 10,
-              "text": "악동뮤지션",
-              "source": "title"
-            },
-            {
-              "start": 55,
-              "end": 57,
-              "text": "악뮤",
-              "source": "title"
-            }
-          ]
-        }
-      ],
-      "externalId": "Y5i28FzIsBI",
-      "sourceUrl": "https://www.youtube.com/watch?v=Y5i28FzIsBI",
-      "externalType": "other",
-      "contentTabs": [
-        "home",
-        "external"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false
     },
     {
       "id": "youtube__hn9iTaUV5YA",
@@ -3769,12 +3769,6 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 30,
-              "end": 37,
-              "text": "GFRIEND",
-              "source": "title"
-            },
-            {
               "start": 4,
               "end": 8,
               "text": "여자친구",
@@ -3784,6 +3778,12 @@
               "start": 24,
               "end": 28,
               "text": "여자친구",
+              "source": "title"
+            },
+            {
+              "start": 30,
+              "end": 37,
+              "text": "GFRIEND",
               "source": "title"
             }
           ]
@@ -4098,6 +4098,99 @@
       "musicBroadcast": false
     },
     {
+      "id": "youtube__NGex3sIHWoo",
+      "platform": "youtube",
+      "platformId": "NGex3sIHWoo",
+      "demo": false,
+      "title": "[UNFILTERED CAM] GFRIEND SINB(신비) 'MAGO' 4K | BE ORIGINAL",
+      "publishedAt": "2020-11-14T08:00:07Z",
+      "groupIds": [
+        "gfriend",
+        "shinvi"
+      ],
+      "memberIds": [
+        "person-d0486a64061b31cd"
+      ],
+      "channelId": "studio-choom",
+      "channelName": "STUDIO CHOOM [스튜디오 춤]",
+      "category": "external",
+      "subtypes": [
+        "기타"
+      ],
+      "tags": [
+        "기타",
+        "외부 콘텐츠",
+        "노래·퍼포먼스"
+      ],
+      "format": "video",
+      "thumbnail": "https://i.ytimg.com/vi/NGex3sIHWoo/hqdefault.jpg",
+      "durationLabel": "3m32s",
+      "contentTypes": [
+        "external"
+      ],
+      "externalType": "song",
+      "memberTagging": {
+        "policy": "title-only-v1",
+        "source": "title",
+        "appearanceVerified": false
+      },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "gfriend",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 17,
+              "end": 24,
+              "text": "GFRIEND",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "shinvi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 30,
+              "end": 32,
+              "text": "신비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-d0486a64061b31cd",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 30,
+              "end": 32,
+              "text": "신비",
+              "source": "title"
+            }
+          ]
+        }
+      ],
+      "externalId": "NGex3sIHWoo",
+      "sourceUrl": "https://www.youtube.com/watch?v=NGex3sIHWoo",
+      "contentTabs": [
+        "home",
+        "external"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false
+    },
+    {
       "id": "youtube__cipQbgeSkHw",
       "platform": "youtube",
       "platformId": "cipQbgeSkHw",
@@ -4151,20 +4244,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-f07a58ca3f31f17c",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 30,
-              "end": 32,
-              "text": "유주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "gfriend-yuju",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -4199,6 +4278,20 @@
               "start": 25,
               "end": 29,
               "text": "YUJU",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-f07a58ca3f31f17c",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 30,
+              "end": 32,
+              "text": "유주",
               "source": "title"
             }
           ]
@@ -4254,6 +4347,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "gfriend",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 17,
+              "end": 24,
+              "text": "GFRIEND",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-a62f6751637129dd",
           "state": "inferred",
@@ -4266,117 +4373,10 @@
               "source": "title"
             }
           ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gfriend",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 17,
-              "end": 24,
-              "text": "GFRIEND",
-              "source": "title"
-            }
-          ]
         }
       ],
       "externalId": "fUNSz2N58Bc",
       "sourceUrl": "https://www.youtube.com/watch?v=fUNSz2N58Bc",
-      "contentTabs": [
-        "home",
-        "external"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false
-    },
-    {
-      "id": "youtube__NGex3sIHWoo",
-      "platform": "youtube",
-      "platformId": "NGex3sIHWoo",
-      "demo": false,
-      "title": "[UNFILTERED CAM] GFRIEND SINB(신비) 'MAGO' 4K | BE ORIGINAL",
-      "publishedAt": "2020-11-14T08:00:07Z",
-      "groupIds": [
-        "gfriend",
-        "shinvi"
-      ],
-      "memberIds": [
-        "person-d0486a64061b31cd"
-      ],
-      "channelId": "studio-choom",
-      "channelName": "STUDIO CHOOM [스튜디오 춤]",
-      "category": "external",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "외부 콘텐츠",
-        "노래·퍼포먼스"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/NGex3sIHWoo/hqdefault.jpg",
-      "durationLabel": "3m32s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "song",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "title",
-        "appearanceVerified": false
-      },
-      "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "shinvi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 30,
-              "end": 32,
-              "text": "신비",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-d0486a64061b31cd",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 30,
-              "end": 32,
-              "text": "신비",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gfriend",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 17,
-              "end": 24,
-              "text": "GFRIEND",
-              "source": "title"
-            }
-          ]
-        }
-      ],
-      "externalId": "NGex3sIHWoo",
-      "sourceUrl": "https://www.youtube.com/watch?v=NGex3sIHWoo",
       "contentTabs": [
         "home",
         "external"
@@ -4519,20 +4519,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "gfriend-yerin",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-936fea5dbf4b0c14",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 31,
               "end": 33,
               "text": "예린",
-              "source": "title"
-            },
-            {
-              "start": 25,
-              "end": 30,
-              "text": "YERIN",
               "source": "title"
             }
           ]
@@ -4552,8 +4546,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yerin",
+          "artistType": "person",
+          "artistId": "gfriend-yerin",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -4587,7 +4581,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-936fea5dbf4b0c14",
+          "artistId": "person-fd0f6919c9668a17",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -4600,15 +4594,21 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-fd0f6919c9668a17",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "yerin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 31,
               "end": 33,
               "text": "예린",
+              "source": "title"
+            },
+            {
+              "start": 25,
+              "end": 30,
+              "text": "YERIN",
               "source": "title"
             }
           ]
@@ -4667,6 +4667,12 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 34,
+              "end": 39,
+              "text": "STAYC",
+              "source": "title"
+            },
+            {
               "start": 20,
               "end": 24,
               "text": "스테이씨",
@@ -4676,12 +4682,6 @@
               "start": 29,
               "end": 33,
               "text": "스테이씨",
-              "source": "title"
-            },
-            {
-              "start": 34,
-              "end": 39,
-              "text": "STAYC",
               "source": "title"
             }
           ]
@@ -4739,15 +4739,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "weeekly",
+          "artistType": "person",
+          "artistId": "weeekly-member-0a2f9dd400ad",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 60,
-              "end": 67,
-              "text": "WEEEKLY",
+              "start": 46,
+              "end": 48,
+              "text": "지한",
               "source": "title"
             }
           ]
@@ -4768,20 +4768,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "weeekly-member-0a2f9dd400ad",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 46,
-              "end": 48,
-              "text": "지한",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-897304d1e3afc053",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -4790,6 +4776,20 @@
               "start": 29,
               "end": 35,
               "text": "올리비아 혜",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "weeekly",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 60,
+              "end": 67,
+              "text": "WEEEKLY",
               "source": "title"
             }
           ]
@@ -4845,26 +4845,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "blackpink",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 30,
-              "end": 34,
-              "text": "블랙핑크",
-              "source": "title"
-            },
-            {
-              "start": 35,
-              "end": 44,
-              "text": "BLACKPINK",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "gg-3ea891caaee2e6ac",
           "state": "needs_review",
           "reason": "everyday-name",
@@ -4873,6 +4853,26 @@
               "start": 81,
               "end": 82,
               "text": "s",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "blackpink",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 35,
+              "end": 44,
+              "text": "BLACKPINK",
+              "source": "title"
+            },
+            {
+              "start": 30,
+              "end": 34,
+              "text": "블랙핑크",
               "source": "title"
             }
           ]
@@ -4928,41 +4928,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gidle-yuqi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 8,
-              "end": 10,
-              "text": "우기",
-              "source": "title"
-            },
-            {
-              "start": 56,
-              "end": 60,
-              "text": "YUQI",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "yuqi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 56,
+              "end": 60,
+              "text": "YUQI",
+              "source": "title"
+            },
+            {
               "start": 8,
               "end": 10,
               "text": "우기",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gidle-yuqi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 56,
               "end": 60,
               "text": "YUQI",
+              "source": "title"
+            },
+            {
+              "start": 8,
+              "end": 10,
+              "text": "우기",
               "source": "title"
             }
           ]
@@ -4974,15 +4974,9 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 50,
-              "end": 55,
-              "text": "I-DLE",
-              "source": "title"
-            },
-            {
-              "start": 0,
+              "start": 4,
               "end": 7,
-              "text": "(여자)아이들",
+              "text": "아이들",
               "source": "title"
             },
             {
@@ -4992,9 +4986,15 @@
               "source": "title"
             },
             {
-              "start": 4,
+              "start": 0,
               "end": 7,
-              "text": "아이들",
+              "text": "(여자)아이들",
+              "source": "title"
+            },
+            {
+              "start": 50,
+              "end": 55,
+              "text": "I-DLE",
               "source": "title"
             }
           ]
@@ -5187,15 +5187,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 14,
-              "end": 21,
-              "text": "GFRIEND",
-              "source": "title"
-            },
-            {
               "start": 22,
               "end": 26,
               "text": "여자친구",
+              "source": "title"
+            },
+            {
+              "start": 14,
+              "end": 21,
+              "text": "GFRIEND",
               "source": "title"
             }
           ]
@@ -5251,8 +5251,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "natty",
+          "artistType": "person",
+          "artistId": "kiss-of-life-natty",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -5271,8 +5271,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "kiss-of-life-natty",
+          "artistType": "group",
+          "artistId": "natty",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -5509,20 +5509,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-18ce3b969b504550",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 11,
-              "end": 13,
-              "text": "나라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-c73ce5fb2451dbbf",
           "state": "needs_review",
           "reason": "everyday-name",
@@ -5531,6 +5517,20 @@
               "start": 8,
               "end": 9,
               "text": "봄",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-18ce3b969b504550",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 11,
+              "end": 13,
+              "text": "나라",
               "source": "title"
             }
           ]
@@ -5582,55 +5582,7 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "마마무",
-              "source": "title"
-            },
-            {
-              "start": 4,
-              "end": 11,
-              "text": "MAMAMOO",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "hwasa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 52,
-              "end": 54,
-              "text": "화사",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "mamamoo-hwasa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 52,
-              "end": 54,
-              "text": "화사",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -5643,8 +5595,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "solar",
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -5686,14 +5638,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "wheein",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 49,
-              "end": 51,
-              "text": "휘인",
+              "start": 52,
+              "end": 54,
+              "text": "화사",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-hwasa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 52,
+              "end": 54,
+              "text": "화사",
               "source": "title"
             }
           ]
@@ -5708,6 +5674,40 @@
               "start": 49,
               "end": 51,
               "text": "휘인",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "wheein",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 49,
+              "end": 51,
+              "text": "휘인",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "마마무",
+              "source": "title"
+            },
+            {
+              "start": 4,
+              "end": 11,
+              "text": "MAMAMOO",
               "source": "title"
             }
           ]
@@ -5771,55 +5771,7 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "마마무",
-              "source": "title"
-            },
-            {
-              "start": 4,
-              "end": 11,
-              "text": "MAMAMOO",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "hwasa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 42,
-              "end": 44,
-              "text": "화사",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "mamamoo-hwasa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 42,
-              "end": 44,
-              "text": "화사",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -5832,8 +5784,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "solar",
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -5875,14 +5827,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "wheein",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 39,
-              "end": 41,
-              "text": "휘인",
+              "start": 42,
+              "end": 44,
+              "text": "화사",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-hwasa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "화사",
               "source": "title"
             }
           ]
@@ -5897,6 +5863,40 @@
               "start": 39,
               "end": 41,
               "text": "휘인",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "wheein",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 39,
+              "end": 41,
+              "text": "휘인",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "마마무",
+              "source": "title"
+            },
+            {
+              "start": 4,
+              "end": 11,
+              "text": "MAMAMOO",
               "source": "title"
             }
           ]
@@ -6041,15 +6041,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 23,
-              "end": 30,
-              "text": "GFRIEND",
-              "source": "title"
-            },
-            {
               "start": 31,
               "end": 35,
               "text": "여자친구",
+              "source": "title"
+            },
+            {
+              "start": 23,
+              "end": 30,
+              "text": "GFRIEND",
               "source": "title"
             }
           ]
@@ -6110,15 +6110,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 56,
-              "end": 61,
-              "text": "LOONA",
-              "source": "title"
-            },
-            {
               "start": 49,
               "end": 55,
               "text": "이달의 소녀",
+              "source": "title"
+            },
+            {
+              "start": 56,
+              "end": 61,
+              "text": "LOONA",
               "source": "title"
             }
           ]
@@ -6446,41 +6446,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gidle-yuqi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 8,
-              "end": 10,
-              "text": "우기",
-              "source": "title"
-            },
-            {
-              "start": 60,
-              "end": 64,
-              "text": "YUQI",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "yuqi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 60,
+              "end": 64,
+              "text": "YUQI",
+              "source": "title"
+            },
+            {
               "start": 8,
               "end": 10,
               "text": "우기",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gidle-yuqi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 60,
               "end": 64,
               "text": "YUQI",
+              "source": "title"
+            },
+            {
+              "start": 8,
+              "end": 10,
+              "text": "우기",
               "source": "title"
             }
           ]
@@ -6492,15 +6492,9 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 54,
-              "end": 59,
-              "text": "I-DLE",
-              "source": "title"
-            },
-            {
-              "start": 0,
+              "start": 4,
               "end": 7,
-              "text": "(여자)아이들",
+              "text": "아이들",
               "source": "title"
             },
             {
@@ -6510,9 +6504,15 @@
               "source": "title"
             },
             {
-              "start": 4,
+              "start": 0,
               "end": 7,
-              "text": "아이들",
+              "text": "(여자)아이들",
+              "source": "title"
+            },
+            {
+              "start": 54,
+              "end": 59,
+              "text": "I-DLE",
               "source": "title"
             }
           ]
@@ -6594,68 +6594,6 @@
       ]
     },
     {
-      "id": "youtube__zZh3L16DjHk",
-      "platform": "youtube",
-      "platformId": "zZh3L16DjHk",
-      "demo": false,
-      "title": "우당탕탕 얼레벌레 밸런스 게임🎭 │ APRIL",
-      "publishedAt": "2020-11-06T09:00:08Z",
-      "groupIds": [
-        "april"
-      ],
-      "memberIds": [],
-      "channelId": "april-official",
-      "channelName": "APRIL",
-      "category": "own",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "자체 콘텐츠",
-        "자체 예능"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/zZh3L16DjHk/hqdefault.jpg",
-      "durationLabel": "11m34s",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "unclassified",
-        "appearanceVerified": false
-      },
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "variety",
-      "musicBroadcast": false,
-      "externalId": "zZh3L16DjHk",
-      "sourceUrl": "https://www.youtube.com/watch?v=zZh3L16DjHk",
-      "contentTabs": [
-        "home",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
-      "hierarchyVersion": 2,
-      "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "april",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 20,
-              "end": 25,
-              "text": "APRIL",
-              "source": "title"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "youtube__VYUsFfx7y0c",
       "platform": "youtube",
       "platformId": "VYUsFfx7y0c",
@@ -6724,6 +6662,68 @@
       "musicBroadcast": false
     },
     {
+      "id": "youtube__zZh3L16DjHk",
+      "platform": "youtube",
+      "platformId": "zZh3L16DjHk",
+      "demo": false,
+      "title": "우당탕탕 얼레벌레 밸런스 게임🎭 │ APRIL",
+      "publishedAt": "2020-11-06T09:00:08Z",
+      "groupIds": [
+        "april"
+      ],
+      "memberIds": [],
+      "channelId": "april-official",
+      "channelName": "APRIL",
+      "category": "own",
+      "subtypes": [
+        "기타"
+      ],
+      "tags": [
+        "기타",
+        "자체 콘텐츠",
+        "자체 예능"
+      ],
+      "format": "video",
+      "thumbnail": "https://i.ytimg.com/vi/zZh3L16DjHk/hqdefault.jpg",
+      "durationLabel": "11m34s",
+      "memberTagging": {
+        "policy": "title-only-v1",
+        "source": "unclassified",
+        "appearanceVerified": false
+      },
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "variety",
+      "musicBroadcast": false,
+      "externalId": "zZh3L16DjHk",
+      "sourceUrl": "https://www.youtube.com/watch?v=zZh3L16DjHk",
+      "contentTabs": [
+        "home",
+        "own"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "april",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 20,
+              "end": 25,
+              "text": "APRIL",
+              "source": "title"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "youtube__cFnENIGvkFs",
       "platform": "youtube",
       "platformId": "cFnENIGvkFs",
@@ -6761,41 +6761,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gidle-yuqi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 17,
-              "end": 19,
-              "text": "우기",
-              "source": "title"
-            },
-            {
-              "start": 45,
-              "end": 49,
-              "text": "YUQI",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "yuqi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 45,
+              "end": 49,
+              "text": "YUQI",
+              "source": "title"
+            },
+            {
               "start": 17,
               "end": 19,
               "text": "우기",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gidle-yuqi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 45,
               "end": 49,
               "text": "YUQI",
+              "source": "title"
+            },
+            {
+              "start": 17,
+              "end": 19,
+              "text": "우기",
               "source": "title"
             }
           ]
@@ -6807,15 +6807,9 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 39,
-              "end": 44,
-              "text": "I-DLE",
-              "source": "title"
-            },
-            {
-              "start": 9,
+              "start": 13,
               "end": 16,
-              "text": "(여자)아이들",
+              "text": "아이들",
               "source": "title"
             },
             {
@@ -6825,9 +6819,15 @@
               "source": "title"
             },
             {
-              "start": 13,
+              "start": 9,
               "end": 16,
-              "text": "아이들",
+              "text": "(여자)아이들",
+              "source": "title"
+            },
+            {
+              "start": 39,
+              "end": 44,
+              "text": "I-DLE",
               "source": "title"
             }
           ]
@@ -6978,55 +6978,7 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "마마무",
-              "source": "title"
-            },
-            {
-              "start": 53,
-              "end": 60,
-              "text": "MAMAMOO",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "hwasa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 89,
-              "end": 91,
-              "text": "화사",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "mamamoo-hwasa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 89,
-              "end": 91,
-              "text": "화사",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -7039,8 +6991,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "solar",
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -7110,14 +7062,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "wheein",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 92,
-              "end": 94,
-              "text": "휘인",
+              "start": 89,
+              "end": 91,
+              "text": "화사",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-hwasa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 89,
+              "end": 91,
+              "text": "화사",
               "source": "title"
             }
           ]
@@ -7132,6 +7098,40 @@
               "start": 92,
               "end": 94,
               "text": "휘인",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "wheein",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 92,
+              "end": 94,
+              "text": "휘인",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "마마무",
+              "source": "title"
+            },
+            {
+              "start": 53,
+              "end": 60,
+              "text": "MAMAMOO",
               "source": "title"
             }
           ]
@@ -7205,20 +7205,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-a15644dd7969fec5",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 46,
-              "end": 49,
-              "text": "백예린",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "weeekly-member-0a2f9dd400ad",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -7227,6 +7213,20 @@
               "start": 4,
               "end": 6,
               "text": "지한",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a15644dd7969fec5",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 46,
+              "end": 49,
+              "text": "백예린",
               "source": "title"
             }
           ]
@@ -7397,15 +7397,15 @@
           "reason": "everyday-name",
           "matches": [
             {
-              "start": 9,
-              "end": 12,
-              "text": "시크릿",
-              "source": "title"
-            },
-            {
               "start": 39,
               "end": 45,
               "text": "SECRET",
+              "source": "title"
+            },
+            {
+              "start": 9,
+              "end": 12,
+              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -7539,14 +7539,14 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "stayc",
+          "artistId": "blackpink",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 54,
-              "end": 58,
-              "text": "스테이씨",
+              "start": 5,
+              "end": 14,
+              "text": "BLACKPINK",
               "source": "title"
             }
           ]
@@ -7567,14 +7567,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "blackpink",
+          "artistId": "stayc",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 5,
-              "end": 14,
-              "text": "BLACKPINK",
+              "start": 54,
+              "end": 58,
+              "text": "스테이씨",
               "source": "title"
             }
           ]
@@ -7821,6 +7821,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 24,
+              "end": 27,
+              "text": "마마무",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-fdc550e2ca4dea99",
           "state": "needs_review",
@@ -7844,20 +7858,6 @@
               "start": 56,
               "end": 58,
               "text": "아야",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 24,
-              "end": 27,
-              "text": "마마무",
               "source": "title"
             }
           ]
