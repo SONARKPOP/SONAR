@@ -34,7 +34,7 @@
   "actualEndTime": "2023-08-30T09:31:50Z",
   "scheduledStartTime": "2023-08-30T09:00:00Z",
   "source": {
-    "collectedAt": "2026-11-18T19:19:05.141341Z",
+    "collectedAt": "2026-11-19T01:36:41.134520Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -77,14 +77,40 @@
     },
     {
       "artistType": "group",
-      "artistId": "csr",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "chaeyoung",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 37,
-          "end": 40,
-          "text": "첫사랑",
+          "start": 44,
+          "end": 46,
+          "text": "채영",
+          "source": "title"
+        },
+        {
+          "start": 63,
+          "end": 65,
+          "text": "채영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-06dc3162229035e7",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 44,
+          "end": 46,
+          "text": "채영",
+          "source": "title"
+        },
+        {
+          "start": 63,
+          "end": 65,
+          "text": "채영",
           "source": "title"
         }
       ]
@@ -131,40 +157,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "chaeyoung",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 44,
-          "end": 46,
-          "text": "채영",
-          "source": "title"
-        },
-        {
-          "start": 63,
-          "end": 65,
-          "text": "채영",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-06dc3162229035e7",
+      "artistId": "csr",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 44,
-          "end": 46,
-          "text": "채영",
-          "source": "title"
-        },
-        {
-          "start": 63,
-          "end": 65,
-          "text": "채영",
+          "start": 37,
+          "end": 40,
+          "text": "첫사랑",
           "source": "title"
         }
       ]

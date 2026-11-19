@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T19:19:48.410345Z",
+    "collectedAt": "2026-11-19T01:37:11.938338Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,10 +44,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a3f163a3e0377062",
+      "artistType": "group",
+      "artistId": "fromis9",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 28,
+          "text": "프로미스나인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a8e334984dff2ee2",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 17,
@@ -73,28 +87,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-a8e334984dff2ee2",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-a3f163a3e0377062",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 17,
           "end": 20,
           "text": "박지원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "fromis9",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 28,
-          "text": "프로미스나인",
           "source": "title"
         }
       ]

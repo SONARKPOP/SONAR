@@ -32,7 +32,7 @@
   "actualEndTime": "2020-06-18T10:05:37Z",
   "scheduledStartTime": "2020-06-18T10:00:00Z",
   "source": {
-    "collectedAt": "2026-11-18T19:20:39.480687Z",
+    "collectedAt": "2026-11-19T01:37:48.347466Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,29 +48,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 61,
-          "end": 65,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "izone",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 61,
-          "end": 65,
-          "text": "Swan",
+          "start": 32,
+          "end": 38,
+          "text": "IZ*ONE",
+          "source": "title"
+        },
+        {
+          "start": 1,
+          "end": 5,
+          "text": "아이즈원",
           "source": "title"
         }
       ]
@@ -91,20 +83,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "izone",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 32,
-          "end": 38,
-          "text": "IZ*ONE",
+          "start": 61,
+          "end": 65,
+          "text": "Swan",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 1,
-          "end": 5,
-          "text": "아이즈원",
+          "start": 61,
+          "end": 65,
+          "text": "Swan",
           "source": "title"
         }
       ]

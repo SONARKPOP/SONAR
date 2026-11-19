@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T19:17:59.657815Z",
+    "collectedAt": "2026-11-19T01:35:52.411297Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,6 +60,26 @@
     },
     {
       "artistType": "group",
+      "artistId": "hot-issue",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 30,
+          "text": "핫이슈",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 26,
+          "text": "HOT ISSUE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "blackpink",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -68,26 +88,6 @@
           "start": 35,
           "end": 44,
           "text": "BLACKPINK",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hot-issue",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 26,
-          "text": "HOT ISSUE",
-          "source": "title"
-        },
-        {
-          "start": 27,
-          "end": 30,
-          "text": "핫이슈",
           "source": "title"
         }
       ]

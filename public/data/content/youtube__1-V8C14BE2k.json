@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T19:17:59.339635Z",
+    "collectedAt": "2026-11-19T01:35:52.204109Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,15 +42,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-b2018bbbcbce6c41",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "illit",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "로하",
+          "start": 56,
+          "end": 61,
+          "text": "ILLIT",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 27,
+          "text": "아일릿",
           "source": "title"
         }
       ]
@@ -70,21 +76,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "illit",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-b2018bbbcbce6c41",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 56,
-          "end": 61,
-          "text": "ILLIT",
-          "source": "title"
-        },
-        {
-          "start": 24,
-          "end": 27,
-          "text": "아일릿",
+          "start": 0,
+          "end": 2,
+          "text": "로하",
           "source": "title"
         }
       ]

@@ -102,20 +102,34 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 23,
+              "end": 27,
+              "text": "KISS",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "tuide",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 10,
-              "end": 13,
-              "text": "튜이드",
-              "source": "title"
-            },
-            {
               "start": 30,
               "end": 35,
               "text": "TUIDE",
+              "source": "title"
+            },
+            {
+              "start": 10,
+              "end": 13,
+              "text": "튜이드",
               "source": "title"
             }
           ]
@@ -136,20 +150,6 @@
               "start": 14,
               "end": 17,
               "text": "엘레나",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 23,
-              "end": 27,
-              "text": "KISS",
               "source": "title"
             }
           ]
@@ -207,26 +207,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "tuide",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 10,
-              "end": 13,
-              "text": "튜이드",
-              "source": "title"
-            },
-            {
-              "start": 29,
-              "end": 34,
-              "text": "TUIDE",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -240,21 +220,21 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "tuide-seohee",
+          "artistType": "group",
+          "artistId": "tuide",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 14,
-              "end": 16,
-              "text": "서희",
+              "start": 29,
+              "end": 34,
+              "text": "TUIDE",
               "source": "title"
             },
             {
-              "start": 35,
-              "end": 41,
-              "text": "SEOHEE",
+              "start": 10,
+              "end": 13,
+              "text": "튜이드",
               "source": "title"
             }
           ]
@@ -266,15 +246,35 @@
           "reason": "shared-name",
           "matches": [
             {
+              "start": 35,
+              "end": 41,
+              "text": "SEOHEE",
+              "source": "title"
+            },
+            {
               "start": 14,
               "end": 16,
               "text": "서희",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "tuide-seohee",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 35,
               "end": 41,
               "text": "SEOHEE",
+              "source": "title"
+            },
+            {
+              "start": 14,
+              "end": 16,
+              "text": "서희",
               "source": "title"
             }
           ]

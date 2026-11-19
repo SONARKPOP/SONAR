@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T19:19:09.492477Z",
+    "collectedAt": "2026-11-19T01:36:44.602137Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "apink-jung-eun-ji",
+      "artistType": "group",
+      "artistId": "babymonster",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 39,
-          "end": 42,
-          "text": "정은지",
+          "start": 57,
+          "end": 63,
+          "text": "베이비몬스터",
+          "source": "title"
+        },
+        {
+          "start": 44,
+          "end": 55,
+          "text": "BABYMONSTER",
           "source": "title"
         }
       ]
@@ -74,21 +80,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "babymonster",
+      "artistType": "person",
+      "artistId": "apink-jung-eun-ji",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 57,
-          "end": 63,
-          "text": "베이비몬스터",
-          "source": "title"
-        },
-        {
-          "start": 44,
-          "end": 55,
-          "text": "BABYMONSTER",
+          "start": 39,
+          "end": 42,
+          "text": "정은지",
           "source": "title"
         }
       ]

@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T19:18:36.518204Z",
+    "collectedAt": "2026-11-19T01:36:21.004189Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -59,6 +59,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "x-in",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 60,
+          "end": 64,
+          "text": "X:IN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "secret-number",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -81,20 +95,6 @@
           "start": 33,
           "end": 39,
           "text": "SECRET",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "x-in",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 60,
-          "end": 64,
-          "text": "X:IN",
           "source": "title"
         }
       ]

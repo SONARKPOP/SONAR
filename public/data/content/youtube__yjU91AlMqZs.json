@@ -31,7 +31,7 @@
   "actualEndTime": "2024-10-30T04:52:00Z",
   "scheduledStartTime": "2024-10-30T04:00:00Z",
   "source": {
-    "collectedAt": "2026-11-18T19:21:05.520046Z",
+    "collectedAt": "2026-11-19T01:38:06.779578Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-5035c2dc85c0c21e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "aespa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 47,
-          "end": 48,
-          "text": "수",
+          "start": 24,
+          "end": 27,
+          "text": "에스파",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 33,
+          "text": "aespa",
           "source": "title"
         }
       ]
@@ -74,6 +80,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "person-5035c2dc85c0c21e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 47,
+          "end": 48,
+          "text": "수",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "aespa-karina",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -82,26 +102,6 @@
           "start": 15,
           "end": 18,
           "text": "카리나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "aespa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 24,
-          "end": 27,
-          "text": "에스파",
-          "source": "title"
-        },
-        {
-          "start": 28,
-          "end": 33,
-          "text": "aespa",
           "source": "title"
         }
       ]
