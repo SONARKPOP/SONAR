@@ -40,20 +40,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-a3d469a9e79693d5",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 56,
-              "end": 59,
-              "text": "김신영",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "blackpink",
           "state": "inferred",
@@ -74,41 +60,55 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "bp-lisa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 78,
-              "end": 82,
-              "text": "LISA",
-              "source": "title"
-            },
-            {
-              "start": 10,
-              "end": 12,
-              "text": "리사",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "lisa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 10,
+              "end": 12,
+              "text": "리사",
+              "source": "title"
+            },
+            {
               "start": 78,
               "end": 82,
               "text": "LISA",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "bp-lisa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 10,
               "end": 12,
               "text": "리사",
+              "source": "title"
+            },
+            {
+              "start": 78,
+              "end": 82,
+              "text": "LISA",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a3d469a9e79693d5",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 56,
+              "end": 59,
+              "text": "김신영",
               "source": "title"
             }
           ]
@@ -168,20 +168,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "blackpink",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 66,
-              "end": 75,
-              "text": "BLACKPINK",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "babymonster",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -190,6 +176,20 @@
               "start": 53,
               "end": 64,
               "text": "BABYMONSTER",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "blackpink",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 66,
+              "end": 75,
+              "text": "BLACKPINK",
               "source": "title"
             }
           ]
@@ -245,58 +245,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "bp-jisoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 32,
-              "end": 37,
-              "text": "JISOO",
-              "source": "title"
-            },
-            {
-              "start": 18,
-              "end": 20,
-              "text": "지수",
-              "source": "title"
-            },
-            {
-              "start": 28,
-              "end": 30,
-              "text": "지수",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "jisoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 32,
-              "end": 37,
-              "text": "JISOO",
-              "source": "title"
-            },
-            {
-              "start": 18,
-              "end": 20,
-              "text": "지수",
-              "source": "title"
-            },
-            {
-              "start": 28,
-              "end": 30,
-              "text": "지수",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-94eb4421c0847185",
           "state": "needs_review",
           "reason": "shared-name",
@@ -317,7 +265,59 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-c8945fd8178cf886",
+          "artistId": "bp-jisoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 18,
+              "end": 20,
+              "text": "지수",
+              "source": "title"
+            },
+            {
+              "start": 28,
+              "end": 30,
+              "text": "지수",
+              "source": "title"
+            },
+            {
+              "start": 32,
+              "end": 37,
+              "text": "JISOO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "jisoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 18,
+              "end": 20,
+              "text": "지수",
+              "source": "title"
+            },
+            {
+              "start": 28,
+              "end": 30,
+              "text": "지수",
+              "source": "title"
+            },
+            {
+              "start": 32,
+              "end": 37,
+              "text": "JISOO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-4442d3593b19b75a",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -337,7 +337,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-4442d3593b19b75a",
+          "artistId": "person-c8945fd8178cf886",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -566,20 +566,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "blackpink",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 72,
-              "end": 81,
-              "text": "BLACKPINK",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "meovv",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -588,6 +574,20 @@
               "start": 60,
               "end": 65,
               "text": "MEOVV",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "blackpink",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 72,
+              "end": 81,
+              "text": "BLACKPINK",
               "source": "title"
             }
           ]
