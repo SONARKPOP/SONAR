@@ -8,8 +8,7 @@
   "publishedAt": "2025-10-02T10:17:38Z",
   "groupIds": [
     "izna",
-    "min",
-    "miss-a"
+    "min"
   ],
   "memberIds": [
     "miss-a-min",
@@ -42,41 +41,21 @@
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-ad73a6c022a8838f",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 15,
-          "text": "방지민",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "izna",
+      "artistId": "min",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 35,
-          "end": 39,
-          "text": "izna",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 11,
-          "text": "이즈나",
+          "start": 49,
+          "end": 52,
+          "text": "MIN",
           "source": "title"
         }
       ]
@@ -97,14 +76,34 @@
     },
     {
       "artistType": "group",
-      "artistId": "min",
+      "artistId": "izna",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 49,
-          "end": 52,
-          "text": "MIN",
+          "start": 8,
+          "end": 11,
+          "text": "이즈나",
+          "source": "title"
+        },
+        {
+          "start": 35,
+          "end": 39,
+          "text": "izna",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ad73a6c022a8838f",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "방지민",
           "source": "title"
         }
       ]
