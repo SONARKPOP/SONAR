@@ -38,26 +38,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "kiss-of-life",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 41,
-              "end": 48,
-              "text": "키스오브라이프",
-              "source": "title"
-            },
-            {
-              "start": 62,
-              "end": 74,
-              "text": "KISS OF LIFE",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -66,6 +46,26 @@
               "start": 62,
               "end": 66,
               "text": "KISS",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kiss-of-life",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 62,
+              "end": 74,
+              "text": "KISS OF LIFE",
+              "source": "title"
+            },
+            {
+              "start": 41,
+              "end": 48,
+              "text": "키스오브라이프",
               "source": "title"
             }
           ]
@@ -122,26 +122,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "kiss-of-life",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 31,
-              "end": 38,
-              "text": "키스오브라이프",
-              "source": "title"
-            },
-            {
-              "start": 40,
-              "end": 52,
-              "text": "KISS OF LIFE",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -150,6 +130,26 @@
               "start": 40,
               "end": 44,
               "text": "KISS",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kiss-of-life",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 40,
+              "end": 52,
+              "text": "KISS OF LIFE",
+              "source": "title"
+            },
+            {
+              "start": 31,
+              "end": 38,
+              "text": "키스오브라이프",
               "source": "title"
             }
           ]
@@ -169,37 +169,42 @@
       "musicBroadcast": true
     },
     {
-      "id": "youtube__ugOiOaizAF0",
+      "id": "youtube__CeY38eEPGv4",
       "platform": "youtube",
-      "platformId": "ugOiOaizAF0",
+      "platformId": "CeY38eEPGv4",
       "demo": false,
-      "title": "(ENG)[MusicBank Interview Cam] 키스오브라이프 (KISS OF LIFE Interview) l @MusicBank KBS 260417",
-      "publishedAt": "2026-04-18T06:00:51Z",
+      "title": "The Weekend | 키스오브라이프 나띠&쥴리 [리무진서비스 가로ver.]",
+      "publishedAt": "2026-08-04T09:33:28Z",
       "groupIds": [
-        "kiss",
-        "kiss-of-life"
+        "kiss-of-life",
+        "natty"
       ],
-      "memberIds": [],
+      "memberIds": [
+        "kiss-of-life-member-272247fb290a",
+        "kiss-of-life-natty"
+      ],
       "channelId": "kbs-kpop",
       "channelName": "KBS Kpop",
-      "category": "external",
+      "category": "shorts",
       "subtypes": [
-        "기타"
+        "쇼츠"
       ],
       "tags": [
-        "기타",
+        "쇼츠",
         "외부 콘텐츠",
-        "인터뷰",
-        "음악방송"
+        "노래·퍼포먼스"
       ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/ugOiOaizAF0/hqdefault.jpg",
-      "durationLabel": "2m19s",
+      "format": "short",
+      "thumbnail": "https://i.ytimg.com/vi/CeY38eEPGv4/hqdefault.jpg",
+      "durationLabel": "1m15s",
       "contentTypes": [
         "external"
       ],
+      "programId": "kbs-kpop--lee-mujin-service",
+      "programName": "리무진서비스",
+      "externalType": "song",
       "memberTagging": {
-        "policy": "title-only-v1",
+        "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
       },
@@ -207,50 +212,71 @@
         {
           "artistType": "group",
           "artistId": "kiss-of-life",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 14,
+              "end": 21,
+              "text": "키스오브라이프",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "kiss-of-life-natty",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 31,
-              "end": 38,
-              "text": "키스오브라이프",
-              "source": "title"
-            },
-            {
-              "start": 40,
-              "end": 52,
-              "text": "KISS OF LIFE",
+              "start": 22,
+              "end": 24,
+              "text": "나띠",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "kiss",
+          "artistId": "natty",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 22,
+              "end": 24,
+              "text": "나띠",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "kiss-of-life-member-272247fb290a",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 40,
-              "end": 44,
-              "text": "KISS",
+              "start": 25,
+              "end": 27,
+              "text": "쥴리",
               "source": "title"
             }
           ]
         }
       ],
-      "externalId": "ugOiOaizAF0",
-      "sourceUrl": "https://www.youtube.com/watch?v=ugOiOaizAF0",
-      "externalType": "interview",
+      "externalId": "CeY38eEPGv4",
+      "sourceUrl": "https://www.youtube.com/watch?v=CeY38eEPGv4",
       "contentTabs": [
-        "broadcast",
+        "shorts",
         "external"
       ],
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": true
+      "musicBroadcast": false
     }
   ]
 }

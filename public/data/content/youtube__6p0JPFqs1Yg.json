@@ -7,8 +7,7 @@
   "description": "#한로로 #물음표",
   "publishedAt": "2026-11-07T08:00:06Z",
   "groupIds": [
-    "hanroro",
-    "ive"
+    "hanroro"
   ],
   "memberIds": [
     "ive-liz"
@@ -36,25 +35,11 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 4,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "ive-liz",
@@ -65,6 +50,20 @@
           "start": 6,
           "end": 8,
           "text": "리즈",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 1,
+          "end": 4,
+          "text": "IVE",
           "source": "title"
         }
       ]
