@@ -143,17 +143,45 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-82c8dfffcc8a320b",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 11,
+              "end": 14,
+              "text": "앨리스",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "alice",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 11,
+              "end": 14,
+              "text": "앨리스",
+              "source": "title"
+            },
+            {
               "start": 5,
               "end": 10,
               "text": "ALICE",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-9dda2eae88d9d10c",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
             {
               "start": 11,
               "end": 14,
@@ -186,34 +214,6 @@
               "start": 34,
               "end": 35,
               "text": "안",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-82c8dfffcc8a320b",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 11,
-              "end": 14,
-              "text": "앨리스",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-9dda2eae88d9d10c",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 11,
-              "end": 14,
-              "text": "앨리스",
               "source": "title"
             }
           ]
@@ -274,20 +274,14 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "bol4",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "xum",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
-              "start": 7,
-              "end": 11,
-              "text": "BOL4",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 6,
-              "text": "볼빨간사춘기",
+              "start": 74,
+              "end": 75,
+              "text": "썸",
               "source": "title"
             }
           ]
@@ -322,14 +316,20 @@
         },
         {
           "artistType": "group",
-          "artistId": "xum",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistId": "bol4",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 74,
-              "end": 75,
-              "text": "썸",
+              "start": 0,
+              "end": 6,
+              "text": "볼빨간사춘기",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 11,
+              "text": "BOL4",
               "source": "title"
             }
           ]
