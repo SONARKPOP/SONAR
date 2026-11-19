@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2026-10-27T03:00:27Z",
   "groupIds": [
-    "meovv",
     "tuide"
   ],
   "memberIds": [
@@ -37,21 +36,21 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "meovv",
+      "artistId": "tuide",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 12,
-          "end": 17,
-          "text": "MEOVV",
+          "start": 30,
+          "end": 35,
+          "text": "TUIDE",
           "source": "title"
         }
       ]
@@ -71,20 +70,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 30,
-          "end": 35,
-          "text": "TUIDE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "meovv-anna",
       "state": "inferred",
@@ -94,6 +79,20 @@
           "start": 19,
           "end": 23,
           "text": "ANNA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "meovv",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 12,
+          "end": 17,
+          "text": "MEOVV",
           "source": "title"
         }
       ]
