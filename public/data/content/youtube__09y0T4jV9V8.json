@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:35:50.487894Z",
+    "collectedAt": "2026-11-19T07:42:14.773622Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,41 +44,35 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 49,
+          "end": 51,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "gugudan-kim-sejeong",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 4,
-          "end": 15,
-          "text": "KIM SEJEONG",
-          "source": "title"
-        },
-        {
           "start": 0,
           "end": 3,
           "text": "김세정",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kim-sejeong",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
           "start": 4,
           "end": 15,
           "text": "KIM SEJEONG",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 3,
-          "text": "김세정",
           "source": "title"
         }
       ]
@@ -90,29 +84,35 @@
       "reason": "shared-name",
       "matches": [
         {
-          "start": 4,
-          "end": 15,
-          "text": "KIM SEJEONG",
-          "source": "title"
-        },
-        {
           "start": 0,
           "end": 3,
           "text": "김세정",
+          "source": "title"
+        },
+        {
+          "start": 4,
+          "end": 15,
+          "text": "KIM SEJEONG",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "kim-sejeong",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 49,
-          "end": 51,
-          "text": "키스",
+          "start": 0,
+          "end": 3,
+          "text": "김세정",
+          "source": "title"
+        },
+        {
+          "start": 4,
+          "end": 15,
+          "text": "KIM SEJEONG",
           "source": "title"
         }
       ]

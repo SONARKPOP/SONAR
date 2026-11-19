@@ -7,6 +7,7 @@
   "description": "#izna #이즈나 \n#BANGJEEMIN #방지민 \n#DUMB_HOT",
   "publishedAt": "2026-10-22T12:00:05Z",
   "groupIds": [
+    "ive",
     "izna"
   ],
   "memberIds": [
@@ -31,29 +32,15 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:35:51.171549Z",
+    "collectedAt": "2026-11-19T07:44:03.822221Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "ive-rei",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 21,
-          "end": 24,
-          "text": "REI",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "izna",
@@ -77,13 +64,27 @@
     {
       "artistType": "group",
       "artistId": "ive",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 16,
           "end": 19,
           "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-rei",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 24,
+          "text": "REI",
           "source": "title"
         }
       ]

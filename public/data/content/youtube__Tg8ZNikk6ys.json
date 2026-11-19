@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2026-11-02T09:30:32Z",
   "groupIds": [
-    "candy-shop",
     "x-in"
   ],
   "memberIds": [
@@ -34,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:35:03.612680Z",
+    "collectedAt": "2026-11-19T07:43:25.128418Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -45,14 +44,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "candy-shop",
+      "artistId": "x-in",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 74,
-          "end": 77,
-          "text": "캔디샵",
+          "start": 49,
+          "end": 51,
+          "text": "엑신",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-5035c2dc85c0c21e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 17,
+          "text": "수",
           "source": "title"
         }
       ]
@@ -79,34 +92,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-5035c2dc85c0c21e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 17,
-          "text": "수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-685346ec4ff8d72a",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 59,
-          "end": 61,
-          "text": "니즈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-89d3bb3a64660eb2",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -115,20 +100,6 @@
           "start": 12,
           "end": 14,
           "text": "소람",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "x-in",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 49,
-          "end": 51,
-          "text": "엑신",
           "source": "title"
         }
       ]
@@ -157,6 +128,34 @@
           "start": 16,
           "end": 18,
           "text": "수이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "candy-shop",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 74,
+          "end": 77,
+          "text": "캔디샵",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-685346ec4ff8d72a",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 59,
+          "end": 61,
+          "text": "니즈",
           "source": "title"
         }
       ]

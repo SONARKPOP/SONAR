@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:36:02.489368Z",
+    "collectedAt": "2026-11-19T07:42:28.002209Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,7 +43,21 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "yerin",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 34,
+          "end": 36,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-936fea5dbf4b0c14",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -98,8 +112,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-936fea5dbf4b0c14",
+      "artistType": "group",
+      "artistId": "yerin",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -121,20 +135,6 @@
           "start": 10,
           "end": 12,
           "text": "예린",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 34,
-          "end": 36,
-          "text": "키스",
           "source": "title"
         }
       ]

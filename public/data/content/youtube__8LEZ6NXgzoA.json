@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:36:08.262585Z",
+    "collectedAt": "2026-11-19T07:42:34.135801Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "iu",
+      "artistId": "ive",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 36,
-          "end": 38,
-          "text": "IU",
+          "start": 41,
+          "end": 44,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "weeekly",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 58,
+          "end": 65,
+          "text": "Weeekly",
           "source": "title"
         }
       ]
@@ -80,28 +94,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "weeekly",
+      "artistId": "iu",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 58,
-          "end": 65,
-          "text": "Weeekly",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 41,
-          "end": 44,
-          "text": "IVE",
+          "start": 36,
+          "end": 38,
+          "text": "IU",
           "source": "title"
         }
       ]

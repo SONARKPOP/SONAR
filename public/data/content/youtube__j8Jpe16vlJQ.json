@@ -33,15 +33,29 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:35:52.180099Z",
+    "collectedAt": "2026-11-19T07:44:04.635007Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-24959fea7e1e92fb",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 60,
+          "end": 62,
+          "text": "이지",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "wooah",
@@ -58,20 +72,6 @@
           "start": 35,
           "end": 40,
           "text": "wooah",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-24959fea7e1e92fb",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 60,
-          "end": 62,
-          "text": "이지",
           "source": "title"
         }
       ]

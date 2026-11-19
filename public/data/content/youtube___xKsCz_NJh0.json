@@ -32,7 +32,7 @@
   "actualEndTime": "2026-03-10T09:35:53Z",
   "scheduledStartTime": "2026-03-10T09:00:00Z",
   "source": {
-    "collectedAt": "2026-11-19T01:37:11.549440Z",
+    "collectedAt": "2026-11-19T07:43:42.190271Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "atheart",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 28,
+          "end": 35,
+          "text": "AtHeart",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 19,
+          "text": "앳하트",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "seohyun",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 23,
+          "end": 25,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "girls-generation-seohyun",
@@ -71,40 +105,6 @@
           "start": 23,
           "end": 25,
           "text": "서현",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "seohyun",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "서현",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "atheart",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 19,
-          "text": "앳하트",
-          "source": "title"
-        },
-        {
-          "start": 28,
-          "end": 35,
-          "text": "AtHeart",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:37:22.407290Z",
+    "collectedAt": "2026-11-19T07:43:52.779074Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,11 +45,31 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-6af77dba6c567f44",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "meovv",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 17,
+          "end": 22,
+          "text": "MEOVV",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "meovv-ella",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 27,
+          "text": "ELLA",
+          "source": "title"
+        },
         {
           "start": 28,
           "end": 30,
@@ -74,20 +94,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "meovv-ella",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-6af77dba6c567f44",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 28,
           "end": 30,
           "text": "엘라",
-          "source": "title"
-        },
-        {
-          "start": 23,
-          "end": 27,
-          "text": "ELLA",
           "source": "title"
         }
       ]
@@ -102,20 +116,6 @@
           "start": 28,
           "end": 30,
           "text": "엘라",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "meovv",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 22,
-          "text": "MEOVV",
           "source": "title"
         }
       ]

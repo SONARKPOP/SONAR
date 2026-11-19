@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:38:06.001976Z",
+    "collectedAt": "2026-11-19T07:44:41.664196Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,48 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yuri",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 31,
+          "text": "Yuri",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-yuri",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 31,
+          "text": "Yuri",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "izone-jo-yuri",
@@ -91,20 +133,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 43,
-          "end": 49,
-          "text": "Secret",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "swan",
       "state": "inferred",
       "reason": "unambiguous-title-name",
@@ -133,42 +161,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "yuri",
+      "artistId": "secret",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 27,
-          "end": 31,
-          "text": "Yuri",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "girls-generation-yuri",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 27,
-          "end": 31,
-          "text": "Yuri",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
+          "start": 43,
+          "end": 49,
+          "text": "Secret",
           "source": "title"
         }
       ]

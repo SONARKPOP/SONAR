@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:36:09.636252Z",
+    "collectedAt": "2026-11-19T07:42:35.628498Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,7 +43,21 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "joy",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-3fe6e94556a877e5",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -70,8 +84,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-3fe6e94556a877e5",
+      "artistType": "group",
+      "artistId": "joy",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -79,20 +93,6 @@
           "start": 29,
           "end": 31,
           "text": "조이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "키스",
           "source": "title"
         }
       ]

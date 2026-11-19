@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:37:20.460500Z",
+    "collectedAt": "2026-11-19T07:43:51.465599Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -64,14 +64,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "gidle-miyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 6,
-          "end": 7,
-          "text": "안",
+          "start": 49,
+          "end": 55,
+          "text": "miyeon",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 47,
+          "text": "미연",
           "source": "title"
         }
       ]
@@ -83,35 +89,29 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 45,
-          "end": 47,
-          "text": "미연",
-          "source": "title"
-        },
-        {
           "start": 49,
           "end": 55,
           "text": "miyeon",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 47,
+          "text": "미연",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "gidle-miyeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 45,
-          "end": 47,
-          "text": "미연",
-          "source": "title"
-        },
-        {
-          "start": 49,
-          "end": 55,
-          "text": "miyeon",
+          "start": 6,
+          "end": 7,
+          "text": "안",
           "source": "title"
         }
       ]

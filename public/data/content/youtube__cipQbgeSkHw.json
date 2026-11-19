@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:37:18.065918Z",
+    "collectedAt": "2026-11-19T07:43:48.901860Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,8 +46,22 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "gfriend-yuju",
+      "artistType": "group",
+      "artistId": "gfriend",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 24,
+          "text": "GFRIEND",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yuju",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -66,8 +80,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yuju",
+      "artistType": "person",
+      "artistId": "gfriend-yuju",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -95,20 +109,6 @@
           "start": 30,
           "end": 32,
           "text": "유주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gfriend",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 24,
-          "text": "GFRIEND",
           "source": "title"
         }
       ]

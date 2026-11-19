@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:36:43.963437Z",
+    "collectedAt": "2026-11-19T07:43:12.448937Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,8 +44,42 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "cherry-bullet",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 9,
+          "text": "체리블렛",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 49,
+          "text": "Cherry Bullet",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-ef771f423ffec044",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "지원",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-4c50c11b539c8ae2",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -95,40 +129,6 @@
           "start": 10,
           "end": 12,
           "text": "지원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-4c50c11b539c8ae2",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 10,
-          "end": 12,
-          "text": "지원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "cherry-bullet",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 36,
-          "end": 49,
-          "text": "Cherry Bullet",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 9,
-          "text": "체리블렛",
           "source": "title"
         }
       ]

@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:37:37.901958Z",
+    "collectedAt": "2026-11-19T07:44:10.125495Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 46,
+          "end": 48,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "itzy-member-608992372543",
@@ -61,15 +75,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-8b4343714e0c63b6",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 9,
-          "end": 11,
-          "text": "예지",
+          "start": 5,
+          "end": 7,
+          "text": "있지",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 4,
+          "text": "ITZY",
           "source": "title"
         }
       ]
@@ -145,35 +165,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-8b4343714e0c63b6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "있지",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 4,
-          "text": "ITZY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 46,
-          "end": 48,
-          "text": "키스",
+          "start": 9,
+          "end": 11,
+          "text": "예지",
           "source": "title"
         }
       ]

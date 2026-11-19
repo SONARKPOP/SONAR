@@ -33,29 +33,15 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:34:46.730489Z",
+    "collectedAt": "2026-11-19T07:43:10.286152Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "tuide-seah",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 37,
-          "end": 41,
-          "text": "SEAH",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "tuide",
@@ -80,6 +66,20 @@
           "start": 12,
           "end": 17,
           "text": "MEOVV",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tuide-seah",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 37,
+          "end": 41,
+          "text": "SEAH",
           "source": "title"
         }
       ]

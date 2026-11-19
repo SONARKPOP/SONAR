@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:37:23.758686Z",
+    "collectedAt": "2026-11-19T07:43:54.040563Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,20 +44,34 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 39,
+          "end": 41,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "chuu",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 8,
-          "end": 9,
-          "text": "츄",
-          "source": "title"
-        },
-        {
           "start": 10,
           "end": 14,
           "text": "CHUU",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 9,
+          "text": "츄",
           "source": "title"
         }
       ]
@@ -69,29 +83,15 @@
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 8,
-          "end": 9,
-          "text": "츄",
-          "source": "title"
-        },
-        {
           "start": 10,
           "end": 14,
           "text": "CHUU",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 39,
-          "end": 41,
-          "text": "키스",
+          "start": 8,
+          "end": 9,
+          "text": "츄",
           "source": "title"
         }
       ]

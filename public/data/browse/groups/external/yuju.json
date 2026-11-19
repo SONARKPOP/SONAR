@@ -38,20 +38,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gfriend-yuju",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 16,
-              "end": 20,
-              "text": "YUJU",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "yuju",
           "state": "inferred",
@@ -64,7 +50,27 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gfriend-yuju",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 16,
+              "end": 20,
+              "text": "YUJU",
+              "source": "title"
+            }
+          ]
         }
+      ],
+      "careerGroupIds": [
+        "gfriend"
+      ],
+      "displayCareerGroupIds": [
+        "gfriend"
       ],
       "externalId": "wrDB7d_zwww",
       "sourceUrl": "https://www.youtube.com/watch?v=wrDB7d_zwww",
@@ -76,13 +82,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "gfriend"
-      ],
-      "displayCareerGroupIds": [
-        "gfriend"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__7KYbLA71BP0",
@@ -123,8 +123,22 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gfriend-yuju",
+          "artistType": "group",
+          "artistId": "gfriend",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 17,
+              "end": 24,
+              "text": "GFRIEND",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yuju",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -143,8 +157,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yuju",
+          "artistType": "person",
+          "artistId": "gfriend-yuju",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -172,20 +186,6 @@
               "start": 30,
               "end": 32,
               "text": "유주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gfriend",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 17,
-              "end": 24,
-              "text": "GFRIEND",
               "source": "title"
             }
           ]
@@ -248,80 +248,30 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-a62f6751637129dd",
+          "artistType": "group",
+          "artistId": "gfriend",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 42,
-              "end": 44,
-              "text": "은하",
+              "start": 0,
+              "end": 4,
+              "text": "여자친구",
+              "source": "title"
+            },
+            {
+              "start": 5,
+              "end": 12,
+              "text": "GFRIEND",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "gfriend-yuju",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 45,
-              "end": 47,
-              "text": "유주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-f07a58ca3f31f17c",
+          "artistId": "person-936fea5dbf4b0c14",
           "state": "needs_review",
           "reason": "shared-name",
-          "matches": [
-            {
-              "start": 45,
-              "end": 47,
-              "text": "유주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yuju",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 45,
-              "end": 47,
-              "text": "유주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-a1479c2cc95e8b6a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 36,
-              "end": 38,
-              "text": "소원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yerin",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 39,
@@ -374,10 +324,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-936fea5dbf4b0c14",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "yerin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 39,
@@ -397,6 +347,34 @@
               "start": 39,
               "end": 41,
               "text": "예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a62f6751637129dd",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "은하",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a1479c2cc95e8b6a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 36,
+              "end": 38,
+              "text": "소원",
               "source": "title"
             }
           ]
@@ -431,20 +409,42 @@
         },
         {
           "artistType": "group",
-          "artistId": "gfriend",
+          "artistId": "yuju",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "여자친구",
+              "start": 45,
+              "end": 47,
+              "text": "유주",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gfriend-yuju",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
-              "start": 5,
-              "end": 12,
-              "text": "GFRIEND",
+              "start": 45,
+              "end": 47,
+              "text": "유주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-f07a58ca3f31f17c",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 45,
+              "end": 47,
+              "text": "유주",
               "source": "title"
             }
           ]

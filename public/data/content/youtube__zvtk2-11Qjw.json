@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:38:09.730602Z",
+    "collectedAt": "2026-11-19T07:44:45.120777Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 19,
-          "end": 20,
-          "text": "S",
+          "start": 41,
+          "end": 43,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lee-chae-yeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "이채연",
           "source": "title"
         }
       ]
@@ -74,28 +88,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "lee-chae-yeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 10,
-          "end": 13,
-          "text": "이채연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 41,
-          "end": 43,
-          "text": "키스",
+          "start": 19,
+          "end": 20,
+          "text": "S",
           "source": "title"
         }
       ]

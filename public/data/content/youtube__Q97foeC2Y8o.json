@@ -33,15 +33,29 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-18T13:34:54.074682Z",
+    "collectedAt": "2026-11-19T07:43:16.901859Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "x-in",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 42,
+          "text": "엑신",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "ichillin",
@@ -66,20 +80,6 @@
           "start": 75,
           "end": 77,
           "text": "이지",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "x-in",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 40,
-          "end": 42,
-          "text": "엑신",
           "source": "title"
         }
       ]

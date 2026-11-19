@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:36:39.263932Z",
+    "collectedAt": "2026-11-19T07:43:07.400497Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,20 +47,34 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 48,
+          "end": 50,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "cignature",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 15,
-          "end": 24,
-          "text": "cignature",
-          "source": "title"
-        },
-        {
           "start": 10,
           "end": 14,
           "text": "시그니처",
+          "source": "title"
+        },
+        {
+          "start": 15,
+          "end": 24,
+          "text": "cignature",
           "source": "title"
         }
       ]
@@ -75,20 +89,6 @@
           "start": 27,
           "end": 30,
           "text": "오로라",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 48,
-          "end": 50,
-          "text": "키스",
           "source": "title"
         }
       ]

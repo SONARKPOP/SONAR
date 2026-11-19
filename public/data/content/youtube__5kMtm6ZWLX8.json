@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:36:02.197050Z",
+    "collectedAt": "2026-11-19T07:42:27.708770Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,34 +43,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 9,
-          "end": 15,
-          "text": "SECRET",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "secret-number",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 9,
-          "end": 22,
-          "text": "SECRET NUMBER",
-          "source": "title"
-        },
-        {
           "start": 23,
           "end": 28,
           "text": "시크릿넘버",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 22,
+          "text": "SECRET NUMBER",
           "source": "title"
         }
       ]
@@ -85,6 +71,20 @@
           "start": 37,
           "end": 45,
           "text": "Saturday",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 9,
+          "end": 15,
+          "text": "SECRET",
           "source": "title"
         }
       ]

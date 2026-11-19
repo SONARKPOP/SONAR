@@ -32,7 +32,7 @@
   "actualEndTime": "2025-08-21T14:55:32Z",
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:37:31.656506Z",
+    "collectedAt": "2026-11-19T07:44:03.898140Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,9 +47,37 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "joy",
+      "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "red-velvet",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 28,
+          "end": 32,
+          "text": "레드벨벳",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-3fe6e94556a877e5",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 33,
@@ -74,43 +102,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-3fe6e94556a877e5",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "joy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 33,
           "end": 35,
           "text": "조이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "red-velvet",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 28,
-          "end": 32,
-          "text": "레드벨벳",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "키스",
           "source": "title"
         }
       ]

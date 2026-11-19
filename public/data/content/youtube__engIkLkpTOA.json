@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:37:23.081460Z",
+    "collectedAt": "2026-11-19T07:43:53.356197Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-bdc924de3f709d10",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 47,
+          "end": 49,
+          "text": "유키",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-3f5fd983e1a7655d",
@@ -76,20 +90,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-bdc924de3f709d10",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 47,
-          "end": 49,
-          "text": "유키",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-67584eb9ce5a161c",
       "state": "needs_review",
       "reason": "shared-name",
@@ -104,14 +104,26 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "purple-kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 25,
+          "start": 18,
           "end": 29,
-          "text": "KISS",
+          "text": "PURPLE KISS",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 16,
+          "text": "퍼플키스",
+          "source": "title"
+        },
+        {
+          "start": 64,
+          "end": 68,
+          "text": "퍼플키스",
           "source": "title"
         }
       ]
@@ -132,26 +144,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "purple-kiss",
+      "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 12,
-          "end": 16,
-          "text": "퍼플키스",
-          "source": "title"
-        },
-        {
-          "start": 64,
-          "end": 68,
-          "text": "퍼플키스",
-          "source": "title"
-        },
-        {
-          "start": 18,
+          "start": 25,
           "end": 29,
-          "text": "PURPLE KISS",
+          "text": "KISS",
           "source": "title"
         }
       ]

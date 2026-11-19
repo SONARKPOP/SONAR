@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:35:52.704251Z",
+    "collectedAt": "2026-11-19T07:42:17.725976Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-8b4343714e0c63b6",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "예지",
+          "start": 52,
+          "end": 56,
+          "text": "ITZY",
+          "source": "title"
+        },
+        {
+          "start": 48,
+          "end": 50,
+          "text": "있지",
           "source": "title"
         }
       ]
@@ -128,21 +134,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-8b4343714e0c63b6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 52,
-          "end": 56,
-          "text": "ITZY",
-          "source": "title"
-        },
-        {
-          "start": 48,
-          "end": 50,
-          "text": "있지",
+          "start": 0,
+          "end": 2,
+          "text": "예지",
           "source": "title"
         }
       ]

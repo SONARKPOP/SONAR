@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T01:36:57.015907Z",
+    "collectedAt": "2026-11-19T07:43:27.225545Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -67,14 +67,34 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-8b4343714e0c63b6",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "itzy-member-7278cba408bf",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 52,
+          "end": 56,
+          "text": "YEJI",
+          "source": "title"
+        },
         {
           "start": 67,
           "end": 69,
           "text": "예지",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 47,
+          "end": 51,
+          "text": "ITZY",
           "source": "title"
         }
       ]
@@ -109,26 +129,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "itzy-member-7278cba408bf",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 67,
-          "end": 69,
-          "text": "예지",
-          "source": "title"
-        },
-        {
-          "start": 52,
-          "end": 56,
-          "text": "YEJI",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-7b9762369239d782",
       "state": "needs_review",
       "reason": "shared-name",
@@ -156,15 +156,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-8b4343714e0c63b6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 47,
-          "end": 51,
-          "text": "ITZY",
+          "start": 67,
+          "end": 69,
+          "text": "예지",
           "source": "title"
         }
       ]
