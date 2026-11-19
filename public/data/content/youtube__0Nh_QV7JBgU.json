@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:38:06.478997Z",
+    "collectedAt": "2026-11-19T19:21:09.281177Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,44 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "bp-rose",
+      "artistType": "group",
+      "artistId": "billlie",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 69,
+          "end": 71,
+          "text": "빌리",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 67,
+          "text": "Billlie",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "billlie-tsuki",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 29,
+          "text": "츠키",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 16,
@@ -61,10 +95,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "bp-rose",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 16,
@@ -98,40 +132,6 @@
           "start": 55,
           "end": 58,
           "text": "최유정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "billlie",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 69,
-          "end": 71,
-          "text": "빌리",
-          "source": "title"
-        },
-        {
-          "start": 60,
-          "end": 67,
-          "text": "Billlie",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "billlie-tsuki",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 27,
-          "end": 29,
-          "text": "츠키",
           "source": "title"
         }
       ]

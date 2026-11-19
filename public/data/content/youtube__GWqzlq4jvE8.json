@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:38:59.870931Z",
+    "collectedAt": "2026-11-19T19:21:50.870604Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,41 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-25dff8797c83a601",
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "리센느",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 19,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 67,
+          "end": 74,
+          "text": "RESCENE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 49,
-          "end": 50,
-          "text": "원",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]
@@ -87,41 +113,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
+      "artistType": "person",
+      "artistId": "person-25dff8797c83a601",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 4,
-          "end": 5,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 19,
-          "text": "RESCENE",
-          "source": "title"
-        },
-        {
-          "start": 67,
-          "end": 74,
-          "text": "RESCENE",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 23,
-          "text": "리센느",
+          "start": 49,
+          "end": 50,
+          "text": "원",
           "source": "title"
         }
       ]

@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:41:21.990728Z",
+    "collectedAt": "2026-11-19T19:23:48.630926Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,10 +45,30 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "akmu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "악뮤",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "iu",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
+        {
+          "start": 59,
+          "end": 61,
+          "text": "IU",
+          "source": "title"
+        },
         {
           "start": 0,
           "end": 3,
@@ -59,26 +79,6 @@
           "start": 54,
           "end": 57,
           "text": "아이유",
-          "source": "title"
-        },
-        {
-          "start": 59,
-          "end": 61,
-          "text": "IU",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "akmu",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 10,
-          "end": 12,
-          "text": "악뮤",
           "source": "title"
         }
       ]

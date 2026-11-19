@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:39:27.959749Z",
+    "collectedAt": "2026-11-19T19:22:13.818586Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,9 +46,43 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-845f9828c743c539",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "rescene-minami",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 44,
+          "end": 47,
+          "text": "미나미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 7,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 12,
+          "text": "리센느",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "rescene-zena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 41,
@@ -74,9 +108,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-zena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-845f9828c743c539",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 41,
@@ -96,40 +130,6 @@
           "start": 41,
           "end": 43,
           "text": "제나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "rescene-minami",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 44,
-          "end": 47,
-          "text": "미나미",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 9,
-          "end": 12,
-          "text": "리센느",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 7,
-          "text": "RESCENE",
           "source": "title"
         }
       ]

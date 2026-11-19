@@ -8,6 +8,7 @@
   "publishedAt": "2023-07-07T08:30:00Z",
   "groupIds": [
     "kiss",
+    "kiss-of-life",
     "natty"
   ],
   "memberIds": [
@@ -33,32 +34,18 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:38:10.725693Z",
+    "collectedAt": "2026-11-19T19:21:12.720154Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "kiss-of-life-member-272247fb290a",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 35,
-          "end": 37,
-          "text": "쥴리",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "kiss",
@@ -94,6 +81,20 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 82,
+          "end": 84,
+          "text": "나띠",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "kiss-of-life-natty",
       "state": "inferred",
@@ -108,15 +109,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "natty",
+      "artistType": "person",
+      "artistId": "kiss-of-life-member-272247fb290a",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 82,
-          "end": 84,
-          "text": "나띠",
+          "start": 35,
+          "end": 37,
+          "text": "쥴리",
           "source": "title"
         }
       ]

@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:38:39.471890Z",
+    "collectedAt": "2026-11-19T19:21:35.050986Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "artms",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 1,
-          "text": "안",
+          "start": 29,
+          "end": 34,
+          "text": "ARTMS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "artms-heejin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 35,
+          "end": 37,
+          "text": "희진",
           "source": "title"
         }
       ]
@@ -89,20 +103,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "artms-heejin",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 35,
-          "end": 37,
-          "text": "희진",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "loona-heejin",
       "state": "needs_review",
       "reason": "shared-name",
@@ -116,22 +116,22 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "artms",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 29,
-          "end": 34,
-          "text": "ARTMS",
+          "start": 0,
+          "end": 1,
+          "text": "안",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "person-ccc452dc9f5e19ed",
+      "artistId": "person-bdf64d614e71b79b",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -145,7 +145,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-bdf64d614e71b79b",
+      "artistId": "person-ccc452dc9f5e19ed",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [

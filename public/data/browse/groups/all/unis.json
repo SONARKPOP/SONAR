@@ -208,11 +208,17 @@
       ],
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-9997262542575782",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "unis",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
+            {
+              "start": 20,
+              "end": 24,
+              "text": "UNIS",
+              "source": "title"
+            },
             {
               "start": 26,
               "end": 29,
@@ -222,21 +228,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "unis",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-9997262542575782",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 26,
               "end": 29,
               "text": "유니스",
-              "source": "title"
-            },
-            {
-              "start": 20,
-              "end": 24,
-              "text": "UNIS",
               "source": "title"
             }
           ]

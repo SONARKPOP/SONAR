@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:41:00.431700Z",
+    "collectedAt": "2026-11-19T19:23:27.880908Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,10 +44,30 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-507e18325fa70402",
+      "artistType": "group",
+      "artistId": "wjsn",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 9,
+          "text": "우주소녀",
+          "source": "title"
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "text": "WJSN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a62ad8bf482db100",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 10,
@@ -73,34 +93,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-a62ad8bf482db100",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-507e18325fa70402",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 10,
           "end": 12,
           "text": "여름",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wjsn",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 9,
-          "text": "우주소녀",
-          "source": "title"
-        },
-        {
-          "start": 26,
-          "end": 30,
-          "text": "WJSN",
           "source": "title"
         }
       ]

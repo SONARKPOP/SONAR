@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:40:30.154885Z",
+    "collectedAt": "2026-11-19T19:23:01.639152Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -65,10 +65,24 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-8defe17b9cba6d30",
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "s",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c622d120b6071959",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 51,
@@ -94,28 +108,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c622d120b6071959",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-8defe17b9cba6d30",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 51,
           "end": 53,
           "text": "지윤",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 4,
-          "end": 5,
-          "text": "s",
           "source": "title"
         }
       ]

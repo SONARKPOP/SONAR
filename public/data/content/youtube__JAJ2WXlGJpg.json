@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:39:08.311260Z",
+    "collectedAt": "2026-11-19T19:21:57.817446Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,34 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 35,
+          "text": "SECRET NUMBER",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 28,
+          "text": "SECRET",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "mimiirose",
@@ -67,34 +95,6 @@
           "start": 45,
           "end": 54,
           "text": "BLACKSWAN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 28,
-          "text": "SECRET",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 35,
-          "text": "SECRET NUMBER",
           "source": "title"
         }
       ]

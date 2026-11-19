@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:38:17.309258Z",
+    "collectedAt": "2026-11-19T19:21:17.415393Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "bp-jisoo",
+      "artistType": "group",
+      "artistId": "illit",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 44,
-          "end": 49,
-          "text": "JISOO",
+          "start": 7,
+          "end": 10,
+          "text": "아일릿",
+          "source": "title"
+        },
+        {
+          "start": 69,
+          "end": 74,
+          "text": "ILLIT",
           "source": "title"
         }
       ]
@@ -75,21 +81,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "illit",
+      "artistType": "person",
+      "artistId": "bp-jisoo",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 7,
-          "end": 10,
-          "text": "아일릿",
-          "source": "title"
-        },
-        {
-          "start": 69,
-          "end": 74,
-          "text": "ILLIT",
+          "start": 44,
+          "end": 49,
+          "text": "JISOO",
           "source": "title"
         }
       ]

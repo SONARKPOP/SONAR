@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:41:30.908500Z",
+    "collectedAt": "2026-11-19T19:23:57.645216Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,11 +45,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-9997262542575782",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "unis",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 8,
+          "end": 12,
+          "text": "UNIS",
+          "source": "title"
+        },
         {
           "start": 13,
           "end": 16,
@@ -59,21 +65,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "unis",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-9997262542575782",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 13,
           "end": 16,
           "text": "유니스",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 12,
-          "text": "UNIS",
           "source": "title"
         }
       ]

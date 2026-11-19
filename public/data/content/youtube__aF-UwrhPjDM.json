@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:40:08.504762Z",
+    "collectedAt": "2026-11-19T19:22:44.757701Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 41,
+          "end": 45,
+          "text": "오마이걸",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-6775f1fd651e6b2d",
@@ -74,26 +88,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "sistar-hyolyn",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 20,
-          "text": "HYOLYN",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 12,
-          "text": "효린",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "hyolyn",
       "state": "inferred",
@@ -114,15 +108,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
+      "artistType": "person",
+      "artistId": "sistar-hyolyn",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 41,
-          "end": 45,
-          "text": "오마이걸",
+          "start": 14,
+          "end": 20,
+          "text": "HYOLYN",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 12,
+          "text": "효린",
           "source": "title"
         }
       ]

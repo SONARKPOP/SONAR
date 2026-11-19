@@ -30,7 +30,7 @@
   "actualEndTime": "2021-06-26T08:07:26Z",
   "scheduledStartTime": "2021-06-26T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-19T13:39:27.242231Z",
+    "collectedAt": "2026-11-19T19:22:13.242898Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,8 +44,42 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "tri-be",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 16,
+          "text": "TRI.BE",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 9,
+          "text": "트라이비",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 82,
+          "end": 83,
+          "text": "s",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-507e18325fa70402",
+      "artistId": "person-a62ad8bf482db100",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -73,7 +107,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-a62ad8bf482db100",
+      "artistId": "person-507e18325fa70402",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -81,40 +115,6 @@
           "start": 71,
           "end": 73,
           "text": "여름",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 82,
-          "end": 83,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tri-be",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 9,
-          "text": "트라이비",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 16,
-          "text": "TRI.BE",
           "source": "title"
         }
       ]

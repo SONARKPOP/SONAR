@@ -38,7 +38,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:39:15.695128Z",
+    "collectedAt": "2026-11-19T19:22:03.939205Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -53,6 +53,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 41,
+          "end": 44,
+          "text": "리센느",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "badvillain",
@@ -110,10 +124,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jeong-ye-in",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "lovelyz-jeong-ye-in",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 27,
@@ -124,10 +138,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "lovelyz-jeong-ye-in",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "jeong-ye-in",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 27,
@@ -175,20 +189,6 @@
           "start": 32,
           "end": 35,
           "text": "유지애",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 41,
-          "end": 44,
-          "text": "리센느",
           "source": "title"
         }
       ]

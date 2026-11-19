@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:40:10.515620Z",
+    "collectedAt": "2026-11-19T19:22:46.259127Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "bp-jisoo",
+      "artistType": "group",
+      "artistId": "illit",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 45,
-          "end": 50,
-          "text": "JISOO",
+          "start": 8,
+          "end": 11,
+          "text": "아일릿",
+          "source": "title"
+        },
+        {
+          "start": 70,
+          "end": 75,
+          "text": "ILLIT",
           "source": "title"
         }
       ]
@@ -76,14 +82,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "girls-generation-yoona",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "bp-jisoo",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "윤아",
+          "start": 45,
+          "end": 50,
+          "text": "JISOO",
           "source": "title"
         }
       ]
@@ -117,21 +123,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "illit",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "girls-generation-yoona",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 8,
-          "end": 11,
-          "text": "아일릿",
-          "source": "title"
-        },
-        {
-          "start": 70,
-          "end": 75,
-          "text": "ILLIT",
+          "start": 12,
+          "end": 14,
+          "text": "윤아",
           "source": "title"
         }
       ]

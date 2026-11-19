@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:40:36.498051Z",
+    "collectedAt": "2026-11-19T19:23:06.271514Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-4a1008c1ee4010af",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "lesserafim",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 16,
-          "end": 19,
-          "text": "김채원",
+          "start": 11,
+          "end": 15,
+          "text": "르세라핌",
+          "source": "title"
+        },
+        {
+          "start": 38,
+          "end": 49,
+          "text": "LE SSERAFIM",
           "source": "title"
         }
       ]
@@ -59,20 +65,6 @@
     {
       "artistType": "person",
       "artistId": "person-fde141675e2b215a",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 19,
-          "text": "김채원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "lsf-chaewon",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -113,21 +105,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lesserafim",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "lsf-chaewon",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 11,
-          "end": 15,
-          "text": "르세라핌",
+          "start": 16,
+          "end": 19,
+          "text": "김채원",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-4a1008c1ee4010af",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 38,
-          "end": 49,
-          "text": "LE SSERAFIM",
+          "start": 16,
+          "end": 19,
+          "text": "김채원",
           "source": "title"
         }
       ]

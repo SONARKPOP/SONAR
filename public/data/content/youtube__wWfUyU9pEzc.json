@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:41:23.931505Z",
+    "collectedAt": "2026-11-19T19:23:50.532950Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,20 +49,6 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 68,
-          "end": 79,
-          "text": "SAY MY NAME",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "baby-dont-cry",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -77,9 +63,23 @@
     },
     {
       "artistType": "group",
-      "artistId": "jennie",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 68,
+          "end": 79,
+          "text": "SAY MY NAME",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "bp-jennie",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 0,
@@ -96,10 +96,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "bp-jennie",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "jennie",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 0,

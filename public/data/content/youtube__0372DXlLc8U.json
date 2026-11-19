@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:38:05.560199Z",
+    "collectedAt": "2026-11-19T19:21:08.596335Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,15 +60,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "aespa-karina",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 20,
-          "end": 24,
-          "text": "ROSE",
+          "start": 0,
+          "end": 3,
+          "text": "카리나",
+          "source": "title"
+        },
+        {
+          "start": 48,
+          "end": 51,
+          "text": "카리나",
           "source": "title"
         }
       ]
@@ -88,21 +94,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "aespa-karina",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "카리나",
-          "source": "title"
-        },
-        {
-          "start": 48,
-          "end": 51,
-          "text": "카리나",
+          "start": 20,
+          "end": 24,
+          "text": "ROSE",
           "source": "title"
         }
       ]

@@ -33,7 +33,7 @@
   "actualEndTime": "2026-07-26T09:41:02Z",
   "scheduledStartTime": "2026-07-26T09:00:00Z",
   "source": {
-    "collectedAt": "2026-11-19T13:39:19.951757Z",
+    "collectedAt": "2026-11-19T19:22:07.137079Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,10 +60,38 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 15,
+          "text": "RESCENE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "younha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 29,
+          "end": 31,
+          "text": "윤하",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-845f9828c743c539",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "rescene-zena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 21,
@@ -89,9 +117,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-zena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-845f9828c743c539",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 21,
@@ -111,34 +139,6 @@
           "start": 21,
           "end": 23,
           "text": "제나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "younha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 29,
-          "end": 31,
-          "text": "윤하",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 15,
-          "text": "RESCENE",
           "source": "title"
         }
       ]

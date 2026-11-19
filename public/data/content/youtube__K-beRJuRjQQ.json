@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:39:11.323814Z",
+    "collectedAt": "2026-11-19T19:22:00.360436Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -59,6 +59,26 @@
     },
     {
       "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 14,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 50,
+          "end": 53,
+          "text": "리센느",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "younha",
       "state": "mention",
       "reason": "original-artist-or-comparison",
@@ -73,26 +93,6 @@
           "start": 33,
           "end": 39,
           "text": "YOUNHA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 50,
-          "end": 53,
-          "text": "리센느",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 14,
-          "text": "RESCENE",
           "source": "title"
         }
       ]

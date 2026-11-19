@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:39:13.017455Z",
+    "collectedAt": "2026-11-19T19:22:01.737020Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "miss-a-min",
+      "artistType": "group",
+      "artistId": "izna",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 46,
-          "end": 49,
-          "text": "MIN",
+          "start": 32,
+          "end": 36,
+          "text": "izna",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "이즈나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ad73a6c022a8838f",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "방지민",
           "source": "title"
         }
       ]
@@ -75,35 +95,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "izna",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 11,
-          "text": "이즈나",
-          "source": "title"
-        },
-        {
-          "start": 32,
-          "end": 36,
-          "text": "izna",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-ad73a6c022a8838f",
+      "artistId": "miss-a-min",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 12,
-          "end": 15,
-          "text": "방지민",
+          "start": 46,
+          "end": 49,
+          "text": "MIN",
           "source": "title"
         }
       ]

@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:39:58.596399Z",
+    "collectedAt": "2026-11-19T19:22:37.353965Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-d535ae91fd92421e",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "candy-shop",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 41,
-          "end": 43,
-          "text": "수이",
+          "start": 25,
+          "end": 35,
+          "text": "CANDY SHOP",
+          "source": "title"
+        },
+        {
+          "start": 37,
+          "end": 40,
+          "text": "캔디샵",
           "source": "title"
         }
       ]
@@ -93,6 +99,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "person-d535ae91fd92421e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 41,
+          "end": 43,
+          "text": "수이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-5035c2dc85c0c21e",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -101,26 +121,6 @@
           "start": 41,
           "end": 42,
           "text": "수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "candy-shop",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 25,
-          "end": 35,
-          "text": "CANDY SHOP",
-          "source": "title"
-        },
-        {
-          "start": 37,
-          "end": 40,
-          "text": "캔디샵",
           "source": "title"
         }
       ]
