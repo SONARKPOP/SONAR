@@ -57,9 +57,23 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "swan",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "purple-kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 9,
+          "text": "퍼플키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 24,
@@ -90,10 +104,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 24,
@@ -105,20 +119,6 @@
           "start": 28,
           "end": 32,
           "text": "SWAN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "purple-kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 9,
-          "text": "퍼플키스",
           "source": "title"
         }
       ]
