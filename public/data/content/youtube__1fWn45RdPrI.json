@@ -8,7 +8,6 @@
   "publishedAt": "2023-07-07T08:30:00Z",
   "groupIds": [
     "kiss",
-    "kiss-of-life",
     "natty"
   ],
   "memberIds": [
@@ -34,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:42:18.736853Z",
+    "collectedAt": "2026-11-19T13:38:10.725693Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,21 +46,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 73,
-          "end": 80,
-          "text": "키스오브라이프",
+          "start": 82,
+          "end": 84,
+          "text": "나띠",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 21,
-          "end": 33,
-          "text": "KISS OF LIFE",
+          "start": 82,
+          "end": 84,
+          "text": "나띠",
           "source": "title"
         }
       ]
@@ -95,29 +102,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "kiss-of-life-natty",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 82,
-          "end": 84,
-          "text": "나띠",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "natty",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 82,
-          "end": 84,
-          "text": "나띠",
+          "start": 73,
+          "end": 80,
+          "text": "키스오브라이프",
+          "source": "title"
+        },
+        {
+          "start": 21,
+          "end": 33,
+          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]

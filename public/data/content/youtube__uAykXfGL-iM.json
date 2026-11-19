@@ -7,7 +7,8 @@
   "description": "@triplescosmos \n#트리플에스 #tripleS\n#이젤 #EJel\n#이젤_여름의방정식",
   "publishedAt": "2026-06-19T06:00:34Z",
   "groupIds": [
-    "ejel"
+    "ejel",
+    "triples"
   ],
   "memberIds": [
     "person-e17393f13f3dc4c0"
@@ -31,15 +32,29 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:44:31.509510Z",
+    "collectedAt": "2026-11-19T13:41:15.789994Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "triples",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 7,
+          "text": "tripleS",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-a62ad8bf482db100",
@@ -92,20 +107,6 @@
           "start": 9,
           "end": 12,
           "text": "김수민",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "triples",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 0,
-          "end": 7,
-          "text": "tripleS",
           "source": "title"
         }
       ]

@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:42:21.955596Z",
+    "collectedAt": "2026-11-19T13:38:15.858899Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,8 +44,8 @@
   "programName": "리무진서비스",
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-context-v2",
-    "source": "title",
+    "policy": "title-only-v1",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
@@ -56,15 +56,29 @@
       "reason": "everyday-name",
       "matches": [
         {
+          "start": 22,
+          "end": 29,
+          "text": "베이비돈크라이",
+          "source": "title"
+        },
+        {
           "start": 41,
           "end": 54,
           "text": "Baby DONT Cry",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-55aca1823bded05b",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 22,
-          "end": 29,
-          "text": "베이비돈크라이",
+          "start": 71,
+          "end": 74,
+          "text": "JIN",
           "source": "title"
         }
       ]
@@ -93,20 +107,6 @@
           "start": 30,
           "end": 32,
           "text": "이현",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-55aca1823bded05b",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 71,
-          "end": 74,
-          "text": "JIN",
           "source": "title"
         }
       ]

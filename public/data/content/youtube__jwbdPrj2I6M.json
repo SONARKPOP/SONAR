@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:44:06.396681Z",
+    "collectedAt": "2026-11-19T13:40:42.120109Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-6775f1fd651e6b2d",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 52,
+          "end": 54,
+          "text": "효정",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-e1112600ab2e1973",
@@ -61,14 +75,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-6775f1fd651e6b2d",
+      "artistId": "wonder-girls-sunmi",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 52,
-          "end": 54,
-          "text": "효정",
+          "start": 24,
+          "end": 26,
+          "text": "선미",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 32,
+          "text": "SUNMI",
           "source": "title"
         }
       ]
@@ -80,35 +100,15 @@
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 27,
-          "end": 32,
-          "text": "SUNMI",
-          "source": "title"
-        },
-        {
           "start": 24,
           "end": 26,
           "text": "선미",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "wonder-girls-sunmi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
           "start": 27,
           "end": 32,
           "text": "SUNMI",
-          "source": "title"
-        },
-        {
-          "start": 24,
-          "end": 26,
-          "text": "선미",
           "source": "title"
         }
       ]

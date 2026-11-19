@@ -29,7 +29,7 @@
   "actualEndTime": "2023-09-13T14:53:42Z",
   "scheduledStartTime": "2023-09-13T13:00:00Z",
   "source": {
-    "collectedAt": "2026-11-19T07:43:24.656522Z",
+    "collectedAt": "2026-11-19T13:39:42.174203Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,6 +42,34 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 8,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "김세정",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "kim-sejeong",
@@ -66,34 +94,6 @@
           "start": 20,
           "end": 23,
           "text": "김세정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "ioi-kim-sejeong",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 20,
-          "end": 23,
-          "text": "김세정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 6,
-          "end": 8,
-          "text": "키스",
           "source": "title"
         }
       ]

@@ -59,9 +59,23 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "weeekly-lunedi",
+      "artistId": "person-a1479c2cc95e8b6a",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 50,
+          "end": 52,
+          "text": "소원",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lunedi",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 42,
@@ -78,10 +92,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lunedi",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "weeekly-lunedi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 42,
@@ -113,20 +127,6 @@
           "start": 28,
           "end": 35,
           "text": "Weeekly",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 50,
-          "end": 52,
-          "text": "소원",
           "source": "title"
         }
       ]

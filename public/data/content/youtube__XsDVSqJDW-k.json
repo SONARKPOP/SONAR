@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:43:34.964607Z",
+    "collectedAt": "2026-11-19T13:39:57.111016Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,20 +47,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 48,
-          "end": 54,
-          "text": "Secret",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "izone-lee-chae-yeon",
@@ -91,14 +77,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "izone",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
+          "start": 68,
+          "end": 72,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -119,14 +105,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "izone",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 68,
-          "end": 72,
-          "text": "Swan",
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 48,
+          "end": 54,
+          "text": "Secret",
           "source": "title"
         }
       ]

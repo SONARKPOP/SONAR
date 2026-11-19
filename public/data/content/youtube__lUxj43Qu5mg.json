@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:44:10.151907Z",
+    "collectedAt": "2026-11-19T13:40:47.311552Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "hot-issue",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 30,
+          "text": "핫이슈",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 25,
+          "text": "HOT ISSUE",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "aespa",
@@ -74,6 +94,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "4minute-hyuna",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 55,
+          "end": 60,
+          "text": "HyunA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "wonder-girls-hyuna",
       "state": "needs_review",
       "reason": "shared-name",
@@ -96,40 +130,6 @@
           "start": 55,
           "end": 60,
           "text": "HyunA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "4minute-hyuna",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 55,
-          "end": 60,
-          "text": "HyunA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hot-issue",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 27,
-          "end": 30,
-          "text": "핫이슈",
-          "source": "title"
-        },
-        {
-          "start": 16,
-          "end": 25,
-          "text": "HOT ISSUE",
           "source": "title"
         }
       ]

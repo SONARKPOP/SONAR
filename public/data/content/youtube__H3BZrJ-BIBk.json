@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:42:54.973892Z",
+    "collectedAt": "2026-11-19T13:39:01.407876Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -61,15 +61,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "bp-jennie",
+      "artistType": "group",
+      "artistId": "triples",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 14,
-          "end": 20,
-          "text": "JENNIE",
+          "start": 29,
+          "end": 36,
+          "text": "tripleS",
+          "source": "title"
+        },
+        {
+          "start": 38,
+          "end": 43,
+          "text": "트리플에스",
           "source": "title"
         }
       ]
@@ -89,21 +95,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "triples",
+      "artistType": "person",
+      "artistId": "bp-jennie",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 38,
-          "end": 43,
-          "text": "트리플에스",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 36,
-          "text": "tripleS",
+          "start": 14,
+          "end": 20,
+          "text": "JENNIE",
           "source": "title"
         }
       ]

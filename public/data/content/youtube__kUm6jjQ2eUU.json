@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:44:07.745234Z",
+    "collectedAt": "2026-11-19T13:40:43.993278Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 34,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "kara",
@@ -60,8 +74,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nicole",
+      "artistType": "person",
+      "artistId": "kara-nicole",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -88,8 +102,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "kara-nicole",
+      "artistType": "group",
+      "artistId": "nicole",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -97,20 +111,6 @@
           "start": 8,
           "end": 10,
           "text": "니콜",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 32,
-          "end": 34,
-          "text": "키스",
           "source": "title"
         }
       ]

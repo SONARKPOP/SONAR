@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:44:09.230388Z",
+    "collectedAt": "2026-11-19T13:40:46.059924Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,8 +44,22 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "iu",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 18,
+          "text": "아이유",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-dff6b18b1d4d3a3c",
+      "artistId": "kiss-of-life-member-da7f28bccc9c",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -59,7 +73,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "kiss-of-life-member-da7f28bccc9c",
+      "artistId": "person-dff6b18b1d4d3a3c",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -87,26 +101,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 1,
-          "end": 13,
-          "text": "KISS OF LIFE",
-          "source": "title"
-        },
-        {
-          "start": 52,
-          "end": 59,
-          "text": "키스오브라이프",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -121,14 +115,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "iu",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 15,
-          "end": 18,
-          "text": "아이유",
+          "start": 52,
+          "end": 59,
+          "text": "키스오브라이프",
+          "source": "title"
+        },
+        {
+          "start": 1,
+          "end": 13,
+          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]

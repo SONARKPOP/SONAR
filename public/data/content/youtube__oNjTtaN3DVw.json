@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:44:17.476168Z",
+    "collectedAt": "2026-11-19T13:40:57.149548Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-849ce8f77dfc945c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "madein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 15,
-          "end": 18,
-          "text": "나고미",
+          "start": 50,
+          "end": 56,
+          "text": "MADEIN",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 14,
+          "text": "메이딘",
           "source": "title"
         }
       ]
@@ -75,21 +81,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "madein",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-849ce8f77dfc945c",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 11,
-          "end": 14,
-          "text": "메이딘",
-          "source": "title"
-        },
-        {
-          "start": 50,
-          "end": 56,
-          "text": "MADEIN",
+          "start": 15,
+          "end": 18,
+          "text": "나고미",
           "source": "title"
         }
       ]

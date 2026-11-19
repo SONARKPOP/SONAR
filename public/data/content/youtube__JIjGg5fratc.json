@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:43:00.432149Z",
+    "collectedAt": "2026-11-19T13:39:08.669663Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -50,28 +50,14 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 56,
-          "end": 62,
-          "text": "Secret",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
+          "start": 76,
+          "end": 80,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -91,35 +77,49 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 76,
-          "end": 80,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "lsf-sakura",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 33,
+          "end": 39,
+          "text": "Sakura",
+          "source": "title"
+        },
+        {
           "start": 45,
           "end": 48,
           "text": "사쿠라",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 33,
-          "end": 39,
-          "text": "Sakura",
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 56,
+          "end": 62,
+          "text": "Secret",
           "source": "title"
         }
       ]

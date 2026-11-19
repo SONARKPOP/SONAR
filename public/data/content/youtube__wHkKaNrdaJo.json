@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:44:36.962803Z",
+    "collectedAt": "2026-11-19T13:41:23.252120Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,14 +43,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "favorite",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "heize",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 69,
-          "end": 77,
-          "text": "Favorite",
+          "start": 51,
+          "end": 56,
+          "text": "Heize",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 48,
+          "text": "헤이즈",
           "source": "title"
         }
       ]
@@ -71,20 +77,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "heize",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "favorite",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 45,
-          "end": 48,
-          "text": "헤이즈",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 56,
-          "text": "Heize",
+          "start": 69,
+          "end": 77,
+          "text": "Favorite",
           "source": "title"
         }
       ]

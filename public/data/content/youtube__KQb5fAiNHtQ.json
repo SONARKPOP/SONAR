@@ -7,6 +7,7 @@
   "description": "#류진\n#유주 #YUJU\n#file07 #미제\n#ATAREA #앳에어리어",
   "publishedAt": "2026-10-24T05:00:31Z",
   "groupIds": [
+    "itzy",
     "yuju"
   ],
   "memberIds": [
@@ -56,24 +57,10 @@
   "musicBroadcast": false,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "itzy-member-9a631d0b740b",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 13,
-          "text": "RYUJIN",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "itzy",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 1,
@@ -88,14 +75,20 @@
           "source": "title"
         }
       ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "itzy-member-9a631d0b740b",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 13,
+          "text": "RYUJIN",
+          "source": "title"
+        }
+      ]
     }
-  ],
-  "individualActivity": {
-    "artistId": "yuju",
-    "groupIds": [
-      "gfriend"
-    ],
-    "kind": "individual",
-    "evidence": "official-solo-channel"
-  }
+  ]
 }

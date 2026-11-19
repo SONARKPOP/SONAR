@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:44:31.530019Z",
+    "collectedAt": "2026-11-19T13:41:15.817441Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,28 +47,14 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 28,
-          "end": 34,
-          "text": "Secret",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 15,
-          "end": 21,
-          "text": "IZ*ONE",
+          "start": 48,
+          "end": 52,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -89,14 +75,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "izone",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 48,
-          "end": 52,
-          "text": "Swan",
+          "start": 15,
+          "end": 21,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 28,
+          "end": 34,
+          "text": "Secret",
           "source": "title"
         }
       ]

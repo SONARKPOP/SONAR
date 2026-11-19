@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:43:17.179367Z",
+    "collectedAt": "2026-11-19T13:39:32.092058Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -59,6 +59,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "boa",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 55,
+          "end": 58,
+          "text": "BoA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "csr",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -73,20 +87,6 @@
           "start": 40,
           "end": 43,
           "text": "CSR",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "boa",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 55,
-          "end": 58,
-          "text": "BoA",
           "source": "title"
         }
       ]

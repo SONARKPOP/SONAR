@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T07:42:20.147255Z",
+    "collectedAt": "2026-11-19T13:38:13.184412Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,6 +41,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 27,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "kiss-of-life-member-4cd0df8d103d",
@@ -71,6 +85,26 @@
     },
     {
       "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 22,
+          "text": "키스오브라이프",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 35,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "younha",
       "state": "mention",
       "reason": "original-artist-or-comparison",
@@ -79,40 +113,6 @@
           "start": 57,
           "end": 59,
           "text": "윤하",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 23,
-          "end": 35,
-          "text": "KISS OF LIFE",
-          "source": "title"
-        },
-        {
-          "start": 15,
-          "end": 22,
-          "text": "키스오브라이프",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 27,
-          "text": "KISS",
           "source": "title"
         }
       ]
