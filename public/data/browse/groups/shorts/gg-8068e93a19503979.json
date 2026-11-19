@@ -35,6 +35,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "qwer",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 49,
+              "text": "QWER",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-7d822ba2bf35ac44",
           "state": "inferred",
@@ -50,20 +64,6 @@
               "start": 57,
               "end": 59,
               "text": "바다",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "qwer",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 45,
-              "end": 49,
-              "text": "QWER",
               "source": "title"
             }
           ]
@@ -132,15 +132,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-7d822ba2bf35ac44",
+          "artistType": "group",
+          "artistId": "choi-yu-ree",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 16,
-              "end": 18,
-              "text": "바다",
+              "start": 10,
+              "end": 13,
+              "text": "최유리",
+              "source": "title"
+            },
+            {
+              "start": 24,
+              "end": 27,
+              "text": "최유리",
               "source": "title"
             }
           ]
@@ -160,21 +166,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "choi-yu-ree",
+          "artistType": "person",
+          "artistId": "person-7d822ba2bf35ac44",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 10,
-              "end": 13,
-              "text": "최유리",
-              "source": "title"
-            },
-            {
-              "start": 24,
-              "end": 27,
-              "text": "최유리",
+              "start": 16,
+              "end": 18,
+              "text": "바다",
               "source": "title"
             }
           ]
@@ -228,29 +228,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-7d822ba2bf35ac44",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 5,
-              "end": 7,
-              "text": "바다",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "irene",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistId": "red-velvet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 31,
-              "end": 36,
-              "text": "IRENE",
+              "start": 25,
+              "end": 29,
+              "text": "레드벨벳",
               "source": "title"
             }
           ]
@@ -271,14 +257,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "red-velvet",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "irene",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 25,
-              "end": 29,
-              "text": "레드벨벳",
+              "start": 31,
+              "end": 36,
+              "text": "IRENE",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-7d822ba2bf35ac44",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 5,
+              "end": 7,
+              "text": "바다",
               "source": "title"
             }
           ]
