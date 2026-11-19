@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2026-05-03T03:02:00Z",
   "groupIds": [
+    "lesserafim",
     "taeyeon"
   ],
   "memberIds": [
@@ -37,26 +38,48 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "unclassified",
+    "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "girls-generation-taeyeon",
+      "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 36,
+          "end": 40,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lesserafim",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 6,
-          "end": 13,
-          "text": "TAEYEON",
+          "start": 73,
+          "end": 77,
+          "text": "르세라핌",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lsf-eunchae",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 15,
-          "end": 17,
-          "text": "태연",
+          "start": 55,
+          "end": 58,
+          "text": "홍은채",
           "source": "title"
         }
       ]
@@ -83,42 +106,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "lsf-eunchae",
+      "artistId": "girls-generation-taeyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 55,
-          "end": 58,
-          "text": "홍은채",
+          "start": 6,
+          "end": 13,
+          "text": "TAEYEON",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "lesserafim",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
+        },
         {
-          "start": 73,
-          "end": 77,
-          "text": "르세라핌",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 36,
-          "end": 40,
-          "text": "소녀시대",
+          "start": 15,
+          "end": 17,
+          "text": "태연",
           "source": "title"
         }
       ]
