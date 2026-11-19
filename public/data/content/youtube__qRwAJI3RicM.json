@@ -48,29 +48,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 61,
-          "end": 65,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "izone",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 61,
-          "end": 65,
-          "text": "Swan",
+          "start": 1,
+          "end": 5,
+          "text": "아이즈원",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 38,
+          "text": "IZ*ONE",
           "source": "title"
         }
       ]
@@ -91,20 +83,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "izone",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 32,
-          "end": 38,
-          "text": "IZ*ONE",
+          "start": 61,
+          "end": 65,
+          "text": "Swan",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 1,
-          "end": 5,
-          "text": "아이즈원",
+          "start": 61,
+          "end": 65,
+          "text": "Swan",
           "source": "title"
         }
       ]
