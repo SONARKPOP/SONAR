@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-20T07:45:37.525961Z",
+  "updatedAt": "2026-11-20T08:51:26.680428Z",
   "items": [
     {
       "id": "youtube__KlQfrc_dzrQ",
@@ -120,7 +120,6 @@
       "title": "BESTie 다혜 팅팅컴피티션 출전합니다",
       "publishedAt": "2026-11-18T02:00:17Z",
       "groupIds": [
-        "bestie",
         "unchild"
       ],
       "memberIds": [
@@ -141,25 +140,11 @@
       "thumbnail": "https://i.ytimg.com/vi/UktC98aArvE/hqdefault.jpg",
       "durationLabel": "13s",
       "memberTagging": {
-        "policy": "title-only-v1",
+        "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
       },
       "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 6,
-              "text": "BESTie",
-              "source": "title"
-            }
-          ]
-        },
         {
           "artistType": "person",
           "artistId": "person-5b40d78dec073504",
@@ -187,13 +172,21 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 0,
+              "end": 6,
+              "text": "BESTie",
+              "source": "title"
+            }
+          ]
         }
-      ],
-      "careerGroupIds": [
-        "bestie"
-      ],
-      "displayCareerGroupIds": [
-        "bestie"
       ],
       "externalId": "UktC98aArvE",
       "sourceUrl": "https://www.youtube.com/watch?v=UktC98aArvE",
@@ -209,7 +202,13 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "musicBroadcast": false,
+      "careerGroupIds": [
+        "bestie"
+      ],
+      "displayCareerGroupIds": [
+        "bestie"
+      ]
     },
     {
       "id": "youtube__xfyszJum0VQ",
@@ -251,20 +250,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-06cfb6ae34c0baa6",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 28,
-              "end": 30,
-              "text": "보나",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "bestie",
           "state": "inferred",
@@ -280,6 +265,20 @@
               "start": 37,
               "end": 43,
               "text": "BESTie",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-06cfb6ae34c0baa6",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 28,
+              "end": 30,
+              "text": "보나",
               "source": "title"
             }
           ]
@@ -800,9 +799,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-0f8c819a53e4a7d2",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-905944af0ed05141",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 26,
@@ -814,9 +813,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-905944af0ed05141",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-0f8c819a53e4a7d2",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 26,
@@ -1345,9 +1344,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-0f8c819a53e4a7d2",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-905944af0ed05141",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 15,
@@ -1359,9 +1358,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-905944af0ed05141",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-0f8c819a53e4a7d2",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 15,
@@ -1852,20 +1851,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 23,
-              "end": 26,
-              "text": "베스티",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-5b40d78dec073504",
           "state": "needs_review",
@@ -1889,6 +1874,20 @@
               "start": 0,
               "end": 2,
               "text": "다혜",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 23,
+              "end": 26,
+              "text": "베스티",
               "source": "title"
             }
           ]
@@ -2445,20 +2444,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 46,
-              "end": 47,
-              "text": "s",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "bestie",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -2467,6 +2452,20 @@
               "start": 59,
               "end": 65,
               "text": "bestie",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 46,
+              "end": 47,
+              "text": "s",
               "source": "title"
             }
           ]
@@ -2537,6 +2536,48 @@
         },
         {
           "artistType": "person",
+          "artistId": "red-velvet-yeri",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 31,
+              "end": 33,
+              "text": "예리",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yeri",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 31,
+              "end": 33,
+              "text": "예리",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "nayeon",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 27,
+              "end": 29,
+              "text": "나연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-8ce8dce26a64068c",
           "state": "needs_review",
           "reason": "shared-name",
@@ -2573,48 +2614,6 @@
               "start": 27,
               "end": 29,
               "text": "나연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "nayeon",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 27,
-              "end": 29,
-              "text": "나연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "red-velvet-yeri",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 31,
-              "end": 33,
-              "text": "예리",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yeri",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 31,
-              "end": 33,
-              "text": "예리",
               "source": "title"
             }
           ]
@@ -3019,7 +3018,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-507e18325fa70402",
+          "artistId": "person-93f1f4e0118a5b58",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3047,7 +3046,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-93f1f4e0118a5b58",
+          "artistId": "person-507e18325fa70402",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3505,20 +3504,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 8,
-              "end": 14,
-              "text": "BESTie",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-5b40d78dec073504",
           "state": "needs_review",
@@ -3542,6 +3527,20 @@
               "start": 19,
               "end": 21,
               "text": "다혜",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 8,
+              "end": 14,
+              "text": "BESTie",
               "source": "title"
             }
           ]
@@ -3728,9 +3727,9 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-0f8c819a53e4a7d2",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-905944af0ed05141",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 6,
@@ -3742,9 +3741,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-905944af0ed05141",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-0f8c819a53e4a7d2",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 6,
@@ -4228,15 +4227,15 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-905944af0ed05141",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 14,
-              "end": 20,
-              "text": "BESTie",
+              "start": 9,
+              "end": 11,
+              "text": "유지",
               "source": "title"
             }
           ]
@@ -4256,15 +4255,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-905944af0ed05141",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 9,
-              "end": 11,
-              "text": "유지",
+              "start": 14,
+              "end": 20,
+              "text": "BESTie",
               "source": "title"
             }
           ]
@@ -4528,15 +4527,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 3,
-              "text": "베스티",
-              "source": "title"
-            },
-            {
               "start": 4,
               "end": 10,
               "text": "BESTie",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "text": "베스티",
               "source": "title"
             }
           ]
@@ -4743,20 +4742,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 25,
-              "end": 28,
-              "text": "베이비",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "bestie",
           "state": "inferred",
@@ -4772,6 +4757,20 @@
               "start": 4,
               "end": 10,
               "text": "BESTie",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 25,
+              "end": 28,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -4828,20 +4827,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 25,
-              "end": 28,
-              "text": "베이비",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "bestie",
           "state": "inferred",
@@ -4857,6 +4842,20 @@
               "start": 4,
               "end": 10,
               "text": "BESTie",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 25,
+              "end": 28,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -4913,20 +4912,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 25,
-              "end": 28,
-              "text": "베이비",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "bestie",
           "state": "inferred",
@@ -4942,6 +4927,20 @@
               "start": 4,
               "end": 10,
               "text": "BESTie",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 25,
+              "end": 28,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -5001,15 +5000,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 3,
-              "text": "베스티",
-              "source": "title"
-            },
-            {
               "start": 4,
               "end": 10,
               "text": "BESTie",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "text": "베스티",
               "source": "title"
             }
           ]
@@ -5065,20 +5064,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-29b673c1354993f1",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 25,
-              "end": 26,
-              "text": "별",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "bestie",
           "state": "inferred",
@@ -5100,6 +5085,20 @@
         },
         {
           "artistType": "person",
+          "artistId": "person-905944af0ed05141",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 17,
+              "end": 19,
+              "text": "유지",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-0f8c819a53e4a7d2",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -5114,14 +5113,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-905944af0ed05141",
+          "artistId": "person-29b673c1354993f1",
           "state": "needs_review",
-          "reason": "shared-name",
+          "reason": "everyday-name",
           "matches": [
             {
-              "start": 17,
-              "end": 19,
-              "text": "유지",
+              "start": 25,
+              "end": 26,
+              "text": "별",
               "source": "title"
             }
           ]
@@ -5576,9 +5575,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-0f8c819a53e4a7d2",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-905944af0ed05141",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 12,
@@ -5590,9 +5589,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-905944af0ed05141",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-0f8c819a53e4a7d2",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 12,

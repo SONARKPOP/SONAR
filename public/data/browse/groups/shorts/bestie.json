@@ -8,7 +8,6 @@
       "title": "BESTie 다혜 팅팅컴피티션 출전합니다",
       "publishedAt": "2026-11-18T02:00:17Z",
       "groupIds": [
-        "bestie",
         "unchild"
       ],
       "memberIds": [
@@ -29,25 +28,11 @@
       "thumbnail": "https://i.ytimg.com/vi/UktC98aArvE/hqdefault.jpg",
       "durationLabel": "13s",
       "memberTagging": {
-        "policy": "title-only-v1",
+        "policy": "title-context-v2",
         "source": "unclassified",
         "appearanceVerified": false
       },
       "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 6,
-              "text": "BESTie",
-              "source": "title"
-            }
-          ]
-        },
         {
           "artistType": "person",
           "artistId": "person-5b40d78dec073504",
@@ -75,13 +60,21 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 0,
+              "end": 6,
+              "text": "BESTie",
+              "source": "title"
+            }
+          ]
         }
-      ],
-      "careerGroupIds": [
-        "bestie"
-      ],
-      "displayCareerGroupIds": [
-        "bestie"
       ],
       "externalId": "UktC98aArvE",
       "sourceUrl": "https://www.youtube.com/watch?v=UktC98aArvE",
@@ -97,7 +90,13 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "musicBroadcast": false,
+      "careerGroupIds": [
+        "bestie"
+      ],
+      "displayCareerGroupIds": [
+        "bestie"
+      ]
     },
     {
       "id": "youtube__xfyszJum0VQ",
@@ -139,20 +138,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-06cfb6ae34c0baa6",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 28,
-              "end": 30,
-              "text": "보나",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "bestie",
           "state": "inferred",
@@ -168,6 +153,20 @@
               "start": 37,
               "end": 43,
               "text": "BESTie",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-06cfb6ae34c0baa6",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 28,
+              "end": 30,
+              "text": "보나",
               "source": "title"
             }
           ]
@@ -460,20 +459,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 23,
-              "end": 26,
-              "text": "베스티",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-5b40d78dec073504",
           "state": "needs_review",
@@ -497,6 +482,20 @@
               "start": 0,
               "end": 2,
               "text": "다혜",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 23,
+              "end": 26,
+              "text": "베스티",
               "source": "title"
             }
           ]

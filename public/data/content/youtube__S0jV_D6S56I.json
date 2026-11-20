@@ -45,26 +45,6 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "limelight",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 10,
-          "text": "LIMELIGHT",
-          "source": "title"
-        },
-        {
-          "start": 41,
-          "end": 45,
-          "text": "라임라잇",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "iu",
       "state": "inferred",
       "reason": "unambiguous-title-name",
@@ -79,7 +59,27 @@
     },
     {
       "artistType": "group",
-      "artistId": "sorn",
+      "artistId": "limelight",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 41,
+          "end": 45,
+          "text": "라임라잇",
+          "source": "title"
+        },
+        {
+          "start": 1,
+          "end": 10,
+          "text": "LIMELIGHT",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "clc-sorn",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
@@ -92,8 +92,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "clc-sorn",
+      "artistType": "group",
+      "artistId": "sorn",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [

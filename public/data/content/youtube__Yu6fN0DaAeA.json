@@ -45,35 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 33,
-          "text": "Say My Name",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "gidle-miyeon",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 9,
-          "end": 11,
-          "text": "미연",
-          "source": "title"
-        },
-        {
           "start": 12,
           "end": 18,
           "text": "MIYEON",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "text": "미연",
           "source": "title"
         }
       ]
@@ -85,15 +71,29 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
+          "start": 12,
+          "end": 18,
+          "text": "MIYEON",
+          "source": "title"
+        },
+        {
           "start": 9,
           "end": 11,
           "text": "미연",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 12,
-          "end": 18,
-          "text": "MIYEON",
+          "start": 22,
+          "end": 33,
+          "text": "Say My Name",
           "source": "title"
         }
       ]
