@@ -36,6 +36,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "code-zigu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 54,
+              "end": 58,
+              "text": "코드지구",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "gg-3ea891caaee2e6ac",
           "state": "needs_review",
           "reason": "everyday-name",
@@ -72,20 +86,6 @@
               "start": 0,
               "end": 5,
               "text": "Yerin",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "code-zigu",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 54,
-              "end": 58,
-              "text": "코드지구",
               "source": "title"
             }
           ]
@@ -372,10 +372,10 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gfriend-yuju",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistType": "group",
+          "artistId": "yuju",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 20,
@@ -386,10 +386,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yuju",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "gfriend-yuju",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 20,
@@ -460,20 +460,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gfriend-yuju",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 16,
-              "end": 20,
-              "text": "YUJU",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "yuju",
           "state": "inferred",
@@ -486,13 +472,21 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gfriend-yuju",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 16,
+              "end": 20,
+              "text": "YUJU",
+              "source": "title"
+            }
+          ]
         }
-      ],
-      "careerGroupIds": [
-        "gfriend"
-      ],
-      "displayCareerGroupIds": [
-        "gfriend"
       ],
       "externalId": "wrDB7d_zwww",
       "sourceUrl": "https://www.youtube.com/watch?v=wrDB7d_zwww",
@@ -504,7 +498,13 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "musicBroadcast": false,
+      "careerGroupIds": [
+        "gfriend"
+      ],
+      "displayCareerGroupIds": [
+        "gfriend"
+      ]
     }
   ]
 }

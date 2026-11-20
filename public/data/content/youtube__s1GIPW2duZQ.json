@@ -43,20 +43,6 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "sis",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 36,
-          "end": 41,
-          "text": "S.I.S",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "iu",
       "state": "mention",
       "reason": "official-owner-reference",
@@ -71,6 +57,20 @@
           "start": 4,
           "end": 6,
           "text": "IU",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-gaeul",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 32,
+          "text": "Gaeul",
           "source": "title"
         }
       ]
@@ -96,15 +96,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "ive-gaeul",
+      "artistType": "group",
+      "artistId": "sis",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 27,
-          "end": 32,
-          "text": "Gaeul",
+          "start": 36,
+          "end": 41,
+          "text": "S.I.S",
           "source": "title"
         }
       ]
