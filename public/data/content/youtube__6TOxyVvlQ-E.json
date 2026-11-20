@@ -7,7 +7,8 @@
   "description": "",
   "publishedAt": "2025-01-12T09:59:49Z",
   "groupIds": [
-    "gfriend"
+    "gfriend",
+    "illit"
   ],
   "memberIds": [
     "gfriend-yuju",
@@ -57,15 +58,61 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "illit-member-a5c02f904155",
+      "artistType": "group",
+      "artistId": "illit",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 7,
-          "end": 9,
-          "text": "민주",
+          "start": 2,
+          "end": 5,
+          "text": "아일릿",
+          "source": "title"
+        },
+        {
+          "start": 26,
+          "end": 31,
+          "text": "ILLIT",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "gfriend-yuju",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 59,
+          "end": 63,
+          "text": "YUJU",
+          "source": "title"
+        },
+        {
+          "start": 55,
+          "end": 57,
+          "text": "유주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yuju",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 59,
+          "end": 63,
+          "text": "YUJU",
+          "source": "title"
+        },
+        {
+          "start": 55,
+          "end": 57,
+          "text": "유주",
           "source": "title"
         }
       ]
@@ -100,9 +147,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-8078e40995871510",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "illit-member-a5c02f904155",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 7,
@@ -113,75 +160,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "illit",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 2,
-          "end": 5,
-          "text": "아일릿",
-          "source": "title"
-        },
-        {
-          "start": 26,
-          "end": 31,
-          "text": "ILLIT",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "gfriend-yuju",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 55,
-          "end": 57,
-          "text": "유주",
-          "source": "title"
-        },
-        {
-          "start": 59,
-          "end": 63,
-          "text": "YUJU",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yuju",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 55,
-          "end": 57,
-          "text": "유주",
-          "source": "title"
-        },
-        {
-          "start": 59,
-          "end": 63,
-          "text": "YUJU",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-f07a58ca3f31f17c",
+      "artistId": "person-8078e40995871510",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 55,
-          "end": 57,
-          "text": "유주",
+          "start": 7,
+          "end": 9,
+          "text": "민주",
           "source": "title"
         }
       ]
@@ -202,6 +189,20 @@
           "start": 40,
           "end": 44,
           "text": "여자친구",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-f07a58ca3f31f17c",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 55,
+          "end": 57,
+          "text": "유주",
           "source": "title"
         }
       ]

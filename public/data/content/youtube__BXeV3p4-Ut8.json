@@ -49,14 +49,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "classy",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "cignature",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 27,
-          "end": 30,
-          "text": "클라씨",
+          "start": 18,
+          "end": 22,
+          "text": "시그니처",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyolyn",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 32,
+          "end": 34,
+          "text": "효린",
           "source": "title"
         }
       ]
@@ -76,15 +90,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "hyolyn",
+      "artistType": "person",
+      "artistId": "person-ef771f423ffec044",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 32,
-          "end": 34,
-          "text": "효린",
+          "start": 23,
+          "end": 25,
+          "text": "지원",
           "source": "title"
         }
       ]
@@ -146,29 +160,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-ef771f423ffec044",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "지원",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "cignature",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "classy",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 18,
-          "end": 22,
-          "text": "시그니처",
+          "start": 27,
+          "end": 30,
+          "text": "클라씨",
           "source": "title"
         }
       ]
