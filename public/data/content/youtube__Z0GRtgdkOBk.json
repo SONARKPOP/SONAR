@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2026-10-20T12:57:06Z",
   "groupIds": [
-    "rescene",
     "yena"
   ],
   "memberIds": [
@@ -38,7 +37,7 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "title",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
@@ -83,20 +82,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 30,
-          "end": 37,
-          "text": "RESCENE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "rescene-may",
       "state": "inferred",
@@ -106,6 +91,20 @@
           "start": 7,
           "end": 10,
           "text": "MAY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 30,
+          "end": 37,
+          "text": "RESCENE",
           "source": "title"
         }
       ]

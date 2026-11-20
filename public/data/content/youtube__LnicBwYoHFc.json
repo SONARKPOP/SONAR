@@ -44,6 +44,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "secret",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 39,
+          "end": 45,
+          "text": "Secret",
+          "source": "title"
+        },
+        {
+          "start": 34,
+          "end": 37,
+          "text": "시크릿",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -57,10 +77,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jeon-hyo-seong",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "secret-jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 47,
@@ -71,10 +91,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "secret-jeon-hyo-seong",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "jeon-hyo-seong",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 47,
@@ -108,26 +128,6 @@
           "start": 0,
           "end": 3,
           "text": "Hyo",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 39,
-          "end": 45,
-          "text": "Secret",
-          "source": "title"
-        },
-        {
-          "start": 34,
-          "end": 37,
-          "text": "시크릿",
           "source": "title"
         }
       ]

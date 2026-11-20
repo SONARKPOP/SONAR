@@ -58,20 +58,6 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "lovelyz-mijoo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 38,
-          "end": 43,
-          "text": "MIJOO",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "mijoo",
       "state": "inferred",
@@ -87,9 +73,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "izone-lee-chae-yeon",
+      "artistId": "lovelyz-mijoo",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 38,
+          "end": 43,
+          "text": "MIJOO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lee-chae-yeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 45,
@@ -100,10 +100,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lee-chae-yeon",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "izone-lee-chae-yeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 45,
