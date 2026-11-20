@@ -7,6 +7,7 @@
   "description": "TiNG TiNG with STAYC 시은\n\n#UNCHILD #언차일드\n#TiNGTiNG \n@STAYC",
   "publishedAt": "2026-11-10T04:30:02Z",
   "groupIds": [
+    "stayc",
     "unchild"
   ],
   "memberIds": [
@@ -31,15 +32,29 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:43:02.545739Z",
+    "collectedAt": "2026-11-20T13:35:23.981574Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "stayc",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 20,
+          "text": "STAYC",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "stayc-member-3f52535f31d5",
@@ -67,21 +82,13 @@
           "source": "title"
         }
       ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "stayc",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 15,
-          "end": 20,
-          "text": "STAYC",
-          "source": "title"
-        }
-      ]
     }
+  ],
+  "careerGroupIds": [
+    "stayc"
+  ],
+  "displayCareerGroupIds": [
+    "stayc"
   ],
   "externalId": "cC6xI3VRI68",
   "sourceUrl": "https://www.youtube.com/watch?v=cC6xI3VRI68",
@@ -97,11 +104,5 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "careerGroupIds": [
-    "stayc"
-  ],
-  "displayCareerGroupIds": [
-    "stayc"
-  ]
+  "musicBroadcast": false
 }

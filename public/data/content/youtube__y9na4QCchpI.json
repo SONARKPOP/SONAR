@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:44:09.665850Z",
+    "collectedAt": "2026-11-20T13:37:04.935321Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,24 +46,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 4,
-          "end": 5,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "dreamcatcher",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 25,
+          "end": 29,
+          "text": "드림캐쳐",
+          "source": "title"
+        },
         {
           "start": 12,
           "end": 24,
@@ -75,11 +67,19 @@
           "end": 81,
           "text": "Dreamcatcher",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 25,
-          "end": 29,
-          "text": "드림캐쳐",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]

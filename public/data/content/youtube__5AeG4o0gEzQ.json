@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T13:38:22.326553Z",
+    "collectedAt": "2026-11-20T13:33:00.874513Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -62,10 +62,36 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-8ce8dce26a64068c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "tw-nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 39,
+          "end": 45,
+          "text": "NAYEON",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 49,
+          "text": "나연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "nayeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 39,
+          "end": 45,
+          "text": "NAYEON",
+          "source": "title"
+        },
         {
           "start": 47,
           "end": 49,
@@ -89,41 +115,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nayeon",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 47,
-          "end": 49,
-          "text": "나연",
-          "source": "title"
-        },
-        {
-          "start": 39,
-          "end": 45,
-          "text": "NAYEON",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "tw-nayeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-8ce8dce26a64068c",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 47,
           "end": 49,
           "text": "나연",
-          "source": "title"
-        },
-        {
-          "start": 39,
-          "end": 45,
-          "text": "NAYEON",
           "source": "title"
         }
       ]

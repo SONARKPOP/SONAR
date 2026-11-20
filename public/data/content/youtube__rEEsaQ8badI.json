@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:43:48.889914Z",
+    "collectedAt": "2026-11-20T13:36:33.568490Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -61,15 +61,29 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "soyou",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "소유",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-e6e94b8b5bcbf3f1",
+      "artistId": "sistar-soyou",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 25,
-          "end": 27,
-          "text": "보라",
+          "start": 10,
+          "end": 12,
+          "text": "소유",
           "source": "title"
         }
       ]
@@ -90,28 +104,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "sistar-soyou",
+      "artistId": "person-e6e94b8b5bcbf3f1",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 12,
-          "text": "소유",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "soyou",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 10,
-          "end": 12,
-          "text": "소유",
+          "start": 25,
+          "end": 27,
+          "text": "보라",
           "source": "title"
         }
       ]

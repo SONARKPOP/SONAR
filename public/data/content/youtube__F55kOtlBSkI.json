@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-16T16:42:40.508946Z",
+    "collectedAt": "2026-11-20T13:33:41.716804Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -39,6 +39,62 @@
     "source": "unclassified",
     "appearanceVerified": false
   },
+  "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "hwasa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 20,
+          "end": 25,
+          "text": "HWASA",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 18,
+          "text": "화사",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-hwasa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 20,
+          "end": 25,
+          "text": "HWASA",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 18,
+          "text": "화사",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "아이들",
+          "source": "title"
+        }
+      ]
+    }
+  ],
   "externalId": "F55kOtlBSkI",
   "sourceUrl": "https://www.youtube.com/watch?v=F55kOtlBSkI",
   "contentTypes": [
@@ -59,61 +115,5 @@
     "groupIds": [],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  },
-  "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "hwasa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "화사",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 25,
-          "text": "HWASA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "mamamoo-hwasa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "화사",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 25,
-          "text": "HWASA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 0,
-          "end": 3,
-          "text": "아이들",
-          "source": "title"
-        }
-      ]
-    }
-  ]
+  }
 }

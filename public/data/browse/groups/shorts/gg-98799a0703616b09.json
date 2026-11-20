@@ -42,23 +42,37 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "ive-gaeul",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-b832aad57724cb63",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 35,
-              "end": 37,
-              "text": "가을",
+              "start": 32,
+              "end": 33,
+              "text": "달",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-db56c112abc0387a",
+          "artistId": "person-8d209a243d886295",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 8,
+              "end": 10,
+              "text": "건지",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "ive-gaeul",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 35,
@@ -98,28 +112,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-8d209a243d886295",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 8,
-              "end": 10,
-              "text": "건지",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-b832aad57724cb63",
+          "artistId": "person-db56c112abc0387a",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 32,
-              "end": 33,
-              "text": "달",
+              "start": 35,
+              "end": 37,
+              "text": "가을",
               "source": "title"
             }
           ]
@@ -184,6 +184,32 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "stayc",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "스테이씨",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 52,
+              "text": "스테이씨",
+              "source": "title"
+            },
+            {
+              "start": 41,
+              "end": 46,
+              "text": "STAYC",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-8d209a243d886295",
           "state": "inferred",
@@ -207,32 +233,6 @@
               "start": 33,
               "end": 34,
               "text": "s",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "stayc",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 41,
-              "end": 46,
-              "text": "STAYC",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 4,
-              "text": "스테이씨",
-              "source": "title"
-            },
-            {
-              "start": 48,
-              "end": 52,
-              "text": "스테이씨",
               "source": "title"
             }
           ]
@@ -302,14 +302,14 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-0f7b3adaec0807a5",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "person-6ced3b067434a529",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 59,
-              "end": 61,
-              "text": "루안",
+              "start": 41,
+              "end": 43,
+              "text": "소리",
               "source": "title"
             }
           ]
@@ -329,20 +329,6 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-6ced3b067434a529",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 41,
-              "end": 43,
-              "text": "소리",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "beauty-box",
           "state": "inferred",
@@ -352,6 +338,20 @@
               "start": 29,
               "end": 33,
               "text": "뷰티박스",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-0f7b3adaec0807a5",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 59,
+              "end": 61,
+              "text": "루안",
               "source": "title"
             }
           ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:43:58.056938Z",
+    "collectedAt": "2026-11-20T13:36:47.209627Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,40 +46,34 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 7,
-          "text": "RESCENE",
-          "source": "title"
-        },
-        {
-          "start": 9,
-          "end": 12,
-          "text": "리센느",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "blackpink",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 27,
+          "end": 31,
+          "text": "블랙핑크",
+          "source": "title"
+        },
+        {
           "start": 16,
           "end": 25,
           "text": "BLACKPINK",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "rescene-liv",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 27,
-          "end": 31,
-          "text": "블랙핑크",
+          "start": 77,
+          "end": 79,
+          "text": "리브",
           "source": "title"
         }
       ]
@@ -99,15 +93,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "rescene-liv",
+      "artistType": "group",
+      "artistId": "rescene",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 77,
-          "end": 79,
-          "text": "리브",
+          "start": 0,
+          "end": 7,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 12,
+          "text": "리센느",
           "source": "title"
         }
       ]

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:44:13.338274Z",
+    "collectedAt": "2026-11-20T13:37:10.316641Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,15 +60,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-beabf7f2ae204647",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "rocket-punch",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "소희",
+          "start": 6,
+          "end": 10,
+          "text": "로켓펀치",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 23,
+          "text": "Rocket Punch",
           "source": "title"
         }
       ]
@@ -102,21 +108,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rocket-punch",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-beabf7f2ae204647",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 11,
-          "end": 23,
-          "text": "Rocket Punch",
-          "source": "title"
-        },
-        {
-          "start": 6,
-          "end": 10,
-          "text": "로켓펀치",
+          "start": 0,
+          "end": 2,
+          "text": "소희",
           "source": "title"
         }
       ]

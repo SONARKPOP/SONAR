@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:44:06.410568Z",
+    "collectedAt": "2026-11-20T13:36:59.819111Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,20 +46,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "person-d70508a044bfe45b",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 1,
-          "end": 3,
-          "text": "서현",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "girls-generation-seohyun",
@@ -90,9 +76,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "girls-generation-hyo",
+      "artistId": "person-d70508a044bfe45b",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "서현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyo",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 15,
@@ -109,10 +109,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "hyo",
+      "artistType": "person",
+      "artistId": "girls-generation-hyo",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 15,

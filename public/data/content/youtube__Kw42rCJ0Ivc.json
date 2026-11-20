@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:42:04.671465Z",
+    "collectedAt": "2026-11-20T13:34:06.891543Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,14 +45,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "luv",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "soyou",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 51,
-          "end": 53,
-          "text": "러브",
+          "start": 18,
+          "end": 20,
+          "text": "소유",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 17,
+          "text": "SOYOU",
           "source": "title"
         }
       ]
@@ -64,39 +70,39 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 12,
-          "end": 17,
-          "text": "SOYOU",
-          "source": "title"
-        },
-        {
           "start": 18,
           "end": 20,
           "text": "소유",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 17,
+          "text": "SOYOU",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "soyou",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "luv",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 12,
-          "end": 17,
-          "text": "SOYOU",
-          "source": "title"
-        },
-        {
-          "start": 18,
-          "end": 20,
-          "text": "소유",
+          "start": 51,
+          "end": 53,
+          "text": "러브",
           "source": "title"
         }
       ]
     }
+  ],
+  "careerGroupIds": [
+    "sistar"
+  ],
+  "displayCareerGroupIds": [
+    "sistar"
   ],
   "externalId": "Kw42rCJ0Ivc",
   "sourceUrl": "https://www.youtube.com/watch?v=Kw42rCJ0Ivc",
@@ -109,11 +115,5 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "careerGroupIds": [
-    "sistar"
-  ],
-  "displayCareerGroupIds": [
-    "sistar"
-  ]
+  "musicBroadcast": false
 }

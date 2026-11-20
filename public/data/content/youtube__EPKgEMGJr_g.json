@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:41:37.811402Z",
+    "collectedAt": "2026-11-20T13:33:39.139093Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -61,6 +61,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "person-60c0563ec31a28a5",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "나나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-8afd0dc999a5a3e5",
       "state": "needs_review",
       "reason": "shared-name",
@@ -74,15 +88,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-60c0563ec31a28a5",
+      "artistType": "group",
+      "artistId": "iu",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 4,
-          "end": 6,
-          "text": "나나",
+          "start": 25,
+          "end": 28,
+          "text": "아이유",
           "source": "title"
         }
       ]
@@ -111,20 +125,6 @@
           "start": 1,
           "end": 3,
           "text": "우아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "iu",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 25,
-          "end": 28,
-          "text": "아이유",
           "source": "title"
         }
       ]

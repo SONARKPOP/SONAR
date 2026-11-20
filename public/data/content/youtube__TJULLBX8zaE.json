@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:42:31.859930Z",
+    "collectedAt": "2026-11-20T13:34:41.514644Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -62,21 +62,35 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "uspeer-roa",
+      "artistType": "group",
+      "artistId": "uspeer",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 34,
+          "end": 40,
+          "text": "USPEER",
+          "source": "title"
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "text": "유스피어",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e8e31caaa60a7185",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 30,
           "end": 32,
           "text": "로아",
-          "source": "title"
-        },
-        {
-          "start": 25,
-          "end": 28,
-          "text": "ROA",
           "source": "title"
         }
       ]
@@ -91,6 +105,26 @@
           "start": 30,
           "end": 32,
           "text": "로아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-37d750bf0949e1a5",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 30,
+          "end": 32,
+          "text": "로아",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 28,
+          "text": "ROA",
           "source": "title"
         }
       ]
@@ -139,23 +173,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-e8e31caaa60a7185",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 30,
-          "end": 32,
-          "text": "로아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-37d750bf0949e1a5",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "uspeer-roa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 30,
@@ -167,26 +187,6 @@
           "start": 25,
           "end": 28,
           "text": "ROA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "uspeer",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 42,
-          "end": 46,
-          "text": "유스피어",
-          "source": "title"
-        },
-        {
-          "start": 34,
-          "end": 40,
-          "text": "USPEER",
           "source": "title"
         }
       ]

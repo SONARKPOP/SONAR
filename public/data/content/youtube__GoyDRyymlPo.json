@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:41:46.412803Z",
+    "collectedAt": "2026-11-20T13:33:49.063378Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,10 +45,30 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-e15f2801873c3186",
+      "artistType": "group",
+      "artistId": "everglow",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 16,
+          "text": "에버글로우",
+          "source": "title"
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "text": "EVERGLOW",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-635192b2e655114d",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 17,
@@ -74,34 +94,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-635192b2e655114d",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-e15f2801873c3186",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 17,
           "end": 19,
           "text": "이유",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "everglow",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 31,
-          "end": 39,
-          "text": "EVERGLOW",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 16,
-          "text": "에버글로우",
           "source": "title"
         }
       ]

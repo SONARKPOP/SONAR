@@ -8,6 +8,7 @@
   "publishedAt": "2024-04-04T03:00:32Z",
   "groupIds": [
     "kiss",
+    "kiss-of-life",
     "natty"
   ],
   "memberIds": [
@@ -33,38 +34,30 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:43:26.389334Z",
+    "collectedAt": "2026-11-20T13:36:01.119014Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "kiss-of-life-member-272247fb290a",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 68,
-          "end": 70,
-          "text": "쥴리",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "kiss-of-life",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
+        {
+          "start": 29,
+          "end": 41,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        },
         {
           "start": 0,
           "end": 7,
@@ -75,12 +68,6 @@
           "start": 58,
           "end": 65,
           "text": "키스오브라이프",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 41,
-          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]
@@ -123,6 +110,20 @@
           "start": 29,
           "end": 33,
           "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "kiss-of-life-member-272247fb290a",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 68,
+          "end": 70,
+          "text": "쥴리",
           "source": "title"
         }
       ]

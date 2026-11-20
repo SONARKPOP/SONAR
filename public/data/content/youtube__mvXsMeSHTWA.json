@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:43:36.065089Z",
+    "collectedAt": "2026-11-20T13:36:15.582506Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,26 +45,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 33,
-          "end": 38,
-          "text": "TUIDE",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 11,
-          "text": "튜이드",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "person-53ac75592cc41944",
@@ -96,6 +76,20 @@
     {
       "artistType": "person",
       "artistId": "person-f1bd11c84b90f90e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "서연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a03ed8929b5bad88",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -142,15 +136,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-a03ed8929b5bad88",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "서연",
+          "start": 33,
+          "end": 38,
+          "text": "TUIDE",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "튜이드",
           "source": "title"
         }
       ]

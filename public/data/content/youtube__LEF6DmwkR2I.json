@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:42:05.909066Z",
+    "collectedAt": "2026-11-20T13:34:08.052044Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "itzy-member-7278cba408bf",
+      "artistType": "group",
+      "artistId": "itzy",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-8b4343714e0c63b6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 28,
@@ -62,9 +76,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b2cb44ebb8cd28b7",
+      "artistId": "person-8b1cef20627a0a20",
       "state": "needs_review",
       "reason": "shared-name",
+      "matches": [
+        {
+          "start": 28,
+          "end": 30,
+          "text": "예지",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "itzy-member-7278cba408bf",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 28,
@@ -104,7 +132,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-8b4343714e0c63b6",
+      "artistId": "person-b2cb44ebb8cd28b7",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -112,34 +140,6 @@
           "start": 28,
           "end": 30,
           "text": "예지",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-8b1cef20627a0a20",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 28,
-          "end": 30,
-          "text": "예지",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 26,
-          "text": "ITZY",
           "source": "title"
         }
       ]

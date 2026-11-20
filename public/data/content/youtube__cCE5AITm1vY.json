@@ -35,7 +35,7 @@
   "actualEndTime": "2025-09-05T09:35:34Z",
   "scheduledStartTime": "2025-09-05T09:00:00Z",
   "source": {
-    "collectedAt": "2026-11-20T07:43:02.582188Z",
+    "collectedAt": "2026-11-20T13:35:24.673783Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "younha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 26,
+          "text": "윤하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -57,6 +71,20 @@
           "start": 8,
           "end": 11,
           "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-85a74b9d1650b4e3",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "이서",
           "source": "title"
         }
       ]
@@ -77,28 +105,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-85a74b9d1650b4e3",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "이서",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "younha",
+      "artistId": "ive-liz",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "윤하",
+          "start": 12,
+          "end": 14,
+          "text": "리즈",
           "source": "title"
         }
       ]
@@ -113,20 +127,6 @@
           "start": 41,
           "end": 43,
           "text": "우연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "ive-liz",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "리즈",
           "source": "title"
         }
       ]

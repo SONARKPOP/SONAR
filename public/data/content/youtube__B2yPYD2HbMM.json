@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:41:26.616348Z",
+    "collectedAt": "2026-11-20T13:33:25.650342Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,9 +47,23 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "itzy-member-7278cba408bf",
+      "artistId": "person-97230eee8a140bd9",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 19,
+          "text": "이런",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-8b4343714e0c63b6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 5,
@@ -61,9 +75,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b2cb44ebb8cd28b7",
+      "artistId": "person-8b1cef20627a0a20",
       "state": "needs_review",
       "reason": "shared-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "예지",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "itzy-member-7278cba408bf",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 5,
@@ -103,7 +131,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-8b4343714e0c63b6",
+      "artistId": "person-b2cb44ebb8cd28b7",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -111,34 +139,6 @@
           "start": 5,
           "end": 7,
           "text": "예지",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-8b1cef20627a0a20",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "예지",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-97230eee8a140bd9",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 17,
-          "end": 19,
-          "text": "이런",
           "source": "title"
         }
       ]

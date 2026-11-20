@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:41:14.064614Z",
+    "collectedAt": "2026-11-20T13:33:08.763126Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ioi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 56,
+          "end": 61,
+          "text": "아이오아이",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "jeon-somi",
@@ -77,14 +91,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-67e210cea7126fd3",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-6ac11acfa7a53bdb",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 46,
-          "end": 49,
-          "text": "최유정",
+          "start": 12,
+          "end": 14,
+          "text": "솜이",
           "source": "title"
         }
       ]
@@ -104,29 +118,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ioi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 56,
-          "end": 61,
-          "text": "아이오아이",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-6ac11acfa7a53bdb",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-67e210cea7126fd3",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "솜이",
+          "start": 46,
+          "end": 49,
+          "text": "최유정",
           "source": "title"
         }
       ]

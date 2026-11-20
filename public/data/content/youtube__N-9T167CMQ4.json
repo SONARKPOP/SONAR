@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:42:12.441372Z",
+    "collectedAt": "2026-11-20T13:34:14.985176Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -63,20 +63,34 @@
     },
     {
       "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 25,
+          "text": "아이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
-          "end": 20,
-          "text": "아이들",
-          "source": "title"
-        },
-        {
           "start": 13,
           "end": 20,
           "text": "(여자)아이들",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 20,
+          "text": "아이들",
           "source": "title"
         }
       ]
@@ -91,20 +105,6 @@
           "start": 27,
           "end": 30,
           "text": "뉴진스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 25,
-          "text": "아이브",
           "source": "title"
         }
       ]

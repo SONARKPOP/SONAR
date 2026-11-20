@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:41:49.090901Z",
+    "collectedAt": "2026-11-20T13:33:51.628437Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,21 +44,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-67e210cea7126fd3",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ioi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 22,
-          "end": 25,
-          "text": "최유정",
+          "start": 56,
+          "end": 61,
+          "text": "아이오아이",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 51,
-          "end": 54,
-          "text": "최유정",
+          "start": 9,
+          "end": 10,
+          "text": "안",
           "source": "title"
         }
       ]
@@ -85,28 +93,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
+      "artistId": "person-67e210cea7126fd3",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 9,
-          "end": 10,
-          "text": "안",
+          "start": 22,
+          "end": 25,
+          "text": "최유정",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ioi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 56,
-          "end": 61,
-          "text": "아이오아이",
+          "start": 51,
+          "end": 54,
+          "text": "최유정",
           "source": "title"
         }
       ]

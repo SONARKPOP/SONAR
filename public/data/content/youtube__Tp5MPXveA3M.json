@@ -32,7 +32,7 @@
   "actualEndTime": "2023-01-21T08:08:14Z",
   "scheduledStartTime": "2023-01-21T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-20T07:42:33.375916Z",
+    "collectedAt": "2026-11-20T13:34:43.633422Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,27 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-6c94e077a885f432",
+      "artistType": "group",
+      "artistId": "h1-key",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 29,
-          "end": 31,
-          "text": "장미",
+          "start": 5,
+          "end": 11,
+          "text": "H1-KEY",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 15,
+          "text": "하이키",
+          "source": "title"
+        },
+        {
+          "start": 56,
+          "end": 59,
+          "text": "하이키",
           "source": "title"
         }
       ]
@@ -74,27 +86,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "h1-key",
+      "artistType": "person",
+      "artistId": "person-6c94e077a885f432",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 12,
-          "end": 15,
-          "text": "하이키",
-          "source": "title"
-        },
-        {
-          "start": 56,
-          "end": 59,
-          "text": "하이키",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 11,
-          "text": "H1-KEY",
+          "start": 29,
+          "end": 31,
+          "text": "장미",
           "source": "title"
         }
       ]

@@ -30,30 +30,35 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-16T16:43:48.545172Z",
+    "collectedAt": "2026-11-20T13:36:23.563355Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
-  "externalId": "or3sSHAsjeA",
-  "sourceUrl": "https://www.youtube.com/watch?v=or3sSHAsjeA",
-  "contentTypes": [
-    "own"
-  ],
-  "ownType": "behind",
-  "contentTabs": [
-    "home",
-    "own"
-  ],
-  "musicType": "",
-  "teaserType": "",
-  "contentLength": "regular",
-  "hierarchyVersion": 2,
-  "musicBroadcast": false,
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 49,
+          "end": 54,
+          "text": "i-dle",
+          "source": "title"
+        },
+        {
+          "start": 56,
+          "end": 59,
+          "text": "아이들",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "minnie",
@@ -81,26 +86,21 @@
           "source": "title"
         }
       ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 49,
-          "end": 54,
-          "text": "i-dle",
-          "source": "title"
-        },
-        {
-          "start": 56,
-          "end": 59,
-          "text": "아이들",
-          "source": "title"
-        }
-      ]
     }
-  ]
+  ],
+  "externalId": "or3sSHAsjeA",
+  "sourceUrl": "https://www.youtube.com/watch?v=or3sSHAsjeA",
+  "contentTypes": [
+    "own"
+  ],
+  "ownType": "behind",
+  "contentTabs": [
+    "home",
+    "own"
+  ],
+  "musicType": "",
+  "teaserType": "",
+  "contentLength": "regular",
+  "hierarchyVersion": 2,
+  "musicBroadcast": false
 }

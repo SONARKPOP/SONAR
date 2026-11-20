@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:43:21.039422Z",
+    "collectedAt": "2026-11-20T13:35:51.767617Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -65,8 +65,42 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 13,
+          "text": "있지",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 33,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-b2cb44ebb8cd28b7",
+      "artistId": "person-8b4343714e0c63b6",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 14,
+          "end": 16,
+          "text": "예지",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-8b1cef20627a0a20",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -108,7 +142,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-8b4343714e0c63b6",
+      "artistId": "person-b2cb44ebb8cd28b7",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -116,40 +150,6 @@
           "start": 14,
           "end": 16,
           "text": "예지",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-8b1cef20627a0a20",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 16,
-          "text": "예지",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 13,
-          "text": "있지",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 33,
-          "text": "ITZY",
           "source": "title"
         }
       ]

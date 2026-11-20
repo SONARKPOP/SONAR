@@ -29,7 +29,7 @@
   "actualEndTime": "2023-08-25T08:07:46Z",
   "scheduledStartTime": "2023-08-25T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-20T07:43:37.398983Z",
+    "collectedAt": "2026-11-20T13:36:17.589607Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,6 +42,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "akmu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "악뮤",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 9,
+          "text": "AKMU",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-57cd8238ec9cf0f1",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 51,
+          "end": 53,
+          "text": "수현",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "billlie-member-3c2540674e49",
@@ -66,40 +100,6 @@
           "start": 51,
           "end": 53,
           "text": "수현",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-57cd8238ec9cf0f1",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 51,
-          "end": 53,
-          "text": "수현",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "akmu",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 10,
-          "end": 12,
-          "text": "악뮤",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 9,
-          "text": "AKMU",
           "source": "title"
         }
       ]

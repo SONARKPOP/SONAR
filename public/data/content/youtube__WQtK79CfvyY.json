@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:42:41.438016Z",
+    "collectedAt": "2026-11-20T13:34:55.052643Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -62,7 +62,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b28c840649822102",
+      "artistId": "person-cdec1868119ed257",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -76,7 +76,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-cdec1868119ed257",
+      "artistId": "person-b28c840649822102",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -84,6 +84,20 @@
           "start": 14,
           "end": 16,
           "text": "소은",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lunedi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "먼데이",
           "source": "title"
         }
       ]
@@ -104,34 +118,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "lunedi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 10,
-          "end": 13,
-          "text": "먼데이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "gidle",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 44,
-          "end": 47,
-          "text": "아이들",
-          "source": "title"
-        },
-        {
           "start": 40,
           "end": 47,
           "text": "(여자)아이들",
+          "source": "title"
+        },
+        {
+          "start": 44,
+          "end": 47,
+          "text": "아이들",
           "source": "title"
         }
       ]

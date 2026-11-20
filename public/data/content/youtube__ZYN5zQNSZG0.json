@@ -30,7 +30,7 @@
   "actualEndTime": "2026-07-01T04:56:22Z",
   "scheduledStartTime": "2026-07-01T04:00:00Z",
   "source": {
-    "collectedAt": "2026-11-20T07:42:51.221956Z",
+    "collectedAt": "2026-11-20T13:35:08.767255Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,34 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ioi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 67,
+          "end": 72,
+          "text": "아이오아이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-7ec6d765a59e3467",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 28,
+          "end": 30,
+          "text": "정희",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-58ec1ca80bc9170d",
@@ -73,14 +101,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-7ec6d765a59e3467",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-541463fe20a0d62e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 28,
-          "end": 30,
-          "text": "정희",
+          "start": 18,
+          "end": 21,
+          "text": "최유정",
+          "source": "title"
+        },
+        {
+          "start": 62,
+          "end": 65,
+          "text": "최유정",
           "source": "title"
         }
       ]
@@ -101,40 +135,6 @@
           "start": 62,
           "end": 65,
           "text": "최유정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-541463fe20a0d62e",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 18,
-          "end": 21,
-          "text": "최유정",
-          "source": "title"
-        },
-        {
-          "start": 62,
-          "end": 65,
-          "text": "최유정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ioi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 67,
-          "end": 72,
-          "text": "아이오아이",
           "source": "title"
         }
       ]

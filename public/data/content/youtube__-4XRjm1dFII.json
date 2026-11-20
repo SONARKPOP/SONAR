@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T07:40:47.678336Z",
+    "collectedAt": "2026-11-20T13:32:35.350016Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,20 +47,54 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "lee-hi",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 11,
+          "end": 15,
+          "text": "ROSE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "oh-my-girl-yooa",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 36,
-          "end": 39,
-          "text": "이하이",
+          "start": 3,
+          "end": 7,
+          "text": "YooA",
           "source": "title"
         },
         {
-          "start": 40,
-          "end": 46,
-          "text": "LEE HI",
+          "start": 0,
+          "end": 2,
+          "text": "유아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yooa",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 3,
+          "end": 7,
+          "text": "YooA",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "text": "유아",
           "source": "title"
         }
       ]
@@ -81,54 +115,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 11,
-          "end": 15,
-          "text": "ROSE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yooa",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 2,
-          "text": "유아",
-          "source": "title"
-        },
-        {
-          "start": 3,
-          "end": 7,
-          "text": "YooA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
+      "artistId": "lee-hi",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "유아",
+          "start": 36,
+          "end": 39,
+          "text": "이하이",
           "source": "title"
         },
         {
-          "start": 3,
-          "end": 7,
-          "text": "YooA",
+          "start": 40,
+          "end": 46,
+          "text": "LEE HI",
           "source": "title"
         }
       ]
