@@ -41,15 +41,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-5c47ca1195ef2f82",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 35,
-          "end": 37,
-          "text": "레이",
+          "start": 20,
+          "end": 23,
+          "text": "IVE",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 28,
+          "text": "아이브",
           "source": "title"
         }
       ]
@@ -75,21 +81,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-5c47ca1195ef2f82",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 25,
-          "end": 28,
-          "text": "아이브",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 23,
-          "text": "IVE",
+          "start": 35,
+          "end": 37,
+          "text": "레이",
           "source": "title"
         }
       ]

@@ -44,10 +44,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "itzy-member-76c6aafcc89c",
+      "artistType": "group",
+      "artistId": "itzy",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 4,
+          "end": 8,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e0dfa5918b67a1d3",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 0,
@@ -73,28 +87,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-e0dfa5918b67a1d3",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "itzy-member-76c6aafcc89c",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 0,
           "end": 2,
           "text": "리아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 4,
-          "end": 8,
-          "text": "ITZY",
           "source": "title"
         }
       ]
