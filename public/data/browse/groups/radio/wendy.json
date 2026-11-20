@@ -42,20 +42,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "red-velvet",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 72,
-              "end": 76,
-              "text": "레드벨벳",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "wendy",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -102,6 +88,20 @@
               "start": 61,
               "end": 63,
               "text": "웬디",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "red-velvet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 72,
+              "end": 76,
+              "text": "레드벨벳",
               "source": "title"
             }
           ]
@@ -266,22 +266,36 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "ive-liz",
+          "artistType": "group",
+          "artistId": "wendy",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 8,
-              "end": 10,
-              "text": "리즈",
+              "start": 14,
+              "end": 16,
+              "text": "웬디",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "red-velvet-seulgi",
+          "artistId": "red-velvet-wendy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 16,
+              "text": "웬디",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "seulgi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -294,8 +308,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "seulgi",
+          "artistType": "person",
+          "artistId": "red-velvet-seulgi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -322,29 +336,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "wendy",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 16,
-              "text": "웬디",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
-          "artistId": "red-velvet-wendy",
+          "artistId": "ive-liz",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 14,
-              "end": 16,
-              "text": "웬디",
+              "start": 8,
+              "end": 10,
+              "text": "리즈",
               "source": "title"
             }
           ]
