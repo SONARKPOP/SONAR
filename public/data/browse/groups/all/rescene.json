@@ -293,7 +293,6 @@
       "title": "RESCENE #메이 님과 like a flower ⋆˚✿˖°",
       "publishedAt": "2026-11-19T07:00:14Z",
       "groupIds": [
-        "rescene",
         "say-my-name"
       ],
       "memberIds": [
@@ -321,15 +320,29 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "rescene",
+          "artistType": "person",
+          "artistId": "rescene-may",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 7,
-              "text": "RESCENE",
+              "start": 9,
+              "end": 11,
+              "text": "메이",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-6710cdc41d20f9fd",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 9,
+              "end": 11,
+              "text": "메이",
               "source": "title"
             }
           ]
@@ -363,29 +376,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "rescene-may",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "rescene",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 9,
-              "end": 11,
-              "text": "메이",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-6710cdc41d20f9fd",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 9,
-              "end": 11,
-              "text": "메이",
+              "start": 0,
+              "end": 7,
+              "text": "RESCENE",
               "source": "title"
             }
           ]
