@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T19:23:02.637988Z",
+    "collectedAt": "2026-11-20T01:33:12.297245Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -56,6 +56,26 @@
           "start": 12,
           "end": 13,
           "text": "달",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "오마이걸",
+          "source": "title"
+        },
+        {
+          "start": 55,
+          "end": 59,
+          "text": "오마이걸",
           "source": "title"
         }
       ]
@@ -90,23 +110,37 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-9e234c5ab92ae35e",
+      "artistId": "oh-my-girl-yooa",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 61,
-          "end": 63,
-          "text": "유빈",
+          "start": 65,
+          "end": 67,
+          "text": "유아",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "yubin",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "yooa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 65,
+          "end": 67,
+          "text": "유아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-9e234c5ab92ae35e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 61,
@@ -174,48 +208,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "yubin",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "오마이걸",
-          "source": "title"
-        },
-        {
-          "start": 55,
-          "end": 59,
-          "text": "오마이걸",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 65,
-          "end": 67,
-          "text": "유아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yooa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 65,
-          "end": 67,
-          "text": "유아",
+          "start": 61,
+          "end": 63,
+          "text": "유빈",
           "source": "title"
         }
       ]

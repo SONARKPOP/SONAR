@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T19:22:23.043261Z",
+    "collectedAt": "2026-11-20T01:32:25.707673Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c6502f8c2e036bcd",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "fromis9",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 22,
-          "end": 24,
-          "text": "하얀",
+          "start": 31,
+          "end": 39,
+          "text": "fromis_9",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 20,
+          "text": "프로미스나인",
           "source": "title"
         }
       ]
@@ -71,21 +77,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "fromis9",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-c6502f8c2e036bcd",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 31,
-          "end": 39,
-          "text": "fromis_9",
-          "source": "title"
-        },
-        {
-          "start": 14,
-          "end": 20,
-          "text": "프로미스나인",
+          "start": 22,
+          "end": 24,
+          "text": "하얀",
           "source": "title"
         }
       ]

@@ -9,7 +9,8 @@
       "publishedAt": "2026-07-07T03:00:25Z",
       "groupIds": [
         "izna",
-        "min"
+        "min",
+        "miss-a"
       ],
       "memberIds": [
         "miss-a-min",
@@ -34,7 +35,7 @@
         "external"
       ],
       "memberTagging": {
-        "policy": "title-context-v2",
+        "policy": "title-only-v1",
         "source": "title",
         "appearanceVerified": false
       },
@@ -61,14 +62,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-ad73a6c022a8838f",
+          "artistId": "miss-a-min",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 11,
-              "end": 14,
-              "text": "방지민",
+              "start": 48,
+              "end": 51,
+              "text": "MIN",
               "source": "title"
             }
           ]
@@ -89,14 +90,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "miss-a-min",
+          "artistId": "person-ad73a6c022a8838f",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 48,
-              "end": 51,
-              "text": "MIN",
+              "start": 11,
+              "end": 14,
+              "text": "방지민",
               "source": "title"
             }
           ]

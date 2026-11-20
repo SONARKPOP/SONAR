@@ -72,23 +72,9 @@
     },
     {
       "artistType": "group",
-      "artistId": "loona",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 9,
-          "end": 15,
-          "text": "이달의 소녀",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "gugudan-kim-sejeong",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "kim-sejeong",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 36,
@@ -113,15 +99,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kim-sejeong",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "gugudan-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 36,
           "end": 39,
           "text": "김세정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "loona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 15,
+          "text": "이달의 소녀",
           "source": "title"
         }
       ]

@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T19:23:18.355409Z",
+    "collectedAt": "2026-11-20T01:33:28.047186Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,23 +44,9 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "kim-sejeong",
       "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 44,
-          "end": 46,
-          "text": "키스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "gugudan-kim-sejeong",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 10,
@@ -85,15 +71,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kim-sejeong",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "gugudan-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 10,
           "end": 13,
           "text": "김세정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 44,
+          "end": 46,
+          "text": "키스",
           "source": "title"
         }
       ]

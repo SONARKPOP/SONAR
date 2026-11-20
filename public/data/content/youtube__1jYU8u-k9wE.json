@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T19:21:13.003630Z",
+    "collectedAt": "2026-11-20T01:31:06.444620Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a62ad8bf482db100",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ejel",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "여름",
+          "start": 14,
+          "end": 18,
+          "text": "EJel",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 12,
+          "text": "이젤",
           "source": "title"
         }
       ]
@@ -85,21 +91,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ejel",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "person-a62ad8bf482db100",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 14,
-          "end": 18,
-          "text": "EJel",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 12,
-          "text": "이젤",
+          "start": 0,
+          "end": 2,
+          "text": "여름",
           "source": "title"
         }
       ]

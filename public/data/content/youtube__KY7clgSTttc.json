@@ -8,7 +8,8 @@
   "publishedAt": "2026-06-11T11:08:43Z",
   "groupIds": [
     "izna",
-    "min"
+    "min",
+    "miss-a"
   ],
   "memberIds": [
     "miss-a-min",
@@ -34,34 +35,28 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-19T19:22:01.737020Z",
+    "collectedAt": "2026-11-20T01:32:01.753913Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "izna",
+      "artistType": "person",
+      "artistId": "miss-a-min",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 8,
-          "end": 11,
-          "text": "이즈나",
-          "source": "title"
-        },
-        {
-          "start": 32,
-          "end": 36,
-          "text": "izna",
+          "start": 46,
+          "end": 49,
+          "text": "MIN",
           "source": "title"
         }
       ]
@@ -82,20 +77,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "miss-a-min",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 46,
-          "end": 49,
-          "text": "MIN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-ad73a6c022a8838f",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -104,6 +85,26 @@
           "start": 12,
           "end": 15,
           "text": "방지민",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 36,
+          "text": "izna",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "이즈나",
           "source": "title"
         }
       ]
