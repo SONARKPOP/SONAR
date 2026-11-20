@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-20T09:48:12.445231Z",
+  "updatedAt": "2026-11-20T10:23:48.638654Z",
   "items": [
     {
       "id": "youtube__gnGVOqMqK8k",
@@ -64,12 +64,6 @@
           ]
         }
       ],
-      "careerGroupIds": [
-        "mamamoo"
-      ],
-      "displayCareerGroupIds": [
-        "mamamoo"
-      ],
       "externalId": "gnGVOqMqK8k",
       "sourceUrl": "https://www.youtube.com/watch?v=gnGVOqMqK8k",
       "contentTypes": [
@@ -92,7 +86,13 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      }
+      },
+      "careerGroupIds": [
+        "mamamoo"
+      ],
+      "displayCareerGroupIds": [
+        "mamamoo"
+      ]
     },
     {
       "id": "youtube__UyDWFF3nQbQ",
@@ -156,12 +156,6 @@
           ]
         }
       ],
-      "careerGroupIds": [
-        "mamamoo"
-      ],
-      "displayCareerGroupIds": [
-        "mamamoo"
-      ],
       "externalId": "UyDWFF3nQbQ",
       "sourceUrl": "https://www.youtube.com/watch?v=UyDWFF3nQbQ",
       "contentTypes": [
@@ -184,7 +178,13 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      }
+      },
+      "careerGroupIds": [
+        "mamamoo"
+      ],
+      "displayCareerGroupIds": [
+        "mamamoo"
+      ]
     },
     {
       "id": "youtube__Sa62YpXfkkU",
@@ -4685,10 +4685,10 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "lovelyz-mijoo",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistType": "group",
+          "artistId": "mijoo",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 9,
@@ -4699,10 +4699,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "mijoo",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "lovelyz-mijoo",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 9,
@@ -5146,6 +5146,26 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 34,
+              "end": 41,
+              "text": "MAMAMOO",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 14,
+              "text": "마마무",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "mamamoo-solar",
           "state": "inferred",
@@ -5181,26 +5201,6 @@
               "start": 42,
               "end": 47,
               "text": "SOLAR",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 11,
-              "end": 14,
-              "text": "마마무",
-              "source": "title"
-            },
-            {
-              "start": 34,
-              "end": 41,
-              "text": "MAMAMOO",
               "source": "title"
             }
           ]
@@ -5262,29 +5262,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 49,
-              "end": 51,
-              "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "solar",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 49,
-              "end": 51,
-              "text": "솔라",
+              "start": 37,
+              "end": 39,
+              "text": "화사",
               "source": "title"
             }
           ]
@@ -5305,14 +5291,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "hwasa",
+          "artistId": "moonbyul",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 37,
-              "end": 39,
-              "text": "화사",
+              "start": 45,
+              "end": 47,
+              "text": "문별",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-moonbyul",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 47,
+              "text": "문별",
               "source": "title"
             }
           ]
@@ -5361,28 +5361,28 @@
         },
         {
           "artistType": "person",
-          "artistId": "mamamoo-moonbyul",
+          "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 45,
-              "end": 47,
-              "text": "문별",
+              "start": 49,
+              "end": 51,
+              "text": "솔라",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "moonbyul",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 45,
-              "end": 47,
-              "text": "문별",
+              "start": 49,
+              "end": 51,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -5443,29 +5443,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 62,
-              "end": 64,
-              "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "solar",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 62,
-              "end": 64,
-              "text": "솔라",
+              "start": 74,
+              "end": 76,
+              "text": "화사",
               "source": "title"
             }
           ]
@@ -5486,14 +5472,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "hwasa",
+          "artistId": "moonbyul",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 74,
-              "end": 76,
-              "text": "화사",
+              "start": 66,
+              "end": 68,
+              "text": "문별",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-moonbyul",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 66,
+              "end": 68,
+              "text": "문별",
               "source": "title"
             }
           ]
@@ -5542,28 +5542,28 @@
         },
         {
           "artistType": "person",
-          "artistId": "mamamoo-moonbyul",
+          "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 66,
-              "end": 68,
-              "text": "문별",
+              "start": 62,
+              "end": 64,
+              "text": "솔라",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "moonbyul",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 66,
-              "end": 68,
-              "text": "문별",
+              "start": 62,
+              "end": 64,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -5618,21 +5618,35 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "마마무",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 10,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -5644,29 +5658,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 10,
               "text": "Solar",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 15,
-              "end": 18,
-              "text": "마마무",
+              "start": 11,
+              "end": 13,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -5840,15 +5840,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 10,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -5860,15 +5860,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 10,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -5940,6 +5940,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 1,
+              "end": 4,
+              "text": "마마무",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "mamamoo-solar",
           "state": "inferred",
@@ -5963,20 +5977,6 @@
               "start": 5,
               "end": 7,
               "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 1,
-              "end": 4,
-              "text": "마마무",
               "source": "title"
             }
           ]
@@ -6038,15 +6038,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 16,
-              "end": 18,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 10,
               "end": 15,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 16,
+              "end": 18,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6058,15 +6058,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 16,
-              "end": 18,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 10,
               "end": 15,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 16,
+              "end": 18,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6146,15 +6146,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 30,
-              "end": 35,
-              "text": "Apink",
-              "source": "title"
-            },
-            {
               "start": 24,
               "end": 28,
               "text": "에이핑크",
+              "source": "title"
+            },
+            {
+              "start": 30,
+              "end": 35,
+              "text": "Apink",
               "source": "title"
             }
           ]
@@ -6166,15 +6166,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 65,
-              "end": 67,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 69,
               "end": 74,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 65,
+              "end": 67,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6186,29 +6186,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 65,
-              "end": 67,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 69,
               "end": 74,
               "text": "Solar",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-1302ddab0dad9303",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 37,
-              "end": 40,
-              "text": "박초롱",
+              "start": 65,
+              "end": 67,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6220,15 +6206,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 56,
-              "end": 63,
-              "text": "MAMAMOO",
-              "source": "title"
-            },
-            {
               "start": 51,
               "end": 54,
               "text": "마마무",
+              "source": "title"
+            },
+            {
+              "start": 56,
+              "end": 63,
+              "text": "MAMAMOO",
               "source": "title"
             }
           ]
@@ -6243,6 +6229,20 @@
               "start": 8,
               "end": 10,
               "text": "하트",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-1302ddab0dad9303",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 37,
+              "end": 40,
+              "text": "박초롱",
               "source": "title"
             }
           ]
@@ -6307,15 +6307,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 24,
-              "end": 29,
-              "text": "Apink",
-              "source": "title"
-            },
-            {
               "start": 18,
               "end": 22,
               "text": "에이핑크",
+              "source": "title"
+            },
+            {
+              "start": 24,
+              "end": 29,
+              "text": "Apink",
               "source": "title"
             }
           ]
@@ -6327,15 +6327,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 59,
-              "end": 61,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 63,
               "end": 68,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 59,
+              "end": 61,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6347,29 +6347,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 59,
-              "end": 61,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 63,
               "end": 68,
               "text": "Solar",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-1302ddab0dad9303",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 31,
-              "end": 34,
-              "text": "박초롱",
+              "start": 59,
+              "end": 61,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6381,15 +6367,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 50,
-              "end": 57,
-              "text": "MAMAMOO",
-              "source": "title"
-            },
-            {
               "start": 45,
               "end": 48,
               "text": "마마무",
+              "source": "title"
+            },
+            {
+              "start": 50,
+              "end": 57,
+              "text": "MAMAMOO",
               "source": "title"
             }
           ]
@@ -6404,6 +6390,20 @@
               "start": 9,
               "end": 11,
               "text": "하트",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-1302ddab0dad9303",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 31,
+              "end": 34,
+              "text": "박초롱",
               "source": "title"
             }
           ]
@@ -6465,15 +6465,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 16,
-              "end": 18,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 10,
               "end": 15,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 16,
+              "end": 18,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6485,15 +6485,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 16,
-              "end": 18,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 10,
               "end": 15,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 16,
+              "end": 18,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6570,15 +6570,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 10,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6590,15 +6590,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 10,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6675,46 +6675,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
-              "start": 4,
-              "end": 9,
-              "text": "Solar",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
-              "start": 4,
-              "end": 9,
-              "text": "Solar",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "mamamoo",
           "state": "inferred",
@@ -6730,6 +6690,46 @@
               "start": 75,
               "end": 82,
               "text": "MAMAMOO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 4,
+              "end": 9,
+              "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 2,
+              "text": "솔라",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 4,
+              "end": 9,
+              "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 2,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6787,46 +6787,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
-              "start": 33,
-              "end": 38,
-              "text": "Solar",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
-              "start": 33,
-              "end": 38,
-              "text": "Solar",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "mamamoo",
           "state": "inferred",
@@ -6842,6 +6802,46 @@
               "start": 40,
               "end": 47,
               "text": "MAMAMOO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 33,
+              "end": 38,
+              "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 2,
+              "text": "솔라",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 33,
+              "end": 38,
+              "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 2,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6898,21 +6898,35 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "마마무",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 10,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 13,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -6924,29 +6938,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 10,
               "text": "Solar",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 15,
-              "end": 18,
-              "text": "마마무",
+              "start": 11,
+              "end": 13,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -7003,21 +7003,35 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 20,
+              "end": 23,
+              "text": "마마무",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 16,
-              "end": 18,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 10,
               "end": 15,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 16,
+              "end": 18,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -7029,29 +7043,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 16,
-              "end": 18,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 10,
               "end": 15,
               "text": "Solar",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 20,
-              "end": 23,
-              "text": "마마무",
+              "start": 16,
+              "end": 18,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -7108,21 +7108,35 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 19,
+              "end": 22,
+              "text": "마마무",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 17,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 9,
               "end": 14,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 15,
+              "end": 17,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -7134,29 +7148,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 17,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 9,
               "end": 14,
               "text": "Solar",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 19,
-              "end": 22,
-              "text": "마마무",
+              "start": 15,
+              "end": 17,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -7219,29 +7219,57 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
+          "artistType": "group",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 75,
-              "end": 77,
-              "text": "솔라",
+              "start": 84,
+              "end": 86,
+              "text": "화사",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-hwasa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 84,
+              "end": 86,
+              "text": "화사",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "solar",
+          "artistId": "moonbyul",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 75,
-              "end": 77,
-              "text": "솔라",
+              "start": 78,
+              "end": 80,
+              "text": "문별",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-moonbyul",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 78,
+              "end": 80,
+              "text": "문별",
               "source": "title"
             }
           ]
@@ -7296,56 +7324,28 @@
         },
         {
           "artistType": "person",
-          "artistId": "mamamoo-hwasa",
+          "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 84,
-              "end": 86,
-              "text": "화사",
+              "start": 75,
+              "end": 77,
+              "text": "솔라",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "hwasa",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 84,
-              "end": 86,
-              "text": "화사",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "mamamoo-moonbyul",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 78,
-              "end": 80,
-              "text": "문별",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "moonbyul",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 78,
-              "end": 80,
-              "text": "문별",
+              "start": 75,
+              "end": 77,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -7408,49 +7408,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 43,
-              "end": 45,
-              "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "solar",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 43,
-              "end": 45,
-              "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 4,
-              "end": 11,
-              "text": "MAMAMOO",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 3,
-              "text": "마마무",
+              "start": 52,
+              "end": 54,
+              "text": "화사",
               "source": "title"
             }
           ]
@@ -7471,14 +7437,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "hwasa",
+          "artistId": "moonbyul",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 52,
-              "end": 54,
-              "text": "화사",
+              "start": 46,
+              "end": 48,
+              "text": "문별",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-moonbyul",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 46,
+              "end": 48,
+              "text": "문별",
               "source": "title"
             }
           ]
@@ -7512,29 +7492,49 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "mamamoo-moonbyul",
+          "artistType": "group",
+          "artistId": "mamamoo",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 46,
-              "end": 48,
-              "text": "문별",
+              "start": 0,
+              "end": 3,
+              "text": "마마무",
+              "source": "title"
+            },
+            {
+              "start": 4,
+              "end": 11,
+              "text": "MAMAMOO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 43,
+              "end": 45,
+              "text": "솔라",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "moonbyul",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 46,
-              "end": 48,
-              "text": "문별",
+              "start": 43,
+              "end": 45,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -7597,49 +7597,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 33,
-              "end": 35,
-              "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "solar",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 33,
-              "end": 35,
-              "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 4,
-              "end": 11,
-              "text": "MAMAMOO",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 3,
-              "text": "마마무",
+              "start": 42,
+              "end": 44,
+              "text": "화사",
               "source": "title"
             }
           ]
@@ -7660,14 +7626,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "hwasa",
+          "artistId": "moonbyul",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 42,
-              "end": 44,
-              "text": "화사",
+              "start": 36,
+              "end": 38,
+              "text": "문별",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-moonbyul",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 36,
+              "end": 38,
+              "text": "문별",
               "source": "title"
             }
           ]
@@ -7701,29 +7681,49 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "mamamoo-moonbyul",
+          "artistType": "group",
+          "artistId": "mamamoo",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 36,
-              "end": 38,
-              "text": "문별",
+              "start": 0,
+              "end": 3,
+              "text": "마마무",
+              "source": "title"
+            },
+            {
+              "start": 4,
+              "end": 11,
+              "text": "MAMAMOO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 33,
+              "end": 35,
+              "text": "솔라",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "moonbyul",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 36,
-              "end": 38,
-              "text": "문별",
+              "start": 33,
+              "end": 35,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -7787,29 +7787,29 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
+          "artistType": "group",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 83,
-              "end": 85,
-              "text": "솔라",
+              "start": 89,
+              "end": 91,
+              "text": "화사",
               "source": "title"
             }
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "solar",
+          "artistType": "person",
+          "artistId": "mamamoo-hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 83,
-              "end": 85,
-              "text": "솔라",
+              "start": 89,
+              "end": 91,
+              "text": "화사",
               "source": "title"
             }
           ]
@@ -7844,48 +7844,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "mamamoo",
+          "artistId": "moonbyul",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 53,
-              "end": 60,
-              "text": "MAMAMOO",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 3,
-              "text": "마마무",
+              "start": 86,
+              "end": 88,
+              "text": "문별",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "mamamoo-hwasa",
+          "artistId": "mamamoo-moonbyul",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 89,
-              "end": 91,
-              "text": "화사",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "hwasa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 89,
-              "end": 91,
-              "text": "화사",
+              "start": 86,
+              "end": 88,
+              "text": "문별",
               "source": "title"
             }
           ]
@@ -7919,29 +7899,49 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "mamamoo-moonbyul",
+          "artistType": "group",
+          "artistId": "mamamoo",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 86,
-              "end": 88,
-              "text": "문별",
+              "start": 0,
+              "end": 3,
+              "text": "마마무",
+              "source": "title"
+            },
+            {
+              "start": 53,
+              "end": 60,
+              "text": "MAMAMOO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 83,
+              "end": 85,
+              "text": "솔라",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "moonbyul",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 86,
-              "end": 88,
-              "text": "문별",
+              "start": 83,
+              "end": 85,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -7999,6 +7999,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 75,
+              "end": 78,
+              "text": "마마무",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "mamamoo-solar",
           "state": "inferred",
@@ -8022,20 +8036,6 @@
               "start": 0,
               "end": 2,
               "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 75,
-              "end": 78,
-              "text": "마마무",
               "source": "title"
             }
           ]
@@ -8092,6 +8092,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 72,
+              "end": 75,
+              "text": "마마무",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "mamamoo-solar",
           "state": "inferred",
@@ -8115,20 +8129,6 @@
               "start": 13,
               "end": 15,
               "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 72,
-              "end": 75,
-              "text": "마마무",
               "source": "title"
             }
           ]
@@ -8388,49 +8388,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 59,
-              "end": 61,
-              "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "solar",
+          "artistId": "hwasa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 59,
-              "end": 61,
-              "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 48,
-              "end": 55,
-              "text": "MAMAMOO",
-              "source": "title"
-            },
-            {
-              "start": 15,
-              "end": 18,
-              "text": "마마무",
+              "start": 65,
+              "end": 67,
+              "text": "화사",
               "source": "title"
             }
           ]
@@ -8451,14 +8417,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "hwasa",
+          "artistId": "moonbyul",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 65,
-              "end": 67,
-              "text": "화사",
+              "start": 56,
+              "end": 58,
+              "text": "문별",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-moonbyul",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 56,
+              "end": 58,
+              "text": "문별",
               "source": "title"
             }
           ]
@@ -8492,29 +8472,49 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "mamamoo-moonbyul",
+          "artistType": "group",
+          "artistId": "mamamoo",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 56,
-              "end": 58,
-              "text": "문별",
+              "start": 15,
+              "end": 18,
+              "text": "마마무",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 55,
+              "text": "MAMAMOO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 59,
+              "end": 61,
+              "text": "솔라",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "moonbyul",
+          "artistId": "solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 56,
-              "end": 58,
-              "text": "문별",
+              "start": 59,
+              "end": 61,
+              "text": "솔라",
               "source": "title"
             }
           ]
