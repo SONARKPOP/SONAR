@@ -276,6 +276,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "miss-a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 38,
+              "end": 44,
+              "text": "miss A",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "min",
           "state": "mention",
           "reason": "official-owner-reference",
@@ -298,20 +312,6 @@
               "start": 16,
               "end": 19,
               "text": "Min",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "miss-a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 38,
-              "end": 44,
-              "text": "miss A",
               "source": "title"
             }
           ]
@@ -381,10 +381,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "miss-a-suzy",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "suzy",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 16,
@@ -395,10 +395,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "suzy",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "miss-a-suzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 16,
