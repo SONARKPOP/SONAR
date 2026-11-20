@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:34:24.368222Z",
+    "collectedAt": "2026-11-20T19:24:53.902500Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,34 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-ea607d4656ee103e",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "itzy-member-7278cba408bf",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 27,
+          "end": 31,
+          "text": "YEJI",
+          "source": "title"
+        },
         {
           "start": 32,
           "end": 34,
           "text": "예지",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "ITZY",
           "source": "title"
         }
       ]
@@ -102,20 +122,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "itzy-member-7278cba408bf",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-ea607d4656ee103e",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 32,
           "end": 34,
           "text": "예지",
-          "source": "title"
-        },
-        {
-          "start": 27,
-          "end": 31,
-          "text": "YEJI",
           "source": "title"
         }
       ]
@@ -130,20 +144,6 @@
           "start": 32,
           "end": 34,
           "text": "예지",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 26,
-          "text": "ITZY",
           "source": "title"
         }
       ]

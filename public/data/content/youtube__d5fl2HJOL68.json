@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:35:28.443120Z",
+    "collectedAt": "2026-11-20T19:25:54.023707Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-e6aff3c2bf942094",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 29,
-          "end": 31,
-          "text": "리브",
+          "start": 12,
+          "end": 19,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 28,
+          "text": "리센느",
           "source": "title"
         }
       ]
@@ -65,35 +71,29 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 29,
-          "end": 31,
-          "text": "리브",
-          "source": "title"
-        },
-        {
           "start": 20,
           "end": 23,
           "text": "LIV",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 31,
+          "text": "리브",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-e6aff3c2bf942094",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 25,
-          "end": 28,
-          "text": "리센느",
-          "source": "title"
-        },
-        {
-          "start": 12,
-          "end": 19,
-          "text": "RESCENE",
+          "start": 29,
+          "end": 31,
+          "text": "리브",
           "source": "title"
         }
       ]

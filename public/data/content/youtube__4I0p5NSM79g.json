@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2026-11-09T11:30:33Z",
   "groupIds": [
+    "rescene",
     "tuide"
   ],
   "memberIds": [
@@ -42,15 +43,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "hitgs-seohee",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 36,
-          "end": 42,
-          "text": "SEOHEE",
+          "start": 12,
+          "end": 19,
+          "text": "RESCENE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "rescene-liv",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 24,
+          "text": "LIV",
           "source": "title"
         }
       ]
@@ -71,28 +86,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-liv",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "hitgs-seohee",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 21,
-          "end": 24,
-          "text": "LIV",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 12,
-          "end": 19,
-          "text": "RESCENE",
+          "start": 36,
+          "end": 42,
+          "text": "SEOHEE",
           "source": "title"
         }
       ]

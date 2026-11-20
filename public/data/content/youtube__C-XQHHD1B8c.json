@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:29.164387Z",
+    "collectedAt": "2026-11-20T19:24:00.137536Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,20 +46,34 @@
   "appearanceLinks": [
     {
       "artistType": "person",
+      "artistId": "person-ce998ea45bc26e22",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "가을",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "ive-gaeul",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 33,
-          "end": 38,
-          "text": "GAEUL",
-          "source": "title"
-        },
-        {
           "start": 15,
           "end": 17,
           "text": "가을",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 38,
+          "text": "GAEUL",
           "source": "title"
         }
       ]
@@ -93,35 +107,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-ce998ea45bc26e22",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 15,
-          "end": 17,
-          "text": "가을",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 29,
-          "end": 32,
-          "text": "IVE",
-          "source": "title"
-        },
-        {
           "start": 11,
           "end": 14,
           "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 32,
+          "text": "IVE",
           "source": "title"
         }
       ]

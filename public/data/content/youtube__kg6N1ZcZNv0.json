@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:36:04.992937Z",
+    "collectedAt": "2026-11-20T19:26:25.241093Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "secret",
@@ -75,20 +89,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 67,
-          "end": 71,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "purple-kiss-swan",
       "state": "inferred",
@@ -104,14 +104,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "izone",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
+          "start": 67,
+          "end": 71,
+          "text": "Swan",
           "source": "title"
         }
       ]

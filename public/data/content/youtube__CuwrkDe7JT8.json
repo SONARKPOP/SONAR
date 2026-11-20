@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:32.468880Z",
+    "collectedAt": "2026-11-20T19:24:04.497412Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "dreamnote",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "드림노트",
+          "source": "title"
+        },
+        {
+          "start": 22,
+          "end": 31,
+          "text": "DreamNote",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-d8ed16dd74b1c036",
@@ -61,30 +81,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "dreamnote",
+      "artistType": "person",
+      "artistId": "oh-my-girl-yooa",
       "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 31,
-          "text": "DreamNote",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 4,
-          "text": "드림노트",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yooa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 5,
@@ -95,10 +95,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
+      "artistType": "group",
+      "artistId": "yooa",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 5,

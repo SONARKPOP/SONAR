@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:36:53.727686Z",
+    "collectedAt": "2026-11-20T19:27:08.967477Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,30 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "rescene-zena",
+      "artistType": "group",
+      "artistId": "rescene",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 46,
+          "end": 53,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 21,
+          "end": 24,
+          "text": "리센느",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-845f9828c743c539",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 30,
@@ -62,9 +82,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-845f9828c743c539",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "rescene-zena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 30,
@@ -104,40 +124,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-minami",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 26,
-          "end": 29,
-          "text": "미나미",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 21,
-          "end": 24,
-          "text": "리센느",
-          "source": "title"
-        },
-        {
-          "start": 46,
-          "end": 53,
-          "text": "RESCENE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-dbe1e024b60849a5",
       "state": "needs_review",
       "reason": "shared-name",
@@ -166,6 +152,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "rescene-may",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 33,
+          "end": 35,
+          "text": "메이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-504a77b935c31921",
       "state": "needs_review",
       "reason": "shared-name",
@@ -180,14 +180,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-may",
+      "artistId": "rescene-minami",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 33,
-          "end": 35,
-          "text": "메이",
+          "start": 26,
+          "end": 29,
+          "text": "미나미",
           "source": "title"
         }
       ]

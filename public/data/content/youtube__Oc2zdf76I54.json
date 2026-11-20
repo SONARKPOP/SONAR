@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:34:21.379481Z",
+    "collectedAt": "2026-11-20T19:24:51.635672Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,6 +48,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "purple-kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 27,
+          "text": "퍼플키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "iu",
       "state": "inferred",
       "reason": "unambiguous-title-name",
@@ -56,34 +70,6 @@
           "start": 0,
           "end": 3,
           "text": "아이유",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "ioi-chungha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "청하",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "chungha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "청하",
           "source": "title"
         }
       ]
@@ -104,14 +90,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "purple-kiss",
+      "artistId": "chungha",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 23,
-          "end": 27,
-          "text": "퍼플키스",
+          "start": 5,
+          "end": 7,
+          "text": "청하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "청하",
           "source": "title"
         }
       ]

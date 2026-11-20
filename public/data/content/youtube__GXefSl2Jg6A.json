@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:48.181628Z",
+    "collectedAt": "2026-11-20T19:24:19.089946Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,38 +47,30 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "bp-jennie",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 6,
-          "text": "JENNIE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "jennie",
+      "artistId": "rescene",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 6,
-          "text": "JENNIE",
+          "start": 27,
+          "end": 34,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 39,
+          "text": "리센느",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "rescene-zena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-845f9828c743c539",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 20,
@@ -90,9 +82,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-845f9828c743c539",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "rescene-zena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 20,
@@ -132,20 +124,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "rescene",
+      "artistId": "jennie",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 27,
-          "end": 34,
-          "text": "RESCENE",
+          "start": 0,
+          "end": 6,
+          "text": "JENNIE",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "bp-jennie",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 36,
-          "end": 39,
-          "text": "리센느",
+          "start": 0,
+          "end": 6,
+          "text": "JENNIE",
           "source": "title"
         }
       ]

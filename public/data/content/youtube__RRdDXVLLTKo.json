@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:34:33.552442Z",
+    "collectedAt": "2026-11-20T19:25:02.507725Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -64,14 +64,34 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "highteen",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 72,
-          "end": 76,
-          "text": "Swan",
+          "start": 6,
+          "end": 9,
+          "text": "하이틴",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 31,
+          "text": "하이틴",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "아이즈원",
           "source": "title"
         }
       ]
@@ -92,34 +112,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "izone",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "아이즈원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "highteen",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 6,
-          "end": 9,
-          "text": "하이틴",
-          "source": "title"
-        },
-        {
-          "start": 28,
-          "end": 31,
-          "text": "하이틴",
+          "start": 72,
+          "end": 76,
+          "text": "Swan",
           "source": "title"
         }
       ]

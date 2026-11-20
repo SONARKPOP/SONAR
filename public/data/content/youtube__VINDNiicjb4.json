@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:34:50.098745Z",
+    "collectedAt": "2026-11-20T19:25:17.613422Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 35,
+          "end": 42,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 10,
+          "text": "리센느",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-25dff8797c83a601",
@@ -62,10 +82,16 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-d8ccbbf9070691b4",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "rescene-woni",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 43,
+          "end": 47,
+          "text": "WONI",
+          "source": "title"
+        },
         {
           "start": 11,
           "end": 13,
@@ -76,40 +102,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-woni",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-d8ccbbf9070691b4",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 11,
           "end": 13,
           "text": "원이",
-          "source": "title"
-        },
-        {
-          "start": 43,
-          "end": 47,
-          "text": "WONI",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 10,
-          "text": "리센느",
-          "source": "title"
-        },
-        {
-          "start": 35,
-          "end": 42,
-          "text": "RESCENE",
           "source": "title"
         }
       ]

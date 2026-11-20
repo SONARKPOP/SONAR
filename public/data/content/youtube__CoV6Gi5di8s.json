@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:32.180915Z",
+    "collectedAt": "2026-11-20T19:24:04.179259Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,21 +46,43 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "sistar-hyolyn",
+      "artistType": "group",
+      "artistId": "oh-my-girl",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 28,
-          "end": 34,
-          "text": "HYOLYN",
+          "start": 49,
+          "end": 53,
+          "text": "오마이걸",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-6775f1fd651e6b2d",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "효린",
+          "start": 54,
+          "end": 56,
+          "text": "효정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e1112600ab2e1973",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 54,
+          "end": 56,
+          "text": "효정",
           "source": "title"
         }
       ]
@@ -86,43 +108,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 49,
-          "end": 53,
-          "text": "오마이걸",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-e1112600ab2e1973",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 54,
-          "end": 56,
-          "text": "효정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-6775f1fd651e6b2d",
+      "artistId": "sistar-hyolyn",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 54,
-          "end": 56,
-          "text": "효정",
+          "start": 28,
+          "end": 34,
+          "text": "HYOLYN",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 26,
+          "text": "효린",
           "source": "title"
         }
       ]

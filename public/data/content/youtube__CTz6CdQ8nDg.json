@@ -33,28 +33,28 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:30.902769Z",
+    "collectedAt": "2026-11-20T19:24:02.799277Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "kiss-of-life-natty",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 11,
-          "end": 13,
-          "text": "나띠",
+          "start": 0,
+          "end": 7,
+          "text": "키스오브라이프",
           "source": "title"
         }
       ]
@@ -74,15 +74,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 7,
-          "text": "키스오브라이프",
+          "start": 11,
+          "end": 13,
+          "text": "나띠",
           "source": "title"
         }
       ]

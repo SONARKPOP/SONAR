@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:34:28.673138Z",
+    "collectedAt": "2026-11-20T19:24:58.478277Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,20 +45,34 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "iu",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 52,
+          "end": 54,
+          "text": "IU",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "csr",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 36,
-          "end": 39,
-          "text": "첫사랑",
-          "source": "title"
-        },
-        {
           "start": 40,
           "end": 43,
           "text": "CSR",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 39,
+          "text": "첫사랑",
           "source": "title"
         }
       ]
@@ -73,20 +87,6 @@
           "start": 55,
           "end": 58,
           "text": "BoA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "iu",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 52,
-          "end": 54,
-          "text": "IU",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:43.840617Z",
+    "collectedAt": "2026-11-20T19:24:15.183098Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,40 @@
   "appearanceLinks": [
     {
       "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 31,
+          "end": 32,
+          "text": "안",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "alice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "ALICE",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 10,
+          "text": "앨리스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-e431bf31c4a3ed87",
       "state": "inferred",
       "reason": "unambiguous-title-name",
@@ -54,20 +88,6 @@
           "start": 34,
           "end": 36,
           "text": "우주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-9dda2eae88d9d10c",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 7,
-          "end": 10,
-          "text": "앨리스",
           "source": "title"
         }
       ]
@@ -87,35 +107,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-9dda2eae88d9d10c",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 7,
           "end": 10,
           "text": "앨리스",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 5,
-          "text": "ALICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 31,
-          "end": 32,
-          "text": "안",
           "source": "title"
         }
       ]

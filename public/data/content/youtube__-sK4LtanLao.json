@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:32:38.826141Z",
+    "collectedAt": "2026-11-20T19:23:05.040836Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 19,
+          "end": 22,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 27,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "luv",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 43,
           "end": 45,
           "text": "러브",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 24,
-          "end": 27,
-          "text": "IVE",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 22,
-          "text": "아이브",
           "source": "title"
         }
       ]

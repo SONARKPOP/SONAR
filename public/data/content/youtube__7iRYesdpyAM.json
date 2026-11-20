@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:11.255461Z",
+    "collectedAt": "2026-11-20T19:23:40.324564Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,15 +60,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-7dcc9591b28d84e7",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "everglow",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "시윤",
+          "start": 19,
+          "end": 27,
+          "text": "EVERGLOW",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "stayc-member-cb8052aa0320",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "윤",
           "source": "title"
         }
       ]
@@ -89,28 +103,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "stayc-member-cb8052aa0320",
+      "artistId": "person-7dcc9591b28d84e7",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 0,
-          "end": 1,
-          "text": "윤",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "everglow",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 19,
-          "end": 27,
-          "text": "EVERGLOW",
+          "start": 5,
+          "end": 7,
+          "text": "시윤",
           "source": "title"
         }
       ]

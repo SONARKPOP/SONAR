@@ -29,7 +29,7 @@
   "actualEndTime": "2026-03-16T08:05:49Z",
   "scheduledStartTime": "2026-03-16T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-20T13:33:53.037198Z",
+    "collectedAt": "2026-11-20T19:24:24.500374Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "h1-key",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "하이키",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "text": "H1-KEY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "csr",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -52,26 +72,6 @@
           "start": 21,
           "end": 24,
           "text": "첫사랑",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "h1-key",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 11,
-          "text": "H1-KEY",
-          "source": "title"
-        },
-        {
-          "start": 12,
-          "end": 15,
-          "text": "하이키",
           "source": "title"
         }
       ]

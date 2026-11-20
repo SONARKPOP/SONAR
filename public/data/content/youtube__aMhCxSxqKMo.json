@@ -29,7 +29,7 @@
   "actualEndTime": "2022-02-01T08:08:05Z",
   "scheduledStartTime": "2022-02-01T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-20T13:35:16.791339Z",
+    "collectedAt": "2026-11-20T19:25:42.690003Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-b2eaa19674e03e6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "wjsn",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 72,
-          "end": 73,
-          "text": "설",
+          "start": 5,
+          "end": 9,
+          "text": "우주소녀",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "text": "WJSN",
           "source": "title"
         }
       ]
@@ -71,21 +77,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "wjsn",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-b2eaa19674e03e6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 5,
-          "end": 9,
-          "text": "우주소녀",
-          "source": "title"
-        },
-        {
-          "start": 14,
-          "end": 18,
-          "text": "WJSN",
+          "start": 72,
+          "end": 73,
+          "text": "설",
           "source": "title"
         }
       ]

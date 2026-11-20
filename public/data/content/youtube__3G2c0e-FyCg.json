@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:32:52.754433Z",
+    "collectedAt": "2026-11-20T19:23:19.119597Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,8 +44,8 @@
   "programName": "리무진서비스",
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-context-v2",
-    "source": "title",
+    "policy": "title-only-v1",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
@@ -84,20 +84,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 16,
-          "text": "Kiss",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-55aca1823bded05b",
       "state": "inferred",
@@ -107,6 +93,20 @@
           "start": 71,
           "end": 74,
           "text": "JIN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 16,
+          "text": "Kiss",
           "source": "title"
         }
       ]

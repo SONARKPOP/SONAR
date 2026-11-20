@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:34:53.752887Z",
+    "collectedAt": "2026-11-20T19:25:20.943485Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,6 +41,54 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "alice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 39,
+          "end": 44,
+          "text": "Alice",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 48,
+          "text": "앨리스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 22,
+          "text": "Secret",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-f07a58ca3f31f17c",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "유주",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "gfriend-yuju",
@@ -83,28 +131,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-f07a58ca3f31f17c",
+      "artistId": "person-82c8dfffcc8a320b",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 10,
-          "end": 12,
-          "text": "유주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 22,
-          "text": "Secret",
+          "start": 45,
+          "end": 48,
+          "text": "앨리스",
           "source": "title"
         }
       ]
@@ -119,40 +153,6 @@
           "start": 45,
           "end": 48,
           "text": "앨리스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-82c8dfffcc8a320b",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 45,
-          "end": 48,
-          "text": "앨리스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 48,
-          "text": "앨리스",
-          "source": "title"
-        },
-        {
-          "start": 39,
-          "end": 44,
-          "text": "Alice",
           "source": "title"
         }
       ]
