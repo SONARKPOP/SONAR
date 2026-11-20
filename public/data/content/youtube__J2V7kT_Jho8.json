@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2026-05-03T03:00:31Z",
   "groupIds": [
+    "lesserafim",
     "taeyeon"
   ],
   "memberIds": [
@@ -37,26 +38,34 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "unclassified",
+    "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "taeyeon",
+      "artistId": "lesserafim",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 19,
-          "end": 21,
-          "text": "태연",
+          "start": 77,
+          "end": 81,
+          "text": "르세라핌",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lsf-eunchae",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 10,
-          "end": 17,
-          "text": "TAEYEON",
+          "start": 59,
+          "end": 62,
+          "text": "홍은채",
           "source": "title"
         }
       ]
@@ -82,29 +91,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "lsf-eunchae",
+      "artistType": "group",
+      "artistId": "taeyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 59,
-          "end": 62,
-          "text": "홍은채",
+          "start": 19,
+          "end": 21,
+          "text": "태연",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "lesserafim",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
+        },
         {
-          "start": 77,
-          "end": 81,
-          "text": "르세라핌",
+          "start": 10,
+          "end": 17,
+          "text": "TAEYEON",
           "source": "title"
         }
       ]

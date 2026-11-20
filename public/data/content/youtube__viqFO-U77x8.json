@@ -48,31 +48,11 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-1a94f85ddc70413a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 40,
-          "end": 42,
-          "text": "연주",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
-        {
-          "start": 63,
-          "end": 68,
-          "text": "I-DLE",
-          "source": "title"
-        },
         {
           "start": 60,
           "end": 68,
@@ -90,6 +70,12 @@
           "end": 17,
           "text": "아이들",
           "source": "title"
+        },
+        {
+          "start": 63,
+          "end": 68,
+          "text": "I-DLE",
+          "source": "title"
         }
       ]
     },
@@ -100,15 +86,15 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 18,
-          "end": 20,
-          "text": "우기",
-          "source": "title"
-        },
-        {
           "start": 69,
           "end": 73,
           "text": "YUQI",
+          "source": "title"
+        },
+        {
+          "start": 18,
+          "end": 20,
+          "text": "우기",
           "source": "title"
         }
       ]
@@ -120,15 +106,29 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 69,
+          "end": 73,
+          "text": "YUQI",
+          "source": "title"
+        },
+        {
           "start": 18,
           "end": 20,
           "text": "우기",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-1a94f85ddc70413a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 69,
-          "end": 73,
-          "text": "YUQI",
+          "start": 40,
+          "end": 42,
+          "text": "연주",
           "source": "title"
         }
       ]
