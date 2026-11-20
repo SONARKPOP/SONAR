@@ -57,20 +57,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-8acd643aa64b43fa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 27,
-              "end": 29,
-              "text": "휘서",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "2ne1-park-bom",
           "state": "inferred",
           "reason": "unambiguous-title-name",
@@ -99,9 +85,23 @@
         },
         {
           "artistType": "person",
-          "artistId": "bp-rose",
+          "artistId": "person-8acd643aa64b43fa",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 27,
+              "end": 29,
+              "text": "휘서",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "rose",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
               "start": 3,
@@ -112,10 +112,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "rose",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistType": "person",
+          "artistId": "bp-rose",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 3,

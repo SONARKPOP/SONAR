@@ -41,20 +41,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "stayc",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 44,
-              "end": 49,
-              "text": "STAYC",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-eb8aecf164f8f31f",
           "state": "inferred",
@@ -64,6 +50,20 @@
               "start": 17,
               "end": 19,
               "text": "도시",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "stayc",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 44,
+              "end": 49,
+              "text": "STAYC",
               "source": "title"
             }
           ]
@@ -195,21 +195,43 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "craxy",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-dfc8c250fa8ac988",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 69,
-              "end": 72,
-              "text": "크랙시",
+              "start": 29,
+              "end": 31,
+              "text": "하루",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a380d0436e0914d6",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
             {
-              "start": 62,
-              "end": 67,
-              "text": "CRAXY",
+              "start": 29,
+              "end": 31,
+              "text": "하루",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-b085c85dbb862ce6",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 29,
+              "end": 31,
+              "text": "하루",
               "source": "title"
             }
           ]
@@ -244,20 +266,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-a380d0436e0914d6",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 29,
-              "end": 31,
-              "text": "하루",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-0605b9a5570b7f5d",
           "state": "needs_review",
           "reason": "shared-name",
@@ -271,38 +279,30 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-b085c85dbb862ce6",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 29,
-              "end": 31,
-              "text": "하루",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-dfc8c250fa8ac988",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 29,
-              "end": 31,
-              "text": "하루",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "purple-kiss-swan",
+          "artistType": "group",
+          "artistId": "craxy",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 69,
+              "end": 72,
+              "text": "크랙시",
+              "source": "title"
+            },
+            {
+              "start": 62,
+              "end": 67,
+              "text": "CRAXY",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "swan",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 6,
@@ -313,10 +313,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "swan",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "purple-kiss-swan",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 6,
