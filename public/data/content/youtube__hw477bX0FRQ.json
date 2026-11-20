@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T01:33:14.877382Z",
+    "collectedAt": "2026-11-20T07:43:20.749939Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c5350a999a763d86",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "babymonster",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 19,
-          "end": 21,
-          "text": "아현",
+          "start": 70,
+          "end": 76,
+          "text": "베이비몬스터",
+          "source": "title"
+        },
+        {
+          "start": 57,
+          "end": 68,
+          "text": "BABYMONSTER",
           "source": "title"
         }
       ]
@@ -74,6 +80,20 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "person-c5350a999a763d86",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 19,
+          "end": 21,
+          "text": "아현",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "2ne1",
       "state": "inferred",
@@ -83,26 +103,6 @@
           "start": 0,
           "end": 4,
           "text": "2ne1",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "babymonster",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 70,
-          "end": 76,
-          "text": "베이비몬스터",
-          "source": "title"
-        },
-        {
-          "start": 57,
-          "end": 68,
-          "text": "BABYMONSTER",
           "source": "title"
         }
       ]

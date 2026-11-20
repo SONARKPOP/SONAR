@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T01:32:13.198949Z",
+    "collectedAt": "2026-11-20T07:42:16.791254Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 28,
+          "text": "ITZY",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 31,
+          "text": "있지",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "oh-my-girl",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -54,20 +74,6 @@
           "start": 46,
           "end": 50,
           "text": "오마이걸",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-e1112600ab2e1973",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 51,
-          "end": 53,
-          "text": "효정",
           "source": "title"
         }
       ]
@@ -87,21 +93,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-e1112600ab2e1973",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 24,
-          "end": 28,
-          "text": "ITZY",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 31,
-          "text": "있지",
+          "start": 51,
+          "end": 53,
+          "text": "효정",
           "source": "title"
         }
       ]

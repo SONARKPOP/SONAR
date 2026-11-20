@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T01:33:45.655087Z",
+    "collectedAt": "2026-11-20T07:43:52.039737Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,15 +48,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-72b5d3b4f827ee2b",
+      "artistType": "group",
+      "artistId": "ioi",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 13,
-          "end": 15,
-          "text": "채연",
+          "start": 29,
+          "end": 34,
+          "text": "I.O.I",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 12,
+          "text": "아이오아이",
           "source": "title"
         }
       ]
@@ -76,21 +82,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ioi",
+      "artistType": "person",
+      "artistId": "person-72b5d3b4f827ee2b",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 7,
-          "end": 12,
-          "text": "아이오아이",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 34,
-          "text": "I.O.I",
+          "start": 13,
+          "end": 15,
+          "text": "채연",
           "source": "title"
         }
       ]

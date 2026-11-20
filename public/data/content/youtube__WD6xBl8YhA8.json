@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T01:32:36.015691Z",
+    "collectedAt": "2026-11-20T07:42:40.783846Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "alice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 26,
+          "end": 31,
+          "text": "ELRIS",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 39,
+          "text": "엘리스",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-4ff156a8e5680895",
@@ -81,26 +101,6 @@
           "start": 33,
           "end": 35,
           "text": "소희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 26,
-          "end": 31,
-          "text": "ELRIS",
-          "source": "title"
-        },
-        {
-          "start": 36,
-          "end": 39,
-          "text": "엘리스",
           "source": "title"
         }
       ]

@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T01:31:27.991165Z",
+    "collectedAt": "2026-11-20T07:41:20.301541Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
+      "artistType": "group",
+      "artistId": "illit",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 9,
-          "end": 11,
-          "text": "소원",
+          "start": 0,
+          "end": 3,
+          "text": "아일릿",
+          "source": "title"
+        },
+        {
+          "start": 15,
+          "end": 18,
+          "text": "아일릿",
           "source": "title"
         }
       ]
@@ -75,21 +81,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "illit",
+      "artistType": "person",
+      "artistId": "person-a1479c2cc95e8b6a",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "아일릿",
-          "source": "title"
-        },
-        {
-          "start": 15,
-          "end": 18,
-          "text": "아일릿",
+          "start": 9,
+          "end": 11,
+          "text": "소원",
           "source": "title"
         }
       ]

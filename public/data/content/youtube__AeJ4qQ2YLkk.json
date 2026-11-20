@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T01:31:32.831557Z",
+    "collectedAt": "2026-11-20T07:41:25.393615Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -52,15 +52,29 @@
       "reason": "shared-name",
       "matches": [
         {
+          "start": 24,
+          "end": 37,
+          "text": "Jang Wonyoung",
+          "source": "title"
+        },
+        {
           "start": 38,
           "end": 41,
           "text": "장원영",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 24,
-          "end": 37,
-          "text": "Jang Wonyoung",
+          "start": 49,
+          "end": 55,
+          "text": "Secret",
           "source": "title"
         }
       ]
@@ -81,14 +95,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 49,
-          "end": 55,
-          "text": "Secret",
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
           "source": "title"
         }
       ]
@@ -117,20 +131,6 @@
           "start": 69,
           "end": 73,
           "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
           "source": "title"
         }
       ]

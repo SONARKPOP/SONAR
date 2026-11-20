@@ -72,7 +72,6 @@
       "groupIds": [
         "dreamnote",
         "luv",
-        "oh-my-girl",
         "yooa"
       ],
       "memberIds": [
@@ -97,11 +96,39 @@
         "external"
       ],
       "memberTagging": {
-        "policy": "title-only-v1",
+        "policy": "title-context-v2",
         "source": "title",
         "appearanceVerified": false
       },
       "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "yooa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 5,
+              "end": 7,
+              "text": "유아",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "oh-my-girl-yooa",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 5,
+              "end": 7,
+              "text": "유아",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "group",
           "artistId": "dreamnote",
@@ -146,34 +173,6 @@
               "start": 57,
               "end": 60,
               "text": "Luv",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yooa",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 5,
-              "end": 7,
-              "text": "유아",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "oh-my-girl-yooa",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 5,
-              "end": 7,
-              "text": "유아",
               "source": "title"
             }
           ]
@@ -232,21 +231,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "dreamnote",
+          "artistType": "person",
+          "artistId": "person-15239ff7b3ddff52",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "드림노트",
-              "source": "title"
-            },
-            {
-              "start": 19,
-              "end": 28,
-              "text": "DreamNote",
+              "start": 5,
+              "end": 7,
+              "text": "미소",
               "source": "title"
             }
           ]
@@ -281,20 +274,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-15239ff7b3ddff52",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 5,
-              "end": 7,
-              "text": "미소",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-f2f07fec22c9a395",
           "state": "needs_review",
           "reason": "shared-name",
@@ -309,14 +288,20 @@
         },
         {
           "artistType": "group",
-          "artistId": "luv",
+          "artistId": "dreamnote",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 56,
-              "end": 59,
-              "text": "Luv",
+              "start": 0,
+              "end": 4,
+              "text": "드림노트",
+              "source": "title"
+            },
+            {
+              "start": 19,
+              "end": 28,
+              "text": "DreamNote",
               "source": "title"
             }
           ]
@@ -331,6 +316,20 @@
               "start": 29,
               "end": 33,
               "text": "MISO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "luv",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 56,
+              "end": 59,
+              "text": "Luv",
               "source": "title"
             }
           ]

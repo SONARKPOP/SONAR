@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T01:31:16.515405Z",
+    "collectedAt": "2026-11-20T07:41:07.907286Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,20 +46,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "hitgs",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "bibi",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 11,
-          "end": 14,
-          "text": "힛지스",
+          "start": 15,
+          "end": 17,
+          "text": "비비",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-2bcd73e04ace2548",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 30,
-          "end": 35,
-          "text": "HITGS",
+          "start": 15,
+          "end": 17,
+          "text": "비비",
           "source": "title"
         }
       ]
@@ -86,28 +94,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "bibi",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hitgs",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 15,
-          "end": 17,
-          "text": "비비",
+          "start": 11,
+          "end": 14,
+          "text": "힛지스",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-2bcd73e04ace2548",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
+        },
         {
-          "start": 15,
-          "end": 17,
-          "text": "비비",
+          "start": 30,
+          "end": 35,
+          "text": "HITGS",
           "source": "title"
         }
       ]

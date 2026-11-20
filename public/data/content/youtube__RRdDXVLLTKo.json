@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T01:32:21.920383Z",
+    "collectedAt": "2026-11-20T07:42:25.760804Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -84,6 +84,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "아이즈원",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "swan",
       "state": "inferred",
       "reason": "unambiguous-title-name",
@@ -106,20 +120,6 @@
           "start": 72,
           "end": 76,
           "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "아이즈원",
           "source": "title"
         }
       ]
