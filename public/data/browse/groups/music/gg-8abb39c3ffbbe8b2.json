@@ -36,26 +36,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "gidle-miyeon",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "miyeon",
           "state": "mention",
@@ -77,7 +57,27 @@
         },
         {
           "artistType": "person",
-          "artistId": "girls-generation-tiffany-young",
+          "artistId": "gidle-miyeon",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "tiffany-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -90,8 +90,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "tiffany-young",
+          "artistType": "person",
+          "artistId": "girls-generation-tiffany-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -167,14 +167,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistId": "minzy",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 48,
-              "end": 49,
-              "text": "s",
+              "start": 5,
+              "end": 8,
+              "text": "공민지",
+              "source": "title"
+            },
+            {
+              "start": 9,
+              "end": 14,
+              "text": "MINZY",
               "source": "title"
             }
           ]
@@ -186,35 +192,29 @@
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 9,
-              "end": 14,
-              "text": "MINZY",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 8,
               "text": "공민지",
+              "source": "title"
+            },
+            {
+              "start": 9,
+              "end": 14,
+              "text": "MINZY",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "minzy",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
-              "start": 9,
-              "end": 14,
-              "text": "MINZY",
-              "source": "title"
-            },
-            {
-              "start": 5,
-              "end": 8,
-              "text": "공민지",
+              "start": 48,
+              "end": 49,
+              "text": "s",
               "source": "title"
             }
           ]
@@ -274,41 +274,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "2ne1-minzy",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 7,
-              "end": 10,
-              "text": "공민지",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 5,
-              "text": "MINZY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "minzy",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 0,
+              "end": 5,
+              "text": "MINZY",
+              "source": "title"
+            },
+            {
               "start": 7,
               "end": 10,
               "text": "공민지",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "2ne1-minzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 0,
               "end": 5,
               "text": "MINZY",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 10,
+              "text": "공민지",
               "source": "title"
             }
           ]
