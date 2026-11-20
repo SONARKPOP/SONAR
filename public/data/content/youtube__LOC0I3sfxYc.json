@@ -56,14 +56,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "muutive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 42,
+          "end": 49,
+          "text": "MuuTive",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gidle",
       "state": "mention",
       "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 0,
-          "end": 7,
-          "text": "(여자)아이들",
+          "start": 11,
+          "end": 16,
+          "text": "I-DLE",
           "source": "title"
         },
         {
@@ -73,29 +87,15 @@
           "source": "title"
         },
         {
-          "start": 4,
+          "start": 0,
           "end": 7,
-          "text": "아이들",
+          "text": "(여자)아이들",
           "source": "title"
         },
         {
-          "start": 11,
-          "end": 16,
-          "text": "I-DLE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "muutive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 42,
-          "end": 49,
-          "text": "MuuTive",
+          "start": 4,
+          "end": 7,
+          "text": "아이들",
           "source": "title"
         }
       ]

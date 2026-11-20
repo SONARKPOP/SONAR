@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-09-18T12:30:32Z",
   "groupIds": [
-    "kwon-eun-bi",
-    "ourbirthday"
+    "kwon-eun-bi"
   ],
   "memberIds": [
     "person-91701f6ec51b8fca"
@@ -57,10 +56,24 @@
   "musicBroadcast": false,
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "ourbirthday",
+      "artistType": "person",
+      "artistId": "person-91701f6ec51b8fca",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 17,
+          "text": "국초록",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ourbirthday",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 1,
@@ -78,7 +91,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-eb73497ae0cc470f",
+      "artistId": "izone-kwon-eun-bi",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -106,7 +119,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "izone-kwon-eun-bi",
+      "artistId": "person-eb73497ae0cc470f",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -117,20 +130,6 @@
           "source": "title"
         }
       ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-91701f6ec51b8fca",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 14,
-          "end": 17,
-          "text": "국초록",
-          "source": "title"
-        }
-      ]
     }
   ],
   "careerGroupIds": [
@@ -138,5 +137,11 @@
   ],
   "displayCareerGroupIds": [
     "ourbirthday"
-  ]
+  ],
+  "individualActivity": {
+    "artistId": "kwon-eun-bi",
+    "groupIds": [],
+    "kind": "individual",
+    "evidence": "official-solo-channel"
+  }
 }
