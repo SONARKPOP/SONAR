@@ -405,20 +405,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-4b927123d0b53a6e",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 11,
-              "end": 12,
-              "text": "안",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "oh-my-girl",
           "state": "inferred",
@@ -456,6 +442,20 @@
               "start": 5,
               "end": 7,
               "text": "효정",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-4b927123d0b53a6e",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 11,
+              "end": 12,
+              "text": "안",
               "source": "title"
             }
           ]
@@ -662,9 +662,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-305196eac7739736",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-d09dc3d4ecc65e1e",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 11,
@@ -676,9 +676,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-d09dc3d4ecc65e1e",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-305196eac7739736",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 11,
@@ -919,15 +919,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 37,
-              "end": 40,
-              "text": "아이들",
-              "source": "title"
-            },
-            {
               "start": 33,
               "end": 40,
               "text": "(여자)아이들",
+              "source": "title"
+            },
+            {
+              "start": 37,
+              "end": 40,
+              "text": "아이들",
               "source": "title"
             },
             {
@@ -939,38 +939,18 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "gidle-yuqi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 16,
-              "text": "우기",
-              "source": "title"
-            },
-            {
-              "start": 47,
-              "end": 49,
-              "text": "우기",
-              "source": "title"
-            },
-            {
-              "start": 50,
-              "end": 54,
-              "text": "YUQI",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "yuqi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 50,
+              "end": 54,
+              "text": "YUQI",
+              "source": "title"
+            },
+            {
               "start": 14,
               "end": 16,
               "text": "우기",
@@ -981,11 +961,31 @@
               "end": 49,
               "text": "우기",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "gidle-yuqi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 50,
               "end": 54,
               "text": "YUQI",
+              "source": "title"
+            },
+            {
+              "start": 14,
+              "end": 16,
+              "text": "우기",
+              "source": "title"
+            },
+            {
+              "start": 47,
+              "end": 49,
+              "text": "우기",
               "source": "title"
             }
           ]
@@ -1132,8 +1132,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "ioi-chungha",
+          "artistType": "group",
+          "artistId": "chungha",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -1152,8 +1152,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "chungha",
+          "artistType": "person",
+          "artistId": "ioi-chungha",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -1288,15 +1288,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 24,
-              "end": 29,
-              "text": "LOONA",
-              "source": "title"
-            },
-            {
               "start": 17,
               "end": 23,
               "text": "이달의 소녀",
+              "source": "title"
+            },
+            {
+              "start": 24,
+              "end": 29,
+              "text": "LOONA",
               "source": "title"
             }
           ]
@@ -1356,15 +1356,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 13,
-              "end": 21,
-              "text": "MOMOLAND",
-              "source": "title"
-            },
-            {
               "start": 8,
               "end": 12,
               "text": "모모랜드",
+              "source": "title"
+            },
+            {
+              "start": 13,
+              "end": 21,
+              "text": "MOMOLAND",
               "source": "title"
             }
           ]
@@ -1622,15 +1622,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 20,
-              "text": "LOONA",
-              "source": "title"
-            },
-            {
               "start": 8,
               "end": 14,
               "text": "이달의 소녀",
+              "source": "title"
+            },
+            {
+              "start": 15,
+              "end": 20,
+              "text": "LOONA",
               "source": "title"
             }
           ]
@@ -1697,15 +1697,21 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "nj-hanni",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "exid",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 17,
-              "text": "하니",
+              "start": 6,
+              "end": 12,
+              "text": "이엑스아이디",
+              "source": "title"
+            },
+            {
+              "start": 1,
+              "end": 5,
+              "text": "EXID",
               "source": "title"
             }
           ]
@@ -1725,21 +1731,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "exid",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "nj-hanni",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 6,
-              "end": 12,
-              "text": "이엑스아이디",
-              "source": "title"
-            },
-            {
-              "start": 1,
-              "end": 5,
-              "text": "EXID",
+              "start": 15,
+              "end": 17,
+              "text": "하니",
               "source": "title"
             }
           ]
@@ -1791,21 +1791,9 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 4,
-              "end": 7,
-              "text": "아이들",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 7,
               "text": "(여자)아이들",
-              "source": "title"
-            },
-            {
-              "start": 67,
-              "end": 72,
-              "text": "I-DLE",
               "source": "title"
             },
             {
@@ -1813,12 +1801,24 @@
               "end": 72,
               "text": "(G)I-DLE",
               "source": "title"
+            },
+            {
+              "start": 4,
+              "end": 7,
+              "text": "아이들",
+              "source": "title"
+            },
+            {
+              "start": 67,
+              "end": 72,
+              "text": "I-DLE",
+              "source": "title"
             }
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "gidle-yuqi",
+          "artistType": "group",
+          "artistId": "yuqi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -1831,8 +1831,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yuqi",
+          "artistType": "person",
+          "artistId": "gidle-yuqi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -1971,14 +1971,14 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "c-real",
+          "artistId": "chungha",
           "state": "mention",
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 1,
-              "end": 4,
-              "text": "씨리얼",
+              "start": 21,
+              "end": 23,
+              "text": "청하",
               "source": "title"
             }
           ]
@@ -1999,14 +1999,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "chungha",
+          "artistId": "c-real",
           "state": "mention",
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 21,
-              "end": 23,
-              "text": "청하",
+              "start": 1,
+              "end": 4,
+              "text": "씨리얼",
               "source": "title"
             }
           ]
@@ -2070,27 +2070,27 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 4,
-              "end": 7,
-              "text": "아이들",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 7,
               "text": "(여자)아이들",
               "source": "title"
             },
             {
-              "start": 11,
-              "end": 16,
-              "text": "I-DLE",
-              "source": "title"
-            },
-            {
               "start": 8,
               "end": 16,
               "text": "(G)I-DLE",
+              "source": "title"
+            },
+            {
+              "start": 4,
+              "end": 7,
+              "text": "아이들",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 16,
+              "text": "I-DLE",
               "source": "title"
             }
           ]

@@ -47,6 +47,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 25,
+          "end": 29,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "tuide",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -66,25 +80,37 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
+      "artistType": "person",
+      "artistId": "tuide-jia",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 25,
-          "end": 29,
-          "text": "KISS",
+          "start": 38,
+          "end": 41,
+          "text": "JIA",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 13,
+          "text": "지아",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "person-fd9e7ea74d203fe1",
+      "artistId": "miss-a-jia",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
+        {
+          "start": 38,
+          "end": 41,
+          "text": "JIA",
+          "source": "title"
+        },
         {
           "start": 11,
           "end": 13,
@@ -100,15 +126,15 @@
       "reason": "shared-name",
       "matches": [
         {
-          "start": 11,
-          "end": 13,
-          "text": "지아",
-          "source": "title"
-        },
-        {
           "start": 38,
           "end": 41,
           "text": "JIA",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 13,
+          "text": "지아",
           "source": "title"
         }
       ]
@@ -129,7 +155,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "miss-a-jia",
+      "artistId": "person-fd9e7ea74d203fe1",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -137,32 +163,6 @@
           "start": 11,
           "end": 13,
           "text": "지아",
-          "source": "title"
-        },
-        {
-          "start": 38,
-          "end": 41,
-          "text": "JIA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "tuide-jia",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 13,
-          "text": "지아",
-          "source": "title"
-        },
-        {
-          "start": 38,
-          "end": 41,
-          "text": "JIA",
           "source": "title"
         }
       ]
