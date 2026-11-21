@@ -7,7 +7,8 @@
   "description": "",
   "publishedAt": "2026-06-30T09:00:19Z",
   "groupIds": [
-    "seeya"
+    "seeya",
+    "stayc"
   ],
   "memberIds": [
     "person-5093ef4f08d2376c",
@@ -58,28 +59,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "seeya",
+      "artistId": "stayc",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 51,
-          "end": 53,
-          "text": "씨야",
+          "start": 33,
+          "end": 38,
+          "text": "STAYC",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-5093ef4f08d2376c",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 55,
-          "end": 58,
-          "text": "남규리",
+          "start": 40,
+          "end": 45,
+          "text": "STAYC",
+          "source": "title"
+        },
+        {
+          "start": 18,
+          "end": 22,
+          "text": "스테이씨",
           "source": "title"
         }
       ]
@@ -105,27 +104,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "stayc",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "person-5093ef4f08d2376c",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 33,
-          "end": 38,
-          "text": "STAYC",
+          "start": 55,
+          "end": 58,
+          "text": "남규리",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "seeya",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 40,
-          "end": 45,
-          "text": "STAYC",
-          "source": "title"
-        },
-        {
-          "start": 18,
-          "end": 22,
-          "text": "스테이씨",
+          "start": 51,
+          "end": 53,
+          "text": "씨야",
           "source": "title"
         }
       ]
