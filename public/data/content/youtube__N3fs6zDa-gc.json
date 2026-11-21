@@ -29,7 +29,7 @@
   "actualEndTime": "2023-05-18T08:07:45Z",
   "scheduledStartTime": "2023-05-18T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-21T01:34:34.498778Z",
+    "collectedAt": "2026-11-21T07:34:26.357339Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,24 +44,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 65,
-          "end": 66,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "adya",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 5,
+          "end": 9,
+          "text": "ADYA",
+          "source": "title"
+        },
         {
           "start": 10,
           "end": 14,
@@ -73,11 +65,19 @@
           "end": 52,
           "text": "에이디야",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 5,
-          "end": 9,
-          "text": "ADYA",
+          "start": 65,
+          "end": 66,
+          "text": "s",
           "source": "title"
         }
       ]

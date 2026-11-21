@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:36:02.891631Z",
+    "collectedAt": "2026-11-21T07:36:23.359867Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -67,6 +67,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "natty",
       "state": "inferred",
       "reason": "unambiguous-title-name",
@@ -89,20 +103,6 @@
           "start": 32,
           "end": 34,
           "text": "나띠",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 5,
-          "text": "KISS",
           "source": "title"
         }
       ]

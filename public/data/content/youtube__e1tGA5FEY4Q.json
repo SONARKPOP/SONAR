@@ -8,6 +8,7 @@
   "publishedAt": "2026-10-27T07:00:10Z",
   "groupIds": [
     "gfriend",
+    "ive",
     "nmixx"
   ],
   "memberIds": [
@@ -45,6 +46,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 4,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "nmixx",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -53,6 +68,20 @@
           "start": 33,
           "end": 38,
           "text": "NMIXX",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "nmixx-member-ac44760f306b",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 46,
+          "text": "KYUJIN",
           "source": "title"
         }
       ]
@@ -81,34 +110,6 @@
           "start": 18,
           "end": 20,
           "text": "소원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 1,
-          "end": 4,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "nmixx-member-ac44760f306b",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 40,
-          "end": 46,
-          "text": "KYUJIN",
           "source": "title"
         }
       ]

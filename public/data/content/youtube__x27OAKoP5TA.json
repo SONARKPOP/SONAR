@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:36:19.750094Z",
+    "collectedAt": "2026-11-21T07:36:45.387699Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-e50ccba19f0ec7d0",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "atheart",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 14,
-          "end": 16,
-          "text": "아린",
+          "start": 10,
+          "end": 13,
+          "text": "앳하트",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 43,
+          "text": "AtHeart",
           "source": "title"
         }
       ]
@@ -73,21 +79,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "atheart",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-e50ccba19f0ec7d0",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 10,
-          "end": 13,
-          "text": "앳하트",
-          "source": "title"
-        },
-        {
-          "start": 36,
-          "end": 43,
-          "text": "AtHeart",
+          "start": 14,
+          "end": 16,
+          "text": "아린",
           "source": "title"
         }
       ]

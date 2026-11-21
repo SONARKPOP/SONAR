@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:34:20.515403Z",
+    "collectedAt": "2026-11-21T07:34:08.438731Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "aespa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 41,
+          "end": 44,
+          "text": "에스파",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "aespa-ningning",
@@ -78,20 +92,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "gidle-yuqi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 28,
-          "end": 30,
-          "text": "우기",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "yuqi",
       "state": "needs_review",
@@ -106,15 +106,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "aespa",
+      "artistType": "person",
+      "artistId": "gidle-yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 41,
-          "end": 44,
-          "text": "에스파",
+          "start": 28,
+          "end": 30,
+          "text": "우기",
           "source": "title"
         }
       ]

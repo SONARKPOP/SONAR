@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:35:40.951553Z",
+    "collectedAt": "2026-11-21T07:35:54.310293Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a4d51f3976423aac",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "baby-dont-cry",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 19,
-          "end": 21,
-          "text": "미아",
+          "start": 11,
+          "end": 18,
+          "text": "베이비돈크라이",
+          "source": "title"
+        },
+        {
+          "start": 40,
+          "end": 53,
+          "text": "Baby DONT Cry",
           "source": "title"
         }
       ]
@@ -85,21 +91,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "baby-dont-cry",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-a4d51f3976423aac",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 40,
-          "end": 53,
-          "text": "Baby DONT Cry",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 18,
-          "text": "베이비돈크라이",
+          "start": 19,
+          "end": 21,
+          "text": "미아",
           "source": "title"
         }
       ]

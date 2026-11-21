@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:36:12.850151Z",
+    "collectedAt": "2026-11-21T07:36:36.687914Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,11 +44,51 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "artms",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 61,
+          "end": 66,
+          "text": "ARTMS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "heejin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 53,
+          "end": 59,
+          "text": "heejin",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 47,
+          "text": "희진",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-785f24419fb37180",
+      "artistId": "loona-heejin",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
+        {
+          "start": 53,
+          "end": 59,
+          "text": "heejin",
+          "source": "title"
+        },
         {
           "start": 45,
           "end": 47,
@@ -64,22 +104,22 @@
       "reason": "shared-name",
       "matches": [
         {
-          "start": 45,
-          "end": 47,
-          "text": "희진",
-          "source": "title"
-        },
-        {
           "start": 53,
           "end": 59,
           "text": "heejin",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 47,
+          "text": "희진",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "loona-heejin",
+      "artistId": "person-785f24419fb37180",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -87,46 +127,6 @@
           "start": 45,
           "end": 47,
           "text": "희진",
-          "source": "title"
-        },
-        {
-          "start": 53,
-          "end": 59,
-          "text": "heejin",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "heejin",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 47,
-          "text": "희진",
-          "source": "title"
-        },
-        {
-          "start": 53,
-          "end": 59,
-          "text": "heejin",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "artms",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 61,
-          "end": 66,
-          "text": "ARTMS",
           "source": "title"
         }
       ]

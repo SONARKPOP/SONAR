@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:33:31.939953Z",
+    "collectedAt": "2026-11-21T07:33:04.252666Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "hearts2hearts-yeon",
+      "artistType": "group",
+      "artistId": "ioi",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 56,
-          "end": 60,
-          "text": "YEON",
+          "start": 50,
+          "end": 55,
+          "text": "I.O.I",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 13,
+          "text": "아이오아이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b99056e7676d14b5",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 14,
+          "end": 16,
+          "text": "연정",
           "source": "title"
         }
       ]
@@ -90,34 +110,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b99056e7676d14b5",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 16,
-          "text": "연정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ioi",
+      "artistId": "hearts2hearts-yeon",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 50,
-          "end": 55,
-          "text": "I.O.I",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 13,
-          "text": "아이오아이",
+          "start": 56,
+          "end": 60,
+          "text": "YEON",
           "source": "title"
         }
       ]

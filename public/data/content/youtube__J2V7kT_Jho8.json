@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:58.921378Z",
+    "collectedAt": "2026-11-21T07:34:11.841532Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -42,15 +42,41 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "girls-generation-taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 40,
-          "end": 44,
-          "text": "소녀시대",
+          "start": 19,
+          "end": 21,
+          "text": "태연",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 17,
+          "text": "TAEYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 19,
+          "end": 21,
+          "text": "태연",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 17,
+          "text": "TAEYEON",
           "source": "title"
         }
       ]
@@ -71,6 +97,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 40,
+          "end": 44,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "lesserafim",
       "state": "mention",
       "reason": "official-owner-reference",
@@ -79,46 +119,6 @@
           "start": 77,
           "end": 81,
           "text": "르세라핌",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "girls-generation-taeyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 10,
-          "end": 17,
-          "text": "TAEYEON",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 21,
-          "text": "태연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "taeyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 10,
-          "end": 17,
-          "text": "TAEYEON",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 21,
-          "text": "태연",
           "source": "title"
         }
       ]

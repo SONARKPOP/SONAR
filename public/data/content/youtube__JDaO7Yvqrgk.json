@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:34:23.147997Z",
+    "collectedAt": "2026-11-21T07:34:12.369631Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,8 +45,42 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "lightsum",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 45,
+          "end": 53,
+          "text": "LIGHTSUM",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 10,
+          "text": "라잇썸",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-223c3f324fc1e836",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 11,
+          "end": 13,
+          "text": "유정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-af43bcf3ce0e980c",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -96,40 +130,6 @@
           "start": 11,
           "end": 13,
           "text": "유정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-af43bcf3ce0e980c",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 11,
-          "end": 13,
-          "text": "유정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "lightsum",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 53,
-          "text": "LIGHTSUM",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 10,
-          "text": "라잇썸",
           "source": "title"
         }
       ]

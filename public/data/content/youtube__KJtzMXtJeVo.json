@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:34:26.495231Z",
+    "collectedAt": "2026-11-21T07:34:16.297913Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,14 +47,46 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 4,
-          "end": 5,
-          "text": "s",
+          "start": 12,
+          "end": 19,
+          "text": "(여자)아이들",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 28,
+          "text": "I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 28,
+          "text": "(G)I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 19,
+          "text": "아이들",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 51,
+          "end": 53,
+          "text": "소연",
           "source": "title"
         }
       ]
@@ -89,20 +121,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 51,
-          "end": 53,
-          "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-0a0c0ebc64042cc2",
       "state": "needs_review",
       "reason": "shared-name",
@@ -117,32 +135,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 12,
-          "end": 19,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 23,
-          "end": 28,
-          "text": "I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 28,
-          "text": "(G)I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 16,
-          "end": 19,
-          "text": "아이들",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]

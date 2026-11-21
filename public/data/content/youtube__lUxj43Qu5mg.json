@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:35:47.541566Z",
+    "collectedAt": "2026-11-21T07:36:03.103377Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -51,38 +51,24 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 16,
-          "end": 25,
-          "text": "HOT ISSUE",
-          "source": "title"
-        },
-        {
           "start": 27,
           "end": 30,
           "text": "핫이슈",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "aespa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 34,
-          "end": 39,
-          "text": "aespa",
+          "start": 16,
+          "end": 25,
+          "text": "HOT ISSUE",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "hyuna",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "4minute-hyuna",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 55,
@@ -107,10 +93,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "4minute-hyuna",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "hyuna",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 55,
@@ -130,6 +116,20 @@
           "start": 50,
           "end": 54,
           "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "aespa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 34,
+          "end": 39,
+          "text": "aespa",
           "source": "title"
         }
       ]

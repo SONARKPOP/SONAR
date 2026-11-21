@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:34:40.305919Z",
+    "collectedAt": "2026-11-21T07:34:34.563955Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "younha",
+      "artistId": "aespa",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "윤하",
+          "start": 19,
+          "end": 22,
+          "text": "에스파",
+          "source": "title"
+        },
+        {
+          "start": 69,
+          "end": 72,
+          "text": "에스파",
           "source": "title"
         }
       ]
@@ -86,20 +92,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "aespa",
+      "artistId": "younha",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 19,
-          "end": 22,
-          "text": "에스파",
-          "source": "title"
-        },
-        {
-          "start": 69,
-          "end": 72,
-          "text": "에스파",
+          "start": 5,
+          "end": 7,
+          "text": "윤하",
           "source": "title"
         }
       ]

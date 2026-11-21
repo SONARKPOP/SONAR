@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:34:23.352656Z",
+    "collectedAt": "2026-11-21T07:34:12.641121Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -63,15 +63,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "lsf-sakura",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 56,
-          "end": 62,
-          "text": "Secret",
+          "start": 45,
+          "end": 48,
+          "text": "사쿠라",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 39,
+          "text": "Sakura",
           "source": "title"
         }
       ]
@@ -86,20 +92,6 @@
           "start": 40,
           "end": 48,
           "text": "미야와키 사쿠라",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 76,
-          "end": 80,
-          "text": "Swan",
           "source": "title"
         }
       ]
@@ -120,20 +112,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "lsf-sakura",
+      "artistId": "purple-kiss-swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 33,
-          "end": 39,
-          "text": "Sakura",
+          "start": 76,
+          "end": 80,
+          "text": "Swan",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 45,
-          "end": 48,
-          "text": "사쿠라",
+          "start": 56,
+          "end": 62,
+          "text": "Secret",
           "source": "title"
         }
       ]

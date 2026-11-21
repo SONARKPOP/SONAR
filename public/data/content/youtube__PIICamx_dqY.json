@@ -29,7 +29,7 @@
   "actualEndTime": "2021-11-12T08:06:28Z",
   "scheduledStartTime": "2021-11-12T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-21T01:34:40.646287Z",
+    "collectedAt": "2026-11-21T07:34:35.070389Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,24 +44,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 76,
-          "end": 77,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "ailee",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
+        {
+          "start": 9,
+          "end": 14,
+          "text": "Ailee",
+          "source": "title"
+        },
         {
           "start": 5,
           "end": 8,
@@ -73,11 +65,19 @@
           "end": 70,
           "text": "에일리",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 9,
-          "end": 14,
-          "text": "Ailee",
+          "start": 76,
+          "end": 77,
+          "text": "s",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:34:33.478083Z",
+    "collectedAt": "2026-11-21T07:34:25.022630Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "boa",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "보아",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-b550b1b601289b96",
@@ -60,14 +74,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "boa",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "lightsum",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 1,
-          "end": 3,
-          "text": "보아",
+          "start": 38,
+          "end": 46,
+          "text": "LIGHTSUM",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 32,
+          "text": "라잇썸",
           "source": "title"
         }
       ]
@@ -96,26 +116,6 @@
           "start": 33,
           "end": 35,
           "text": "나영",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "lightsum",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 38,
-          "end": 46,
-          "text": "LIGHTSUM",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 32,
-          "text": "라잇썸",
           "source": "title"
         }
       ]

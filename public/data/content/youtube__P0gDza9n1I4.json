@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:34:39.926205Z",
+    "collectedAt": "2026-11-21T07:34:34.058510Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "person-13a79783b44af032",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 4,
-          "end": 5,
-          "text": "s",
+          "start": 45,
+          "end": 48,
+          "text": "오윤아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-9997262542575782",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 20,
+          "text": "유니스",
+          "source": "title"
+        },
+        {
+          "start": 82,
+          "end": 85,
+          "text": "유니스",
           "source": "title"
         }
       ]
@@ -91,35 +111,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-9997262542575782",
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 17,
-          "end": 20,
-          "text": "유니스",
-          "source": "title"
-        },
-        {
-          "start": 82,
-          "end": 85,
-          "text": "유니스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-13a79783b44af032",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 48,
-          "text": "오윤아",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]

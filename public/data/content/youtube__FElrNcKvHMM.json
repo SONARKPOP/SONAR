@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:34:12.311021Z",
+    "collectedAt": "2026-11-21T07:33:57.133417Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,24 +47,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 69,
-          "end": 70,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "wjsn",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 11,
+          "end": 15,
+          "text": "WJSN",
+          "source": "title"
+        },
         {
           "start": 5,
           "end": 9,
@@ -76,25 +68,19 @@
           "end": 55,
           "text": "우주소녀",
           "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 15,
-          "text": "WJSN",
-          "source": "title"
         }
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "luli-lee",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "person-a1479c2cc95e8b6a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 60,
-          "end": 63,
-          "text": "이루리",
+          "start": 57,
+          "end": 59,
+          "text": "소원",
           "source": "title"
         }
       ]
@@ -114,15 +100,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "luli-lee",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 57,
-          "end": 59,
-          "text": "소원",
+          "start": 60,
+          "end": 63,
+          "text": "이루리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 69,
+          "end": 70,
+          "text": "s",
           "source": "title"
         }
       ]

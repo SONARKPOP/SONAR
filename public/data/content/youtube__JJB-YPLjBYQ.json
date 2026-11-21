@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T01:34:23.396002Z",
+    "collectedAt": "2026-11-21T07:34:12.700234Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,7 +44,21 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "yena",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 31,
+          "end": 33,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-329ef04589380b0d",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -71,8 +85,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-329ef04589380b0d",
+      "artistType": "group",
+      "artistId": "yena",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -108,20 +122,6 @@
           "start": 5,
           "end": 7,
           "text": "예나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 31,
-          "end": 33,
-          "text": "키스",
           "source": "title"
         }
       ]
