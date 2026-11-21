@@ -54,11 +54,17 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-2bcd73e04ace2548",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "bibi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 37,
+          "end": 41,
+          "text": "BIBI",
+          "source": "title"
+        },
         {
           "start": 33,
           "end": 35,
@@ -82,21 +88,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "bibi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-2bcd73e04ace2548",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 33,
           "end": 35,
           "text": "비비",
-          "source": "title"
-        },
-        {
-          "start": 37,
-          "end": 41,
-          "text": "BIBI",
           "source": "title"
         }
       ]
