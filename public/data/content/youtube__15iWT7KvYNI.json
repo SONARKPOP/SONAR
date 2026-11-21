@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:33:04.318975Z",
+    "collectedAt": "2026-11-21T13:19:19.516188Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "aespa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 12,
+          "text": "aespa",
+          "source": "title"
+        },
+        {
+          "start": 35,
+          "end": 38,
+          "text": "에스파",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-d91802c80d2b1122",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 21,
+          "end": 23,
+          "text": "모아",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "aespa-karina",
@@ -61,40 +95,6 @@
           "start": 39,
           "end": 42,
           "text": "카리나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "aespa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 35,
-          "end": 38,
-          "text": "에스파",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 12,
-          "text": "aespa",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-d91802c80d2b1122",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 21,
-          "end": 23,
-          "text": "모아",
           "source": "title"
         }
       ]

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:34:25.099781Z",
+    "collectedAt": "2026-11-21T13:20:28.335674Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "twice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 39,
+          "end": 44,
+          "text": "TWICE",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-4b927123d0b53a6e",
       "state": "needs_review",
@@ -55,26 +69,6 @@
           "start": 16,
           "end": 17,
           "text": "안",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "tw-nayeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 9,
-          "end": 11,
-          "text": "나연",
-          "source": "title"
-        },
-        {
-          "start": 45,
-          "end": 47,
-          "text": "나연",
           "source": "title"
         }
       ]
@@ -101,9 +95,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b7086b233a866c09",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "tw-nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 9,
@@ -140,15 +134,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "twice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-b7086b233a866c09",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 39,
-          "end": 44,
-          "text": "TWICE",
+          "start": 9,
+          "end": 11,
+          "text": "나연",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 47,
+          "text": "나연",
           "source": "title"
         }
       ]

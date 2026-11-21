@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:36:21.332501Z",
+    "collectedAt": "2026-11-21T13:22:09.304494Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,10 +60,16 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-89f673cc56c7abe4",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "nj-hanni",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 26,
+          "end": 31,
+          "text": "HANNI",
+          "source": "title"
+        },
         {
           "start": 32,
           "end": 34,
@@ -74,20 +80,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "nj-hanni",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-89f673cc56c7abe4",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 32,
           "end": 34,
           "text": "하니",
-          "source": "title"
-        },
-        {
-          "start": 26,
-          "end": 31,
-          "text": "HANNI",
           "source": "title"
         }
       ]

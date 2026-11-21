@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:34:56.411798Z",
+    "collectedAt": "2026-11-21T13:21:00.528966Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -58,14 +58,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "wheein",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "apink",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "휘인",
+          "start": 56,
+          "end": 60,
+          "text": "에이핑크",
+          "source": "title"
+        },
+        {
+          "start": 61,
+          "end": 66,
+          "text": "Apink",
           "source": "title"
         }
       ]
@@ -86,20 +92,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "apink",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 56,
-          "end": 60,
-          "text": "에이핑크",
-          "source": "title"
-        },
-        {
-          "start": 61,
-          "end": 66,
-          "text": "Apink",
+          "start": 0,
+          "end": 2,
+          "text": "휘인",
           "source": "title"
         }
       ]

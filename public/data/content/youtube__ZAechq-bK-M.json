@@ -33,11 +33,11 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:35:07.161990Z",
+    "collectedAt": "2026-11-21T13:21:08.706890Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
@@ -52,20 +52,6 @@
           "start": 52,
           "end": 57,
           "text": "TWICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "itzy-member-608992372543",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 40,
-          "end": 50,
-          "text": "CHAERYEONG",
           "source": "title"
         }
       ]
@@ -86,9 +72,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "tw-jihyo",
+      "artistId": "itzy-member-608992372543",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 50,
+          "text": "CHAERYEONG",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jihyo",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 59,
@@ -99,10 +99,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jihyo",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "tw-jihyo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 59,

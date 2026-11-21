@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-21T12:59:26.619209Z",
+  "updatedAt": "2026-11-21T13:24:03.666227Z",
   "items": [
     {
       "id": "youtube__WQ2WnW1mK_I",
@@ -44,20 +44,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "rose",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 3,
-              "end": 5,
-              "text": "로제",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "bp-rose",
           "state": "inferred",
@@ -73,14 +59,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "park-bom",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "rose",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
-              "start": 0,
-              "end": 2,
-              "text": "박봄",
+              "start": 3,
+              "end": 5,
+              "text": "로제",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "h1-key",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 23,
+              "end": 26,
+              "text": "하이키",
               "source": "title"
             }
           ]
@@ -101,14 +101,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "h1-key",
+          "artistId": "park-bom",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 23,
-              "end": 26,
-              "text": "하이키",
+              "start": 0,
+              "end": 2,
+              "text": "박봄",
               "source": "title"
             }
           ]
@@ -212,8 +212,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "park-bom",
+          "artistType": "person",
+          "artistId": "2ne1-park-bom",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -232,8 +232,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "2ne1-park-bom",
+          "artistType": "group",
+          "artistId": "park-bom",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -331,38 +331,18 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "park-bom",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "박봄",
-              "source": "title"
-            },
-            {
-              "start": 70,
-              "end": 72,
-              "text": "박봄",
-              "source": "title"
-            },
-            {
-              "start": 3,
-              "end": 11,
-              "text": "Park Bom",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "2ne1-park-bom",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 3,
+              "end": 11,
+              "text": "Park Bom",
+              "source": "title"
+            },
+            {
               "start": 0,
               "end": 2,
               "text": "박봄",
@@ -373,11 +353,31 @@
               "end": 72,
               "text": "박봄",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "park-bom",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 3,
               "end": 11,
               "text": "Park Bom",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 2,
+              "text": "박봄",
+              "source": "title"
+            },
+            {
+              "start": 70,
+              "end": 72,
+              "text": "박봄",
               "source": "title"
             }
           ]

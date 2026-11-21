@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:35:01.474525Z",
+    "collectedAt": "2026-11-21T13:20:59.482339Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,20 +48,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 3,
-          "end": 5,
-          "text": "로제",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "bp-rose",
@@ -78,14 +64,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "park-bom",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "박봄",
+          "start": 3,
+          "end": 5,
+          "text": "로제",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "h1-key",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 26,
+          "text": "하이키",
           "source": "title"
         }
       ]
@@ -106,14 +106,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "h1-key",
+      "artistId": "park-bom",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 23,
-          "end": 26,
-          "text": "하이키",
+          "start": 0,
+          "end": 2,
+          "text": "박봄",
           "source": "title"
         }
       ]

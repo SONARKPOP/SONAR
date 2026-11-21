@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:33:00.968449Z",
+    "collectedAt": "2026-11-21T13:19:16.884775Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,14 +48,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 61,
-          "end": 73,
-          "text": "KISS OF LIFE",
+          "start": 48,
+          "end": 50,
+          "text": "나띠",
+          "source": "title"
+        },
+        {
+          "start": 51,
+          "end": 56,
+          "text": "NATTY",
           "source": "title"
         }
       ]
@@ -82,40 +88,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "natty",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 48,
-          "end": 50,
-          "text": "나띠",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 56,
-          "text": "NATTY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 61,
-          "end": 65,
-          "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "adora",
       "state": "inferred",
       "reason": "unambiguous-title-name",
@@ -130,6 +102,34 @@
           "start": 14,
           "end": 17,
           "text": "아도라",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 61,
+          "end": 73,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 61,
+          "end": 65,
+          "text": "KISS",
           "source": "title"
         }
       ]

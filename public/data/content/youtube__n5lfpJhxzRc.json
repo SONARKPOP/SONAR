@@ -8,7 +8,8 @@
   "publishedAt": "2025-04-10T10:19:46Z",
   "groupIds": [
     "izna",
-    "min"
+    "min",
+    "miss-a"
   ],
   "memberIds": [
     "miss-a-min",
@@ -34,28 +35,34 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:36:09.209239Z",
+    "collectedAt": "2026-11-21T13:21:58.811981Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "min",
+      "artistId": "izna",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 44,
-          "end": 47,
-          "text": "MIN",
+          "start": 8,
+          "end": 11,
+          "text": "이즈나",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "text": "izna",
           "source": "title"
         }
       ]
@@ -76,20 +83,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "izna",
+      "artistId": "min",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 8,
-          "end": 11,
-          "text": "이즈나",
-          "source": "title"
-        },
-        {
-          "start": 30,
-          "end": 34,
-          "text": "izna",
+          "start": 44,
+          "end": 47,
+          "text": "MIN",
           "source": "title"
         }
       ]

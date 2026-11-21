@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:35:28.830105Z",
+    "collectedAt": "2026-11-21T13:21:22.999469Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,26 +42,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 6,
-          "text": "Secret",
-          "source": "title"
-        },
-        {
-          "start": 41,
-          "end": 44,
-          "text": "시크릿",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
@@ -78,14 +58,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
+          "start": 41,
+          "end": 44,
+          "text": "시크릿",
+          "source": "title"
+        },
+        {
           "start": 0,
-          "end": 13,
-          "text": "Secret Number",
+          "end": 6,
+          "text": "Secret",
           "source": "title"
         }
       ]
@@ -100,6 +86,20 @@
           "start": 16,
           "end": 24,
           "text": "Favorite",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 13,
+          "text": "Secret Number",
           "source": "title"
         }
       ]

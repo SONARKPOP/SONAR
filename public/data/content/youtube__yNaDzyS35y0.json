@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:36:50.680250Z",
+    "collectedAt": "2026-11-21T13:22:34.268091Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,23 +45,9 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "illit",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 3,
-          "text": "아일릿",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "illit-member-59036fd87f0e",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "yoona",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 4,
@@ -86,15 +72,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yoona",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "illit-member-59036fd87f0e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 4,
           "end": 6,
           "text": "윤아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "illit",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "아일릿",
           "source": "title"
         }
       ]

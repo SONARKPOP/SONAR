@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:34:18.577254Z",
+    "collectedAt": "2026-11-21T13:20:22.586599Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -67,20 +67,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 24,
-          "end": 26,
-          "text": "소원",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "hearts2hearts",
       "state": "inferred",
@@ -102,14 +88,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "youha",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "girls-generation",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 17,
-          "end": 19,
-          "text": "유하",
+          "start": 38,
+          "end": 42,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a1479c2cc95e8b6a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 26,
+          "text": "소원",
           "source": "title"
         }
       ]
@@ -130,14 +130,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistId": "youha",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 38,
-          "end": 42,
-          "text": "소녀시대",
+          "start": 17,
+          "end": 19,
+          "text": "유하",
           "source": "title"
         }
       ]

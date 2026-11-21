@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:36:11.195523Z",
+    "collectedAt": "2026-11-21T13:22:00.621164Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-504a77b935c31921",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 31,
+          "end": 33,
+          "text": "메이",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "rescene-may",
@@ -87,35 +101,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-504a77b935c31921",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 31,
-          "end": 33,
-          "text": "메이",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "say-my-name",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 23,
-          "end": 29,
-          "text": "세이마이네임",
-          "source": "title"
-        },
-        {
           "start": 10,
           "end": 21,
           "text": "SAY MY NAME",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 29,
+          "text": "세이마이네임",
           "source": "title"
         }
       ]

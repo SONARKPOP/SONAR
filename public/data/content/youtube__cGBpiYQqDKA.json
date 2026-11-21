@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:35:27.276517Z",
+    "collectedAt": "2026-11-21T13:21:21.703562Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -68,14 +68,34 @@
     },
     {
       "artistType": "group",
-      "artistId": "miss-a",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 47,
-          "end": 53,
-          "text": "miss A",
+          "start": 57,
+          "end": 61,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "나띠",
+          "source": "title"
+        },
+        {
+          "start": 70,
+          "end": 75,
+          "text": "NATTY",
           "source": "title"
         }
       ]
@@ -102,34 +122,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "natty",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "miss-a",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 18,
-          "end": 20,
-          "text": "나띠",
-          "source": "title"
-        },
-        {
-          "start": 70,
-          "end": 75,
-          "text": "NATTY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 57,
-          "end": 61,
-          "text": "KISS",
+          "start": 47,
+          "end": 53,
+          "text": "miss A",
           "source": "title"
         }
       ]

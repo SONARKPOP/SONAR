@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:33:28.618267Z",
+    "collectedAt": "2026-11-21T13:19:39.982662Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "wjsn",
@@ -67,38 +81,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 3,
-          "text": "키스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "seola",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 28,
-          "end": 30,
-          "text": "설아",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "wjsn-seola",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-13d1f132703629ae",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 28,
@@ -123,10 +109,24 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "seola",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 28,
+          "end": 30,
+          "text": "설아",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-13d1f132703629ae",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "wjsn-seola",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 28,

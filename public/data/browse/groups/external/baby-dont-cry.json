@@ -137,25 +137,11 @@
       "programName": "리무진서비스",
       "externalType": "song",
       "memberTagging": {
-        "policy": "title-context-v2",
-        "source": "title",
+        "policy": "title-only-v1",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "appearanceLinks": [
-        {
-          "artistType": "person",
-          "artistId": "person-55aca1823bded05b",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 71,
-              "end": 74,
-              "text": "JIN",
-              "source": "title"
-            }
-          ]
-        },
         {
           "artistType": "group",
           "artistId": "baby-dont-cry",
@@ -172,6 +158,20 @@
               "start": 22,
               "end": 29,
               "text": "베이비돈크라이",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-55aca1823bded05b",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 71,
+              "end": 74,
+              "text": "JIN",
               "source": "title"
             }
           ]

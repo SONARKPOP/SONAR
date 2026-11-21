@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:52.914967Z",
+    "collectedAt": "2026-11-21T13:20:12.642238Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -43,14 +43,40 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "girls-generation-tiffany-young",
+      "artistId": "gidle-miyeon",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 13,
-          "text": "Tiffany Young",
+          "start": 38,
+          "end": 40,
+          "text": "미연",
+          "source": "title"
+        },
+        {
+          "start": 42,
+          "end": 48,
+          "text": "MIYEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "miyeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 38,
+          "end": 40,
+          "text": "미연",
+          "source": "title"
+        },
+        {
+          "start": 42,
+          "end": 48,
+          "text": "MIYEON",
           "source": "title"
         }
       ]
@@ -70,45 +96,27 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "miyeon",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 42,
-          "end": 48,
-          "text": "MIYEON",
-          "source": "title"
-        },
-        {
-          "start": 38,
-          "end": 40,
-          "text": "미연",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "gidle-miyeon",
+      "artistId": "girls-generation-tiffany-young",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 42,
-          "end": 48,
-          "text": "MIYEON",
-          "source": "title"
-        },
-        {
-          "start": 38,
-          "end": 40,
-          "text": "미연",
+          "start": 0,
+          "end": 13,
+          "text": "Tiffany Young",
           "source": "title"
         }
       ]
     }
+  ],
+  "careerGroupIds": [
+    "gg-8abb39c3ffbbe8b2",
+    "girls-generation"
+  ],
+  "displayCareerGroupIds": [
+    "gg-8abb39c3ffbbe8b2",
+    "girls-generation"
   ],
   "externalId": "Hm37FYlfo5g",
   "sourceUrl": "https://www.youtube.com/watch?v=Hm37FYlfo5g",
@@ -124,13 +132,5 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "careerGroupIds": [
-    "gg-8abb39c3ffbbe8b2",
-    "girls-generation"
-  ],
-  "displayCareerGroupIds": [
-    "gg-8abb39c3ffbbe8b2",
-    "girls-generation"
-  ]
+  "musicBroadcast": false
 }

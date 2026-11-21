@@ -34,15 +34,43 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:47.717754Z",
+    "collectedAt": "2026-11-21T13:20:08.190243Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "tuide-saki",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 69,
+          "end": 71,
+          "text": "사키",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 44,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "tuide",
@@ -85,20 +113,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "tuide-saki",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 69,
-          "end": 71,
-          "text": "사키",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "tuide-seah",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -121,20 +135,6 @@
           "start": 73,
           "end": 75,
           "text": "세아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 40,
-          "end": 44,
-          "text": "ITZY",
           "source": "title"
         }
       ]

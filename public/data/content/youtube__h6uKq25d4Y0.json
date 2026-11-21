@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:35:45.865565Z",
+    "collectedAt": "2026-11-21T13:21:38.577030Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,21 +45,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "qwer",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-c0ba3a19752c65c8",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 7,
-          "end": 11,
-          "text": "QWER",
+          "start": 12,
+          "end": 14,
+          "text": "시연",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-3858c7c33d34acfe",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 30,
-          "end": 34,
-          "text": "QWER",
+          "start": 12,
+          "end": 14,
+          "text": "시연",
           "source": "title"
         }
       ]
@@ -94,34 +102,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-3858c7c33d34acfe",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "시연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-c0ba3a19752c65c8",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "시연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-15b6ea01ba8829c9",
       "state": "needs_review",
       "reason": "shared-name",
@@ -130,6 +110,26 @@
           "start": 12,
           "end": 14,
           "text": "시연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "qwer",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 11,
+          "text": "QWER",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "text": "QWER",
           "source": "title"
         }
       ]

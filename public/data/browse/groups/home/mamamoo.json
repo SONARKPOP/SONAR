@@ -213,6 +213,12 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "mamamoo"
+      ],
+      "displayCareerGroupIds": [
+        "mamamoo"
+      ],
       "externalId": "3Hll9UcMiIw",
       "sourceUrl": "https://www.youtube.com/watch?v=3Hll9UcMiIw",
       "contentTypes": [
@@ -235,13 +241,7 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "careerGroupIds": [
-        "mamamoo"
-      ],
-      "displayCareerGroupIds": [
-        "mamamoo"
-      ]
+      }
     },
     {
       "id": "youtube__6QI88KFr2fE",
@@ -277,8 +277,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "wheein",
+          "artistType": "person",
+          "artistId": "mamamoo-wheein",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -291,8 +291,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "mamamoo-wheein",
+          "artistType": "group",
+          "artistId": "wheein",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -369,35 +369,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 28,
-              "end": 29,
-              "text": "S",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "mamamoo-solar",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 2,
-              "text": "솔라",
-              "source": "title"
-            },
-            {
               "start": 4,
               "end": 9,
               "text": "Solar",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 2,
+              "text": "솔라",
               "source": "title"
             }
           ]
@@ -409,15 +395,29 @@
           "reason": "official-owner-reference",
           "matches": [
             {
+              "start": 4,
+              "end": 9,
+              "text": "Solar",
+              "source": "title"
+            },
+            {
               "start": 0,
               "end": 2,
               "text": "솔라",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
             {
-              "start": 4,
-              "end": 9,
-              "text": "Solar",
+              "start": 28,
+              "end": 29,
+              "text": "S",
               "source": "title"
             }
           ]

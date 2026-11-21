@@ -30,7 +30,7 @@
   "actualEndTime": "2026-09-02T08:05:47Z",
   "scheduledStartTime": "2026-09-02T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-21T07:35:19.429772Z",
+    "collectedAt": "2026-11-21T13:21:15.389567Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -59,6 +59,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 25,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "tuide",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -73,20 +87,6 @@
           "start": 5,
           "end": 10,
           "text": "TUIDE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 21,
-          "end": 25,
-          "text": "KISS",
           "source": "title"
         }
       ]

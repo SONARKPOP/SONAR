@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T07:33:44.260625Z",
+    "collectedAt": "2026-11-21T13:19:53.690624Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,36 +46,50 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "bp-jennie",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "highteen",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 3,
-          "end": 5,
-          "text": "제니",
+          "start": 24,
+          "end": 27,
+          "text": "하이틴",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-jeon-somi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 19,
+          "end": 22,
+          "text": "전소미",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "jennie",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "jeon-somi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 3,
-          "end": 5,
-          "text": "제니",
+          "start": 19,
+          "end": 22,
+          "text": "전소미",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "person-6ec59eddfafab2fd",
+      "artistId": "bp-jennie",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -117,42 +131,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "ioi-jeon-somi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-6ec59eddfafab2fd",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 19,
-          "end": 22,
-          "text": "전소미",
+          "start": 3,
+          "end": 5,
+          "text": "제니",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "jeon-somi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "jennie",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 19,
-          "end": 22,
-          "text": "전소미",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "highteen",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 24,
-          "end": 27,
-          "text": "하이틴",
+          "start": 3,
+          "end": 5,
+          "text": "제니",
           "source": "title"
         }
       ]
