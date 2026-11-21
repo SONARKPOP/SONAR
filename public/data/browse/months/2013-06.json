@@ -173,10 +173,10 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "miss-a-fei",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "fei",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 0,
@@ -193,10 +193,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "fei",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "miss-a-fei",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 0,
@@ -380,20 +380,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "spica",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 20,
-              "text": "SPICA",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "boa",
           "state": "mention",
           "reason": "official-owner-reference",
@@ -402,6 +388,20 @@
               "start": 4,
               "end": 7,
               "text": "BoA",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "spica",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 20,
+              "text": "SPICA",
               "source": "title"
             }
           ]
