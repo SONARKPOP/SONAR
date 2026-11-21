@@ -43,20 +43,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "sis",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 36,
-          "end": 37,
-          "text": "S",
-          "source": "title"
-        },
-        {
-          "start": 40,
           "end": 41,
-          "text": "S",
+          "text": "S.I.S",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-gaeul",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 32,
+          "text": "Gaeul",
           "source": "title"
         }
       ]
@@ -83,28 +91,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "sis",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 36,
-          "end": 41,
-          "text": "S.I.S",
+          "end": 37,
+          "text": "S",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "ive-gaeul",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
-          "start": 27,
-          "end": 32,
-          "text": "Gaeul",
+          "start": 40,
+          "end": 41,
+          "text": "S",
           "source": "title"
         }
       ]

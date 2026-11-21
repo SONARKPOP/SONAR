@@ -8,6 +8,7 @@
   "publishedAt": "2026-10-27T07:00:10Z",
   "groupIds": [
     "gfriend",
+    "ive",
     "nmixx"
   ],
   "memberIds": [
@@ -44,15 +45,15 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
+      "artistType": "group",
+      "artistId": "ive",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 18,
-          "end": 20,
-          "text": "소원",
+          "start": 1,
+          "end": 4,
+          "text": "IVE",
           "source": "title"
         }
       ]
@@ -72,15 +73,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nmixx",
+      "artistType": "person",
+      "artistId": "person-a1479c2cc95e8b6a",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 33,
-          "end": 38,
-          "text": "NMIXX",
+          "start": 18,
+          "end": 20,
+          "text": "소원",
           "source": "title"
         }
       ]
@@ -101,14 +102,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "ive",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "nmixx",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 1,
-          "end": 4,
-          "text": "IVE",
+          "start": 33,
+          "end": 38,
+          "text": "NMIXX",
           "source": "title"
         }
       ]
