@@ -39,8 +39,36 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 58,
+              "end": 60,
+              "text": "키스",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
-          "artistId": "person-8256788526b32f7c",
+          "artistId": "person-b1adb81048e956dc",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "전율",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-7c2b43021c2ece7d",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -68,7 +96,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-7c2b43021c2ece7d",
+          "artistId": "person-8256788526b32f7c",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -76,34 +104,6 @@
               "start": 34,
               "end": 36,
               "text": "루시",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-b1adb81048e956dc",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 44,
-              "text": "전율",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 58,
-              "end": 60,
-              "text": "키스",
               "source": "title"
             }
           ]
@@ -168,11 +168,17 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "hearts2hearts-stella",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "stellar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
+            {
+              "start": 1,
+              "end": 8,
+              "text": "STELLAR",
+              "source": "title"
+            },
             {
               "start": 15,
               "end": 18,
@@ -182,21 +188,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "stellar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "hearts2hearts-stella",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 15,
               "end": 18,
               "text": "스텔라",
-              "source": "title"
-            },
-            {
-              "start": 1,
-              "end": 8,
-              "text": "STELLAR",
               "source": "title"
             }
           ]
