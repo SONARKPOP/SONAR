@@ -38,8 +38,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "taeyeon",
+          "artistType": "person",
+          "artistId": "girls-generation-taeyeon",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -52,8 +52,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "girls-generation-taeyeon",
+          "artistType": "group",
+          "artistId": "taeyeon",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -207,41 +207,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "taeyeon",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 8,
-              "end": 10,
-              "text": "태연",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 7,
-              "text": "TAEYEON",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "girls-generation-taeyeon",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 0,
+              "end": 7,
+              "text": "TAEYEON",
+              "source": "title"
+            },
+            {
               "start": 8,
               "end": 10,
               "text": "태연",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "taeyeon",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 0,
               "end": 7,
               "text": "TAEYEON",
+              "source": "title"
+            },
+            {
+              "start": 8,
+              "end": 10,
+              "text": "태연",
               "source": "title"
             }
           ]
@@ -388,28 +388,14 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "hyo",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 18,
-              "end": 21,
-              "text": "HYO",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "girls-generation-hyo",
+          "artistId": "nmixx",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 18,
-              "end": 21,
-              "text": "HYO",
+              "start": 42,
+              "end": 47,
+              "text": "NMIXX",
               "source": "title"
             }
           ]
@@ -444,14 +430,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "nmixx",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "hyo",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 42,
-              "end": 47,
-              "text": "NMIXX",
+              "start": 18,
+              "end": 21,
+              "text": "HYO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "girls-generation-hyo",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 18,
+              "end": 21,
+              "text": "HYO",
               "source": "title"
             }
           ]
