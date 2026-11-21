@@ -45,20 +45,6 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 28,
-          "text": "SECRET",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "wooah",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -67,6 +53,20 @@
           "start": 46,
           "end": 53,
           "text": "woo!ah!",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 35,
+          "text": "SECRET NUMBER",
           "source": "title"
         }
       ]
@@ -87,14 +87,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 22,
-          "end": 35,
-          "text": "SECRET NUMBER",
+          "end": 28,
+          "text": "SECRET",
           "source": "title"
         }
       ]
