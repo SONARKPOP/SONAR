@@ -56,6 +56,26 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "highteen",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "하이틴",
+          "source": "title"
+        },
+        {
+          "start": 1,
+          "end": 9,
+          "text": "HIGHTEEN",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-c660162f86f5c9f9",
       "state": "inferred",
@@ -71,34 +91,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "highteen",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "episode",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 1,
-          "end": 9,
-          "text": "HIGHTEEN",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 23,
-          "text": "하이틴",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "tuide-seah",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 39,
-          "end": 41,
-          "text": "세아",
+          "start": 10,
+          "end": 17,
+          "text": "EPISODE",
           "source": "title"
         }
       ]
@@ -118,15 +118,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "episode",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "tuide-seah",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 10,
-          "end": 17,
-          "text": "EPISODE",
+          "start": 39,
+          "end": 41,
+          "text": "세아",
           "source": "title"
         }
       ]

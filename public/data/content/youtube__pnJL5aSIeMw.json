@@ -42,20 +42,6 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-1302ddab0dad9303",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 20,
-          "text": "박초롱",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "apink",
       "state": "inferred",
@@ -77,9 +63,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "apink-oh-ha-young",
+      "artistId": "person-1302ddab0dad9303",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 20,
+          "text": "박초롱",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "oh-ha-young",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 35,
@@ -90,10 +90,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "oh-ha-young",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "apink-oh-ha-young",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 35,
