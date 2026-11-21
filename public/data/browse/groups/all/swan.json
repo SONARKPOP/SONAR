@@ -39,6 +39,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "x-in",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 40,
+              "end": 44,
+              "text": "X:IN",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "swan",
           "state": "inferred",
           "reason": "unambiguous-title-name",
@@ -61,20 +75,6 @@
               "start": 62,
               "end": 66,
               "text": "Swan",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "x-in",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 40,
-              "end": 44,
-              "text": "X:IN",
               "source": "title"
             }
           ]
@@ -137,6 +137,26 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "purple-kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 71,
+              "end": 75,
+              "text": "퍼플키스",
+              "source": "title"
+            },
+            {
+              "start": 53,
+              "end": 64,
+              "text": "PURPLE KISS",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -151,20 +171,40 @@
         },
         {
           "artistType": "group",
-          "artistId": "purple-kiss",
+          "artistId": "swan",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 53,
-              "end": 64,
-              "text": "PURPLE KISS",
+              "start": 45,
+              "end": 49,
+              "text": "SWAN",
               "source": "title"
             },
             {
-              "start": 71,
-              "end": 75,
-              "text": "퍼플키스",
+              "start": 65,
+              "end": 67,
+              "text": "수안",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "purple-kiss-swan",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 49,
+              "text": "SWAN",
+              "source": "title"
+            },
+            {
+              "start": 65,
+              "end": 67,
+              "text": "수안",
               "source": "title"
             }
           ]
@@ -179,46 +219,6 @@
               "start": 65,
               "end": 67,
               "text": "수안",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "swan",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 65,
-              "end": 67,
-              "text": "수안",
-              "source": "title"
-            },
-            {
-              "start": 45,
-              "end": 49,
-              "text": "SWAN",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "purple-kiss-swan",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 65,
-              "end": 67,
-              "text": "수안",
-              "source": "title"
-            },
-            {
-              "start": 45,
-              "end": 49,
-              "text": "SWAN",
               "source": "title"
             }
           ]
@@ -278,30 +278,10 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 24,
-              "end": 28,
-              "text": "KISS",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "purple-kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
-            {
-              "start": 17,
-              "end": 28,
-              "text": "PURPLE KISS",
-              "source": "title"
-            },
             {
               "start": 12,
               "end": 16,
@@ -312,6 +292,40 @@
               "start": 62,
               "end": 66,
               "text": "퍼플키스",
+              "source": "title"
+            },
+            {
+              "start": 17,
+              "end": 28,
+              "text": "PURPLE KISS",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 4,
+              "end": 5,
+              "text": "s",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 24,
+              "end": 28,
+              "text": "KISS",
               "source": "title"
             }
           ]
@@ -354,20 +368,6 @@
               "start": 53,
               "end": 55,
               "text": "수안",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 4,
-              "end": 5,
-              "text": "s",
               "source": "title"
             }
           ]

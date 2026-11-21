@@ -35,7 +35,7 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-94eb4421c0847185",
+          "artistId": "person-4442d3593b19b75a",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -77,7 +77,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-c8945fd8178cf886",
+          "artistId": "person-94eb4421c0847185",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -91,7 +91,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-4442d3593b19b75a",
+          "artistId": "person-c8945fd8178cf886",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -437,29 +437,21 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "red-velvet-joy",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 33,
-              "end": 36,
-              "text": "JOY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "joy",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistId": "itzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 33,
-              "end": 36,
-              "text": "JOY",
+              "start": 1,
+              "end": 5,
+              "text": "ITZY",
+              "source": "title"
+            },
+            {
+              "start": 6,
+              "end": 10,
+              "text": "ITZY",
               "source": "title"
             }
           ]
@@ -480,20 +472,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "itzy",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "joy",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
-              "start": 1,
-              "end": 5,
-              "text": "ITZY",
+              "start": 33,
+              "end": 36,
+              "text": "JOY",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "red-velvet-joy",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
             {
-              "start": 6,
-              "end": 10,
-              "text": "ITZY",
+              "start": 33,
+              "end": 36,
+              "text": "JOY",
               "source": "title"
             }
           ]
