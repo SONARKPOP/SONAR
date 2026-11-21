@@ -7,8 +7,7 @@
   "description": "@xin.official",
   "publishedAt": "2026-11-07T13:00:37Z",
   "groupIds": [
-    "code-zigu",
-    "x-in"
+    "code-zigu"
   ],
   "memberIds": [
     "person-685346ec4ff8d72a"
@@ -36,51 +35,11 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "x-in",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 59,
-          "end": 61,
-          "text": "엑신",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 4,
-          "text": "X:IN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-685346ec4ff8d72a",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "니즈",
-          "source": "title"
-        },
-        {
-          "start": 68,
-          "end": 70,
-          "text": "니즈",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "person-c0c58f9332b550c3",
@@ -110,6 +69,46 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "person-685346ec4ff8d72a",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "니즈",
+          "source": "title"
+        },
+        {
+          "start": 68,
+          "end": 70,
+          "text": "니즈",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "x-in",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "X:IN",
+          "source": "title"
+        },
+        {
+          "start": 59,
+          "end": 61,
+          "text": "엑신",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "code-zigu",
       "state": "inferred",
@@ -123,12 +122,6 @@
         }
       ]
     }
-  ],
-  "careerGroupIds": [
-    "x-in"
-  ],
-  "displayCareerGroupIds": [
-    "x-in"
   ],
   "externalId": "tKpGAgDv5O0",
   "sourceUrl": "https://www.youtube.com/watch?v=tKpGAgDv5O0",
@@ -144,5 +137,11 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false
+  "musicBroadcast": false,
+  "careerGroupIds": [
+    "x-in"
+  ],
+  "displayCareerGroupIds": [
+    "x-in"
+  ]
 }

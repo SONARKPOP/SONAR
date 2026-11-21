@@ -56,10 +56,24 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-4e78c7a9714df5fd",
+      "artistType": "group",
+      "artistId": "dia",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 34,
+          "end": 37,
+          "text": "dia",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-5d18e099d4275459",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 2,
@@ -97,9 +111,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-5d18e099d4275459",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-4e78c7a9714df5fd",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 2,
@@ -111,20 +125,6 @@
           "start": 30,
           "end": 32,
           "text": "디아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "dia",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 34,
-          "end": 37,
-          "text": "dia",
           "source": "title"
         }
       ]
