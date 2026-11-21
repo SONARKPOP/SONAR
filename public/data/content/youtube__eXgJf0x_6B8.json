@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:21:29.407457Z",
+    "collectedAt": "2026-11-21T19:10:28.605313Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,10 +60,16 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-6af77dba6c567f44",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "meovv-ella",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 23,
+          "end": 27,
+          "text": "ELLA",
+          "source": "title"
+        },
         {
           "start": 28,
           "end": 30,
@@ -102,20 +108,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "meovv-ella",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-6af77dba6c567f44",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 28,
           "end": 30,
           "text": "엘라",
-          "source": "title"
-        },
-        {
-          "start": 23,
-          "end": 27,
-          "text": "ELLA",
           "source": "title"
         }
       ]

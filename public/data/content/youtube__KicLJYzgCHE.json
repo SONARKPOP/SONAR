@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:20:21.873479Z",
+    "collectedAt": "2026-11-21T19:09:29.004409Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 17,
+          "text": "세이마이네임",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-7d7cd6c710e78340",
@@ -61,9 +75,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-fc1cc913087cf860",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-59d9d2c5f0ca05f8",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 28,
@@ -75,9 +89,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-59d9d2c5f0ca05f8",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-fc1cc913087cf860",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 28,
@@ -153,20 +167,6 @@
           "start": 24,
           "end": 26,
           "text": "승주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 17,
-          "text": "세이마이네임",
           "source": "title"
         }
       ]

@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:22:33.069632Z",
+    "collectedAt": "2026-11-21T19:11:23.810203Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -50,9 +50,29 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "soyeon",
+      "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 52,
+          "end": 59,
+          "text": "(여자)아이들",
+          "source": "title"
+        },
+        {
+          "start": 56,
+          "end": 59,
+          "text": "아이들",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-0a0c0ebc64042cc2",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 60,
@@ -63,10 +83,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "soyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 60,
@@ -92,7 +112,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-0a0c0ebc64042cc2",
+      "artistId": "person-3caf8650648aaf32",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -148,26 +168,6 @@
           "start": 11,
           "end": 15,
           "text": "에이핑크",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 52,
-          "end": 59,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 56,
-          "end": 59,
-          "text": "아이들",
           "source": "title"
         }
       ]

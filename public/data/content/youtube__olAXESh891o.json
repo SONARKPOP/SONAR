@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:22:03.801331Z",
+    "collectedAt": "2026-11-21T19:10:58.278055Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,15 +49,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistType": "person",
+      "artistId": "hearts2hearts-juun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 38,
-          "end": 42,
-          "text": "소녀시대",
+          "start": 60,
+          "end": 64,
+          "text": "JUUN",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 19,
+          "text": "주은",
           "source": "title"
         }
       ]
@@ -78,6 +84,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
+      "matches": [
+        {
+          "start": 38,
+          "end": 42,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "hearts2hearts",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -92,26 +112,6 @@
           "start": 11,
           "end": 16,
           "text": "하츠투하츠",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "hearts2hearts-juun",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 60,
-          "end": 64,
-          "text": "JUUN",
-          "source": "title"
-        },
-        {
-          "start": 17,
-          "end": 19,
-          "text": "주은",
           "source": "title"
         }
       ]

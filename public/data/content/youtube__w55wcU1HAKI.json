@@ -57,9 +57,29 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "nicole",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "kara",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "KARA",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": "카라",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "kara-nicole",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 42,
@@ -90,10 +110,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "kara-nicole",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "nicole",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 42,
@@ -105,26 +125,6 @@
           "start": 34,
           "end": 40,
           "text": "NICOLE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kara",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 5,
-          "text": "KARA",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 9,
-          "text": "카라",
           "source": "title"
         }
       ]

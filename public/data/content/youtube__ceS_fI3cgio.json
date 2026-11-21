@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:21:22.999469Z",
+    "collectedAt": "2026-11-21T19:10:23.120595Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,6 +42,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 14,
+          "end": 15,
+          "text": "s",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "secret",
@@ -64,14 +78,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 14,
-          "end": 15,
-          "text": "s",
+          "start": 0,
+          "end": 13,
+          "text": "Secret Number",
           "source": "title"
         }
       ]
@@ -86,20 +100,6 @@
           "start": 16,
           "end": 24,
           "text": "Favorite",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 13,
-          "text": "Secret Number",
           "source": "title"
         }
       ]

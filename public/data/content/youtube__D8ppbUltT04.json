@@ -37,7 +37,7 @@
   "actualEndTime": "2021-01-15T08:14:22Z",
   "scheduledStartTime": "2021-01-15T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-21T13:19:57.686176Z",
+    "collectedAt": "2026-11-21T19:09:07.432228Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -50,6 +50,54 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 20,
+          "end": 27,
+          "text": "(여자)아이들",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 27,
+          "text": "아이들",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-taeyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "태연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "taeyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "태연",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "stayc",
@@ -66,20 +114,6 @@
           "start": 0,
           "end": 5,
           "text": "STAYC",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-d94d0de75b9f2aeb",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 44,
-          "end": 46,
-          "text": "루키",
           "source": "title"
         }
       ]
@@ -113,49 +147,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 20,
-          "end": 27,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 24,
-          "end": 27,
-          "text": "아이들",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "taeyeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "태연",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "girls-generation-taeyeon",
+      "artistId": "person-d94d0de75b9f2aeb",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "태연",
+          "start": 44,
+          "end": 46,
+          "text": "루키",
           "source": "title"
         }
       ]

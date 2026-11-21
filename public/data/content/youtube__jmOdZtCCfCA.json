@@ -8,6 +8,7 @@
   "publishedAt": "2024-04-04T03:00:32Z",
   "groupIds": [
     "kiss",
+    "kiss-of-life",
     "natty"
   ],
   "memberIds": [
@@ -33,32 +34,18 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:21:47.859644Z",
+    "collectedAt": "2026-11-21T19:10:43.927522Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "kiss-of-life-member-272247fb290a",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 68,
-          "end": 70,
-          "text": "쥴리",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "kiss-of-life",
@@ -87,9 +74,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "kiss-of-life-natty",
+      "artistId": "kiss-of-life-member-272247fb290a",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 68,
+          "end": 70,
+          "text": "쥴리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 71,
@@ -100,10 +101,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "natty",
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 71,

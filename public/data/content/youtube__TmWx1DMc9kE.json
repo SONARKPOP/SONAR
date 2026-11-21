@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:20:51.099899Z",
+    "collectedAt": "2026-11-21T19:09:54.775587Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,29 +44,15 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-ff9c145acecbf386",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 30,
-          "end": 32,
-          "text": "다영",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "dayoung",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 30,
-          "end": 32,
-          "text": "다영",
+          "start": 12,
+          "end": 15,
+          "text": "아이브",
           "source": "title"
         }
       ]
@@ -101,14 +87,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "dayoung",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 12,
-          "end": 15,
-          "text": "아이브",
+          "start": 30,
+          "end": 32,
+          "text": "다영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ff9c145acecbf386",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 30,
+          "end": 32,
+          "text": "다영",
           "source": "title"
         }
       ]

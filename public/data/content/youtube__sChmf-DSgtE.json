@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:22:14.457273Z",
+    "collectedAt": "2026-11-21T19:11:07.318249Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,25 +40,11 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "kiss-of-life-member-272247fb290a",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 59,
-          "end": 61,
-          "text": "쥴리",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "kiss-of-life",
@@ -80,24 +66,24 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
+      "artistType": "person",
+      "artistId": "kiss-of-life-member-da7f28bccc9c",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "KISS",
+          "start": 63,
+          "end": 64,
+          "text": "벨",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "kiss-of-life-member-da7f28bccc9c",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-dff6b18b1d4d3a3c",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 63,
@@ -123,14 +109,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-dff6b18b1d4d3a3c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "kiss-of-life-member-272247fb290a",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 63,
-          "end": 64,
-          "text": "벨",
+          "start": 59,
+          "end": 61,
+          "text": "쥴리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "KISS",
           "source": "title"
         }
       ]

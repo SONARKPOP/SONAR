@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:20:47.475816Z",
+    "collectedAt": "2026-11-21T19:09:51.505254Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "twice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 31,
+          "end": 36,
+          "text": "TWICE",
+          "source": "title"
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "text": "트와이스",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "tw-nayeon",
@@ -120,20 +140,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-jihyo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 41,
-          "end": 43,
-          "text": "지효",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "jihyo",
       "state": "inferred",
@@ -148,21 +154,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "twice",
+      "artistType": "person",
+      "artistId": "tw-jihyo",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 31,
-          "end": 36,
-          "text": "TWICE",
-          "source": "title"
-        },
-        {
-          "start": 26,
-          "end": 30,
-          "text": "트와이스",
+          "start": 41,
+          "end": 43,
+          "text": "지효",
           "source": "title"
         }
       ]

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:22:27.040160Z",
+    "collectedAt": "2026-11-21T19:11:18.353854Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,14 +47,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "craxy",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 67,
-          "end": 71,
-          "text": "SWAN",
+          "start": 6,
+          "end": 9,
+          "text": "크랙시",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 5,
+          "text": "Craxy",
           "source": "title"
         }
       ]
@@ -75,20 +81,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "craxy",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 6,
-          "end": 9,
-          "text": "크랙시",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 5,
-          "text": "Craxy",
+          "start": 67,
+          "end": 71,
+          "text": "SWAN",
           "source": "title"
         }
       ]

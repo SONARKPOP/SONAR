@@ -79,6 +79,7 @@
       "title": "Minzy (공민지) - Calling challenge with NiziU 마코",
       "publishedAt": "2026-10-13T03:00:29Z",
       "groupIds": [
+        "gg-58462020e43cb61a",
         "minzy"
       ],
       "memberIds": [
@@ -101,7 +102,7 @@
       "durationLabel": "29s",
       "memberTagging": {
         "policy": "title-context-v2",
-        "source": "unclassified",
+        "source": "title",
         "appearanceVerified": false
       },
       "appearanceLinks": [
@@ -146,20 +147,6 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-8c544f5330f8296e",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 43,
-              "end": 45,
-              "text": "마코",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "gg-58462020e43cb61a",
           "state": "needs_review",
@@ -169,6 +156,20 @@
               "start": 37,
               "end": 42,
               "text": "NiziU",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8c544f5330f8296e",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 43,
+              "end": 45,
+              "text": "마코",
               "source": "title"
             }
           ]
@@ -208,7 +209,6 @@
       "title": "#NiziU #미이히 선배님과 ☁️하늘땅 별땅⭐ #UNIS #유니스 #NANA #나나 #하늘땅별땅",
       "publishedAt": "2026-10-06T12:03:03Z",
       "groupIds": [
-        "gg-58462020e43cb61a",
         "unis"
       ],
       "memberIds": [
@@ -260,28 +260,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "gg-58462020e43cb61a",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 1,
-              "end": 6,
-              "text": "NiziU",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-0bf8446768bc9486",
+          "artistId": "unis",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 8,
-              "end": 11,
-              "text": "미이히",
+              "start": 34,
+              "end": 37,
+              "text": "유니스",
+              "source": "title"
+            },
+            {
+              "start": 28,
+              "end": 32,
+              "text": "UNIS",
               "source": "title"
             }
           ]
@@ -301,21 +293,29 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "unis",
+          "artistType": "person",
+          "artistId": "person-0bf8446768bc9486",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 34,
-              "end": 37,
-              "text": "유니스",
+              "start": 8,
+              "end": 11,
+              "text": "미이히",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-58462020e43cb61a",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
             {
-              "start": 28,
-              "end": 32,
-              "text": "UNIS",
+              "start": 1,
+              "end": 6,
+              "text": "NiziU",
               "source": "title"
             }
           ]

@@ -32,7 +32,7 @@
   "actualEndTime": "2020-06-18T10:05:37Z",
   "scheduledStartTime": "2020-06-18T10:00:00Z",
   "source": {
-    "collectedAt": "2026-11-21T13:22:09.286715Z",
+    "collectedAt": "2026-11-21T19:11:02.632594Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,14 +49,14 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 61,
-          "end": 65,
-          "text": "Swan",
+          "start": 41,
+          "end": 47,
+          "text": "Secret",
           "source": "title"
         }
       ]
@@ -77,34 +77,34 @@
     },
     {
       "artistType": "group",
-      "artistId": "izone",
+      "artistId": "swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 1,
-          "end": 5,
-          "text": "아이즈원",
-          "source": "title"
-        },
-        {
-          "start": 32,
-          "end": 38,
-          "text": "IZ*ONE",
+          "start": 61,
+          "end": 65,
+          "text": "Swan",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 41,
-          "end": 47,
-          "text": "Secret",
+          "start": 32,
+          "end": 38,
+          "text": "IZ*ONE",
+          "source": "title"
+        },
+        {
+          "start": 1,
+          "end": 5,
+          "text": "아이즈원",
           "source": "title"
         }
       ]

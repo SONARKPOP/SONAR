@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:20:15.195691Z",
+    "collectedAt": "2026-11-21T19:09:22.758708Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,15 +48,29 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 0,
+          "end": 5,
+          "text": "ALICE",
+          "source": "title"
+        },
+        {
           "start": 7,
           "end": 10,
           "text": "앨리스",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "episode",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 0,
-          "end": 5,
-          "text": "ALICE",
+          "start": 19,
+          "end": 26,
+          "text": "Episode",
           "source": "title"
         }
       ]
@@ -85,20 +99,6 @@
           "start": 7,
           "end": 10,
           "text": "앨리스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "episode",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 19,
-          "end": 26,
-          "text": "Episode",
           "source": "title"
         }
       ]

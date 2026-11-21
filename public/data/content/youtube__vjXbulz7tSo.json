@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:22:25.811511Z",
+    "collectedAt": "2026-11-21T19:11:17.293516Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,10 +43,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "ioi-kim-sejeong",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ioi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 19,
+          "end": 24,
+          "text": "아이오아이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kim-sejeong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 0,
@@ -71,29 +85,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kim-sejeong",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "ioi-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 0,
           "end": 3,
           "text": "김세정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ioi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 19,
-          "end": 24,
-          "text": "아이오아이",
           "source": "title"
         }
       ]

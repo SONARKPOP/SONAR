@@ -29,7 +29,7 @@
   "actualEndTime": "2025-11-30T11:41:42Z",
   "scheduledStartTime": "2025-11-30T11:00:00Z",
   "source": {
-    "collectedAt": "2026-11-21T13:22:35.470273Z",
+    "collectedAt": "2026-11-21T19:11:25.977522Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,25 +45,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 28,
-          "end": 29,
-          "text": "안",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "illit",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 14,
+          "end": 19,
+          "text": "ILLIT",
+          "source": "title"
+        },
         {
           "start": 52,
           "end": 55,
@@ -75,11 +67,19 @@
           "end": 74,
           "text": "아일릿",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 14,
-          "end": 19,
-          "text": "ILLIT",
+          "start": 28,
+          "end": 29,
+          "text": "안",
           "source": "title"
         }
       ]
