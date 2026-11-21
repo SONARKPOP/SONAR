@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2023-05-25T09:47:43Z",
   "groupIds": [
+    "aespa",
     "mijoo"
   ],
   "memberIds": [
@@ -37,7 +38,7 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "unclassified",
+    "source": "title",
     "appearanceVerified": false
   },
   "externalId": "75gzwslZnAw",
@@ -57,21 +58,29 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "aespa-winter",
+      "artistType": "group",
+      "artistId": "mijoo",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 53,
-          "end": 59,
-          "text": "WINTER",
+          "start": 42,
+          "end": 47,
+          "text": "MIJOO",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-mijoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 49,
-          "end": 51,
-          "text": "윈터",
+          "start": 42,
+          "end": 47,
+          "text": "MIJOO",
           "source": "title"
         }
       ]
@@ -79,8 +88,8 @@
     {
       "artistType": "group",
       "artistId": "aespa",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 66,
@@ -104,28 +113,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "lovelyz-mijoo",
+      "artistId": "aespa-winter",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 42,
-          "end": 47,
-          "text": "MIJOO",
+          "start": 53,
+          "end": 59,
+          "text": "WINTER",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "mijoo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 42,
-          "end": 47,
-          "text": "MIJOO",
+          "start": 49,
+          "end": 51,
+          "text": "윈터",
           "source": "title"
         }
       ]

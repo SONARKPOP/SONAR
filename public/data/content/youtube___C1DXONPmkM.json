@@ -49,15 +49,41 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-03f3b444749397e1",
+      "artistType": "group",
+      "artistId": "wjsn",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 7,
-          "end": 11,
-          "text": "스텔라장",
+          "start": 32,
+          "end": 36,
+          "text": "우주소녀",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 31,
+          "text": "WJSN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-5c85d08c9f599797",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "설아",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 62,
+          "text": "설아",
           "source": "title"
         }
       ]
@@ -136,20 +162,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-5c85d08c9f599797",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-03f3b444749397e1",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 4,
-          "end": 6,
-          "text": "설아",
-          "source": "title"
-        },
-        {
-          "start": 60,
-          "end": 62,
-          "text": "설아",
+          "start": 7,
+          "end": 11,
+          "text": "스텔라장",
           "source": "title"
         }
       ]
@@ -164,26 +184,6 @@
           "start": 40,
           "end": 46,
           "text": "Stella",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wjsn",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 27,
-          "end": 31,
-          "text": "WJSN",
-          "source": "title"
-        },
-        {
-          "start": 32,
-          "end": 36,
-          "text": "우주소녀",
           "source": "title"
         }
       ]
