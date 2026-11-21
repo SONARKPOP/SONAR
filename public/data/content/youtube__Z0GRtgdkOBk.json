@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2026-10-20T12:57:06Z",
   "groupIds": [
+    "rescene",
     "yena"
   ],
   "memberIds": [
@@ -37,10 +38,24 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "unclassified",
+    "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 30,
+          "end": 37,
+          "text": "RESCENE",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "rescene-may",
@@ -56,22 +71,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 30,
-          "end": 37,
-          "text": "RESCENE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yena",
+      "artistType": "person",
+      "artistId": "izone-yena",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -90,8 +91,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "izone-yena",
+      "artistType": "group",
+      "artistId": "yena",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [

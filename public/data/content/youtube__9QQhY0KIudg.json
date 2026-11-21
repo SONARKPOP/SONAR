@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:23:47.819134Z",
+    "collectedAt": "2026-11-21T01:33:55.576442Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "ichillin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 15,
+          "text": "아이칠린",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 9,
+          "text": "ICHILLIN'",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "episode",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 24,
           "end": 31,
           "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ichillin",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 9,
-          "text": "ICHILLIN'",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 15,
-          "text": "아이칠린",
           "source": "title"
         }
       ]

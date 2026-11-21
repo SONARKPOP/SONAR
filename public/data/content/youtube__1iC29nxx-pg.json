@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:23:12.835551Z",
+    "collectedAt": "2026-11-21T01:33:33.719089Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,21 +45,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "stayc",
+      "artistType": "person",
+      "artistId": "person-589b8dda826c4788",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 13,
+          "end": 15,
+          "text": "수민",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "stayc-member-225ce3eee6ba",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 8,
-          "end": 12,
-          "text": "스테이씨",
-          "source": "title"
-        },
-        {
-          "start": 32,
-          "end": 37,
-          "text": "STAYC",
+          "start": 13,
+          "end": 15,
+          "text": "수민",
           "source": "title"
         }
       ]
@@ -94,34 +102,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-589b8dda826c4788",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 13,
-          "end": 15,
-          "text": "수민",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "stayc-member-225ce3eee6ba",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 13,
-          "end": 15,
-          "text": "수민",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-31c954563f42ea7d",
       "state": "needs_review",
       "reason": "shared-name",
@@ -130,6 +110,26 @@
           "start": 13,
           "end": 15,
           "text": "수민",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "stayc",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 12,
+          "text": "스테이씨",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 37,
+          "text": "STAYC",
           "source": "title"
         }
       ]

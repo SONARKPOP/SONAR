@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:23:13.791924Z",
+    "collectedAt": "2026-11-21T01:33:34.702523Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,20 +48,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "yubin",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hyo",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "유빈",
+          "start": 5,
+          "end": 8,
+          "text": "Hyo",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-hyo",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 18,
-          "end": 23,
-          "text": "Yubin",
+          "start": 5,
+          "end": 8,
+          "text": "Hyo",
           "source": "title"
         }
       ]
@@ -73,25 +81,31 @@
       "reason": "shared-name",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "유빈",
-          "source": "title"
-        },
-        {
           "start": 18,
           "end": 23,
           "text": "Yubin",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 26,
+          "text": "유빈",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-4a92114ac3b0fc73",
+      "artistType": "group",
+      "artistId": "yubin",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
+        {
+          "start": 18,
+          "end": 23,
+          "text": "Yubin",
+          "source": "title"
+        },
         {
           "start": 24,
           "end": 26,
@@ -119,6 +133,20 @@
       "artistId": "person-9e234c5ab92ae35e",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 26,
+          "text": "유빈",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-4a92114ac3b0fc73",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 24,
@@ -166,34 +194,6 @@
           "start": 14,
           "end": 16,
           "text": "효정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hyo",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 8,
-          "text": "Hyo",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "girls-generation-hyo",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 8,
-          "text": "Hyo",
           "source": "title"
         }
       ]

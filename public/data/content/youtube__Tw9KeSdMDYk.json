@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:25:11.870983Z",
+    "collectedAt": "2026-11-21T01:34:53.865607Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "classy",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 39,
+          "end": 42,
+          "text": "클라씨",
+          "source": "title"
+        },
+        {
+          "start": 43,
+          "end": 49,
+          "text": "CLASSY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 64,
+          "end": 68,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "purple-kiss",
@@ -66,54 +100,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "classy",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 43,
-          "end": 49,
-          "text": "CLASSY",
-          "source": "title"
-        },
-        {
-          "start": 39,
-          "end": 42,
-          "text": "클라씨",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "cherry-bullet",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 18,
-          "end": 22,
-          "text": "체리블렛",
-          "source": "title"
-        },
-        {
           "start": 23,
           "end": 36,
           "text": "CHERRY BULLET",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 64,
-          "end": 68,
-          "text": "KISS",
+          "start": 18,
+          "end": 22,
+          "text": "체리블렛",
           "source": "title"
         }
       ]

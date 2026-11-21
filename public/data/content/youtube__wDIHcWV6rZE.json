@@ -29,7 +29,7 @@
   "actualEndTime": "2023-11-17T08:06:50Z",
   "scheduledStartTime": "2023-11-17T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-20T19:27:10.505436Z",
+    "collectedAt": "2026-11-21T01:36:17.086018Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,20 +42,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "person-5035c2dc85c0c21e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 59,
-          "end": 60,
-          "text": "수",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
@@ -71,8 +57,48 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "viviz",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 10,
+          "text": "VIVIZ",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 14,
+          "text": "비비지",
+          "source": "title"
+        },
+        {
+          "start": 64,
+          "end": 67,
+          "text": "비비지",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-e202f1ad30e8b48a",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 43,
+          "end": 45,
+          "text": "사랑",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a0260b2bdfc6f22a",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -100,40 +126,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-a0260b2bdfc6f22a",
+      "artistId": "person-5035c2dc85c0c21e",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 43,
-          "end": 45,
-          "text": "사랑",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "viviz",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 14,
-          "text": "비비지",
-          "source": "title"
-        },
-        {
-          "start": 64,
-          "end": 67,
-          "text": "비비지",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 10,
-          "text": "VIVIZ",
+          "start": 59,
+          "end": 60,
+          "text": "수",
           "source": "title"
         }
       ]

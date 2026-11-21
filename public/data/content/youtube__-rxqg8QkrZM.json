@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:23:05.014245Z",
+    "collectedAt": "2026-11-21T01:33:28.618644Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "wjsn",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -55,20 +69,6 @@
           "start": 48,
           "end": 52,
           "text": "우주소녀",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "wjsn-seola",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 44,
-          "end": 46,
-          "text": "설아",
           "source": "title"
         }
       ]
@@ -116,15 +116,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
+      "artistType": "person",
+      "artistId": "wjsn-seola",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "키스",
+          "start": 44,
+          "end": 46,
+          "text": "설아",
           "source": "title"
         }
       ]

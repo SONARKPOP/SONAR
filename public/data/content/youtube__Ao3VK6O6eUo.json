@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:23:54.734622Z",
+    "collectedAt": "2026-11-21T01:33:59.469245Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,10 +46,16 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-cac40b695d7c9bce",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "itzy-member-b14664ea78a4",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 33,
+          "end": 37,
+          "text": "YUNA",
+          "source": "title"
+        },
         {
           "start": 10,
           "end": 12,
@@ -59,15 +65,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-7e35929de859f8b1",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 12,
-          "text": "유나",
+          "start": 7,
+          "end": 9,
+          "text": "있지",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "text": "ITZY",
           "source": "title"
         }
       ]
@@ -102,20 +114,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "itzy-member-b14664ea78a4",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-cac40b695d7c9bce",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 10,
           "end": 12,
           "text": "유나",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-7e35929de859f8b1",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 33,
-          "end": 37,
-          "text": "YUNA",
+          "start": 10,
+          "end": 12,
+          "text": "유나",
           "source": "title"
         }
       ]
@@ -144,26 +164,6 @@
           "start": 10,
           "end": 12,
           "text": "유나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 28,
-          "end": 32,
-          "text": "ITZY",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 9,
-          "text": "있지",
           "source": "title"
         }
       ]

@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:25:05.327767Z",
+    "collectedAt": "2026-11-21T01:34:48.654687Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,8 +43,42 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "triples",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 7,
+          "text": "tripleS",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 13,
+          "text": "트리플에스",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-765a82e4db18a01c",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 43,
+          "end": 45,
+          "text": "지니",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ee86501c26ef6300",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -80,40 +114,6 @@
           "start": 43,
           "end": 45,
           "text": "지니",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-ee86501c26ef6300",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 43,
-          "end": 45,
-          "text": "지니",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "triples",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 7,
-          "text": "tripleS",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 13,
-          "text": "트리플에스",
           "source": "title"
         }
       ]

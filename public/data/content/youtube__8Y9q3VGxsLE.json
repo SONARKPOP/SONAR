@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:23:43.650863Z",
+    "collectedAt": "2026-11-21T01:33:53.138461Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -51,6 +51,20 @@
       "artistId": "person-39bf10a34536eb16",
       "state": "needs_review",
       "reason": "shared-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "지원",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ef771f423ffec044",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 5,
@@ -103,15 +117,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-ef771f423ffec044",
+      "artistType": "group",
+      "artistId": "cignature",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "지원",
+          "start": 0,
+          "end": 4,
+          "text": "시그니처",
           "source": "title"
         }
       ]
@@ -126,20 +140,6 @@
           "start": 9,
           "end": 12,
           "text": "클로이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "cignature",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "시그니처",
           "source": "title"
         }
       ]

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:23:04.842569Z",
+    "collectedAt": "2026-11-21T01:33:28.507664Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,29 +46,15 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 20,
-          "text": "아이브",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-a114078617030613",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-1a94f85ddc70413a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 4,
-          "end": 7,
-          "text": "장원영",
+          "start": 13,
+          "end": 15,
+          "text": "연주",
           "source": "title"
         }
       ]
@@ -89,14 +75,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-1a94f85ddc70413a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-a114078617030613",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 13,
-          "end": 15,
-          "text": "연주",
+          "start": 4,
+          "end": 7,
+          "text": "장원영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 20,
+          "text": "아이브",
           "source": "title"
         }
       ]

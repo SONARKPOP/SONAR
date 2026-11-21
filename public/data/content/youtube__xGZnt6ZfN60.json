@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-11-16T07:00:33Z",
   "groupIds": [
-    "itzy",
-    "nmixx"
+    "itzy"
   ],
   "memberIds": [
     "itzy-member-608992372543",
@@ -37,39 +36,11 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "nmixx",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 63,
-          "end": 68,
-          "text": "NMIXX",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 49,
-          "text": "ITZY",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "itzy-member-608992372543",
@@ -94,6 +65,34 @@
           "start": 9,
           "end": 11,
           "text": "규진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 45,
+          "end": 49,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "nmixx",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 63,
+          "end": 68,
+          "text": "NMIXX",
           "source": "title"
         }
       ]

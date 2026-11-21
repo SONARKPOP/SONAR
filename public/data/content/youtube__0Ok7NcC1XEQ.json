@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:23:06.977352Z",
+    "collectedAt": "2026-11-21T01:33:30.024612Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -54,6 +54,20 @@
       "artistId": "person-39bf10a34536eb16",
       "state": "needs_review",
       "reason": "shared-name",
+      "matches": [
+        {
+          "start": 23,
+          "end": 25,
+          "text": "지원",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ef771f423ffec044",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 23,
@@ -106,15 +120,71 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-ef771f423ffec044",
+      "artistType": "group",
+      "artistId": "cignature",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 23,
-          "end": 25,
-          "text": "지원",
+          "start": 18,
+          "end": 22,
+          "text": "시그니처",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-yoo-ji-ae",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 34,
+          "end": 37,
+          "text": "유지애",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yoo-ji-ae",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 34,
+          "end": 37,
+          "text": "유지애",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b1ac6c92f40f08e6",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 29,
+          "text": "우아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "wooah",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 29,
+          "text": "우아",
           "source": "title"
         }
       ]
@@ -157,76 +227,6 @@
           "start": 30,
           "end": 32,
           "text": "나나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "cignature",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 18,
-          "end": 22,
-          "text": "시그니처",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-b1ac6c92f40f08e6",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 27,
-          "end": 29,
-          "text": "우아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wooah",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 27,
-          "end": 29,
-          "text": "우아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yoo-ji-ae",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 34,
-          "end": 37,
-          "text": "유지애",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "lovelyz-yoo-ji-ae",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 34,
-          "end": 37,
-          "text": "유지애",
           "source": "title"
         }
       ]

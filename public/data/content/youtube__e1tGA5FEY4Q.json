@@ -8,7 +8,6 @@
   "publishedAt": "2026-10-27T07:00:10Z",
   "groupIds": [
     "gfriend",
-    "ive",
     "nmixx"
   ],
   "memberIds": [
@@ -74,20 +73,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 4,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "nmixx",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -110,6 +95,20 @@
           "start": 6,
           "end": 12,
           "text": "LEESEO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 1,
+          "end": 4,
+          "text": "IVE",
           "source": "title"
         }
       ]

@@ -376,7 +376,6 @@
       "title": "Hysteric challenge with LEESEO🐯💗 of IVE #Hysteric #Yves",
       "publishedAt": "2026-10-30T14:47:40Z",
       "groupIds": [
-        "ive",
         "yves"
       ],
       "memberIds": [
@@ -399,10 +398,24 @@
       "durationLabel": "24s",
       "memberTagging": {
         "policy": "title-context-v2",
-        "source": "title",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "appearanceLinks": [
+        {
+          "artistType": "person",
+          "artistId": "ive-leeseo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 24,
+              "end": 30,
+              "text": "LEESEO",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "person",
           "artistId": "loona-yves",
@@ -434,27 +447,13 @@
         {
           "artistType": "group",
           "artistId": "ive",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 36,
               "end": 39,
               "text": "IVE",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "ive-leeseo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 24,
-              "end": 30,
-              "text": "LEESEO",
               "source": "title"
             }
           ]

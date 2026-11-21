@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:26:43.534413Z",
+    "collectedAt": "2026-11-21T01:35:58.685927Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-8a50ea5c18115e1d",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 15,
-          "end": 17,
-          "text": "승희",
+          "start": 19,
+          "end": 29,
+          "text": "OH MY GIRL",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "text": "오마이걸",
           "source": "title"
         }
       ]
@@ -72,21 +78,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-8a50ea5c18115e1d",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 30,
-          "end": 34,
-          "text": "오마이걸",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 29,
-          "text": "OH MY GIRL",
+          "start": 15,
+          "end": 17,
+          "text": "승희",
           "source": "title"
         }
       ]

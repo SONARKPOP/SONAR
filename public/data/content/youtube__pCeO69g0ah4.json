@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T19:26:42.874043Z",
+    "collectedAt": "2026-11-21T01:35:58.196909Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,9 +44,23 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kwon-eun-bi",
+      "artistId": "izone",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "아이즈원",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-eb73497ae0cc470f",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 10,
@@ -71,29 +85,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-eb73497ae0cc470f",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kwon-eun-bi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 10,
           "end": 13,
           "text": "권은비",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "아이즈원",
           "source": "title"
         }
       ]
