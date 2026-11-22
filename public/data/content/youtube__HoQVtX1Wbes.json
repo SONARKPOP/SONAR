@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:09:20.580146Z",
+    "collectedAt": "2026-11-22T01:32:46.855940Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,30 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "odd-youth-member-c11ae0994dc5",
+      "artistType": "group",
+      "artistId": "odd-youth",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "오드유스",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 15,
+          "text": "오드유스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c0b787a0a45fb2ee",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 16,
@@ -76,9 +96,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c0b787a0a45fb2ee",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "odd-youth-member-c11ae0994dc5",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 16,
@@ -98,26 +118,6 @@
           "start": 19,
           "end": 21,
           "text": "써머",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "odd-youth",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "오드유스",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 15,
-          "text": "오드유스",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:11:20.018954Z",
+    "collectedAt": "2026-11-22T01:35:42.433315Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-67e210cea7126fd3",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "weki-meki",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 13,
-          "text": "최유정",
+          "start": 31,
+          "end": 40,
+          "text": "Weki Meki",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 9,
+          "text": "위키미키",
           "source": "title"
         }
       ]
@@ -72,21 +78,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "weki-meki",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-67e210cea7126fd3",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 5,
-          "end": 9,
-          "text": "위키미키",
-          "source": "title"
-        },
-        {
-          "start": 31,
-          "end": 40,
-          "text": "Weki Meki",
+          "start": 10,
+          "end": 13,
+          "text": "최유정",
           "source": "title"
         }
       ]

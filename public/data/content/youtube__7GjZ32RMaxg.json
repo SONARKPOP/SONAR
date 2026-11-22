@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:08:50.597393Z",
+    "collectedAt": "2026-11-22T01:32:03.234961Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,6 +60,26 @@
     },
     {
       "artistType": "group",
+      "artistId": "wena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "We;Na",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": "위나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "rose",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -68,26 +88,6 @@
           "start": 13,
           "end": 17,
           "text": "Rose",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 9,
-          "text": "위나",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 5,
-          "text": "We;Na",
           "source": "title"
         }
       ]

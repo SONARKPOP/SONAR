@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:09:00.742029Z",
+    "collectedAt": "2026-11-22T01:32:18.049023Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "hearts2hearts-yeon",
+      "artistType": "group",
+      "artistId": "ioi",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 36,
-          "end": 40,
-          "text": "YEON",
+          "start": 8,
+          "end": 13,
+          "text": "아이오아이",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 35,
+          "text": "I.O.I",
           "source": "title"
         }
       ]
@@ -103,21 +109,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ioi",
+      "artistType": "person",
+      "artistId": "hearts2hearts-yeon",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 30,
-          "end": 35,
-          "text": "I.O.I",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 13,
-          "text": "아이오아이",
+          "start": 36,
+          "end": 40,
+          "text": "YEON",
           "source": "title"
         }
       ]

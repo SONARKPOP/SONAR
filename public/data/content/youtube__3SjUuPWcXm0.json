@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:08:39.435915Z",
+    "collectedAt": "2026-11-22T01:31:46.731471Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,26 +49,6 @@
       "artistId": "kim-sejeong",
       "state": "inferred",
       "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 16,
-          "text": "KIM SEJEONG",
-          "source": "title"
-        },
-        {
-          "start": 17,
-          "end": 20,
-          "text": "김세정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "gugudan-kim-sejeong",
-      "state": "needs_review",
-      "reason": "shared-name",
       "matches": [
         {
           "start": 5,
@@ -106,9 +86,29 @@
     },
     {
       "artistType": "person",
-      "artistId": "mamamoo-solar",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "gugudan-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 16,
+          "text": "KIM SEJEONG",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 20,
+          "text": "김세정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "solar",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 24,
@@ -119,10 +119,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "solar",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "mamamoo-solar",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 24,

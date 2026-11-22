@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:09:17.312059Z",
+    "collectedAt": "2026-11-22T01:32:41.527953Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,8 +47,42 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 34,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 39,
+          "text": "리센느",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-845f9828c743c539",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 20,
+          "end": 22,
+          "text": "제나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-48c4cb964a0f4b98",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -89,20 +123,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-48c4cb964a0f4b98",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 20,
-          "end": 22,
-          "text": "제나",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "jennie",
       "state": "inferred",
@@ -126,26 +146,6 @@
           "start": 0,
           "end": 6,
           "text": "JENNIE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 27,
-          "end": 34,
-          "text": "RESCENE",
-          "source": "title"
-        },
-        {
-          "start": 36,
-          "end": 39,
-          "text": "리센느",
           "source": "title"
         }
       ]

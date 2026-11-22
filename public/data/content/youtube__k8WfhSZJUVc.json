@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:10:44.903428Z",
+    "collectedAt": "2026-11-22T01:34:51.209663Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,24 +44,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 59,
-          "end": 60,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "lovelyz",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 5,
+          "end": 12,
+          "text": "Lovelyz",
+          "source": "title"
+        },
         {
           "start": 0,
           "end": 4,
@@ -73,11 +65,19 @@
           "end": 36,
           "text": "러블리즈",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 5,
-          "end": 12,
-          "text": "Lovelyz",
+          "start": 59,
+          "end": 60,
+          "text": "s",
           "source": "title"
         }
       ]

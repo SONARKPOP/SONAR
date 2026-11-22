@@ -43,26 +43,6 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "hyolyn",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 13,
-          "end": 19,
-          "text": "HYOLYN",
-          "source": "title"
-        },
-        {
-          "start": 9,
-          "end": 11,
-          "text": "효린",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "sistar-hyolyn",
       "state": "inferred",
@@ -83,10 +63,30 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "ioi-chungha",
+      "artistType": "group",
+      "artistId": "hyolyn",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 13,
+          "end": 19,
+          "text": "HYOLYN",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "text": "효린",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chungha",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 21,
@@ -103,10 +103,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "chungha",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "ioi-chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 21,

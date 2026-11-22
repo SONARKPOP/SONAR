@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:10:42.814162Z",
+    "collectedAt": "2026-11-22T01:34:48.141034Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,15 +42,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c29ac6506908865e",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "triples",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "하늘",
+          "start": 25,
+          "end": 30,
+          "text": "트리플에스",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 23,
+          "text": "tripleS",
           "source": "title"
         }
       ]
@@ -70,21 +76,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "triples",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-c29ac6506908865e",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 25,
-          "end": 30,
-          "text": "트리플에스",
-          "source": "title"
-        },
-        {
-          "start": 16,
-          "end": 23,
-          "text": "tripleS",
+          "start": 0,
+          "end": 2,
+          "text": "하늘",
           "source": "title"
         }
       ]

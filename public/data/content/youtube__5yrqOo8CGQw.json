@@ -35,7 +35,7 @@
   "actualEndTime": "2023-07-07T08:08:01Z",
   "scheduledStartTime": "2023-07-07T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-21T19:08:46.310928Z",
+    "collectedAt": "2026-11-22T01:31:57.180660Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,6 +48,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "fromis9",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 20,
+          "text": "프로미스나인",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 13,
+          "text": "fromis_9",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-7c6ccda0122b2222",
@@ -119,20 +139,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-chaeyoung",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 54,
-          "end": 56,
-          "text": "채영",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "chaeyoung",
       "state": "needs_review",
@@ -148,9 +154,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-06dc3162229035e7",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "tw-chaeyoung",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 54,
@@ -175,21 +181,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "fromis9",
+      "artistType": "person",
+      "artistId": "person-06dc3162229035e7",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 14,
-          "end": 20,
-          "text": "프로미스나인",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 13,
-          "text": "fromis_9",
+          "start": 54,
+          "end": 56,
+          "text": "채영",
           "source": "title"
         }
       ]

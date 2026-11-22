@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:10:11.795378Z",
+    "collectedAt": "2026-11-22T01:34:02.506699Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "red-velvet",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 42,
+          "end": 46,
+          "text": "레드벨벳",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "red-velvet-seulgi",
@@ -92,20 +106,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "red-velvet-wendy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 14,
-          "end": 16,
-          "text": "웬디",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "wendy",
       "state": "inferred",
@@ -120,15 +120,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "red-velvet",
+      "artistType": "person",
+      "artistId": "red-velvet-wendy",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 42,
-          "end": 46,
-          "text": "레드벨벳",
+          "start": 14,
+          "end": 16,
+          "text": "웬디",
           "source": "title"
         }
       ]

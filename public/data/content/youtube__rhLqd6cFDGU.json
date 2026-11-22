@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T19:11:05.959304Z",
+    "collectedAt": "2026-11-22T01:35:22.365550Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,34 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "bestie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 10,
+          "text": "베스티",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yeri",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 31,
+          "end": 33,
+          "text": "예리",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "red-velvet-yeri",
@@ -61,14 +89,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "yeri",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "nayeon",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 31,
-          "end": 33,
-          "text": "예리",
+          "start": 27,
+          "end": 29,
+          "text": "나연",
           "source": "title"
         }
       ]
@@ -111,34 +139,6 @@
           "start": 27,
           "end": 29,
           "text": "나연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "nayeon",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 27,
-          "end": 29,
-          "text": "나연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "bestie",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 10,
-          "text": "베스티",
           "source": "title"
         }
       ]
