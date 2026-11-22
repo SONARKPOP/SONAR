@@ -48,6 +48,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "secret",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 25,
+              "end": 31,
+              "text": "Secret",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "blady",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -76,20 +90,6 @@
               "start": 25,
               "end": 38,
               "text": "Secret number",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 25,
-              "end": 31,
-              "text": "Secret",
               "source": "title"
             }
           ]
@@ -146,20 +146,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "secret-number",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 35,
-              "end": 48,
-              "text": "Secret number",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-183d3ee4bf8216be",
           "state": "inferred",
@@ -175,20 +161,34 @@
         },
         {
           "artistType": "group",
+          "artistId": "secret-number",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 35,
+              "end": 48,
+              "text": "Secret number",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "blady",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 15,
-              "text": "블레이디",
-              "source": "title"
-            },
-            {
               "start": 1,
               "end": 6,
               "text": "blady",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 15,
+              "text": "블레이디",
               "source": "title"
             }
           ]

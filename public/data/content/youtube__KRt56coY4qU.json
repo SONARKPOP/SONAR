@@ -44,21 +44,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "hearts2hearts-ian",
+      "artistType": "group",
+      "artistId": "hearts2hearts",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 29,
+          "text": "Hearts2Hearts",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c2cc10bef5fe45c9",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 34,
           "end": 36,
           "text": "이안",
-          "source": "title"
-        },
-        {
-          "start": 30,
-          "end": 33,
-          "text": "IAN",
           "source": "title"
         }
       ]
@@ -79,28 +87,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c2cc10bef5fe45c9",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hearts2hearts-ian",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 34,
           "end": 36,
           "text": "이안",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hearts2hearts",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 16,
-          "end": 29,
-          "text": "Hearts2Hearts",
+          "start": 30,
+          "end": 33,
+          "text": "IAN",
           "source": "title"
         }
       ]
