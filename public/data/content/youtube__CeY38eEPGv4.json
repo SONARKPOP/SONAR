@@ -43,39 +43,11 @@
   "programName": "리무진서비스",
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "natty",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 24,
-          "text": "나띠",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "kiss-of-life-natty",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 24,
-          "text": "나띠",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "kiss-of-life",
@@ -100,6 +72,34 @@
           "start": 25,
           "end": 27,
           "text": "쥴리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "나띠",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "나띠",
           "source": "title"
         }
       ]
