@@ -47,6 +47,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 42,
+          "end": 44,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "twice",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -55,20 +69,6 @@
           "start": 15,
           "end": 20,
           "text": "TWICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "nayeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "나연",
           "source": "title"
         }
       ]
@@ -102,8 +102,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-nayeon",
+      "artistType": "group",
+      "artistId": "nayeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -116,15 +116,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
+      "artistType": "person",
+      "artistId": "tw-nayeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 42,
-          "end": 44,
-          "text": "키스",
+          "start": 12,
+          "end": 14,
+          "text": "나연",
           "source": "title"
         }
       ]
