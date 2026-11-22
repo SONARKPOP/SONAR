@@ -48,10 +48,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-6c6f78b3800b2df3",
+      "artistType": "group",
+      "artistId": "classy",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 30,
+          "text": "클라씨",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ef771f423ffec044",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 23,
@@ -63,9 +77,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-ef771f423ffec044",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-6c6f78b3800b2df3",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 23,
@@ -127,20 +141,6 @@
           "start": 18,
           "end": 22,
           "text": "시그니처",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "classy",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 27,
-          "end": 30,
-          "text": "클라씨",
           "source": "title"
         }
       ]
