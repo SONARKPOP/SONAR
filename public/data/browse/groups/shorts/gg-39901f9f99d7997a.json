@@ -37,15 +37,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-86c6db57d4b93a60",
+          "artistType": "group",
+          "artistId": "illit",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 18,
-              "text": "제이미",
+              "start": 52,
+              "end": 55,
+              "text": "아일릿",
+              "source": "title"
+            },
+            {
+              "start": 45,
+              "end": 50,
+              "text": "ILLIT",
               "source": "title"
             }
           ]
@@ -65,21 +71,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "illit",
+          "artistType": "person",
+          "artistId": "person-86c6db57d4b93a60",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 45,
-              "end": 50,
-              "text": "ILLIT",
-              "source": "title"
-            },
-            {
-              "start": 52,
-              "end": 55,
-              "text": "아일릿",
+              "start": 15,
+              "end": 18,
+              "text": "제이미",
               "source": "title"
             }
           ]
@@ -160,15 +160,53 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "girls-generation",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "girls-generation-hyo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 54,
-              "end": 58,
-              "text": "소녀시대",
+              "start": 45,
+              "end": 52,
+              "text": "HYOYEON",
+              "source": "title"
+            },
+            {
+              "start": 41,
+              "end": 43,
+              "text": "효연",
+              "source": "title"
+            },
+            {
+              "start": 36,
+              "end": 39,
+              "text": "HYO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "hyo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 52,
+              "text": "HYOYEON",
+              "source": "title"
+            },
+            {
+              "start": 41,
+              "end": 43,
+              "text": "효연",
+              "source": "title"
+            },
+            {
+              "start": 36,
+              "end": 39,
+              "text": "HYO",
               "source": "title"
             }
           ]
@@ -189,52 +227,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "hyo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "girls-generation",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 41,
-              "end": 43,
-              "text": "효연",
-              "source": "title"
-            },
-            {
-              "start": 45,
-              "end": 52,
-              "text": "HYOYEON",
-              "source": "title"
-            },
-            {
-              "start": 36,
-              "end": 39,
-              "text": "HYO",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "girls-generation-hyo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 41,
-              "end": 43,
-              "text": "효연",
-              "source": "title"
-            },
-            {
-              "start": 45,
-              "end": 52,
-              "text": "HYOYEON",
-              "source": "title"
-            },
-            {
-              "start": 36,
-              "end": 39,
-              "text": "HYO",
+              "start": 54,
+              "end": 58,
+              "text": "소녀시대",
               "source": "title"
             }
           ]

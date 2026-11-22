@@ -47,34 +47,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 11,
-          "text": "Say My Name",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "miyeon",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 14,
-          "end": 16,
-          "text": "미연",
-          "source": "title"
-        },
-        {
           "start": 18,
           "end": 24,
           "text": "MIYEON",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 16,
+          "text": "미연",
           "source": "title"
         }
       ]
@@ -86,15 +72,29 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
+          "start": 18,
+          "end": 24,
+          "text": "MIYEON",
+          "source": "title"
+        },
+        {
           "start": 14,
           "end": 16,
           "text": "미연",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 18,
-          "end": 24,
-          "text": "MIYEON",
+          "start": 0,
+          "end": 11,
+          "text": "Say My Name",
           "source": "title"
         }
       ]
