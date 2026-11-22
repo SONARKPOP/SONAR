@@ -59,20 +59,6 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "blackswan",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 25,
-          "end": 29,
-          "text": "블랙스완",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "badkiz",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -87,9 +73,23 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "blackswan",
       "state": "mention",
       "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 25,
+          "end": 29,
+          "text": "블랙스완",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 20,
@@ -100,10 +100,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 20,

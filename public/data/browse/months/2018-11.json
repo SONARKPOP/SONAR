@@ -166,26 +166,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "apink",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 4,
-              "text": "에이핑크",
-              "source": "title"
-            },
-            {
-              "start": 52,
-              "end": 56,
-              "text": "에이핑크",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "hitgs-iyoo",
           "state": "needs_review",
@@ -223,6 +203,26 @@
               "start": 24,
               "end": 26,
               "text": "이유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "apink",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "에이핑크",
+              "source": "title"
+            },
+            {
+              "start": 52,
+              "end": 56,
+              "text": "에이핑크",
               "source": "title"
             }
           ]
@@ -1280,15 +1280,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 4,
-              "end": 10,
-              "text": "ShaFLA",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 3,
               "text": "샤플라",
+              "source": "title"
+            },
+            {
+              "start": 4,
+              "end": 10,
+              "text": "ShaFLA",
               "source": "title"
             }
           ]
@@ -1439,7 +1439,6 @@
       "title": "뷰티 인사이드 OST 'Goodbye - 웬디 of 레드벨벳' Cover by. 달 of S.I.S",
       "publishedAt": "2018-11-14T11:00:01Z",
       "groupIds": [
-        "red-velvet",
         "sis"
       ],
       "memberIds": [
@@ -1468,14 +1467,34 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "red-velvet",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 50,
+              "end": 51,
+              "text": "S",
+              "source": "title"
+            },
+            {
+              "start": 54,
+              "end": 55,
+              "text": "S",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "sis",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 29,
-              "end": 33,
-              "text": "레드벨벳",
+              "start": 50,
+              "end": 55,
+              "text": "S.I.S",
               "source": "title"
             }
           ]
@@ -1509,26 +1528,6 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 50,
-              "end": 51,
-              "text": "S",
-              "source": "title"
-            },
-            {
-              "start": 54,
-              "end": 55,
-              "text": "S",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-b832aad57724cb63",
           "state": "inferred",
@@ -1544,14 +1543,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "sis",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "red-velvet",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 50,
-              "end": 55,
-              "text": "S.I.S",
+              "start": 29,
+              "end": 33,
+              "text": "레드벨벳",
               "source": "title"
             }
           ]
@@ -2199,47 +2198,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-223c3f324fc1e836",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 14,
-              "end": 16,
-              "text": "유정",
-              "source": "title"
-            },
-            {
-              "start": 59,
-              "end": 61,
-              "text": "유정",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-c0b7acb4a4d594d4",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 14,
-              "end": 16,
-              "text": "유정",
-              "source": "title"
-            },
-            {
-              "start": 59,
-              "end": 61,
-              "text": "유정",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-edc40ed2d801e4fe",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -2298,6 +2257,46 @@
           ]
         },
         {
+          "artistType": "person",
+          "artistId": "person-223c3f324fc1e836",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 14,
+              "end": 16,
+              "text": "유정",
+              "source": "title"
+            },
+            {
+              "start": 59,
+              "end": 61,
+              "text": "유정",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-edc40ed2d801e4fe",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 14,
+              "end": 16,
+              "text": "유정",
+              "source": "title"
+            },
+            {
+              "start": 59,
+              "end": 61,
+              "text": "유정",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "weki-meki",
           "state": "inferred",
@@ -2312,10 +2311,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-e4ee489d355b1604",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "yerin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 5,
@@ -2373,7 +2372,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-936fea5dbf4b0c14",
+          "artistId": "person-e4ee489d355b1604",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -2412,10 +2411,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yerin",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-936fea5dbf4b0c14",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 5,
@@ -2497,15 +2496,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 4,
-              "end": 10,
-              "text": "ShaFLA",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 3,
               "text": "샤플라",
+              "source": "title"
+            },
+            {
+              "start": 4,
+              "end": 10,
+              "text": "ShaFLA",
               "source": "title"
             }
           ]
@@ -2564,15 +2563,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 17,
-              "text": "ShaFLA",
-              "source": "title"
-            },
-            {
               "start": 7,
               "end": 10,
               "text": "샤플라",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 17,
+              "text": "ShaFLA",
               "source": "title"
             }
           ]
@@ -2769,15 +2768,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 12,
-              "end": 18,
-              "text": "ShaFLA",
-              "source": "title"
-            },
-            {
               "start": 8,
               "end": 11,
               "text": "샤플라",
+              "source": "title"
+            },
+            {
+              "start": 12,
+              "end": 18,
+              "text": "ShaFLA",
               "source": "title"
             }
           ]
@@ -2856,15 +2855,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 17,
-              "text": "ShaFLA",
-              "source": "title"
-            },
-            {
               "start": 7,
               "end": 10,
               "text": "샤플라",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 17,
+              "text": "ShaFLA",
               "source": "title"
             }
           ]
@@ -2977,8 +2976,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "ioi-chungha",
+          "artistType": "group",
+          "artistId": "chungha",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -2997,8 +2996,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "chungha",
+          "artistType": "person",
+          "artistId": "ioi-chungha",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -3067,8 +3066,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "jung-eun-ji",
+          "artistType": "person",
+          "artistId": "apink-jung-eun-ji",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -3087,8 +3086,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "apink-jung-eun-ji",
+          "artistType": "group",
+          "artistId": "jung-eun-ji",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -3522,36 +3521,8 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "favorite",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 1,
-              "end": 9,
-              "text": "Favorite",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
-          "artistId": "person-a03ed8929b5bad88",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 41,
-              "end": 43,
-              "text": "서연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-1c05592cd6eefc53",
+          "artistId": "person-7c6bbdf077199db4",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3579,7 +3550,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-7c6bbdf077199db4",
+          "artistId": "person-f1bd11c84b90f90e",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3593,7 +3564,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-f1bd11c84b90f90e",
+          "artistId": "person-1c05592cd6eefc53",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3615,6 +3586,34 @@
               "start": 41,
               "end": 43,
               "text": "서연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a03ed8929b5bad88",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 41,
+              "end": 43,
+              "text": "서연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "favorite",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 1,
+              "end": 9,
+              "text": "Favorite",
               "source": "title"
             }
           ]
@@ -3675,15 +3674,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 5,
-              "end": 11,
-              "text": "ShaFLA",
-              "source": "title"
-            },
-            {
               "start": 1,
               "end": 4,
               "text": "샤플라",
+              "source": "title"
+            },
+            {
+              "start": 5,
+              "end": 11,
+              "text": "ShaFLA",
               "source": "title"
             }
           ]
@@ -3695,15 +3694,15 @@
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 14,
-              "end": 17,
-              "text": "헤이즈",
-              "source": "title"
-            },
-            {
               "start": 18,
               "end": 23,
               "text": "Heize",
+              "source": "title"
+            },
+            {
+              "start": 14,
+              "end": 17,
+              "text": "헤이즈",
               "source": "title"
             }
           ]
@@ -3752,15 +3751,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 38,
-              "end": 47,
-              "text": "Weki Meki",
-              "source": "title"
-            },
-            {
               "start": 33,
               "end": 37,
               "text": "위키미키",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 47,
+              "text": "Weki Meki",
               "source": "title"
             }
           ]

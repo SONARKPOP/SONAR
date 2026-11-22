@@ -8,7 +8,6 @@
       "title": "뷰티 인사이드 OST 'Goodbye - 웬디 of 레드벨벳' Cover by. 달 of S.I.S",
       "publishedAt": "2018-11-14T11:00:01Z",
       "groupIds": [
-        "red-velvet",
         "sis"
       ],
       "memberIds": [
@@ -37,14 +36,34 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "red-velvet",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 50,
+              "end": 51,
+              "text": "S",
+              "source": "title"
+            },
+            {
+              "start": 54,
+              "end": 55,
+              "text": "S",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "sis",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 29,
-              "end": 33,
-              "text": "레드벨벳",
+              "start": 50,
+              "end": 55,
+              "text": "S.I.S",
               "source": "title"
             }
           ]
@@ -78,26 +97,6 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 50,
-              "end": 51,
-              "text": "S",
-              "source": "title"
-            },
-            {
-              "start": 54,
-              "end": 55,
-              "text": "S",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-b832aad57724cb63",
           "state": "inferred",
@@ -113,14 +112,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "sis",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "red-velvet",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 50,
-              "end": 55,
-              "text": "S.I.S",
+              "start": 29,
+              "end": 33,
+              "text": "레드벨벳",
               "source": "title"
             }
           ]
@@ -213,6 +212,20 @@
         },
         {
           "artistType": "group",
+          "artistId": "sis",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 36,
+              "end": 41,
+              "text": "S.I.S",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "iu",
           "state": "mention",
           "reason": "official-owner-reference",
@@ -227,20 +240,6 @@
               "start": 0,
               "end": 3,
               "text": "아이유",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "sis",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 36,
-              "end": 41,
-              "text": "S.I.S",
               "source": "title"
             }
           ]
@@ -317,20 +316,6 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-b832aad57724cb63",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 24,
-              "end": 25,
-              "text": "달",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "sis",
           "state": "inferred",
@@ -340,6 +325,20 @@
               "start": 29,
               "end": 34,
               "text": "S.I.S",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-b832aad57724cb63",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 24,
+              "end": 25,
+              "text": "달",
               "source": "title"
             }
           ]
