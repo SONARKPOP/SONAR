@@ -43,20 +43,34 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 38,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "sole",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 10,
-          "end": 14,
-          "text": "SOLE",
-          "source": "title"
-        },
-        {
           "start": 15,
           "end": 16,
           "text": "쏠",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 14,
+          "text": "SOLE",
           "source": "title"
         }
       ]
@@ -71,20 +85,6 @@
           "start": 10,
           "end": 14,
           "text": "SOLE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 36,
-          "end": 38,
-          "text": "키스",
           "source": "title"
         }
       ]

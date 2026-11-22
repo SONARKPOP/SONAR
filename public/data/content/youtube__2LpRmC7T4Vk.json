@@ -47,6 +47,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "red-velvet",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 28,
+          "end": 38,
+          "text": "Red Velvet",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -66,24 +80,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "red-velvet",
+      "artistType": "person",
+      "artistId": "wonder-girls-sunmi",
       "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 28,
-          "end": 38,
-          "text": "Red Velvet",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "sunmi",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 48,
@@ -94,10 +94,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "wonder-girls-sunmi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "sunmi",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 48,

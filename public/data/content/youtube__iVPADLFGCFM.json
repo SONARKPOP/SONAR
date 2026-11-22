@@ -42,9 +42,29 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "jeon-hyo-seong",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "secret",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 25,
+          "end": 31,
+          "text": "Secret",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 23,
+          "text": "시크릿",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "secret-jeon-hyo-seong",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 33,
@@ -55,10 +75,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "secret-jeon-hyo-seong",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "jeon-hyo-seong",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 33,
@@ -124,26 +144,6 @@
           "start": 53,
           "end": 55,
           "text": "사랑",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 25,
-          "end": 31,
-          "text": "Secret",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 23,
-          "text": "시크릿",
           "source": "title"
         }
       ]
