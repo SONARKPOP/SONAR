@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T07:34:59.076741Z",
+    "collectedAt": "2026-11-22T13:19:37.539602Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,10 +45,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "illit-member-59036fd87f0e",
+      "artistType": "group",
+      "artistId": "illit",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "아일릿",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-yoona",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 4,
@@ -74,28 +88,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "girls-generation-yoona",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "illit-member-59036fd87f0e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 4,
           "end": 6,
           "text": "윤아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "illit",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 3,
-          "text": "아일릿",
           "source": "title"
         }
       ]

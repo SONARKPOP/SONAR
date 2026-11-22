@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:41.716804Z",
+    "collectedAt": "2026-11-22T13:18:10.710902Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -42,14 +42,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gidle",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "hwasa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "아이들",
+          "start": 20,
+          "end": 25,
+          "text": "HWASA",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 18,
+          "text": "화사",
           "source": "title"
         }
       ]
@@ -76,20 +82,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "hwasa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "gidle",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 20,
-          "end": 25,
-          "text": "HWASA",
-          "source": "title"
-        },
-        {
-          "start": 16,
-          "end": 18,
-          "text": "화사",
+          "start": 0,
+          "end": 3,
+          "text": "아이들",
           "source": "title"
         }
       ]

@@ -32,11 +32,11 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-20T13:33:10.085937Z",
+    "collectedAt": "2026-11-22T13:17:42.265054Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -77,20 +77,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "illit-member-a5c02f904155",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 27,
-          "end": 29,
-          "text": "민주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-8078e40995871510",
       "state": "needs_review",
       "reason": "shared-name",
@@ -116,7 +102,27 @@
           "source": "title"
         }
       ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "illit-member-a5c02f904155",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 29,
+          "text": "민주",
+          "source": "title"
+        }
+      ]
     }
+  ],
+  "careerGroupIds": [
+    "illit"
+  ],
+  "displayCareerGroupIds": [
+    "illit"
   ],
   "externalId": "7OeERbz3kUQ",
   "sourceUrl": "https://www.youtube.com/watch?v=7OeERbz3kUQ",
@@ -132,11 +138,5 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "careerGroupIds": [
-    "illit"
-  ],
-  "displayCareerGroupIds": [
-    "illit"
-  ]
+  "musicBroadcast": false
 }

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T07:36:36.782738Z",
+    "collectedAt": "2026-11-22T13:21:08.228258Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,34 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "tw-dahyun",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "다현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "punch",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 23,
+          "text": "Punch",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "rocket-punch",
@@ -66,36 +94,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "punch",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 18,
-          "end": 23,
-          "text": "Punch",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-4ff156a8e5680895",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 2,
-          "text": "소희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-beabf7f2ae204647",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -123,14 +123,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "tw-dahyun",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-beabf7f2ae204647",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 3,
-          "end": 5,
-          "text": "다현",
+          "start": 0,
+          "end": 2,
+          "text": "소희",
           "source": "title"
         }
       ]

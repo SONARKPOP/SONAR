@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:22:29.427873Z",
+    "collectedAt": "2026-11-22T13:20:58.864881Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -56,15 +56,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "miss-a-jia",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 41,
-          "end": 44,
-          "text": "JIA",
+          "start": 22,
+          "end": 27,
+          "text": "TUIDE",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 32,
+          "text": "튜이드",
           "source": "title"
         }
       ]
@@ -98,21 +104,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "miss-a-jia",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 22,
-          "end": 27,
-          "text": "TUIDE",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 32,
-          "text": "튜이드",
+          "start": 41,
+          "end": 44,
+          "text": "JIA",
           "source": "title"
         }
       ]

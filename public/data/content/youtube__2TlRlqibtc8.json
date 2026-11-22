@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:19:23.710266Z",
+    "collectedAt": "2026-11-22T13:17:24.142849Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -43,15 +43,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "miss-a-jia",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 46,
-          "end": 49,
-          "text": "JIA",
+          "start": 17,
+          "end": 22,
+          "text": "TUIDE",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 27,
+          "text": "튜이드",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tuide-seoyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 37,
+          "end": 44,
+          "text": "SEOYEON",
           "source": "title"
         }
       ]
@@ -86,34 +106,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "tuide-seoyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "miss-a-jia",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 37,
-          "end": 44,
-          "text": "SEOYEON",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 22,
-          "text": "TUIDE",
-          "source": "title"
-        },
-        {
-          "start": 24,
-          "end": 27,
-          "text": "튜이드",
+          "start": 46,
+          "end": 49,
+          "text": "JIA",
           "source": "title"
         }
       ]

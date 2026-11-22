@@ -34,11 +34,11 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:21:09.183438Z",
+    "collectedAt": "2026-11-22T13:19:26.671665Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
@@ -73,6 +73,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 25,
+          "end": 30,
+          "text": "TUIDE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -95,20 +109,6 @@
           "start": 17,
           "end": 20,
           "text": "REI",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 25,
-          "end": 30,
-          "text": "TUIDE",
           "source": "title"
         }
       ]

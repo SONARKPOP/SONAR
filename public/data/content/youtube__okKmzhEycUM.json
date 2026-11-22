@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T07:35:54.377487Z",
+    "collectedAt": "2026-11-22T13:20:28.925512Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,11 +42,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-eb73497ae0cc470f",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kwon-eun-bi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
+        {
+          "start": 23,
+          "end": 34,
+          "text": "KWON EUN BI",
+          "source": "title"
+        },
         {
           "start": 19,
           "end": 22,
@@ -62,35 +68,29 @@
       "reason": "shared-name",
       "matches": [
         {
-          "start": 19,
-          "end": 22,
-          "text": "권은비",
-          "source": "title"
-        },
-        {
           "start": 23,
           "end": 34,
           "text": "KWON EUN BI",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 22,
+          "text": "권은비",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kwon-eun-bi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "person-eb73497ae0cc470f",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 19,
           "end": 22,
           "text": "권은비",
-          "source": "title"
-        },
-        {
-          "start": 23,
-          "end": 34,
-          "text": "KWON EUN BI",
           "source": "title"
         }
       ]

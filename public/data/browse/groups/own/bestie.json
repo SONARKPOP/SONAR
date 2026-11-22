@@ -30,25 +30,11 @@
       "thumbnail": "https://i.ytimg.com/vi/TfiT8p--XeI/hqdefault.jpg",
       "durationLabel": "22s",
       "memberTagging": {
-        "policy": "title-context-v2",
+        "policy": "title-only-v1",
         "source": "title",
         "appearanceVerified": false
       },
       "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 69,
-              "end": 75,
-              "text": "BESTie",
-              "source": "title"
-            }
-          ]
-        },
         {
           "artistType": "person",
           "artistId": "itzy-member-608992372543",
@@ -70,15 +56,29 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-3ddfea2840d67f2f",
+          "artistType": "group",
+          "artistId": "bestie",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 1,
-              "end": 3,
-              "text": "다혜",
+              "start": 69,
+              "end": 75,
+              "text": "BESTie",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "itzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 51,
+              "end": 55,
+              "text": "ITZY",
               "source": "title"
             }
           ]
@@ -98,15 +98,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "itzy",
+          "artistType": "person",
+          "artistId": "person-3ddfea2840d67f2f",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 51,
-              "end": 55,
-              "text": "ITZY",
+              "start": 1,
+              "end": 3,
+              "text": "다혜",
               "source": "title"
             }
           ]
@@ -165,7 +165,7 @@
       "thumbnail": "https://i.ytimg.com/vi/UktC98aArvE/hqdefault.jpg",
       "durationLabel": "13s",
       "memberTagging": {
-        "policy": "title-context-v2",
+        "policy": "title-only-v1",
         "source": "unclassified",
         "appearanceVerified": false
       },
@@ -186,20 +186,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-3ddfea2840d67f2f",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 7,
-              "end": 9,
-              "text": "다혜",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-5b40d78dec073504",
           "state": "needs_review",
           "reason": "shared-name",
@@ -211,7 +197,27 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-3ddfea2840d67f2f",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 7,
+              "end": 9,
+              "text": "다혜",
+              "source": "title"
+            }
+          ]
         }
+      ],
+      "careerGroupIds": [
+        "bestie"
+      ],
+      "displayCareerGroupIds": [
+        "bestie"
       ],
       "externalId": "UktC98aArvE",
       "sourceUrl": "https://www.youtube.com/watch?v=UktC98aArvE",
@@ -227,13 +233,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "bestie"
-      ],
-      "displayCareerGroupIds": [
-        "bestie"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__qtGqVO6nnUY",

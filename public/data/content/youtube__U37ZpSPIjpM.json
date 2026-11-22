@@ -28,7 +28,7 @@
   "actualEndTime": "2025-08-29T09:10:06Z",
   "scheduledStartTime": "2025-08-29T09:00:00Z",
   "source": {
-    "collectedAt": "2026-11-22T07:34:26.055585Z",
+    "collectedAt": "2026-11-22T13:19:06.714527Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,24 +43,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 64,
-          "end": 65,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 22,
+          "end": 25,
+          "text": "아이브",
+          "source": "title"
+        },
         {
           "start": 26,
           "end": 29,
@@ -72,11 +64,25 @@
           "end": 63,
           "text": "IVE",
           "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a114078617030613",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "장원영",
+          "source": "title"
         },
         {
-          "start": 22,
-          "end": 25,
-          "text": "아이브",
+          "start": 31,
+          "end": 34,
+          "text": "장원영",
           "source": "title"
         }
       ]
@@ -108,21 +114,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-a114078617030613",
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 10,
-          "end": 13,
-          "text": "장원영",
-          "source": "title"
-        },
-        {
-          "start": 31,
-          "end": 34,
-          "text": "장원영",
+          "start": 64,
+          "end": 65,
+          "text": "s",
           "source": "title"
         }
       ]
