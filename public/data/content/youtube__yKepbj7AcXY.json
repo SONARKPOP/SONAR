@@ -58,10 +58,16 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-f0d2fde20c967cbb",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "meovv-anna",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
+        {
+          "start": 45,
+          "end": 49,
+          "text": "ANNA",
+          "source": "title"
+        },
         {
           "start": 51,
           "end": 53,
@@ -72,20 +78,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "meovv-anna",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-f0d2fde20c967cbb",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 51,
           "end": 53,
           "text": "안나",
-          "source": "title"
-        },
-        {
-          "start": 45,
-          "end": 49,
-          "text": "ANNA",
           "source": "title"
         }
       ]
@@ -114,6 +114,20 @@
           "start": 51,
           "end": 53,
           "text": "안나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "mimiirose",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "미미로즈",
           "source": "title"
         }
       ]
@@ -156,20 +170,6 @@
           "start": 29,
           "end": 33,
           "text": "뷰티박스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "mimiirose",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "미미로즈",
           "source": "title"
         }
       ]

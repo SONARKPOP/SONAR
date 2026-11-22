@@ -47,20 +47,6 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 28,
-          "text": "IZ*ONE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "secret",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -69,6 +55,20 @@
           "start": 35,
           "end": 41,
           "text": "Secret",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 55,
+          "end": 59,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -89,14 +89,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "izone",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 55,
-          "end": 59,
-          "text": "Swan",
+          "start": 22,
+          "end": 28,
+          "text": "IZ*ONE",
           "source": "title"
         }
       ]
