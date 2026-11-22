@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:18:12.154484Z",
+    "collectedAt": "2026-11-22T19:11:37.776868Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,34 +45,6 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-e431bf31c4a3ed87",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 34,
-          "end": 36,
-          "text": "우주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 31,
-          "end": 32,
-          "text": "안",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "alice",
       "state": "inferred",
@@ -84,6 +56,20 @@
           "text": "ALICE",
           "source": "title"
         },
+        {
+          "start": 7,
+          "end": 10,
+          "text": "앨리스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-9dda2eae88d9d10c",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
           "start": 7,
           "end": 10,
@@ -108,14 +94,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-9dda2eae88d9d10c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-e431bf31c4a3ed87",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 7,
-          "end": 10,
-          "text": "앨리스",
+          "start": 34,
+          "end": 36,
+          "text": "우주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 31,
+          "end": 32,
+          "text": "안",
           "source": "title"
         }
       ]

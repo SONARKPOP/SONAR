@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:17:54.351291Z",
+    "collectedAt": "2026-11-22T19:11:19.126249Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,21 +46,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "ive-wonyoung",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 24,
-          "end": 37,
-          "text": "Jang Wonyoung",
+          "start": 69,
+          "end": 73,
+          "text": "Swan",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 38,
-          "end": 41,
-          "text": "장원영",
+          "start": 69,
+          "end": 73,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -95,28 +103,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "ive-wonyoung",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 69,
-          "end": 73,
-          "text": "Swan",
+          "start": 24,
+          "end": 37,
+          "text": "Jang Wonyoung",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
-          "start": 69,
-          "end": 73,
-          "text": "Swan",
+          "start": 38,
+          "end": 41,
+          "text": "장원영",
           "source": "title"
         }
       ]

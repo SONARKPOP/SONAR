@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:20:04.591349Z",
+    "collectedAt": "2026-11-22T19:13:33.288259Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,14 +45,34 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "kiss-of-life",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 10,
+          "end": 17,
+          "text": "키스오브라이프",
+          "source": "title"
+        },
+        {
           "start": 34,
-          "end": 38,
-          "text": "KISS",
+          "end": 46,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "kiss-of-life-member-da7f28bccc9c",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 19,
+          "text": "벨",
           "source": "title"
         }
       ]
@@ -86,35 +106,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "kiss-of-life-member-da7f28bccc9c",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 18,
-          "end": 19,
-          "text": "벨",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "kiss-of-life",
+      "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 17,
-          "text": "키스오브라이프",
-          "source": "title"
-        },
-        {
           "start": 34,
-          "end": 46,
-          "text": "KISS OF LIFE",
+          "end": 38,
+          "text": "KISS",
           "source": "title"
         }
       ]

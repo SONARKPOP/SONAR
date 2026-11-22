@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:20:21.270201Z",
+    "collectedAt": "2026-11-22T19:13:50.051971Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -50,14 +50,34 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "billlie-member-3c2540674e49",
+      "artistId": "person-95151adfa18496c3",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "편지",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "billlie",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 18,
-          "end": 20,
-          "text": "수현",
+          "start": 46,
+          "end": 53,
+          "text": "Billlie",
+          "source": "title"
+        },
+        {
+          "start": 55,
+          "end": 57,
+          "text": "빌리",
           "source": "title"
         }
       ]
@@ -92,34 +112,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-95151adfa18496c3",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 8,
-          "end": 10,
-          "text": "편지",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "billlie",
+      "artistId": "billlie-member-3c2540674e49",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 55,
-          "end": 57,
-          "text": "빌리",
-          "source": "title"
-        },
-        {
-          "start": 46,
-          "end": 53,
-          "text": "Billlie",
+          "start": 18,
+          "end": 20,
+          "text": "수현",
           "source": "title"
         }
       ]

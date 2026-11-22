@@ -93,26 +93,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "yena",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "최예나",
-              "source": "title"
-            },
-            {
-              "start": 21,
-              "end": 25,
-              "text": "YENA",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "izone-yena",
           "state": "inferred",
@@ -131,7 +111,33 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yena",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "최예나",
+              "source": "title"
+            },
+            {
+              "start": 21,
+              "end": 25,
+              "text": "YENA",
+              "source": "title"
+            }
+          ]
         }
+      ],
+      "careerGroupIds": [
+        "izone"
+      ],
+      "displayCareerGroupIds": [
+        "izone"
       ],
       "externalId": "Gi40B3HTYps",
       "sourceUrl": "https://www.youtube.com/watch?v=Gi40B3HTYps",
@@ -145,13 +151,7 @@
       "teaserType": "",
       "contentLength": "live",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "izone"
-      ],
-      "displayCareerGroupIds": [
-        "izone"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__qRwAJI3RicM",
@@ -195,34 +195,14 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "izone",
+          "artistId": "swan",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 1,
-              "end": 5,
-              "text": "아이즈원",
-              "source": "title"
-            },
-            {
-              "start": 32,
-              "end": 38,
-              "text": "IZ*ONE",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 41,
-              "end": 47,
-              "text": "Secret",
+              "start": 61,
+              "end": 65,
+              "text": "Swan",
               "source": "title"
             }
           ]
@@ -243,14 +223,34 @@
         },
         {
           "artistType": "group",
-          "artistId": "swan",
+          "artistId": "izone",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 61,
-              "end": 65,
-              "text": "Swan",
+              "start": 32,
+              "end": 38,
+              "text": "IZ*ONE",
+              "source": "title"
+            },
+            {
+              "start": 1,
+              "end": 5,
+              "text": "아이즈원",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "secret",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 41,
+              "end": 47,
+              "text": "Secret",
               "source": "title"
             }
           ]

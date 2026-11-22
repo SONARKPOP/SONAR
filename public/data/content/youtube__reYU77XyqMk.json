@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2026-09-19T09:00:19Z",
   "groupIds": [
-    "apink",
     "kwon-eun-bi"
   ],
   "memberIds": [
@@ -36,21 +35,35 @@
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "izone-kwon-eun-bi",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kim-nam-joo",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 31,
-          "end": 34,
-          "text": "권은비",
+          "start": 7,
+          "end": 10,
+          "text": "김남주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "apink-kim-nam-joo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 10,
+          "text": "김남주",
           "source": "title"
         }
       ]
@@ -84,10 +97,24 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "izone-kwon-eun-bi",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 31,
+          "end": 34,
+          "text": "권은비",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "apink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 1,
@@ -96,41 +123,7 @@
           "source": "title"
         }
       ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "apink-kim-nam-joo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 10,
-          "text": "김남주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kim-nam-joo",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 7,
-          "end": 10,
-          "text": "김남주",
-          "source": "title"
-        }
-      ]
     }
-  ],
-  "careerGroupIds": [
-    "apink"
-  ],
-  "displayCareerGroupIds": [
-    "apink"
   ],
   "externalId": "reYU77XyqMk",
   "sourceUrl": "https://www.youtube.com/watch?v=reYU77XyqMk",
@@ -146,5 +139,17 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false
+  "musicBroadcast": false,
+  "careerGroupIds": [
+    "apink"
+  ],
+  "displayCareerGroupIds": [
+    "apink"
+  ],
+  "individualActivity": {
+    "artistId": "kwon-eun-bi",
+    "groupIds": [],
+    "kind": "individual",
+    "evidence": "official-solo-channel"
+  }
 }

@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:19:47.292302Z",
+    "collectedAt": "2026-11-22T19:13:15.482614Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -61,15 +61,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "bp-rose",
+      "artistType": "group",
+      "artistId": "billlie",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 4,
-          "end": 6,
-          "text": "로제",
+          "start": 47,
+          "end": 54,
+          "text": "Billlie",
+          "source": "title"
+        },
+        {
+          "start": 56,
+          "end": 58,
+          "text": "빌리",
           "source": "title"
         }
       ]
@@ -89,21 +95,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "billlie",
+      "artistType": "person",
+      "artistId": "bp-rose",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 56,
-          "end": 58,
-          "text": "빌리",
-          "source": "title"
-        },
-        {
-          "start": 47,
-          "end": 54,
-          "text": "Billlie",
+          "start": 4,
+          "end": 6,
+          "text": "로제",
           "source": "title"
         }
       ]

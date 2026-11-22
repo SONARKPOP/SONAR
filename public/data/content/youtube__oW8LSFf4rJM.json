@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:20:28.227742Z",
+    "collectedAt": "2026-11-22T19:13:57.360209Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -52,22 +52,22 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 48,
-          "end": 52,
-          "text": "블랙핑크",
-          "source": "title"
-        },
-        {
           "start": 54,
           "end": 63,
           "text": "BLACKPINK",
+          "source": "title"
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "text": "블랙핑크",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "bp-jennie",
+      "artistType": "group",
+      "artistId": "jennie",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -95,20 +95,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b2cb44ebb8cd28b7",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "제니",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-6ec59eddfafab2fd",
       "state": "needs_review",
       "reason": "shared-name",
@@ -122,10 +108,24 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jennie",
+      "artistType": "person",
+      "artistId": "bp-jennie",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "제니",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b2cb44ebb8cd28b7",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 12,

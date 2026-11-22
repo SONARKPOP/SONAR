@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:18:39.688771Z",
+    "collectedAt": "2026-11-22T19:12:05.805533Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,37 +45,11 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "uspeer",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 37,
-          "end": 43,
-          "text": "USPEER",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 12,
-          "text": "유스피어",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "uspeer-soee",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-b43f48ab65b54787",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
-        {
-          "start": 44,
-          "end": 48,
-          "text": "SOEE",
-          "source": "title"
-        },
         {
           "start": 13,
           "end": 15,
@@ -100,14 +74,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b43f48ab65b54787",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "uspeer-soee",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 13,
           "end": 15,
           "text": "소이",
+          "source": "title"
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "text": "SOEE",
           "source": "title"
         }
       ]
@@ -122,6 +102,26 @@
           "start": 13,
           "end": 15,
           "text": "소이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "uspeer",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 12,
+          "text": "유스피어",
+          "source": "title"
+        },
+        {
+          "start": 37,
+          "end": 43,
+          "text": "USPEER",
           "source": "title"
         }
       ]

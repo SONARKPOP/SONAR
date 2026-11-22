@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:20:41.183180Z",
+    "collectedAt": "2026-11-22T19:14:11.386048Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,8 +43,22 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "artms",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 67,
+          "end": 72,
+          "text": "ARTMS",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "artms-heejin",
+      "artistId": "person-785f24419fb37180",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -52,12 +66,6 @@
           "start": 63,
           "end": 65,
           "text": "희진",
-          "source": "title"
-        },
-        {
-          "start": 55,
-          "end": 61,
-          "text": "HeeJin",
           "source": "title"
         }
       ]
@@ -104,7 +112,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-785f24419fb37180",
+      "artistId": "artms-heejin",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -113,19 +121,11 @@
           "end": 65,
           "text": "희진",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "artms",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 67,
-          "end": 72,
-          "text": "ARTMS",
+          "start": 55,
+          "end": 61,
+          "text": "HeeJin",
           "source": "title"
         }
       ]

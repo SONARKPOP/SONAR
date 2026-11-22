@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:19:51.235340Z",
+    "collectedAt": "2026-11-22T19:13:19.471271Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -74,6 +74,26 @@
     },
     {
       "artistType": "group",
+      "artistId": "ailee",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 14,
+          "end": 19,
+          "text": "Ailee",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "text": "에일리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "oh-my-girl",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -82,26 +102,6 @@
           "start": 34,
           "end": 38,
           "text": "오마이걸",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ailee",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 10,
-          "end": 13,
-          "text": "에일리",
-          "source": "title"
-        },
-        {
-          "start": 14,
-          "end": 19,
-          "text": "Ailee",
           "source": "title"
         }
       ]

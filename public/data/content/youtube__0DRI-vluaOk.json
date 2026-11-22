@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:17:15.784976Z",
+    "collectedAt": "2026-11-22T19:10:39.204243Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -67,15 +67,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 61,
-          "end": 65,
-          "text": "KISS",
+          "start": 48,
+          "end": 50,
+          "text": "나띠",
+          "source": "title"
+        },
+        {
+          "start": 51,
+          "end": 56,
+          "text": "NATTY",
           "source": "title"
         }
       ]
@@ -101,21 +107,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "kiss-of-life-natty",
+      "artistType": "group",
+      "artistId": "kiss",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 48,
-          "end": 50,
-          "text": "나띠",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 56,
-          "text": "NATTY",
+          "start": 61,
+          "end": 65,
+          "text": "KISS",
           "source": "title"
         }
       ]

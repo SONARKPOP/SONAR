@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:18:54.188363Z",
+    "collectedAt": "2026-11-22T19:12:21.194221Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "billlie-member-3c2540674e49",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "akmu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "수현",
+          "start": 60,
+          "end": 64,
+          "text": "AKMU",
+          "source": "title"
+        },
+        {
+          "start": 56,
+          "end": 58,
+          "text": "악뮤",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-53da7f045c68d659",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 51,
+          "end": 54,
+          "text": "이수현",
           "source": "title"
         }
       ]
@@ -88,35 +108,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "akmu",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 56,
-          "end": 58,
-          "text": "악뮤",
-          "source": "title"
-        },
-        {
-          "start": 60,
-          "end": 64,
-          "text": "AKMU",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-53da7f045c68d659",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "billlie-member-3c2540674e49",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 51,
-          "end": 54,
-          "text": "이수현",
+          "start": 0,
+          "end": 2,
+          "text": "수현",
           "source": "title"
         }
       ]
