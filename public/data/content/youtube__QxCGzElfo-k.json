@@ -44,10 +44,30 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "artms-heejin",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "artms",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 33,
+          "end": 38,
+          "text": "ARTMS",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 13,
+          "text": "아르테미스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "heejin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 39,
@@ -84,10 +104,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "heejin",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "artms-heejin",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 39,
@@ -113,26 +133,6 @@
           "start": 14,
           "end": 16,
           "text": "희진",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "artms",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 33,
-          "end": 38,
-          "text": "ARTMS",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 13,
-          "text": "아르테미스",
           "source": "title"
         }
       ]

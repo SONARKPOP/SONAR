@@ -45,10 +45,30 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-15239ff7b3ddff52",
+      "artistType": "group",
+      "artistId": "dreamnote",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 9,
+          "text": "DreamNote",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 15,
+          "text": "드림노트",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-87a451dd22497032",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 41,
@@ -60,9 +80,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-87a451dd22497032",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-15239ff7b3ddff52",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 41,
@@ -110,26 +130,6 @@
           "start": 44,
           "end": 46,
           "text": "보니",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "dreamnote",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 9,
-          "text": "DreamNote",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 15,
-          "text": "드림노트",
           "source": "title"
         }
       ]
