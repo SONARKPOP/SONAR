@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:35:38.781207Z",
+    "collectedAt": "2026-11-22T07:36:21.844868Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-71e6a52fc4306113",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
-          "end": 19,
-          "text": "소리",
+          "start": 1,
+          "end": 5,
+          "text": "Kiss",
+          "source": "title"
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "text": "Kiss",
           "source": "title"
         }
       ]
@@ -71,21 +77,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-71e6a52fc4306113",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 1,
-          "end": 5,
-          "text": "Kiss",
-          "source": "title"
-        },
-        {
-          "start": 6,
-          "end": 10,
-          "text": "Kiss",
+          "start": 17,
+          "end": 19,
+          "text": "소리",
           "source": "title"
         }
       ]

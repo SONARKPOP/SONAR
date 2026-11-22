@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:33:57.374808Z",
+    "collectedAt": "2026-11-22T07:34:44.694451Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,6 +48,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "nmixx",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 70,
+          "end": 75,
+          "text": "NMIXX",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "nmixx-haewon",
@@ -78,28 +92,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "nmixx",
+      "artistId": "ailee",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 70,
-          "end": 75,
-          "text": "NMIXX",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "lovelyz-mijoo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 48,
-          "end": 50,
-          "text": "미주",
+          "start": 43,
+          "end": 46,
+          "text": "에일리",
           "source": "title"
         }
       ]
@@ -119,15 +119,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ailee",
+      "artistType": "person",
+      "artistId": "lovelyz-mijoo",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 43,
-          "end": 46,
-          "text": "에일리",
+          "start": 48,
+          "end": 50,
+          "text": "미주",
           "source": "title"
         }
       ]

@@ -34,7 +34,7 @@
   "actualEndTime": "2026-01-29T10:28:17Z",
   "scheduledStartTime": "2026-01-29T10:00:00Z",
   "source": {
-    "collectedAt": "2026-11-22T01:32:33.028335Z",
+    "collectedAt": "2026-11-22T07:33:23.542862Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -107,6 +107,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 63,
+          "end": 68,
+          "text": "i-dle",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -135,21 +149,7 @@
     },
     {
       "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 63,
-          "end": 68,
-          "text": "i-dle",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "gidle-miyeon",
+      "artistId": "miyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -162,8 +162,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "miyeon",
+      "artistType": "person",
+      "artistId": "gidle-miyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:33:33.858314Z",
+    "collectedAt": "2026-11-22T07:34:22.330320Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -65,17 +65,11 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "hearts2hearts-yuha",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "youha",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
-        {
-          "start": 45,
-          "end": 49,
-          "text": "YUHA",
-          "source": "title"
-        },
         {
           "start": 17,
           "end": 19,
@@ -99,15 +93,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "youha",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "hearts2hearts-yuha",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 17,
           "end": 19,
           "text": "유하",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 49,
+          "text": "YUHA",
           "source": "title"
         }
       ]

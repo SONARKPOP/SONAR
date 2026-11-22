@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:32:22.958780Z",
+    "collectedAt": "2026-11-22T07:33:13.389220Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -64,8 +64,28 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 35,
+          "end": 39,
+          "text": "Kiss",
+          "source": "title"
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-dff6b18b1d4d3a3c",
+      "artistId": "person-ecfa150b92cf2ae4",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -79,7 +99,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-ecfa150b92cf2ae4",
+      "artistId": "person-dff6b18b1d4d3a3c",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -101,26 +121,6 @@
           "start": 16,
           "end": 17,
           "text": "벨",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 35,
-          "end": 39,
-          "text": "Kiss",
-          "source": "title"
-        },
-        {
-          "start": 42,
-          "end": 46,
-          "text": "KISS",
           "source": "title"
         }
       ]

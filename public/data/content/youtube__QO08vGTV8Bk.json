@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:33:23.213636Z",
+    "collectedAt": "2026-11-22T07:34:11.540034Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,15 +42,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-3bba35b66a3d2957",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "babymonster",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 8,
-          "end": 10,
-          "text": "정희",
+          "start": 23,
+          "end": 34,
+          "text": "BABYMONSTER",
+          "source": "title"
+        },
+        {
+          "start": 71,
+          "end": 82,
+          "text": "BABYMONSTER",
           "source": "title"
         }
       ]
@@ -84,21 +90,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "babymonster",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-3bba35b66a3d2957",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 23,
-          "end": 34,
-          "text": "BABYMONSTER",
-          "source": "title"
-        },
-        {
-          "start": 71,
-          "end": 82,
-          "text": "BABYMONSTER",
+          "start": 8,
+          "end": 10,
+          "text": "정희",
           "source": "title"
         }
       ]

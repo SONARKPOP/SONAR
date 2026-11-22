@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:33:54.787320Z",
+    "collectedAt": "2026-11-22T07:34:41.793258Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,14 +49,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 48,
-          "end": 54,
-          "text": "Secret",
+          "start": 68,
+          "end": 72,
+          "text": "Swan",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 68,
+          "end": 72,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -71,6 +85,20 @@
           "start": 17,
           "end": 23,
           "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 48,
+          "end": 54,
+          "text": "Secret",
           "source": "title"
         }
       ]
@@ -99,34 +127,6 @@
           "start": 37,
           "end": 40,
           "text": "이채연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 68,
-          "end": 72,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 68,
-          "end": 72,
-          "text": "Swan",
           "source": "title"
         }
       ]

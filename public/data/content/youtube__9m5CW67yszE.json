@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:32:13.289708Z",
+    "collectedAt": "2026-11-22T07:33:04.525048Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 30,
+          "end": 34,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "queenz-eye",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -53,20 +67,6 @@
           "start": 53,
           "end": 63,
           "text": "Queenz Eye",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 30,
-          "end": 42,
-          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]
@@ -87,14 +87,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 30,
-          "end": 34,
-          "text": "KISS",
+          "end": 42,
+          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]

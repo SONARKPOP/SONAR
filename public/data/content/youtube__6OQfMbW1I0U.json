@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:31:59.327032Z",
+    "collectedAt": "2026-11-22T07:32:50.703370Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "kiiras",
+      "artistType": "person",
+      "artistId": "mamamoo-solar",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 54,
-          "end": 60,
-          "text": "KIIRAS",
+          "start": 50,
+          "end": 52,
+          "text": "솔라",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "solar",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 50,
+          "end": 52,
+          "text": "솔라",
           "source": "title"
         }
       ]
@@ -75,28 +89,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "solar",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 50,
-          "end": 52,
-          "text": "솔라",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "mamamoo-solar",
+      "artistId": "kiiras",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 50,
-          "end": 52,
-          "text": "솔라",
+          "start": 54,
+          "end": 60,
+          "text": "KIIRAS",
           "source": "title"
         }
       ]

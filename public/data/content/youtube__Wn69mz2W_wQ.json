@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:33:49.703841Z",
+    "collectedAt": "2026-11-22T07:34:37.430013Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-38c50b37968d7ec3",
+      "artistType": "group",
+      "artistId": "young-posse",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 21,
-          "end": 23,
-          "text": "선혜",
+          "start": 4,
+          "end": 7,
+          "text": "영파씨",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 20,
+          "text": "영파씨",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-afb3a805d501d567",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 25,
+          "end": 27,
+          "text": "연정",
           "source": "title"
         }
       ]
@@ -90,34 +110,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-afb3a805d501d567",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 25,
-          "end": 27,
-          "text": "연정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "young-posse",
+      "artistId": "person-38c50b37968d7ec3",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 4,
-          "end": 7,
-          "text": "영파씨",
-          "source": "title"
-        },
-        {
-          "start": 17,
-          "end": 20,
-          "text": "영파씨",
+          "start": 21,
+          "end": 23,
+          "text": "선혜",
           "source": "title"
         }
       ]

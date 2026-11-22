@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:35:02.885505Z",
+    "collectedAt": "2026-11-22T07:35:47.269248Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a0260b2bdfc6f22a",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "izna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 22,
-          "end": 24,
-          "text": "사랑",
+          "start": 0,
+          "end": 3,
+          "text": "이즈나",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "text": "이즈나",
           "source": "title"
         }
       ]
@@ -86,21 +92,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "izna",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-a0260b2bdfc6f22a",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "이즈나",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 13,
-          "text": "이즈나",
+          "start": 22,
+          "end": 24,
+          "text": "사랑",
           "source": "title"
         }
       ]

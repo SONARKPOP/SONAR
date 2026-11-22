@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:34:02.807497Z",
+    "collectedAt": "2026-11-22T07:34:49.729491Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "1chu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "1CHU",
+          "source": "title"
+        },
+        {
+          "start": 6,
+          "end": 8,
+          "text": "원츄",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "episode",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 17,
           "end": 24,
           "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "1chu",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 6,
-          "end": 8,
-          "text": "원츄",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 4,
-          "text": "1CHU",
           "source": "title"
         }
       ]

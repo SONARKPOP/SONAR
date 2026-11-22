@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:32:02.941707Z",
+    "collectedAt": "2026-11-22T07:32:54.263492Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "h1-key",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "하이키",
+          "source": "title"
+        },
+        {
+          "start": 4,
+          "end": 10,
+          "text": "H1-KEY",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "kiss",
@@ -61,40 +81,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 28,
-          "end": 32,
-          "text": "Rose",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "h1-key",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 4,
-          "end": 10,
-          "text": "H1-KEY",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 3,
-          "text": "하이키",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-6c94e077a885f432",
       "state": "inferred",
@@ -104,6 +90,20 @@
           "start": 24,
           "end": 26,
           "text": "장미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 28,
+          "end": 32,
+          "text": "Rose",
           "source": "title"
         }
       ]

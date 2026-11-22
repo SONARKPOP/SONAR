@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:33:06.398374Z",
+    "collectedAt": "2026-11-22T07:33:55.768289Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,10 +48,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "bp-jisoo",
+      "artistType": "group",
+      "artistId": "blackpink",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "블랙핑크",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c8945fd8178cf886",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 3,
@@ -89,7 +103,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c8945fd8178cf886",
+      "artistId": "person-94eb4421c0847185",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -109,9 +123,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-94eb4421c0847185",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "bp-jisoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 3,
@@ -143,20 +157,6 @@
           "start": 28,
           "end": 30,
           "text": "지수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "blackpink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 26,
-          "text": "블랙핑크",
           "source": "title"
         }
       ]

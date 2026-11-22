@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:34:11.704418Z",
+    "collectedAt": "2026-11-22T07:34:57.752293Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,36 +47,28 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "bp-jisoo",
+      "artistType": "group",
+      "artistId": "illit",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 45,
-          "end": 50,
-          "text": "JISOO",
+          "start": 70,
+          "end": 75,
+          "text": "ILLIT",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "아일릿",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "jisoo",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 45,
-          "end": 50,
-          "text": "JISOO",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "girls-generation-yoona",
+      "artistId": "yoona",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -89,8 +81,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yoona",
+      "artistType": "person",
+      "artistId": "girls-generation-yoona",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -117,21 +109,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "illit",
+      "artistType": "person",
+      "artistId": "bp-jisoo",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 70,
-          "end": 75,
-          "text": "ILLIT",
+          "start": 45,
+          "end": 50,
+          "text": "JISOO",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jisoo",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 8,
-          "end": 11,
-          "text": "아일릿",
+          "start": 45,
+          "end": 50,
+          "text": "JISOO",
           "source": "title"
         }
       ]

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:35:26.172689Z",
+    "collectedAt": "2026-11-22T07:36:09.650480Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
+      "artistType": "person",
+      "artistId": "oh-my-girl-yooa",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "오마이걸",
+          "start": 5,
+          "end": 7,
+          "text": "유아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yooa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "유아",
           "source": "title"
         }
       ]
@@ -75,28 +89,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "yooa",
+      "artistId": "oh-my-girl",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "유아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "유아",
+          "start": 0,
+          "end": 4,
+          "text": "오마이걸",
           "source": "title"
         }
       ]

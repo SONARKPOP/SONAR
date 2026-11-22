@@ -30,7 +30,7 @@
   "actualEndTime": "2024-09-11T03:54:17Z",
   "scheduledStartTime": "2024-09-11T03:00:00Z",
   "source": {
-    "collectedAt": "2026-11-22T01:32:48.806587Z",
+    "collectedAt": "2026-11-22T07:33:38.406979Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -72,15 +72,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-3bba35b66a3d2957",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "tzuyu",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 37,
-          "end": 39,
-          "text": "정희",
+          "start": 23,
+          "end": 25,
+          "text": "쯔위",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tw-tzuyu",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 23,
+          "end": 25,
+          "text": "쯔위",
           "source": "title"
         }
       ]
@@ -115,28 +129,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "tw-tzuyu",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-3bba35b66a3d2957",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 23,
-          "end": 25,
-          "text": "쯔위",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tzuyu",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "쯔위",
+          "start": 37,
+          "end": 39,
+          "text": "정희",
           "source": "title"
         }
       ]

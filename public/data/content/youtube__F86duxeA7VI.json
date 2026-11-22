@@ -32,11 +32,11 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-21T13:20:03.862105Z",
+    "collectedAt": "2026-11-22T07:33:26.398452Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -62,8 +62,56 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "heart-of-woman",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 69,
+          "end": 81,
+          "text": "HEARTOFWOMAN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "rescene-zena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 45,
+          "end": 49,
+          "text": "ZENA",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 25,
+          "text": "제나",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-845f9828c743c539",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 23,
+          "end": 25,
+          "text": "제나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-fd5f710fbd3fcb9b",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -88,55 +136,13 @@
           "source": "title"
         }
       ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "rescene-zena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "제나",
-          "source": "title"
-        },
-        {
-          "start": 45,
-          "end": 49,
-          "text": "ZENA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-fd5f710fbd3fcb9b",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "제나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "heart-of-woman",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 69,
-          "end": 81,
-          "text": "HEARTOFWOMAN",
-          "source": "title"
-        }
-      ]
     }
+  ],
+  "careerGroupIds": [
+    "rescene"
+  ],
+  "displayCareerGroupIds": [
+    "rescene"
   ],
   "externalId": "F86duxeA7VI",
   "sourceUrl": "https://www.youtube.com/watch?v=F86duxeA7VI",
@@ -152,11 +158,5 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "careerGroupIds": [
-    "rescene"
-  ],
-  "displayCareerGroupIds": [
-    "rescene"
-  ]
+  "musicBroadcast": false
 }

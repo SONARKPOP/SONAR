@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:35:14.172600Z",
+    "collectedAt": "2026-11-22T07:35:58.130859Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,10 +46,58 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 40,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 22,
+          "text": "TUIDE",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "tuide-jia",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 26,
+          "text": "JIA",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 29,
+          "text": "지아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "miss-a-jia",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 23,
@@ -87,16 +135,10 @@
     },
     {
       "artistType": "person",
-      "artistId": "miss-a-jia",
+      "artistId": "person-413c533f79929770",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
-        {
-          "start": 23,
-          "end": 26,
-          "text": "JIA",
-          "source": "title"
-        },
         {
           "start": 27,
           "end": 29,
@@ -121,20 +163,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-413c533f79929770",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 27,
-          "end": 29,
-          "text": "지아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-a5cd317c1284220a",
       "state": "needs_review",
       "reason": "shared-name",
@@ -143,34 +171,6 @@
           "start": 27,
           "end": 29,
           "text": "지아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 22,
-          "text": "TUIDE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 36,
-          "end": 40,
-          "text": "KISS",
           "source": "title"
         }
       ]

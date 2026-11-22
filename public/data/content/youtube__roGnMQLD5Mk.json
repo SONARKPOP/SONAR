@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T01:35:22.846505Z",
+    "collectedAt": "2026-11-22T07:36:06.434822Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-bad85c9da16022fc",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "tara",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 14,
-          "end": 16,
-          "text": "은정",
+          "start": 25,
+          "end": 28,
+          "text": "티아라",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 24,
+          "text": "T-ARA",
           "source": "title"
         }
       ]
@@ -72,21 +78,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "tara",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-bad85c9da16022fc",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 19,
-          "end": 24,
-          "text": "T-ARA",
-          "source": "title"
-        },
-        {
-          "start": 25,
-          "end": 28,
-          "text": "티아라",
+          "start": 14,
+          "end": 16,
+          "text": "은정",
           "source": "title"
         }
       ]
