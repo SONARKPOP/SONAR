@@ -7,7 +7,8 @@
   "description": "@heartofwoman_officl \n#하트오브우먼 #HEARTOFWOMAN\n#이젤 #EJel\n#이젤_여름의방정식",
   "publishedAt": "2026-06-20T06:00:07Z",
   "groupIds": [
-    "ejel"
+    "ejel",
+    "heart-of-woman"
   ],
   "memberIds": [
     "heart-of-woman-ayne"
@@ -41,17 +42,25 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "heart-of-woman-ayne",
+      "artistType": "group",
+      "artistId": "heart-of-woman",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 20,
-          "end": 24,
-          "text": "AYNE",
+          "start": 0,
+          "end": 14,
+          "text": "HEART OF WOMAN",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-f08b8fdbaa01a66e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
           "start": 16,
           "end": 18,
@@ -62,14 +71,34 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-507e18325fa70402",
+      "artistId": "heart-of-woman-ayne",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "아인",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 24,
+          "text": "AYNE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-d96049b26e3fb539",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 36,
-          "end": 38,
-          "text": "여름",
+          "start": 16,
+          "end": 18,
+          "text": "아인",
           "source": "title"
         }
       ]
@@ -104,42 +133,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-d96049b26e3fb539",
+      "artistId": "person-507e18325fa70402",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 16,
-          "end": 18,
-          "text": "아인",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-f08b8fdbaa01a66e",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "아인",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "heart-of-woman",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 0,
-          "end": 14,
-          "text": "HEART OF WOMAN",
+          "start": 36,
+          "end": 38,
+          "text": "여름",
           "source": "title"
         }
       ]
