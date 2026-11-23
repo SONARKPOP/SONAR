@@ -99,11 +99,17 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-82c8dfffcc8a320b",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "alice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 34,
+          "end": 39,
+          "text": "ALICE",
+          "source": "title"
+        },
         {
           "start": 30,
           "end": 33,
@@ -113,21 +119,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-82c8dfffcc8a320b",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 30,
           "end": 33,
           "text": "앨리스",
-          "source": "title"
-        },
-        {
-          "start": 34,
-          "end": 39,
-          "text": "ALICE",
           "source": "title"
         }
       ]
