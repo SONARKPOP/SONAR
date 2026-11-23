@@ -42,14 +42,28 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "billlie-member-3c2540674e49",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-c8e109bade6a90b1",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 21,
-              "end": 23,
-              "text": "수현",
+              "start": 4,
+              "end": 6,
+              "text": "아이",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "akmu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 18,
+              "end": 20,
+              "text": "악뮤",
               "source": "title"
             }
           ]
@@ -83,29 +97,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "akmu",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 18,
-              "end": 20,
-              "text": "악뮤",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
-          "artistId": "person-c8e109bade6a90b1",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "billlie-member-3c2540674e49",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 4,
-              "end": 6,
-              "text": "아이",
+              "start": 21,
+              "end": 23,
+              "text": "수현",
               "source": "title"
             }
           ]
@@ -191,22 +191,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "oh-my-girl",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 17,
-              "end": 21,
-              "text": "오마이걸",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yooa",
+          "artistType": "person",
+          "artistId": "oh-my-girl-yooa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -225,8 +211,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "oh-my-girl-yooa",
+          "artistType": "group",
+          "artistId": "yooa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -254,6 +240,20 @@
               "start": 40,
               "end": 42,
               "text": "아이",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "oh-my-girl",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 17,
+              "end": 21,
+              "text": "오마이걸",
               "source": "title"
             }
           ]

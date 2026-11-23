@@ -46,8 +46,22 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "weeekly-lunedi",
+      "artistType": "group",
+      "artistId": "weeekly",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 24,
+          "text": "Weeekly",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lunedi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -60,8 +74,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lunedi",
+      "artistType": "person",
+      "artistId": "weeekly-lunedi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -88,15 +102,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lee-hi",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistType": "person",
+      "artistId": "person-cdec1868119ed257",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 36,
-          "end": 39,
-          "text": "이하이",
+          "start": 14,
+          "end": 16,
+          "text": "소은",
           "source": "title"
         }
       ]
@@ -116,29 +130,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-cdec1868119ed257",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 16,
-          "text": "소은",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "weeekly",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "lee-hi",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 17,
-          "end": 24,
-          "text": "Weeekly",
+          "start": 36,
+          "end": 39,
+          "text": "이하이",
           "source": "title"
         }
       ]
