@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:48.555080Z",
+    "collectedAt": "2026-11-23T13:43:57.583948Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,11 +42,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "kwon-eun-bi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "izone-kwon-eun-bi",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
+        {
+          "start": 25,
+          "end": 36,
+          "text": "KWON EUN BI",
+          "source": "title"
+        },
         {
           "start": 4,
           "end": 7,
@@ -58,11 +64,31 @@
           "end": 22,
           "text": "권은비",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kwon-eun-bi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
           "start": 25,
           "end": 36,
           "text": "KWON EUN BI",
+          "source": "title"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "text": "권은비",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 22,
+          "text": "권은비",
           "source": "title"
         }
       ]
@@ -83,32 +109,6 @@
           "start": 19,
           "end": 22,
           "text": "권은비",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "izone-kwon-eun-bi",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 4,
-          "end": 7,
-          "text": "권은비",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 22,
-          "text": "권은비",
-          "source": "title"
-        },
-        {
-          "start": 25,
-          "end": 36,
-          "text": "KWON EUN BI",
           "source": "title"
         }
       ]

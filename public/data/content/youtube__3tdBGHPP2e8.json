@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:23.765824Z",
+    "collectedAt": "2026-11-23T13:43:04.871839Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,38 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 7,
+          "text": "(여자)아이들",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 68,
+          "text": "(G)I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 4,
+          "end": 7,
+          "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 63,
+          "end": 68,
+          "text": "I-DLE",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-2300f45a248fc299",
@@ -67,40 +99,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 7,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 63,
-          "end": 68,
-          "text": "I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 4,
-          "end": 7,
-          "text": "아이들",
-          "source": "title"
-        },
-        {
-          "start": 60,
-          "end": 68,
-          "text": "(G)I-DLE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yuqi",
+      "artistType": "person",
+      "artistId": "gidle-yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -125,8 +125,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "gidle-yuqi",
+      "artistType": "group",
+      "artistId": "yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [

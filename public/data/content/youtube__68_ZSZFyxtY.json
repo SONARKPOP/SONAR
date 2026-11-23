@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:29.377584Z",
+    "collectedAt": "2026-11-23T13:43:17.208578Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,20 +60,34 @@
     },
     {
       "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 62,
+          "end": 65,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "csr",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 74,
-          "end": 77,
-          "text": "첫사랑",
-          "source": "title"
-        },
-        {
           "start": 78,
           "end": 81,
           "text": "CSR",
+          "source": "title"
+        },
+        {
+          "start": 74,
+          "end": 77,
+          "text": "첫사랑",
           "source": "title"
         }
       ]
@@ -88,20 +102,6 @@
           "start": 45,
           "end": 50,
           "text": "aespa",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 62,
-          "end": 65,
-          "text": "IVE",
           "source": "title"
         }
       ]

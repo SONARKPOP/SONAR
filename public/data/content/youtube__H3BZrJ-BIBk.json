@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:57.904546Z",
+    "collectedAt": "2026-11-23T13:44:17.671237Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c73ce5fb2451dbbf",
+      "artistType": "group",
+      "artistId": "jennie",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 24,
-          "end": 25,
-          "text": "봄",
+          "start": 14,
+          "end": 20,
+          "text": "JENNIE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "bp-jennie",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 14,
+          "end": 20,
+          "text": "JENNIE",
           "source": "title"
         }
       ]
@@ -76,28 +90,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "bp-jennie",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 20,
-          "text": "JENNIE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "jennie",
+      "artistId": "person-c73ce5fb2451dbbf",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 14,
-          "end": 20,
-          "text": "JENNIE",
+          "start": 24,
+          "end": 25,
+          "text": "봄",
           "source": "title"
         }
       ]
@@ -109,15 +109,15 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 38,
-          "end": 43,
-          "text": "트리플에스",
-          "source": "title"
-        },
-        {
           "start": 29,
           "end": 36,
           "text": "tripleS",
+          "source": "title"
+        },
+        {
+          "start": 38,
+          "end": 43,
+          "text": "트리플에스",
           "source": "title"
         }
       ]

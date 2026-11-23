@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:45.630850Z",
+    "collectedAt": "2026-11-23T13:43:52.405060Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,17 +45,31 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "ive-gaeul",
+      "artistType": "group",
+      "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 39,
-          "end": 44,
-          "text": "GAEUL",
+          "start": 7,
+          "end": 10,
+          "text": "아이브",
           "source": "title"
         },
+        {
+          "start": 35,
+          "end": 38,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ce998ea45bc26e22",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
           "start": 11,
           "end": 13,
@@ -80,14 +94,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-ce998ea45bc26e22",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "ive-gaeul",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 11,
           "end": 13,
           "text": "가을",
+          "source": "title"
+        },
+        {
+          "start": 39,
+          "end": 44,
+          "text": "GAEUL",
           "source": "title"
         }
       ]
@@ -102,26 +122,6 @@
           "start": 11,
           "end": 13,
           "text": "가을",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 35,
-          "end": 38,
-          "text": "IVE",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 10,
-          "text": "아이브",
           "source": "title"
         }
       ]

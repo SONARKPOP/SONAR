@@ -36,15 +36,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "tiffany-young",
+          "artistType": "person",
+          "artistId": "gidle-miyeon",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 0,
-              "end": 13,
-              "text": "Tiffany Young",
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            },
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "miyeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            },
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
               "source": "title"
             }
           ]
@@ -65,44 +91,26 @@
         },
         {
           "artistType": "group",
-          "artistId": "miyeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "gidle-miyeon",
+          "artistId": "tiffany-young",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
+              "start": 0,
+              "end": 13,
+              "text": "Tiffany Young",
               "source": "title"
             }
           ]
         }
+      ],
+      "careerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
+      ],
+      "displayCareerGroupIds": [
+        "gg-8abb39c3ffbbe8b2",
+        "girls-generation"
       ],
       "externalId": "t1S8uM8e8Ro",
       "sourceUrl": "https://www.youtube.com/watch?v=t1S8uM8e8Ro",
@@ -118,15 +126,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ],
-      "displayCareerGroupIds": [
-        "gg-8abb39c3ffbbe8b2",
-        "girls-generation"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__oxMgMOY2XDs",
@@ -166,8 +166,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "2ne1-minzy",
+          "artistType": "group",
+          "artistId": "minzy",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -186,8 +186,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "minzy",
+          "artistType": "person",
+          "artistId": "2ne1-minzy",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -220,6 +220,14 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "2ne1",
+        "gg-8abb39c3ffbbe8b2"
+      ],
+      "displayCareerGroupIds": [
+        "2ne1",
+        "gg-8abb39c3ffbbe8b2"
+      ],
       "externalId": "oxMgMOY2XDs",
       "sourceUrl": "https://www.youtube.com/watch?v=oxMgMOY2XDs",
       "contentTabs": [
@@ -230,15 +238,7 @@
       "teaserType": "",
       "contentLength": "live",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "2ne1",
-        "gg-8abb39c3ffbbe8b2"
-      ],
-      "displayCareerGroupIds": [
-        "2ne1",
-        "gg-8abb39c3ffbbe8b2"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__7hFLYfO-TbU",
@@ -274,45 +274,53 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "2ne1-minzy",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 7,
-              "end": 10,
-              "text": "공민지",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 5,
-              "text": "MINZY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "minzy",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 0,
+              "end": 5,
+              "text": "MINZY",
+              "source": "title"
+            },
+            {
               "start": 7,
               "end": 10,
               "text": "공민지",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "2ne1-minzy",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 0,
               "end": 5,
               "text": "MINZY",
               "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 10,
+              "text": "공민지",
+              "source": "title"
             }
           ]
         }
+      ],
+      "careerGroupIds": [
+        "2ne1",
+        "gg-8abb39c3ffbbe8b2"
+      ],
+      "displayCareerGroupIds": [
+        "2ne1",
+        "gg-8abb39c3ffbbe8b2"
       ],
       "externalId": "7hFLYfO-TbU",
       "sourceUrl": "https://www.youtube.com/watch?v=7hFLYfO-TbU",
@@ -337,15 +345,7 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "careerGroupIds": [
-        "2ne1",
-        "gg-8abb39c3ffbbe8b2"
-      ],
-      "displayCareerGroupIds": [
-        "2ne1",
-        "gg-8abb39c3ffbbe8b2"
-      ]
+      }
     }
   ]
 }

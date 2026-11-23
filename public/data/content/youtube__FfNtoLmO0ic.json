@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:54.755849Z",
+    "collectedAt": "2026-11-23T13:44:10.503211Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-5035c2dc85c0c21e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "lapillus",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 11,
-          "text": "수",
+          "start": 29,
+          "end": 33,
+          "text": "라필루스",
+          "source": "title"
+        },
+        {
+          "start": 43,
+          "end": 51,
+          "text": "Lapillus",
           "source": "title"
         }
       ]
@@ -73,21 +79,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lapillus",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-5035c2dc85c0c21e",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 43,
-          "end": 51,
-          "text": "Lapillus",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 33,
-          "text": "라필루스",
+          "start": 10,
+          "end": 11,
+          "text": "수",
           "source": "title"
         }
       ]

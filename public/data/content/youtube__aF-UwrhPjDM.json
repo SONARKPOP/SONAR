@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:58:53.742025Z",
+    "collectedAt": "2026-11-23T13:46:15.103520Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -61,14 +61,40 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-e1112600ab2e1973",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "sistar-hyolyn",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 46,
-          "end": 48,
-          "text": "효정",
+          "start": 10,
+          "end": 12,
+          "text": "효린",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 20,
+          "text": "HYOLYN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyolyn",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "효린",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 20,
+          "text": "HYOLYN",
           "source": "title"
         }
       ]
@@ -88,41 +114,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "hyolyn",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 20,
-          "text": "HYOLYN",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 12,
-          "text": "효린",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "sistar-hyolyn",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-e1112600ab2e1973",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 14,
-          "end": 20,
-          "text": "HYOLYN",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 12,
-          "text": "효린",
+          "start": 46,
+          "end": 48,
+          "text": "효정",
           "source": "title"
         }
       ]

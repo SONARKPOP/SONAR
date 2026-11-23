@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-08-25T09:00:01Z",
   "groupIds": [
-    "crazangel",
-    "lightsum"
+    "crazangel"
   ],
   "memberIds": [
     "person-04da0bcc18d08a2f",
@@ -33,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:20:12.812740Z",
+    "collectedAt": "2026-11-23T13:47:15.525944Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -43,21 +42,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "crazangel",
+      "artistType": "person",
+      "artistId": "person-72f5c359a3d6592f",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 19,
+          "end": 21,
+          "text": "초원",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-04da0bcc18d08a2f",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 50,
-          "end": 59,
-          "text": "CrazAngel",
-          "source": "title"
-        },
-        {
-          "start": 61,
-          "end": 67,
-          "text": "크레이즈엔젤",
+          "start": 19,
+          "end": 21,
+          "text": "초원",
           "source": "title"
         }
       ]
@@ -79,8 +86,8 @@
     {
       "artistType": "group",
       "artistId": "lightsum",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 1,
@@ -91,29 +98,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-04da0bcc18d08a2f",
+      "artistType": "group",
+      "artistId": "crazangel",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 19,
-          "end": 21,
-          "text": "초원",
+          "start": 50,
+          "end": 59,
+          "text": "CrazAngel",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-72f5c359a3d6592f",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
+        },
         {
-          "start": 19,
-          "end": 21,
-          "text": "초원",
+          "start": 61,
+          "end": 67,
+          "text": "크레이즈엔젤",
           "source": "title"
         }
       ]

@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:58:46.359160Z",
+    "collectedAt": "2026-11-23T13:45:59.523175Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -50,6 +50,20 @@
       "artistId": "person-b9c57e755497c55a",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 49,
+          "end": 51,
+          "text": "제인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ff8b4bfb506de6c0",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 49,
@@ -88,15 +102,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-ff8b4bfb506de6c0",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "momoland",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 49,
-          "end": 51,
-          "text": "제인",
+          "start": 62,
+          "end": 70,
+          "text": "MOMOLAND",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 15,
+          "text": "모모랜드",
           "source": "title"
         }
       ]
@@ -125,26 +145,6 @@
           "start": 46,
           "end": 48,
           "text": "혜빈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "momoland",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 62,
-          "end": 70,
-          "text": "MOMOLAND",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 15,
-          "text": "모모랜드",
           "source": "title"
         }
       ]

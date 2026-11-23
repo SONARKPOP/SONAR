@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:58:51.055268Z",
+    "collectedAt": "2026-11-23T13:46:09.494810Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "uspeer-roa",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "rocking-doll",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 51,
-          "end": 54,
-          "text": "Roa",
+          "start": 14,
+          "end": 17,
+          "text": "록킹돌",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 12,
+          "text": "Rocking doll",
           "source": "title"
         }
       ]
@@ -71,21 +77,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rocking-doll",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "uspeer-roa",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 14,
-          "end": 17,
-          "text": "록킹돌",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 12,
-          "text": "Rocking doll",
+          "start": 51,
+          "end": 54,
+          "text": "Roa",
           "source": "title"
         }
       ]

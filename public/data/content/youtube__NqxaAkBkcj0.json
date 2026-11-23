@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:58:15.978052Z",
+    "collectedAt": "2026-11-23T13:44:57.468924Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-d4d87f98795ecb6e",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "lunedi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 42,
-          "end": 44,
-          "text": "주니",
+          "start": 24,
+          "end": 30,
+          "text": "Monday",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "weeekly-lunedi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 30,
+          "text": "Monday",
           "source": "title"
         }
       ]
@@ -73,28 +87,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "weeekly-lunedi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-d4d87f98795ecb6e",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 24,
-          "end": 30,
-          "text": "Monday",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "lunedi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 24,
-          "end": 30,
-          "text": "Monday",
+          "start": 42,
+          "end": 44,
+          "text": "주니",
           "source": "title"
         }
       ]

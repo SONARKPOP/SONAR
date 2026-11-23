@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:48.178812Z",
+    "collectedAt": "2026-11-23T13:43:56.666238Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,31 +45,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "unchild-yeeun",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 13,
-          "end": 16,
-          "text": "박예은",
-          "source": "title"
-        },
-        {
-          "start": 42,
-          "end": 47,
-          "text": "YEEUN",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "unchild",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 8,
+          "end": 12,
+          "text": "언차일드",
+          "source": "title"
+        },
         {
           "start": 24,
           "end": 31,
@@ -81,11 +67,19 @@
           "end": 41,
           "text": "UNCHILD",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "clc-ye-eun",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 8,
-          "end": 12,
-          "text": "언차일드",
+          "start": 42,
+          "end": 47,
+          "text": "YEEUN",
           "source": "title"
         }
       ]
@@ -106,14 +100,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "clc-ye-eun",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "unchild-yeeun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 42,
           "end": 47,
           "text": "YEEUN",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 16,
+          "text": "박예은",
           "source": "title"
         }
       ]

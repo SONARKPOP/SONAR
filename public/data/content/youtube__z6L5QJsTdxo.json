@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T08:00:04.962238Z",
+    "collectedAt": "2026-11-23T13:48:40.990708Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,15 +48,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "jisoo",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "lovelyz-yoo-ji-ae",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "지수",
+          "start": 16,
+          "end": 19,
+          "text": "유지애",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yoo-ji-ae",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "유지애",
           "source": "title"
         }
       ]
@@ -76,8 +90,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-4442d3593b19b75a",
+      "artistType": "group",
+      "artistId": "jisoo",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -119,6 +133,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "person-4442d3593b19b75a",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "지수",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "lovelyz-member-7fca9418e66d",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -127,34 +155,6 @@
           "start": 11,
           "end": 14,
           "text": "서지수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yoo-ji-ae",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 19,
-          "text": "유지애",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "lovelyz-yoo-ji-ae",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 19,
-          "text": "유지애",
           "source": "title"
         }
       ]

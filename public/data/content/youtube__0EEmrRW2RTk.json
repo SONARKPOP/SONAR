@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:14.639899Z",
+    "collectedAt": "2026-11-23T13:42:43.622728Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-2300f45a248fc299",
+      "artistType": "group",
+      "artistId": "purple-kiss",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 16,
-          "end": 18,
-          "text": "세계",
+          "start": 70,
+          "end": 74,
+          "text": "퍼플키스",
+          "source": "title"
+        },
+        {
+          "start": 75,
+          "end": 86,
+          "text": "PURPLE KISS",
           "source": "title"
         }
       ]
@@ -74,21 +80,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "purple-kiss",
+      "artistType": "person",
+      "artistId": "person-2300f45a248fc299",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 70,
-          "end": 74,
-          "text": "퍼플키스",
-          "source": "title"
-        },
-        {
-          "start": 75,
-          "end": 86,
-          "text": "PURPLE KISS",
+          "start": 16,
+          "end": 18,
+          "text": "세계",
           "source": "title"
         }
       ]

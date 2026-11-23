@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:58:49.131609Z",
+    "collectedAt": "2026-11-23T13:46:05.570822Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 21,
+          "text": "SAY MY NAME",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 29,
+          "text": "세이마이네임",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-5e4af611df7b9334",
@@ -61,20 +81,6 @@
     {
       "artistType": "person",
       "artistId": "person-59d9d2c5f0ca05f8",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 31,
-          "end": 33,
-          "text": "도희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-7d7cd6c710e78340",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -115,21 +121,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-7d7cd6c710e78340",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 23,
-          "end": 29,
-          "text": "세이마이네임",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 21,
-          "text": "SAY MY NAME",
+          "start": 31,
+          "end": 33,
+          "text": "도희",
           "source": "title"
         }
       ]

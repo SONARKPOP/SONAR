@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:59:34.607725Z",
+    "collectedAt": "2026-11-23T13:47:37.737045Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,6 +48,20 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "person",
+      "artistId": "person-a1479c2cc95e8b6a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "소원",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "gidle",
       "state": "inferred",
@@ -57,20 +71,6 @@
           "start": 0,
           "end": 3,
           "text": "아이들",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 10,
-          "text": "전소연",
           "source": "title"
         }
       ]
@@ -90,15 +90,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
+      "artistType": "group",
+      "artistId": "soyeon",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 16,
-          "end": 18,
-          "text": "소원",
+          "start": 7,
+          "end": 10,
+          "text": "전소연",
           "source": "title"
         }
       ]

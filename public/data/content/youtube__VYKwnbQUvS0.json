@@ -7,6 +7,7 @@
   "description": "TiNG TiNG with STAYC 수민\n\n#UNCHILD #언차일드\n#TiNGTiNG \n@STAYC",
   "publishedAt": "2026-11-09T07:00:25Z",
   "groupIds": [
+    "stayc",
     "unchild"
   ],
   "memberIds": [
@@ -31,15 +32,29 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T13:19:12.063529Z",
+    "collectedAt": "2026-11-23T13:45:41.187094Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "stayc",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 20,
+          "text": "STAYC",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "stayc-member-225ce3eee6ba",
@@ -56,7 +71,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-589b8dda826c4788",
+      "artistId": "person-31c954563f42ea7d",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -70,7 +85,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-31c954563f42ea7d",
+      "artistId": "person-589b8dda826c4788",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -109,21 +124,13 @@
           "source": "title"
         }
       ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "stayc",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 15,
-          "end": 20,
-          "text": "STAYC",
-          "source": "title"
-        }
-      ]
     }
+  ],
+  "careerGroupIds": [
+    "stayc"
+  ],
+  "displayCareerGroupIds": [
+    "stayc"
   ],
   "externalId": "VYKwnbQUvS0",
   "sourceUrl": "https://www.youtube.com/watch?v=VYKwnbQUvS0",
@@ -139,11 +146,5 @@
   "teaserType": "",
   "contentLength": "short",
   "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "careerGroupIds": [
-    "stayc"
-  ],
-  "displayCareerGroupIds": [
-    "stayc"
-  ]
+  "musicBroadcast": false
 }

@@ -9,7 +9,6 @@
   "groupIds": [
     "dreamnote",
     "luv",
-    "oh-my-girl",
     "yooa"
   ],
   "memberIds": [
@@ -35,56 +34,28 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:59:00.631259Z",
+    "collectedAt": "2026-11-23T13:46:28.176107Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "유아",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "yooa",
+      "artistId": "luv",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "유아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-d8ed16dd74b1c036",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 8,
-          "text": "유아이",
+          "start": 57,
+          "end": 60,
+          "text": "Luv",
           "source": "title"
         }
       ]
@@ -110,15 +81,43 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "luv",
+      "artistType": "person",
+      "artistId": "person-d8ed16dd74b1c036",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 57,
-          "end": 60,
-          "text": "Luv",
+          "start": 5,
+          "end": 8,
+          "text": "유아이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yooa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "유아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "oh-my-girl-yooa",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "유아",
           "source": "title"
         }
       ]

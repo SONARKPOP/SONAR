@@ -58,20 +58,6 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "mijoo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 40,
-          "end": 45,
-          "text": "MIJOO",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "lovelyz-mijoo",
       "state": "inferred",
@@ -86,10 +72,24 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "wonder-girls-sunmi",
+      "artistType": "group",
+      "artistId": "mijoo",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 45,
+          "text": "MIJOO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "sunmi",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 47,
@@ -100,10 +100,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "sunmi",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "wonder-girls-sunmi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 47,

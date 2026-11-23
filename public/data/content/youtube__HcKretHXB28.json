@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:59.371107Z",
+    "collectedAt": "2026-11-23T13:44:21.260000Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,24 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-d987ed7f3b983b31",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "girls-generation-yuri",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 5,
@@ -61,8 +75,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "girls-generation-yuri",
+      "artistType": "group",
+      "artistId": "yuri",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -89,10 +103,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yuri",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-b467f92429da48fc",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 5,
@@ -104,7 +118,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b467f92429da48fc",
+      "artistId": "person-d987ed7f3b983b31",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -126,20 +140,6 @@
           "start": 46,
           "end": 49,
           "text": "안영미",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "소녀시대",
           "source": "title"
         }
       ]

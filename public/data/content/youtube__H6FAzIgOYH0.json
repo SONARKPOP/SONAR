@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:58.037496Z",
+    "collectedAt": "2026-11-23T13:44:18.453400Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "wjsn",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 44,
+          "end": 48,
+          "text": "WJSN",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-f6d6c3db927998e1",
@@ -76,35 +90,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
+      "artistType": "person",
+      "artistId": "person-6d3affd6c44aebdd",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 54,
-          "end": 59,
-          "text": "I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 59,
-          "text": "(G)I-DLE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yuqi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 3,
-          "end": 5,
-          "text": "우기",
+          "start": 11,
+          "end": 13,
+          "text": "엑시",
           "source": "title"
         }
       ]
@@ -125,14 +119,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "wjsn",
+      "artistId": "yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 44,
-          "end": 48,
-          "text": "WJSN",
+          "start": 3,
+          "end": 5,
+          "text": "우기",
           "source": "title"
         }
       ]
@@ -142,20 +136,6 @@
       "artistId": "person-507e18325fa70402",
       "state": "inferred",
       "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "여름",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-93f1f4e0118a5b58",
-      "state": "needs_review",
-      "reason": "shared-name",
       "matches": [
         {
           "start": 23,
@@ -181,14 +161,34 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-6d3affd6c44aebdd",
+      "artistId": "person-93f1f4e0118a5b58",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 23,
+          "end": 25,
+          "text": "여름",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 11,
-          "end": 13,
-          "text": "엑시",
+          "start": 51,
+          "end": 59,
+          "text": "(G)I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 54,
+          "end": 59,
+          "text": "I-DLE",
           "source": "title"
         }
       ]

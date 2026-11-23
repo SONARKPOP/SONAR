@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:57:22.195410Z",
+    "collectedAt": "2026-11-23T13:43:00.777034Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,46 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 11,
+          "text": "리센느",
+          "source": "title"
+        },
+        {
+          "start": 54,
+          "end": 61,
+          "text": "RESCENE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "rescene-zena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 62,
+          "end": 66,
+          "text": "ZENA",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 14,
+          "text": "제나",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-2300f45a248fc299",
@@ -76,20 +116,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-zena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-845f9828c743c539",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 12,
           "end": 14,
           "text": "제나",
-          "source": "title"
-        },
-        {
-          "start": 62,
-          "end": 66,
-          "text": "ZENA",
           "source": "title"
         }
       ]
@@ -104,40 +138,6 @@
           "start": 12,
           "end": 14,
           "text": "제나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-845f9828c743c539",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "제나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 11,
-          "text": "리센느",
-          "source": "title"
-        },
-        {
-          "start": 54,
-          "end": 61,
-          "text": "RESCENE",
           "source": "title"
         }
       ]

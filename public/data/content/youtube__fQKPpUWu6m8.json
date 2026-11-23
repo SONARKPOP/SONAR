@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T07:59:09.108540Z",
+    "collectedAt": "2026-11-23T13:46:44.906126Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-0cc88e0b9d8f878b",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ourbirthday",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 4,
-          "end": 5,
-          "text": "유",
+          "start": 7,
+          "end": 18,
+          "text": "OURBIRTHDAY",
+          "source": "title"
+        },
+        {
+          "start": 56,
+          "end": 67,
+          "text": "OURBIRTHDAY",
           "source": "title"
         }
       ]
@@ -72,21 +78,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ourbirthday",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-0cc88e0b9d8f878b",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 7,
-          "end": 18,
-          "text": "OURBIRTHDAY",
-          "source": "title"
-        },
-        {
-          "start": 56,
-          "end": 67,
-          "text": "OURBIRTHDAY",
+          "start": 4,
+          "end": 5,
+          "text": "유",
           "source": "title"
         }
       ]
