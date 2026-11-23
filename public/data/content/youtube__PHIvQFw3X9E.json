@@ -46,14 +46,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "bugaboo",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 28,
+          "text": "SECRET",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret-number",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 44,
-          "end": 51,
-          "text": "bugAboo",
+          "start": 22,
+          "end": 35,
+          "text": "SECRET NUMBER",
           "source": "title"
         }
       ]
@@ -74,20 +88,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 28,
-          "text": "SECRET",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "pixy",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -102,14 +102,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret-number",
+      "artistId": "bugaboo",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 22,
-          "end": 35,
-          "text": "SECRET NUMBER",
+          "start": 44,
+          "end": 51,
+          "text": "bugAboo",
           "source": "title"
         }
       ]
