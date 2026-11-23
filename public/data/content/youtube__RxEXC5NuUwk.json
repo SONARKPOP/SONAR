@@ -59,6 +59,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "gfriend",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 15,
+          "text": "여자친구",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 24,
+          "text": "GFRIEND",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "yuju",
       "state": "mention",
       "reason": "official-owner-reference",
@@ -112,30 +132,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gfriend",
+      "artistType": "person",
+      "artistId": "person-d0486a64061b31cd",
       "state": "inferred",
       "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 24,
-          "text": "GFRIEND",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 15,
-          "text": "여자친구",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "shinvi",
-      "state": "mention",
-      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 47,
@@ -146,10 +146,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-d0486a64061b31cd",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "shinvi",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 47,
