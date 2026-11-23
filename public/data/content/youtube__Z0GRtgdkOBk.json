@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2026-10-20T12:57:06Z",
   "groupIds": [
+    "rescene",
     "yena"
   ],
   "memberIds": [
@@ -37,30 +38,10 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "unclassified",
+    "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "izone-yena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 24,
-          "end": 28,
-          "text": "YENA",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 22,
-          "text": "최예나",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "yena",
@@ -83,6 +64,40 @@
     },
     {
       "artistType": "person",
+      "artistId": "izone-yena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 28,
+          "text": "YENA",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 22,
+          "text": "최예나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 30,
+          "end": 37,
+          "text": "RESCENE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "rescene-may",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -91,20 +106,6 @@
           "start": 7,
           "end": 10,
           "text": "MAY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 30,
-          "end": 37,
-          "text": "RESCENE",
           "source": "title"
         }
       ]

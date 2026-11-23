@@ -49,6 +49,20 @@
   "appearanceLinks": [
     {
       "artistType": "person",
+      "artistId": "artms-heejin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 36,
+          "end": 38,
+          "text": "희진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "loona-heejin",
       "state": "needs_review",
       "reason": "shared-name",
@@ -76,10 +90,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "artms-heejin",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "heejin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 36,
@@ -91,14 +105,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "heejin",
+      "artistId": "artms",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 36,
-          "end": 38,
-          "text": "희진",
+          "start": 24,
+          "end": 29,
+          "text": "ARTMS",
+          "source": "title"
+        },
+        {
+          "start": 68,
+          "end": 73,
+          "text": "artms",
           "source": "title"
         }
       ]
@@ -127,26 +147,6 @@
           "start": 44,
           "end": 46,
           "text": "하슬",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "artms",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 24,
-          "end": 29,
-          "text": "ARTMS",
-          "source": "title"
-        },
-        {
-          "start": 68,
-          "end": 73,
-          "text": "artms",
           "source": "title"
         }
       ]
