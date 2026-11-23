@@ -57,6 +57,26 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "hello-venus",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 17,
+          "text": "HELLOVENUS",
+          "source": "title"
+        },
+        {
+          "start": 18,
+          "end": 23,
+          "text": "헬로비너스",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-18ce3b969b504550",
       "state": "inferred",
@@ -71,30 +91,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "hello-venus",
+      "artistType": "person",
+      "artistId": "person-82c8dfffcc8a320b",
       "state": "inferred",
       "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 18,
-          "end": 23,
-          "text": "헬로비너스",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 17,
-          "text": "HELLOVENUS",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "mention",
-      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 35,
@@ -105,10 +105,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-82c8dfffcc8a320b",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "alice",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 35,
