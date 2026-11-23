@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:39:32.657859Z",
+    "collectedAt": "2026-11-23T07:58:28.174610Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,38 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "오마이걸",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-6117226ecd9c488c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-825348b001ce3be9",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "소미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-9e234c5ab92ae35e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 6,
@@ -89,10 +117,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-9e234c5ab92ae35e",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "yubin",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 6,
@@ -117,8 +145,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yubin",
+      "artistType": "person",
+      "artistId": "person-6117226ecd9c488c",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -126,34 +154,6 @@
           "start": 6,
           "end": 8,
           "text": "유빈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-825348b001ce3be9",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 10,
-          "end": 12,
-          "text": "소미",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 5,
-          "text": "오마이걸",
           "source": "title"
         }
       ]

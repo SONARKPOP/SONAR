@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:39:32.647604Z",
+    "collectedAt": "2026-11-23T07:58:28.160745Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c73ce5fb2451dbbf",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "wjsn",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 24,
-          "end": 25,
-          "text": "봄",
+          "start": 11,
+          "end": 15,
+          "text": "WJSN",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 9,
+          "text": "우주소녀",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c3c326d43c8fd030",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 59,
+          "end": 61,
+          "text": "우정",
           "source": "title"
         }
       ]
@@ -72,34 +92,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c3c326d43c8fd030",
+      "artistId": "person-c73ce5fb2451dbbf",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 59,
-          "end": 61,
-          "text": "우정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wjsn",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 9,
-          "text": "우주소녀",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 15,
-          "text": "WJSN",
+          "start": 24,
+          "end": 25,
+          "text": "봄",
           "source": "title"
         }
       ]

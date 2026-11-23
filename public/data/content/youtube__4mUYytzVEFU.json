@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:37:51.473443Z",
+    "collectedAt": "2026-11-23T07:57:25.636725Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,21 +44,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-29b673c1354993f1",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 15,
-          "end": 16,
-          "text": "별",
+          "start": 47,
+          "end": 49,
+          "text": "청하",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 22,
-          "end": 23,
-          "text": "별",
+          "start": 47,
+          "end": 49,
+          "text": "청하",
           "source": "title"
         }
       ]
@@ -79,28 +87,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "ioi-chungha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-29b673c1354993f1",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 47,
-          "end": 49,
-          "text": "청하",
+          "start": 15,
+          "end": 16,
+          "text": "별",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "chungha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
-          "start": 47,
-          "end": 49,
-          "text": "청하",
+          "start": 22,
+          "end": 23,
+          "text": "별",
           "source": "title"
         }
       ]

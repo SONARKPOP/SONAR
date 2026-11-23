@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:38:38.469109Z",
+    "collectedAt": "2026-11-23T07:57:54.684098Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,15 +48,41 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-5035c2dc85c0c21e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "jo-yuri",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 29,
-          "end": 30,
-          "text": "수",
+          "start": 4,
+          "end": 11,
+          "text": "JO YURI",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 3,
+          "text": "조유리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "izone-jo-yuri",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 4,
+          "end": 11,
+          "text": "JO YURI",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 3,
+          "text": "조유리",
           "source": "title"
         }
       ]
@@ -77,40 +103,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "izone-jo-yuri",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-5035c2dc85c0c21e",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "조유리",
-          "source": "title"
-        },
-        {
-          "start": 4,
-          "end": 11,
-          "text": "JO YURI",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "jo-yuri",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 3,
-          "text": "조유리",
-          "source": "title"
-        },
-        {
-          "start": 4,
-          "end": 11,
-          "text": "JO YURI",
+          "start": 29,
+          "end": 30,
+          "text": "수",
           "source": "title"
         }
       ]

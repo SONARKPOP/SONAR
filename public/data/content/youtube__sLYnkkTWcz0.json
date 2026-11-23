@@ -31,7 +31,7 @@
   "actualEndTime": "2025-11-04T08:04:37Z",
   "scheduledStartTime": "2025-11-04T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-23T01:41:29.613505Z",
+    "collectedAt": "2026-11-23T07:59:46.534997Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,41 +45,15 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "gidle-miyeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "미연",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 14,
-          "text": "MIYEON",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "miyeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "say-my-name",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "미연",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 14,
-          "text": "MIYEON",
+          "start": 17,
+          "end": 28,
+          "text": "Say My Name",
           "source": "title"
         }
       ]
@@ -99,15 +73,41 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistType": "person",
+      "artistId": "gidle-miyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 17,
-          "end": 28,
-          "text": "Say My Name",
+          "start": 8,
+          "end": 14,
+          "text": "MIYEON",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "text": "미연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "miyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 8,
+          "end": 14,
+          "text": "MIYEON",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "text": "미연",
           "source": "title"
         }
       ]

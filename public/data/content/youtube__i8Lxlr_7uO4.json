@@ -34,7 +34,7 @@
   "actualEndTime": "2025-02-05T10:16:01Z",
   "scheduledStartTime": "2025-02-05T09:58:00Z",
   "source": {
-    "collectedAt": "2026-11-23T01:40:45.725806Z",
+    "collectedAt": "2026-11-23T07:59:16.472634Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,15 +48,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "itzy-member-9a631d0b740b",
+      "artistType": "group",
+      "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 57,
-          "end": 59,
-          "text": "류진",
+          "start": 43,
+          "end": 46,
+          "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 39,
+          "end": 46,
+          "text": "(여자)아이들",
           "source": "title"
         }
       ]
@@ -76,30 +82,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 39,
-          "end": 46,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 43,
-          "end": 46,
-          "text": "아이들",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 47,
@@ -138,15 +124,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "soyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 47,
           "end": 49,
           "text": "소연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "itzy-member-9a631d0b740b",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 57,
+          "end": 59,
+          "text": "류진",
           "source": "title"
         }
       ]

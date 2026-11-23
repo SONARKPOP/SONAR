@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:41:22.649687Z",
+    "collectedAt": "2026-11-23T07:59:40.535214Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,20 @@
       "artistId": "person-cbbb12691140e223",
       "state": "needs_review",
       "reason": "shared-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "지우",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "nmixx-member-c8f92f89ce72",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 18,
@@ -101,31 +115,11 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "nmixx-member-c8f92f89ce72",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 18,
-          "end": 20,
-          "text": "지우",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "nmixx",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
-        {
-          "start": 56,
-          "end": 61,
-          "text": "NMIXX",
-          "source": "title"
-        },
         {
           "start": 14,
           "end": 17,
@@ -136,6 +130,12 @@
           "start": 63,
           "end": 66,
           "text": "엔믹스",
+          "source": "title"
+        },
+        {
+          "start": 56,
+          "end": 61,
+          "text": "NMIXX",
           "source": "title"
         }
       ]

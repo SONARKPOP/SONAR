@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:39:02.922671Z",
+    "collectedAt": "2026-11-23T07:58:09.210980Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -78,36 +78,22 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "lovelyz-yoo-ji-ae",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 21,
-          "end": 24,
-          "text": "유지애",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yoo-ji-ae",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 21,
-          "end": 24,
-          "text": "유지애",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "jeong-ye-in",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "정예인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-110a6a07afa29cb8",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -134,15 +120,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-110a6a07afa29cb8",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "yoo-ji-ae",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 16,
-          "end": 19,
-          "text": "정예인",
+          "start": 21,
+          "end": 24,
+          "text": "유지애",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-yoo-ji-ae",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 24,
+          "text": "유지애",
           "source": "title"
         }
       ]

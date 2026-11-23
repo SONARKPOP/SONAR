@@ -7,6 +7,7 @@
   "description": "새로운 Zl금이 필요할 때, \nMake Your Sta-Z\nSTATION Z\n\nKBS 쿨FM 89.1MHz(수도권)\n인스타그램 @stationz89.1\n\n#유아 #유 #SELFISH \n#스테이션제트 #STATIONZ #스제 #크브스 #KBS #쿨FM89.1 #보이는라디오 #라디오 #YooA #오마이걸 #OHMYGIRL #온앤오프 #ONF #유토 #온앤오프유의NightFlight #WM #덞엠",
   "publishedAt": "2022-11-22T05:26:01Z",
   "groupIds": [
+    "oh-my-girl",
     "yooa"
   ],
   "memberIds": [
@@ -30,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:38:34.978663Z",
+    "collectedAt": "2026-11-23T07:57:52.113095Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -38,27 +39,35 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-0cc88e0b9d8f878b",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "oh-my-girl-yooa",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 15,
-          "end": 16,
-          "text": "유",
+          "start": 33,
+          "end": 35,
+          "text": "유아",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yooa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 59,
-          "end": 60,
-          "text": "유",
+          "start": 33,
+          "end": 35,
+          "text": "유아",
           "source": "title"
         }
       ]
@@ -84,29 +93,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yooa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 33,
-          "end": 35,
-          "text": "유아",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-0cc88e0b9d8f878b",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 33,
-          "end": 35,
-          "text": "유아",
+          "start": 15,
+          "end": 16,
+          "text": "유",
+          "source": "title"
+        },
+        {
+          "start": 59,
+          "end": 60,
+          "text": "유",
           "source": "title"
         }
       ]

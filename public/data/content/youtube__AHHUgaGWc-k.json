@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:38:15.179858Z",
+    "collectedAt": "2026-11-23T07:57:40.550325Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -51,6 +51,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-2c227955eeea6554",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 52,
+          "end": 54,
+          "text": "지혜",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "wonder-girls-hatfelt",
@@ -80,50 +94,22 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-2c227955eeea6554",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 52,
-          "end": 54,
-          "text": "지혜",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "lovelyz-yoo-ji-ae",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 26,
-          "text": "유지애",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yoo-ji-ae",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 23,
-          "end": 26,
-          "text": "유지애",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "jeong-ye-in",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 28,
+          "end": 31,
+          "text": "정예인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-110a6a07afa29cb8",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -150,15 +136,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-110a6a07afa29cb8",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "yoo-ji-ae",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 28,
-          "end": 31,
-          "text": "정예인",
+          "start": 23,
+          "end": 26,
+          "text": "유지애",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-yoo-ji-ae",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 26,
+          "text": "유지애",
           "source": "title"
         }
       ]

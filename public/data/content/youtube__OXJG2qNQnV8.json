@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:39:16.315378Z",
+    "collectedAt": "2026-11-23T07:58:17.721748Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,31 +45,11 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 24,
-          "text": "RESCENE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "rescene-zena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-fd5f710fbd3fcb9b",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
-        {
-          "start": 25,
-          "end": 29,
-          "text": "ZENA",
-          "source": "title"
-        },
         {
           "start": 30,
           "end": 32,
@@ -108,14 +88,34 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-fd5f710fbd3fcb9b",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "rescene-zena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 30,
           "end": 32,
           "text": "제나",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 29,
+          "text": "ZENA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 24,
+          "text": "RESCENE",
           "source": "title"
         }
       ]

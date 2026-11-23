@@ -29,7 +29,7 @@
   "actualEndTime": "2026-01-13T08:05:28Z",
   "scheduledStartTime": "2026-01-13T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-23T01:39:47.753203Z",
+    "collectedAt": "2026-11-23T07:58:38.487277Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 16,
+          "text": "SAY MY NAME",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 23,
+          "text": "세이마이네임",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -52,26 +72,6 @@
           "start": 58,
           "end": 59,
           "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 23,
-          "text": "세이마이네임",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 16,
-          "text": "SAY MY NAME",
           "source": "title"
         }
       ]

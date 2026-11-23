@@ -33,7 +33,7 @@
   "actualEndTime": "2024-07-22T04:57:12Z",
   "scheduledStartTime": "2024-07-22T04:00:00Z",
   "source": {
-    "collectedAt": "2026-11-23T01:38:44.798344Z",
+    "collectedAt": "2026-11-23T07:57:58.436352Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,8 +47,22 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "아이들",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-7ec6d765a59e3467",
+      "artistId": "person-3bba35b66a3d2957",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -76,7 +90,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-3bba35b66a3d2957",
+      "artistId": "person-7ec6d765a59e3467",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -117,38 +131,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 20,
-          "end": 23,
-          "text": "아이들",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-53779dccf63f8465",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 15,
-          "end": 17,
-          "text": "신디",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 29,
@@ -187,15 +173,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "soyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 29,
           "end": 31,
           "text": "소연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-53779dccf63f8465",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "신디",
           "source": "title"
         }
       ]

@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:40:23.781494Z",
+    "collectedAt": "2026-11-23T07:59:02.186160Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 30,
+          "end": 32,
+          "text": "키스",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 20,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "kiss-of-life",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 16,
           "end": 28,
           "text": "KISS OF LIFE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 20,
-          "text": "KISS",
-          "source": "title"
-        },
-        {
-          "start": 30,
-          "end": 32,
-          "text": "키스",
           "source": "title"
         }
       ]

@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:37:38.745128Z",
+    "collectedAt": "2026-11-23T07:57:18.219509Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "아이들",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "minnie",
@@ -76,24 +90,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 3,
-          "text": "아이들",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 12,
@@ -132,10 +132,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "soyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 12,

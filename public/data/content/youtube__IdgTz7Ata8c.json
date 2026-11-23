@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:38:50.947840Z",
+    "collectedAt": "2026-11-23T07:58:02.050213Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "2ne1-sandara-park",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 16,
+          "text": "산다라박",
+          "source": "title"
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "text": "산다라박",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "sandara-park",
@@ -66,20 +86,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "2ne1-sandara-park",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-1e4c52ed979eb0a0",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 12,
-          "end": 16,
-          "text": "산다라박",
+          "start": 18,
+          "end": 19,
+          "text": "팬",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a0260b2bdfc6f22a",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 48,
-          "end": 52,
-          "text": "산다라박",
+          "start": 20,
+          "end": 22,
+          "text": "사랑",
           "source": "title"
         }
       ]
@@ -108,34 +136,6 @@
           "start": 20,
           "end": 22,
           "text": "사랑",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-a0260b2bdfc6f22a",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 20,
-          "end": 22,
-          "text": "사랑",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-1e4c52ed979eb0a0",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 18,
-          "end": 19,
-          "text": "팬",
           "source": "title"
         }
       ]

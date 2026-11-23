@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:38:34.846262Z",
+    "collectedAt": "2026-11-23T07:57:52.038532Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,14 +48,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "luv",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "jo-yuri",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 31,
-          "end": 33,
-          "text": "러브",
+          "start": 17,
+          "end": 24,
+          "text": "JO YURI",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 28,
+          "text": "조유리",
           "source": "title"
         }
       ]
@@ -67,35 +73,15 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 25,
-          "end": 28,
-          "text": "조유리",
-          "source": "title"
-        },
-        {
           "start": 17,
           "end": 24,
           "text": "JO YURI",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "jo-yuri",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
           "start": 25,
           "end": 28,
           "text": "조유리",
-          "source": "title"
-        },
-        {
-          "start": 17,
-          "end": 24,
-          "text": "JO YURI",
           "source": "title"
         }
       ]
@@ -124,6 +110,20 @@
           "start": 20,
           "end": 24,
           "text": "YURI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "luv",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 31,
+          "end": 33,
+          "text": "러브",
           "source": "title"
         }
       ]

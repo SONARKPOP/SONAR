@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T01:40:18.909906Z",
+    "collectedAt": "2026-11-23T07:58:59.352948Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,10 +45,24 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 47,
+          "end": 51,
+          "text": "오마이걸",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-6117226ecd9c488c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-9e234c5ab92ae35e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 3,
@@ -87,10 +101,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-9e234c5ab92ae35e",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "yubin",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 3,
@@ -115,8 +129,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yubin",
+      "artistType": "person",
+      "artistId": "person-6117226ecd9c488c",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -124,20 +138,6 @@
           "start": 3,
           "end": 5,
           "text": "유빈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 47,
-          "end": 51,
-          "text": "오마이걸",
           "source": "title"
         }
       ]
