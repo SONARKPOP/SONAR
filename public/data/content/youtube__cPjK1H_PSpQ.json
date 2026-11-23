@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:46:27.021461Z",
+    "collectedAt": "2026-11-23T19:23:25.171813Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,24 +44,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "iu",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 48,
-          "end": 50,
-          "text": "IU",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "lightsum",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 70,
+          "end": 78,
+          "text": "LIGHTSUM",
+          "source": "title"
+        },
         {
           "start": 7,
           "end": 10,
@@ -73,11 +65,19 @@
           "end": 68,
           "text": "라잇썸",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "iu",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 70,
-          "end": 78,
-          "text": "LIGHTSUM",
+          "start": 48,
+          "end": 50,
+          "text": "IU",
           "source": "title"
         }
       ]

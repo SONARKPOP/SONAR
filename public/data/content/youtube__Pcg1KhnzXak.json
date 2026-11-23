@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:45:07.948134Z",
+    "collectedAt": "2026-11-23T19:22:44.714793Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-656871b32f77f770",
+      "artistType": "group",
+      "artistId": "apink",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 72,
-          "end": 74,
-          "text": "보미",
+          "start": 0,
+          "end": 4,
+          "text": "에이핑크",
+          "source": "title"
+        },
+        {
+          "start": 64,
+          "end": 69,
+          "text": "Apink",
           "source": "title"
         }
       ]
@@ -73,21 +79,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "apink",
+      "artistType": "person",
+      "artistId": "person-656871b32f77f770",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 64,
-          "end": 69,
-          "text": "Apink",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 4,
-          "text": "에이핑크",
+          "start": 72,
+          "end": 74,
+          "text": "보미",
           "source": "title"
         }
       ]

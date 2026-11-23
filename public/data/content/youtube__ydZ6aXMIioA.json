@@ -33,14 +33,14 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:48:38.386838Z",
+    "collectedAt": "2026-11-23T19:24:30.243141Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -61,40 +61,6 @@
           "start": 50,
           "end": 57,
           "text": "키스오브라이프",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 11,
-          "text": "KISS",
-          "source": "title"
-        },
-        {
-          "start": 37,
-          "end": 41,
-          "text": "Kiss",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "kiss-of-life-member-da7f28bccc9c",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 20,
-          "end": 21,
-          "text": "벨",
           "source": "title"
         }
       ]
@@ -129,14 +95,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c29ac6506908865e",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "kiss-of-life-member-da7f28bccc9c",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 22,
-          "end": 24,
-          "text": "하늘",
+          "start": 20,
+          "end": 21,
+          "text": "벨",
           "source": "title"
         }
       ]
@@ -151,6 +117,40 @@
           "start": 22,
           "end": 24,
           "text": "하늘",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c29ac6506908865e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "하늘",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 11,
+          "text": "KISS",
+          "source": "title"
+        },
+        {
+          "start": 37,
+          "end": 41,
+          "text": "Kiss",
           "source": "title"
         }
       ]

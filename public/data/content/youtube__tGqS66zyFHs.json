@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:48:07.365317Z",
+    "collectedAt": "2026-11-23T19:24:14.384168Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,11 +46,31 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "person",
+      "artistId": "tw-jeongyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "정연",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "newjeans",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 13,
+          "end": 21,
+          "text": "NewJeans",
+          "source": "title"
+        },
         {
           "start": 9,
           "end": 12,
@@ -61,26 +81,6 @@
           "start": 54,
           "end": 57,
           "text": "뉴진스",
-          "source": "title"
-        },
-        {
-          "start": 13,
-          "end": 21,
-          "text": "NewJeans",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "tw-jeongyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 4,
-          "end": 6,
-          "text": "정연",
           "source": "title"
         }
       ]
@@ -101,20 +101,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "twice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 49,
-          "end": 53,
-          "text": "트와이스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -123,6 +109,20 @@
           "start": 75,
           "end": 77,
           "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "twice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 49,
+          "end": 53,
+          "text": "트와이스",
           "source": "title"
         }
       ]

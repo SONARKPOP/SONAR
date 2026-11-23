@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:45:41.451668Z",
+    "collectedAt": "2026-11-23T19:23:01.819386Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "hitgs-seohee",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 23,
+          "end": 29,
+          "text": "SEOHEE",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 32,
+          "text": "서희",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "tuide-seohee",
@@ -66,21 +86,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "hitgs-seohee",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 23,
-          "end": 29,
-          "text": "SEOHEE",
-          "source": "title"
-        },
-        {
-          "start": 30,
-          "end": 32,
-          "text": "서희",
+          "start": 17,
+          "end": 22,
+          "text": "TUIDE",
           "source": "title"
         }
       ]
@@ -109,20 +123,6 @@
           "start": 30,
           "end": 32,
           "text": "서희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 22,
-          "text": "TUIDE",
           "source": "title"
         }
       ]

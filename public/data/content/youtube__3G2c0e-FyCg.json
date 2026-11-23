@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:43:00.860872Z",
+    "collectedAt": "2026-11-23T19:21:39.287251Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,11 +44,25 @@
   "programName": "리무진서비스",
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-context-v2",
-    "source": "title",
+    "policy": "title-only-v1",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-55aca1823bded05b",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 71,
+          "end": 74,
+          "text": "JIN",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "kiss",
@@ -93,20 +107,6 @@
           "start": 30,
           "end": 32,
           "text": "이현",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-55aca1823bded05b",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 71,
-          "end": 74,
-          "text": "JIN",
           "source": "title"
         }
       ]

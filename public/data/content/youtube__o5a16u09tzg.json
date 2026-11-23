@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:47:37.315643Z",
+    "collectedAt": "2026-11-23T19:23:59.858411Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -66,8 +66,22 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 51,
+          "end": 53,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "qwer-member-3c10bb67ee7a",
+      "artistId": "person-c0ba3a19752c65c8",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -81,9 +95,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-15b6ea01ba8829c9",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "qwer-member-3c10bb67ee7a",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 19,
@@ -123,28 +137,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c0ba3a19752c65c8",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-15b6ea01ba8829c9",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 19,
           "end": 21,
           "text": "시연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 51,
-          "end": 53,
-          "text": "키스",
           "source": "title"
         }
       ]

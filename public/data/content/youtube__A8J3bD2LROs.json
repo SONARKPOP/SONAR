@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:43:39.399005Z",
+    "collectedAt": "2026-11-23T19:21:59.121948Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,21 +46,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
+      "artistType": "person",
+      "artistId": "person-37598e798d5836fd",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "미미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-264e8908f1db1283",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 11,
-          "end": 21,
-          "text": "OH MY GIRL",
-          "source": "title"
-        },
-        {
-          "start": 6,
-          "end": 10,
-          "text": "오마이걸",
+          "start": 3,
+          "end": 5,
+          "text": "미미",
           "source": "title"
         }
       ]
@@ -94,29 +102,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-37598e798d5836fd",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 3,
-          "end": 5,
-          "text": "미미",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-264e8908f1db1283",
+      "artistType": "group",
+      "artistId": "oh-my-girl",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 3,
-          "end": 5,
-          "text": "미미",
+          "start": 11,
+          "end": 21,
+          "text": "OH MY GIRL",
+          "source": "title"
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "text": "오마이걸",
           "source": "title"
         }
       ]

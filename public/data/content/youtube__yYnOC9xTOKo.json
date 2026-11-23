@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:48:37.858615Z",
+    "collectedAt": "2026-11-23T19:24:29.980003Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,6 +48,26 @@
     {
       "artistType": "person",
       "artistId": "tw-chaeyoung",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 32,
+          "text": "CHAEYOUNG",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 35,
+          "text": "채영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "chaeyoung",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -87,20 +107,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "chaeyoung",
+      "artistId": "twice",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 23,
-          "end": 32,
-          "text": "CHAEYOUNG",
-          "source": "title"
-        },
-        {
-          "start": 33,
-          "end": 35,
-          "text": "채영",
+          "start": 17,
+          "end": 22,
+          "text": "TWICE",
           "source": "title"
         }
       ]
@@ -115,20 +129,6 @@
           "start": 33,
           "end": 35,
           "text": "채영",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "twice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 22,
-          "text": "TWICE",
           "source": "title"
         }
       ]

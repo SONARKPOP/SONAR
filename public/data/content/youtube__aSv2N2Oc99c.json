@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:46:16.421638Z",
+    "collectedAt": "2026-11-23T19:23:19.611261Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,6 +48,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "gidle-miyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "미연",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 49,
+          "text": "미연",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "miyeon",
@@ -70,48 +90,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "gidle-miyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-a6fddffa2d03e5bf",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 18,
-          "end": 20,
-          "text": "미연",
-          "source": "title"
-        },
-        {
-          "start": 47,
-          "end": 49,
-          "text": "미연",
+          "start": 55,
+          "end": 57,
+          "text": "민주",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "gidle-yuqi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 51,
-          "end": 53,
-          "text": "우기",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yuqi",
+      "artistId": "illit-member-a5c02f904155",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 51,
-          "end": 53,
-          "text": "우기",
+          "start": 55,
+          "end": 57,
+          "text": "민주",
           "source": "title"
         }
       ]
@@ -145,29 +145,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "illit-member-a5c02f904155",
+      "artistType": "group",
+      "artistId": "yuqi",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 55,
-          "end": 57,
-          "text": "민주",
+          "start": 51,
+          "end": 53,
+          "text": "우기",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "person-a6fddffa2d03e5bf",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "gidle-yuqi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 55,
-          "end": 57,
-          "text": "민주",
+          "start": 51,
+          "end": 53,
+          "text": "우기",
           "source": "title"
         }
       ]

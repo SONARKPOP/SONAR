@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:48:05.961891Z",
+    "collectedAt": "2026-11-23T19:24:13.729291Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "fx",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "f(x)",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-1b82c7ab68987815",
@@ -71,15 +85,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "fx",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "f(x)",
+          "start": 13,
+          "end": 14,
+          "text": "안",
           "source": "title"
         }
       ]
@@ -100,20 +114,6 @@
           "start": 26,
           "end": 30,
           "text": "크리스탈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 13,
-          "end": 14,
-          "text": "안",
           "source": "title"
         }
       ]

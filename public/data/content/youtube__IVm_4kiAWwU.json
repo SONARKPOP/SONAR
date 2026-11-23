@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:44:26.813609Z",
+    "collectedAt": "2026-11-23T19:22:23.562156Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,6 +41,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "episode",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 19,
+          "end": 26,
+          "text": "Episode",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "alice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "ALICE",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 10,
+          "text": "앨리스",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-9dda2eae88d9d10c",
@@ -56,26 +90,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 10,
-          "text": "앨리스",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 5,
-          "text": "ALICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-82c8dfffcc8a320b",
       "state": "needs_review",
@@ -85,20 +99,6 @@
           "start": 7,
           "end": 10,
           "text": "앨리스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "episode",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 19,
-          "end": 26,
-          "text": "Episode",
           "source": "title"
         }
       ]

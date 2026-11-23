@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:44:50.074501Z",
+    "collectedAt": "2026-11-23T19:22:35.933121Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,15 +60,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "girls-generation-yoona",
+      "artistType": "group",
+      "artistId": "bugaboo",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 76,
-          "end": 81,
-          "text": "Yoona",
+          "start": 29,
+          "end": 32,
+          "text": "버가부",
+          "source": "title"
+        },
+        {
+          "start": 55,
+          "end": 62,
+          "text": "bugAboo",
           "source": "title"
         }
       ]
@@ -88,21 +94,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "bugaboo",
+      "artistType": "person",
+      "artistId": "girls-generation-yoona",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 29,
-          "end": 32,
-          "text": "버가부",
-          "source": "title"
-        },
-        {
-          "start": 55,
-          "end": 62,
-          "text": "bugAboo",
+          "start": 76,
+          "end": 81,
+          "text": "Yoona",
           "source": "title"
         }
       ]

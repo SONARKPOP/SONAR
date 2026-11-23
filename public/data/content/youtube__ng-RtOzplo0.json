@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:47:35.078200Z",
+    "collectedAt": "2026-11-23T19:23:58.794480Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,8 +45,28 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 21,
+          "text": "SAY MY NAME",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 29,
+          "text": "세이마이네임",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "rescene-may",
+      "artistId": "person-dbe1e024b60849a5",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -74,20 +94,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-dbe1e024b60849a5",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 31,
-          "end": 33,
-          "text": "메이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-6710cdc41d20f9fd",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -101,21 +107,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "rescene-may",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 10,
-          "end": 21,
-          "text": "SAY MY NAME",
-          "source": "title"
-        },
-        {
-          "start": 23,
-          "end": 29,
-          "text": "세이마이네임",
+          "start": 31,
+          "end": 33,
+          "text": "메이",
           "source": "title"
         }
       ]

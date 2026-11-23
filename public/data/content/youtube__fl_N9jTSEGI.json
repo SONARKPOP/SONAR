@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:46:46.820288Z",
+    "collectedAt": "2026-11-23T19:23:35.008478Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -59,23 +59,25 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "rescene-minami",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 45,
+          "end": 48,
+          "text": "미나미",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "rescene",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
-        {
-          "start": 20,
-          "end": 23,
-          "text": "리센느",
-          "source": "title"
-        },
-        {
-          "start": 82,
-          "end": 85,
-          "text": "리센느",
-          "source": "title"
-        },
         {
           "start": 12,
           "end": 19,
@@ -87,19 +89,17 @@
           "end": 71,
           "text": "RESCENE",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "rescene-minami",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 45,
-          "end": 48,
-          "text": "미나미",
+          "start": 20,
+          "end": 23,
+          "text": "리센느",
+          "source": "title"
+        },
+        {
+          "start": 82,
+          "end": 85,
+          "text": "리센느",
           "source": "title"
         }
       ]
