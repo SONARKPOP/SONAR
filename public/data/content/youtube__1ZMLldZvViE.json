@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:10:44.202285Z",
+    "collectedAt": "2026-11-23T01:37:38.564643Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,23 +49,37 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-2300f45a248fc299",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-b1ac6c92f40f08e6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 72,
-          "end": 74,
-          "text": "세계",
+          "start": 23,
+          "end": 25,
+          "text": "우아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "wooah",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 25,
+          "text": "우아",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "person-60c0563ec31a28a5",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-8afd0dc999a5a3e5",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 26,
@@ -91,9 +105,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-8afd0dc999a5a3e5",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-60c0563ec31a28a5",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 26,
@@ -104,29 +118,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "wooah",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "우아",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-b1ac6c92f40f08e6",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-2300f45a248fc299",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 23,
-          "end": 25,
-          "text": "우아",
+          "start": 72,
+          "end": 74,
+          "text": "세계",
           "source": "title"
         }
       ]

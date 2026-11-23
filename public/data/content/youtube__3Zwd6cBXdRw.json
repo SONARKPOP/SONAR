@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:10:51.876272Z",
+    "collectedAt": "2026-11-23T01:37:46.556717Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "ily1",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 11,
+          "text": "아일리원",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 5,
+          "text": "ILY:1",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "episode",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 20,
           "end": 27,
           "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ily1",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 5,
-          "text": "ILY:1",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 11,
-          "text": "아일리원",
           "source": "title"
         }
       ]

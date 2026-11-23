@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:11:19.000222Z",
+    "collectedAt": "2026-11-23T01:38:16.734739Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,25 +43,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-287b4bd95d98a04a",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 6,
-          "end": 7,
-          "text": "주",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "gfriend",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 29,
+          "end": 36,
+          "text": "GFRIEND",
+          "source": "title"
+        },
         {
           "start": 11,
           "end": 15,
@@ -73,11 +65,19 @@
           "end": 28,
           "text": "여자친구",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-287b4bd95d98a04a",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 29,
-          "end": 36,
-          "text": "GFRIEND",
+          "start": 6,
+          "end": 7,
+          "text": "주",
           "source": "title"
         }
       ]

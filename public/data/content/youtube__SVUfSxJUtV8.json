@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:12:27.393061Z",
+    "collectedAt": "2026-11-23T01:39:33.494069Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,10 +60,24 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "dayoung",
+      "artistType": "person",
+      "artistId": "person-6d3affd6c44aebdd",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "엑시",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-9b7ede9e1f509c65",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 30,
@@ -88,6 +102,20 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "dayoung",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 30,
+          "end": 32,
+          "text": "다영",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-ff9c145acecbf386",
       "state": "needs_review",
@@ -97,34 +125,6 @@
           "start": 30,
           "end": 32,
           "text": "다영",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-9b7ede9e1f509c65",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 30,
-          "end": 32,
-          "text": "다영",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-6d3affd6c44aebdd",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 10,
-          "text": "엑시",
           "source": "title"
         }
       ]

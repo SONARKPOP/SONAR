@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:12:52.564323Z",
+    "collectedAt": "2026-11-23T01:40:01.383650Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "girls-generation-taeyeon",
+      "artistType": "group",
+      "artistId": "triples",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 13,
-          "end": 15,
-          "text": "태연",
+          "start": 63,
+          "end": 68,
+          "text": "트리플에스",
+          "source": "title"
+        },
+        {
+          "start": 54,
+          "end": 61,
+          "text": "tripleS",
           "source": "title"
         }
       ]
@@ -73,21 +79,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "triples",
+      "artistType": "person",
+      "artistId": "girls-generation-taeyeon",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 54,
-          "end": 61,
-          "text": "tripleS",
-          "source": "title"
-        },
-        {
-          "start": 63,
-          "end": 68,
-          "text": "트리플에스",
+          "start": 13,
+          "end": 15,
+          "text": "태연",
           "source": "title"
         }
       ]

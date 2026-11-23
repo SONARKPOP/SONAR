@@ -8,7 +8,6 @@
   "publishedAt": "2020-03-01T03:00:01Z",
   "groupIds": [
     "dreamnote",
-    "oh-my-girl",
     "yooa"
   ],
   "memberIds": [
@@ -34,42 +33,34 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:11:27.834833Z",
+    "collectedAt": "2026-11-23T01:38:26.454831Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-d8ed16dd74b1c036",
+      "artistType": "group",
+      "artistId": "dreamnote",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 8,
-          "text": "유아이",
+          "start": 0,
+          "end": 4,
+          "text": "드림노트",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
-          "start": 5,
-          "end": 7,
-          "text": "유아",
+          "start": 22,
+          "end": 31,
+          "text": "DreamNote",
           "source": "title"
         }
       ]
@@ -89,21 +80,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "dreamnote",
+      "artistType": "person",
+      "artistId": "oh-my-girl-yooa",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "유아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-d8ed16dd74b1c036",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 22,
-          "end": 31,
-          "text": "DreamNote",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 4,
-          "text": "드림노트",
+          "start": 5,
+          "end": 8,
+          "text": "유아이",
           "source": "title"
         }
       ]

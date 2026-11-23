@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:14:26.247427Z",
+    "collectedAt": "2026-11-23T01:41:45.183959Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,28 +48,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 4,
-          "end": 5,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-c50c1d5da305252d",
+      "artistId": "say-my-name",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 47,
-          "end": 49,
-          "text": "빛나",
+          "start": 24,
+          "end": 30,
+          "text": "세이마이네임",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 23,
+          "text": "SAY MY NAME",
           "source": "title"
         }
       ]
@@ -89,6 +81,20 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "s",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-661a89743ea077c5",
       "state": "inferred",
@@ -103,21 +109,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "say-my-name",
+      "artistType": "person",
+      "artistId": "person-c50c1d5da305252d",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 24,
-          "end": 30,
-          "text": "세이마이네임",
-          "source": "title"
-        },
-        {
-          "start": 12,
-          "end": 23,
-          "text": "SAY MY NAME",
+          "start": 47,
+          "end": 49,
+          "text": "빛나",
           "source": "title"
         }
       ]

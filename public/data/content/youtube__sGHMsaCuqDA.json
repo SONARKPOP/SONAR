@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:14:11.789871Z",
+    "collectedAt": "2026-11-23T01:41:28.796056Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -66,10 +66,16 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c2cc10bef5fe45c9",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hearts2hearts-ian",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 67,
+          "end": 70,
+          "text": "IAN",
+          "source": "title"
+        },
         {
           "start": 17,
           "end": 19,
@@ -94,20 +100,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "hearts2hearts-ian",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-c2cc10bef5fe45c9",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 17,
           "end": 19,
           "text": "이안",
-          "source": "title"
-        },
-        {
-          "start": 67,
-          "end": 70,
-          "text": "IAN",
           "source": "title"
         }
       ]

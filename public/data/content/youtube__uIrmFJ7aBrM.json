@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:14:19.836380Z",
+    "collectedAt": "2026-11-23T01:41:37.588277Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "blackpink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 27,
+          "end": 31,
+          "text": "블랙핑크",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 25,
+          "text": "BLACKPINK",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "rescene",
@@ -65,30 +85,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "blackpink",
+      "artistType": "person",
+      "artistId": "rescene-liv",
       "state": "inferred",
       "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 25,
-          "text": "BLACKPINK",
-          "source": "title"
-        },
-        {
-          "start": 27,
-          "end": 31,
-          "text": "블랙핑크",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-e6aff3c2bf942094",
-      "state": "needs_review",
-      "reason": "shared-name",
       "matches": [
         {
           "start": 77,
@@ -100,9 +100,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-liv",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-e6aff3c2bf942094",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 77,

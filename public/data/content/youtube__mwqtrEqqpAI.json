@@ -33,7 +33,7 @@
   "actualEndTime": "2025-03-12T10:34:04Z",
   "scheduledStartTime": "2025-03-12T09:58:00Z",
   "source": {
-    "collectedAt": "2026-11-22T19:13:51.451739Z",
+    "collectedAt": "2026-11-23T01:41:06.601986Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -67,10 +67,38 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "bibi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 72,
+          "end": 76,
+          "text": "BIBI",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
+      "artistId": "person-5035c2dc85c0c21e",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 11,
+          "text": "수",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "soyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 67,
@@ -82,9 +110,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "gidle-soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 67,
@@ -109,8 +137,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "soyeon",
+      "artistType": "person",
+      "artistId": "gidle-soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -118,34 +146,6 @@
           "start": 67,
           "end": 69,
           "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "bibi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 72,
-          "end": 76,
-          "text": "BIBI",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-5035c2dc85c0c21e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 10,
-          "end": 11,
-          "text": "수",
           "source": "title"
         }
       ]

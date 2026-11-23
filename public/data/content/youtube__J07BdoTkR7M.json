@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:11:51.690106Z",
+    "collectedAt": "2026-11-23T01:38:52.745519Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-635192b2e655114d",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "lightsum",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 12,
-          "text": "이유",
+          "start": 19,
+          "end": 27,
+          "text": "LIGHTSUM",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 17,
+          "text": "라잇썸",
           "source": "title"
         }
       ]
@@ -85,21 +91,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lightsum",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-635192b2e655114d",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 19,
-          "end": 27,
-          "text": "LIGHTSUM",
-          "source": "title"
-        },
-        {
-          "start": 14,
-          "end": 17,
-          "text": "라잇썸",
+          "start": 10,
+          "end": 12,
+          "text": "이유",
           "source": "title"
         }
       ]

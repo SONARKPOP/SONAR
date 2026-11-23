@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:14:30.067083Z",
+    "collectedAt": "2026-11-23T01:41:49.346314Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,14 +48,40 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "girls-generation-seohyun",
+      "artistId": "girls-generation-hyo",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 1,
-          "end": 3,
-          "text": "서현",
+          "start": 15,
+          "end": 18,
+          "text": "HYO",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 14,
+          "text": "효연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyo",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 18,
+          "text": "HYO",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 14,
+          "text": "효연",
           "source": "title"
         }
       ]
@@ -75,10 +101,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "seohyun",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "girls-generation-seohyun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 1,
@@ -90,40 +116,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "hyo",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "seohyun",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "효연",
-          "source": "title"
-        },
-        {
-          "start": 15,
-          "end": 18,
-          "text": "HYO",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "girls-generation-hyo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "효연",
-          "source": "title"
-        },
-        {
-          "start": 15,
-          "end": 18,
-          "text": "HYO",
+          "start": 1,
+          "end": 3,
+          "text": "서현",
           "source": "title"
         }
       ]

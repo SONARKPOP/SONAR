@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:12:37.759387Z",
+    "collectedAt": "2026-11-23T01:39:44.820423Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "twice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "TWICE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -55,20 +69,6 @@
           "start": 38,
           "end": 39,
           "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "tw-nayeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 6,
-          "end": 12,
-          "text": "Nayeon",
           "source": "title"
         }
       ]
@@ -88,15 +88,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "twice",
+      "artistType": "person",
+      "artistId": "tw-nayeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 5,
-          "text": "TWICE",
+          "start": 6,
+          "end": 12,
+          "text": "Nayeon",
           "source": "title"
         }
       ]

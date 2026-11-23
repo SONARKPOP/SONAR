@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:12:50.661152Z",
+    "collectedAt": "2026-11-23T01:39:59.160648Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,28 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-c406316ab93d03eb",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "lsf-kazuha",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 9,
-          "end": 11,
-          "text": "은채",
+          "start": 24,
+          "end": 27,
+          "text": "카즈하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "lesserafim",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 29,
+          "end": 33,
+          "text": "르세라핌",
           "source": "title"
         }
       ]
@@ -87,29 +101,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lesserafim",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 29,
-          "end": 33,
-          "text": "르세라핌",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "lsf-kazuha",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-c406316ab93d03eb",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 24,
-          "end": 27,
-          "text": "카즈하",
+          "start": 9,
+          "end": 11,
+          "text": "은채",
           "source": "title"
         }
       ]

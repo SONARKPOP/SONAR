@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-22T19:11:16.881655Z",
+    "collectedAt": "2026-11-23T01:38:14.350303Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-635192b2e655114d",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "apink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 21,
-          "end": 23,
-          "text": "이유",
+          "start": 0,
+          "end": 4,
+          "text": "에이핑크",
+          "source": "title"
+        },
+        {
+          "start": 31,
+          "end": 35,
+          "text": "에이핑크",
           "source": "title"
         }
       ]
@@ -85,21 +91,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "apink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-635192b2e655114d",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "에이핑크",
-          "source": "title"
-        },
-        {
-          "start": 31,
-          "end": 35,
-          "text": "에이핑크",
+          "start": 21,
+          "end": 23,
+          "text": "이유",
           "source": "title"
         }
       ]
