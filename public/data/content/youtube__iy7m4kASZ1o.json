@@ -7,7 +7,8 @@
   "description": "둘만의 7Heaven 속에서💜 #퍼플키스 #수안 님과 함께한 #치키챌린지 😘 #Shorts\n@PURPLEKISS\n⠀\n#CHEEKY_Challenge #치키챌린지 #EL7ZUP #엘즈업 #CHEEKY #케이 #KEI #PURPLE_KISS #SWAN",
   "publishedAt": "2023-09-25T11:00:37Z",
   "groupIds": [
-    "el7z-up"
+    "el7z-up",
+    "purple-kiss"
   ],
   "memberIds": [
     "purple-kiss-swan"
@@ -56,10 +57,24 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
+      "artistType": "group",
+      "artistId": "purple-kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 18,
+          "end": 22,
+          "text": "퍼플키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 24,
@@ -84,29 +99,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "swan",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 24,
           "end": 26,
           "text": "수안",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "purple-kiss",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 18,
-          "end": 22,
-          "text": "퍼플키스",
           "source": "title"
         }
       ]
