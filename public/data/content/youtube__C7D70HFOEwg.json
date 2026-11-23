@@ -56,17 +56,31 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "blackpink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 20,
+          "end": 29,
+          "text": "BLACKPINK",
+          "source": "title"
+        },
+        {
+          "start": 31,
+          "end": 35,
+          "text": "블랙핑크",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "bp-rose",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
-        {
-          "start": 37,
-          "end": 41,
-          "text": "ROSÉ",
-          "source": "title"
-        },
         {
           "start": 16,
           "end": 18,
@@ -77,6 +91,12 @@
           "start": 43,
           "end": 45,
           "text": "로제",
+          "source": "title"
+        },
+        {
+          "start": 37,
+          "end": 41,
+          "text": "ROSÉ",
           "source": "title"
         }
       ]
@@ -88,12 +108,6 @@
       "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 37,
-          "end": 41,
-          "text": "ROSÉ",
-          "source": "title"
-        },
-        {
           "start": 16,
           "end": 18,
           "text": "로제",
@@ -104,25 +118,11 @@
           "end": 45,
           "text": "로제",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "blackpink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 31,
-          "end": 35,
-          "text": "블랙핑크",
-          "source": "title"
         },
         {
-          "start": 20,
-          "end": 29,
-          "text": "BLACKPINK",
+          "start": 37,
+          "end": 41,
+          "text": "ROSÉ",
           "source": "title"
         }
       ]
