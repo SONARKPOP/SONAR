@@ -47,15 +47,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "izone",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
+          "start": 70,
+          "end": 74,
+          "text": "Swan",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 70,
+          "end": 74,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -90,28 +104,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "izone",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 70,
-          "end": 74,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 70,
-          "end": 74,
-          "text": "Swan",
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
           "source": "title"
         }
       ]
