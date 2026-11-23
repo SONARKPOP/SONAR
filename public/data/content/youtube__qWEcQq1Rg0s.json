@@ -48,14 +48,34 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-504a77b935c31921",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-2300f45a248fc299",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "메이",
+          "start": 28,
+          "end": 30,
+          "text": "세계",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 54,
+          "end": 61,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "리센느",
           "source": "title"
         }
       ]
@@ -109,35 +129,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 11,
-          "text": "리센느",
-          "source": "title"
-        },
-        {
-          "start": 54,
-          "end": 61,
-          "text": "RESCENE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-2300f45a248fc299",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-504a77b935c31921",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 28,
-          "end": 30,
-          "text": "세계",
+          "start": 12,
+          "end": 14,
+          "text": "메이",
           "source": "title"
         }
       ]
