@@ -56,20 +56,14 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "hello-venus",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "alice",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 0,
-          "end": 10,
-          "text": "HELLOVENUS",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 16,
-          "text": "헬로비너스",
+          "start": 17,
+          "end": 20,
+          "text": "앨리스",
           "source": "title"
         }
       ]
@@ -89,10 +83,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "person-82c8dfffcc8a320b",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 17,
@@ -103,15 +97,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-82c8dfffcc8a320b",
+      "artistType": "group",
+      "artistId": "hello-venus",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
-          "end": 20,
-          "text": "앨리스",
+          "start": 11,
+          "end": 16,
+          "text": "헬로비너스",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 10,
+          "text": "HELLOVENUS",
           "source": "title"
         }
       ]

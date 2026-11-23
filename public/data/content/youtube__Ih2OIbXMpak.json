@@ -43,6 +43,20 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "person",
+      "artistId": "person-a1479c2cc95e8b6a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 26,
+          "text": "소원",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "nmixx",
       "state": "inferred",
@@ -52,34 +66,6 @@
           "start": 45,
           "end": 50,
           "text": "NMIXX",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "hearts2hearts-jiwoo",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 52,
-          "end": 57,
-          "text": "JIWOO",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "nmixx-member-c8f92f89ce72",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 52,
-          "end": 57,
-          "text": "JIWOO",
           "source": "title"
         }
       ]
@@ -100,14 +86,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
+      "artistId": "nmixx-member-c8f92f89ce72",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "소원",
+          "start": 52,
+          "end": 57,
+          "text": "JIWOO",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "hearts2hearts-jiwoo",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 52,
+          "end": 57,
+          "text": "JIWOO",
           "source": "title"
         }
       ]
