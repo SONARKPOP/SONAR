@@ -44,6 +44,20 @@
   "appearanceLinks": [
     {
       "artistType": "person",
+      "artistId": "ive-rei",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 20,
+          "text": "REI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "tuide-saki",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -58,14 +72,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "ive",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 25,
-          "end": 30,
-          "text": "TUIDE",
+          "start": 12,
+          "end": 15,
+          "text": "IVE",
           "source": "title"
         }
       ]
@@ -85,29 +99,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "ive-rei",
+      "artistType": "group",
+      "artistId": "tuide",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
-          "end": 20,
-          "text": "REI",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 12,
-          "end": 15,
-          "text": "IVE",
+          "start": 25,
+          "end": 30,
+          "text": "TUIDE",
           "source": "title"
         }
       ]
