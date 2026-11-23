@@ -45,26 +45,6 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 10,
-          "text": "ALICE",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 14,
-          "text": "앨리스",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-4b927123d0b53a6e",
       "state": "needs_review",
@@ -79,15 +59,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-e431bf31c4a3ed87",
+      "artistType": "group",
+      "artistId": "alice",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 37,
-          "end": 39,
-          "text": "우주",
+          "start": 11,
+          "end": 14,
+          "text": "앨리스",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 10,
+          "text": "ALICE",
           "source": "title"
         }
       ]
@@ -116,6 +102,20 @@
           "start": 11,
           "end": 14,
           "text": "앨리스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e431bf31c4a3ed87",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 37,
+          "end": 39,
+          "text": "우주",
           "source": "title"
         }
       ]

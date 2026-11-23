@@ -44,14 +44,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "csr",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 64,
-          "end": 70,
-          "text": "Secret",
+          "start": 2,
+          "end": 5,
+          "text": "첫사랑",
+          "source": "title"
+        },
+        {
+          "start": 71,
+          "end": 74,
+          "text": "CSR",
           "source": "title"
         }
       ]
@@ -72,26 +78,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "csr",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 2,
-          "end": 5,
-          "text": "첫사랑",
-          "source": "title"
-        },
-        {
-          "start": 71,
-          "end": 74,
-          "text": "CSR",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "blackpink",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -100,6 +86,20 @@
           "start": 37,
           "end": 41,
           "text": "블랙핑크",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 64,
+          "end": 70,
+          "text": "Secret",
           "source": "title"
         }
       ]
