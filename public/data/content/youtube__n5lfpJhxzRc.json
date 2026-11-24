@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:45:12.082652Z",
+    "collectedAt": "2026-11-24T19:25:22.782042Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,26 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "izna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 30,
+          "end": 34,
+          "text": "izna",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "이즈나",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-ad73a6c022a8838f",
       "state": "inferred",
@@ -56,20 +76,6 @@
           "start": 12,
           "end": 15,
           "text": "방지민",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "miss-a-min",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 44,
-          "end": 47,
-          "text": "MIN",
           "source": "title"
         }
       ]
@@ -89,21 +95,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "izna",
+      "artistType": "person",
+      "artistId": "miss-a-min",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 30,
-          "end": 34,
-          "text": "izna",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 11,
-          "text": "이즈나",
+          "start": 44,
+          "end": 47,
+          "text": "MIN",
           "source": "title"
         }
       ]

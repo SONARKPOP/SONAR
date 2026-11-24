@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:44:33.004827Z",
+    "collectedAt": "2026-11-24T19:24:22.530346Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-5dd38a7b2da9157e",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 16,
-          "end": 18,
-          "text": "세아",
+          "start": 12,
+          "end": 15,
+          "text": "튜이드",
+          "source": "title"
+        },
+        {
+          "start": 44,
+          "end": 47,
+          "text": "튜이드",
           "source": "title"
         }
       ]
@@ -72,21 +78,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-5dd38a7b2da9157e",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 12,
-          "end": 15,
-          "text": "튜이드",
-          "source": "title"
-        },
-        {
-          "start": 44,
-          "end": 47,
-          "text": "튜이드",
+          "start": 16,
+          "end": 18,
+          "text": "세아",
           "source": "title"
         }
       ]

@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:45:16.239416Z",
+    "collectedAt": "2026-11-24T19:25:30.146388Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -51,9 +51,23 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "yoo-ji-ae",
+      "artistId": "fifty-fifty",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 26,
+          "end": 33,
+          "text": "피프티 피프티",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-yoo-ji-ae",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 35,
@@ -64,10 +78,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "lovelyz-yoo-ji-ae",
+      "artistType": "group",
+      "artistId": "yoo-ji-ae",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 35,
@@ -107,20 +121,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "lovelyz-jeong-ye-in",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 40,
-          "end": 43,
-          "text": "정예인",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-110a6a07afa29cb8",
       "state": "needs_review",
       "reason": "shared-name",
@@ -134,15 +134,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "fifty-fifty",
+      "artistType": "person",
+      "artistId": "lovelyz-jeong-ye-in",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 26,
-          "end": 33,
-          "text": "피프티 피프티",
+          "start": 40,
+          "end": 43,
+          "text": "정예인",
           "source": "title"
         }
       ]

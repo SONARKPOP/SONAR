@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:43:10.133533Z",
+    "collectedAt": "2026-11-24T19:22:11.513242Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,14 +49,28 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-a3d469a9e79693d5",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 56,
-          "end": 59,
-          "text": "김신영",
+          "start": 15,
+          "end": 16,
+          "text": "안",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "2ne1",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 69,
+          "end": 73,
+          "text": "2NE1",
           "source": "title"
         }
       ]
@@ -114,22 +128,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "2ne1",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 69,
-          "end": 73,
-          "text": "2NE1",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-3bba35b66a3d2957",
+      "artistId": "person-58ec1ca80bc9170d",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -143,7 +143,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-58ec1ca80bc9170d",
+      "artistId": "person-3bba35b66a3d2957",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -171,14 +171,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "person-a3d469a9e79693d5",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 15,
-          "end": 16,
-          "text": "안",
+          "start": 56,
+          "end": 59,
+          "text": "김신영",
           "source": "title"
         }
       ]

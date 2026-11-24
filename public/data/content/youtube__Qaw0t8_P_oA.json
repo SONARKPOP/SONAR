@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:44:11.347518Z",
+    "collectedAt": "2026-11-24T19:23:48.998323Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -66,10 +66,16 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-cbbb12691140e223",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hearts2hearts-jiwoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 50,
+          "end": 55,
+          "text": "JIWOO",
+          "source": "title"
+        },
         {
           "start": 13,
           "end": 15,
@@ -85,35 +91,29 @@
       "reason": "shared-name",
       "matches": [
         {
-          "start": 13,
-          "end": 15,
-          "text": "지우",
-          "source": "title"
-        },
-        {
           "start": 50,
           "end": 55,
           "text": "JIWOO",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 15,
+          "text": "지우",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "hearts2hearts-jiwoo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-cbbb12691140e223",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 13,
           "end": 15,
           "text": "지우",
-          "source": "title"
-        },
-        {
-          "start": 50,
-          "end": 55,
-          "text": "JIWOO",
           "source": "title"
         }
       ]

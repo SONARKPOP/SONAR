@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:43:24.466573Z",
+    "collectedAt": "2026-11-24T19:22:33.991004Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c5eea4206ec90765",
+      "artistType": "group",
+      "artistId": "rocket-punch",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 11,
-          "end": 13,
-          "text": "연희",
+          "start": 25,
+          "end": 37,
+          "text": "Rocket Punch",
+          "source": "title"
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "text": "로켓펀치",
           "source": "title"
         }
       ]
@@ -74,21 +80,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rocket-punch",
+      "artistType": "person",
+      "artistId": "person-c5eea4206ec90765",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 6,
-          "end": 10,
-          "text": "로켓펀치",
-          "source": "title"
-        },
-        {
-          "start": 25,
-          "end": 37,
-          "text": "Rocket Punch",
+          "start": 11,
+          "end": 13,
+          "text": "연희",
           "source": "title"
         }
       ]

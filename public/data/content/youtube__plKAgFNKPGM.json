@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:45:18.238497Z",
+    "collectedAt": "2026-11-24T19:25:33.367767Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,10 +45,36 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "illit-member-59036fd87f0e",
+      "artistType": "group",
+      "artistId": "illit",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "아일릿",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 33,
+          "text": "아일릿",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 28,
+          "text": "ILLIT",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yoona",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 12,
@@ -65,10 +91,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yoona",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "illit-member-59036fd87f0e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 12,
@@ -100,32 +126,6 @@
           "start": 35,
           "end": 37,
           "text": "윤아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "illit",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 3,
-          "text": "아일릿",
-          "source": "title"
-        },
-        {
-          "start": 30,
-          "end": 33,
-          "text": "아일릿",
-          "source": "title"
-        },
-        {
-          "start": 23,
-          "end": 28,
-          "text": "ILLIT",
           "source": "title"
         }
       ]

@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:43:09.847859Z",
+    "collectedAt": "2026-11-24T19:22:11.023092Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -78,42 +78,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "weeekly",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 59,
-          "end": 61,
-          "text": "키스",
+          "start": 20,
+          "end": 27,
+          "text": "Weeekly",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "lunedi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "girls-generation",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 10,
-          "end": 13,
-          "text": "먼데이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "weeekly-lunedi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 10,
-          "end": 13,
-          "text": "먼데이",
+          "start": 45,
+          "end": 49,
+          "text": "소녀시대",
           "source": "title"
         }
       ]
@@ -161,29 +147,43 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "weeekly",
+      "artistType": "person",
+      "artistId": "weeekly-lunedi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 20,
-          "end": 27,
-          "text": "Weeekly",
+          "start": 10,
+          "end": 13,
+          "text": "먼데이",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistId": "lunedi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 45,
-          "end": 49,
-          "text": "소녀시대",
+          "start": 10,
+          "end": 13,
+          "text": "먼데이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 59,
+          "end": 61,
+          "text": "키스",
           "source": "title"
         }
       ]

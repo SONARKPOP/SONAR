@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:45:41.424106Z",
+    "collectedAt": "2026-11-24T19:26:09.243376Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,9 +48,23 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-afb3a805d501d567",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hearts2hearts-yeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 36,
+          "end": 40,
+          "text": "YEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-f23f05506eb5f126",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 14,
@@ -76,9 +90,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-f23f05506eb5f126",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-afb3a805d501d567",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 14,
@@ -104,20 +118,6 @@
           "start": 8,
           "end": 13,
           "text": "아이오아이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "hearts2hearts-yeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 36,
-          "end": 40,
-          "text": "YEON",
           "source": "title"
         }
       ]

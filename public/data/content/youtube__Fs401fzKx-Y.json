@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:43:44.521999Z",
+    "collectedAt": "2026-11-24T19:23:05.730589Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,30 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "wjsn",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 38,
+          "end": 42,
+          "text": "우주소녀",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "dayoung",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 19,
+          "end": 26,
+          "text": "DAYOUNG",
+          "source": "title"
+        },
         {
           "start": 9,
           "end": 11,
@@ -62,11 +82,31 @@
           "end": 30,
           "text": "다영",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "wjsn-dayoung",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
           "start": 19,
           "end": 26,
           "text": "DAYOUNG",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "text": "다영",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 30,
+          "text": "다영",
           "source": "title"
         }
       ]
@@ -107,46 +147,6 @@
           "start": 28,
           "end": 30,
           "text": "다영",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "wjsn-dayoung",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 9,
-          "end": 11,
-          "text": "다영",
-          "source": "title"
-        },
-        {
-          "start": 28,
-          "end": 30,
-          "text": "다영",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 26,
-          "text": "DAYOUNG",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wjsn",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 38,
-          "end": 42,
-          "text": "우주소녀",
           "source": "title"
         }
       ]

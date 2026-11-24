@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:44:55.620508Z",
+    "collectedAt": "2026-11-24T19:24:57.731353Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 25,
+          "end": 30,
+          "text": "i-dle",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "gidle-soyeon",
@@ -61,34 +81,6 @@
           "start": 31,
           "end": 37,
           "text": "SOYEON",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 16,
-          "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-0a0c0ebc64042cc2",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 16,
-          "text": "소연",
           "source": "title"
         }
       ]
@@ -114,21 +106,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-0a0c0ebc64042cc2",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 10,
-          "end": 13,
-          "text": "아이들",
+          "start": 14,
+          "end": 16,
+          "text": "소연",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 25,
-          "end": 30,
-          "text": "i-dle",
+          "start": 14,
+          "end": 16,
+          "text": "소연",
           "source": "title"
         }
       ]

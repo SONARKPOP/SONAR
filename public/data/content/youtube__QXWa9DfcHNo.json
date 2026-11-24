@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:44:11.211581Z",
+    "collectedAt": "2026-11-24T19:23:48.791271Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,11 +40,31 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "tara",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 24,
+          "text": "티아라",
+          "source": "title"
+        },
+        {
+          "start": 64,
+          "end": 67,
+          "text": "티아라",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "gg-98799a0703616b09",
@@ -75,26 +95,6 @@
           "start": 17,
           "end": 19,
           "text": "리엘",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tara",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 21,
-          "end": 24,
-          "text": "티아라",
-          "source": "title"
-        },
-        {
-          "start": 64,
-          "end": 67,
-          "text": "티아라",
           "source": "title"
         }
       ]

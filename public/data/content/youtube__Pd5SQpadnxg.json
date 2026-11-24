@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:44:09.279097Z",
+    "collectedAt": "2026-11-24T19:23:45.615988Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,41 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-3b97347dbde9066b",
+      "artistType": "group",
+      "artistId": "moonbyul",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 23,
-          "end": 25,
-          "text": "별빛",
+          "start": 49,
+          "end": 57,
+          "text": "MoonByul",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 32,
+          "text": "문별",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-moonbyul",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 49,
+          "end": 57,
+          "text": "MoonByul",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 32,
+          "text": "문별",
           "source": "title"
         }
       ]
@@ -75,41 +101,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "moonbyul",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 30,
-          "end": 32,
-          "text": "문별",
-          "source": "title"
-        },
-        {
-          "start": 49,
-          "end": 57,
-          "text": "MoonByul",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "mamamoo-moonbyul",
+      "artistId": "person-3b97347dbde9066b",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 30,
-          "end": 32,
-          "text": "문별",
-          "source": "title"
-        },
-        {
-          "start": 49,
-          "end": 57,
-          "text": "MoonByul",
+          "start": 23,
+          "end": 25,
+          "text": "별빛",
           "source": "title"
         }
       ]

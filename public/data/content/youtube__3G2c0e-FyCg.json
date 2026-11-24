@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:43:12.685158Z",
+    "collectedAt": "2026-11-24T19:22:14.691740Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,31 +44,11 @@
   "programName": "리무진서비스",
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-context-v2",
-    "source": "title",
+    "policy": "title-only-v1",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "baby-dont-cry",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 41,
-          "end": 54,
-          "text": "Baby DONT Cry",
-          "source": "title"
-        },
-        {
-          "start": 22,
-          "end": 29,
-          "text": "베이비돈크라이",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "kiss",
@@ -84,15 +64,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-55aca1823bded05b",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "baby-dont-cry",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 71,
-          "end": 74,
-          "text": "JIN",
+          "start": 22,
+          "end": 29,
+          "text": "베이비돈크라이",
+          "source": "title"
+        },
+        {
+          "start": 41,
+          "end": 54,
+          "text": "Baby DONT Cry",
           "source": "title"
         }
       ]
@@ -107,6 +93,20 @@
           "start": 30,
           "end": 32,
           "text": "이현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-55aca1823bded05b",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 71,
+          "end": 74,
+          "text": "JIN",
           "source": "title"
         }
       ]

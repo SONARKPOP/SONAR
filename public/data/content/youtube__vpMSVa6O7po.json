@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:45:33.450338Z",
+    "collectedAt": "2026-11-24T19:25:56.160575Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -61,6 +61,26 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 20,
+          "end": 21,
+          "text": "안",
+          "source": "title"
+        },
+        {
+          "start": 31,
+          "end": 32,
+          "text": "안",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "red-velvet",
       "state": "inferred",
@@ -70,26 +90,6 @@
           "start": 79,
           "end": 83,
           "text": "레드벨벳",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wendy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "웬디",
-          "source": "title"
-        },
-        {
-          "start": 75,
-          "end": 77,
-          "text": "웬디",
           "source": "title"
         }
       ]
@@ -115,21 +115,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "wendy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 20,
-          "end": 21,
-          "text": "안",
+          "start": 12,
+          "end": 14,
+          "text": "웬디",
           "source": "title"
         },
         {
-          "start": 31,
-          "end": 32,
-          "text": "안",
+          "start": 75,
+          "end": 77,
+          "text": "웬디",
           "source": "title"
         }
       ]

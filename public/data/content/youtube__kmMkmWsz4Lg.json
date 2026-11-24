@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:45:05.915700Z",
+    "collectedAt": "2026-11-24T19:25:13.965367Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,10 +46,16 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-f0d2fde20c967cbb",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "meovv-anna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 39,
+          "end": 43,
+          "text": "ANNA",
+          "source": "title"
+        },
         {
           "start": 12,
           "end": 14,
@@ -60,20 +66,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "meovv-anna",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-f0d2fde20c967cbb",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 12,
           "end": 14,
           "text": "안나",
-          "source": "title"
-        },
-        {
-          "start": 39,
-          "end": 43,
-          "text": "ANNA",
           "source": "title"
         }
       ]
@@ -113,15 +113,15 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 33,
-          "end": 38,
-          "text": "MEOVV",
-          "source": "title"
-        },
-        {
           "start": 8,
           "end": 11,
           "text": "미야오",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 38,
+          "text": "MEOVV",
           "source": "title"
         }
       ]
