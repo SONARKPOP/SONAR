@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:23:32.756317Z",
+    "collectedAt": "2026-11-24T01:39:10.893947Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,15 +49,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "kiss-of-life-member-272247fb290a",
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 7,
+          "text": "키스오브라이프",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 21,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 89,
-          "end": 91,
-          "text": "쥴리",
+          "start": 9,
+          "end": 13,
+          "text": "KISS",
           "source": "title"
         }
       ]
@@ -86,54 +106,6 @@
           "start": 92,
           "end": 94,
           "text": "나띠",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "kiss-of-life-member-4cd0df8d103d",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 97,
-          "end": 99,
-          "text": "하늘",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-c29ac6506908865e",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 97,
-          "end": 99,
-          "text": "하늘",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 7,
-          "text": "키스오브라이프",
-          "source": "title"
-        },
-        {
-          "start": 9,
-          "end": 21,
-          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]
@@ -181,15 +153,43 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
+      "artistType": "person",
+      "artistId": "kiss-of-life-member-272247fb290a",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 9,
-          "end": 13,
-          "text": "KISS",
+          "start": 89,
+          "end": 91,
+          "text": "쥴리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c29ac6506908865e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 97,
+          "end": 99,
+          "text": "하늘",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "kiss-of-life-member-4cd0df8d103d",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 97,
+          "end": 99,
+          "text": "하늘",
           "source": "title"
         }
       ]

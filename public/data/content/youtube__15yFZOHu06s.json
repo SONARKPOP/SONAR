@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:21:33.143718Z",
+    "collectedAt": "2026-11-24T01:36:13.434077Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,24 +47,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 4,
-          "end": 5,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "아이들",
+          "source": "title"
+        },
         {
           "start": 12,
           "end": 19,
@@ -78,12 +70,6 @@
           "source": "title"
         },
         {
-          "start": 16,
-          "end": 19,
-          "text": "아이들",
-          "source": "title"
-        },
-        {
           "start": 20,
           "end": 28,
           "text": "(G)I-DLE",
@@ -92,8 +78,36 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "person-0a0c0ebc64042cc2",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 58,
+          "end": 60,
+          "text": "소연",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "soyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 58,
+          "end": 60,
+          "text": "소연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "gidle-soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -120,29 +134,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "gidle-soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 58,
-          "end": 60,
-          "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-0a0c0ebc64042cc2",
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 58,
-          "end": 60,
-          "text": "소연",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]

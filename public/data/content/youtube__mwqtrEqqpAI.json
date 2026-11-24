@@ -33,7 +33,7 @@
   "actualEndTime": "2025-03-12T10:34:04Z",
   "scheduledStartTime": "2025-03-12T09:58:00Z",
   "source": {
-    "collectedAt": "2026-11-23T19:23:56.660904Z",
+    "collectedAt": "2026-11-24T01:39:46.729130Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -67,8 +67,36 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "person-0a0c0ebc64042cc2",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 67,
+          "end": 69,
+          "text": "소연",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "soyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 67,
+          "end": 69,
+          "text": "소연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "gidle-soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -95,29 +123,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "gidle-soyeon",
+      "artistType": "group",
+      "artistId": "bibi",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 67,
-          "end": 69,
-          "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-0a0c0ebc64042cc2",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 67,
-          "end": 69,
-          "text": "소연",
+          "start": 72,
+          "end": 76,
+          "text": "BIBI",
           "source": "title"
         }
       ]
@@ -132,20 +146,6 @@
           "start": 10,
           "end": 11,
           "text": "수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "bibi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 72,
-          "end": 76,
-          "text": "BIBI",
           "source": "title"
         }
       ]

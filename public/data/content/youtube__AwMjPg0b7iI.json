@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:22:01.472849Z",
+    "collectedAt": "2026-11-24T01:36:55.975585Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 33,
+          "end": 38,
+          "text": "TUIDE",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 14,
+          "text": "튜이드",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -55,20 +75,6 @@
           "start": 26,
           "end": 30,
           "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-5dd38a7b2da9157e",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 15,
-          "end": 17,
-          "text": "세아",
           "source": "title"
         }
       ]
@@ -94,21 +100,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-5dd38a7b2da9157e",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 11,
-          "end": 14,
-          "text": "튜이드",
-          "source": "title"
-        },
-        {
-          "start": 33,
-          "end": 38,
-          "text": "TUIDE",
+          "start": 15,
+          "end": 17,
+          "text": "세아",
           "source": "title"
         }
       ]

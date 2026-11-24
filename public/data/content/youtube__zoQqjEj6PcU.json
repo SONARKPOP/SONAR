@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:24:33.457948Z",
+    "collectedAt": "2026-11-24T01:40:41.558212Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,38 +47,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c50c1d5da305252d",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "빛나",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "jia",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 16,
-          "end": 18,
-          "text": "지아",
+          "start": 9,
+          "end": 12,
+          "text": "튜이드",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "miss-a-jia",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "tuide-jia",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 16,
@@ -118,9 +104,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "tuide-jia",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "miss-a-jia",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 16,
@@ -146,14 +132,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "jia",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 9,
-          "end": 12,
-          "text": "튜이드",
+          "start": 16,
+          "end": 18,
+          "text": "지아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c50c1d5da305252d",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "빛나",
           "source": "title"
         }
       ]

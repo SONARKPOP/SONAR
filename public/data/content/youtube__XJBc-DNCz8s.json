@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:23:06.977582Z",
+    "collectedAt": "2026-11-24T01:38:33.298169Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,26 +44,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "unchild-yeeun",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 39,
-          "end": 42,
-          "text": "박예은",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 15,
-          "text": "YEEUN",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "unchild",
@@ -85,6 +65,20 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "clc-ye-eun",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 15,
+          "text": "YEEUN",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "ye-eun",
       "state": "needs_review",
@@ -100,14 +94,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "clc-ye-eun",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "unchild-yeeun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 10,
           "end": 15,
           "text": "YEEUN",
+          "source": "title"
+        },
+        {
+          "start": 39,
+          "end": 42,
+          "text": "박예은",
           "source": "title"
         }
       ]

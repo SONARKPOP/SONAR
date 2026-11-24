@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:21:50.984311Z",
+    "collectedAt": "2026-11-24T01:36:40.149693Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -67,6 +67,40 @@
     },
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 16,
+          "text": "KISS",
+          "source": "title"
+        },
+        {
+          "start": 69,
+          "end": 71,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-db461325cd947b43",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "수안",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "swan",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -89,40 +123,6 @@
           "start": 18,
           "end": 20,
           "text": "수안",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-db461325cd947b43",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 18,
-          "end": 20,
-          "text": "수안",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 16,
-          "text": "KISS",
-          "source": "title"
-        },
-        {
-          "start": 69,
-          "end": 71,
-          "text": "키스",
           "source": "title"
         }
       ]

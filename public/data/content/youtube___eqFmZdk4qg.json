@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:23:17.288832Z",
+    "collectedAt": "2026-11-24T01:38:47.507689Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -66,15 +66,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "apink-kim-nam-joo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 4,
-          "end": 5,
-          "text": "s",
+          "start": 12,
+          "end": 15,
+          "text": "김남주",
+          "source": "title"
+        },
+        {
+          "start": 75,
+          "end": 78,
+          "text": "김남주",
           "source": "title"
         }
       ]
@@ -100,21 +106,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "apink-kim-nam-joo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 12,
-          "end": 15,
-          "text": "김남주",
-          "source": "title"
-        },
-        {
-          "start": 75,
-          "end": 78,
-          "text": "김남주",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]

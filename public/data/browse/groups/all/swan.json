@@ -39,20 +39,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "x-in",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 40,
-              "end": 44,
-              "text": "X:IN",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "swan",
           "state": "inferred",
           "reason": "unambiguous-title-name",
@@ -78,7 +64,27 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "x-in",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 40,
+              "end": 44,
+              "text": "X:IN",
+              "source": "title"
+            }
+          ]
         }
+      ],
+      "careerGroupIds": [
+        "purple-kiss"
+      ],
+      "displayCareerGroupIds": [
+        "purple-kiss"
       ],
       "externalId": "Hxxj-h7-abw",
       "sourceUrl": "https://www.youtube.com/watch?v=Hxxj-h7-abw",
@@ -89,13 +95,7 @@
       "teaserType": "",
       "contentLength": "regular",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "purple-kiss"
-      ],
-      "displayCareerGroupIds": [
-        "purple-kiss"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__p9GAgted-hk",
@@ -137,6 +137,46 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "swan",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 49,
+              "text": "SWAN",
+              "source": "title"
+            },
+            {
+              "start": 65,
+              "end": 67,
+              "text": "수안",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "purple-kiss-swan",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 49,
+              "text": "SWAN",
+              "source": "title"
+            },
+            {
+              "start": 65,
+              "end": 67,
+              "text": "수안",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "purple-kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -157,40 +197,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "swan",
+          "artistId": "kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 65,
-              "end": 67,
-              "text": "수안",
-              "source": "title"
-            },
-            {
-              "start": 45,
-              "end": 49,
-              "text": "SWAN",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "purple-kiss-swan",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 65,
-              "end": 67,
-              "text": "수안",
-              "source": "title"
-            },
-            {
-              "start": 45,
-              "end": 49,
-              "text": "SWAN",
+              "start": 60,
+              "end": 64,
+              "text": "KISS",
               "source": "title"
             }
           ]
@@ -205,20 +219,6 @@
               "start": 65,
               "end": 67,
               "text": "수안",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 60,
-              "end": 64,
-              "text": "KISS",
               "source": "title"
             }
           ]
@@ -318,6 +318,34 @@
         },
         {
           "artistType": "group",
+          "artistId": "kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 24,
+              "end": 28,
+              "text": "KISS",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-db461325cd947b43",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 53,
+              "end": 55,
+              "text": "수안",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "swan",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -340,34 +368,6 @@
               "start": 53,
               "end": 55,
               "text": "수안",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-db461325cd947b43",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 53,
-              "end": 55,
-              "text": "수안",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 24,
-              "end": 28,
-              "text": "KISS",
               "source": "title"
             }
           ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:23:49.984099Z",
+    "collectedAt": "2026-11-24T01:39:36.944100Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,24 +46,22 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 4,
-          "end": 5,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "viviz",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 12,
+          "end": 17,
+          "text": "VIVIZ",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 65,
+          "text": "VIVIZ",
+          "source": "title"
+        },
         {
           "start": 18,
           "end": 21,
@@ -75,17 +73,19 @@
           "end": 78,
           "text": "비비지",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 12,
-          "end": 17,
-          "text": "VIVIZ",
-          "source": "title"
-        },
-        {
-          "start": 60,
-          "end": 65,
-          "text": "VIVIZ",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]

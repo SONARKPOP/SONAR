@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:22:12.537109Z",
+    "collectedAt": "2026-11-24T01:37:12.389267Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,14 +43,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "sole",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "키스",
+          "start": 38,
+          "end": 39,
+          "text": "쏠",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 37,
+          "text": "SOLE",
           "source": "title"
         }
       ]
@@ -85,20 +91,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "sole",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 38,
-          "end": 39,
-          "text": "쏠",
-          "source": "title"
-        },
-        {
-          "start": 33,
-          "end": 37,
-          "text": "SOLE",
+          "start": 5,
+          "end": 7,
+          "text": "키스",
           "source": "title"
         }
       ]

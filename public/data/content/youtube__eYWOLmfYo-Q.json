@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T19:23:31.451683Z",
+    "collectedAt": "2026-11-24T01:39:09.016984Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "babymonster",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 4,
-          "end": 5,
-          "text": "s",
+          "start": 12,
+          "end": 23,
+          "text": "BABYMONSTER",
+          "source": "title"
+        },
+        {
+          "start": 70,
+          "end": 81,
+          "text": "BABYMONSTER",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 30,
+          "text": "베이비몬스터",
           "source": "title"
         }
       ]
@@ -74,26 +86,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "babymonster",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 24,
-          "end": 30,
-          "text": "베이비몬스터",
-          "source": "title"
-        },
-        {
-          "start": 12,
-          "end": 23,
-          "text": "BABYMONSTER",
-          "source": "title"
-        },
-        {
-          "start": 70,
-          "end": 81,
-          "text": "BABYMONSTER",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]
