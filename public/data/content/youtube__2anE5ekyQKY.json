@@ -43,14 +43,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "saturday",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 33,
-          "end": 41,
-          "text": "Saturday",
+          "start": 19,
+          "end": 24,
+          "text": "시크릿넘버",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 18,
+          "text": "SECRET NUMBER",
           "source": "title"
         }
       ]
@@ -71,20 +77,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "saturday",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 19,
-          "end": 24,
-          "text": "시크릿넘버",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 18,
-          "text": "SECRET NUMBER",
+          "start": 33,
+          "end": 41,
+          "text": "Saturday",
           "source": "title"
         }
       ]
