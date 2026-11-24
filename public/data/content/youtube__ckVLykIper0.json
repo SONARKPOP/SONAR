@@ -46,14 +46,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "punch",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "rocket-punch",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 12,
+          "start": 0,
+          "end": 4,
+          "text": "로켓펀치",
+          "source": "title"
+        },
+        {
+          "start": 5,
           "end": 17,
-          "text": "Punch",
+          "text": "Rocket Punch",
           "source": "title"
         }
       ]
@@ -74,20 +80,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "rocket-punch",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "punch",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "로켓펀치",
-          "source": "title"
-        },
-        {
-          "start": 5,
+          "start": 12,
           "end": 17,
-          "text": "Rocket Punch",
+          "text": "Punch",
           "source": "title"
         }
       ]

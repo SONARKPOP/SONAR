@@ -43,6 +43,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "SECRET",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "secret-number",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -71,20 +85,6 @@
           "start": 29,
           "end": 36,
           "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 6,
-          "text": "SECRET",
           "source": "title"
         }
       ]
