@@ -7,6 +7,7 @@
   "description": "@IVEstarship",
   "publishedAt": "2026-10-30T14:47:40Z",
   "groupIds": [
+    "ive",
     "yves"
   ],
   "memberIds": [
@@ -37,10 +38,24 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "unclassified",
+    "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 39,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "ive-leeseo",
@@ -57,21 +72,7 @@
     },
     {
       "artistType": "group",
-      "artistId": "ive",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 36,
-          "end": 39,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "loona-yves",
+      "artistId": "yves",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -84,8 +85,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yves",
+      "artistType": "person",
+      "artistId": "loona-yves",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [

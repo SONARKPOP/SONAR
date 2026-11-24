@@ -7,7 +7,8 @@
   "description": "#로라 #LOLA #AWU #아야 #위나 #wena",
   "publishedAt": "2026-05-26T11:58:34Z",
   "groupIds": [
-    "awu"
+    "awu",
+    "wena"
   ],
   "memberIds": [
     "person-fdc550e2ca4dea99"
@@ -56,15 +57,15 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "babymonster-member-96f22b173d89",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "wena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 30,
-          "end": 32,
-          "text": "로라",
+          "start": 1,
+          "end": 3,
+          "text": "위나",
           "source": "title"
         }
       ]
@@ -84,43 +85,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "awu",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 34,
-          "end": 37,
-          "text": "AWU",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-c8e109bade6a90b1",
+      "artistId": "babymonster-member-96f22b173d89",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "아야",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-fdc550e2ca4dea99",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "아야",
+          "start": 30,
+          "end": 32,
+          "text": "로라",
           "source": "title"
         }
       ]
@@ -140,15 +113,43 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "wena",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "person-fdc550e2ca4dea99",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 1,
-          "end": 3,
-          "text": "위나",
+          "start": 5,
+          "end": 7,
+          "text": "아야",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c8e109bade6a90b1",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "아야",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "awu",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 34,
+          "end": 37,
+          "text": "AWU",
           "source": "title"
         }
       ]
