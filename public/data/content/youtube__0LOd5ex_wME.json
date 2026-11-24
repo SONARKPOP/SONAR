@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:36:10.262742Z",
+    "collectedAt": "2026-11-24T07:43:04.919255Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "hearts2hearts-jiwoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 31,
+          "end": 36,
+          "text": "JIWOO",
+          "source": "title"
+        },
+        {
+          "start": 37,
+          "end": 39,
+          "text": "지우",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "nmixx-member-c8f92f89ce72",
@@ -65,17 +85,25 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "hearts2hearts-jiwoo",
+      "artistType": "group",
+      "artistId": "hearts2hearts",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 31,
-          "end": 36,
-          "text": "JIWOO",
+          "start": 17,
+          "end": 30,
+          "text": "Hearts2Hearts",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-cbbb12691140e223",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
           "start": 37,
           "end": 39,
@@ -100,20 +128,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-cbbb12691140e223",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 37,
-          "end": 39,
-          "text": "지우",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-922af2015e8a4066",
       "state": "needs_review",
       "reason": "shared-name",
@@ -122,20 +136,6 @@
           "start": 37,
           "end": 39,
           "text": "지우",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hearts2hearts",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 30,
-          "text": "Hearts2Hearts",
           "source": "title"
         }
       ]

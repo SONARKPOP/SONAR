@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:37:06.945948Z",
+    "collectedAt": "2026-11-24T07:43:38.218110Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,22 +43,28 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-635192b2e655114d",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 20,
-          "end": 22,
-          "text": "이유",
+          "start": 48,
+          "end": 53,
+          "text": "i-dle",
+          "source": "title"
+        },
+        {
+          "start": 55,
+          "end": 58,
+          "text": "아이들",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "hitgs-iyoo",
+      "artistId": "person-635192b2e655114d",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -85,21 +91,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "hitgs-iyoo",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 48,
-          "end": 53,
-          "text": "i-dle",
-          "source": "title"
-        },
-        {
-          "start": 55,
-          "end": 58,
-          "text": "아이들",
+          "start": 20,
+          "end": 22,
+          "text": "이유",
           "source": "title"
         }
       ]

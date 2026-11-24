@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:40:31.718965Z",
+    "collectedAt": "2026-11-24T07:45:37.557107Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-a62f6751637129dd",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 71,
+          "end": 73,
+          "text": "은하",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-d0486a64061b31cd",
@@ -75,26 +89,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "viviz",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 3,
-          "text": "비비지",
-          "source": "title"
-        },
-        {
-          "start": 38,
-          "end": 43,
-          "text": "VIVIZ",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-92dca0d431ec333d",
       "state": "inferred",
@@ -109,15 +103,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-a62f6751637129dd",
+      "artistType": "group",
+      "artistId": "viviz",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 71,
-          "end": 73,
-          "text": "은하",
+          "start": 38,
+          "end": 43,
+          "text": "VIVIZ",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 3,
+          "text": "비비지",
           "source": "title"
         }
       ]

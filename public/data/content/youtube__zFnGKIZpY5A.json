@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:40:39.492756Z",
+    "collectedAt": "2026-11-24T07:45:41.565860Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "meovv-narin",
+      "artistType": "group",
+      "artistId": "meovv",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "미야오",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-775e393168ce1f55",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 20,
@@ -62,9 +76,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-8726e3edd629ba38",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "meovv-narin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 20,
@@ -90,7 +104,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-775e393168ce1f55",
+      "artistId": "person-8726e3edd629ba38",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -98,20 +112,6 @@
           "start": 20,
           "end": 22,
           "text": "나린",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "meovv",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 19,
-          "text": "미야오",
           "source": "title"
         }
       ]

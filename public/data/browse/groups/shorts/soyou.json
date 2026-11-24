@@ -309,20 +309,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "sistar-soyou",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "소유",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "soyou",
           "state": "inferred",
@@ -335,7 +321,27 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "sistar-soyou",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "소유",
+              "source": "title"
+            }
+          ]
         }
+      ],
+      "careerGroupIds": [
+        "sistar"
+      ],
+      "displayCareerGroupIds": [
+        "sistar"
       ],
       "externalId": "0HVdBine4nE",
       "sourceUrl": "https://www.youtube.com/watch?v=0HVdBine4nE",
@@ -359,13 +365,7 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "careerGroupIds": [
-        "sistar"
-      ],
-      "displayCareerGroupIds": [
-        "sistar"
-      ]
+      }
     }
   ]
 }

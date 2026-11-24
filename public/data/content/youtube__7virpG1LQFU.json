@@ -39,7 +39,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:36:42.566266Z",
+    "collectedAt": "2026-11-24T07:43:24.004088Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -72,6 +72,12 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 11,
+          "end": 16,
+          "text": "I-DLE",
+          "source": "title"
+        },
+        {
           "start": 0,
           "end": 7,
           "text": "(여자)아이들",
@@ -88,11 +94,33 @@
           "end": 16,
           "text": "(G)I-DLE",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "minnie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 11,
-          "end": 16,
-          "text": "I-DLE",
+          "start": 62,
+          "end": 64,
+          "text": "민니",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "gidle-minnie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 62,
+          "end": 64,
+          "text": "민니",
           "source": "title"
         }
       ]
@@ -127,28 +155,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "gidle-minnie",
+      "artistId": "gidle-yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 62,
-          "end": 64,
-          "text": "민니",
+          "start": 68,
+          "end": 70,
+          "text": "우기",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "minnie",
+      "artistId": "yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 62,
-          "end": 64,
-          "text": "민니",
+          "start": 68,
+          "end": 70,
+          "text": "우기",
           "source": "title"
         }
       ]
@@ -156,34 +184,6 @@
     {
       "artistType": "person",
       "artistId": "gidle-soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 65,
-          "end": 67,
-          "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 65,
-          "end": 67,
-          "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -211,28 +211,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "yuqi",
+      "artistId": "soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 68,
-          "end": 70,
-          "text": "우기",
+          "start": 65,
+          "end": 67,
+          "text": "소연",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "gidle-yuqi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 68,
-          "end": 70,
-          "text": "우기",
+          "start": 65,
+          "end": 67,
+          "text": "소연",
           "source": "title"
         }
       ]

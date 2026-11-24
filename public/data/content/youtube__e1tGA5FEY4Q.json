@@ -8,6 +8,7 @@
   "publishedAt": "2026-10-27T07:00:10Z",
   "groupIds": [
     "gfriend",
+    "ive",
     "nmixx"
   ],
   "memberIds": [
@@ -34,39 +35,25 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:46:36.544195Z",
+    "collectedAt": "2026-11-24T07:44:48.266615Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "nmixx",
+      "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 33,
-          "end": 38,
-          "text": "NMIXX",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 18,
-          "end": 20,
-          "text": "소원",
+          "start": 1,
+          "end": 4,
+          "text": "IVE",
           "source": "title"
         }
       ]
@@ -87,14 +74,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "ive",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "nmixx",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 1,
-          "end": 4,
-          "text": "IVE",
+          "start": 33,
+          "end": 38,
+          "text": "NMIXX",
           "source": "title"
         }
       ]
@@ -109,6 +96,20 @@
           "start": 40,
           "end": 46,
           "text": "KYUJIN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a1479c2cc95e8b6a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "소원",
           "source": "title"
         }
       ]

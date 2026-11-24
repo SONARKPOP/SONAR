@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:38:54.020100Z",
+    "collectedAt": "2026-11-24T07:44:40.795117Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,20 +44,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 35,
-          "text": "SECRET NUMBER",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "irris",
@@ -74,14 +60,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "csr",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 60,
-          "end": 63,
-          "text": "CSR",
+          "start": 22,
+          "end": 28,
+          "text": "SECRET",
           "source": "title"
         }
       ]
@@ -102,14 +88,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 22,
-          "end": 28,
-          "text": "SECRET",
+          "end": 35,
+          "text": "SECRET NUMBER",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "csr",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 60,
+          "end": 63,
+          "text": "CSR",
           "source": "title"
         }
       ]

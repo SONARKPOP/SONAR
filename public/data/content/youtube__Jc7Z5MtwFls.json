@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:37:33.464360Z",
+    "collectedAt": "2026-11-24T07:43:53.751386Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,31 +44,37 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 78,
-          "end": 81,
-          "text": "아이브",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "ive-gaeul",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 0,
+          "end": 2,
+          "text": "가을",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 25,
+          "text": "가을",
+          "source": "title"
+        },
+        {
           "start": 47,
           "end": 52,
           "text": "GAEUL",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c24b8768ba7a3b32",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
           "start": 0,
           "end": 2,
@@ -85,7 +91,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-c24b8768ba7a3b32",
+      "artistId": "person-db56c112abc0387a",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -124,21 +130,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-db56c112abc0387a",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "가을",
-          "source": "title"
-        },
-        {
-          "start": 23,
-          "end": 25,
-          "text": "가을",
+          "start": 78,
+          "end": 81,
+          "text": "아이브",
           "source": "title"
         }
       ]

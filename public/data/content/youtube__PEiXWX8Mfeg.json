@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:37:58.069760Z",
+    "collectedAt": "2026-11-24T07:44:08.241631Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,7 +47,21 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "yerin",
+      "artistId": "gfriend",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 24,
+          "text": "GFRIEND",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "gfriend-yerin",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -61,6 +75,20 @@
           "start": 25,
           "end": 30,
           "text": "YERIN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-fd0f6919c9668a17",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 31,
+          "end": 33,
+          "text": "예린",
           "source": "title"
         }
       ]
@@ -94,8 +122,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "gfriend-yerin",
+      "artistType": "group",
+      "artistId": "yerin",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -123,34 +151,6 @@
           "start": 31,
           "end": 33,
           "text": "예린",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-fd0f6919c9668a17",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 31,
-          "end": 33,
-          "text": "예린",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gfriend",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 24,
-          "text": "GFRIEND",
           "source": "title"
         }
       ]

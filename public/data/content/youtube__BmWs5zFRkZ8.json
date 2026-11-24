@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:36:59.568447Z",
+    "collectedAt": "2026-11-24T07:43:33.745650Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,14 +48,14 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 51,
-          "end": 57,
-          "text": "Secret",
+          "start": 71,
+          "end": 75,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -76,28 +76,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 71,
-          "end": 75,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-9ac4be5dab63693e",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 37,
-          "end": 43,
-          "text": "혼다 히토미",
+          "start": 51,
+          "end": 57,
+          "text": "Secret",
           "source": "title"
         }
       ]
@@ -112,6 +98,20 @@
           "start": 17,
           "end": 23,
           "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-9ac4be5dab63693e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 37,
+          "end": 43,
+          "text": "혼다 히토미",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:37:19.115311Z",
+    "collectedAt": "2026-11-24T07:43:45.602365Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-25dff8797c83a601",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 40,
+          "end": 41,
+          "text": "원",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "rescene-woni",
@@ -64,26 +78,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 26,
-          "end": 33,
-          "text": "RESCENE",
-          "source": "title"
-        },
-        {
-          "start": 35,
-          "end": 38,
-          "text": "리센느",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-d8ccbbf9070691b4",
       "state": "needs_review",
@@ -98,15 +92,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-25dff8797c83a601",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 40,
-          "end": 41,
-          "text": "원",
+          "start": 35,
+          "end": 38,
+          "text": "리센느",
+          "source": "title"
+        },
+        {
+          "start": 26,
+          "end": 33,
+          "text": "RESCENE",
           "source": "title"
         }
       ]

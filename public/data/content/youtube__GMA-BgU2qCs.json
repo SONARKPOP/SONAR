@@ -58,26 +58,6 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "girls-generation-hyo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 6,
-          "end": 9,
-          "text": "HYO",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 13,
-          "text": "효연",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "hyo",
       "state": "inferred",
@@ -99,9 +79,29 @@
     },
     {
       "artistType": "person",
-      "artistId": "red-velvet-irene",
+      "artistId": "girls-generation-hyo",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 9,
+          "text": "HYO",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 13,
+          "text": "효연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "irene",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 32,
@@ -118,10 +118,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "irene",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "red-velvet-irene",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 32,

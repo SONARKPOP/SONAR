@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:36:56.672094Z",
+    "collectedAt": "2026-11-24T07:43:32.120524Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 55,
+          "end": 60,
+          "text": "I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 52,
+          "end": 60,
+          "text": "(G)I-DLE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "aespa",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -55,20 +75,6 @@
           "start": 25,
           "end": 30,
           "text": "aespa",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 31,
-          "end": 34,
-          "text": "IVE",
           "source": "title"
         }
       ]
@@ -103,20 +109,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "gidle",
+      "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 52,
-          "end": 60,
-          "text": "(G)I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 55,
-          "end": 60,
-          "text": "I-DLE",
+          "start": 31,
+          "end": 34,
+          "text": "IVE",
           "source": "title"
         }
       ]

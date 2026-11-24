@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-23T13:47:20.819247Z",
+    "collectedAt": "2026-11-24T07:45:07.029860Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -41,15 +41,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "kara-nicole",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "soyou",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "니콜",
+          "start": 4,
+          "end": 6,
+          "text": "소유",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "sistar-soyou",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "소유",
           "source": "title"
         }
       ]
@@ -84,32 +98,24 @@
     },
     {
       "artistType": "person",
-      "artistId": "sistar-soyou",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "kara-nicole",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 4,
-          "end": 6,
-          "text": "소유",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "soyou",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 4,
-          "end": 6,
-          "text": "소유",
+          "start": 0,
+          "end": 2,
+          "text": "니콜",
           "source": "title"
         }
       ]
     }
+  ],
+  "careerGroupIds": [
+    "sistar"
+  ],
+  "displayCareerGroupIds": [
+    "sistar"
   ],
   "externalId": "lHgSVroOgvY",
   "sourceUrl": "https://www.youtube.com/watch?v=lHgSVroOgvY",
@@ -133,11 +139,5 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  },
-  "careerGroupIds": [
-    "sistar"
-  ],
-  "displayCareerGroupIds": [
-    "sistar"
-  ]
+  }
 }

@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T01:38:40.420370Z",
+    "collectedAt": "2026-11-24T07:44:32.816518Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,14 +47,34 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-563b46c18e89e522",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hearts2hearts-yeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 14,
-          "end": 16,
-          "text": "도연",
+          "start": 59,
+          "end": 63,
+          "text": "YEON",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ioi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 50,
+          "end": 55,
+          "text": "I.O.I",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 13,
+          "text": "아이오아이",
           "source": "title"
         }
       ]
@@ -74,35 +94,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ioi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 13,
-          "text": "아이오아이",
-          "source": "title"
-        },
-        {
-          "start": 50,
-          "end": 55,
-          "text": "I.O.I",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "hearts2hearts-yeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-563b46c18e89e522",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 59,
-          "end": 63,
-          "text": "YEON",
+          "start": 14,
+          "end": 16,
+          "text": "도연",
           "source": "title"
         }
       ]

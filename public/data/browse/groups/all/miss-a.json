@@ -35,6 +35,26 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "izna",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 55,
+              "end": 59,
+              "text": "izna",
+              "source": "title"
+            },
+            {
+              "start": 61,
+              "end": 64,
+              "text": "이즈나",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "miss-a-min",
           "state": "inferred",
@@ -58,26 +78,6 @@
               "start": 10,
               "end": 13,
               "text": "MIN",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "izna",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 55,
-              "end": 59,
-              "text": "izna",
-              "source": "title"
-            },
-            {
-              "start": 61,
-              "end": 64,
-              "text": "이즈나",
               "source": "title"
             }
           ]
@@ -295,7 +295,8 @@
       "title": "[얼빡직캠 4K] 장민호 '인생이란 친구에게' (JANG MIN HO Facecam) @뮤직뱅크(Music Bank) 261120",
       "publishedAt": "2026-11-20T10:50:06Z",
       "groupIds": [
-        "min"
+        "min",
+        "miss-a"
       ],
       "memberIds": [
         "miss-a-min"
@@ -319,7 +320,7 @@
         "external"
       ],
       "memberTagging": {
-        "policy": "title-context-v2",
+        "policy": "title-only-v1",
         "source": "unclassified",
         "appearanceVerified": false
       },
@@ -353,6 +354,12 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "miss-a"
+      ],
+      "displayCareerGroupIds": [
+        "miss-a"
+      ],
       "externalId": "O1u4TFBGIcE",
       "sourceUrl": "https://www.youtube.com/watch?v=O1u4TFBGIcE",
       "externalType": "other",
@@ -363,13 +370,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": true,
-      "careerGroupIds": [
-        "miss-a"
-      ],
-      "displayCareerGroupIds": [
-        "miss-a"
-      ]
+      "musicBroadcast": true
     },
     {
       "id": "youtube__h2H4vjbGZOg",
@@ -379,7 +380,8 @@
       "title": "[K-Fancam 8K] 장민호 직캠 '인생이란 친구에게' (JANG MIN HO Fancam) @MusicBank 261120",
       "publishedAt": "2026-11-20T10:40:35Z",
       "groupIds": [
-        "min"
+        "min",
+        "miss-a"
       ],
       "memberIds": [
         "miss-a-min"
@@ -403,7 +405,7 @@
         "external"
       ],
       "memberTagging": {
-        "policy": "title-context-v2",
+        "policy": "title-only-v1",
         "source": "unclassified",
         "appearanceVerified": false
       },
@@ -437,6 +439,12 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "miss-a"
+      ],
+      "displayCareerGroupIds": [
+        "miss-a"
+      ],
       "externalId": "h2H4vjbGZOg",
       "sourceUrl": "https://www.youtube.com/watch?v=h2H4vjbGZOg",
       "externalType": "other",
@@ -447,13 +455,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": true,
-      "careerGroupIds": [
-        "miss-a"
-      ],
-      "displayCareerGroupIds": [
-        "miss-a"
-      ]
+      "musicBroadcast": true
     },
     {
       "id": "youtube__0cvhWBfyMOw",
@@ -495,34 +497,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "miss-a-min",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 9,
-              "end": 12,
-              "text": "Min",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "min",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 9,
-              "end": 12,
-              "text": "Min",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-1f6bfc3c159e2c1c",
           "state": "needs_review",
           "reason": "shared-name",
@@ -545,6 +519,34 @@
               "start": 41,
               "end": 43,
               "text": "나비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "miss-a-min",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 9,
+              "end": 12,
+              "text": "Min",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "min",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 9,
+              "end": 12,
+              "text": "Min",
               "source": "title"
             }
           ]
