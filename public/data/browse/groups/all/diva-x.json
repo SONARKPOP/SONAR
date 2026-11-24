@@ -53,9 +53,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-b467f92429da48fc",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-d987ed7f3b983b31",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 29,
@@ -66,10 +66,30 @@
           ]
         },
         {
+          "artistType": "group",
+          "artistId": "yuri",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 29,
+              "end": 31,
+              "text": "유리",
+              "source": "title"
+            },
+            {
+              "start": 24,
+              "end": 28,
+              "text": "Yuri",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
-          "artistId": "person-d987ed7f3b983b31",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-b467f92429da48fc",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 29,
@@ -109,26 +129,6 @@
               "start": 29,
               "end": 31,
               "text": "유리",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yuri",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 29,
-              "end": 31,
-              "text": "유리",
-              "source": "title"
-            },
-            {
-              "start": 24,
-              "end": 28,
-              "text": "Yuri",
               "source": "title"
             }
           ]
@@ -315,15 +315,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-4b331f16407916a6",
+          "artistType": "group",
+          "artistId": "diva-x",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 53,
-              "end": 55,
-              "text": "하얀",
+              "start": 18,
+              "end": 24,
+              "text": "DIVA-X",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 52,
+              "text": "디바엑스",
               "source": "title"
             }
           ]
@@ -343,21 +349,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "diva-x",
+          "artistType": "person",
+          "artistId": "person-4b331f16407916a6",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 18,
-              "end": 24,
-              "text": "DIVA-X",
-              "source": "title"
-            },
-            {
-              "start": 48,
-              "end": 52,
-              "text": "디바엑스",
+              "start": 53,
+              "end": 55,
+              "text": "하얀",
               "source": "title"
             }
           ]
