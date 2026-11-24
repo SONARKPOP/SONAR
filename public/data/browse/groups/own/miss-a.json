@@ -35,15 +35,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistType": "person",
+          "artistId": "miss-a-min",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 14,
-              "end": 15,
-              "text": "s",
+              "start": 10,
+              "end": 13,
+              "text": "MIN",
               "source": "title"
             }
           ]
@@ -63,35 +63,35 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "miss-a-min",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 10,
-              "end": 13,
-              "text": "MIN",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "izna",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 55,
+              "end": 59,
+              "text": "izna",
+              "source": "title"
+            },
+            {
               "start": 61,
               "end": 64,
               "text": "이즈나",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
             {
-              "start": 55,
-              "end": 59,
-              "text": "izna",
+              "start": 14,
+              "end": 15,
+              "text": "s",
               "source": "title"
             }
           ]
@@ -174,12 +174,6 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 35,
-              "end": 39,
-              "text": "메이져스",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 6,
               "text": "MAJORS",
@@ -190,14 +184,20 @@
               "end": 33,
               "text": "MAJORS",
               "source": "title"
+            },
+            {
+              "start": 35,
+              "end": 39,
+              "text": "메이져스",
+              "source": "title"
             }
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "suzy",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "miss-a-suzy",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 7,
@@ -214,10 +214,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "miss-a-suzy",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistType": "group",
+          "artistId": "suzy",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 7,
@@ -285,34 +285,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "suzy",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 80,
-              "end": 84,
-              "text": "Suzy",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "miss-a-suzy",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 80,
-              "end": 84,
-              "text": "Suzy",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "majors",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -333,6 +305,34 @@
               "start": 35,
               "end": 39,
               "text": "메이져스",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "miss-a-suzy",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 80,
+              "end": 84,
+              "text": "Suzy",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "suzy",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 80,
+              "end": 84,
+              "text": "Suzy",
               "source": "title"
             }
           ]
