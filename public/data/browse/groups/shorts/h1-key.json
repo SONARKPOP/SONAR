@@ -82,10 +82,10 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "kei",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistType": "person",
+          "artistId": "lovelyz-kei",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 1,
@@ -96,10 +96,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "lovelyz-kei",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistType": "group",
+          "artistId": "kei",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
               "start": 1,
@@ -307,7 +307,8 @@
       "title": "#izna #방지민 님과 𝙐𝙣-𝙐𝙣-𝙐𝙣𝙗𝙚𝙡𝙞𝙚𝙫𝙖𝙗𝙡𝙚 ⚡@izna_offcl",
       "publishedAt": "2026-11-21T05:30:24Z",
       "groupIds": [
-        "h1-key"
+        "h1-key",
+        "izna"
       ],
       "memberIds": [
         "person-ad73a6c022a8838f"
@@ -333,6 +334,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "izna",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 1,
+              "end": 5,
+              "text": "izna",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-ad73a6c022a8838f",
           "state": "inferred",
@@ -342,20 +357,6 @@
               "start": 7,
               "end": 10,
               "text": "방지민",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "izna",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 1,
-              "end": 5,
-              "text": "izna",
               "source": "title"
             }
           ]

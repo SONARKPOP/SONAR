@@ -48,26 +48,6 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 33,
-          "end": 36,
-          "text": "IVE",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 32,
-          "text": "아이브",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "boa",
       "state": "needs_review",
       "reason": "shared-name",
@@ -95,6 +75,20 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "person-2300f45a248fc299",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "세계",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "girls-generation",
       "state": "inferred",
@@ -109,15 +103,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-2300f45a248fc299",
+      "artistType": "group",
+      "artistId": "ive",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 22,
-          "end": 24,
-          "text": "세계",
+          "start": 29,
+          "end": 32,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 36,
+          "text": "IVE",
           "source": "title"
         }
       ]

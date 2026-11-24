@@ -40,14 +40,28 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-34b213e93f75ca3e",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-b1adb81048e956dc",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 34,
-              "end": 36,
-              "text": "루시",
+              "start": 42,
+              "end": 44,
+              "text": "전율",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 58,
+              "end": 60,
+              "text": "키스",
               "source": "title"
             }
           ]
@@ -81,29 +95,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 58,
-              "end": 60,
-              "text": "키스",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
-          "artistId": "person-b1adb81048e956dc",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "person-34b213e93f75ca3e",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 42,
-              "end": 44,
-              "text": "전율",
+              "start": 34,
+              "end": 36,
+              "text": "루시",
               "source": "title"
             }
           ]
@@ -252,6 +252,20 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-b1adb81048e956dc",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 13,
+              "end": 15,
+              "text": "전율",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "stellar",
           "state": "inferred",
@@ -281,20 +295,6 @@
               "start": 0,
               "end": 3,
               "text": "스텔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-b1adb81048e956dc",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 13,
-              "end": 15,
-              "text": "전율",
               "source": "title"
             }
           ]

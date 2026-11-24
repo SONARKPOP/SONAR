@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-e81a4ab1fcee94cc",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "apink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "은지",
+          "start": 9,
+          "end": 14,
+          "text": "Apink",
+          "source": "title"
+        },
+        {
+          "start": 15,
+          "end": 19,
+          "text": "에이핑크",
           "source": "title"
         }
       ]
@@ -102,21 +108,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "apink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-e81a4ab1fcee94cc",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 9,
-          "end": 14,
-          "text": "Apink",
-          "source": "title"
-        },
-        {
-          "start": 15,
-          "end": 19,
-          "text": "에이핑크",
+          "start": 0,
+          "end": 2,
+          "text": "은지",
           "source": "title"
         }
       ]

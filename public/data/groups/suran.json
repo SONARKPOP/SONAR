@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-24T14:02:08.005071Z",
+  "updatedAt": "2026-11-24T14:33:12.701942Z",
   "items": [
     {
       "id": "youtube__bDcuW1tnwNE",
@@ -174,20 +174,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "episode",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 18,
-              "end": 25,
-              "text": "Episode",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "suran",
           "state": "inferred",
           "reason": "unambiguous-title-name",
@@ -202,6 +188,20 @@
               "start": 0,
               "end": 5,
               "text": "SURAN",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "episode",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 18,
+              "end": 25,
+              "text": "Episode",
               "source": "title"
             }
           ]
@@ -745,27 +745,21 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "suran",
+          "artistId": "gfriend",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 37,
-              "end": 39,
-              "text": "수란",
-              "source": "title"
-            },
-            {
-              "start": 40,
-              "end": 45,
-              "text": "Suran",
+              "start": 11,
+              "end": 18,
+              "text": "GFRIEND",
               "source": "title"
             }
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yuju",
+          "artistType": "person",
+          "artistId": "gfriend-yuju",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -784,8 +778,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "gfriend-yuju",
+          "artistType": "group",
+          "artistId": "yuju",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -819,14 +813,20 @@
         },
         {
           "artistType": "group",
-          "artistId": "gfriend",
+          "artistId": "suran",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 11,
-              "end": 18,
-              "text": "GFRIEND",
+              "start": 37,
+              "end": 39,
+              "text": "수란",
+              "source": "title"
+            },
+            {
+              "start": 40,
+              "end": 45,
+              "text": "Suran",
               "source": "title"
             }
           ]
