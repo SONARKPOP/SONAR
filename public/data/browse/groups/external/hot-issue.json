@@ -162,6 +162,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "aespa",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 34,
+              "end": 39,
+              "text": "aespa",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "4minute-hyuna",
           "state": "needs_review",
@@ -205,26 +219,6 @@
         },
         {
           "artistType": "group",
-          "artistId": "hot-issue",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 16,
-              "end": 25,
-              "text": "HOT ISSUE",
-              "source": "title"
-            },
-            {
-              "start": 27,
-              "end": 30,
-              "text": "핫이슈",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "itzy",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -239,14 +233,20 @@
         },
         {
           "artistType": "group",
-          "artistId": "aespa",
+          "artistId": "hot-issue",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 34,
-              "end": 39,
-              "text": "aespa",
+              "start": 16,
+              "end": 25,
+              "text": "HOT ISSUE",
+              "source": "title"
+            },
+            {
+              "start": 27,
+              "end": 30,
+              "text": "핫이슈",
               "source": "title"
             }
           ]

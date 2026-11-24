@@ -43,24 +43,22 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "favorite",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 10,
-          "end": 18,
-          "text": "favorite",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "billlie",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 0,
+          "end": 7,
+          "text": "Billlie",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 67,
+          "text": "billlie",
+          "source": "title"
+        },
         {
           "start": 32,
           "end": 34,
@@ -72,17 +70,19 @@
           "end": 71,
           "text": "빌리",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "favorite",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 0,
-          "end": 7,
-          "text": "Billlie",
-          "source": "title"
-        },
-        {
-          "start": 60,
-          "end": 67,
-          "text": "billlie",
+          "start": 10,
+          "end": 18,
+          "text": "favorite",
           "source": "title"
         }
       ]
