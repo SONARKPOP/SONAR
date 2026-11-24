@@ -49,20 +49,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "swan",
+      "artistId": "h1-key",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 4,
+          "text": "하이키",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "purple-kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 11,
-          "end": 18,
-          "text": "퍼플키스 수안",
-          "source": "title"
-        },
-        {
-          "start": 16,
-          "end": 18,
-          "text": "수안",
+          "end": 15,
+          "text": "퍼플키스",
           "source": "title"
         }
       ]
@@ -89,24 +97,16 @@
     },
     {
       "artistType": "group",
-      "artistId": "purple-kiss",
+      "artistId": "swan",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 11,
-          "end": 15,
-          "text": "퍼플키스",
+          "end": 18,
+          "text": "퍼플키스 수안",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-db461325cd947b43",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
+        },
         {
           "start": 16,
           "end": 18,
@@ -130,15 +130,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "h1-key",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-db461325cd947b43",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 1,
-          "end": 4,
-          "text": "하이키",
+          "start": 16,
+          "end": 18,
+          "text": "수안",
           "source": "title"
         }
       ]

@@ -57,6 +57,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "clc",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 4,
+          "text": "CLC",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "sorn",
       "state": "mention",
       "reason": "official-owner-reference",
@@ -91,20 +105,6 @@
           "start": 18,
           "end": 22,
           "text": "SORN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "clc",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 4,
-          "text": "CLC",
           "source": "title"
         }
       ]
