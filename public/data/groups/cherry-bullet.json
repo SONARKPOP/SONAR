@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-24T09:12:55.664104Z",
+  "updatedAt": "2026-11-24T10:00:39.870086Z",
   "items": [
     {
       "id": "youtube__DT80DV3iOVk",
@@ -123,9 +123,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-bf5312851b87db8b",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-e73219b3e12b1436",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 4,
@@ -137,9 +137,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-e73219b3e12b1436",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-bf5312851b87db8b",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 4,
@@ -354,35 +354,7 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-a1479c2cc95e8b6a",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 12,
-              "end": 14,
-              "text": "소원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "ive",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 5,
-              "end": 8,
-              "text": "IVE",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "ive-yujin",
+          "artistId": "person-a8d2c786d580bbbc",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -396,7 +368,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-a8d2c786d580bbbc",
+          "artistId": "ive-yujin",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -418,6 +390,34 @@
               "start": 0,
               "end": 3,
               "text": "안유진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ive",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 5,
+              "end": 8,
+              "text": "IVE",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a1479c2cc95e8b6a",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 12,
+              "end": 14,
+              "text": "소원",
               "source": "title"
             }
           ]
@@ -782,22 +782,28 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-a0260b2bdfc6f22a",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "cherry-bullet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 71,
-              "end": 73,
-              "text": "사랑",
+              "start": 16,
+              "end": 29,
+              "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 30,
+              "end": 34,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-e202f1ad30e8b48a",
+          "artistId": "person-a0260b2bdfc6f22a",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -825,14 +831,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-107bc4f5371ff8f7",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-e202f1ad30e8b48a",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "보라",
+              "start": 71,
+              "end": 73,
+              "text": "사랑",
               "source": "title"
             }
           ]
@@ -852,21 +858,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "cherry-bullet",
+          "artistType": "person",
+          "artistId": "person-107bc4f5371ff8f7",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 30,
-              "end": 34,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
-              "start": 16,
-              "end": 29,
-              "text": "Cherry Bullet",
+              "start": 11,
+              "end": 13,
+              "text": "보라",
               "source": "title"
             }
           ]
@@ -1614,15 +1614,55 @@
           "reason": "everyday-name",
           "matches": [
             {
+              "start": 39,
+              "end": 42,
+              "text": "클라씨",
+              "source": "title"
+            },
+            {
               "start": 43,
               "end": 49,
               "text": "CLASSY",
               "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "purple-kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 57,
+              "end": 68,
+              "text": "PURPLE KISS",
+              "source": "title"
             },
             {
-              "start": 39,
-              "end": 42,
-              "text": "클라씨",
+              "start": 52,
+              "end": 56,
+              "text": "퍼플키스",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "cherry-bullet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 23,
+              "end": 36,
+              "text": "CHERRY BULLET",
+              "source": "title"
+            },
+            {
+              "start": 18,
+              "end": 22,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -1637,46 +1677,6 @@
               "start": 64,
               "end": 68,
               "text": "KISS",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "purple-kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 52,
-              "end": 56,
-              "text": "퍼플키스",
-              "source": "title"
-            },
-            {
-              "start": 57,
-              "end": 68,
-              "text": "PURPLE KISS",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "cherry-bullet",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 18,
-              "end": 22,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
-              "start": 23,
-              "end": 36,
-              "text": "CHERRY BULLET",
               "source": "title"
             }
           ]
@@ -1740,6 +1740,141 @@
       "contentLength": "short",
       "hierarchyVersion": 2,
       "appearanceLinks": []
+    },
+    {
+      "id": "youtube__ck_qvnD7ipU",
+      "platform": "youtube",
+      "platformId": "ck_qvnD7ipU",
+      "demo": false,
+      "title": "집순희 시원한 고음으로 올해 여름 나볼게요🌀 #CHO고음챌린지 #초고음챌린지 #체리블렛 #보라",
+      "publishedAt": "2023-06-08T10:00:26Z",
+      "groupIds": [
+        "cherry-bullet",
+        "feverse"
+      ],
+      "memberIds": [
+        "person-107bc4f5371ff8f7"
+      ],
+      "channelId": "feverse-official",
+      "channelName": "피버스 Feverse",
+      "category": "own",
+      "subtypes": [
+        "기타"
+      ],
+      "tags": [
+        "기타",
+        "자체 콘텐츠",
+        "자체 예능"
+      ],
+      "format": "video",
+      "thumbnail": "https://i.ytimg.com/vi/ck_qvnD7ipU/hqdefault.jpg",
+      "durationLabel": "31s",
+      "memberTagging": {
+        "policy": "title-context-v2",
+        "source": "unclassified",
+        "appearanceVerified": false
+      },
+      "externalId": "ck_qvnD7ipU",
+      "sourceUrl": "https://www.youtube.com/watch?v=ck_qvnD7ipU",
+      "contentTypes": [
+        "own"
+      ],
+      "ownType": "variety",
+      "contentTabs": [
+        "shorts",
+        "own"
+      ],
+      "musicBroadcast": false,
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "short",
+      "hierarchyVersion": 2,
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "cherry-bullet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 44,
+              "end": 48,
+              "text": "체리블렛",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-507e18325fa70402",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 16,
+              "end": 18,
+              "text": "여름",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a62ad8bf482db100",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 16,
+              "end": 18,
+              "text": "여름",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-93f1f4e0118a5b58",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 16,
+              "end": 18,
+              "text": "여름",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e6e94b8b5bcbf3f1",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 50,
+              "end": 52,
+              "text": "보라",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-107bc4f5371ff8f7",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 50,
+              "end": 52,
+              "text": "보라",
+              "source": "title"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "youtube__O6S0Q_AdhP8",
@@ -1909,34 +2044,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "dreamnote",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 69,
-              "end": 78,
-              "text": "DreamNote",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "x-in",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 22,
-              "end": 26,
-              "text": "X:IN",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "cherry-bullet",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1951,6 +2058,20 @@
         },
         {
           "artistType": "group",
+          "artistId": "dreamnote",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 69,
+              "end": 78,
+              "text": "DreamNote",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "billlie",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1959,6 +2080,20 @@
               "start": 28,
               "end": 35,
               "text": "Billlie",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "x-in",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 22,
+              "end": 26,
+              "text": "X:IN",
               "source": "title"
             }
           ]
@@ -2025,7 +2160,7 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-504a77b935c31921",
+          "artistId": "person-6710cdc41d20f9fd",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -2039,7 +2174,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-6710cdc41d20f9fd",
+          "artistId": "person-504a77b935c31921",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -2255,84 +2390,42 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-c43a8693274ab50b",
+          "artistId": "person-110a6a07afa29cb8",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
             {
-              "start": 42,
-              "end": 44,
-              "text": "수빈",
+              "start": 56,
+              "end": 59,
+              "text": "정예인",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "jeong-ye-in",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 56,
+              "end": 59,
+              "text": "정예인",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-ed0bdd1050057612",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "lovelyz-jeong-ye-in",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 42,
-              "end": 44,
-              "text": "수빈",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-75f064f22d7b585b",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 44,
-              "text": "수빈",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-ef564d6f2eff92ed",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 44,
-              "text": "수빈",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-6405a02f1e2c2479",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 44,
-              "text": "수빈",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-351756972e1b0d9f",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 42,
-              "end": 44,
-              "text": "수빈",
+              "start": 56,
+              "end": 59,
+              "text": "정예인",
               "source": "title"
             }
           ]
@@ -2395,48 +2488,6 @@
         },
         {
           "artistType": "group",
-          "artistId": "jeong-ye-in",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 56,
-              "end": 59,
-              "text": "정예인",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "lovelyz-jeong-ye-in",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 56,
-              "end": 59,
-              "text": "정예인",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-110a6a07afa29cb8",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 56,
-              "end": 59,
-              "text": "정예인",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "cherry-bullet",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -2445,6 +2496,90 @@
               "start": 22,
               "end": 26,
               "text": "체리블렛",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-75f064f22d7b585b",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "수빈",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-ef564d6f2eff92ed",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "수빈",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-351756972e1b0d9f",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "수빈",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-c43a8693274ab50b",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "수빈",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-6405a02f1e2c2479",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "수빈",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-ed0bdd1050057612",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 42,
+              "end": 44,
+              "text": "수빈",
               "source": "title"
             }
           ]
@@ -2500,14 +2635,14 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-1cd1ee96248783a7",
+          "artistId": "person-66be5bd6c342235c",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 28,
-              "end": 30,
-              "text": "레미",
+              "start": 32,
+              "end": 34,
+              "text": "해윤",
               "source": "title"
             }
           ]
@@ -2528,14 +2663,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-66be5bd6c342235c",
+          "artistId": "person-1cd1ee96248783a7",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 32,
-              "end": 34,
-              "text": "해윤",
+              "start": 28,
+              "end": 30,
+              "text": "레미",
               "source": "title"
             }
           ]
@@ -2640,14 +2775,14 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-1cd1ee96248783a7",
+          "artistId": "person-66be5bd6c342235c",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 32,
-              "end": 34,
-              "text": "레미",
+              "start": 28,
+              "end": 30,
+              "text": "해윤",
               "source": "title"
             }
           ]
@@ -2668,14 +2803,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-66be5bd6c342235c",
+          "artistId": "person-1cd1ee96248783a7",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 28,
-              "end": 30,
-              "text": "해윤",
+              "start": 32,
+              "end": 34,
+              "text": "레미",
               "source": "title"
             }
           ]
@@ -2885,15 +3020,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 19,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 13,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 15,
+              "end": 19,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -3439,15 +3574,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 6,
               "end": 19,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -3853,7 +3988,7 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-106b49dfd7675575",
+          "artistId": "person-91af8eefcf028ceb",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3867,7 +4002,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-91af8eefcf028ceb",
+          "artistId": "person-106b49dfd7675575",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -4087,6 +4222,26 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "cherry-bullet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 28,
+              "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 10,
+              "end": 14,
+              "text": "체리블렛",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -4095,26 +4250,6 @@
               "start": 46,
               "end": 48,
               "text": "키스",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "cherry-bullet",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 10,
-              "end": 14,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
-              "start": 15,
-              "end": 28,
-              "text": "Cherry Bullet",
               "source": "title"
             }
           ]
@@ -4207,6 +4342,87 @@
       "musicBroadcast": false
     },
     {
+      "id": "youtube__5Fily8TjOAM",
+      "platform": "youtube",
+      "platformId": "5Fily8TjOAM",
+      "demo": false,
+      "title": "원샷초대석 with 체리블렛(Cherry Bullet) full ver. / [비투비의 키스 더 라디오] I KBS 230317 방송",
+      "publishedAt": "2023-03-17T14:30:02Z",
+      "groupIds": [
+        "cherry-bullet",
+        "kiss"
+      ],
+      "memberIds": [],
+      "channelId": "kbs-coolfm",
+      "channelName": "KBS CoolFM",
+      "category": "external",
+      "subtypes": [
+        "기타"
+      ],
+      "tags": [
+        "기타",
+        "라디오"
+      ],
+      "format": "video",
+      "thumbnail": "https://i.ytimg.com/vi/5Fily8TjOAM/hqdefault.jpg",
+      "durationLabel": "38m15s",
+      "contentTypes": [
+        "external"
+      ],
+      "externalType": "radio",
+      "memberTagging": {
+        "policy": "title-only-v1",
+        "source": "unclassified",
+        "appearanceVerified": false
+      },
+      "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "cherry-bullet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 16,
+              "end": 29,
+              "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 15,
+              "text": "체리블렛",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kiss",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 49,
+              "end": 51,
+              "text": "키스",
+              "source": "title"
+            }
+          ]
+        }
+      ],
+      "externalId": "5Fily8TjOAM",
+      "sourceUrl": "https://www.youtube.com/watch?v=5Fily8TjOAM",
+      "contentTabs": [
+        "radio"
+      ],
+      "musicType": "",
+      "teaserType": "",
+      "contentLength": "regular",
+      "hierarchyVersion": 2,
+      "musicBroadcast": false
+    },
+    {
       "id": "youtube__CnrX_w6w-Ww",
       "platform": "youtube",
       "platformId": "CnrX_w6w-Ww",
@@ -4244,6 +4460,26 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "cherry-bullet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 5,
+              "end": 18,
+              "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "체리블렛",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -4252,26 +4488,6 @@
               "start": 41,
               "end": 43,
               "text": "키스",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "cherry-bullet",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 4,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
-              "start": 5,
-              "end": 18,
-              "text": "Cherry Bullet",
               "source": "title"
             }
           ]
@@ -4286,87 +4502,6 @@
       "musicType": "",
       "teaserType": "",
       "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false
-    },
-    {
-      "id": "youtube__5Fily8TjOAM",
-      "platform": "youtube",
-      "platformId": "5Fily8TjOAM",
-      "demo": false,
-      "title": "원샷초대석 with 체리블렛(Cherry Bullet) full ver. / [비투비의 키스 더 라디오] I KBS 230317 방송",
-      "publishedAt": "2023-03-17T14:30:02Z",
-      "groupIds": [
-        "cherry-bullet",
-        "kiss"
-      ],
-      "memberIds": [],
-      "channelId": "kbs-coolfm",
-      "channelName": "KBS CoolFM",
-      "category": "external",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "라디오"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/5Fily8TjOAM/hqdefault.jpg",
-      "durationLabel": "38m15s",
-      "contentTypes": [
-        "external"
-      ],
-      "externalType": "radio",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "unclassified",
-        "appearanceVerified": false
-      },
-      "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "kiss",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 49,
-              "end": 51,
-              "text": "키스",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "cherry-bullet",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 11,
-              "end": 15,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
-              "start": 16,
-              "end": 29,
-              "text": "Cherry Bullet",
-              "source": "title"
-            }
-          ]
-        }
-      ],
-      "externalId": "5Fily8TjOAM",
-      "sourceUrl": "https://www.youtube.com/watch?v=5Fily8TjOAM",
-      "contentTabs": [
-        "radio"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "regular",
       "hierarchyVersion": 2,
       "musicBroadcast": false
     },
@@ -5124,15 +5259,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 6,
               "end": 19,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -5192,15 +5327,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 19,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 13,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 15,
+              "end": 19,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -5260,15 +5395,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 6,
               "end": 19,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -5464,15 +5599,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 6,
               "end": 19,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -5600,15 +5735,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 6,
               "end": 19,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -5694,10 +5829,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-f07a58ca3f31f17c",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "yuju",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 27,
@@ -5722,10 +5857,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yuju",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "person",
+          "artistId": "person-f07a58ca3f31f17c",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 27,
@@ -5830,10 +5965,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-f07a58ca3f31f17c",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "yuju",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 37,
@@ -5858,10 +5993,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yuju",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "person",
+          "artistId": "person-f07a58ca3f31f17c",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 37,
@@ -6561,6 +6696,26 @@
         },
         {
           "artistType": "group",
+          "artistId": "cherry-bullet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 5,
+              "end": 18,
+              "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "체리블렛",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "girls-generation",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -6569,26 +6724,6 @@
               "start": 32,
               "end": 36,
               "text": "소녀시대",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "cherry-bullet",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 4,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
-              "start": 5,
-              "end": 18,
-              "text": "Cherry Bullet",
               "source": "title"
             }
           ]
@@ -6662,15 +6797,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 18,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -6806,15 +6941,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 5,
               "end": 18,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 4,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -6870,6 +7005,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "girls-generation",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 72,
+              "end": 76,
+              "text": "소녀시대",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "gg-3ea891caaee2e6ac",
           "state": "needs_review",
           "reason": "everyday-name",
@@ -6890,34 +7039,20 @@
         },
         {
           "artistType": "group",
-          "artistId": "girls-generation",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 72,
-              "end": 76,
-              "text": "소녀시대",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "cherry-bullet",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 5,
-              "end": 9,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 10,
               "end": 23,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 5,
+              "end": 9,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
@@ -7150,7 +7285,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-504a77b935c31921",
+          "artistId": "person-6710cdc41d20f9fd",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -7164,7 +7299,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-6710cdc41d20f9fd",
+          "artistId": "person-504a77b935c31921",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -7256,9 +7391,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-3f145ccd1924ff13",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-fb32906f4cb59ca9",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 10,
@@ -7270,9 +7405,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-fb32906f4cb59ca9",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-3f145ccd1924ff13",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 10,
@@ -7368,21 +7503,7 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-39bf10a34536eb16",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 10,
-              "end": 12,
-              "text": "지원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-6c6f78b3800b2df3",
+          "artistId": "person-7c6ccda0122b2222",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -7410,7 +7531,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-ef771f423ffec044",
+          "artistId": "person-6c6f78b3800b2df3",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -7424,7 +7545,21 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-7c6ccda0122b2222",
+          "artistId": "person-39bf10a34536eb16",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 10,
+              "end": 12,
+              "text": "지원",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-ef771f423ffec044",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -7443,15 +7578,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 5,
-              "end": 9,
-              "text": "체리블렛",
-              "source": "title"
-            },
-            {
               "start": 36,
               "end": 49,
               "text": "Cherry Bullet",
+              "source": "title"
+            },
+            {
+              "start": 5,
+              "end": 9,
+              "text": "체리블렛",
               "source": "title"
             }
           ]
