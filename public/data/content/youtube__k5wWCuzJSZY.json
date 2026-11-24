@@ -48,14 +48,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "boa",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 66,
-          "end": 68,
-          "text": "보아",
+          "start": 29,
+          "end": 32,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 36,
+          "text": "IVE",
           "source": "title"
         }
       ]
@@ -75,15 +81,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-2300f45a248fc299",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "boa",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 22,
-          "end": 24,
-          "text": "세계",
+          "start": 66,
+          "end": 68,
+          "text": "보아",
           "source": "title"
         }
       ]
@@ -103,21 +109,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ive",
+      "artistType": "person",
+      "artistId": "person-2300f45a248fc299",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 33,
-          "end": 36,
-          "text": "IVE",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 32,
-          "text": "아이브",
+          "start": 22,
+          "end": 24,
+          "text": "세계",
           "source": "title"
         }
       ]
