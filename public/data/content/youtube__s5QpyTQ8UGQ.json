@@ -57,6 +57,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "purple-kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 11,
+          "text": "PURPLE KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-d2dde911aeb209a8",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -71,23 +85,9 @@
     },
     {
       "artistType": "group",
-      "artistId": "purple-kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 11,
-          "text": "PURPLE KISS",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "swan",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 58,
@@ -98,10 +98,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "swan",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 58,

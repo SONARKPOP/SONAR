@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-09-18T12:30:32Z",
   "groupIds": [
-    "kwon-eun-bi",
-    "ourbirthday"
+    "kwon-eun-bi"
   ],
   "memberIds": [
     "person-91701f6ec51b8fca"
@@ -42,6 +41,34 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "person",
+      "artistId": "person-91701f6ec51b8fca",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 17,
+          "text": "국초록",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "izone-kwon-eun-bi",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 35,
+          "end": 38,
+          "text": "권은비",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "kwon-eun-bi",
       "state": "inferred",
@@ -70,24 +97,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "izone-kwon-eun-bi",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 35,
-          "end": 38,
-          "text": "권은비",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "ourbirthday",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 1,
@@ -99,20 +112,6 @@
           "start": 77,
           "end": 88,
           "text": "OURBIRTHDAY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-91701f6ec51b8fca",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 14,
-          "end": 17,
-          "text": "국초록",
           "source": "title"
         }
       ]
@@ -138,5 +137,11 @@
   ],
   "displayCareerGroupIds": [
     "ourbirthday"
-  ]
+  ],
+  "individualActivity": {
+    "artistId": "kwon-eun-bi",
+    "groupIds": [],
+    "kind": "individual",
+    "evidence": "official-solo-channel"
+  }
 }

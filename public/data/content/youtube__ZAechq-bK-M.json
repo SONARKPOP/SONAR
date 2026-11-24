@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-11-19T12:00:06Z",
   "groupIds": [
-    "itzy",
-    "twice"
+    "itzy"
   ],
   "memberIds": [
     "itzy-member-608992372543",
@@ -58,20 +57,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "twice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 52,
-          "end": 57,
-          "text": "TWICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "itzy",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -80,6 +65,20 @@
           "start": 34,
           "end": 38,
           "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tw-jihyo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 59,
+          "end": 64,
+          "text": "JIHYO",
           "source": "title"
         }
       ]
@@ -99,15 +98,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-jihyo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "twice",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 59,
-          "end": 64,
-          "text": "JIHYO",
+          "start": 52,
+          "end": 57,
+          "text": "TWICE",
           "source": "title"
         }
       ]
