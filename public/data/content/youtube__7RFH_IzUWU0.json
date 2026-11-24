@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-06-30T09:00:19Z",
   "groupIds": [
-    "seeya",
-    "stayc"
+    "seeya"
   ],
   "memberIds": [
     "person-5093ef4f08d2376c",
@@ -58,15 +57,21 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "seeya",
+      "artistType": "person",
+      "artistId": "stayc-member-c5adbcd89db8",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 51,
-          "end": 53,
-          "text": "씨야",
+          "start": 23,
+          "end": 25,
+          "text": "세은",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 49,
+          "text": "세은",
           "source": "title"
         }
       ]
@@ -74,9 +79,15 @@
     {
       "artistType": "group",
       "artistId": "stayc",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
+        {
+          "start": 18,
+          "end": 22,
+          "text": "스테이씨",
+          "source": "title"
+        },
         {
           "start": 33,
           "end": 38,
@@ -87,12 +98,6 @@
           "start": 40,
           "end": 45,
           "text": "STAYC",
-          "source": "title"
-        },
-        {
-          "start": 18,
-          "end": 22,
-          "text": "스테이씨",
           "source": "title"
         }
       ]
@@ -112,21 +117,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "stayc-member-c5adbcd89db8",
+      "artistType": "group",
+      "artistId": "seeya",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 23,
-          "end": 25,
-          "text": "세은",
-          "source": "title"
-        },
-        {
-          "start": 47,
-          "end": 49,
-          "text": "세은",
+          "start": 51,
+          "end": 53,
+          "text": "씨야",
           "source": "title"
         }
       ]
