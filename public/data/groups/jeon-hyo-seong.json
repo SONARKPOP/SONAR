@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-24T10:51:46.305119Z",
+  "updatedAt": "2026-11-24T11:24:14.295531Z",
   "items": [
     {
       "id": "youtube__JBGFMlERQ-Y",
@@ -828,6 +828,20 @@
       "appearanceLinks": [
         {
           "artistType": "person",
+          "artistId": "person-9f5a8dd269dd0594",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 31,
+              "end": 33,
+              "text": "징거",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-0627b0a012a22973",
           "state": "needs_review",
           "reason": "shared-name",
@@ -842,9 +856,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-9e5ba9142a2c2e06",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-35ba498f236f93ff",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 27,
@@ -884,14 +898,28 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-35ba498f236f93ff",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-9e5ba9142a2c2e06",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 27,
               "end": 29,
               "text": "예빈",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 9,
+              "end": 12,
+              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -932,34 +960,6 @@
               "start": 14,
               "end": 17,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-9f5a8dd269dd0594",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 31,
-              "end": 33,
-              "text": "징거",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 9,
-              "end": 12,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -1029,62 +1029,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "classy",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 36,
-              "end": 39,
-              "text": "클라씨",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "jeon-hyo-seong",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 23,
-              "end": 26,
-              "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "secret-jeon-hyo-seong",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 23,
-              "end": 26,
-              "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 18,
-              "end": 21,
-              "text": "시크릿",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-ab3fa2f798d96086",
           "state": "needs_review",
@@ -1150,6 +1094,62 @@
               "start": 41,
               "end": 43,
               "text": "지민",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 18,
+              "end": 21,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "classy",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 36,
+              "end": 39,
+              "text": "클라씨",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "jeon-hyo-seong",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 23,
+              "end": 26,
+              "text": "전효성",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "secret-jeon-hyo-seong",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 23,
+              "end": 26,
+              "text": "전효성",
               "source": "title"
             }
           ]
@@ -1220,6 +1220,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 37,
+              "end": 40,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1242,20 +1256,6 @@
               "start": 12,
               "end": 15,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 37,
-              "end": 40,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -1326,34 +1326,6 @@
       ],
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "jeon-hyo-seong",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 18,
-              "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "secret-jeon-hyo-seong",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 18,
-              "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-9f5a8dd269dd0594",
           "state": "inferred",
@@ -1383,9 +1355,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-9e5ba9142a2c2e06",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-35ba498f236f93ff",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 28,
@@ -1425,14 +1397,42 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-35ba498f236f93ff",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-9e5ba9142a2c2e06",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 28,
               "end": 30,
               "text": "예빈",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "jeon-hyo-seong",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "전효성",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "secret-jeon-hyo-seong",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "전효성",
               "source": "title"
             }
           ]
@@ -1496,6 +1496,26 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 17,
+              "end": 20,
+              "text": "시크릿",
+              "source": "title"
+            },
+            {
+              "start": 67,
+              "end": 70,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1530,26 +1550,6 @@
               "start": 54,
               "end": 57,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 17,
-              "end": 20,
-              "text": "시크릿",
-              "source": "title"
-            },
-            {
-              "start": 67,
-              "end": 70,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -2227,9 +2227,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-9e5ba9142a2c2e06",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-35ba498f236f93ff",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 7,
@@ -2269,9 +2269,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-35ba498f236f93ff",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-9e5ba9142a2c2e06",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 7,
@@ -2421,9 +2421,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-9e5ba9142a2c2e06",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-35ba498f236f93ff",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 27,
@@ -2463,9 +2463,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-35ba498f236f93ff",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-9e5ba9142a2c2e06",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 27,
@@ -2639,6 +2639,26 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "kiss",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 35,
+              "end": 39,
+              "text": "Kiss",
+              "source": "title"
+            },
+            {
+              "start": 20,
+              "end": 22,
+              "text": "키스",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -2673,26 +2693,6 @@
               "start": 64,
               "end": 67,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "kiss",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 20,
-              "end": 22,
-              "text": "키스",
-              "source": "title"
-            },
-            {
-              "start": 35,
-              "end": 39,
-              "text": "Kiss",
               "source": "title"
             }
           ]
@@ -2749,6 +2749,20 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 68,
+              "end": 71,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-85910168dcb4b9cd",
           "state": "inferred",
@@ -2786,20 +2800,6 @@
               "start": 63,
               "end": 66,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 68,
-              "end": 71,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -2857,26 +2857,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-85910168dcb4b9cd",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "신재영",
-              "source": "title"
-            },
-            {
-              "start": 35,
-              "end": 38,
-              "text": "신재영",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
@@ -2914,6 +2894,26 @@
               "start": 30,
               "end": 33,
               "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-85910168dcb4b9cd",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "신재영",
+              "source": "title"
+            },
+            {
+              "start": 35,
+              "end": 38,
+              "text": "신재영",
               "source": "title"
             }
           ]
@@ -3071,6 +3071,34 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 21,
+              "end": 24,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a62ad8bf482db100",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "여름",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-93f1f4e0118a5b58",
           "state": "needs_review",
@@ -3094,34 +3122,6 @@
               "start": 0,
               "end": 2,
               "text": "여름",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-a62ad8bf482db100",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "여름",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 21,
-              "end": 24,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -3286,6 +3286,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 20,
+              "end": 23,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -3308,20 +3322,6 @@
               "start": 15,
               "end": 18,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 20,
-              "end": 23,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -3384,28 +3384,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "jeon-hyo-seong",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 32,
-              "end": 35,
-              "text": "전효성",
+              "start": 27,
+              "end": 30,
+              "text": "시크릿",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "secret-jeon-hyo-seong",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 32,
-              "end": 35,
-              "text": "전효성",
+              "start": 44,
+              "end": 47,
+              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -3440,20 +3432,28 @@
         },
         {
           "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistId": "jeon-hyo-seong",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 27,
-              "end": 30,
-              "text": "시크릿",
+              "start": 32,
+              "end": 35,
+              "text": "전효성",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "secret-jeon-hyo-seong",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
-              "start": 44,
-              "end": 47,
-              "text": "시크릿",
+              "start": 32,
+              "end": 35,
+              "text": "전효성",
               "source": "title"
             }
           ]
@@ -3515,6 +3515,26 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 5,
+              "end": 8,
+              "text": "시크릿",
+              "source": "title"
+            },
+            {
+              "start": 24,
+              "end": 27,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-4b927123d0b53a6e",
           "state": "needs_review",
@@ -3552,26 +3572,6 @@
               "start": 12,
               "end": 15,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 5,
-              "end": 8,
-              "text": "시크릿",
-              "source": "title"
-            },
-            {
-              "start": 24,
-              "end": 27,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -3730,6 +3730,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -3752,20 +3766,6 @@
               "start": 15,
               "end": 18,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -3827,6 +3827,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 49,
+              "end": 52,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -3849,20 +3863,6 @@
               "start": 36,
               "end": 39,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 49,
-              "end": 52,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -3936,6 +3936,20 @@
           ]
         },
         {
+          "artistType": "person",
+          "artistId": "person-7d822ba2bf35ac44",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 3,
+              "end": 5,
+              "text": "바다",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
@@ -3959,20 +3973,6 @@
               "start": 17,
               "end": 20,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-7d822ba2bf35ac44",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 3,
-              "end": 5,
-              "text": "바다",
               "source": "title"
             }
           ]
@@ -4035,6 +4035,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 36,
+              "end": 39,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -4057,20 +4071,6 @@
               "start": 16,
               "end": 19,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 36,
-              "end": 39,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -4243,6 +4243,26 @@
         },
         {
           "artistType": "group",
+          "artistId": "secret",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 9,
+              "end": 12,
+              "text": "시크릿",
+              "source": "title"
+            },
+            {
+              "start": 52,
+              "end": 55,
+              "text": "시크릿",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "jeon-hyo-seong",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -4265,26 +4285,6 @@
               "start": 57,
               "end": 60,
               "text": "전효성",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 9,
-              "end": 12,
-              "text": "시크릿",
-              "source": "title"
-            },
-            {
-              "start": 52,
-              "end": 55,
-              "text": "시크릿",
               "source": "title"
             }
           ]
@@ -4678,20 +4678,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-635192b2e655114d",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 14,
-              "end": 16,
-              "text": "이유",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-e15f2801873c3186",
           "state": "needs_review",
           "reason": "shared-name",
@@ -4707,6 +4693,20 @@
         {
           "artistType": "person",
           "artistId": "hitgs-iyoo",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 14,
+              "end": 16,
+              "text": "이유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-635192b2e655114d",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -4774,20 +4774,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-635192b2e655114d",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 15,
-              "end": 17,
-              "text": "이유",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-e15f2801873c3186",
           "state": "needs_review",
           "reason": "shared-name",
@@ -4803,6 +4789,20 @@
         {
           "artistType": "person",
           "artistId": "hitgs-iyoo",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 15,
+              "end": 17,
+              "text": "이유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-635192b2e655114d",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
