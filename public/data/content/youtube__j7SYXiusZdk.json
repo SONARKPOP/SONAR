@@ -55,14 +55,40 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "loona",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "heejin",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 9,
-          "end": 14,
-          "text": "LOONA",
+          "start": 24,
+          "end": 26,
+          "text": "희진",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 38,
+          "text": "HeeJin",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "loona-heejin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 26,
+          "text": "희진",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 38,
+          "text": "HeeJin",
           "source": "title"
         }
       ]
@@ -102,41 +128,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "loona-heejin",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 24,
-          "end": 26,
-          "text": "희진",
-          "source": "title"
-        },
-        {
-          "start": 32,
-          "end": 38,
-          "text": "HeeJin",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "heejin",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "loona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "희진",
-          "source": "title"
-        },
-        {
-          "start": 32,
-          "end": 38,
-          "text": "HeeJin",
+          "start": 9,
+          "end": 14,
+          "text": "LOONA",
           "source": "title"
         }
       ]
