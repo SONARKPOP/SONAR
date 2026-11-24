@@ -8,7 +8,6 @@
   "publishedAt": "2026-10-27T07:00:10Z",
   "groupIds": [
     "gfriend",
-    "ive",
     "nmixx"
   ],
   "memberIds": [
@@ -45,20 +44,6 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 4,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "nmixx-member-ac44760f306b",
       "state": "inferred",
@@ -68,6 +53,20 @@
           "start": 40,
           "end": 46,
           "text": "KYUJIN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-leeseo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 12,
+          "text": "LEESEO",
           "source": "title"
         }
       ]
@@ -87,15 +86,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "ive-leeseo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 6,
-          "end": 12,
-          "text": "LEESEO",
+          "start": 1,
+          "end": 4,
+          "text": "IVE",
           "source": "title"
         }
       ]
