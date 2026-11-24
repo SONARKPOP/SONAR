@@ -57,6 +57,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "miss-a",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "miss A",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -71,23 +85,9 @@
     },
     {
       "artistType": "group",
-      "artistId": "miss-a",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 6,
-          "text": "miss A",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "tuide-jia",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "jia",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 21,
@@ -112,10 +112,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jia",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "tuide-jia",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 21,
