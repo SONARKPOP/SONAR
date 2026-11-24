@@ -1,0 +1,59 @@
+.artist-comparison {
+ display:grid;
+ gap:.8rem;
+ margin:0 0 1.25rem;
+ padding:clamp(.75rem,3vw,1.5rem);
+ border:1px solid color-mix(in srgb,currentColor 22%,transparent);
+ border-radius:1rem;
+ background:color-mix(in srgb,currentColor 4%,transparent);
+}
+.artist-comparison header,.artist-comparison-controls,.artist-relations {
+ display:flex;
+ flex-wrap:wrap;
+ gap:.65rem;
+}
+.artist-comparison header {justify-content:space-between;align-items:center}
+.artist-comparison h3 {font-size:1.1rem;font-weight:700}
+.artist-comparison h3 span {margin-inline-start:.5rem}
+.artist-comparison-controls label {display:grid;gap:.2rem;min-width:0}
+.artist-comparison-controls select {max-width:min(18rem,75vw)}
+.artist-analysis-columns {
+ display:grid;
+ grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);
+ gap:1rem;
+}
+.artist-analysis-card {
+ display:grid;
+ align-content:start;
+ min-width:0;
+ gap:.65rem;
+ padding:clamp(.65rem,2vw,1rem);
+ border:1px solid color-mix(in srgb,currentColor 18%,transparent);
+ border-radius:.75rem;
+}
+.artist-analysis-card .artist-relations {display:grid}
+.artist-analysis-card .artist-relations li {border-inline-start:2px solid color-mix(in srgb,currentColor 24%,transparent);padding-inline-start:.7rem}
+@media(max-width:700px){.artist-analysis-columns {grid-template-columns:minmax(0,1fr)}}
+.artist-comparison button,.artist-comparison select {
+ padding:.32rem .65rem;
+ border:1px solid color-mix(in srgb,currentColor 26%,transparent);
+ border-radius:.5rem;
+ color:inherit;
+}
+.artist-comparison button,.artist-shared-videos summary {cursor:pointer}
+.artist-comparison :is(button,select):focus-visible {outline:2px solid currentColor;outline-offset:2px}
+.artist-comparison button[aria-pressed="true"] {background:color-mix(in srgb,currentColor 13%,transparent)}
+.artist-relations li {display:flex;align-items:end;gap:.35rem}
+.artist-relations li div {display:grid;gap:.2rem}
+.artist-comparison-table {width:100%;table-layout:fixed;border-collapse:collapse}
+.artist-comparison-table caption {text-align:start;font-weight:700;margin:.4rem 0}
+.artist-comparison-table :is(th,td) {
+ padding:.35rem;
+ border-bottom:1px solid color-mix(in srgb,currentColor 18%,transparent);
+ overflow-wrap:anywhere;
+ text-align:center;
+}
+.artist-comparison-table th:first-child {text-align:start}
+.artist-comparison-table small {display:block;font-weight:400}
+.artist-shared-videos ul {display:grid;gap:.4rem;margin-top:.65rem}
+.artist-shared-videos button {max-width:100%;text-align:start;overflow-wrap:anywhere}

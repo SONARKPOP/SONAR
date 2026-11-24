@@ -1,5 +1,5 @@
 import {activityView} from './youtube-activity.js';
-export const ANALYSIS_TABS=[['activity','콘텐츠 활동량'],['profiles','아티스트 통계'],['maps','출생지 지도']];
+export const ANALYSIS_TABS=[['activity','콘텐츠 활동량'],['comparison','관계망 · 콘텐츠 비교'],['profiles','아티스트 통계'],['maps','출생지 지도']];
 export function analysisDataFiles(tab){return tab==='activity'?{activity:'analysis-activity.json',legacy:'activity-comparison.json'}:{};}
 function debutYear(artist){
  const date=artist.artistType==='solo'?(artist.soloDebutDate||artist.debutDate):artist.debutDate;
