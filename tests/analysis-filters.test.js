@@ -25,6 +25,7 @@ test('active states exclude stale/unknown signals and no state selection preserv
 });
 test('unfinished analysis artifacts are never requested, activity loads only on its tab',()=>{
  assert.deepEqual(analysisDataFiles('profiles'),{});assert.deepEqual(analysisDataFiles('maps'),{});
+ assert.deepEqual(analysisDataFiles('comparison'),{});
  assert.deepEqual(analysisDataFiles('credits'),{});assert.deepEqual(analysisDataFiles('advanced'),{});
  assert.deepEqual(analysisDataFiles('activity'),{activity:'analysis-activity.json',legacy:'activity-comparison.json'});
 });
@@ -34,7 +35,7 @@ test('analysis defaults and legacy combined kind normalize without touching pref
  const copy=JSON.stringify(legacy),normalized=normalizeAnalysisFilters(legacy);
  assert.equal(normalized.kind,'group');assert.equal(normalizeAnalysisFilters().kind,'group');
  assert.deepEqual(normalized.states,['SURGE']);assert.deepEqual(normalized.presets,['heart','star']);assert.equal(JSON.stringify(legacy),copy);
- assert.deepEqual(ANALYSIS_TABS.map(([id])=>id),['activity','profiles','maps']);
+ assert.deepEqual(ANALYSIS_TABS.map(([id])=>id),['activity','comparison','profiles','maps']);
 });
 test('favorite categories combine with OR, then year/type/activity with AND',()=>{
  const favorites={heart:['a'],star:['b','a'],clover:['d']};
