@@ -51,11 +51,17 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-9beac4d506c27cd3",
+          "artistType": "group",
+          "artistId": "hynn",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
+            {
+              "start": 10,
+              "end": 13,
+              "text": "박혜원",
+              "source": "title"
+            },
             {
               "start": 5,
               "end": 9,
@@ -65,8 +71,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "hynn",
+          "artistType": "person",
+          "artistId": "person-9beac4d506c27cd3",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -74,12 +80,6 @@
               "start": 5,
               "end": 9,
               "text": "HYNN",
-              "source": "title"
-            },
-            {
-              "start": 10,
-              "end": 13,
-              "text": "박혜원",
               "source": "title"
             }
           ]
@@ -136,21 +136,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "alice",
+          "artistType": "person",
+          "artistId": "person-5ee9cac67b459167",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 34,
-              "end": 39,
-              "text": "Alice",
-              "source": "title"
-            },
-            {
-              "start": 40,
-              "end": 43,
-              "text": "앨리스",
+              "start": 10,
+              "end": 12,
+              "text": "노을",
               "source": "title"
             }
           ]
@@ -184,15 +178,21 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-5ee9cac67b459167",
+          "artistType": "group",
+          "artistId": "alice",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 10,
-              "end": 12,
-              "text": "노을",
+              "start": 40,
+              "end": 43,
+              "text": "앨리스",
+              "source": "title"
+            },
+            {
+              "start": 34,
+              "end": 39,
+              "text": "Alice",
               "source": "title"
             }
           ]
