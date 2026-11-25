@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2026-05-03T03:01:06Z",
   "groupIds": [
-    "lesserafim",
     "taeyeon"
   ],
   "memberIds": [
@@ -38,20 +37,60 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "title",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "lesserafim",
+      "artistType": "person",
+      "artistId": "lsf-eunchae",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 81,
-          "end": 85,
-          "text": "르세라핌",
+          "start": 63,
+          "end": 66,
+          "text": "홍은채",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 21,
+          "text": "TAEYEON",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 25,
+          "text": "태연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 21,
+          "text": "TAEYEON",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 25,
+          "text": "태연",
           "source": "title"
         }
       ]
@@ -72,54 +111,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "taeyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "lesserafim",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 23,
-          "end": 25,
-          "text": "태연",
-          "source": "title"
-        },
-        {
-          "start": 14,
-          "end": 21,
-          "text": "TAEYEON",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "girls-generation-taeyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "태연",
-          "source": "title"
-        },
-        {
-          "start": 14,
-          "end": 21,
-          "text": "TAEYEON",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "lsf-eunchae",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 63,
-          "end": 66,
-          "text": "홍은채",
+          "start": 81,
+          "end": 85,
+          "text": "르세라핌",
           "source": "title"
         }
       ]

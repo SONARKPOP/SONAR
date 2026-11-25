@@ -46,17 +46,31 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "red-velvet-joy",
+      "artistType": "group",
+      "artistId": "joy",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "조이",
+          "source": "title"
+        },
         {
           "start": 48,
           "end": 51,
           "text": "JOY",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-3fe6e94556a877e5",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
           "start": 16,
           "end": 18,
@@ -66,21 +80,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "joy",
+      "artistType": "person",
+      "artistId": "red-velvet-joy",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 48,
-          "end": 51,
-          "text": "JOY",
-          "source": "title"
-        },
-        {
           "start": 16,
           "end": 18,
           "text": "조이",
+          "source": "title"
+        },
+        {
+          "start": 48,
+          "end": 51,
+          "text": "JOY",
           "source": "title"
         }
       ]
@@ -101,20 +115,6 @@
           "start": 11,
           "end": 15,
           "text": "레드벨벳",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-3fe6e94556a877e5",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "조이",
           "source": "title"
         }
       ]
