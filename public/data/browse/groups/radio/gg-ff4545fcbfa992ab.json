@@ -221,15 +221,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-6c94e077a885f432",
+          "artistType": "group",
+          "artistId": "h1-key",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 53,
-              "end": 55,
-              "text": "장미",
+              "start": 9,
+              "end": 12,
+              "text": "하이키",
+              "source": "title"
+            },
+            {
+              "start": 13,
+              "end": 19,
+              "text": "H1-KEY",
               "source": "title"
             }
           ]
@@ -249,21 +255,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "h1-key",
+          "artistType": "person",
+          "artistId": "person-6c94e077a885f432",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 13,
-              "end": 19,
-              "text": "H1-KEY",
-              "source": "title"
-            },
-            {
-              "start": 9,
-              "end": 12,
-              "text": "하이키",
+              "start": 53,
+              "end": 55,
+              "text": "장미",
               "source": "title"
             }
           ]

@@ -45,35 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 42,
-          "end": 44,
-          "text": "키스",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "mamamoo-hwasa",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 13,
-          "end": 18,
-          "text": "HWASA",
-          "source": "title"
-        },
-        {
           "start": 10,
           "end": 12,
           "text": "화사",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 18,
+          "text": "HWASA",
           "source": "title"
         }
       ]
@@ -85,15 +71,29 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
+          "start": 10,
+          "end": 12,
+          "text": "화사",
+          "source": "title"
+        },
+        {
           "start": 13,
           "end": 18,
           "text": "HWASA",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 10,
-          "end": 12,
-          "text": "화사",
+          "start": 42,
+          "end": 44,
+          "text": "키스",
           "source": "title"
         }
       ]
