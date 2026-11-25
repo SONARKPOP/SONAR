@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:23:12.204775Z",
+    "collectedAt": "2026-11-25T01:43:19.707203Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,21 +46,35 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 28,
+          "end": 39,
+          "text": "Say My Name",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "gidle-miyeon",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "미연",
-          "source": "title"
-        },
-        {
           "start": 41,
           "end": 47,
           "text": "MIYEON",
+          "source": "title"
+        },
+        {
+          "start": 24,
+          "end": 26,
+          "text": "미연",
           "source": "title"
         }
       ]
@@ -72,29 +86,15 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "미연",
-          "source": "title"
-        },
-        {
           "start": 41,
           "end": 47,
           "text": "MIYEON",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
+        },
         {
-          "start": 28,
-          "end": 39,
-          "text": "Say My Name",
+          "start": 24,
+          "end": 26,
+          "text": "미연",
           "source": "title"
         }
       ]

@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:25:49.505022Z",
+    "collectedAt": "2026-11-25T01:46:12.778488Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -50,6 +50,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-62f16aafb0b35bca",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 42,
+          "end": 44,
+          "text": "제이",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "gidle-miyeon",
@@ -79,24 +93,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-62f16aafb0b35bca",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 42,
-          "end": 44,
-          "text": "제이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "gidle-minnie",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "minnie",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 33,
@@ -107,10 +107,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "minnie",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "gidle-minnie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 33,

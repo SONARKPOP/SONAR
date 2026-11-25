@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:23:25.356086Z",
+    "collectedAt": "2026-11-25T01:43:33.803631Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,21 +44,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "loona-chuu",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 23,
-          "end": 27,
-          "text": "CHUU",
+          "start": 41,
+          "end": 43,
+          "text": "청하",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 21,
-          "end": 22,
-          "text": "츄",
+          "start": 41,
+          "end": 43,
+          "text": "청하",
           "source": "title"
         }
       ]
@@ -84,29 +92,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "chungha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 41,
-          "end": 43,
-          "text": "청하",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "ioi-chungha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "loona-chuu",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 41,
-          "end": 43,
-          "text": "청하",
+          "start": 23,
+          "end": 27,
+          "text": "CHUU",
+          "source": "title"
+        },
+        {
+          "start": 21,
+          "end": 22,
+          "text": "츄",
           "source": "title"
         }
       ]

@@ -29,7 +29,7 @@
   "actualEndTime": "2023-11-17T08:06:50Z",
   "scheduledStartTime": "2023-11-17T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-24T19:25:57.673798Z",
+    "collectedAt": "2026-11-25T01:46:22.493379Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -57,11 +57,31 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "person-5035c2dc85c0c21e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 59,
+          "end": 60,
+          "text": "수",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "viviz",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 5,
+          "end": 10,
+          "text": "VIVIZ",
+          "source": "title"
+        },
         {
           "start": 11,
           "end": 14,
@@ -73,32 +93,12 @@
           "end": 67,
           "text": "비비지",
           "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 10,
-          "text": "VIVIZ",
-          "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
       "artistId": "person-740b582fc9cc1cf0",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 43,
-          "end": 45,
-          "text": "사랑",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-a0260b2bdfc6f22a",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -126,14 +126,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-5035c2dc85c0c21e",
+      "artistId": "person-a0260b2bdfc6f22a",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 59,
-          "end": 60,
-          "text": "수",
+          "start": 43,
+          "end": 45,
+          "text": "사랑",
           "source": "title"
         }
       ]

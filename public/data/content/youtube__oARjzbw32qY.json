@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:25:26.820488Z",
+    "collectedAt": "2026-11-25T01:45:47.851223Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,25 +46,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 53,
-          "end": 57,
-          "text": "오마이걸",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "ioi-jeon-somi",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
+        {
+          "start": 24,
+          "end": 27,
+          "text": "전소미",
+          "source": "title"
+        },
         {
           "start": 29,
           "end": 38,
@@ -75,12 +67,6 @@
           "start": 34,
           "end": 38,
           "text": "SOMI",
-          "source": "title"
-        },
-        {
-          "start": 24,
-          "end": 27,
-          "text": "전소미",
           "source": "title"
         }
       ]
@@ -92,6 +78,12 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
+          "start": 24,
+          "end": 27,
+          "text": "전소미",
+          "source": "title"
+        },
+        {
           "start": 29,
           "end": 38,
           "text": "JEON SOMI",
@@ -102,11 +94,19 @@
           "end": 38,
           "text": "SOMI",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 24,
-          "end": 27,
-          "text": "전소미",
+          "start": 53,
+          "end": 57,
+          "text": "오마이걸",
           "source": "title"
         }
       ]

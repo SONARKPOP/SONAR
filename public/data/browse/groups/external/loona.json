@@ -66,6 +66,12 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "loona"
+      ],
+      "displayCareerGroupIds": [
+        "loona"
+      ],
       "externalId": "o0q4YNjaMoI",
       "sourceUrl": "https://www.youtube.com/watch?v=o0q4YNjaMoI",
       "contentTabs": [
@@ -76,13 +82,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "loona"
-      ],
-      "displayCareerGroupIds": [
-        "loona"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__tmL5gKP5uYg",
@@ -135,20 +135,6 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-8ba7931c791a7788",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 44,
-              "end": 46,
-              "text": "현진",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "nmixx-haewon",
           "state": "confirmed",
           "reason": "existing-participation-evidence",
@@ -157,6 +143,20 @@
               "start": 0,
               "end": 3,
               "text": "오해원",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8ba7931c791a7788",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 44,
+              "end": 46,
+              "text": "현진",
               "source": "title"
             }
           ]
@@ -214,41 +214,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "loona-heejin",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "artms",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 48,
-              "end": 50,
-              "text": "희진",
-              "source": "title"
-            },
-            {
-              "start": 56,
-              "end": 62,
-              "text": "heejin",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "artms-heejin",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 48,
-              "end": 50,
-              "text": "희진",
-              "source": "title"
-            },
-            {
-              "start": 56,
-              "end": 62,
-              "text": "heejin",
+              "start": 70,
+              "end": 75,
+              "text": "artms",
               "source": "title"
             }
           ]
@@ -258,6 +232,26 @@
           "artistId": "heejin",
           "state": "inferred",
           "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 48,
+              "end": 50,
+              "text": "희진",
+              "source": "title"
+            },
+            {
+              "start": 56,
+              "end": 62,
+              "text": "heejin",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "loona-heejin",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 48,
@@ -288,15 +282,21 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "artms",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "artms-heejin",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 70,
-              "end": 75,
-              "text": "artms",
+              "start": 48,
+              "end": 50,
+              "text": "희진",
+              "source": "title"
+            },
+            {
+              "start": 56,
+              "end": 62,
+              "text": "heejin",
               "source": "title"
             }
           ]

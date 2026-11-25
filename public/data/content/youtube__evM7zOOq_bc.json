@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:24:49.680234Z",
+    "collectedAt": "2026-11-25T01:45:06.310192Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-68d4509149a9c415",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "illit",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 21,
-          "end": 23,
-          "text": "민주",
+          "start": 4,
+          "end": 9,
+          "text": "ILLIT",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 3,
+          "text": "아일릿",
           "source": "title"
         }
       ]
@@ -102,21 +108,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "illit",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-68d4509149a9c415",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "아일릿",
-          "source": "title"
-        },
-        {
-          "start": 4,
-          "end": 9,
-          "text": "ILLIT",
+          "start": 21,
+          "end": 23,
+          "text": "민주",
           "source": "title"
         }
       ]

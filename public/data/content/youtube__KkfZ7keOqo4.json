@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:23:25.177511Z",
+    "collectedAt": "2026-11-25T01:43:33.612546Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
+      "artistType": "person",
+      "artistId": "person-264e8908f1db1283",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 32,
-          "end": 36,
-          "text": "오마이걸",
+          "start": 18,
+          "end": 20,
+          "text": "미미",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-37598e798d5836fd",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "미미",
           "source": "title"
         }
       ]
@@ -74,20 +88,6 @@
           "start": 66,
           "end": 69,
           "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "ive-yujin",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 61,
-          "end": 64,
-          "text": "안유진",
           "source": "title"
         }
       ]
@@ -122,28 +122,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-264e8908f1db1283",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "ive-yujin",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 18,
-          "end": 20,
-          "text": "미미",
+          "start": 61,
+          "end": 64,
+          "text": "안유진",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-37598e798d5836fd",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 18,
-          "end": 20,
-          "text": "미미",
+          "start": 32,
+          "end": 36,
+          "text": "오마이걸",
           "source": "title"
         }
       ]

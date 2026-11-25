@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:25:16.462039Z",
+    "collectedAt": "2026-11-25T01:45:35.818640Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -59,10 +59,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "wonder-girls-hyuna",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "hyuna",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 55,
@@ -73,10 +73,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "hyuna",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "wonder-girls-hyuna",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 55,
@@ -102,6 +102,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 50,
+          "end": 54,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "hot-issue",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -116,20 +130,6 @@
           "start": 16,
           "end": 25,
           "text": "HOT ISSUE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 50,
-          "end": 54,
-          "text": "ITZY",
           "source": "title"
         }
       ]

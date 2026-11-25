@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:23:18.483567Z",
+    "collectedAt": "2026-11-25T01:43:26.399369Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -59,6 +59,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 28,
+          "text": "SECRET",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "blackswan",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -81,20 +95,6 @@
           "start": 64,
           "end": 73,
           "text": "mimiirose",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 28,
-          "text": "SECRET",
           "source": "title"
         }
       ]

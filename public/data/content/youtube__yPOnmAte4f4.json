@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:26:06.321110Z",
+    "collectedAt": "2026-11-25T01:46:31.624414Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "izone-jo-yuri",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 31,
+          "text": "Jo Yuri",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 35,
+          "text": "조유리",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "jo-yuri",
@@ -70,21 +90,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "izone-jo-yuri",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 24,
-          "end": 31,
-          "text": "Jo Yuri",
-          "source": "title"
-        },
-        {
-          "start": 32,
-          "end": 35,
-          "text": "조유리",
+          "start": 43,
+          "end": 49,
+          "text": "Secret",
           "source": "title"
         }
       ]
@@ -155,20 +169,6 @@
           "start": 27,
           "end": 31,
           "text": "Yuri",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 43,
-          "end": 49,
-          "text": "Secret",
           "source": "title"
         }
       ]

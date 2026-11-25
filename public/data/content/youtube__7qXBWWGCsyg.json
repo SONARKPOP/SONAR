@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T19:22:32.936612Z",
+    "collectedAt": "2026-11-25T01:42:36.961197Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -64,20 +64,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "episode",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 26,
-          "end": 33,
-          "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -86,6 +72,20 @@
           "start": 7,
           "end": 11,
           "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "episode",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 26,
+          "end": 33,
+          "text": "Episode",
           "source": "title"
         }
       ]
