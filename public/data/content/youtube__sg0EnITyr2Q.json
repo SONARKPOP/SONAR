@@ -46,15 +46,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "heize",
+      "artistType": "person",
+      "artistId": "oh-my-girl-yooa",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 28,
-          "end": 31,
-          "text": "헤이즈",
+          "start": 5,
+          "end": 7,
+          "text": "유아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yooa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "유아",
           "source": "title"
         }
       ]
@@ -75,28 +89,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "yooa",
+      "artistId": "heize",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "유아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "유아",
+          "start": 28,
+          "end": 31,
+          "text": "헤이즈",
           "source": "title"
         }
       ]
