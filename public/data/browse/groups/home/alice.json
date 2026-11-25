@@ -52,10 +52,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-9dda2eae88d9d10c",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "alice",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 0,
@@ -66,10 +66,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "alice",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-9dda2eae88d9d10c",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 0,
@@ -240,36 +240,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "secret",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 16,
-              "end": 22,
-              "text": "Secret",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-82c8dfffcc8a320b",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 45,
-              "end": 48,
-              "text": "앨리스",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-9dda2eae88d9d10c",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -302,21 +274,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yuju",
+          "artistType": "person",
+          "artistId": "person-9dda2eae88d9d10c",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
             {
-              "start": 5,
-              "end": 9,
-              "text": "YUJU",
-              "source": "title"
-            },
-            {
-              "start": 10,
-              "end": 12,
-              "text": "유주",
+              "start": 45,
+              "end": 48,
+              "text": "앨리스",
               "source": "title"
             }
           ]
@@ -337,6 +303,40 @@
               "start": 10,
               "end": 12,
               "text": "유주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yuju",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 5,
+              "end": 9,
+              "text": "YUJU",
+              "source": "title"
+            },
+            {
+              "start": 10,
+              "end": 12,
+              "text": "유주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "secret",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 16,
+              "end": 22,
+              "text": "Secret",
               "source": "title"
             }
           ]
