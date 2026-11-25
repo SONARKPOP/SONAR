@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:42:54.376950Z",
+    "collectedAt": "2026-11-25T07:46:30.884958Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-5035c2dc85c0c21e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 85,
+          "end": 86,
+          "text": "수",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "kiiikiii",
@@ -65,34 +79,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "kiiikiii-sui",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-f9250a47ff0f71db",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
-        {
-          "start": 80,
-          "end": 83,
-          "text": "SUI",
-          "source": "title"
-        },
         {
           "start": 85,
           "end": 87,
           "text": "수이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-5035c2dc85c0c21e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 85,
-          "end": 86,
-          "text": "수",
           "source": "title"
         }
       ]
@@ -113,14 +107,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-f9250a47ff0f71db",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "kiiikiii-sui",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 85,
           "end": 87,
           "text": "수이",
+          "source": "title"
+        },
+        {
+          "start": 80,
+          "end": 83,
+          "text": "SUI",
           "source": "title"
         }
       ]

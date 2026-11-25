@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:46:07.067223Z",
+    "collectedAt": "2026-11-25T07:49:41.781150Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,21 +45,55 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "kiiikiii",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "키키",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 35,
+          "text": "KiiiKiii",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "kiiikiii-jiyu",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 36,
+          "end": 40,
+          "text": "JIYU",
+          "source": "title"
+        },
+        {
           "start": 11,
           "end": 13,
           "text": "지유",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e536571459fba72e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 36,
-          "end": 40,
-          "text": "JIYU",
+          "start": 11,
+          "end": 13,
+          "text": "지유",
           "source": "title"
         }
       ]
@@ -88,40 +122,6 @@
           "start": 11,
           "end": 13,
           "text": "지유",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-e536571459fba72e",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 11,
-          "end": 13,
-          "text": "지유",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiiikiii",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 10,
-          "text": "키키",
-          "source": "title"
-        },
-        {
-          "start": 27,
-          "end": 35,
-          "text": "KiiiKiii",
           "source": "title"
         }
       ]

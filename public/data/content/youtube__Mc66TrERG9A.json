@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:43:42.157873Z",
+    "collectedAt": "2026-11-25T07:47:17.620277Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -57,15 +57,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-7c2b43021c2ece7d",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 7,
-          "end": 9,
-          "text": "루시",
+          "start": 26,
+          "end": 28,
+          "text": "키스",
+          "source": "title"
+        },
+        {
+          "start": 66,
+          "end": 68,
+          "text": "키스",
           "source": "title"
         }
       ]
@@ -99,21 +105,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-7c2b43021c2ece7d",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 26,
-          "end": 28,
-          "text": "키스",
-          "source": "title"
-        },
-        {
-          "start": 66,
-          "end": 68,
-          "text": "키스",
+          "start": 7,
+          "end": 9,
+          "text": "루시",
           "source": "title"
         }
       ]

@@ -29,7 +29,7 @@
   "actualEndTime": "2022-09-16T08:07:32Z",
   "scheduledStartTime": "2022-09-16T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-25T01:43:40.139311Z",
+    "collectedAt": "2026-11-25T07:47:15.697349Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,14 +44,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "punch",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "rocket-punch",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
+          "start": 10,
           "end": 22,
-          "text": "Punch",
+          "text": "Rocket Punch",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 9,
+          "text": "로켓펀치",
           "source": "title"
         }
       ]
@@ -72,20 +78,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "rocket-punch",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "punch",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 10,
+          "start": 17,
           "end": 22,
-          "text": "Rocket Punch",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 9,
-          "text": "로켓펀치",
+          "text": "Punch",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:42:44.676063Z",
+    "collectedAt": "2026-11-25T07:46:21.382943Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,30 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "dreamnote",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 49,
+          "text": "DreamNote",
+          "source": "title"
+        },
+        {
+          "start": 1,
+          "end": 5,
+          "text": "드림노트",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-c0d7c90bc10c9ed0",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-210c9f20cc6f82f3",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 7,
@@ -76,34 +96,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-210c9f20cc6f82f3",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-c0d7c90bc10c9ed0",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 7,
           "end": 9,
           "text": "라라",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "dreamnote",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 5,
-          "text": "드림노트",
-          "source": "title"
-        },
-        {
-          "start": 40,
-          "end": 49,
-          "text": "DreamNote",
           "source": "title"
         }
       ]

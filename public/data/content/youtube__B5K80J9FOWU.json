@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:42:51.192599Z",
+    "collectedAt": "2026-11-25T07:46:27.759626Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -66,10 +66,24 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-6dbcc3109b9a8630",
+      "artistType": "group",
+      "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 46,
+          "end": 48,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-71ceed223d07ce58",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 20,
@@ -81,9 +95,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-71ceed223d07ce58",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-6dbcc3109b9a8630",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 20,
@@ -117,20 +131,6 @@
           "start": 25,
           "end": 27,
           "text": "세나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 46,
-          "end": 48,
-          "text": "키스",
           "source": "title"
         }
       ]

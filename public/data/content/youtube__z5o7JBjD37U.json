@@ -8,7 +8,8 @@
   "publishedAt": "2025-10-23T09:53:30Z",
   "groupIds": [
     "izna",
-    "min"
+    "min",
+    "miss-a"
   ],
   "memberIds": [
     "miss-a-min",
@@ -34,28 +35,48 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:46:34.602182Z",
+    "collectedAt": "2026-11-25T07:50:09.016962Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "min",
+      "artistType": "person",
+      "artistId": "person-ad73a6c022a8838f",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 47,
-          "end": 50,
-          "text": "MIN",
+          "start": 12,
+          "end": 15,
+          "text": "방지민",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 11,
+          "text": "이즈나",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 37,
+          "text": "izna",
           "source": "title"
         }
       ]
@@ -76,34 +97,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "izna",
+      "artistId": "min",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 33,
-          "end": 37,
-          "text": "izna",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 11,
-          "text": "이즈나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-ad73a6c022a8838f",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 15,
-          "text": "방지민",
+          "start": 47,
+          "end": 50,
+          "text": "MIN",
           "source": "title"
         }
       ]

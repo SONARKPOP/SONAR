@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:44:23.092334Z",
+    "collectedAt": "2026-11-25T07:47:58.127682Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -41,6 +41,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-f07a58ca3f31f17c",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "유주",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "yuju",
@@ -82,15 +96,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-f07a58ca3f31f17c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "alice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 12,
-          "text": "유주",
+          "start": 39,
+          "end": 44,
+          "text": "Alice",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 48,
+          "text": "앨리스",
           "source": "title"
         }
       ]
@@ -119,26 +139,6 @@
           "start": 45,
           "end": 48,
           "text": "앨리스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 48,
-          "text": "앨리스",
-          "source": "title"
-        },
-        {
-          "start": 39,
-          "end": 44,
-          "text": "Alice",
           "source": "title"
         }
       ]

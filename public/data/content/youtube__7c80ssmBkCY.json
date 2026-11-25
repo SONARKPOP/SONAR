@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:42:36.018783Z",
+    "collectedAt": "2026-11-25T07:46:12.924193Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "lovelyz",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 13,
+          "end": 17,
+          "text": "러블리즈",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-110a6a07afa29cb8",
@@ -75,15 +89,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lovelyz",
+      "artistType": "person",
+      "artistId": "person-078bad6c74e06cd1",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 13,
-          "end": 17,
-          "text": "러블리즈",
+          "start": 18,
+          "end": 20,
+          "text": "수정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c8945fd8178cf886",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "지수",
           "source": "title"
         }
       ]
@@ -91,6 +119,20 @@
     {
       "artistType": "person",
       "artistId": "person-4442d3593b19b75a",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "지수",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jisoo",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -126,48 +168,6 @@
           "start": 22,
           "end": 24,
           "text": "지수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-c8945fd8178cf886",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 24,
-          "text": "지수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "jisoo",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 24,
-          "text": "지수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-078bad6c74e06cd1",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 18,
-          "end": 20,
-          "text": "수정",
           "source": "title"
         }
       ]

@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:42:22.597737Z",
+    "collectedAt": "2026-11-25T07:45:59.644866Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,14 +45,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "chungha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "sole",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 42,
-          "end": 44,
-          "text": "청하",
+          "start": 21,
+          "end": 22,
+          "text": "쏠",
+          "source": "title"
+        },
+        {
+          "start": 23,
+          "end": 27,
+          "text": "SOLE",
           "source": "title"
         }
       ]
@@ -73,20 +79,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "sole",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "chungha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 23,
-          "end": 27,
-          "text": "SOLE",
-          "source": "title"
-        },
-        {
-          "start": 21,
-          "end": 22,
-          "text": "쏠",
+          "start": 42,
+          "end": 44,
+          "text": "청하",
           "source": "title"
         }
       ]

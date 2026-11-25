@@ -31,7 +31,7 @@
   "actualEndTime": "2022-07-19T10:17:20Z",
   "scheduledStartTime": "2022-07-19T10:00:00Z",
   "source": {
-    "collectedAt": "2026-11-25T01:44:21.789285Z",
+    "collectedAt": "2026-11-25T07:47:56.869962Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "nmixx-member-c874211512a8",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "hyolyn",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 67,
-          "end": 70,
-          "text": "BAE",
+          "start": 3,
+          "end": 9,
+          "text": "HYOLYN",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "text": "효린",
           "source": "title"
         }
       ]
@@ -81,21 +87,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "hyolyn",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "nmixx-member-c874211512a8",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 3,
-          "end": 9,
-          "text": "HYOLYN",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 2,
-          "text": "효린",
+          "start": 67,
+          "end": 70,
+          "text": "BAE",
           "source": "title"
         }
       ]

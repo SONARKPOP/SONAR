@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:43:48.893604Z",
+    "collectedAt": "2026-11-25T07:47:24.280749Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,6 +42,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-5035c2dc85c0c21e",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 11,
+          "text": "수",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "csr",
@@ -64,34 +78,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "blackpink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 37,
-          "end": 41,
-          "text": "블랙핑크",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-5035c2dc85c0c21e",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 10,
-          "end": 11,
-          "text": "수",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "secret",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -100,6 +86,20 @@
           "start": 64,
           "end": 70,
           "text": "Secret",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "blackpink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 37,
+          "end": 41,
+          "text": "블랙핑크",
           "source": "title"
         }
       ]

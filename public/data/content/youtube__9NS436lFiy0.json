@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:42:43.749279Z",
+    "collectedAt": "2026-11-25T07:46:20.467394Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,8 +46,22 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "girls-generation-yoona",
+      "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 27,
+          "text": "SNSD",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yoona",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -80,8 +94,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yoona",
+      "artistType": "person",
+      "artistId": "girls-generation-yoona",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -95,20 +109,6 @@
           "start": 17,
           "end": 22,
           "text": "YOONA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 27,
-          "text": "SNSD",
           "source": "title"
         }
       ]

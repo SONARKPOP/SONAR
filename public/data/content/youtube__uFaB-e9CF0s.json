@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:46:13.619226Z",
+    "collectedAt": "2026-11-25T07:49:48.294214Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -62,6 +62,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 51,
+          "end": 57,
+          "text": "세이마이네임",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -84,20 +98,6 @@
           "start": 19,
           "end": 21,
           "text": "소하",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 51,
-          "end": 57,
-          "text": "세이마이네임",
           "source": "title"
         }
       ]

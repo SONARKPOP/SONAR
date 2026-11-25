@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:43:34.352588Z",
+    "collectedAt": "2026-11-25T07:47:10.123668Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "hearts2hearts-yuha",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 60,
+          "end": 64,
+          "text": "YUHA",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 19,
+          "text": "유하",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-a1479c2cc95e8b6a",
@@ -76,40 +96,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "hearts2hearts",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 46,
-          "end": 59,
-          "text": "Hearts2Hearts",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 16,
-          "text": "하츠투하츠",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "hearts2hearts-yuha",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "youha",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 17,
           "end": 19,
           "text": "유하",
-          "source": "title"
-        },
-        {
-          "start": 60,
-          "end": 64,
-          "text": "YUHA",
           "source": "title"
         }
       ]
@@ -130,14 +124,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "youha",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hearts2hearts",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
-          "end": 19,
-          "text": "유하",
+          "start": 46,
+          "end": 59,
+          "text": "Hearts2Hearts",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 16,
+          "text": "하츠투하츠",
           "source": "title"
         }
       ]

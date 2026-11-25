@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T01:42:52.091714Z",
+    "collectedAt": "2026-11-25T07:46:28.630072Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-5ddbe84d208eac32",
+      "artistType": "group",
+      "artistId": "dreamnote",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 44,
-          "end": 46,
-          "text": "보니",
+          "start": 0,
+          "end": 9,
+          "text": "DreamNote",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 15,
+          "text": "드림노트",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-f2f07fec22c9a395",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 41,
+          "end": 43,
+          "text": "미소",
           "source": "title"
         }
       ]
@@ -102,34 +122,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-f2f07fec22c9a395",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 41,
-          "end": 43,
-          "text": "미소",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "dreamnote",
+      "artistId": "person-5ddbe84d208eac32",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 11,
-          "end": 15,
-          "text": "드림노트",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 9,
-          "text": "DreamNote",
+          "start": 44,
+          "end": 46,
+          "text": "보니",
           "source": "title"
         }
       ]
