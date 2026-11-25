@@ -60,9 +60,35 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "lunedi",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "weeekly",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "위클리",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 19,
+          "text": "위클리",
+          "source": "title"
+        },
+        {
+          "start": 21,
+          "end": 28,
+          "text": "Weeekly",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "weeekly-lunedi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 35,
@@ -79,10 +105,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "weeekly-lunedi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "lunedi",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 35,
@@ -114,20 +140,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "weeekly-member-dc36adb3b0ca",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 59,
-          "end": 62,
-          "text": "이재희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "weeekly-member-0a2f9dd400ad",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -141,27 +153,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "weeekly",
+      "artistType": "person",
+      "artistId": "weeekly-member-dc36adb3b0ca",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 21,
-          "end": 28,
-          "text": "Weeekly",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 3,
-          "text": "위클리",
-          "source": "title"
-        },
-        {
-          "start": 16,
-          "end": 19,
-          "text": "위클리",
+          "start": 59,
+          "end": 62,
+          "text": "이재희",
           "source": "title"
         }
       ]

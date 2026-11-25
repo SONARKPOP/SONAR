@@ -39,15 +39,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "gidle",
+          "artistType": "person",
+          "artistId": "gidle-soyeon",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 17,
-              "end": 22,
-              "text": "i-dle",
+              "start": 23,
+              "end": 29,
+              "text": "SOYEON",
+              "source": "title"
+            },
+            {
+              "start": 30,
+              "end": 32,
+              "text": "소연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "soyeon",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 23,
+              "end": 29,
+              "text": "SOYEON",
+              "source": "title"
+            },
+            {
+              "start": 30,
+              "end": 32,
+              "text": "소연",
               "source": "title"
             }
           ]
@@ -81,41 +107,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "gidle-soyeon",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 30,
-              "end": 32,
-              "text": "소연",
-              "source": "title"
-            },
-            {
-              "start": 23,
-              "end": 29,
-              "text": "SOYEON",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "soyeon",
+          "artistId": "gidle",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 30,
-              "end": 32,
-              "text": "소연",
-              "source": "title"
-            },
-            {
-              "start": 23,
-              "end": 29,
-              "text": "SOYEON",
+              "start": 17,
+              "end": 22,
+              "text": "i-dle",
               "source": "title"
             }
           ]
@@ -172,20 +172,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "gidle",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 17,
-              "end": 22,
-              "text": "i-dle",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "gidle-soyeon",
           "state": "inferred",
@@ -249,6 +235,20 @@
               "start": 30,
               "end": 32,
               "text": "소연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gidle",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 17,
+              "end": 22,
+              "text": "i-dle",
               "source": "title"
             }
           ]
@@ -312,43 +312,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 59,
-              "end": 66,
-              "text": "(여자)아이들",
-              "source": "title"
-            },
-            {
               "start": 63,
               "end": 66,
               "text": "아이들",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-5035c2dc85c0c21e",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
+            },
             {
-              "start": 10,
-              "end": 11,
-              "text": "수",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "bibi",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 72,
-              "end": 76,
-              "text": "BIBI",
+              "start": 59,
+              "end": 66,
+              "text": "(여자)아이들",
               "source": "title"
             }
           ]
@@ -356,20 +328,6 @@
         {
           "artistType": "person",
           "artistId": "person-0a0c0ebc64042cc2",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 67,
-              "end": 69,
-              "text": "소연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-3caf8650648aaf32",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -405,6 +363,48 @@
               "start": 67,
               "end": 69,
               "text": "소연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-3caf8650648aaf32",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 67,
+              "end": 69,
+              "text": "소연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bibi",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 72,
+              "end": 76,
+              "text": "BIBI",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-5035c2dc85c0c21e",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 10,
+              "end": 11,
+              "text": "수",
               "source": "title"
             }
           ]
