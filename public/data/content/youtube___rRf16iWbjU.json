@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:48:19.231932Z",
+    "collectedAt": "2026-11-25T19:20:42.737603Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,15 +43,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "ive-wonyoung",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 14,
-          "end": 17,
-          "text": "장원영",
+          "start": 10,
+          "end": 13,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 39,
+          "text": "IVE",
           "source": "title"
         }
       ]
@@ -71,21 +77,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "ive-wonyoung",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 10,
-          "end": 13,
-          "text": "아이브",
-          "source": "title"
-        },
-        {
-          "start": 36,
-          "end": 39,
-          "text": "IVE",
+          "start": 14,
+          "end": 17,
+          "text": "장원영",
           "source": "title"
         }
       ]

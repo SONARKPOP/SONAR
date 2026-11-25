@@ -31,7 +31,7 @@
   "actualEndTime": "2021-07-08T08:55:11Z",
   "scheduledStartTime": "2021-07-08T08:37:26Z",
   "source": {
-    "collectedAt": "2026-11-25T07:47:50.886528Z",
+    "collectedAt": "2026-11-25T19:20:09.603446Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -59,15 +59,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-6ced3b067434a529",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "taeyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 9,
-          "end": 11,
-          "text": "소리",
+          "start": 16,
+          "end": 18,
+          "text": "태연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-taeyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "태연",
           "source": "title"
         }
       ]
@@ -88,28 +102,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "girls-generation-taeyeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-6ced3b067434a529",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 16,
-          "end": 18,
-          "text": "태연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "taeyeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "태연",
+          "start": 9,
+          "end": 11,
+          "text": "소리",
           "source": "title"
         }
       ]

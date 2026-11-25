@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:46:11.683775Z",
+    "collectedAt": "2026-11-25T19:18:07.860729Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,34 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "h1-key",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 53,
-          "end": 59,
-          "text": "H1-KEY",
+          "start": 13,
+          "end": 17,
+          "text": "Rose",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "wena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "We;Na",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": "위나",
           "source": "title"
         }
       ]
@@ -74,34 +94,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "wena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "h1-key",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 7,
-          "end": 9,
-          "text": "위나",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 5,
-          "text": "We;Na",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 13,
-          "end": 17,
-          "text": "Rose",
+          "start": 53,
+          "end": 59,
+          "text": "H1-KEY",
           "source": "title"
         }
       ]

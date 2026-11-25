@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:46:55.682951Z",
+    "collectedAt": "2026-11-25T19:19:03.791895Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,17 +42,11 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-9dda2eae88d9d10c",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
-        {
-          "start": 32,
-          "end": 37,
-          "text": "Alice",
-          "source": "title"
-        },
         {
           "start": 38,
           "end": 41,
@@ -76,15 +70,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-9dda2eae88d9d10c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "alice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 38,
           "end": 41,
           "text": "앨리스",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 37,
+          "text": "Alice",
           "source": "title"
         }
       ]

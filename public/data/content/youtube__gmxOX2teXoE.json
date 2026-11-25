@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:48:49.561700Z",
+    "collectedAt": "2026-11-25T19:21:18.233253Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,40 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-ce998ea45bc26e22",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "ive-gaeul",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 37,
+          "end": 42,
+          "text": "GAEUL",
+          "source": "title"
+        },
         {
           "start": 12,
           "end": 14,
           "text": "가을",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 11,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 36,
+          "text": "IVE",
           "source": "title"
         }
       ]
@@ -88,40 +114,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "ive-gaeul",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-ce998ea45bc26e22",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 12,
           "end": 14,
           "text": "가을",
-          "source": "title"
-        },
-        {
-          "start": 37,
-          "end": 42,
-          "text": "GAEUL",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 11,
-          "text": "아이브",
-          "source": "title"
-        },
-        {
-          "start": 33,
-          "end": 36,
-          "text": "IVE",
           "source": "title"
         }
       ]

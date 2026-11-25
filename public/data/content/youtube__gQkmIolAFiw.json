@@ -33,7 +33,7 @@
   "actualEndTime": "2022-08-31T14:36:46Z",
   "scheduledStartTime": "2022-08-31T13:30:00Z",
   "source": {
-    "collectedAt": "2026-11-25T07:48:47.410278Z",
+    "collectedAt": "2026-11-25T19:21:15.981449Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,21 +47,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "twice",
+      "artistType": "person",
+      "artistId": "tw-jeongyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 38,
-          "end": 42,
-          "text": "트와이스",
+          "start": 49,
+          "end": 51,
+          "text": "정연",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 43,
-          "end": 48,
-          "text": "TWICE",
+          "start": 17,
+          "end": 21,
+          "text": "Kiss",
           "source": "title"
         }
       ]
@@ -95,29 +103,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-jeongyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 49,
-          "end": 51,
-          "text": "정연",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "twice",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
-          "end": 21,
-          "text": "Kiss",
+          "start": 43,
+          "end": 48,
+          "text": "TWICE",
+          "source": "title"
+        },
+        {
+          "start": 38,
+          "end": 42,
+          "text": "트와이스",
           "source": "title"
         }
       ]

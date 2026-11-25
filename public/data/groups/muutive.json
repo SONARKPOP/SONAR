@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-25T16:59:46.082790Z",
+  "updatedAt": "2026-11-25T19:25:14.749636Z",
   "items": [
     {
       "id": "youtube__ekdi_Pg73LI",
@@ -121,16 +121,24 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "muutive",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 42,
+              "end": 49,
+              "text": "MuuTive",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "gidle",
           "state": "mention",
           "reason": "official-owner-reference",
           "matches": [
-            {
-              "start": 0,
-              "end": 7,
-              "text": "(여자)아이들",
-              "source": "title"
-            },
             {
               "start": 11,
               "end": 16,
@@ -148,19 +156,11 @@
               "end": 7,
               "text": "아이들",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "muutive",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
+            },
             {
-              "start": 42,
-              "end": 49,
-              "text": "MuuTive",
+              "start": 0,
+              "end": 7,
+              "text": "(여자)아이들",
               "source": "title"
             }
           ]
@@ -281,15 +281,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 41,
-              "end": 44,
-              "text": "뮤티브",
-              "source": "title"
-            },
-            {
               "start": 30,
               "end": 37,
               "text": "MuuTive",
+              "source": "title"
+            },
+            {
+              "start": 41,
+              "end": 44,
+              "text": "뮤티브",
               "source": "title"
             }
           ]

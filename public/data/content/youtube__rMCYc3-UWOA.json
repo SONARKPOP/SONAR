@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:49:35.856221Z",
+    "collectedAt": "2026-11-25T19:22:13.082163Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,35 +45,41 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "person",
+      "artistId": "meovv-ella",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 44,
+          "text": "ELLA",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 13,
+          "text": "엘라",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "meovv",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 34,
-          "end": 39,
-          "text": "MEOVV",
-          "source": "title"
-        },
-        {
           "start": 7,
           "end": 10,
           "text": "미야오",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-fab608e59cd10ae9",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
+        },
         {
-          "start": 11,
-          "end": 13,
-          "text": "엘라",
+          "start": 34,
+          "end": 39,
+          "text": "MEOVV",
           "source": "title"
         }
       ]
@@ -108,20 +114,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "meovv-ella",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-fab608e59cd10ae9",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 11,
           "end": 13,
           "text": "엘라",
-          "source": "title"
-        },
-        {
-          "start": 40,
-          "end": 44,
-          "text": "ELLA",
           "source": "title"
         }
       ]

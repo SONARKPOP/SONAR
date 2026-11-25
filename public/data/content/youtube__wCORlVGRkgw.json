@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:49:56.475142Z",
+    "collectedAt": "2026-11-25T19:22:39.645912Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -52,6 +52,12 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 12,
+          "end": 22,
+          "text": "Red Velvet",
+          "source": "title"
+        },
+        {
           "start": 23,
           "end": 27,
           "text": "레드벨벳",
@@ -62,11 +68,19 @@
           "end": 89,
           "text": "레드벨벳",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "joy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 12,
-          "end": 22,
-          "text": "Red Velvet",
+          "start": 48,
+          "end": 50,
+          "text": "조이",
           "source": "title"
         }
       ]
@@ -88,20 +102,6 @@
     {
       "artistType": "person",
       "artistId": "red-velvet-joy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 48,
-          "end": 50,
-          "text": "조이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "joy",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [

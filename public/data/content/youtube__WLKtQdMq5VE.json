@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:47:59.264599Z",
+    "collectedAt": "2026-11-25T19:20:19.818621Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "person-0257a351c4765bfd",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 4,
-          "end": 5,
-          "text": "s",
+          "start": 45,
+          "end": 47,
+          "text": "켈리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e8f990b6169d68b8",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 45,
+          "end": 47,
+          "text": "켈리",
           "source": "title"
         }
       ]
@@ -85,29 +99,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-e8f990b6169d68b8",
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 45,
-          "end": 47,
-          "text": "켈리",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-0257a351c4765bfd",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 47,
-          "text": "켈리",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]

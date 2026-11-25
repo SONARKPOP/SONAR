@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:47:02.067544Z",
+    "collectedAt": "2026-11-25T19:19:10.699057Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,15 +48,27 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "artms",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
-          "end": 18,
-          "text": "안",
+          "start": 0,
+          "end": 5,
+          "text": "아르테미스",
+          "source": "title"
+        },
+        {
+          "start": 34,
+          "end": 39,
+          "text": "아르테미스",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 33,
+          "text": "ARTMS",
           "source": "title"
         }
       ]
@@ -76,27 +88,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "artms",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 28,
-          "end": 33,
-          "text": "ARTMS",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 5,
-          "text": "아르테미스",
-          "source": "title"
-        },
-        {
-          "start": 34,
-          "end": 39,
-          "text": "아르테미스",
+          "start": 17,
+          "end": 18,
+          "text": "안",
           "source": "title"
         }
       ]

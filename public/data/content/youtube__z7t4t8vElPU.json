@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:50:09.197304Z",
+    "collectedAt": "2026-11-25T19:22:54.439348Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -87,14 +87,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "red-velvet",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "chuu",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 40,
-          "end": 44,
-          "text": "레드벨벳",
+          "start": 73,
+          "end": 74,
+          "text": "츄",
+          "source": "title"
+        },
+        {
+          "start": 67,
+          "end": 71,
+          "text": "CHUU",
           "source": "title"
         }
       ]
@@ -121,20 +127,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "chuu",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "red-velvet",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 73,
-          "end": 74,
-          "text": "츄",
-          "source": "title"
-        },
-        {
-          "start": 67,
-          "end": 71,
-          "text": "CHUU",
+          "start": 40,
+          "end": 44,
+          "text": "레드벨벳",
           "source": "title"
         }
       ]

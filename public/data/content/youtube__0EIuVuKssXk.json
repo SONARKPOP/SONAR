@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:45:41.471475Z",
+    "collectedAt": "2026-11-25T19:17:31.360427Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,11 +45,23 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-9997262542575782",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "unis",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 12,
+          "end": 16,
+          "text": "UNIS",
+          "source": "title"
+        },
+        {
+          "start": 64,
+          "end": 68,
+          "text": "UNIS",
+          "source": "title"
+        },
         {
           "start": 17,
           "end": 20,
@@ -65,33 +77,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "unis",
+      "artistType": "person",
+      "artistId": "person-5c05d809cd126e07",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
-          "end": 20,
-          "text": "유니스",
-          "source": "title"
-        },
-        {
-          "start": 82,
-          "end": 85,
-          "text": "유니스",
-          "source": "title"
-        },
-        {
-          "start": 12,
-          "end": 16,
-          "text": "UNIS",
-          "source": "title"
-        },
-        {
-          "start": 64,
-          "end": 68,
-          "text": "UNIS",
+          "start": 45,
+          "end": 48,
+          "text": "코토코",
           "source": "title"
         }
       ]
@@ -112,14 +106,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-5c05d809cd126e07",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-9997262542575782",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 45,
-          "end": 48,
-          "text": "코토코",
+          "start": 17,
+          "end": 20,
+          "text": "유니스",
+          "source": "title"
+        },
+        {
+          "start": 82,
+          "end": 85,
+          "text": "유니스",
           "source": "title"
         }
       ]

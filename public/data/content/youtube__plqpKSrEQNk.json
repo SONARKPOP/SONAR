@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:49:29.306154Z",
+    "collectedAt": "2026-11-25T19:22:05.140516Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,34 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 28,
+          "text": "SECRET",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "wooah",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 46,
+          "end": 53,
+          "text": "woo!ah!",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "bugaboo",
@@ -67,34 +95,6 @@
           "start": 22,
           "end": 35,
           "text": "SECRET NUMBER",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wooah",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 46,
-          "end": 53,
-          "text": "woo!ah!",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 28,
-          "text": "SECRET",
           "source": "title"
         }
       ]

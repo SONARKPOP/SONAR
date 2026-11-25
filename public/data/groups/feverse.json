@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-25T16:59:46.082790Z",
+  "updatedAt": "2026-11-25T19:25:14.749636Z",
   "items": [
     {
       "id": "youtube__JGmG88WVgdo",
@@ -41,20 +41,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "oh-ha-young",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "오하영",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "apink-oh-ha-young",
           "state": "inferred",
@@ -67,7 +53,29 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "oh-ha-young",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "오하영",
+              "source": "title"
+            }
+          ]
         }
+      ],
+      "careerGroupIds": [
+        "apink",
+        "feverse"
+      ],
+      "displayCareerGroupIds": [
+        "apink",
+        "feverse"
       ],
       "externalId": "JGmG88WVgdo",
       "sourceUrl": "https://www.youtube.com/watch?v=JGmG88WVgdo",
@@ -78,15 +86,7 @@
       "teaserType": "",
       "contentLength": "long",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "careerGroupIds": [
-        "apink",
-        "feverse"
-      ],
-      "displayCareerGroupIds": [
-        "apink",
-        "feverse"
-      ]
+      "musicBroadcast": false
     },
     {
       "id": "youtube__iTFPMXSsVr0",
@@ -276,6 +276,26 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "apink",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 39,
+              "end": 44,
+              "text": "Apink",
+              "source": "title"
+            },
+            {
+              "start": 33,
+              "end": 37,
+              "text": "에이핑크",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "apink-kim-nam-joo",
           "state": "inferred",
@@ -305,40 +325,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-1302ddab0dad9303",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 46,
-              "end": 49,
-              "text": "박초롱",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "apink",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 39,
-              "end": 44,
-              "text": "Apink",
-              "source": "title"
-            },
-            {
-              "start": 33,
-              "end": 37,
-              "text": "에이핑크",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-79fdd3c5e9d77a81",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -347,34 +333,6 @@
               "start": 51,
               "end": 54,
               "text": "윤보미",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "oh-ha-young",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 66,
-              "end": 69,
-              "text": "오하영",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "apink-oh-ha-young",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 66,
-              "end": 69,
-              "text": "오하영",
               "source": "title"
             }
           ]
@@ -409,7 +367,49 @@
         },
         {
           "artistType": "person",
+          "artistId": "apink-oh-ha-young",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 66,
+              "end": 69,
+              "text": "오하영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "oh-ha-young",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 66,
+              "end": 69,
+              "text": "오하영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-740b582fc9cc1cf0",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 11,
+              "end": 13,
+              "text": "사랑",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-a0260b2bdfc6f22a",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -437,14 +437,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-a0260b2bdfc6f22a",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-1302ddab0dad9303",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "사랑",
+              "start": 46,
+              "end": 49,
+              "text": "박초롱",
               "source": "title"
             }
           ]
@@ -512,20 +512,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-1302ddab0dad9303",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 43,
-              "end": 46,
-              "text": "박초롱",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "apink",
           "state": "inferred",
@@ -547,6 +533,34 @@
         },
         {
           "artistType": "person",
+          "artistId": "apink-kim-nam-joo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 58,
+              "end": 61,
+              "text": "김남주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kim-nam-joo",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 58,
+              "end": 61,
+              "text": "김남주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-79fdd3c5e9d77a81",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -555,34 +569,6 @@
               "start": 48,
               "end": 51,
               "text": "윤보미",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "oh-ha-young",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 63,
-              "end": 66,
-              "text": "오하영",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "apink-oh-ha-young",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 63,
-              "end": 66,
-              "text": "오하영",
               "source": "title"
             }
           ]
@@ -617,28 +603,42 @@
         },
         {
           "artistType": "person",
-          "artistId": "apink-kim-nam-joo",
+          "artistId": "apink-oh-ha-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 58,
-              "end": 61,
-              "text": "김남주",
+              "start": 63,
+              "end": 66,
+              "text": "오하영",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "kim-nam-joo",
+          "artistId": "oh-ha-young",
           "state": "mention",
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 58,
-              "end": 61,
-              "text": "김남주",
+              "start": 63,
+              "end": 66,
+              "text": "오하영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-1302ddab0dad9303",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 43,
+              "end": 46,
+              "text": "박초롱",
               "source": "title"
             }
           ]
@@ -727,28 +727,28 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-1302ddab0dad9303",
+          "artistId": "apink-kim-nam-joo",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 45,
-              "end": 48,
-              "text": "박초롱",
+              "start": 60,
+              "end": 63,
+              "text": "김남주",
               "source": "title"
             }
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-f0ca1790688845b4",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistType": "group",
+          "artistId": "kim-nam-joo",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 4,
-              "end": 5,
-              "text": "신",
+              "start": 60,
+              "end": 63,
+              "text": "김남주",
               "source": "title"
             }
           ]
@@ -763,34 +763,6 @@
               "start": 50,
               "end": 53,
               "text": "윤보미",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "oh-ha-young",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 65,
-              "end": 68,
-              "text": "오하영",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "apink-oh-ha-young",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 65,
-              "end": 68,
-              "text": "오하영",
               "source": "title"
             }
           ]
@@ -825,28 +797,56 @@
         },
         {
           "artistType": "person",
-          "artistId": "apink-kim-nam-joo",
+          "artistId": "apink-oh-ha-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 60,
-              "end": 63,
-              "text": "김남주",
+              "start": 65,
+              "end": 68,
+              "text": "오하영",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "kim-nam-joo",
+          "artistId": "oh-ha-young",
           "state": "mention",
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 60,
-              "end": 63,
-              "text": "김남주",
+              "start": 65,
+              "end": 68,
+              "text": "오하영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-f0ca1790688845b4",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 4,
+              "end": 5,
+              "text": "신",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-1302ddab0dad9303",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 48,
+              "text": "박초롱",
               "source": "title"
             }
           ]
@@ -914,20 +914,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-1302ddab0dad9303",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 47,
-              "end": 50,
-              "text": "박초롱",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "apink",
           "state": "inferred",
@@ -949,6 +935,34 @@
         },
         {
           "artistType": "person",
+          "artistId": "apink-kim-nam-joo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 62,
+              "end": 65,
+              "text": "김남주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kim-nam-joo",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 62,
+              "end": 65,
+              "text": "김남주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-79fdd3c5e9d77a81",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -957,34 +971,6 @@
               "start": 52,
               "end": 55,
               "text": "윤보미",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "oh-ha-young",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 67,
-              "end": 70,
-              "text": "오하영",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "apink-oh-ha-young",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 67,
-              "end": 70,
-              "text": "오하영",
               "source": "title"
             }
           ]
@@ -1019,28 +1005,42 @@
         },
         {
           "artistType": "person",
-          "artistId": "apink-kim-nam-joo",
+          "artistId": "apink-oh-ha-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 62,
-              "end": 65,
-              "text": "김남주",
+              "start": 67,
+              "end": 70,
+              "text": "오하영",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "kim-nam-joo",
+          "artistId": "oh-ha-young",
           "state": "mention",
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 62,
-              "end": 65,
-              "text": "김남주",
+              "start": 67,
+              "end": 70,
+              "text": "오하영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-1302ddab0dad9303",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 47,
+              "end": 50,
+              "text": "박초롱",
               "source": "title"
             }
           ]
@@ -1108,20 +1108,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-1302ddab0dad9303",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 76,
-              "end": 79,
-              "text": "박초롱",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "apink",
           "state": "inferred",
@@ -1143,6 +1129,34 @@
         },
         {
           "artistType": "person",
+          "artistId": "apink-kim-nam-joo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 91,
+              "end": 94,
+              "text": "김남주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kim-nam-joo",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 91,
+              "end": 94,
+              "text": "김남주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-79fdd3c5e9d77a81",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1156,10 +1170,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "oh-ha-young",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "apink-oh-ha-young",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 96,
@@ -1170,10 +1184,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "apink-oh-ha-young",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "oh-ha-young",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 96,
@@ -1213,28 +1227,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "apink-kim-nam-joo",
+          "artistId": "person-1302ddab0dad9303",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 91,
-              "end": 94,
-              "text": "김남주",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "kim-nam-joo",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 91,
-              "end": 94,
-              "text": "김남주",
+              "start": 76,
+              "end": 79,
+              "text": "박초롱",
               "source": "title"
             }
           ]
@@ -1302,20 +1302,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-1302ddab0dad9303",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 30,
-              "end": 33,
-              "text": "박초롱",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "apink",
           "state": "inferred",
@@ -1337,6 +1323,34 @@
         },
         {
           "artistType": "person",
+          "artistId": "apink-kim-nam-joo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 48,
+              "text": "김남주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kim-nam-joo",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 45,
+              "end": 48,
+              "text": "김남주",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-79fdd3c5e9d77a81",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1345,34 +1359,6 @@
               "start": 35,
               "end": 38,
               "text": "윤보미",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "oh-ha-young",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 50,
-              "end": 53,
-              "text": "오하영",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "apink-oh-ha-young",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 50,
-              "end": 53,
-              "text": "오하영",
               "source": "title"
             }
           ]
@@ -1407,28 +1393,42 @@
         },
         {
           "artistType": "person",
-          "artistId": "apink-kim-nam-joo",
+          "artistId": "apink-oh-ha-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 45,
-              "end": 48,
-              "text": "김남주",
+              "start": 50,
+              "end": 53,
+              "text": "오하영",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "group",
-          "artistId": "kim-nam-joo",
+          "artistId": "oh-ha-young",
           "state": "mention",
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 45,
-              "end": 48,
-              "text": "김남주",
+              "start": 50,
+              "end": 53,
+              "text": "오하영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-1302ddab0dad9303",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 30,
+              "end": 33,
+              "text": "박초롱",
               "source": "title"
             }
           ]
@@ -1570,6 +1570,20 @@
       "appearanceLinks": [
         {
           "artistType": "person",
+          "artistId": "person-5c80e6ee2b35cae8",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "세라",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-bb2eea295f374454",
           "state": "needs_review",
           "reason": "shared-name",
@@ -1584,23 +1598,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-5c80e6ee2b35cae8",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "세라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "lunedi",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistId": "weeekly-lunedi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 48,
@@ -1611,10 +1611,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "weeekly-lunedi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "lunedi",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 48,
@@ -1732,9 +1732,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-107bc4f5371ff8f7",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-e6e94b8b5bcbf3f1",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 50,
@@ -1746,9 +1746,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-e6e94b8b5bcbf3f1",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-107bc4f5371ff8f7",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 50,
@@ -2677,8 +2677,22 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "feverse",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 9,
+              "end": 12,
+              "text": "피버스",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
-          "artistId": "person-635192b2e655114d",
+          "artistId": "hitgs-iyoo",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -2706,7 +2720,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "hitgs-iyoo",
+          "artistId": "person-635192b2e655114d",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -2714,20 +2728,6 @@
               "start": 30,
               "end": 32,
               "text": "이유",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "feverse",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 9,
-              "end": 12,
-              "text": "피버스",
               "source": "title"
             }
           ]
@@ -3842,7 +3842,7 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-bb2eea295f374454",
+          "artistId": "person-5c80e6ee2b35cae8",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3856,7 +3856,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-5c80e6ee2b35cae8",
+          "artistId": "person-bb2eea295f374454",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -3967,9 +3967,9 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-107bc4f5371ff8f7",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-e6e94b8b5bcbf3f1",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 22,
@@ -3981,9 +3981,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-e6e94b8b5bcbf3f1",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-107bc4f5371ff8f7",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 22,
@@ -4196,10 +4196,10 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "lunedi",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "weeekly-lunedi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 20,
@@ -4210,10 +4210,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "weeekly-lunedi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "lunedi",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 20,
@@ -4247,7 +4247,8 @@
       "title": "[소녀V] 루비였던 소녀, 퍼플키스 '수안'의 이야기 | 소녀 리버스",
       "publishedAt": "2023-03-11T03:00:07Z",
       "groupIds": [
-        "feverse"
+        "feverse",
+        "purple-kiss"
       ],
       "memberIds": [
         "purple-kiss-swan"
@@ -4288,15 +4289,15 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "purple-kiss-swan",
+          "artistType": "group",
+          "artistId": "purple-kiss",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 21,
-              "end": 23,
-              "text": "수안",
+              "start": 15,
+              "end": 19,
+              "text": "퍼플키스",
               "source": "title"
             }
           ]
@@ -4330,15 +4331,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "purple-kiss",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "purple-kiss-swan",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 19,
-              "text": "퍼플키스",
+              "start": 21,
+              "end": 23,
+              "text": "수안",
               "source": "title"
             }
           ]

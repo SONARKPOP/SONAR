@@ -34,14 +34,14 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T07:45:47.646567Z",
+    "collectedAt": "2026-11-25T19:17:39.003032Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -53,15 +53,29 @@
       "reason": "everyday-name",
       "matches": [
         {
+          "start": 21,
+          "end": 33,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        },
+        {
           "start": 73,
           "end": 80,
           "text": "키스오브라이프",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
           "start": 21,
-          "end": 33,
-          "text": "KISS OF LIFE",
+          "end": 25,
+          "text": "KISS",
           "source": "title"
         }
       ]
@@ -76,20 +90,6 @@
           "start": 35,
           "end": 37,
           "text": "쥴리",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "natty",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 82,
-          "end": 84,
-          "text": "나띠",
           "source": "title"
         }
       ]
@@ -110,14 +110,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "natty",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 21,
-          "end": 25,
-          "text": "KISS",
+          "start": 82,
+          "end": 84,
+          "text": "나띠",
           "source": "title"
         }
       ]

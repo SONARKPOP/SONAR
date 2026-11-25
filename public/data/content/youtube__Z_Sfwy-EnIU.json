@@ -60,6 +60,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "IZ*ONE",
+          "source": "title"
+        },
+        {
+          "start": 82,
+          "end": 88,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "kwon-eun-bi",
       "state": "mention",
       "reason": "official-owner-reference",
@@ -87,20 +107,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "lsf-sakura",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 72,
-          "end": 78,
-          "text": "SAKURA",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "red-velvet",
       "state": "mention",
@@ -115,21 +121,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "izone",
+      "artistType": "person",
+      "artistId": "lsf-sakura",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 6,
-          "text": "IZ*ONE",
-          "source": "title"
-        },
-        {
-          "start": 82,
-          "end": 88,
-          "text": "IZ*ONE",
+          "start": 72,
+          "end": 78,
+          "text": "SAKURA",
           "source": "title"
         }
       ]
