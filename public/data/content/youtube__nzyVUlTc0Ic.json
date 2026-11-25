@@ -46,8 +46,22 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "gfriend-yuju",
+      "artistType": "group",
+      "artistId": "gfriend",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 3,
+          "end": 10,
+          "text": "GFRIEND",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yuju",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -60,8 +74,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yuju",
+      "artistType": "person",
+      "artistId": "gfriend-yuju",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -83,20 +97,6 @@
           "start": 0,
           "end": 2,
           "text": "유주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gfriend",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 3,
-          "end": 10,
-          "text": "GFRIEND",
           "source": "title"
         }
       ]
