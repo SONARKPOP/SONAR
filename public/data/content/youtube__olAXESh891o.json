@@ -49,15 +49,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
+      "artistType": "group",
+      "artistId": "hearts2hearts",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "소원",
+          "start": 46,
+          "end": 59,
+          "text": "Hearts2Hearts",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 16,
+          "text": "하츠투하츠",
           "source": "title"
         }
       ]
@@ -84,26 +90,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "hearts2hearts",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 16,
-          "text": "하츠투하츠",
-          "source": "title"
-        },
-        {
-          "start": 46,
-          "end": 59,
-          "text": "Hearts2Hearts",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "girls-generation",
       "state": "mention",
       "reason": "original-artist-or-comparison",
@@ -112,6 +98,20 @@
           "start": 38,
           "end": 42,
           "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-7e099bbae8b262d8",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 19,
+          "text": "주은",
           "source": "title"
         }
       ]
@@ -132,14 +132,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-7e099bbae8b262d8",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-a1479c2cc95e8b6a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 17,
-          "end": 19,
-          "text": "주은",
+          "start": 24,
+          "end": 26,
+          "text": "소원",
           "source": "title"
         }
       ]
