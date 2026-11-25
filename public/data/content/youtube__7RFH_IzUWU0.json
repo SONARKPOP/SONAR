@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-06-30T09:00:19Z",
   "groupIds": [
-    "seeya",
-    "stayc"
+    "seeya"
   ],
   "memberIds": [
     "person-5093ef4f08d2376c",
@@ -58,10 +57,30 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "stayc",
+      "artistType": "person",
+      "artistId": "stayc-member-c5adbcd89db8",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 25,
+          "text": "세은",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 49,
+          "text": "세은",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "stayc",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 33,
@@ -93,26 +112,6 @@
           "start": 51,
           "end": 53,
           "text": "씨야",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "stayc-member-c5adbcd89db8",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "세은",
-          "source": "title"
-        },
-        {
-          "start": 47,
-          "end": 49,
-          "text": "세은",
           "source": "title"
         }
       ]
