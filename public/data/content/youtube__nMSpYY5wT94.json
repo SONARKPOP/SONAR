@@ -46,15 +46,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-6c94e077a885f432",
+      "artistType": "group",
+      "artistId": "h1-key",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 34,
-          "end": 36,
-          "text": "장미",
+          "start": 14,
+          "end": 20,
+          "text": "H1-KEY",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "text": "하이키",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 38,
+          "end": 42,
+          "text": "Rose",
           "source": "title"
         }
       ]
@@ -74,35 +94,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "h1-key",
+      "artistType": "person",
+      "artistId": "person-6c94e077a885f432",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 10,
-          "end": 13,
-          "text": "하이키",
-          "source": "title"
-        },
-        {
-          "start": 14,
-          "end": 20,
-          "text": "H1-KEY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 38,
-          "end": 42,
-          "text": "Rose",
+          "start": 34,
+          "end": 36,
+          "text": "장미",
           "source": "title"
         }
       ]

@@ -65,15 +65,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-c0d7c90bc10c9ed0",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "gfriend",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "라라",
+          "start": 40,
+          "end": 44,
+          "text": "여자친구",
+          "source": "title"
+        },
+        {
+          "start": 45,
+          "end": 52,
+          "text": "GFRIEND",
           "source": "title"
         }
       ]
@@ -107,21 +113,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "gfriend",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-c0d7c90bc10c9ed0",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 40,
-          "end": 44,
-          "text": "여자친구",
-          "source": "title"
-        },
-        {
-          "start": 45,
-          "end": 52,
-          "text": "GFRIEND",
+          "start": 5,
+          "end": 7,
+          "text": "라라",
           "source": "title"
         }
       ]
