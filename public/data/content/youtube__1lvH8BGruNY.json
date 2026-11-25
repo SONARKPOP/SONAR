@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "rescene-woni",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "wena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 15,
-          "end": 17,
-          "text": "원이",
+          "start": 12,
+          "end": 14,
+          "text": "위나",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 5,
+          "text": "We;Na",
           "source": "title"
         }
       ]
@@ -73,6 +79,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "rescene-woni",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "원이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-25dff8797c83a601",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -81,26 +101,6 @@
           "start": 15,
           "end": 16,
           "text": "원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 5,
-          "text": "We;Na",
-          "source": "title"
-        },
-        {
-          "start": 12,
-          "end": 14,
-          "text": "위나",
           "source": "title"
         }
       ]

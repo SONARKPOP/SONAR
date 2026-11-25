@@ -51,14 +51,54 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "jo-yuri",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 43,
-          "end": 49,
-          "text": "Secret",
+          "start": 24,
+          "end": 31,
+          "text": "Jo Yuri",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 35,
+          "text": "조유리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "izone-jo-yuri",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 31,
+          "text": "Jo Yuri",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 35,
+          "text": "조유리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 63,
+          "end": 67,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -79,68 +119,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "yuri",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 63,
-          "end": 67,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "jo-yuri",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 32,
-          "end": 35,
-          "text": "조유리",
-          "source": "title"
-        },
-        {
-          "start": 24,
+          "start": 27,
           "end": 31,
-          "text": "Jo Yuri",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "izone-jo-yuri",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 32,
-          "end": 35,
-          "text": "조유리",
-          "source": "title"
-        },
-        {
-          "start": 24,
-          "end": 31,
-          "text": "Jo Yuri",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
+          "text": "Yuri",
           "source": "title"
         }
       ]
@@ -161,14 +147,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "yuri",
+      "artistId": "secret",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 27,
-          "end": 31,
-          "text": "Yuri",
+          "start": 43,
+          "end": 49,
+          "text": "Secret",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
           "source": "title"
         }
       ]

@@ -56,10 +56,30 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "wjsn-seola",
+      "artistType": "group",
+      "artistId": "wjsn",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "WJSN",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 20,
+          "text": "우주소녀",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "seola",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 5,
@@ -90,10 +110,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "seola",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "wjsn-seola",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 5,
@@ -119,26 +139,6 @@
           "start": 5,
           "end": 7,
           "text": "설아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "wjsn",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 20,
-          "text": "우주소녀",
-          "source": "title"
-        },
-        {
-          "start": 22,
-          "end": 26,
-          "text": "WJSN",
           "source": "title"
         }
       ]
