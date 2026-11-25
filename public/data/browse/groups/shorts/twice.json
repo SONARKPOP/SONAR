@@ -140,6 +140,26 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "twice",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 16,
+              "end": 20,
+              "text": "트와이스",
+              "source": "title"
+            },
+            {
+              "start": 9,
+              "end": 14,
+              "text": "TWICE",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-8ce8dce26a64068c",
           "state": "needs_review",
@@ -174,26 +194,6 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "nayeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 31,
-              "end": 33,
-              "text": "나연",
-              "source": "title"
-            },
-            {
-              "start": 23,
-              "end": 29,
-              "text": "NAYEON",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-b7086b233a866c09",
           "state": "needs_review",
@@ -209,20 +209,20 @@
         },
         {
           "artistType": "group",
-          "artistId": "twice",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "nayeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 16,
-              "end": 20,
-              "text": "트와이스",
+              "start": 31,
+              "end": 33,
+              "text": "나연",
               "source": "title"
             },
             {
-              "start": 9,
-              "end": 14,
-              "text": "TWICE",
+              "start": 23,
+              "end": 29,
+              "text": "NAYEON",
               "source": "title"
             }
           ]
@@ -278,15 +278,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-8ce8dce26a64068c",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "twice",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 49,
-              "end": 51,
-              "text": "나연",
+              "start": 35,
+              "end": 39,
+              "text": "트와이스",
+              "source": "title"
+            },
+            {
+              "start": 28,
+              "end": 33,
+              "text": "TWICE",
               "source": "title"
             }
           ]
@@ -298,15 +304,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 49,
-              "end": 51,
-              "text": "나연",
-              "source": "title"
-            },
-            {
               "start": 41,
               "end": 47,
               "text": "NAYEON",
+              "source": "title"
+            },
+            {
+              "start": 49,
+              "end": 51,
+              "text": "나연",
               "source": "title"
             }
           ]
@@ -318,15 +324,29 @@
           "reason": "official-owner-reference",
           "matches": [
             {
+              "start": 41,
+              "end": 47,
+              "text": "NAYEON",
+              "source": "title"
+            },
+            {
               "start": 49,
               "end": 51,
               "text": "나연",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8ce8dce26a64068c",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
             {
-              "start": 41,
-              "end": 47,
-              "text": "NAYEON",
+              "start": 49,
+              "end": 51,
+              "text": "나연",
               "source": "title"
             }
           ]
@@ -355,26 +375,6 @@
               "start": 73,
               "end": 78,
               "text": "ILLIT",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "twice",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 35,
-              "end": 39,
-              "text": "트와이스",
-              "source": "title"
-            },
-            {
-              "start": 28,
-              "end": 33,
-              "text": "TWICE",
               "source": "title"
             }
           ]
@@ -514,74 +514,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-8ce8dce26a64068c",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 35,
-              "end": 37,
-              "text": "나연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "tw-nayeon",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 35,
-              "end": 37,
-              "text": "나연",
-              "source": "title"
-            },
-            {
-              "start": 27,
-              "end": 33,
-              "text": "NAYEON",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "nayeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 35,
-              "end": 37,
-              "text": "나연",
-              "source": "title"
-            },
-            {
-              "start": 27,
-              "end": 33,
-              "text": "NAYEON",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-b7086b233a866c09",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 35,
-              "end": 37,
-              "text": "나연",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "twice",
           "state": "inferred",
@@ -597,6 +529,74 @@
               "start": 14,
               "end": 19,
               "text": "TWICE",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "tw-nayeon",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 27,
+              "end": 33,
+              "text": "NAYEON",
+              "source": "title"
+            },
+            {
+              "start": 35,
+              "end": 37,
+              "text": "나연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "nayeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 27,
+              "end": 33,
+              "text": "NAYEON",
+              "source": "title"
+            },
+            {
+              "start": 35,
+              "end": 37,
+              "text": "나연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8ce8dce26a64068c",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 35,
+              "end": 37,
+              "text": "나연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-b7086b233a866c09",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 35,
+              "end": 37,
+              "text": "나연",
               "source": "title"
             }
           ]
@@ -652,6 +652,26 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "twice",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 28,
+              "end": 32,
+              "text": "트와이스",
+              "source": "title"
+            },
+            {
+              "start": 21,
+              "end": 26,
+              "text": "TWICE",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-8ce8dce26a64068c",
           "state": "needs_review",
@@ -686,26 +706,6 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "nayeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 42,
-              "end": 44,
-              "text": "나연",
-              "source": "title"
-            },
-            {
-              "start": 34,
-              "end": 40,
-              "text": "NAYEON",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-b7086b233a866c09",
           "state": "needs_review",
@@ -721,20 +721,20 @@
         },
         {
           "artistType": "group",
-          "artistId": "twice",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "nayeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 28,
-              "end": 32,
-              "text": "트와이스",
+              "start": 42,
+              "end": 44,
+              "text": "나연",
               "source": "title"
             },
             {
-              "start": 21,
-              "end": 26,
-              "text": "TWICE",
+              "start": 34,
+              "end": 40,
+              "text": "NAYEON",
               "source": "title"
             }
           ]
