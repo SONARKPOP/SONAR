@@ -46,8 +46,22 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "tw-nayeon",
+      "artistType": "group",
+      "artistId": "bestie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 10,
+          "text": "베스티",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "nayeon",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -88,8 +102,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nayeon",
+      "artistType": "person",
+      "artistId": "tw-nayeon",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -97,20 +111,6 @@
           "start": 27,
           "end": 29,
           "text": "나연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "bestie",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 10,
-          "text": "베스티",
           "source": "title"
         }
       ]

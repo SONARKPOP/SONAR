@@ -39,8 +39,22 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "tw-nayeon",
+          "artistType": "group",
+          "artistId": "red-velvet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 45,
+              "end": 49,
+              "text": "레드벨벳",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "nayeon",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -99,8 +113,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "nayeon",
+          "artistType": "person",
+          "artistId": "tw-nayeon",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -154,20 +168,6 @@
               "start": 50,
               "end": 52,
               "text": "예리",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "red-velvet",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 45,
-              "end": 49,
-              "text": "레드벨벳",
               "source": "title"
             }
           ]

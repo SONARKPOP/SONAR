@@ -42,11 +42,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-82c8dfffcc8a320b",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "alice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "ALICE",
+          "source": "title"
+        },
         {
           "start": 7,
           "end": 10,
@@ -57,20 +63,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "alice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "episode",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 7,
-          "end": 10,
-          "text": "앨리스",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 5,
-          "text": "ALICE",
+          "start": 19,
+          "end": 26,
+          "text": "Episode",
           "source": "title"
         }
       ]
@@ -90,15 +90,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "episode",
+      "artistType": "person",
+      "artistId": "person-82c8dfffcc8a320b",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 19,
-          "end": 26,
-          "text": "Episode",
+          "start": 7,
+          "end": 10,
+          "text": "앨리스",
           "source": "title"
         }
       ]

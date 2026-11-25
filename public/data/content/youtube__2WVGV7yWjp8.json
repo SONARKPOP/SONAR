@@ -57,29 +57,9 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "miss-a",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 18,
-          "text": "miss A",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 23,
-          "text": "미쓰에이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "miss-a-jia",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "jia",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 69,
@@ -104,15 +84,35 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jia",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "miss-a-jia",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 69,
           "end": 72,
           "text": "JIA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "miss-a",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 18,
+          "text": "miss A",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 23,
+          "text": "미쓰에이",
           "source": "title"
         }
       ]
