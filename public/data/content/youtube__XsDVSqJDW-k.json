@@ -49,6 +49,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "lee-chae-yeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -76,15 +90,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 48,
-          "end": 54,
-          "text": "Secret",
+          "start": 68,
+          "end": 72,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -104,29 +118,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 68,
-          "end": 72,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
+          "start": 48,
+          "end": 54,
+          "text": "Secret",
           "source": "title"
         }
       ]

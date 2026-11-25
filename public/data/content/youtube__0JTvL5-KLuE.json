@@ -56,6 +56,26 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "hello-venus",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 18,
+          "end": 23,
+          "text": "헬로비너스",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 17,
+          "text": "HELLOVENUS",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-18ce3b969b504550",
       "state": "inferred",
@@ -65,20 +85,6 @@
           "start": 40,
           "end": 42,
           "text": "나라",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-9dda2eae88d9d10c",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 44,
-          "end": 47,
-          "text": "앨리스",
           "source": "title"
         }
       ]
@@ -98,10 +104,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "alice",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "person-9dda2eae88d9d10c",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 44,
@@ -113,20 +119,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "hello-venus",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "alice",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 7,
-          "end": 17,
-          "text": "HELLOVENUS",
-          "source": "title"
-        },
-        {
-          "start": 18,
-          "end": 23,
-          "text": "헬로비너스",
+          "start": 44,
+          "end": 47,
+          "text": "앨리스",
           "source": "title"
         }
       ]
