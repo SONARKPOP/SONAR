@@ -58,29 +58,21 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "weeekly-lunedi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 6,
-          "end": 12,
-          "text": "Monday",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "lunedi",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "lapillus",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 6,
-          "end": 12,
-          "text": "Monday",
+          "start": 26,
+          "end": 34,
+          "text": "Lapillus",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 40,
+          "text": "라필루스",
           "source": "title"
         }
       ]
@@ -101,20 +93,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "lapillus",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "lunedi",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 36,
-          "end": 40,
-          "text": "라필루스",
+          "start": 6,
+          "end": 12,
+          "text": "Monday",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "weeekly-lunedi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 26,
-          "end": 34,
-          "text": "Lapillus",
+          "start": 6,
+          "end": 12,
+          "text": "Monday",
           "source": "title"
         }
       ]

@@ -503,6 +503,26 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "favorite",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 9,
+              "end": 13,
+              "text": "페이버릿",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 8,
+              "text": "Favorite",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "gg-3ea891caaee2e6ac",
           "state": "needs_review",
           "reason": "everyday-name",
@@ -511,26 +531,6 @@
               "start": 25,
               "end": 26,
               "text": "s",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "favorite",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 8,
-              "text": "Favorite",
-              "source": "title"
-            },
-            {
-              "start": 9,
-              "end": 13,
-              "text": "페이버릿",
               "source": "title"
             }
           ]
@@ -711,8 +711,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "chungha",
+          "artistType": "person",
+          "artistId": "ioi-chungha",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -731,8 +731,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "ioi-chungha",
+          "artistType": "group",
+          "artistId": "chungha",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -1000,8 +1000,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "chungha",
+          "artistType": "person",
+          "artistId": "ioi-chungha",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -1020,8 +1020,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "ioi-chungha",
+          "artistType": "group",
+          "artistId": "chungha",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -1255,20 +1255,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-ad935aaa23b4d453",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 17,
-              "end": 19,
-              "text": "우린",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "davichi",
           "state": "inferred",
@@ -1284,6 +1270,20 @@
               "start": 4,
               "end": 11,
               "text": "Davichi",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-ad935aaa23b4d453",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 17,
+              "end": 19,
+              "text": "우린",
               "source": "title"
             }
           ]
@@ -1676,15 +1676,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 26,
-              "end": 30,
-              "text": "프리스틴",
-              "source": "title"
-            },
-            {
               "start": 16,
               "end": 23,
               "text": "PRISTIN",
+              "source": "title"
+            },
+            {
+              "start": 26,
+              "end": 30,
+              "text": "프리스틴",
               "source": "title"
             }
           ]
@@ -2077,34 +2077,14 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-4b927123d0b53a6e",
+          "artistId": "person-0484323e05d6fc75",
           "state": "needs_review",
-          "reason": "everyday-name",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 28,
-              "end": 29,
-              "text": "안",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "melody-day",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 7,
-              "end": 12,
-              "text": "멜로디데이",
-              "source": "title"
-            },
-            {
-              "start": 13,
-              "end": 22,
-              "text": "MELODYDAY",
+              "start": 36,
+              "end": 38,
+              "text": "유민",
               "source": "title"
             }
           ]
@@ -2124,15 +2104,35 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-0484323e05d6fc75",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "melody-day",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 36,
-              "end": 38,
-              "text": "유민",
+              "start": 13,
+              "end": 22,
+              "text": "MELODYDAY",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 12,
+              "text": "멜로디데이",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-4b927123d0b53a6e",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 28,
+              "end": 29,
+              "text": "안",
               "source": "title"
             }
           ]
@@ -2189,14 +2189,14 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-4b927123d0b53a6e",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistId": "person-035229819722b904",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 28,
-              "end": 29,
-              "text": "안",
+              "start": 36,
+              "end": 38,
+              "text": "차희",
               "source": "title"
             }
           ]
@@ -2208,29 +2208,29 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 7,
-              "end": 12,
-              "text": "멜로디데이",
-              "source": "title"
-            },
-            {
               "start": 13,
               "end": 22,
               "text": "MELODYDAY",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 12,
+              "text": "멜로디데이",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-035229819722b904",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-4b927123d0b53a6e",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
-              "start": 36,
-              "end": 38,
-              "text": "차희",
+              "start": 28,
+              "end": 29,
+              "text": "안",
               "source": "title"
             }
           ]
@@ -2584,6 +2584,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-2300f45a248fc299",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 1,
+              "end": 3,
+              "text": "세계",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "apink",
           "state": "inferred",
@@ -2599,20 +2613,6 @@
               "start": 27,
               "end": 31,
               "text": "에이핑크",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-2300f45a248fc299",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 1,
-              "end": 3,
-              "text": "세계",
               "source": "title"
             }
           ]
