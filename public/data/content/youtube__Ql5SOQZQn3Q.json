@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-53da7f045c68d659",
+      "artistType": "group",
+      "artistId": "akmu",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 51,
-          "end": 54,
-          "text": "이수현",
+          "start": 56,
+          "end": 58,
+          "text": "악뮤",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 64,
+          "text": "AKMU",
           "source": "title"
         }
       ]
@@ -62,6 +68,20 @@
     {
       "artistType": "person",
       "artistId": "person-1f583d1633be80c3",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "수현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "billlie-member-3c2540674e49",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -89,34 +109,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "billlie-member-3c2540674e49",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 2,
-          "text": "수현",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "akmu",
+      "artistId": "person-53da7f045c68d659",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 60,
-          "end": 64,
-          "text": "AKMU",
-          "source": "title"
-        },
-        {
-          "start": 56,
-          "end": 58,
-          "text": "악뮤",
+          "start": 51,
+          "end": 54,
+          "text": "이수현",
           "source": "title"
         }
       ]

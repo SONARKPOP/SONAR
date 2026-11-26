@@ -58,6 +58,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "blady",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 6,
+          "text": "blady",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 15,
+          "text": "블레이디",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "secret",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -72,20 +92,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "blady",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "secret-number",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 11,
-          "end": 15,
-          "text": "블레이디",
-          "source": "title"
-        },
-        {
-          "start": 1,
-          "end": 6,
-          "text": "blady",
+          "start": 35,
+          "end": 48,
+          "text": "Secret number",
           "source": "title"
         }
       ]
@@ -100,20 +114,6 @@
           "start": 28,
           "end": 30,
           "text": "썸머",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret-number",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 35,
-          "end": 48,
-          "text": "Secret number",
           "source": "title"
         }
       ]
