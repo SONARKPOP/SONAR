@@ -68,10 +68,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "gidle-minnie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "minnie",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 0,
@@ -82,10 +82,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "minnie",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "gidle-minnie",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 0,
@@ -301,38 +301,18 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "miyeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "미연",
-              "source": "title"
-            },
-            {
-              "start": 26,
-              "end": 28,
-              "text": "미연",
-              "source": "title"
-            },
-            {
-              "start": 30,
-              "end": 36,
-              "text": "MIYEON",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "gidle-miyeon",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 30,
+              "end": 36,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
               "start": 0,
               "end": 2,
               "text": "미연",
@@ -343,11 +323,31 @@
               "end": 28,
               "text": "미연",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "miyeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
             {
               "start": 30,
               "end": 36,
               "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 2,
+              "text": "미연",
+              "source": "title"
+            },
+            {
+              "start": 26,
+              "end": 28,
+              "text": "미연",
               "source": "title"
             }
           ]
@@ -404,26 +404,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "miyeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
-              "source": "title"
-            },
-            {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "gidle-miyeon",
           "state": "inferred",
@@ -445,7 +425,27 @@
         },
         {
           "artistType": "group",
-          "artistId": "tiffany-young",
+          "artistId": "miyeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "girls-generation-tiffany-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -458,8 +458,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "girls-generation-tiffany-young",
+          "artistType": "group",
+          "artistId": "tiffany-young",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -532,29 +532,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "tiffany-young",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 13,
-              "text": "Tiffany Young",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
-          "artistId": "girls-generation-tiffany-young",
+          "artistId": "gidle-miyeon",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 0,
-              "end": 13,
-              "text": "Tiffany Young",
+              "start": 42,
+              "end": 48,
+              "text": "MIYEON",
+              "source": "title"
+            },
+            {
+              "start": 38,
+              "end": 40,
+              "text": "미연",
               "source": "title"
             }
           ]
@@ -581,20 +573,28 @@
         },
         {
           "artistType": "person",
-          "artistId": "gidle-miyeon",
+          "artistId": "girls-generation-tiffany-young",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 42,
-              "end": 48,
-              "text": "MIYEON",
+              "start": 0,
+              "end": 13,
+              "text": "Tiffany Young",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "tiffany-young",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
-              "start": 38,
-              "end": 40,
-              "text": "미연",
+              "start": 0,
+              "end": 13,
+              "text": "Tiffany Young",
               "source": "title"
             }
           ]

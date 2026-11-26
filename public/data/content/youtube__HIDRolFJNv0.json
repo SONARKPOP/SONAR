@@ -42,15 +42,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-e202f1ad30e8b48a",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "seeya",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 18,
-          "end": 20,
-          "text": "사랑",
+          "start": 5,
+          "end": 7,
+          "text": "씨야",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 14,
+          "text": "SEEYA",
           "source": "title"
         }
       ]
@@ -84,21 +90,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "seeya",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-e202f1ad30e8b48a",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "씨야",
-          "source": "title"
-        },
-        {
-          "start": 9,
-          "end": 14,
-          "text": "SEEYA",
+          "start": 18,
+          "end": 20,
+          "text": "사랑",
           "source": "title"
         }
       ]
