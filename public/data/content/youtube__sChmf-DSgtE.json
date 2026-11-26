@@ -7,8 +7,7 @@
   "description": "#KISSOFLIFE #키스오브라이프 #Midas_Touch",
   "publishedAt": "2024-04-30T00:03:45Z",
   "groupIds": [
-    "kiss",
-    "kiss-of-life"
+    "kiss"
   ],
   "memberIds": [
     "kiss-of-life-member-272247fb290a",
@@ -40,11 +39,25 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "kiss-of-life-member-da7f28bccc9c",
@@ -88,26 +101,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 21,
-          "text": "키스오브라이프",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 12,
-          "text": "KISS OF LIFE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "kiss-of-life-member-272247fb290a",
       "state": "inferred",
@@ -123,14 +116,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
+          "start": 14,
+          "end": 21,
+          "text": "키스오브라이프",
+          "source": "title"
+        },
+        {
           "start": 0,
-          "end": 4,
-          "text": "KISS",
+          "end": 12,
+          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]
