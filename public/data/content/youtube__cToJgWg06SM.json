@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:44:01.004449Z",
+    "collectedAt": "2026-11-26T07:46:58.964794Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "momoland",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 8,
+          "text": "MOMOLAND",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 14,
+          "text": "모모랜드",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "episode",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 23,
           "end": 30,
           "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "momoland",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 10,
-          "end": 14,
-          "text": "모모랜드",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 8,
-          "text": "MOMOLAND",
           "source": "title"
         }
       ]

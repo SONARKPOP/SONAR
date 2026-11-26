@@ -32,7 +32,7 @@
   "actualEndTime": "2024-10-10T08:06:12Z",
   "scheduledStartTime": "2024-10-10T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-26T01:43:14.266931Z",
+    "collectedAt": "2026-11-26T07:46:22.718666Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c50c1d5da305252d",
+      "artistType": "group",
+      "artistId": "madein",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 41,
-          "end": 43,
-          "text": "빛나",
+          "start": 12,
+          "end": 15,
+          "text": "메이딘",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "text": "MADEIN",
           "source": "title"
         }
       ]
@@ -74,21 +80,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "madein",
+      "artistType": "person",
+      "artistId": "person-c50c1d5da305252d",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 5,
-          "end": 11,
-          "text": "MADEIN",
-          "source": "title"
-        },
-        {
-          "start": 12,
-          "end": 15,
-          "text": "메이딘",
+          "start": 41,
+          "end": 43,
+          "text": "빛나",
           "source": "title"
         }
       ]

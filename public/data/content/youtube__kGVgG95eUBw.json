@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:44:32.473407Z",
+    "collectedAt": "2026-11-26T07:47:23.894686Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,29 +47,15 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 45,
-          "end": 51,
-          "text": "Secret",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
+          "start": 65,
+          "end": 69,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -89,15 +75,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 65,
-          "end": 69,
-          "text": "Swan",
+          "start": 45,
+          "end": 51,
+          "text": "Secret",
           "source": "title"
         }
       ]
@@ -112,6 +98,20 @@
           "start": 34,
           "end": 37,
           "text": "김민주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
           "source": "title"
         }
       ]

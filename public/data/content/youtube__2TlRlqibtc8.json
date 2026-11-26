@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:43:10.391507Z",
+    "collectedAt": "2026-11-26T07:45:07.862070Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -71,10 +71,30 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 27,
+          "text": "튜이드",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 22,
+          "text": "TUIDE",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "miss-a-jia",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "tuide-jia",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 46,
@@ -86,9 +106,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "tuide-jia",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "miss-a-jia",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 46,
@@ -122,26 +142,6 @@
           "start": 37,
           "end": 44,
           "text": "SEOYEON",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 22,
-          "text": "TUIDE",
-          "source": "title"
-        },
-        {
-          "start": 24,
-          "end": 27,
-          "text": "튜이드",
           "source": "title"
         }
       ]

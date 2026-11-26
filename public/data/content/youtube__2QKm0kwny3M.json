@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:41:29.511991Z",
+    "collectedAt": "2026-11-26T07:45:07.717977Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 13,
+          "end": 20,
+          "text": "(여자)아이들",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 20,
+          "text": "아이들",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -52,26 +72,6 @@
           "start": 4,
           "end": 5,
           "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 20,
-          "text": "아이들",
-          "source": "title"
-        },
-        {
-          "start": 13,
-          "end": 20,
-          "text": "(여자)아이들",
           "source": "title"
         }
       ]

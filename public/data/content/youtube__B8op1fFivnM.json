@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:42:06.027613Z",
+    "collectedAt": "2026-11-26T07:45:32.761197Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,7 +49,21 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "yeri",
+      "artistId": "red-velvet",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 44,
+          "end": 48,
+          "text": "레드벨벳",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-yeri",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -62,8 +76,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "red-velvet-yeri",
+      "artistType": "group",
+      "artistId": "yeri",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -85,20 +99,6 @@
           "start": 0,
           "end": 2,
           "text": "신디",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "red-velvet",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 44,
-          "end": 48,
-          "text": "레드벨벳",
           "source": "title"
         }
       ]

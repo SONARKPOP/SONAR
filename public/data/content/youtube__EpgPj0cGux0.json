@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:42:21.632256Z",
+    "collectedAt": "2026-11-26T07:45:43.358507Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,21 +44,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-0cc88e0b9d8f878b",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "yooa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 15,
-          "end": 16,
-          "text": "유",
+          "start": 33,
+          "end": 35,
+          "text": "유아",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "oh-my-girl-yooa",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 59,
-          "end": 60,
-          "text": "유",
+          "start": 33,
+          "end": 35,
+          "text": "유아",
           "source": "title"
         }
       ]
@@ -84,29 +92,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yooa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 33,
-          "end": 35,
-          "text": "유아",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-0cc88e0b9d8f878b",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 33,
-          "end": 35,
-          "text": "유아",
+          "start": 15,
+          "end": 16,
+          "text": "유",
+          "source": "title"
+        },
+        {
+          "start": 59,
+          "end": 60,
+          "text": "유",
           "source": "title"
         }
       ]

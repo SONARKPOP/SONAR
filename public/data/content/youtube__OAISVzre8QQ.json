@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:42:59.650346Z",
+    "collectedAt": "2026-11-26T07:46:11.923865Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,26 +44,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "minnie",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 11,
-          "text": "MINNIE",
-          "source": "title"
-        },
-        {
-          "start": 12,
-          "end": 14,
-          "text": "민니",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "gidle-minnie",
@@ -85,15 +65,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-b832aad57724cb63",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "minnie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 53,
-          "end": 54,
-          "text": "달",
+          "start": 5,
+          "end": 11,
+          "text": "MINNIE",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 14,
+          "text": "민니",
           "source": "title"
         }
       ]
@@ -104,6 +90,12 @@
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 20,
+          "end": 25,
+          "text": "I-DLE",
+          "source": "title"
+        },
         {
           "start": 31,
           "end": 34,
@@ -117,15 +109,23 @@
           "source": "title"
         },
         {
-          "start": 20,
-          "end": 25,
-          "text": "I-DLE",
-          "source": "title"
-        },
-        {
           "start": 17,
           "end": 25,
           "text": "(G)I-DLE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b832aad57724cb63",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 53,
+          "end": 54,
+          "text": "달",
           "source": "title"
         }
       ]

@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-24T07:44:45.045672Z",
+    "collectedAt": "2026-11-26T07:47:00.091524Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -43,6 +43,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "udtt",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 67,
+          "end": 74,
+          "text": "우당탕탕소녀단",
+          "source": "title"
+        },
+        {
+          "start": 61,
+          "end": 65,
+          "text": "UDTT",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-35cfcb4db58caf68",
@@ -59,14 +79,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-aff0e495a75cecb2",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-26d1b054ca7c76fd",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 46,
-          "end": 48,
-          "text": "예진",
+          "start": 41,
+          "end": 44,
+          "text": "권예진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-1d289d9c1b81152a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 29,
+          "text": "한나",
           "source": "title"
         }
       ]
@@ -101,48 +135,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-1d289d9c1b81152a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-aff0e495a75cecb2",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 27,
-          "end": 29,
-          "text": "한나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "udtt",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 61,
-          "end": 65,
-          "text": "UDTT",
-          "source": "title"
-        },
-        {
-          "start": 67,
-          "end": 74,
-          "text": "우당탕탕소녀단",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-26d1b054ca7c76fd",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 41,
-          "end": 44,
-          "text": "권예진",
+          "start": 46,
+          "end": 48,
+          "text": "예진",
           "source": "title"
         }
       ]

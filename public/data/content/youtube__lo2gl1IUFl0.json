@@ -3,13 +3,16 @@
   "platform": "youtube",
   "platformId": "lo2gl1IUFl0",
   "demo": false,
-  "title": "[K-Fancam] 이즈나 방지민 직캠 'Pretty Girl(*원곡: 카라)' (izna BANG JEEMIN) @뮤직뱅크 글로벌 페스티벌 251230",
+  "title": "[K-Fancam] 이즈나 방지민 직캠 'Pretty Girl(*원곡: 카라)' (izna BANG JEE MIN) @뮤직뱅크 글로벌 페스티벌 251230",
   "description": "#뮤직뱅크글로벌페스티벌 #izna #BANG_JEEMIN #globalfestival2025\n\nMore from #KBSKPOP\n\nTwitter: https://twitter.com/StudioK_twt\nInstagram: https://www.instagram.com/kbs_kpop_official/",
   "publishedAt": "2025-12-30T12:32:39Z",
   "groupIds": [
-    "izna"
+    "izna",
+    "min",
+    "miss-a"
   ],
   "memberIds": [
+    "miss-a-min",
     "person-ad73a6c022a8838f"
   ],
   "channelId": "kbs-kpop",
@@ -32,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:44:38.608295Z",
+    "collectedAt": "2026-11-26T07:47:27.946949Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +49,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kara",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistId": "izna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 40,
-          "end": 42,
-          "text": "카라",
+          "start": 46,
+          "end": 50,
+          "text": "izna",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 14,
+          "text": "이즈나",
           "source": "title"
         }
       ]
@@ -73,21 +82,43 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "miss-a-min",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 60,
+          "end": 63,
+          "text": "MIN",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
-      "artistId": "izna",
+      "artistId": "min",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 46,
-          "end": 50,
-          "text": "izna",
+          "start": 60,
+          "end": 63,
+          "text": "MIN",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kara",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
+      "matches": [
         {
-          "start": 11,
-          "end": 14,
-          "text": "이즈나",
+          "start": 40,
+          "end": 42,
+          "text": "카라",
           "source": "title"
         }
       ]

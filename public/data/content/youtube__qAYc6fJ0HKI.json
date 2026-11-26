@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:44:56.161616Z",
+    "collectedAt": "2026-11-26T07:47:41.660620Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,14 +45,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "lunedi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 49,
-          "end": 50,
-          "text": "S",
+          "start": 5,
+          "end": 11,
+          "text": "Monday",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 19,
+          "text": "먼데이",
           "source": "title"
         }
       ]
@@ -64,35 +70,15 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 16,
-          "end": 19,
-          "text": "먼데이",
-          "source": "title"
-        },
-        {
           "start": 5,
           "end": 11,
           "text": "Monday",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "lunedi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
           "start": 16,
           "end": 19,
           "text": "먼데이",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 11,
-          "text": "Monday",
           "source": "title"
         }
       ]
@@ -107,6 +93,20 @@
           "start": 94,
           "end": 95,
           "text": "안",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 49,
+          "end": 50,
+          "text": "S",
           "source": "title"
         }
       ]

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:44:37.576614Z",
+    "collectedAt": "2026-11-26T07:47:27.195225Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,20 +46,48 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 50,
+          "end": 54,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "hot-issue",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 16,
+          "end": 25,
+          "text": "HOT ISSUE",
+          "source": "title"
+        },
+        {
           "start": 27,
           "end": 30,
           "text": "핫이슈",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "wonder-girls-hyuna",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 16,
-          "end": 25,
-          "text": "HOT ISSUE",
+          "start": 55,
+          "end": 60,
+          "text": "HyunA",
           "source": "title"
         }
       ]
@@ -93,20 +121,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "wonder-girls-hyuna",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 55,
-          "end": 60,
-          "text": "HyunA",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "aespa",
       "state": "inferred",
@@ -116,20 +130,6 @@
           "start": 34,
           "end": 39,
           "text": "aespa",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 50,
-          "end": 54,
-          "text": "ITZY",
           "source": "title"
         }
       ]

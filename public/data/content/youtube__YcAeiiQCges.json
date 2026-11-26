@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:43:41.719606Z",
+    "collectedAt": "2026-11-26T07:46:43.140270Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,7 +49,21 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "irene",
+      "artistId": "red-velvet",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 75,
+          "end": 79,
+          "text": "레드벨벳",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-irene",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -74,8 +88,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "red-velvet-irene",
+      "artistType": "group",
+      "artistId": "irene",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -109,20 +123,6 @@
           "start": 8,
           "end": 10,
           "text": "러비",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "red-velvet",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 75,
-          "end": 79,
-          "text": "레드벨벳",
           "source": "title"
         }
       ]

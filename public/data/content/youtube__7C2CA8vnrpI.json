@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:41:50.168826Z",
+    "collectedAt": "2026-11-26T07:45:21.731930Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,15 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-6c94e077a885f432",
+      "artistType": "group",
+      "artistId": "kiss",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "장미",
+          "start": 57,
+          "end": 59,
+          "text": "키스",
           "source": "title"
         }
       ]
@@ -82,20 +82,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 57,
-          "end": 59,
-          "text": "키스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "rose",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -104,6 +90,20 @@
           "start": 28,
           "end": 32,
           "text": "Rose",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-6c94e077a885f432",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 26,
+          "text": "장미",
           "source": "title"
         }
       ]

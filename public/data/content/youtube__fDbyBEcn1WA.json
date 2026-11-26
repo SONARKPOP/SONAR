@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:44:12.236736Z",
+    "collectedAt": "2026-11-26T07:47:06.654388Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "lapillus",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 8,
+          "text": "Lapillus",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 14,
+          "text": "라필루스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "episode",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 23,
           "end": 30,
           "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "lapillus",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 10,
-          "end": 14,
-          "text": "라필루스",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 8,
-          "text": "Lapillus",
           "source": "title"
         }
       ]

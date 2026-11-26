@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:43:06.164880Z",
+    "collectedAt": "2026-11-26T07:46:17.327439Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-287b4bd95d98a04a",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 36,
+          "end": 37,
+          "text": "주",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "hearts2hearts",
@@ -60,14 +74,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-287b4bd95d98a04a",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "hearts2hearts-juun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 31,
+          "end": 35,
+          "text": "JUUN",
+          "source": "title"
+        },
+        {
           "start": 36,
-          "end": 37,
-          "text": "주",
+          "end": 38,
+          "text": "주은",
           "source": "title"
         }
       ]
@@ -82,26 +102,6 @@
           "start": 36,
           "end": 38,
           "text": "주은",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "hearts2hearts-juun",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 36,
-          "end": 38,
-          "text": "주은",
-          "source": "title"
-        },
-        {
-          "start": 31,
-          "end": 35,
-          "text": "JUUN",
           "source": "title"
         }
       ]

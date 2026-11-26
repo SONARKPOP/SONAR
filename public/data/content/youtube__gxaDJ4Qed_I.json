@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:44:19.513310Z",
+    "collectedAt": "2026-11-26T07:47:12.652152Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "fanatics",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 25,
+          "end": 29,
+          "text": "파나틱스",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 24,
+          "text": "FANATICS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b7086b233a866c09",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "나연",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "nayeon",
@@ -81,40 +115,6 @@
           "start": 12,
           "end": 14,
           "text": "나연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-b7086b233a866c09",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "나연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "fanatics",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 25,
-          "end": 29,
-          "text": "파나틱스",
-          "source": "title"
-        },
-        {
-          "start": 16,
-          "end": 24,
-          "text": "FANATICS",
           "source": "title"
         }
       ]

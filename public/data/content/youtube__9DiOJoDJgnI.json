@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:41:58.442955Z",
+    "collectedAt": "2026-11-26T07:45:26.956275Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "craxy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 10,
+          "text": "크랙시",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 5,
+          "text": "CRAXY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "episode",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 19,
           "end": 26,
           "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "craxy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 5,
-          "text": "CRAXY",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 10,
-          "text": "크랙시",
           "source": "title"
         }
       ]

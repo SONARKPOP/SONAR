@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:42:17.249904Z",
+    "collectedAt": "2026-11-26T07:45:40.655450Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,34 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 33,
+          "end": 39,
+          "text": "SECRET",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "x-in",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 60,
+          "end": 64,
+          "text": "X:IN",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "blackswan",
@@ -67,34 +95,6 @@
           "start": 33,
           "end": 46,
           "text": "SECRET NUMBER",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "x-in",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 60,
-          "end": 64,
-          "text": "X:IN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 33,
-          "end": 39,
-          "text": "SECRET",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T01:41:47.727355Z",
+    "collectedAt": "2026-11-26T07:45:20.114947Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-4b927123d0b53a6e",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "lunedi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 60,
-          "end": 61,
-          "text": "안",
+          "start": 16,
+          "end": 19,
+          "text": "먼데이",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "text": "Monday",
           "source": "title"
         }
       ]
@@ -78,21 +84,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "lunedi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "person-4b927123d0b53a6e",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 16,
-          "end": 19,
-          "text": "먼데이",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 11,
-          "text": "Monday",
+          "start": 60,
+          "end": 61,
+          "text": "안",
           "source": "title"
         }
       ]
