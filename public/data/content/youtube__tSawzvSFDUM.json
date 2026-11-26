@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:22:24.440836Z",
+    "collectedAt": "2026-11-26T01:45:08.652980Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -65,37 +65,9 @@
     },
     {
       "artistType": "group",
-      "artistId": "yoo-ji-ae",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 29,
-          "end": 32,
-          "text": "유지애",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "lovelyz-yoo-ji-ae",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 29,
-          "end": 32,
-          "text": "유지애",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "lovelyz-jeong-ye-in",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "jeong-ye-in",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 24,
@@ -120,15 +92,43 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jeong-ye-in",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "lovelyz-jeong-ye-in",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 24,
           "end": 27,
           "text": "정예인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-yoo-ji-ae",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 29,
+          "end": 32,
+          "text": "유지애",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yoo-ji-ae",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 29,
+          "end": 32,
+          "text": "유지애",
           "source": "title"
         }
       ]

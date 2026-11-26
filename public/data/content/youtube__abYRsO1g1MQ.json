@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:20:46.425270Z",
+    "collectedAt": "2026-11-26T01:43:53.674851Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -69,6 +69,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "person-95d5214420c6d71a",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 82,
+          "end": 84,
+          "text": "김립",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-e4699425a14e4b75",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -77,34 +91,6 @@
           "start": 86,
           "end": 88,
           "text": "진솔",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yves",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 90,
-          "end": 92,
-          "text": "이브",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "loona-yves",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 90,
-          "end": 92,
-          "text": "이브",
           "source": "title"
         }
       ]
@@ -125,7 +111,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "loona-heejin",
+      "artistId": "artms-heejin",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -153,7 +139,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "artms-heejin",
+      "artistId": "loona-heejin",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -167,14 +153,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-95d5214420c6d71a",
+      "artistId": "loona-yves",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 82,
-          "end": 84,
-          "text": "김립",
+          "start": 90,
+          "end": 92,
+          "text": "이브",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yves",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 90,
+          "end": 92,
+          "text": "이브",
           "source": "title"
         }
       ]

@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:22:07.008788Z",
+    "collectedAt": "2026-11-26T01:44:56.265392Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,10 +48,38 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "ryu-su-jeong",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 19,
+          "end": 22,
+          "text": "류수정",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "lovelyz-jeong-ye-in",
+      "artistId": "lovelyz-ryu-su-jeong",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 19,
+          "end": 22,
+          "text": "류수정",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jeong-ye-in",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 24,
@@ -76,10 +104,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jeong-ye-in",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "lovelyz-jeong-ye-in",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 24,
@@ -113,34 +141,6 @@
           "start": 36,
           "end": 39,
           "text": "이미주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ryu-su-jeong",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 19,
-          "end": 22,
-          "text": "류수정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "lovelyz-ryu-su-jeong",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 19,
-          "end": 22,
-          "text": "류수정",
           "source": "title"
         }
       ]

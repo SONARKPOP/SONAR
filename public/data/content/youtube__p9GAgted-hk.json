@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:22:02.267416Z",
+    "collectedAt": "2026-11-26T01:44:52.487551Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -60,11 +60,37 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-db461325cd947b43",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "purple-kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 53,
+          "end": 64,
+          "text": "PURPLE KISS",
+          "source": "title"
+        },
+        {
+          "start": 71,
+          "end": 75,
+          "text": "퍼플키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 45,
+          "end": 49,
+          "text": "SWAN",
+          "source": "title"
+        },
         {
           "start": 65,
           "end": 67,
@@ -80,55 +106,29 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 65,
-          "end": 67,
-          "text": "수안",
-          "source": "title"
-        },
-        {
           "start": 45,
           "end": 49,
           "text": "SWAN",
+          "source": "title"
+        },
+        {
+          "start": 65,
+          "end": 67,
+          "text": "수안",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-db461325cd947b43",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 65,
           "end": 67,
           "text": "수안",
-          "source": "title"
-        },
-        {
-          "start": 45,
-          "end": 49,
-          "text": "SWAN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "purple-kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 71,
-          "end": 75,
-          "text": "퍼플키스",
-          "source": "title"
-        },
-        {
-          "start": 53,
-          "end": 64,
-          "text": "PURPLE KISS",
           "source": "title"
         }
       ]

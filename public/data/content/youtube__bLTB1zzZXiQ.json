@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:20:50.182298Z",
+    "collectedAt": "2026-11-26T01:43:56.510266Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,20 @@
       "artistId": "person-d8ef14db4c6bad3c",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 19,
+          "text": "시현",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-9a67e5276e900a17",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 17,
@@ -87,35 +101,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-9a67e5276e900a17",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 17,
-          "end": 19,
-          "text": "시현",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "everglow",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 11,
-          "end": 16,
-          "text": "에버글로우",
-          "source": "title"
-        },
-        {
           "start": 31,
           "end": 39,
           "text": "EVERGLOW",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 16,
+          "text": "에버글로우",
           "source": "title"
         }
       ]

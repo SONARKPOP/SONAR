@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:22:58.259581Z",
+    "collectedAt": "2026-11-26T01:45:33.272765Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -61,10 +61,24 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 12,
+          "text": "튜이드",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "miss-a-jia",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "tuide-jia",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 16,
@@ -75,8 +89,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-413c533f79929770",
+      "artistType": "group",
+      "artistId": "jia",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -103,24 +117,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jia",
+      "artistType": "person",
+      "artistId": "miss-a-jia",
       "state": "needs_review",
       "reason": "shared-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "지아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "tuide-jia",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 16,
@@ -145,15 +145,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-413c533f79929770",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 9,
-          "end": 12,
-          "text": "튜이드",
+          "start": 16,
+          "end": 18,
+          "text": "지아",
           "source": "title"
         }
       ]

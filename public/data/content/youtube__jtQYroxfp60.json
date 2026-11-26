@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:21:34.692568Z",
+    "collectedAt": "2026-11-26T01:44:31.023024Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,28 +47,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "heize",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 27,
-          "end": 30,
-          "text": "헤이즈",
+          "start": 40,
+          "end": 43,
+          "text": "아이브",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-85a74b9d1650b4e3",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
+        },
         {
-          "start": 11,
-          "end": 13,
-          "text": "이서",
+          "start": 7,
+          "end": 10,
+          "text": "IVE",
           "source": "title"
         }
       ]
@@ -88,21 +80,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-85a74b9d1650b4e3",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 40,
-          "end": 43,
-          "text": "아이브",
+          "start": 11,
+          "end": 13,
+          "text": "이서",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "heize",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
+      "matches": [
         {
-          "start": 7,
-          "end": 10,
-          "text": "IVE",
+          "start": 27,
+          "end": 30,
+          "text": "헤이즈",
           "source": "title"
         }
       ]

@@ -8,7 +8,6 @@
   "publishedAt": "2025-06-13T09:00:16Z",
   "groupIds": [
     "kiss",
-    "kiss-of-life",
     "younha"
   ],
   "memberIds": [
@@ -34,14 +33,14 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:18:34.725125Z",
+    "collectedAt": "2026-11-26T01:42:11.450550Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -62,14 +61,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 8,
-          "end": 20,
-          "text": "KISS OF LIFE",
+          "end": 12,
+          "text": "KISS",
+          "source": "title"
+        },
+        {
+          "start": 55,
+          "end": 59,
+          "text": "Kiss",
           "source": "title"
         }
       ]
@@ -117,26 +122,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 12,
-          "text": "KISS",
-          "source": "title"
-        },
-        {
-          "start": 55,
-          "end": 59,
-          "text": "Kiss",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-c29ac6506908865e",
       "state": "needs_review",
@@ -160,6 +145,20 @@
           "start": 24,
           "end": 26,
           "text": "하늘",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 8,
+          "end": 20,
+          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]

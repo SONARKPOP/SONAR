@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-25T19:25:14.749636Z",
+  "updatedAt": "2026-11-26T01:47:25.528170Z",
   "items": [
     {
       "id": "youtube__j_x9SRr1T-s",
@@ -275,8 +275,7 @@
       "title": "#OURBIRTHDAY #조혜진 님과 𝙐𝙣-𝙐𝙣-𝙐𝙣𝙗𝙚𝙡𝙞𝙚𝙫𝙖𝙗𝙡𝙚 ⚡ @OURBIRTHDAY",
       "publishedAt": "2026-11-25T08:00:04Z",
       "groupIds": [
-        "h1-key",
-        "ourbirthday"
+        "h1-key"
       ],
       "memberIds": [
         "person-31e013db47fce693"
@@ -302,10 +301,24 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
+          "artistType": "person",
+          "artistId": "person-31e013db47fce693",
           "state": "inferred",
           "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 1,
@@ -317,20 +330,6 @@
               "start": 43,
               "end": 54,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-31e013db47fce693",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "조혜진",
               "source": "title"
             }
           ]
@@ -855,45 +854,37 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 7,
-              "end": 10,
-              "text": "베이비",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "nayeon",
           "state": "mention",
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 37,
-              "end": 39,
-              "text": "나연",
-              "source": "title"
-            },
-            {
               "start": 29,
               "end": 35,
               "text": "NAYEON",
+              "source": "title"
+            },
+            {
+              "start": 37,
+              "end": 39,
+              "text": "나연",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-b7086b233a866c09",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "tw-nayeon",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
+            {
+              "start": 29,
+              "end": 35,
+              "text": "NAYEON",
+              "source": "title"
+            },
             {
               "start": 37,
               "end": 39,
@@ -918,20 +909,28 @@
         },
         {
           "artistType": "person",
-          "artistId": "tw-nayeon",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-b7086b233a866c09",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 37,
               "end": 39,
               "text": "나연",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
             {
-              "start": 29,
-              "end": 35,
-              "text": "NAYEON",
+              "start": 7,
+              "end": 10,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -943,15 +942,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 16,
-              "end": 21,
-              "text": "TWICE",
-              "source": "title"
-            },
-            {
               "start": 23,
               "end": 27,
               "text": "트와이스",
+              "source": "title"
+            },
+            {
+              "start": 16,
+              "end": 21,
+              "text": "TWICE",
               "source": "title"
             }
           ]
@@ -1477,7 +1476,6 @@
       "title": "OURBIRTHDAY 베이비 팅팅컴피티션 출전합니다",
       "publishedAt": "2026-11-17T07:00:24Z",
       "groupIds": [
-        "ourbirthday",
         "unchild"
       ],
       "memberIds": [
@@ -1504,20 +1502,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 11,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
@@ -1527,6 +1511,20 @@
               "start": 12,
               "end": 15,
               "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 0,
+              "end": 11,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -1908,14 +1906,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
+          "artistId": "person-a4d51f3976423aac",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 16,
-              "end": 19,
-              "text": "베이비",
+              "start": 29,
+              "end": 31,
+              "text": "미아",
               "source": "title"
             }
           ]
@@ -1936,9 +1934,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-a4d51f3976423aac",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-3639e807cb70d787",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 29,
@@ -1950,14 +1948,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-3639e807cb70d787",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 29,
-              "end": 31,
-              "text": "미아",
+              "start": 16,
+              "end": 19,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -2067,29 +2065,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "baby-dont-cry",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 37,
-              "end": 50,
-              "text": "Baby DONT Cry",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "person-635192b2e655114d",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 52,
-              "end": 55,
-              "text": "베이비",
+              "start": 33,
+              "end": 35,
+              "text": "이유",
               "source": "title"
             }
           ]
@@ -2124,14 +2108,28 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-635192b2e655114d",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 33,
-              "end": 35,
-              "text": "이유",
+              "start": 52,
+              "end": 55,
+              "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "baby-dont-cry",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 37,
+              "end": 50,
+              "text": "Baby DONT Cry",
               "source": "title"
             }
           ]
@@ -2196,14 +2194,14 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "person-6472d6bc149604e9",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 25,
-              "end": 28,
-              "text": "베이비",
+              "start": 36,
+              "end": 38,
+              "text": "베니",
               "source": "title"
             }
           ]
@@ -2224,14 +2222,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-6472d6bc149604e9",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 36,
-              "end": 38,
-              "text": "베니",
+              "start": 25,
+              "end": 28,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -2513,6 +2511,48 @@
       "appearanceLinks": [
         {
           "artistType": "person",
+          "artistId": "person-a4d51f3976423aac",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 36,
+              "end": 38,
+              "text": "미아",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-3bc5a395d99e9f89",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 36,
+              "end": 38,
+              "text": "미아",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-3639e807cb70d787",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 36,
+              "end": 38,
+              "text": "미아",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
           "reason": "unambiguous-title-name",
@@ -2535,48 +2575,6 @@
               "start": 10,
               "end": 23,
               "text": "Baby DONT Cry",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-3bc5a395d99e9f89",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 36,
-              "end": 38,
-              "text": "미아",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-a4d51f3976423aac",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 36,
-              "end": 38,
-              "text": "미아",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-3639e807cb70d787",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 36,
-              "end": 38,
-              "text": "미아",
               "source": "title"
             }
           ]
@@ -5943,20 +5941,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "kwon-eun-bi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 35,
-              "end": 38,
-              "text": "권은비",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "izone-kwon-eun-bi",
           "state": "needs_review",
@@ -5975,6 +5959,20 @@
           "artistId": "person-eb73497ae0cc470f",
           "state": "needs_review",
           "reason": "shared-name",
+          "matches": [
+            {
+              "start": 35,
+              "end": 38,
+              "text": "권은비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "kwon-eun-bi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 35,
@@ -6087,56 +6085,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-8c485ff8a3395678",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 36,
-              "end": 39,
-              "text": "신혜원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-91701f6ec51b8fca",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 31,
-              "end": 34,
-              "text": "국초록",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 23,
-              "end": 29,
-              "text": "아워버스데이",
-              "source": "title"
-            },
-            {
-              "start": 11,
-              "end": 22,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "lovelyz-jeong-ye-in",
+          "artistId": "jeong-ye-in",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -6163,8 +6113,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "jeong-ye-in",
+          "artistType": "person",
+          "artistId": "lovelyz-jeong-ye-in",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -6172,6 +6122,54 @@
               "start": 6,
               "end": 9,
               "text": "정예인",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 23,
+              "end": 29,
+              "text": "아워버스데이",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 22,
+              "text": "OURBIRTHDAY",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8c485ff8a3395678",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 36,
+              "end": 39,
+              "text": "신혜원",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-91701f6ec51b8fca",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 31,
+              "end": 34,
+              "text": "국초록",
               "source": "title"
             }
           ]
@@ -6294,20 +6292,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-f5e27d9fd9ad45c5",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 49,
-              "end": 52,
-              "text": "임서원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -6330,6 +6314,20 @@
               "start": 14,
               "end": 15,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-f5e27d9fd9ad45c5",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 49,
+              "end": 52,
+              "text": "임서원",
               "source": "title"
             }
           ]
@@ -6657,7 +6655,7 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-92dcc08200b65842",
+          "artistId": "person-91859c52f6927050",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -6671,7 +6669,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-91859c52f6927050",
+          "artistId": "person-92dcc08200b65842",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -7350,15 +7348,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-6ced3b067434a529",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 60,
-              "end": 71,
-              "text": "OURBIRTHDAY",
+              "start": 22,
+              "end": 24,
+              "text": "소리",
               "source": "title"
             }
           ]
@@ -7378,15 +7376,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-6ced3b067434a529",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 22,
-              "end": 24,
-              "text": "소리",
+              "start": 60,
+              "end": 71,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -7880,26 +7878,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 7,
-              "end": 18,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            },
-            {
-              "start": 56,
-              "end": 67,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -7923,6 +7901,26 @@
               "start": 4,
               "end": 5,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 7,
+              "end": 18,
+              "text": "OURBIRTHDAY",
+              "source": "title"
+            },
+            {
+              "start": 56,
+              "end": 67,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -8222,6 +8220,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 6,
+              "end": 9,
+              "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -8237,20 +8249,6 @@
               "start": 60,
               "end": 71,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 6,
-              "end": 9,
-              "text": "베이비",
               "source": "title"
             }
           ]
@@ -8386,6 +8384,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-31e013db47fce693",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 12,
+              "end": 15,
+              "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -8401,20 +8413,6 @@
               "start": 66,
               "end": 77,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-31e013db47fce693",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 12,
-              "end": 15,
-              "text": "조혜진",
               "source": "title"
             }
           ]
@@ -8599,20 +8597,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 32,
-              "end": 43,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-31e013db47fce693",
           "state": "inferred",
@@ -8622,6 +8606,20 @@
               "start": 17,
               "end": 20,
               "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 32,
+              "end": 43,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -8677,20 +8675,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 30,
-              "end": 41,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -8714,6 +8698,20 @@
               "start": 17,
               "end": 18,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 30,
+              "end": 41,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -8925,20 +8923,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 17,
-              "end": 28,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-31e013db47fce693",
           "state": "inferred",
@@ -8948,6 +8932,20 @@
               "start": 40,
               "end": 43,
               "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 17,
+              "end": 28,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -9003,20 +9001,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 17,
-              "end": 28,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -9040,6 +9024,20 @@
               "start": 31,
               "end": 32,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 17,
+              "end": 28,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -9392,20 +9390,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 31,
-              "end": 42,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -9429,6 +9413,20 @@
               "start": 18,
               "end": 19,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 31,
+              "end": 42,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -9640,20 +9638,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 33,
-              "end": 44,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-31e013db47fce693",
           "state": "inferred",
@@ -9663,6 +9647,20 @@
               "start": 18,
               "end": 21,
               "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 33,
+              "end": 44,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -9874,20 +9872,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 33,
-              "end": 44,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
@@ -9897,6 +9881,20 @@
               "start": 18,
               "end": 21,
               "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 33,
+              "end": 44,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -10335,15 +10333,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-6ced3b067434a529",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 32,
-              "end": 43,
-              "text": "OURBIRTHDAY",
+              "start": 0,
+              "end": 2,
+              "text": "소리",
               "source": "title"
             }
           ]
@@ -10363,15 +10361,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-6ced3b067434a529",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 2,
-              "text": "소리",
+              "start": 32,
+              "end": 43,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -10806,20 +10804,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 36,
-              "end": 47,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-31e013db47fce693",
           "state": "inferred",
@@ -10829,6 +10813,20 @@
               "start": 15,
               "end": 18,
               "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 36,
+              "end": 47,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -10962,20 +10960,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 34,
-              "end": 45,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -10999,6 +10983,20 @@
               "start": 15,
               "end": 16,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 34,
+              "end": 45,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -11210,20 +11208,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 36,
-              "end": 47,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
@@ -11233,6 +11217,20 @@
               "start": 15,
               "end": 18,
               "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 36,
+              "end": 47,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -11434,6 +11432,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -11449,20 +11461,6 @@
               "start": 61,
               "end": 72,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "베이비",
               "source": "title"
             }
           ]
@@ -11518,6 +11516,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-31e013db47fce693",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -11533,20 +11545,6 @@
               "start": 67,
               "end": 78,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-31e013db47fce693",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "조혜진",
               "source": "title"
             }
           ]
@@ -11938,26 +11936,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 38,
-              "end": 49,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            },
-            {
-              "start": 62,
-              "end": 73,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -11981,6 +11959,26 @@
               "start": 14,
               "end": 15,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 38,
+              "end": 49,
+              "text": "OURBIRTHDAY",
+              "source": "title"
+            },
+            {
+              "start": 62,
+              "end": 73,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -12189,26 +12187,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 33,
-              "end": 44,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            },
-            {
-              "start": 57,
-              "end": 68,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -12232,6 +12210,26 @@
               "start": 14,
               "end": 15,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 33,
+              "end": 44,
+              "text": "OURBIRTHDAY",
+              "source": "title"
+            },
+            {
+              "start": 57,
+              "end": 68,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -12455,6 +12453,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-31e013db47fce693",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -12470,20 +12482,6 @@
               "start": 68,
               "end": 79,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-31e013db47fce693",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "조혜진",
               "source": "title"
             }
           ]
@@ -12623,6 +12621,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -12638,20 +12650,6 @@
               "start": 62,
               "end": 73,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "베이비",
               "source": "title"
             }
           ]
@@ -13314,6 +13312,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-31e013db47fce693",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -13329,20 +13341,6 @@
               "start": 74,
               "end": 85,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-31e013db47fce693",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 18,
-              "text": "조혜진",
               "source": "title"
             }
           ]
@@ -13398,6 +13396,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -13413,20 +13425,6 @@
               "start": 68,
               "end": 79,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 18,
-              "text": "베이비",
               "source": "title"
             }
           ]
@@ -13566,26 +13564,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 39,
-              "end": 50,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            },
-            {
-              "start": 63,
-              "end": 74,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -13609,6 +13587,26 @@
               "start": 15,
               "end": 16,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 39,
+              "end": 50,
+              "text": "OURBIRTHDAY",
+              "source": "title"
+            },
+            {
+              "start": 63,
+              "end": 74,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -13664,20 +13662,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 27,
-              "end": 38,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-31e013db47fce693",
           "state": "inferred",
@@ -13687,6 +13671,20 @@
               "start": 8,
               "end": 11,
               "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 27,
+              "end": 38,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -13951,26 +13949,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 33,
-              "end": 44,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            },
-            {
-              "start": 57,
-              "end": 68,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -13994,6 +13972,26 @@
               "start": 15,
               "end": 16,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 33,
+              "end": 44,
+              "text": "OURBIRTHDAY",
+              "source": "title"
+            },
+            {
+              "start": 57,
+              "end": 68,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -14385,6 +14383,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -14400,20 +14412,6 @@
               "start": 62,
               "end": 73,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 18,
-              "text": "베이비",
               "source": "title"
             }
           ]
@@ -14469,6 +14467,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-31e013db47fce693",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -14484,20 +14496,6 @@
               "start": 68,
               "end": 79,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-31e013db47fce693",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 18,
-              "text": "조혜진",
               "source": "title"
             }
           ]
@@ -14614,20 +14612,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 28,
-              "end": 39,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-31e013db47fce693",
           "state": "inferred",
@@ -14637,6 +14621,20 @@
               "start": 22,
               "end": 25,
               "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 28,
+              "end": 39,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -14692,20 +14690,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 26,
-              "end": 37,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
@@ -14715,6 +14699,20 @@
               "start": 17,
               "end": 20,
               "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 26,
+              "end": 37,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -15078,6 +15076,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-31e013db47fce693",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -15093,20 +15105,6 @@
               "start": 69,
               "end": 80,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-31e013db47fce693",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 18,
-              "text": "조혜진",
               "source": "title"
             }
           ]
@@ -15414,26 +15412,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 34,
-              "end": 45,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            },
-            {
-              "start": 58,
-              "end": 69,
-              "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-1ec8f5db9c7a85b5",
           "state": "inferred",
@@ -15457,6 +15435,26 @@
               "start": 15,
               "end": 16,
               "text": "유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 34,
+              "end": 45,
+              "text": "OURBIRTHDAY",
+              "source": "title"
+            },
+            {
+              "start": 58,
+              "end": 69,
+              "text": "OURBIRTHDAY",
               "source": "title"
             }
           ]
@@ -15512,6 +15510,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 18,
+              "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "ourbirthday",
           "state": "inferred",
@@ -15527,20 +15539,6 @@
               "start": 63,
               "end": 74,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 18,
-              "text": "베이비",
               "source": "title"
             }
           ]
@@ -17472,20 +17470,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 29,
-              "end": 32,
-              "text": "베이비",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "baby-dont-cry",
           "state": "needs_review",
@@ -17495,6 +17479,20 @@
               "start": 14,
               "end": 27,
               "text": "Baby DONT Cry",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 29,
+              "end": 32,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -17615,22 +17613,22 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
+          "artistType": "group",
+          "artistId": "baby-dont-cry",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 14,
-              "text": "베이비",
+              "start": 42,
+              "end": 55,
+              "text": "Baby DONT Cry",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-3bc5a395d99e9f89",
+          "artistId": "person-a4d51f3976423aac",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -17644,7 +17642,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-a4d51f3976423aac",
+          "artistId": "person-3bc5a395d99e9f89",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -17671,15 +17669,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "baby-dont-cry",
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 42,
-              "end": 55,
-              "text": "Baby DONT Cry",
+              "start": 11,
+              "end": 14,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -17737,15 +17735,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
+          "artistType": "group",
+          "artistId": "baby-dont-cry",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 11,
-              "end": 14,
-              "text": "베이비",
+              "start": 42,
+              "end": 55,
+              "text": "Baby DONT Cry",
               "source": "title"
             }
           ]
@@ -17765,15 +17763,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "baby-dont-cry",
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 42,
-              "end": 55,
-              "text": "Baby DONT Cry",
+              "start": 11,
+              "end": 14,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -17912,9 +17910,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-ab0a3dbb7a056f00",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-6472d6bc149604e9",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 26,
@@ -17926,9 +17924,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-6472d6bc149604e9",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-ab0a3dbb7a056f00",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 26,
@@ -18010,41 +18008,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "hwasa",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 48,
-              "end": 53,
-              "text": "hwasa",
-              "source": "title"
-            },
-            {
-              "start": 44,
-              "end": 46,
-              "text": "화사",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
-          "artistId": "mamamoo-hwasa",
+          "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 48,
-              "end": 53,
-              "text": "hwasa",
-              "source": "title"
-            },
-            {
-              "start": 44,
-              "end": 46,
-              "text": "화사",
+              "start": 18,
+              "end": 21,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -18093,14 +18065,40 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
+          "artistId": "mamamoo-hwasa",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 18,
-              "end": 21,
-              "text": "베이비",
+              "start": 44,
+              "end": 46,
+              "text": "화사",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 53,
+              "text": "hwasa",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "hwasa",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 44,
+              "end": 46,
+              "text": "화사",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 53,
+              "text": "hwasa",
               "source": "title"
             }
           ]
@@ -18156,20 +18154,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 54,
-              "end": 57,
-              "text": "베이비",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "kiss",
           "state": "inferred",
@@ -18179,6 +18163,20 @@
               "start": 72,
               "end": 74,
               "text": "키스",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 54,
+              "end": 57,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -18234,20 +18232,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 20,
-              "end": 23,
-              "text": "베이비",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "kiss",
           "state": "inferred",
@@ -18257,6 +18241,20 @@
               "start": 35,
               "end": 37,
               "text": "키스",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 20,
+              "end": 23,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -18318,21 +18316,7 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-57790a5de504d70c",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 28,
-              "end": 30,
-              "text": "지애",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "lee-su-jeong",
+          "artistId": "lovelyz-lee-su-jeong",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -18351,8 +18335,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "lovelyz-lee-su-jeong",
+          "artistType": "group",
+          "artistId": "lee-su-jeong",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -18380,6 +18364,20 @@
               "start": 43,
               "end": 46,
               "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-57790a5de504d70c",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 28,
+              "end": 30,
+              "text": "지애",
               "source": "title"
             }
           ]
@@ -18826,21 +18824,35 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-e2b1fc320890accf",
+          "artistType": "group",
+          "artistId": "wjsn",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 54,
-              "end": 57,
-              "text": "베이비",
+              "start": 5,
+              "end": 9,
+              "text": "WJSN",
               "source": "title"
             },
             {
-              "start": 58,
-              "end": 61,
-              "text": "베이비",
+              "start": 0,
+              "end": 4,
+              "text": "우주소녀",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 77,
+              "end": 78,
+              "text": "s",
               "source": "title"
             }
           ]
@@ -18866,35 +18878,21 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "wjsn",
+          "artistType": "person",
+          "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 0,
-              "end": 4,
-              "text": "우주소녀",
+              "start": 54,
+              "end": 57,
+              "text": "베이비",
               "source": "title"
             },
             {
-              "start": 5,
-              "end": 9,
-              "text": "WJSN",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 77,
-              "end": 78,
-              "text": "s",
+              "start": 58,
+              "end": 61,
+              "text": "베이비",
               "source": "title"
             }
           ]
@@ -19026,26 +19024,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "베스티",
-              "source": "title"
-            },
-            {
-              "start": 4,
-              "end": 10,
-              "text": "BESTie",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
@@ -19055,6 +19033,26 @@
               "start": 25,
               "end": 28,
               "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 4,
+              "end": 10,
+              "text": "BESTie",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "text": "베스티",
               "source": "title"
             }
           ]
@@ -19111,26 +19109,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "베스티",
-              "source": "title"
-            },
-            {
-              "start": 4,
-              "end": 10,
-              "text": "BESTie",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
@@ -19140,6 +19118,26 @@
               "start": 25,
               "end": 28,
               "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 4,
+              "end": 10,
+              "text": "BESTie",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "text": "베스티",
               "source": "title"
             }
           ]
@@ -19196,26 +19194,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "bestie",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "베스티",
-              "source": "title"
-            },
-            {
-              "start": 4,
-              "end": 10,
-              "text": "BESTie",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e2b1fc320890accf",
           "state": "inferred",
@@ -19225,6 +19203,26 @@
               "start": 25,
               "end": 28,
               "text": "베이비",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "bestie",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 4,
+              "end": 10,
+              "text": "BESTie",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "text": "베스티",
               "source": "title"
             }
           ]

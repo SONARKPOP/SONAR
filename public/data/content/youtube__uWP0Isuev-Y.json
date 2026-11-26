@@ -8,7 +8,8 @@
   "publishedAt": "2025-10-26T04:01:15Z",
   "groupIds": [
     "izna",
-    "min"
+    "min",
+    "miss-a"
   ],
   "memberIds": [
     "miss-a-min",
@@ -34,38 +35,18 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:22:30.627619Z",
+    "collectedAt": "2026-11-26T01:45:12.743129Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "izna",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 32,
-          "end": 36,
-          "text": "izna",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 10,
-          "text": "이즈나",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "person-ad73a6c022a8838f",
@@ -82,9 +63,29 @@
     },
     {
       "artistType": "group",
-      "artistId": "min",
+      "artistId": "izna",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 10,
+          "text": "이즈나",
+          "source": "title"
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "text": "izna",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "miss-a-min",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 46,
@@ -95,10 +96,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "miss-a-min",
+      "artistType": "group",
+      "artistId": "min",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 46,

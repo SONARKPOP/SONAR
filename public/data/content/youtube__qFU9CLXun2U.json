@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:22:07.256449Z",
+    "collectedAt": "2026-11-26T01:44:56.466491Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,26 +46,6 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "momoland",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 9,
-          "text": "모모랜드",
-          "source": "title"
-        },
-        {
-          "start": 27,
-          "end": 35,
-          "text": "MOMOLAND",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-287b4bd95d98a04a",
       "state": "inferred",
@@ -75,6 +55,20 @@
           "start": 10,
           "end": 11,
           "text": "주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-2c5edf710f492a8b",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 10,
+          "end": 12,
+          "text": "주이",
           "source": "title"
         }
       ]
@@ -94,15 +88,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-2c5edf710f492a8b",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "momoland",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 12,
-          "text": "주이",
+          "start": 27,
+          "end": 35,
+          "text": "MOMOLAND",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 9,
+          "text": "모모랜드",
           "source": "title"
         }
       ]

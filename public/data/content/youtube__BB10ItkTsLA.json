@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:18:28.162477Z",
+    "collectedAt": "2026-11-26T01:42:06.140790Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,6 +48,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ioi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 51,
+          "end": 56,
+          "text": "아이오아이",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-67e210cea7126fd3",
@@ -77,15 +91,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-825348b001ce3be9",
+      "artistType": "group",
+      "artistId": "jeon-somi",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 2,
-          "end": 4,
-          "text": "소미",
+          "start": 46,
+          "end": 49,
+          "text": "전소미",
           "source": "title"
         }
       ]
@@ -105,29 +119,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jeon-somi",
+      "artistType": "person",
+      "artistId": "person-825348b001ce3be9",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 46,
-          "end": 49,
-          "text": "전소미",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ioi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 51,
-          "end": 56,
-          "text": "아이오아이",
+          "start": 2,
+          "end": 4,
+          "text": "소미",
           "source": "title"
         }
       ]

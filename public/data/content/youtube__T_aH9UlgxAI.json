@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:20:05.440923Z",
+    "collectedAt": "2026-11-26T01:43:21.137303Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,14 +45,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "xum",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "soyou",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 13,
-          "end": 14,
-          "text": "썸",
+          "start": 48,
+          "end": 50,
+          "text": "소유",
+          "source": "title"
+        },
+        {
+          "start": 52,
+          "end": 57,
+          "text": "SOYOU",
           "source": "title"
         }
       ]
@@ -79,20 +85,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "soyou",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "xum",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 48,
-          "end": 50,
-          "text": "소유",
-          "source": "title"
-        },
-        {
-          "start": 52,
-          "end": 57,
-          "text": "SOYOU",
+          "start": 13,
+          "end": 14,
+          "text": "썸",
           "source": "title"
         }
       ]

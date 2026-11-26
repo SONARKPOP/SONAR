@@ -147,8 +147,7 @@
       "title": "#OURBIRTHDAY #조혜진 님과 𝙐𝙣-𝙐𝙣-𝙐𝙣𝙗𝙚𝙡𝙞𝙚𝙫𝙖𝙗𝙡𝙚 ⚡ @OURBIRTHDAY",
       "publishedAt": "2026-11-25T08:00:04Z",
       "groupIds": [
-        "h1-key",
-        "ourbirthday"
+        "h1-key"
       ],
       "memberIds": [
         "person-31e013db47fce693"
@@ -174,10 +173,24 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
+          "artistType": "person",
+          "artistId": "person-31e013db47fce693",
           "state": "inferred",
           "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 1,
@@ -189,20 +202,6 @@
               "start": 43,
               "end": 54,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-31e013db47fce693",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "조혜진",
               "source": "title"
             }
           ]
@@ -317,20 +316,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "h1-key",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 61,
-              "end": 64,
-              "text": "하이키",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-a3d469a9e79693d5",
           "state": "inferred",
@@ -340,6 +325,20 @@
               "start": 56,
               "end": 59,
               "text": "김신영",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "h1-key",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 61,
+              "end": 64,
+              "text": "하이키",
               "source": "title"
             }
           ]
@@ -422,6 +421,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-a3d469a9e79693d5",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 57,
+              "end": 60,
+              "text": "김신영",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "h1-key",
           "state": "inferred",
@@ -437,34 +450,6 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-0d7b76f335276e1f",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 11,
-              "end": 12,
-              "text": "옐",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-a3d469a9e79693d5",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 57,
-              "end": 60,
-              "text": "김신영",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
           "artistId": "person-3f2297221a521bef",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -473,6 +458,20 @@
               "start": 5,
               "end": 8,
               "text": "리이나",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-0d7b76f335276e1f",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 11,
+              "end": 12,
+              "text": "옐",
               "source": "title"
             }
           ]

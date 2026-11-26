@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:20:17.464329Z",
+    "collectedAt": "2026-11-26T01:43:30.425735Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,16 +44,38 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss-of-life",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 16,
+          "text": "KISS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 12,
-          "end": 24,
-          "text": "KISS OF LIFE",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
           "start": 25,
           "end": 32,
@@ -64,6 +86,12 @@
           "start": 85,
           "end": 92,
           "text": "키스오브라이프",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 24,
+          "text": "KISS OF LIFE",
           "source": "title"
         }
       ]
@@ -92,34 +120,6 @@
           "start": 55,
           "end": 57,
           "text": "하늘",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 16,
-          "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 4,
-          "end": 5,
-          "text": "s",
           "source": "title"
         }
       ]

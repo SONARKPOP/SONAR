@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-25T19:21:29.515891Z",
+    "collectedAt": "2026-11-26T01:44:27.594807Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "episode",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "nmixx-haewon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 25,
-          "end": 29,
-          "text": "에피소드",
+          "start": 4,
+          "end": 7,
+          "text": "오해원",
+          "source": "title"
+        },
+        {
+          "start": 18,
+          "end": 21,
+          "text": "오해원",
           "source": "title"
         }
       ]
@@ -75,21 +81,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "nmixx-haewon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "episode",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 4,
-          "end": 7,
-          "text": "오해원",
-          "source": "title"
-        },
-        {
-          "start": 18,
-          "end": 21,
-          "text": "오해원",
+          "start": 25,
+          "end": 29,
+          "text": "에피소드",
           "source": "title"
         }
       ]
