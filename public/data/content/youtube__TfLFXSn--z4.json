@@ -50,6 +50,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 72,
+          "end": 80,
+          "text": "(G)I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 75,
+          "end": 80,
+          "text": "I-DLE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "iu",
       "state": "inferred",
       "reason": "unambiguous-title-name",
@@ -64,34 +84,6 @@
           "start": 0,
           "end": 3,
           "text": "아이유",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 39,
-          "end": 43,
-          "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "purple-kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 32,
-          "end": 43,
-          "text": "PURPLE KISS",
           "source": "title"
         }
       ]
@@ -140,20 +132,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "gidle",
+      "artistId": "kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 72,
-          "end": 80,
-          "text": "(G)I-DLE",
+          "start": 39,
+          "end": 43,
+          "text": "KISS",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "purple-kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 75,
-          "end": 80,
-          "text": "I-DLE",
+          "start": 32,
+          "end": 43,
+          "text": "PURPLE KISS",
           "source": "title"
         }
       ]

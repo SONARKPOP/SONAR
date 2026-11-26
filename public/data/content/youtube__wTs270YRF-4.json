@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "apink-jung-eun-ji",
+      "artistType": "group",
+      "artistId": "babymonster",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 42,
-          "end": 45,
-          "text": "정은지",
+          "start": 60,
+          "end": 66,
+          "text": "베이비몬스터",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 58,
+          "text": "BABYMONSTER",
           "source": "title"
         }
       ]
@@ -73,21 +79,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "babymonster",
+      "artistType": "person",
+      "artistId": "apink-jung-eun-ji",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 60,
-          "end": 66,
-          "text": "베이비몬스터",
-          "source": "title"
-        },
-        {
-          "start": 47,
-          "end": 58,
-          "text": "BABYMONSTER",
+          "start": 42,
+          "end": 45,
+          "text": "정은지",
           "source": "title"
         }
       ]

@@ -42,20 +42,6 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "itzy-member-608992372543",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 27,
-          "text": "CHAERYEONG",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "twice",
       "state": "inferred",
@@ -76,11 +62,17 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-8ce8dce26a64068c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "nayeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
+        {
+          "start": 45,
+          "end": 51,
+          "text": "NAYEON",
+          "source": "title"
+        },
         {
           "start": 53,
           "end": 55,
@@ -90,21 +82,35 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nayeon",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "tw-nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 45,
+          "end": 51,
+          "text": "NAYEON",
+          "source": "title"
+        },
         {
           "start": 53,
           "end": 55,
           "text": "나연",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-8ce8dce26a64068c",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 45,
-          "end": 51,
-          "text": "NAYEON",
+          "start": 53,
+          "end": 55,
+          "text": "나연",
           "source": "title"
         }
       ]
@@ -125,20 +131,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "tw-nayeon",
+      "artistId": "itzy-member-608992372543",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 53,
-          "end": 55,
-          "text": "나연",
-          "source": "title"
-        },
-        {
-          "start": 45,
-          "end": 51,
-          "text": "NAYEON",
+          "start": 17,
+          "end": 27,
+          "text": "CHAERYEONG",
           "source": "title"
         }
       ]
