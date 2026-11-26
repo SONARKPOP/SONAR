@@ -43,9 +43,23 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "irene",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistId": "red-velvet",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 10,
+          "text": "Red Velvet",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "red-velvet-irene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 13,
@@ -56,10 +70,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "red-velvet-irene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "irene",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 13,
@@ -93,20 +107,6 @@
           "start": 21,
           "end": 27,
           "text": "SEULGI",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "red-velvet",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 10,
-          "text": "Red Velvet",
           "source": "title"
         }
       ]

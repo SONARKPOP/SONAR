@@ -188,8 +188,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "sistar-soyou",
+          "artistType": "group",
+          "artistId": "soyou",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -208,8 +208,8 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "soyou",
+          "artistType": "person",
+          "artistId": "sistar-soyou",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
@@ -326,9 +326,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-838b3400487cd03c",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-4c584a4dffe3c667",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 0,
@@ -340,9 +340,9 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-4c584a4dffe3c667",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-838b3400487cd03c",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 0,
@@ -667,22 +667,34 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-740b582fc9cc1cf0",
-          "state": "mention",
-          "reason": "original-artist-or-comparison",
+          "artistType": "group",
+          "artistId": "shafla",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 26,
-              "end": 28,
-              "text": "사랑",
+              "start": 11,
+              "end": 17,
+              "text": "ShaFLA",
+              "source": "title"
+            },
+            {
+              "start": 7,
+              "end": 10,
+              "text": "샤플라",
+              "source": "title"
+            },
+            {
+              "start": 21,
+              "end": 24,
+              "text": "샤플라",
               "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-e202f1ad30e8b48a",
+          "artistId": "person-740b582fc9cc1cf0",
           "state": "mention",
           "reason": "original-artist-or-comparison",
           "matches": [
@@ -709,27 +721,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "shafla",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-e202f1ad30e8b48a",
+          "state": "mention",
+          "reason": "original-artist-or-comparison",
           "matches": [
             {
-              "start": 11,
-              "end": 17,
-              "text": "ShaFLA",
-              "source": "title"
-            },
-            {
-              "start": 7,
-              "end": 10,
-              "text": "샤플라",
-              "source": "title"
-            },
-            {
-              "start": 21,
-              "end": 24,
-              "text": "샤플라",
+              "start": 26,
+              "end": 28,
+              "text": "사랑",
               "source": "title"
             }
           ]
@@ -810,15 +810,15 @@
           "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 14,
-              "end": 18,
-              "text": "미쓰에이",
-              "source": "title"
-            },
-            {
               "start": 19,
               "end": 25,
               "text": "miss A",
+              "source": "title"
+            },
+            {
+              "start": 14,
+              "end": 18,
+              "text": "미쓰에이",
               "source": "title"
             }
           ]
@@ -939,14 +939,14 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "apink",
+          "artistId": "jung-eun-ji",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 40,
-              "end": 44,
-              "text": "에이핑크",
+              "start": 45,
+              "end": 48,
+              "text": "정은지",
               "source": "title"
             }
           ]
@@ -967,14 +967,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "jung-eun-ji",
+          "artistId": "apink",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 45,
-              "end": 48,
-              "text": "정은지",
+              "start": 40,
+              "end": 44,
+              "text": "에이핑크",
               "source": "title"
             }
           ]
@@ -1319,26 +1319,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "mamamoo",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 21,
-              "end": 24,
-              "text": "마마무",
-              "source": "title"
-            },
-            {
-              "start": 25,
-              "end": 32,
-              "text": "MAMAMOO",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "shafla",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1353,6 +1333,26 @@
               "start": 8,
               "end": 11,
               "text": "샤플라",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "mamamoo",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 25,
+              "end": 32,
+              "text": "MAMAMOO",
+              "source": "title"
+            },
+            {
+              "start": 21,
+              "end": 24,
+              "text": "마마무",
               "source": "title"
             }
           ]
@@ -1535,6 +1535,46 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "jung-eun-ji",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 12,
+              "end": 15,
+              "text": "정은지",
+              "source": "title"
+            },
+            {
+              "start": 53,
+              "end": 65,
+              "text": "Jeong Eun Ji",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "apink-jung-eun-ji",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 12,
+              "end": 15,
+              "text": "정은지",
+              "source": "title"
+            },
+            {
+              "start": 53,
+              "end": 65,
+              "text": "Jeong Eun Ji",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "apink",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1549,46 +1589,6 @@
               "start": 47,
               "end": 52,
               "text": "Apink",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "apink-jung-eun-ji",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 53,
-              "end": 65,
-              "text": "Jeong Eun Ji",
-              "source": "title"
-            },
-            {
-              "start": 12,
-              "end": 15,
-              "text": "정은지",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "jung-eun-ji",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 53,
-              "end": 65,
-              "text": "Jeong Eun Ji",
-              "source": "title"
-            },
-            {
-              "start": 12,
-              "end": 15,
-              "text": "정은지",
               "source": "title"
             }
           ]
@@ -1810,41 +1810,41 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "apink-jung-eun-ji",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 12,
-              "end": 24,
-              "text": "Jeong Eun Ji",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 3,
-              "text": "정은지",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "jung-eun-ji",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
             {
+              "start": 0,
+              "end": 3,
+              "text": "정은지",
+              "source": "title"
+            },
+            {
               "start": 12,
               "end": 24,
               "text": "Jeong Eun Ji",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "apink-jung-eun-ji",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
             {
               "start": 0,
               "end": 3,
               "text": "정은지",
+              "source": "title"
+            },
+            {
+              "start": 12,
+              "end": 24,
+              "text": "Jeong Eun Ji",
               "source": "title"
             }
           ]
@@ -2052,15 +2052,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 6,
-              "end": 12,
-              "text": "9MUSES",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 5,
               "text": "나인뮤지스",
+              "source": "title"
+            },
+            {
+              "start": 6,
+              "end": 12,
+              "text": "9MUSES",
               "source": "title"
             }
           ]
@@ -2188,15 +2188,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 6,
-              "end": 12,
-              "text": "9MUSES",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 5,
               "text": "나인뮤지스",
+              "source": "title"
+            },
+            {
+              "start": 6,
+              "end": 12,
+              "text": "9MUSES",
               "source": "title"
             }
           ]

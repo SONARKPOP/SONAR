@@ -80,7 +80,7 @@
       "appearanceLinks": [
         {
           "artistType": "person",
-          "artistId": "person-3bc5a395d99e9f89",
+          "artistId": "person-3639e807cb70d787",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -94,7 +94,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-3639e807cb70d787",
+          "artistId": "person-3bc5a395d99e9f89",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -289,6 +289,26 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "h1-key",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 22,
+              "end": 28,
+              "text": "H1-KEY",
+              "source": "title"
+            },
+            {
+              "start": 29,
+              "end": 32,
+              "text": "하이키",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-8acd643aa64b43fa",
           "state": "inferred",
@@ -298,26 +318,6 @@
               "start": 41,
               "end": 43,
               "text": "휘서",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "h1-key",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 29,
-              "end": 32,
-              "text": "하이키",
-              "source": "title"
-            },
-            {
-              "start": 22,
-              "end": 28,
-              "text": "H1-KEY",
               "source": "title"
             }
           ]
@@ -355,8 +355,7 @@
       "title": "#OURBIRTHDAY #조혜진 님과 𝙐𝙣-𝙐𝙣-𝙐𝙣𝙗𝙚𝙡𝙞𝙚𝙫𝙖𝙗𝙡𝙚 ⚡ @OURBIRTHDAY",
       "publishedAt": "2026-11-25T08:00:04Z",
       "groupIds": [
-        "h1-key",
-        "ourbirthday"
+        "h1-key"
       ],
       "memberIds": [
         "person-31e013db47fce693"
@@ -382,10 +381,24 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "ourbirthday",
+          "artistType": "person",
+          "artistId": "person-31e013db47fce693",
           "state": "inferred",
           "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "조혜진",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "ourbirthday",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 1,
@@ -397,20 +410,6 @@
               "start": 43,
               "end": 54,
               "text": "OURBIRTHDAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-31e013db47fce693",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "조혜진",
               "source": "title"
             }
           ]
