@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2026-10-20T08:00:20Z",
   "groupIds": [
+    "ive",
     "tuide"
   ],
   "memberIds": [
@@ -44,6 +45,34 @@
   "appearanceLinks": [
     {
       "artistType": "person",
+      "artistId": "tuide-saki",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 32,
+          "end": 36,
+          "text": "SAKI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 12,
+          "end": 15,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "ive-rei",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -58,28 +87,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "ive",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 12,
-          "end": 15,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "tuide-saki",
+      "artistId": "tuide",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 32,
-          "end": 36,
-          "text": "SAKI",
+          "start": 25,
+          "end": 30,
+          "text": "TUIDE",
           "source": "title"
         }
       ]
@@ -94,20 +109,6 @@
           "start": 38,
           "end": 42,
           "text": "SEAH",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 25,
-          "end": 30,
-          "text": "TUIDE",
           "source": "title"
         }
       ]

@@ -8,8 +8,7 @@
   "publishedAt": "2025-04-17T10:08:55Z",
   "groupIds": [
     "izna",
-    "min",
-    "miss-a"
+    "min"
   ],
   "memberIds": [
     "miss-a-min",
@@ -42,41 +41,21 @@
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "izna",
+      "artistId": "min",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 30,
-          "end": 34,
-          "text": "izna",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 11,
-          "text": "이즈나",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-ad73a6c022a8838f",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 15,
-          "text": "방지민",
+          "start": 44,
+          "end": 47,
+          "text": "MIN",
           "source": "title"
         }
       ]
@@ -96,15 +75,35 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "min",
+      "artistType": "person",
+      "artistId": "person-ad73a6c022a8838f",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 44,
-          "end": 47,
-          "text": "MIN",
+          "start": 12,
+          "end": 15,
+          "text": "방지민",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izna",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 11,
+          "text": "이즈나",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "text": "izna",
           "source": "title"
         }
       ]
