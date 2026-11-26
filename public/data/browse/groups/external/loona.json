@@ -38,20 +38,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "loona-yves",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 0,
-              "end": 4,
-              "text": "Yves",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "yves",
           "state": "inferred",
@@ -64,13 +50,21 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "loona-yves",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "Yves",
+              "source": "title"
+            }
+          ]
         }
-      ],
-      "careerGroupIds": [
-        "loona"
-      ],
-      "displayCareerGroupIds": [
-        "loona"
       ],
       "externalId": "o0q4YNjaMoI",
       "sourceUrl": "https://www.youtube.com/watch?v=o0q4YNjaMoI",
@@ -82,7 +76,13 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "musicBroadcast": false,
+      "careerGroupIds": [
+        "loona"
+      ],
+      "displayCareerGroupIds": [
+        "loona"
+      ]
     },
     {
       "id": "youtube__tmL5gKP5uYg",
@@ -215,20 +215,74 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "heejin",
+          "artistId": "artms",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 48,
-              "end": 50,
-              "text": "희진",
+              "start": 70,
+              "end": 75,
+              "text": "artms",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yves",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 52,
+              "end": 54,
+              "text": "이브",
               "source": "title"
             },
+            {
+              "start": 64,
+              "end": 68,
+              "text": "Yves",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "loona-yves",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 52,
+              "end": 54,
+              "text": "이브",
+              "source": "title"
+            },
+            {
+              "start": 64,
+              "end": 68,
+              "text": "Yves",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "loona-heejin",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
             {
               "start": 56,
               "end": 62,
               "text": "heejin",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 50,
+              "text": "희진",
               "source": "title"
             }
           ]
@@ -240,15 +294,35 @@
           "reason": "shared-name",
           "matches": [
             {
+              "start": 56,
+              "end": 62,
+              "text": "heejin",
+              "source": "title"
+            },
+            {
               "start": 48,
               "end": 50,
               "text": "희진",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "heejin",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
             {
               "start": 56,
               "end": 62,
               "text": "heejin",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 50,
+              "text": "희진",
               "source": "title"
             }
           ]
@@ -263,80 +337,6 @@
               "start": 48,
               "end": 50,
               "text": "희진",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "loona-heejin",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 48,
-              "end": 50,
-              "text": "희진",
-              "source": "title"
-            },
-            {
-              "start": 56,
-              "end": 62,
-              "text": "heejin",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "loona-yves",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 64,
-              "end": 68,
-              "text": "Yves",
-              "source": "title"
-            },
-            {
-              "start": 52,
-              "end": 54,
-              "text": "이브",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "yves",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 64,
-              "end": 68,
-              "text": "Yves",
-              "source": "title"
-            },
-            {
-              "start": 52,
-              "end": 54,
-              "text": "이브",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "artms",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 70,
-              "end": 75,
-              "text": "artms",
               "source": "title"
             }
           ]

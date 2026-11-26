@@ -60,14 +60,34 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "red-velvet",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "IZ*ONE",
+          "source": "title"
+        },
+        {
+          "start": 82,
+          "end": 88,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kwon-eun-bi",
       "state": "mention",
       "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 43,
-          "end": 53,
-          "text": "Red Velvet",
+          "start": 64,
+          "end": 69,
+          "text": "EUNBI",
           "source": "title"
         }
       ]
@@ -88,34 +108,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "kwon-eun-bi",
+      "artistId": "red-velvet",
       "state": "mention",
       "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 64,
-          "end": 69,
-          "text": "EUNBI",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 6,
-          "text": "IZ*ONE",
-          "source": "title"
-        },
-        {
-          "start": 82,
-          "end": 88,
-          "text": "IZ*ONE",
+          "start": 43,
+          "end": 53,
+          "text": "Red Velvet",
           "source": "title"
         }
       ]
