@@ -43,30 +43,10 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "loona",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 11,
-          "text": "이달의 소녀",
-          "source": "title"
-        },
-        {
-          "start": 26,
-          "end": 31,
-          "text": "LOONA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "heejin",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "loona-heejin",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 12,
@@ -104,9 +84,23 @@
     },
     {
       "artistType": "person",
-      "artistId": "loona-heejin",
+      "artistId": "person-785f24419fb37180",
       "state": "needs_review",
       "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "희진",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "heejin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 12,
@@ -123,15 +117,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-785f24419fb37180",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "loona",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "희진",
+          "start": 26,
+          "end": 31,
+          "text": "LOONA",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 11,
+          "text": "이달의 소녀",
           "source": "title"
         }
       ]

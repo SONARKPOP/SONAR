@@ -46,35 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 49,
-          "end": 53,
-          "text": "오마이걸",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "gidle-minnie",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 28,
-          "end": 34,
-          "text": "MINNIE",
-          "source": "title"
-        },
-        {
           "start": 24,
           "end": 26,
           "text": "민니",
+          "source": "title"
+        },
+        {
+          "start": 28,
+          "end": 34,
+          "text": "MINNIE",
           "source": "title"
         }
       ]
@@ -86,15 +72,29 @@
       "reason": "everyday-name",
       "matches": [
         {
+          "start": 24,
+          "end": 26,
+          "text": "민니",
+          "source": "title"
+        },
+        {
           "start": 28,
           "end": 34,
           "text": "MINNIE",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "민니",
+          "start": 49,
+          "end": 53,
+          "text": "오마이걸",
           "source": "title"
         }
       ]
