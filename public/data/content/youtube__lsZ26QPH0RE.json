@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:47:28.142078Z",
+    "collectedAt": "2026-11-26T19:25:33.773841Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,6 +42,40 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 56,
+          "end": 59,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 51,
+          "end": 54,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-yujin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 25,
+          "text": "안유진",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-a8d2c786d580bbbc",
@@ -66,40 +100,6 @@
           "start": 22,
           "end": 25,
           "text": "안유진",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "ive-yujin",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 25,
-          "text": "안유진",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 51,
-          "end": 54,
-          "text": "IVE",
-          "source": "title"
-        },
-        {
-          "start": 56,
-          "end": 59,
-          "text": "아이브",
           "source": "title"
         }
       ]

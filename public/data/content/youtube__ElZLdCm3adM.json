@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:45:43.198280Z",
+    "collectedAt": "2026-11-26T19:23:21.630479Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,28 +43,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "키스",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-d4d87f98795ecb6e",
+      "artistId": "sole",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 49,
-          "end": 51,
-          "text": "주니",
+          "start": 38,
+          "end": 39,
+          "text": "쏠",
+          "source": "title"
+        },
+        {
+          "start": 33,
+          "end": 37,
+          "text": "SOLE",
           "source": "title"
         }
       ]
@@ -84,21 +76,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "sole",
+      "artistType": "person",
+      "artistId": "person-d4d87f98795ecb6e",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 33,
-          "end": 37,
-          "text": "SOLE",
+          "start": 49,
+          "end": 51,
+          "text": "주니",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 38,
-          "end": 39,
-          "text": "쏠",
+          "start": 5,
+          "end": 7,
+          "text": "키스",
           "source": "title"
         }
       ]

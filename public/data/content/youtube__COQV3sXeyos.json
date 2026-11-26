@@ -8,6 +8,7 @@
   "publishedAt": "2025-06-13T09:00:16Z",
   "groupIds": [
     "kiss",
+    "kiss-of-life",
     "younha"
   ],
   "memberIds": [
@@ -33,14 +34,14 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:45:36.770522Z",
+    "collectedAt": "2026-11-26T19:23:12.954565Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -75,14 +76,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "younha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 32,
-          "end": 34,
-          "text": "윤하",
+          "start": 8,
+          "end": 20,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-dff6b18b1d4d3a3c",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 21,
+          "end": 22,
+          "text": "벨",
           "source": "title"
         }
       ]
@@ -116,20 +131,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-dff6b18b1d4d3a3c",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 21,
-          "end": 22,
-          "text": "벨",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "kiss",
       "state": "inferred",
@@ -151,14 +152,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "younha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 8,
-          "end": 20,
-          "text": "KISS OF LIFE",
+          "start": 32,
+          "end": 34,
+          "text": "윤하",
           "source": "title"
         }
       ]

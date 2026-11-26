@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:48:04.427255Z",
+    "collectedAt": "2026-11-26T19:26:17.939269Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,30 +44,10 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "wooah",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 26,
-          "end": 31,
-          "text": "WOOAH",
-          "source": "title"
-        },
-        {
-          "start": 33,
-          "end": 35,
-          "text": "우아",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-60c0563ec31a28a5",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-ed0cab837e2af662",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 36,
@@ -93,14 +73,34 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-ed0cab837e2af662",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-60c0563ec31a28a5",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 36,
           "end": 38,
           "text": "나나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "wooah",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 33,
+          "end": 35,
+          "text": "우아",
+          "source": "title"
+        },
+        {
+          "start": 26,
+          "end": 31,
+          "text": "WOOAH",
           "source": "title"
         }
       ]

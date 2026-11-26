@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:47:23.894686Z",
+    "collectedAt": "2026-11-26T19:25:27.569182Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,8 +47,36 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 45,
+          "end": 51,
+          "text": "Secret",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "swan",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
@@ -61,8 +89,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "swan",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
@@ -84,34 +112,6 @@
           "start": 34,
           "end": 37,
           "text": "김민주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 45,
-          "end": 51,
-          "text": "Secret",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "izone",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
           "source": "title"
         }
       ]

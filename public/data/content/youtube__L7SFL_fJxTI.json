@@ -32,7 +32,7 @@
   "actualEndTime": "2025-07-30T17:10:19Z",
   "scheduledStartTime": "2025-07-30T15:00:00Z",
   "source": {
-    "collectedAt": "2026-11-26T07:46:02.076581Z",
+    "collectedAt": "2026-11-26T19:23:45.939082Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,9 +47,9 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "stayc-member-3f52535f31d5",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-7f5eb7debfb3a9d6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 35,
@@ -61,9 +61,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-7f5eb7debfb3a9d6",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "stayc-member-3f52535f31d5",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 35,
@@ -83,6 +83,20 @@
           "start": 42,
           "end": 44,
           "text": "세은",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "stayc",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 45,
+          "end": 50,
+          "text": "STAYC",
           "source": "title"
         }
       ]
@@ -111,20 +125,6 @@
           "start": 38,
           "end": 41,
           "text": "아이사",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "stayc",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 45,
-          "end": 50,
-          "text": "STAYC",
           "source": "title"
         }
       ]

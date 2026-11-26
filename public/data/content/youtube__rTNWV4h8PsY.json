@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:47:45.025616Z",
+    "collectedAt": "2026-11-26T19:25:53.588118Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,24 +44,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 4,
-          "end": 5,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "badvillain",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 50,
+          "end": 60,
+          "text": "BADVILLAIN",
+          "source": "title"
+        },
         {
           "start": 34,
           "end": 38,
@@ -73,11 +65,19 @@
           "end": 66,
           "text": "배드빌런",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 50,
-          "end": 60,
-          "text": "BADVILLAIN",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]

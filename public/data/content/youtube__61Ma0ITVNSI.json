@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:45:18.334010Z",
+    "collectedAt": "2026-11-26T19:22:48.202392Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,24 +44,16 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 51,
-          "end": 52,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "tri-be",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "TRI.BE",
+          "source": "title"
+        },
         {
           "start": 7,
           "end": 11,
@@ -73,11 +65,19 @@
           "end": 36,
           "text": "트라이비",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
         {
-          "start": 0,
-          "end": 6,
-          "text": "TRI.BE",
+          "start": 51,
+          "end": 52,
+          "text": "s",
           "source": "title"
         }
       ]

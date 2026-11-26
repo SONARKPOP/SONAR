@@ -39,7 +39,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:47:46.065022Z",
+    "collectedAt": "2026-11-26T19:25:55.048770Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -80,6 +80,20 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "apink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 66,
+          "end": 71,
+          "text": "Apink",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-1302ddab0dad9303",
       "state": "inferred",
@@ -89,34 +103,6 @@
           "start": 74,
           "end": 77,
           "text": "박초롱",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kim-nam-joo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 90,
-          "end": 93,
-          "text": "김남주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "apink-kim-nam-joo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 90,
-          "end": 93,
-          "text": "김남주",
           "source": "title"
         }
       ]
@@ -151,14 +137,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "apink",
+      "artistId": "kim-nam-joo",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 66,
-          "end": 71,
-          "text": "Apink",
+          "start": 90,
+          "end": 93,
+          "text": "김남주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "apink-kim-nam-joo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 90,
+          "end": 93,
+          "text": "김남주",
           "source": "title"
         }
       ]

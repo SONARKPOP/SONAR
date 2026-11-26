@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:45:26.859514Z",
+    "collectedAt": "2026-11-26T19:22:59.936351Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,34 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "twice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 11,
+          "text": "TWICE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-6914938e9ae4352e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "지효",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "tw-jihyo",
@@ -76,62 +104,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-6914938e9ae4352e",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "지효",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 22,
-          "text": "TUIDE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "twice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 6,
-          "end": 11,
-          "text": "TWICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-1c05592cd6eefc53",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 23,
-          "end": 25,
-          "text": "서연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-f1bd11c84b90f90e",
       "state": "needs_review",
       "reason": "shared-name",
@@ -146,9 +118,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "tuide-seoyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-1c05592cd6eefc53",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 23,
@@ -196,6 +168,34 @@
           "start": 23,
           "end": 25,
           "text": "서연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tuide-seoyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 25,
+          "text": "서연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 22,
+          "text": "TUIDE",
           "source": "title"
         }
       ]

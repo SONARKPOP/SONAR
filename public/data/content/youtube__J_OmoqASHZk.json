@@ -32,7 +32,7 @@
   "actualEndTime": "2025-01-24T08:09:07Z",
   "scheduledStartTime": "2025-01-24T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-26T07:45:57.698428Z",
+    "collectedAt": "2026-11-26T19:23:40.138011Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -87,6 +87,26 @@
     },
     {
       "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 20,
+          "end": 25,
+          "text": "I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 17,
+          "end": 25,
+          "text": "(G)I-DLE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -101,26 +121,6 @@
           "start": 76,
           "end": 77,
           "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 25,
-          "text": "(G)I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 20,
-          "end": 25,
-          "text": "I-DLE",
           "source": "title"
         }
       ]

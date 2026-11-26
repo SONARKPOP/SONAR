@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:45:22.618633Z",
+    "collectedAt": "2026-11-26T19:22:54.145275Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,25 +46,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "itzy-member-b14664ea78a4",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 37,
-          "end": 41,
-          "text": "YUNA",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "csr",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "CSR",
+          "source": "title"
+        },
         {
           "start": 5,
           "end": 8,
@@ -76,11 +68,19 @@
           "end": 26,
           "text": "첫사랑",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "itzy-member-b14664ea78a4",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "CSR",
+          "start": 37,
+          "end": 41,
+          "text": "YUNA",
           "source": "title"
         }
       ]

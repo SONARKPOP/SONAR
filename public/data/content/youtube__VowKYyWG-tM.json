@@ -33,7 +33,7 @@
   "actualEndTime": "2022-12-01T09:23:22Z",
   "scheduledStartTime": "2022-12-01T08:45:00Z",
   "source": {
-    "collectedAt": "2026-11-26T07:46:35.159367Z",
+    "collectedAt": "2026-11-26T19:24:26.806334Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -76,6 +76,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 18,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "kara",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -90,20 +104,6 @@
           "start": 55,
           "end": 57,
           "text": "카라",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 14,
-          "end": 18,
-          "text": "소녀시대",
           "source": "title"
         }
       ]

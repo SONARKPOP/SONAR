@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:46:01.694323Z",
+    "collectedAt": "2026-11-26T19:23:45.424201Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 26,
+          "text": "오마이걸",
+          "source": "title"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "text": "OH MY GIRL",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -54,26 +74,6 @@
           "start": 69,
           "end": 70,
           "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-264e8908f1db1283",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 2,
-          "text": "미미",
-          "source": "title"
-        },
-        {
-          "start": 43,
-          "end": 45,
-          "text": "미미",
           "source": "title"
         }
       ]
@@ -99,21 +99,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
+      "artistType": "person",
+      "artistId": "person-264e8908f1db1283",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 22,
-          "end": 26,
-          "text": "오마이걸",
+          "start": 0,
+          "end": 2,
+          "text": "미미",
           "source": "title"
         },
         {
-          "start": 3,
-          "end": 13,
-          "text": "OH MY GIRL",
+          "start": 43,
+          "end": 45,
+          "text": "미미",
           "source": "title"
         }
       ]

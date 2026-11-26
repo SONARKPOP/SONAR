@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:45:48.295866Z",
+    "collectedAt": "2026-11-26T19:23:27.703339Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,24 +46,10 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "owis",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 12,
-          "text": "OWIS",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-b43f48ab65b54787",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-ef71e2a777b14d5a",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 17,
@@ -103,14 +89,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-ef71e2a777b14d5a",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-b43f48ab65b54787",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 17,
           "end": 19,
           "text": "소이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "owis",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 12,
+          "text": "OWIS",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:47:49.466272Z",
+    "collectedAt": "2026-11-26T19:25:59.443459Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,8 +47,22 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "cignature",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 10,
+          "text": "시그니처",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
-      "artistId": "person-6c6f78b3800b2df3",
+      "artistId": "person-4c50c11b539c8ae2",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -62,21 +76,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-ef771f423ffec044",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 13,
-          "text": "지원",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-4c50c11b539c8ae2",
+      "artistId": "person-6c6f78b3800b2df3",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -104,9 +104,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-7c6ccda0122b2222",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-ef771f423ffec044",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 11,
@@ -117,15 +117,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "cignature",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-7c6ccda0122b2222",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 6,
-          "end": 10,
-          "text": "시그니처",
+          "start": 11,
+          "end": 13,
+          "text": "지원",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": "2023-08-04T04:54:46Z",
   "scheduledStartTime": "2023-08-04T04:00:00Z",
   "source": {
-    "collectedAt": "2026-11-26T07:47:28.596585Z",
+    "collectedAt": "2026-11-26T19:25:34.265478Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,10 +45,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-264e8908f1db1283",
+      "artistType": "group",
+      "artistId": "oh-my-girl",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 21,
+          "end": 25,
+          "text": "오마이걸",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-37598e798d5836fd",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 15,
@@ -60,9 +74,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-37598e798d5836fd",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-264e8908f1db1283",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 15,
@@ -96,20 +110,6 @@
           "start": 18,
           "end": 20,
           "text": "아린",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 21,
-          "end": 25,
-          "text": "오마이걸",
           "source": "title"
         }
       ]

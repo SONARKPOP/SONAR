@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:45:54.614407Z",
+    "collectedAt": "2026-11-26T19:23:35.637879Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-aa550410a3f7718c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "heart-of-woman",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 58,
-          "end": 60,
-          "text": "채이",
+          "start": 51,
+          "end": 57,
+          "text": "하트오브우먼",
+          "source": "title"
+        },
+        {
+          "start": 18,
+          "end": 32,
+          "text": "HEART OF WOMAN",
           "source": "title"
         }
       ]
@@ -93,21 +99,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "heart-of-woman",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-aa550410a3f7718c",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 51,
-          "end": 57,
-          "text": "하트오브우먼",
-          "source": "title"
-        },
-        {
-          "start": 18,
-          "end": 32,
-          "text": "HEART OF WOMAN",
+          "start": 58,
+          "end": 60,
+          "text": "채이",
           "source": "title"
         }
       ]

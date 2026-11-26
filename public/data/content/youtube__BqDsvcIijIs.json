@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:45:35.387930Z",
+    "collectedAt": "2026-11-26T19:23:10.431919Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -42,26 +42,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "younha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 7,
-          "end": 9,
-          "text": "윤하",
-          "source": "title"
-        },
-        {
-          "start": 33,
-          "end": 35,
-          "text": "윤하",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "ive",
@@ -78,6 +58,26 @@
           "start": 10,
           "end": 13,
           "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ive-yujin",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 14,
+          "end": 17,
+          "text": "안유진",
+          "source": "title"
+        },
+        {
+          "start": 49,
+          "end": 52,
+          "text": "안유진",
           "source": "title"
         }
       ]
@@ -123,21 +123,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "ive-yujin",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "younha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 14,
-          "end": 17,
-          "text": "안유진",
+          "start": 7,
+          "end": 9,
+          "text": "윤하",
           "source": "title"
         },
         {
-          "start": 49,
-          "end": 52,
-          "text": "안유진",
+          "start": 33,
+          "end": 35,
+          "text": "윤하",
           "source": "title"
         }
       ]
