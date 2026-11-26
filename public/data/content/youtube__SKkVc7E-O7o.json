@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-bccf8f3118491142",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "blackpink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 6,
-          "end": 8,
-          "text": "제니",
+          "start": 42,
+          "end": 46,
+          "text": "블랙핑크",
+          "source": "title"
+        },
+        {
+          "start": 48,
+          "end": 57,
+          "text": "BLACKPINK",
           "source": "title"
         }
       ]
@@ -74,10 +80,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jennie",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-bccf8f3118491142",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 6,
@@ -117,20 +123,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "blackpink",
+      "artistId": "jennie",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 48,
-          "end": 57,
-          "text": "BLACKPINK",
-          "source": "title"
-        },
-        {
-          "start": 42,
-          "end": 46,
-          "text": "블랙핑크",
+          "start": 6,
+          "end": 8,
+          "text": "제니",
           "source": "title"
         }
       ]
