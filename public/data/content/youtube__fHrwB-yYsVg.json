@@ -57,14 +57,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "favorite",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 35,
-          "end": 36,
-          "text": "s",
+          "start": 0,
+          "end": 8,
+          "text": "FAVORITE",
+          "source": "title"
+        },
+        {
+          "start": 9,
+          "end": 13,
+          "text": "페이버릿",
           "source": "title"
         }
       ]
@@ -72,6 +78,20 @@
     {
       "artistType": "person",
       "artistId": "person-3bba35b66a3d2957",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 15,
+          "end": 17,
+          "text": "정희",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-7ec6d765a59e3467",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -98,35 +118,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-7ec6d765a59e3467",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 15,
-          "end": 17,
-          "text": "정희",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "favorite",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 9,
-          "end": 13,
-          "text": "페이버릿",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 8,
-          "text": "FAVORITE",
+          "start": 35,
+          "end": 36,
+          "text": "s",
           "source": "title"
         }
       ]
