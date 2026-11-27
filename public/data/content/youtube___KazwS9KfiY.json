@@ -47,14 +47,28 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "blackpink",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
+      "matches": [
+        {
+          "start": 39,
+          "end": 48,
+          "text": "BLACKPINK",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "weeekly-lunedi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 58,
-          "end": 60,
-          "text": "키스",
+          "start": 10,
+          "end": 13,
+          "text": "먼데이",
           "source": "title"
         }
       ]
@@ -75,14 +89,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "weeekly-lunedi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-b28c840649822102",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 10,
-          "end": 13,
-          "text": "먼데이",
+          "start": 14,
+          "end": 16,
+          "text": "소은",
           "source": "title"
         }
       ]
@@ -102,15 +116,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-b28c840649822102",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 14,
-          "end": 16,
-          "text": "소은",
+          "start": 58,
+          "end": 60,
+          "text": "키스",
           "source": "title"
         }
       ]
@@ -125,20 +139,6 @@
           "start": 17,
           "end": 24,
           "text": "Weeekly",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "blackpink",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
-      "matches": [
-        {
-          "start": 39,
-          "end": 48,
-          "text": "BLACKPINK",
           "source": "title"
         }
       ]
