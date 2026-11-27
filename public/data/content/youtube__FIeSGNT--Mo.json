@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:45:02.535208Z",
+    "collectedAt": "2026-11-27T19:20:41.507528Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -72,10 +72,16 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-48c4cb964a0f4b98",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "rescene-zena",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 49,
+          "end": 53,
+          "text": "ZENA",
+          "source": "title"
+        },
         {
           "start": 23,
           "end": 25,
@@ -112,9 +118,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-zena",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-48c4cb964a0f4b98",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 23,
@@ -126,12 +132,6 @@
           "start": 45,
           "end": 47,
           "text": "제나",
-          "source": "title"
-        },
-        {
-          "start": 49,
-          "end": 53,
-          "text": "ZENA",
           "source": "title"
         }
       ]

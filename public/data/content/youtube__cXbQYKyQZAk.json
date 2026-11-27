@@ -9,7 +9,6 @@
   "groupIds": [
     "dreamnote",
     "luv",
-    "oh-my-girl",
     "yooa"
   ],
   "memberIds": [
@@ -35,32 +34,18 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:47:13.538867Z",
+    "collectedAt": "2026-11-27T19:22:05.245477Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "person-d8ed16dd74b1c036",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 8,
-          "text": "유아이",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "dreamnote",
@@ -77,6 +62,20 @@
           "start": 20,
           "end": 29,
           "text": "DreamNote",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-d8ed16dd74b1c036",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 8,
+          "text": "유아이",
           "source": "title"
         }
       ]

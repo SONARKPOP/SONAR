@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:44:21.925156Z",
+    "collectedAt": "2026-11-27T19:20:11.449562Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "saturday",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 30,
+          "end": 38,
+          "text": "Saturday",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-287b4bd95d98a04a",
@@ -59,24 +73,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 0,
-          "end": 6,
-          "text": "SECRET",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-1c4d9684873ec015",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-487f9ac252bdd2c1",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 54,
@@ -88,9 +88,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-487f9ac252bdd2c1",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-1c4d9684873ec015",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 54,
@@ -122,14 +122,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "saturday",
+      "artistId": "secret",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 30,
-          "end": 38,
-          "text": "Saturday",
+          "start": 0,
+          "end": 6,
+          "text": "SECRET",
           "source": "title"
         }
       ]

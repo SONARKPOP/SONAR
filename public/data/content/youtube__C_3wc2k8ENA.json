@@ -32,7 +32,7 @@
   "actualEndTime": "2024-05-08T09:21:40Z",
   "scheduledStartTime": "2024-05-08T08:58:00Z",
   "source": {
-    "collectedAt": "2026-11-27T07:44:49.818045Z",
+    "collectedAt": "2026-11-27T19:20:32.560356Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,30 +46,10 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "gidle",
+      "artistType": "person",
+      "artistId": "gidle-soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 47,
-          "end": 54,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 54,
-          "text": "아이들",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-0a0c0ebc64042cc2",
-      "state": "needs_review",
-      "reason": "shared-name",
       "matches": [
         {
           "start": 55,
@@ -94,8 +74,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "gidle-soyeon",
+      "artistType": "group",
+      "artistId": "soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -108,15 +88,35 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-0a0c0ebc64042cc2",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 55,
           "end": 57,
           "text": "소연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 47,
+          "end": 54,
+          "text": "(여자)아이들",
+          "source": "title"
+        },
+        {
+          "start": 51,
+          "end": 54,
+          "text": "아이들",
           "source": "title"
         }
       ]

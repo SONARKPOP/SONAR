@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:48:58.993955Z",
+    "collectedAt": "2026-11-27T19:23:18.903464Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,41 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 10,
-          "end": 17,
-          "text": "키스오브라이프",
+          "start": 18,
+          "end": 20,
+          "text": "나띠",
+          "source": "title"
+        },
+        {
+          "start": 70,
+          "end": 75,
+          "text": "NATTY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 20,
+          "text": "나띠",
+          "source": "title"
+        },
+        {
+          "start": 70,
+          "end": 75,
+          "text": "NATTY",
           "source": "title"
         }
       ]
@@ -76,40 +102,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "natty",
+      "artistId": "kiss-of-life",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 70,
-          "end": 75,
-          "text": "NATTY",
-          "source": "title"
-        },
-        {
-          "start": 18,
-          "end": 20,
-          "text": "나띠",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "kiss-of-life-natty",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 70,
-          "end": 75,
-          "text": "NATTY",
-          "source": "title"
-        },
-        {
-          "start": 18,
-          "end": 20,
-          "text": "나띠",
+          "start": 10,
+          "end": 17,
+          "text": "키스오브라이프",
           "source": "title"
         }
       ]

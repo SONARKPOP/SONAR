@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:46:44.083180Z",
+    "collectedAt": "2026-11-27T19:21:47.242863Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,20 +47,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "rose",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 27,
-          "end": 29,
-          "text": "로제",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "bp-rose",
@@ -77,20 +63,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "blackpink",
+      "artistId": "rose",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 12,
-          "end": 21,
-          "text": "BLACKPINK",
+          "start": 27,
+          "end": 29,
+          "text": "로제",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b2cb44ebb8cd28b7",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 7,
-          "end": 11,
-          "text": "블랙핑크",
+          "start": 23,
+          "end": 25,
+          "text": "제니",
           "source": "title"
         }
       ]
@@ -111,9 +105,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "bp-jennie",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-bccf8f3118491142",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 23,
@@ -139,9 +133,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-b2cb44ebb8cd28b7",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "bp-jennie",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 23,
@@ -152,15 +146,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-bccf8f3118491142",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "blackpink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 23,
-          "end": 25,
-          "text": "제니",
+          "start": 12,
+          "end": 21,
+          "text": "BLACKPINK",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 11,
+          "text": "블랙핑크",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": "2026-09-29T04:56:18Z",
   "scheduledStartTime": "2026-09-29T04:00:00Z",
   "source": {
-    "collectedAt": "2026-11-27T07:48:25.571854Z",
+    "collectedAt": "2026-11-27T19:22:56.378503Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,46 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "lightsum",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 18,
+          "end": 26,
+          "text": "LIGHTSUM",
+          "source": "title"
+        },
+        {
+          "start": 27,
+          "end": 30,
+          "text": "라잇썸",
+          "source": "title"
+        },
+        {
+          "start": 72,
+          "end": 75,
+          "text": "라잇썸",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-3bba35b66a3d2957",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 38,
+          "end": 40,
+          "text": "정희",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-58ec1ca80bc9170d",
@@ -68,46 +108,6 @@
           "start": 38,
           "end": 40,
           "text": "정희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-3bba35b66a3d2957",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 38,
-          "end": 40,
-          "text": "정희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "lightsum",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 18,
-          "end": 26,
-          "text": "LIGHTSUM",
-          "source": "title"
-        },
-        {
-          "start": 27,
-          "end": 30,
-          "text": "라잇썸",
-          "source": "title"
-        },
-        {
-          "start": 72,
-          "end": 75,
-          "text": "라잇썸",
           "source": "title"
         }
       ]
@@ -141,6 +141,12 @@
       ]
     }
   ],
+  "careerGroupIds": [
+    "apink"
+  ],
+  "displayCareerGroupIds": [
+    "apink"
+  ],
   "externalId": "rFbuzkQq6m4",
   "sourceUrl": "https://www.youtube.com/watch?v=rFbuzkQq6m4",
   "contentTabs": [
@@ -151,11 +157,5 @@
   "teaserType": "",
   "contentLength": "live",
   "hierarchyVersion": 2,
-  "musicBroadcast": false,
-  "careerGroupIds": [
-    "apink"
-  ],
-  "displayCareerGroupIds": [
-    "apink"
-  ]
+  "musicBroadcast": false
 }

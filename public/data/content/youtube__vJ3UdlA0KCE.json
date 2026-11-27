@@ -32,7 +32,7 @@
   "actualEndTime": "2020-03-23T08:04:24Z",
   "scheduledStartTime": "2020-03-23T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-27T07:48:44.807713Z",
+    "collectedAt": "2026-11-27T19:23:09.719226Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,10 +46,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "kim-sejeong",
+      "artistType": "person",
+      "artistId": "person-5ddbe84d208eac32",
       "state": "inferred",
       "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 33,
+          "end": 35,
+          "text": "보니",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 36,
@@ -74,29 +88,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "ioi-kim-sejeong",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kim-sejeong",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 36,
           "end": 39,
           "text": "김세정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-5ddbe84d208eac32",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 33,
-          "end": 35,
-          "text": "보니",
           "source": "title"
         }
       ]

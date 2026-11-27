@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:45:44.638180Z",
+    "collectedAt": "2026-11-27T19:21:13.129557Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-04da0bcc18d08a2f",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ichillin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 49,
-          "end": 51,
-          "text": "초원",
+          "start": 22,
+          "end": 26,
+          "text": "아이칠린",
+          "source": "title"
+        },
+        {
+          "start": 78,
+          "end": 82,
+          "text": "아이칠린",
           "source": "title"
         }
       ]
@@ -73,6 +79,20 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "person-04da0bcc18d08a2f",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 49,
+          "end": 51,
+          "text": "초원",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
@@ -82,26 +102,6 @@
           "start": 4,
           "end": 5,
           "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ichillin",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 26,
-          "text": "아이칠린",
-          "source": "title"
-        },
-        {
-          "start": 78,
-          "end": 82,
-          "text": "아이칠린",
           "source": "title"
         }
       ]

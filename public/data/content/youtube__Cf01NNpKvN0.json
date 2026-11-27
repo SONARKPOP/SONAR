@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:44:50.196092Z",
+    "collectedAt": "2026-11-27T19:20:32.867940Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 10,
+          "end": 13,
+          "text": "튜이드",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 35,
+          "text": "TUIDE",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "kiss",
@@ -60,41 +80,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 30,
-          "end": 35,
-          "text": "TUIDE",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 13,
-          "text": "튜이드",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "tuide-elena",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 36,
-          "end": 41,
-          "text": "ELENA",
-          "source": "title"
-        },
-        {
           "start": 14,
           "end": 17,
           "text": "엘레나",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 41,
+          "text": "ELENA",
           "source": "title"
         }
       ]

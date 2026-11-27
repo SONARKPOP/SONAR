@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:47:06.293342Z",
+    "collectedAt": "2026-11-27T19:22:00.076789Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,9 +44,23 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kim-sejeong",
+      "artistId": "apink",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 38,
+          "end": 42,
+          "text": "에이핑크",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "ioi-kim-sejeong",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 44,
@@ -71,29 +85,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "ioi-kim-sejeong",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kim-sejeong",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 44,
           "end": 47,
           "text": "김세정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "apink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 38,
-          "end": 42,
-          "text": "에이핑크",
           "source": "title"
         }
       ]

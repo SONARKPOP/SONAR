@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:44:07.499700Z",
+    "collectedAt": "2026-11-27T19:20:00.043201Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,25 +44,11 @@
   "programName": "리무진서비스",
   "externalType": "song",
   "memberTagging": {
-    "policy": "title-context-v2",
-    "source": "title",
+    "policy": "title-only-v1",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 16,
-          "text": "Kiss",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "baby-dont-cry",
@@ -84,15 +70,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-c42b3c594c6d7492",
+      "artistType": "group",
+      "artistId": "kiss",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 30,
-          "end": 32,
-          "text": "이현",
+          "start": 12,
+          "end": 16,
+          "text": "Kiss",
           "source": "title"
         }
       ]
@@ -107,6 +93,20 @@
           "start": 71,
           "end": 74,
           "text": "JIN",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-c42b3c594c6d7492",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 30,
+          "end": 32,
+          "text": "이현",
           "source": "title"
         }
       ]

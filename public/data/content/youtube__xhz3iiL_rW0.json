@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:48:56.966322Z",
+    "collectedAt": "2026-11-27T19:23:17.618785Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,29 +46,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-9828603cd5c416c6",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "apink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "은지",
+          "start": 9,
+          "end": 14,
+          "text": "Apink",
+          "source": "title"
+        },
+        {
+          "start": 15,
+          "end": 19,
+          "text": "에이핑크",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "person-5172baf874763f50",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-656871b32f77f770",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "은지",
+          "start": 3,
+          "end": 5,
+          "text": "보미",
           "source": "title"
         }
       ]
@@ -103,34 +109,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-656871b32f77f770",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-9828603cd5c416c6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 3,
-          "end": 5,
-          "text": "보미",
+          "start": 0,
+          "end": 2,
+          "text": "은지",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "apink",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-5172baf874763f50",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 15,
-          "end": 19,
-          "text": "에이핑크",
-          "source": "title"
-        },
-        {
-          "start": 9,
-          "end": 14,
-          "text": "Apink",
+          "start": 0,
+          "end": 2,
+          "text": "은지",
           "source": "title"
         }
       ]

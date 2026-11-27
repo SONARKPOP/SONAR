@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:48:23.600662Z",
+    "collectedAt": "2026-11-27T19:22:55.022322Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "dreamnote",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 44,
+          "text": "드림노트",
+          "source": "title"
+        },
+        {
+          "start": 30,
+          "end": 39,
+          "text": "DreamNote",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-1ec8f5db9c7a85b5",
@@ -74,29 +94,9 @@
     },
     {
       "artistType": "group",
-      "artistId": "dreamnote",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 40,
-          "end": 44,
-          "text": "드림노트",
-          "source": "title"
-        },
-        {
-          "start": 30,
-          "end": 39,
-          "text": "DreamNote",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "wonder-girls-sunmi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "sunmi",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
           "start": 12,
@@ -107,10 +107,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "sunmi",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "person",
+      "artistId": "wonder-girls-sunmi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 12,

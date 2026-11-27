@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:49:05.959326Z",
+    "collectedAt": "2026-11-27T19:23:23.839170Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "punch",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 18,
+          "end": 23,
+          "text": "Punch",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "rocket-punch",
@@ -66,29 +80,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "punch",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 18,
-          "end": 23,
-          "text": "Punch",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-beabf7f2ae204647",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "tw-dahyun",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "소희",
+          "start": 3,
+          "end": 5,
+          "text": "다현",
           "source": "title"
         }
       ]
@@ -123,14 +123,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "tw-dahyun",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "person-beabf7f2ae204647",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 3,
-          "end": 5,
-          "text": "다현",
+          "start": 0,
+          "end": 2,
+          "text": "소희",
           "source": "title"
         }
       ]
