@@ -46,10 +46,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-b43f48ab65b54787",
+      "artistType": "group",
+      "artistId": "younha",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 25,
+          "end": 27,
+          "text": "윤하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ef71e2a777b14d5a",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 17,
@@ -61,9 +75,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-83fdc41a9f13438c",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-b43f48ab65b54787",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 17,
@@ -89,7 +103,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-ef71e2a777b14d5a",
+      "artistId": "person-83fdc41a9f13438c",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -111,20 +125,6 @@
           "start": 13,
           "end": 15,
           "text": "썸머",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "younha",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 25,
-          "end": 27,
-          "text": "윤하",
           "source": "title"
         }
       ]

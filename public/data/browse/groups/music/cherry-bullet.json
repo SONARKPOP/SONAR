@@ -66,14 +66,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-a1479c2cc95e8b6a",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistId": "person-a8d2c786d580bbbc",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 12,
-              "end": 14,
-              "text": "소원",
+              "start": 0,
+              "end": 3,
+              "text": "안유진",
               "source": "title"
             }
           ]
@@ -108,14 +108,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-a8d2c786d580bbbc",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "person-a1479c2cc95e8b6a",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 0,
-              "end": 3,
-              "text": "안유진",
+              "start": 12,
+              "end": 14,
+              "text": "소원",
               "source": "title"
             }
           ]
@@ -159,15 +159,21 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "person-a0260b2bdfc6f22a",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "cherry-bullet",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 71,
-              "end": 73,
-              "text": "사랑",
+              "start": 30,
+              "end": 34,
+              "text": "체리블렛",
+              "source": "title"
+            },
+            {
+              "start": 16,
+              "end": 29,
+              "text": "Cherry Bullet",
               "source": "title"
             }
           ]
@@ -202,14 +208,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-e6e94b8b5bcbf3f1",
+          "artistId": "person-a0260b2bdfc6f22a",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
             {
-              "start": 11,
-              "end": 13,
-              "text": "보라",
+              "start": 71,
+              "end": 73,
+              "text": "사랑",
               "source": "title"
             }
           ]
@@ -229,21 +235,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "cherry-bullet",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-e6e94b8b5bcbf3f1",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 16,
-              "end": 29,
-              "text": "Cherry Bullet",
-              "source": "title"
-            },
-            {
-              "start": 30,
-              "end": 34,
-              "text": "체리블렛",
+              "start": 11,
+              "end": 13,
+              "text": "보라",
               "source": "title"
             }
           ]
@@ -310,20 +310,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "rescene-may",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 31,
-              "end": 34,
-              "text": "MAY",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "bol4",
           "state": "mention",
@@ -333,6 +319,20 @@
               "start": 0,
               "end": 6,
               "text": "볼빨간사춘기",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "rescene-may",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 31,
+              "end": 34,
+              "text": "MAY",
               "source": "title"
             }
           ]
