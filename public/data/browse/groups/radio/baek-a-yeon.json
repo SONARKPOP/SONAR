@@ -109,6 +109,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "artms",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 15,
+              "end": 20,
+              "text": "artms",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-95d5214420c6d71a",
           "state": "inferred",
@@ -146,20 +160,6 @@
               "start": 10,
               "end": 13,
               "text": "백아연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "artms",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 15,
-              "end": 20,
-              "text": "artms",
               "source": "title"
             }
           ]
@@ -215,28 +215,14 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "baek-a-yeon",
+          "artistId": "oh-my-girl",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 10,
-              "end": 13,
-              "text": "백아연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-e1112600ab2e1973",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 30,
-              "end": 32,
-              "text": "효정",
+              "start": 25,
+              "end": 29,
+              "text": "오마이걸",
               "source": "title"
             }
           ]
@@ -256,15 +242,29 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "oh-my-girl",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-e1112600ab2e1973",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 25,
-              "end": 29,
-              "text": "오마이걸",
+              "start": 30,
+              "end": 32,
+              "text": "효정",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "baek-a-yeon",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 10,
+              "end": 13,
+              "text": "백아연",
               "source": "title"
             }
           ]
