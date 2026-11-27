@@ -36,66 +36,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "twice",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 27,
-              "end": 32,
-              "text": "TWICE",
-              "source": "title"
-            },
-            {
-              "start": 34,
-              "end": 38,
-              "text": "트와이스",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "tw-nayeon",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 40,
-              "end": 46,
-              "text": "NAYEON",
-              "source": "title"
-            },
-            {
-              "start": 48,
-              "end": 50,
-              "text": "나연",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "nayeon",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 40,
-              "end": 46,
-              "text": "NAYEON",
-              "source": "title"
-            },
-            {
-              "start": 48,
-              "end": 50,
-              "text": "나연",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "bp-jisoo",
           "state": "inferred",
@@ -124,8 +64,28 @@
           ]
         },
         {
+          "artistType": "group",
+          "artistId": "twice",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 27,
+              "end": 32,
+              "text": "TWICE",
+              "source": "title"
+            },
+            {
+              "start": 34,
+              "end": 38,
+              "text": "트와이스",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
-          "artistId": "person-8ce8dce26a64068c",
+          "artistId": "person-b7086b233a866c09",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -138,8 +98,48 @@
           ]
         },
         {
+          "artistType": "group",
+          "artistId": "nayeon",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
+            {
+              "start": 48,
+              "end": 50,
+              "text": "나연",
+              "source": "title"
+            },
+            {
+              "start": 40,
+              "end": 46,
+              "text": "NAYEON",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
-          "artistId": "person-b7086b233a866c09",
+          "artistId": "tw-nayeon",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 48,
+              "end": 50,
+              "text": "나연",
+              "source": "title"
+            },
+            {
+              "start": 40,
+              "end": 46,
+              "text": "NAYEON",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-8ce8dce26a64068c",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -227,10 +227,16 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-4442d3593b19b75a",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistId": "bp-jisoo",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
+            {
+              "start": 32,
+              "end": 37,
+              "text": "JISOO",
+              "source": "title"
+            },
             {
               "start": 18,
               "end": 20,
@@ -252,6 +258,12 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
+              "start": 32,
+              "end": 37,
+              "text": "JISOO",
+              "source": "title"
+            },
+            {
               "start": 18,
               "end": 20,
               "text": "지수",
@@ -262,20 +274,14 @@
               "end": 30,
               "text": "지수",
               "source": "title"
-            },
-            {
-              "start": 32,
-              "end": 37,
-              "text": "JISOO",
-              "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "bp-jisoo",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-c8945fd8178cf886",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 18,
@@ -288,18 +294,12 @@
               "end": 30,
               "text": "지수",
               "source": "title"
-            },
-            {
-              "start": 32,
-              "end": 37,
-              "text": "JISOO",
-              "source": "title"
             }
           ]
         },
         {
           "artistType": "person",
-          "artistId": "person-c8945fd8178cf886",
+          "artistId": "person-4442d3593b19b75a",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -393,15 +393,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 56,
-              "end": 60,
-              "text": "블랙핑크",
-              "source": "title"
-            },
-            {
               "start": 45,
               "end": 54,
               "text": "BLACKPINK",
+              "source": "title"
+            },
+            {
+              "start": 56,
+              "end": 60,
+              "text": "블랙핑크",
               "source": "title"
             }
           ]
@@ -461,29 +461,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 52,
-              "end": 56,
-              "text": "블랙핑크",
-              "source": "title"
-            },
-            {
               "start": 41,
               "end": 50,
               "text": "BLACKPINK",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "hitgs-iyoo",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
+            },
             {
-              "start": 17,
-              "end": 19,
-              "text": "이유",
+              "start": 52,
+              "end": 56,
+              "text": "블랙핑크",
               "source": "title"
             }
           ]
@@ -505,6 +491,20 @@
         {
           "artistType": "person",
           "artistId": "person-e15f2801873c3186",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 17,
+              "end": 19,
+              "text": "이유",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "hitgs-iyoo",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [

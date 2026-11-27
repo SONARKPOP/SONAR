@@ -73,8 +73,8 @@
         {
           "artistType": "group",
           "artistId": "fx",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 56,
@@ -142,6 +142,12 @@
           "reason": "shared-name",
           "matches": [
             {
+              "start": 3,
+              "end": 7,
+              "text": "BIBI",
+              "source": "title"
+            },
+            {
               "start": 0,
               "end": 2,
               "text": "비비",
@@ -151,32 +157,20 @@
               "start": 37,
               "end": 39,
               "text": "비비",
-              "source": "title"
-            },
-            {
-              "start": 3,
-              "end": 7,
-              "text": "BIBI",
               "source": "title"
             }
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "hitgs-vv",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "fx",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 2,
-              "text": "비비",
-              "source": "title"
-            },
-            {
-              "start": 37,
-              "end": 39,
-              "text": "비비",
+              "start": 59,
+              "end": 63,
+              "text": "F(x)",
               "source": "title"
             }
           ]
@@ -202,15 +196,21 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "fx",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "hitgs-vv",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 59,
-              "end": 63,
-              "text": "F(x)",
+              "start": 0,
+              "end": 2,
+              "text": "비비",
+              "source": "title"
+            },
+            {
+              "start": 37,
+              "end": 39,
+              "text": "비비",
               "source": "title"
             }
           ]
@@ -279,26 +279,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "fx",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 11,
-              "end": 15,
-              "text": "에프엑스",
-              "source": "title"
-            },
-            {
-              "start": 47,
-              "end": 51,
-              "text": "f(x)",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "dreamnote",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -313,6 +293,26 @@
               "start": 35,
               "end": 44,
               "text": "DreamNote",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "fx",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 47,
+              "end": 51,
+              "text": "f(x)",
+              "source": "title"
+            },
+            {
+              "start": 11,
+              "end": 15,
+              "text": "에프엑스",
               "source": "title"
             }
           ]
