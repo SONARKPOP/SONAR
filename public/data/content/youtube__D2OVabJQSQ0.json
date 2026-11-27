@@ -33,7 +33,7 @@
   "actualEndTime": "2023-04-28T09:09:28Z",
   "scheduledStartTime": "2023-04-28T09:00:00Z",
   "source": {
-    "collectedAt": "2026-11-27T01:43:54.240112Z",
+    "collectedAt": "2026-11-27T07:44:52.019670Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,43 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-1e4c52ed979eb0a0",
+      "artistType": "group",
+      "artistId": "solar",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 16,
-          "end": 17,
-          "text": "팬",
+          "start": 24,
+          "end": 26,
+          "text": "솔라",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-solar",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 24,
+          "end": 26,
+          "text": "솔라",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-moonbyul",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 8,
+          "text": "문별",
           "source": "title"
         }
       ]
@@ -76,42 +104,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "mamamoo-moonbyul",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 6,
-          "end": 8,
-          "text": "문별",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "mamamoo-solar",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 24,
-          "end": 26,
-          "text": "솔라",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "solar",
+      "artistId": "person-1e4c52ed979eb0a0",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "솔라",
+          "start": 16,
+          "end": 17,
+          "text": "팬",
           "source": "title"
         }
       ]

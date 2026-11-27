@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T01:43:15.919094Z",
+    "collectedAt": "2026-11-27T07:44:00.224080Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,14 +49,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "jo-yuri",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 47,
-          "end": 49,
-          "text": "키스",
+          "start": 7,
+          "end": 14,
+          "text": "JO YURI",
+          "source": "title"
+        },
+        {
+          "start": 3,
+          "end": 6,
+          "text": "조유리",
           "source": "title"
         }
       ]
@@ -83,20 +89,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "jo-yuri",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "yuri",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 7,
+          "start": 10,
           "end": 14,
-          "text": "JO YURI",
-          "source": "title"
-        },
-        {
-          "start": 3,
-          "end": 6,
-          "text": "조유리",
+          "text": "YURI",
           "source": "title"
         }
       ]
@@ -117,14 +117,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "yuri",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 10,
-          "end": 14,
-          "text": "YURI",
+          "start": 47,
+          "end": 49,
+          "text": "키스",
           "source": "title"
         }
       ]

@@ -62,6 +62,12 @@
           ]
         }
       ],
+      "careerGroupIds": [
+        "izone"
+      ],
+      "displayCareerGroupIds": [
+        "izone"
+      ],
       "externalId": "FE-AR5apBCg",
       "sourceUrl": "https://www.youtube.com/watch?v=FE-AR5apBCg",
       "contentTypes": [
@@ -84,13 +90,7 @@
         ],
         "kind": "individual",
         "evidence": "official-solo-channel"
-      },
-      "careerGroupIds": [
-        "izone"
-      ],
-      "displayCareerGroupIds": [
-        "izone"
-      ]
+      }
     },
     {
       "id": "youtube__2mgX7wyIk-k",
@@ -210,6 +210,7 @@
       "title": "ボクノコエ 📼 With #Billlie #문수아",
       "publishedAt": "2026-10-30T07:00:11Z",
       "groupIds": [
+        "billlie",
         "lee-chae-yeon"
       ],
       "memberIds": [
@@ -230,11 +231,25 @@
       "thumbnail": "https://i.ytimg.com/vi/wXxy41yTsS0/hqdefault.jpg",
       "durationLabel": "51s",
       "memberTagging": {
-        "policy": "title-context-v2",
+        "policy": "title-only-v1",
         "source": "unclassified",
         "appearanceVerified": false
       },
       "appearanceLinks": [
+        {
+          "artistType": "group",
+          "artistId": "billlie",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 21,
+              "text": "Billlie",
+              "source": "title"
+            }
+          ]
+        },
         {
           "artistType": "person",
           "artistId": "billlie-member-c4c8cd54cdeb",
@@ -245,20 +260,6 @@
               "start": 23,
               "end": 26,
               "text": "문수아",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "billlie",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 14,
-              "end": 21,
-              "text": "Billlie",
               "source": "title"
             }
           ]
@@ -278,70 +279,7 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "lee-chae-yeon",
-        "groupIds": [
-          "izone"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      }
-    },
-    {
-      "id": "youtube__lwduJrtLZ0o",
-      "platform": "youtube",
-      "platformId": "lwduJrtLZ0o",
-      "demo": false,
-      "title": "ボクノコエ ☁️ With #남우현",
-      "publishedAt": "2026-10-28T07:00:03Z",
-      "groupIds": [
-        "lee-chae-yeon"
-      ],
-      "memberIds": [],
-      "channelId": "lee-chae-yeon-official",
-      "channelName": "LEE CHAEYEON",
-      "category": "own",
-      "subtypes": [
-        "기타"
-      ],
-      "tags": [
-        "기타",
-        "자체 콘텐츠",
-        "기타·미분류"
-      ],
-      "format": "video",
-      "thumbnail": "https://i.ytimg.com/vi/lwduJrtLZ0o/hqdefault.jpg",
-      "durationLabel": "27s",
-      "memberTagging": {
-        "policy": "title-only-v1",
-        "source": "unclassified",
-        "appearanceVerified": false
-      },
-      "appearanceLinks": [],
-      "externalId": "lwduJrtLZ0o",
-      "sourceUrl": "https://www.youtube.com/watch?v=lwduJrtLZ0o",
-      "contentTypes": [
-        "own"
-      ],
-      "ownType": "other",
-      "contentTabs": [
-        "shorts",
-        "own"
-      ],
-      "musicType": "",
-      "teaserType": "",
-      "contentLength": "short",
-      "hierarchyVersion": 2,
-      "musicBroadcast": false,
-      "individualActivity": {
-        "artistId": "lee-chae-yeon",
-        "groupIds": [
-          "izone"
-        ],
-        "kind": "individual",
-        "evidence": "official-solo-channel"
-      }
+      "musicBroadcast": false
     }
   ]
 }

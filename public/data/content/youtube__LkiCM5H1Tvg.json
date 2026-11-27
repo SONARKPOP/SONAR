@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T07:46:03.943034Z",
+    "collectedAt": "2026-11-27T07:45:32.619690Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
@@ -41,15 +41,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c89a1ed57ca11f55",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "solar",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 1,
-          "text": "린",
+          "start": 33,
+          "end": 38,
+          "text": "Solar",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "mamamoo-solar",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 33,
+          "end": 38,
+          "text": "Solar",
           "source": "title"
         }
       ]
@@ -70,32 +84,24 @@
     },
     {
       "artistType": "person",
-      "artistId": "mamamoo-solar",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-c89a1ed57ca11f55",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 33,
-          "end": 38,
-          "text": "Solar",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "solar",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 33,
-          "end": 38,
-          "text": "Solar",
+          "start": 0,
+          "end": 1,
+          "text": "린",
           "source": "title"
         }
       ]
     }
+  ],
+  "careerGroupIds": [
+    "mamamoo"
+  ],
+  "displayCareerGroupIds": [
+    "mamamoo"
   ],
   "externalId": "LkiCM5H1Tvg",
   "sourceUrl": "https://www.youtube.com/watch?v=LkiCM5H1Tvg",
@@ -119,11 +125,5 @@
     ],
     "kind": "individual",
     "evidence": "official-solo-channel"
-  },
-  "careerGroupIds": [
-    "mamamoo"
-  ],
-  "displayCareerGroupIds": [
-    "mamamoo"
-  ]
+  }
 }

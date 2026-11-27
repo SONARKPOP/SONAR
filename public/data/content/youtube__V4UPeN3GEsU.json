@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T01:44:55.184257Z",
+    "collectedAt": "2026-11-27T07:46:23.597541Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,27 +45,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "ive",
+      "artistType": "person",
+      "artistId": "ive-rei",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 65,
-          "end": 68,
-          "text": "IVE",
+          "start": 76,
+          "end": 78,
+          "text": "레이",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-5c47ca1195ef2f82",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 8,
-          "end": 11,
-          "text": "아이브",
-          "source": "title"
-        },
-        {
-          "start": 60,
-          "end": 63,
-          "text": "아이브",
+          "start": 76,
+          "end": 78,
+          "text": "레이",
           "source": "title"
         }
       ]
@@ -99,29 +101,27 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-5c47ca1195ef2f82",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 76,
-          "end": 78,
-          "text": "레이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "ive-rei",
+      "artistType": "group",
+      "artistId": "ive",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 76,
-          "end": 78,
-          "text": "레이",
+          "start": 65,
+          "end": 68,
+          "text": "IVE",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 63,
+          "text": "아이브",
           "source": "title"
         }
       ]

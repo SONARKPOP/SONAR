@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T01:43:25.507832Z",
+    "collectedAt": "2026-11-27T07:44:13.362561Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a3d469a9e79693d5",
+      "artistType": "group",
+      "artistId": "babymonster",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 55,
-          "end": 58,
-          "text": "김신영",
+          "start": 73,
+          "end": 79,
+          "text": "베이비몬스터",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 71,
+          "text": "babymonster",
           "source": "title"
         }
       ]
@@ -102,21 +108,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "babymonster",
+      "artistType": "person",
+      "artistId": "person-a3d469a9e79693d5",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 60,
-          "end": 71,
-          "text": "babymonster",
-          "source": "title"
-        },
-        {
-          "start": 73,
-          "end": 79,
-          "text": "베이비몬스터",
+          "start": 55,
+          "end": 58,
+          "text": "김신영",
           "source": "title"
         }
       ]

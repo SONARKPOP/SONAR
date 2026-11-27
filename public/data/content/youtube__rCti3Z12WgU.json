@@ -37,7 +37,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T01:46:14.100958Z",
+    "collectedAt": "2026-11-27T07:48:25.363587Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -52,20 +52,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 49,
-          "end": 50,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "twice",
@@ -90,6 +76,20 @@
           "start": 66,
           "end": 68,
           "text": "정연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "tw-jihyo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 62,
+          "end": 64,
+          "text": "지효",
           "source": "title"
         }
       ]
@@ -124,14 +124,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "tw-jihyo",
+      "artistId": "person-fc40e5ea793fc7ac",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 62,
-          "end": 64,
-          "text": "지효",
+          "start": 19,
+          "end": 21,
+          "text": "혜리",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 49,
+          "end": 50,
+          "text": "s",
           "source": "title"
         }
       ]
@@ -160,20 +174,6 @@
           "start": 70,
           "end": 72,
           "text": "쯔위",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-fc40e5ea793fc7ac",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 19,
-          "end": 21,
-          "text": "혜리",
           "source": "title"
         }
       ]

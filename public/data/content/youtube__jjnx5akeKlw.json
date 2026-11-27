@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T01:45:48.982663Z",
+    "collectedAt": "2026-11-27T07:47:49.762444Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "davichi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 4,
-          "end": 5,
-          "text": "s",
+          "start": 16,
+          "end": 23,
+          "text": "DAVICHI",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 15,
+          "text": "다비치",
+          "source": "title"
+        },
+        {
+          "start": 81,
+          "end": 84,
+          "text": "다비치",
           "source": "title"
         }
       ]
@@ -74,26 +86,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "davichi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 12,
-          "end": 15,
-          "text": "다비치",
-          "source": "title"
-        },
-        {
-          "start": 81,
-          "end": 84,
-          "text": "다비치",
-          "source": "title"
-        },
-        {
-          "start": 16,
-          "end": 23,
-          "text": "DAVICHI",
+          "start": 4,
+          "end": 5,
+          "text": "s",
           "source": "title"
         }
       ]

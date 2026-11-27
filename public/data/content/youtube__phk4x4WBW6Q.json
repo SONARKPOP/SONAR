@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T01:46:09.329183Z",
+    "collectedAt": "2026-11-27T07:48:18.370745Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,10 +46,10 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "jia",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "tuide-jia",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 23,
@@ -86,10 +86,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tuide-jia",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "jia",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 23,
@@ -106,29 +106,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-413c533f79929770",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 36,
-          "end": 40,
-          "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "tuide",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 22,
-          "text": "TUIDE",
+          "start": 27,
+          "end": 29,
+          "text": "지아",
           "source": "title"
         }
       ]
@@ -162,15 +148,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-413c533f79929770",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "tuide",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 27,
-          "end": 29,
-          "text": "지아",
+          "start": 17,
+          "end": 22,
+          "text": "TUIDE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 36,
+          "end": 40,
+          "text": "KISS",
           "source": "title"
         }
       ]

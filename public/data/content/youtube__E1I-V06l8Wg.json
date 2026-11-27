@@ -32,15 +32,29 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T08:11:12.718678Z",
+    "collectedAt": "2026-11-27T07:44:56.618484Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "twice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 20,
+          "text": "TWICE",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "illit",
@@ -62,24 +76,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "twice",
+      "artistType": "person",
+      "artistId": "tw-nayeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 15,
-          "end": 20,
-          "text": "TWICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "nayeon",
-      "state": "mention",
-      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 22,
@@ -90,10 +90,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-nayeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "nayeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 22,

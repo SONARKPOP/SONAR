@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T01:45:05.136244Z",
+    "collectedAt": "2026-11-27T07:46:41.582528Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -50,8 +50,22 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "girls-generation-hyo",
+      "artistType": "group",
+      "artistId": "girls-generation",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 27,
+          "text": "소녀시대",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "hyo",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -64,8 +78,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "hyo",
+      "artistType": "person",
+      "artistId": "girls-generation-hyo",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -101,20 +115,6 @@
           "start": 28,
           "end": 30,
           "text": "태연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 27,
-          "text": "소녀시대",
           "source": "title"
         }
       ]

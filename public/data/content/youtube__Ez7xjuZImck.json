@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T01:44:00.478917Z",
+    "collectedAt": "2026-11-27T07:45:01.299944Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,15 +46,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-06cfb6ae34c0baa6",
+      "artistType": "group",
+      "artistId": "vvup",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "보나",
+          "start": 43,
+          "end": 47,
+          "text": "VVUP",
+          "source": "title"
+        },
+        {
+          "start": 49,
+          "end": 52,
+          "text": "비비업",
           "source": "title"
         }
       ]
@@ -74,21 +80,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "vvup",
+      "artistType": "person",
+      "artistId": "person-06cfb6ae34c0baa6",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 49,
-          "end": 52,
-          "text": "비비업",
-          "source": "title"
-        },
-        {
-          "start": 43,
-          "end": 47,
-          "text": "VVUP",
+          "start": 12,
+          "end": 14,
+          "text": "보나",
           "source": "title"
         }
       ]
