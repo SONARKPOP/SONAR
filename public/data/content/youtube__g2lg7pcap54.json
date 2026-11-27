@@ -46,8 +46,28 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "gidle-soyeon",
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 7,
+          "end": 10,
+          "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 34,
+          "end": 39,
+          "text": "i-dle",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -66,8 +86,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "soyeon",
+      "artistType": "person",
+      "artistId": "gidle-soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -109,26 +129,6 @@
           "start": 11,
           "end": 13,
           "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 7,
-          "end": 10,
-          "text": "아이들",
-          "source": "title"
-        },
-        {
-          "start": 34,
-          "end": 39,
-          "text": "i-dle",
           "source": "title"
         }
       ]
