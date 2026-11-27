@@ -253,6 +253,34 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "솔라",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 2,
+              "text": "솔라",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "mamamoo-wheein",
           "state": "inferred",
@@ -276,34 +304,6 @@
               "start": 3,
               "end": 5,
               "text": "휘인",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "솔라",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "솔라",
               "source": "title"
             }
           ]
@@ -397,12 +397,6 @@
           ]
         }
       ],
-      "careerGroupIds": [
-        "mamamoo"
-      ],
-      "displayCareerGroupIds": [
-        "mamamoo"
-      ],
       "externalId": "wEz4YCM7EJY",
       "sourceUrl": "https://www.youtube.com/watch?v=wEz4YCM7EJY",
       "contentTabs": [
@@ -413,7 +407,13 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "musicBroadcast": false,
+      "careerGroupIds": [
+        "mamamoo"
+      ],
+      "displayCareerGroupIds": [
+        "mamamoo"
+      ]
     },
     {
       "id": "youtube__ZSqFwadz1uA",
@@ -449,10 +449,10 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "mamamoo-solar",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "solar",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 24,
@@ -469,10 +469,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "solar",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "mamamoo-solar",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 24,

@@ -8,8 +8,7 @@
   "publishedAt": "2026-11-27T10:20:21Z",
   "groupIds": [
     "izna",
-    "min",
-    "miss-a"
+    "min"
   ],
   "memberIds": [
     "miss-a-min",
@@ -42,21 +41,41 @@
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "miss-a-min",
+      "artistType": "group",
+      "artistId": "izna",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 51,
-          "end": 54,
-          "text": "MIN",
+          "start": 37,
+          "end": 41,
+          "text": "izna",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "text": "이즈나",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ad73a6c022a8838f",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 17,
+          "text": "방지민",
           "source": "title"
         }
       ]
@@ -76,35 +95,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "izna",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 10,
-          "end": 13,
-          "text": "이즈나",
-          "source": "title"
-        },
-        {
-          "start": 37,
-          "end": 41,
-          "text": "izna",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
-      "artistId": "person-ad73a6c022a8838f",
+      "artistId": "miss-a-min",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 14,
-          "end": 17,
-          "text": "방지민",
+          "start": 51,
+          "end": 54,
+          "text": "MIN",
           "source": "title"
         }
       ]

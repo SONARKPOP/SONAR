@@ -38,20 +38,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "yves",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 0,
-              "end": 4,
-              "text": "Yves",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "loona-yves",
           "state": "inferred",
@@ -64,13 +50,21 @@
               "source": "title"
             }
           ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "yves",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 0,
+              "end": 4,
+              "text": "Yves",
+              "source": "title"
+            }
+          ]
         }
-      ],
-      "careerGroupIds": [
-        "loona"
-      ],
-      "displayCareerGroupIds": [
-        "loona"
       ],
       "externalId": "o0q4YNjaMoI",
       "sourceUrl": "https://www.youtube.com/watch?v=o0q4YNjaMoI",
@@ -82,7 +76,13 @@
       "teaserType": "",
       "contentLength": "short",
       "hierarchyVersion": 2,
-      "musicBroadcast": false
+      "musicBroadcast": false,
+      "careerGroupIds": [
+        "loona"
+      ],
+      "displayCareerGroupIds": [
+        "loona"
+      ]
     },
     {
       "id": "youtube__RX1wXUxHH0A",
@@ -118,8 +118,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "yves",
+          "artistType": "person",
+          "artistId": "loona-yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -132,8 +132,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "loona-yves",
+          "artistType": "group",
+          "artistId": "yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -210,8 +210,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "yves",
+          "artistType": "person",
+          "artistId": "loona-yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -224,8 +224,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "loona-yves",
+          "artistType": "group",
+          "artistId": "yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -302,8 +302,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "yves",
+          "artistType": "person",
+          "artistId": "loona-yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -316,8 +316,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "loona-yves",
+          "artistType": "group",
+          "artistId": "yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -394,8 +394,8 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "yves",
+          "artistType": "person",
+          "artistId": "loona-yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -408,8 +408,8 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "loona-yves",
+          "artistType": "group",
+          "artistId": "yves",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
@@ -460,7 +460,6 @@
       "title": "Hysteric challenge with LEESEO🐯💗 of IVE #Hysteric #Yves",
       "publishedAt": "2026-10-30T14:47:40Z",
       "groupIds": [
-        "ive",
         "yves"
       ],
       "memberIds": [
@@ -483,24 +482,10 @@
       "durationLabel": "24s",
       "memberTagging": {
         "policy": "title-context-v2",
-        "source": "title",
+        "source": "unclassified",
         "appearanceVerified": false
       },
       "appearanceLinks": [
-        {
-          "artistType": "group",
-          "artistId": "ive",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 36,
-              "end": 39,
-              "text": "IVE",
-              "source": "title"
-            }
-          ]
-        },
         {
           "artistType": "person",
           "artistId": "ive-leeseo",
@@ -511,6 +496,20 @@
               "start": 24,
               "end": 30,
               "text": "LEESEO",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "loona-yves",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 51,
+              "end": 55,
+              "text": "Yves",
               "source": "title"
             }
           ]
@@ -530,15 +529,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "loona-yves",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "ive",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 51,
-              "end": 55,
-              "text": "Yves",
+              "start": 36,
+              "end": 39,
+              "text": "IVE",
               "source": "title"
             }
           ]
