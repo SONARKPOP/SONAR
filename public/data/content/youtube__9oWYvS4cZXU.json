@@ -56,15 +56,21 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "nj-hanni",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "exid",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 15,
-          "end": 17,
-          "text": "하니",
+          "start": 6,
+          "end": 12,
+          "text": "이엑스아이디",
+          "source": "title"
+        },
+        {
+          "start": 1,
+          "end": 5,
+          "text": "EXID",
           "source": "title"
         }
       ]
@@ -84,21 +90,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "exid",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "nj-hanni",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 1,
-          "end": 5,
-          "text": "EXID",
-          "source": "title"
-        },
-        {
-          "start": 6,
-          "end": 12,
-          "text": "이엑스아이디",
+          "start": 15,
+          "end": 17,
+          "text": "하니",
           "source": "title"
         }
       ]
