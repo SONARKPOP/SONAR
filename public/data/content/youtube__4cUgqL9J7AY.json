@@ -47,20 +47,14 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 0,
-          "end": 6,
-          "text": "Secret",
-          "source": "title"
-        },
-        {
-          "start": 44,
-          "end": 47,
-          "text": "시크릿",
+          "end": 13,
+          "text": "Secret Number",
           "source": "title"
         }
       ]
@@ -81,14 +75,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
+          "start": 44,
+          "end": 47,
+          "text": "시크릿",
+          "source": "title"
+        },
+        {
           "start": 0,
-          "end": 13,
-          "text": "Secret Number",
+          "end": 6,
+          "text": "Secret",
           "source": "title"
         }
       ]

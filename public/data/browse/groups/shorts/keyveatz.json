@@ -188,20 +188,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "keyveatz",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "키비츠",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "young-posse",
           "state": "mention",
           "reason": "official-owner-reference",
@@ -210,6 +196,20 @@
               "start": 20,
               "end": 23,
               "text": "영파씨",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "keyveatz",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "키비츠",
               "source": "title"
             }
           ]
@@ -301,7 +301,8 @@
       "title": "#Keyveatz 손주원, 유이 님도 Replay Replay 🔄 #BabyDONTCry #Kumi #Beni #BDC_Replay",
       "publishedAt": "2026-11-25T09:00:10Z",
       "groupIds": [
-        "baby-dont-cry"
+        "baby-dont-cry",
+        "keyveatz"
       ],
       "memberIds": [
         "person-2bef840e6403d315",
@@ -371,28 +372,14 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-2bef840e6403d315",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "person-1ec8f5db9c7a85b5",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 10,
-              "end": 13,
-              "text": "손주원",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "keyveatz",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 1,
-              "end": 9,
-              "text": "Keyveatz",
+              "start": 15,
+              "end": 16,
+              "text": "유",
               "source": "title"
             }
           ]
@@ -412,15 +399,29 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-1ec8f5db9c7a85b5",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "keyveatz",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 16,
-              "text": "유",
+              "start": 1,
+              "end": 9,
+              "text": "Keyveatz",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-2bef840e6403d315",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 10,
+              "end": 13,
+              "text": "손주원",
               "source": "title"
             }
           ]
