@@ -7,6 +7,7 @@
   "description": "",
   "publishedAt": "2026-10-20T12:57:06Z",
   "groupIds": [
+    "rescene",
     "yena"
   ],
   "memberIds": [
@@ -37,26 +38,34 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "unclassified",
+    "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "yena",
+      "artistId": "rescene",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 24,
-          "end": 28,
-          "text": "YENA",
+          "start": 30,
+          "end": 37,
+          "text": "RESCENE",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "rescene-may",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 19,
-          "end": 22,
-          "text": "최예나",
+          "start": 7,
+          "end": 10,
+          "text": "MAY",
           "source": "title"
         }
       ]
@@ -82,29 +91,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "rescene-may",
+      "artistType": "group",
+      "artistId": "yena",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 7,
-          "end": 10,
-          "text": "MAY",
+          "start": 24,
+          "end": 28,
+          "text": "YENA",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
+        },
         {
-          "start": 30,
-          "end": 37,
-          "text": "RESCENE",
+          "start": 19,
+          "end": 22,
+          "text": "최예나",
           "source": "title"
         }
       ]
