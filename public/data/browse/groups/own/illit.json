@@ -275,8 +275,7 @@
       "title": "#체포하겠어 🚨 with @TWICE #NAYEON #You_re_Under_Arrest #ILLIT #아일릿",
       "publishedAt": "2026-11-26T07:00:23Z",
       "groupIds": [
-        "illit",
-        "twice"
+        "illit"
       ],
       "memberIds": [
         "tw-nayeon"
@@ -303,14 +302,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "twice",
+          "artistId": "illit",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 15,
-              "end": 20,
-              "text": "TWICE",
+              "start": 51,
+              "end": 56,
+              "text": "ILLIT",
+              "source": "title"
+            },
+            {
+              "start": 58,
+              "end": 61,
+              "text": "아일릿",
               "source": "title"
             }
           ]
@@ -345,20 +350,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "illit",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "twice",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 58,
-              "end": 61,
-              "text": "아일릿",
-              "source": "title"
-            },
-            {
-              "start": 51,
-              "end": 56,
-              "text": "ILLIT",
+              "start": 15,
+              "end": 20,
+              "text": "TWICE",
               "source": "title"
             }
           ]

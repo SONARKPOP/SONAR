@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T19:25:28.888009Z",
+    "collectedAt": "2026-11-27T01:45:52.429777Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,10 +47,10 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "izone-kwon-eun-bi",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kwon-eun-bi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 35,
@@ -67,10 +67,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kwon-eun-bi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "izone-kwon-eun-bi",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 35,
@@ -101,20 +101,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 66,
-          "end": 70,
-          "text": "Swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "purple-kiss-swan",
       "state": "inferred",
@@ -130,14 +116,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "swan",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 46,
-          "end": 52,
-          "text": "Secret",
+          "start": 66,
+          "end": 70,
+          "text": "Swan",
           "source": "title"
         }
       ]
@@ -152,6 +138,20 @@
           "start": 17,
           "end": 23,
           "text": "IZ*ONE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 46,
+          "end": 52,
+          "text": "Secret",
           "source": "title"
         }
       ]

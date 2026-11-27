@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T19:23:47.352448Z",
+    "collectedAt": "2026-11-27T01:44:22.546147Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,17 +45,31 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "hitgs-vv",
+      "artistType": "group",
+      "artistId": "hitgs",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 40,
-          "end": 42,
-          "text": "VV",
+          "start": 8,
+          "end": 11,
+          "text": "힛지스",
           "source": "title"
         },
+        {
+          "start": 34,
+          "end": 39,
+          "text": "HITGS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "bibi",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
           "start": 12,
           "end": 14,
@@ -79,35 +93,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "bibi",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "hitgs-vv",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 12,
           "end": 14,
           "text": "비비",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hitgs",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 11,
-          "text": "힛지스",
-          "source": "title"
         },
         {
-          "start": 34,
-          "end": 39,
-          "text": "HITGS",
+          "start": 40,
+          "end": 42,
+          "text": "VV",
           "source": "title"
         }
       ]

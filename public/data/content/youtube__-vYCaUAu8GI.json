@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T19:22:24.663264Z",
+    "collectedAt": "2026-11-27T01:43:10.305947Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,7 +47,21 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "lee-chae-yeon",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 40,
+          "end": 42,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "izone-lee-chae-yeon",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
@@ -60,8 +74,8 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "izone-lee-chae-yeon",
+      "artistType": "group",
+      "artistId": "lee-chae-yeon",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
@@ -83,20 +97,6 @@
           "start": 14,
           "end": 15,
           "text": "S",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 40,
-          "end": 42,
-          "text": "키스",
           "source": "title"
         }
       ]

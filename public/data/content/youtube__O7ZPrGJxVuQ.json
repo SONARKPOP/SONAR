@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T19:23:57.569088Z",
+    "collectedAt": "2026-11-27T01:44:31.576759Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -58,15 +58,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-f9250a47ff0f71db",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kiiikiii",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 55,
-          "end": 57,
-          "text": "수이",
+          "start": 36,
+          "end": 44,
+          "text": "KiiiKiii",
+          "source": "title"
+        },
+        {
+          "start": 46,
+          "end": 48,
+          "text": "키키",
           "source": "title"
         }
       ]
@@ -106,21 +112,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiiikiii",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-f9250a47ff0f71db",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 46,
-          "end": 48,
-          "text": "키키",
-          "source": "title"
-        },
-        {
-          "start": 36,
-          "end": 44,
-          "text": "KiiiKiii",
+          "start": 55,
+          "end": 57,
+          "text": "수이",
           "source": "title"
         }
       ]

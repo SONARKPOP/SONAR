@@ -32,7 +32,7 @@
   "actualEndTime": "2024-10-10T08:06:12Z",
   "scheduledStartTime": "2024-10-10T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-26T19:24:11.500333Z",
+    "collectedAt": "2026-11-27T01:44:44.449265Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -61,6 +61,26 @@
     },
     {
       "artistType": "group",
+      "artistId": "madein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 11,
+          "text": "MADEIN",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 15,
+          "text": "메이딘",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -69,26 +89,6 @@
           "start": 62,
           "end": 63,
           "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "madein",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 15,
-          "text": "메이딘",
-          "source": "title"
-        },
-        {
-          "start": 5,
-          "end": 11,
-          "text": "MADEIN",
           "source": "title"
         }
       ]

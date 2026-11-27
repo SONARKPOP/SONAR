@@ -34,7 +34,7 @@
   "actualEndTime": "2024-07-03T09:33:35Z",
   "scheduledStartTime": "2024-07-03T08:58:00Z",
   "source": {
-    "collectedAt": "2026-11-26T19:23:31.137416Z",
+    "collectedAt": "2026-11-27T01:44:07.935403Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,43 +49,9 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-2ce4dcdaca6a96ed",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "대왕",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 49,
-          "end": 52,
-          "text": "아이들",
-          "source": "title"
-        },
-        {
-          "start": 45,
-          "end": 52,
-          "text": "(여자)아이들",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 53,
@@ -100,6 +66,20 @@
       "artistId": "person-0a0c0ebc64042cc2",
       "state": "needs_review",
       "reason": "shared-name",
+      "matches": [
+        {
+          "start": 53,
+          "end": 55,
+          "text": "소연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "soyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 53,
@@ -125,14 +105,34 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-2ce4dcdaca6a96ed",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 53,
-          "end": 55,
-          "text": "소연",
+          "start": 16,
+          "end": 18,
+          "text": "대왕",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 45,
+          "end": 52,
+          "text": "(여자)아이들",
+          "source": "title"
+        },
+        {
+          "start": 49,
+          "end": 52,
+          "text": "아이들",
           "source": "title"
         }
       ]

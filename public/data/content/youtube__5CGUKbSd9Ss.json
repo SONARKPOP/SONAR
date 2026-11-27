@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T19:22:44.691250Z",
+    "collectedAt": "2026-11-27T01:43:27.137484Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "hot-issue",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "핫이슈",
+          "source": "title"
+        },
+        {
+          "start": 5,
+          "end": 14,
+          "text": "HOT ISSUE",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-5979695985059195",
@@ -60,35 +80,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-9e5ba9142a2c2e06",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 43,
-          "end": 45,
-          "text": "예빈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-176237c0b8dac08b",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 43,
-          "end": 45,
-          "text": "예빈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-35ba498f236f93ff",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -129,21 +121,29 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "hot-issue",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-9e5ba9142a2c2e06",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 0,
-          "end": 3,
-          "text": "핫이슈",
+          "start": 43,
+          "end": 45,
+          "text": "예빈",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-35ba498f236f93ff",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 5,
-          "end": 14,
-          "text": "HOT ISSUE",
+          "start": 43,
+          "end": 45,
+          "text": "예빈",
           "source": "title"
         }
       ]

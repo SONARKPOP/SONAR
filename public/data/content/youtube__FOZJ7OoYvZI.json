@@ -8,7 +8,8 @@
   "publishedAt": "2026-06-15T04:00:06Z",
   "groupIds": [
     "izna",
-    "min"
+    "min",
+    "miss-a"
   ],
   "memberIds": [
     "miss-a-min",
@@ -34,42 +35,34 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-26T19:23:23.885168Z",
+    "collectedAt": "2026-11-27T01:44:01.706123Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "min",
+      "artistId": "izna",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 45,
-          "end": 48,
-          "text": "MIN",
+          "start": 7,
+          "end": 10,
+          "text": "이즈나",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "miss-a-min",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
-          "start": 45,
-          "end": 48,
-          "text": "MIN",
+          "start": 31,
+          "end": 35,
+          "text": "izna",
           "source": "title"
         }
       ]
@@ -89,21 +82,29 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "miss-a-min",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 45,
+          "end": 48,
+          "text": "MIN",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
-      "artistId": "izna",
+      "artistId": "min",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 7,
-          "end": 10,
-          "text": "이즈나",
-          "source": "title"
-        },
-        {
-          "start": 31,
-          "end": 35,
-          "text": "izna",
+          "start": 45,
+          "end": 48,
+          "text": "MIN",
           "source": "title"
         }
       ]
