@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-27T06:41:01.501652Z",
+  "updatedAt": "2026-11-27T06:46:09.141337Z",
   "items": [
     {
       "id": "youtube__zI31owzkcOY",
@@ -503,15 +503,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 5,
-              "end": 10,
-              "text": "LeeHi",
-              "source": "title"
-            },
-            {
               "start": 0,
               "end": 3,
               "text": "이하이",
+              "source": "title"
+            },
+            {
+              "start": 5,
+              "end": 10,
+              "text": "LeeHi",
               "source": "title"
             }
           ]
@@ -840,15 +840,21 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "aespa",
+          "artistType": "person",
+          "artistId": "aespa-karina",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 53,
-              "end": 56,
-              "text": "에스파",
+              "start": 0,
+              "end": 3,
+              "text": "카리나",
+              "source": "title"
+            },
+            {
+              "start": 48,
+              "end": 51,
+              "text": "카리나",
               "source": "title"
             }
           ]
@@ -868,21 +874,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "aespa-karina",
+          "artistType": "group",
+          "artistId": "aespa",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 3,
-              "text": "카리나",
-              "source": "title"
-            },
-            {
-              "start": 48,
-              "end": 51,
-              "text": "카리나",
+              "start": 53,
+              "end": 56,
+              "text": "에스파",
               "source": "title"
             }
           ]
@@ -1070,20 +1070,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "lee-hi",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 9,
-              "end": 12,
-              "text": "이하이",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "rose",
           "state": "needs_review",
           "reason": "everyday-name",
@@ -1092,6 +1078,20 @@
               "start": 14,
               "end": 18,
               "text": "Rose",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "lee-hi",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 9,
+              "end": 12,
+              "text": "이하이",
               "source": "title"
             }
           ]
@@ -1791,15 +1791,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "lee-hi",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistType": "person",
+          "artistId": "person-ecfa150b92cf2ae4",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 7,
-              "end": 10,
-              "text": "이하이",
+              "start": 0,
+              "end": 1,
+              "text": "벨",
               "source": "title"
             }
           ]
@@ -1833,15 +1833,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-ecfa150b92cf2ae4",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "lee-hi",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 0,
-              "end": 1,
-              "text": "벨",
+              "start": 7,
+              "end": 10,
+              "text": "이하이",
               "source": "title"
             }
           ]
@@ -2488,24 +2488,16 @@
         },
         {
           "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 78,
-              "end": 79,
-              "text": "s",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "rothy",
           "state": "inferred",
           "reason": "unambiguous-title-name",
           "matches": [
+            {
+              "start": 8,
+              "end": 13,
+              "text": "Rothy",
+              "source": "title"
+            },
             {
               "start": 5,
               "end": 7,
@@ -2517,11 +2509,19 @@
               "end": 66,
               "text": "로시",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
             {
-              "start": 8,
-              "end": 13,
-              "text": "Rothy",
+              "start": 78,
+              "end": 79,
+              "text": "s",
               "source": "title"
             }
           ]
@@ -2580,15 +2580,15 @@
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 31,
-              "end": 36,
-              "text": "LeeHi",
-              "source": "title"
-            },
-            {
               "start": 37,
               "end": 40,
               "text": "이하이",
+              "source": "title"
+            },
+            {
+              "start": 31,
+              "end": 36,
+              "text": "LeeHi",
               "source": "title"
             }
           ]
@@ -2772,14 +2772,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "jennie",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistId": "ive",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 47,
-              "end": 53,
-              "text": "JENNIE",
+              "start": 14,
+              "end": 17,
+              "text": "아이브",
               "source": "title"
             }
           ]
@@ -2799,15 +2799,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "ive-rei",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "jennie",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
-              "start": 18,
-              "end": 20,
-              "text": "레이",
+              "start": 47,
+              "end": 53,
+              "text": "JENNIE",
               "source": "title"
             }
           ]
@@ -2827,15 +2827,15 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "ive",
+          "artistType": "person",
+          "artistId": "ive-rei",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 14,
-              "end": 17,
-              "text": "아이브",
+              "start": 18,
+              "end": 20,
+              "text": "레이",
               "source": "title"
             }
           ]
@@ -3138,15 +3138,15 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "lee-hi",
+          "artistType": "person",
+          "artistId": "stayc-member-ffefe1cc94d5",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 3,
-              "text": "이하이",
+              "start": 13,
+              "end": 16,
+              "text": "아이사",
               "source": "title"
             }
           ]
@@ -3166,15 +3166,15 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "stayc-member-ffefe1cc94d5",
+          "artistType": "group",
+          "artistId": "stayc",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 13,
-              "end": 16,
-              "text": "아이사",
+              "start": 6,
+              "end": 11,
+              "text": "STAYC",
               "source": "title"
             }
           ]
@@ -3195,14 +3195,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "stayc",
+          "artistId": "lee-hi",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 6,
-              "end": 11,
-              "text": "STAYC",
+              "start": 0,
+              "end": 3,
+              "text": "이하이",
               "source": "title"
             }
           ]
@@ -3397,10 +3397,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "ioi-chungha",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistType": "group",
+          "artistId": "chungha",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 6,
@@ -3411,10 +3411,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "chungha",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "ioi-chungha",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 6,
@@ -3589,6 +3589,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "rose",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 27,
+              "end": 31,
+              "text": "Rose",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "lee-hi",
           "state": "inferred",
           "reason": "unambiguous-title-name",
@@ -3603,20 +3617,6 @@
               "start": 0,
               "end": 3,
               "text": "이하이",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "rose",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 27,
-              "end": 31,
-              "text": "Rose",
               "source": "title"
             }
           ]
@@ -3684,34 +3684,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "lee-hi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "이하이",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "oh-my-girl",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 6,
-              "end": 10,
-              "text": "오마이걸",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-e50ccba19f0ec7d0",
           "state": "inferred",
@@ -3735,6 +3707,34 @@
               "start": 11,
               "end": 13,
               "text": "아린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "oh-my-girl",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 6,
+              "end": 10,
+              "text": "오마이걸",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "lee-hi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "이하이",
               "source": "title"
             }
           ]
@@ -3788,34 +3788,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "lee-hi",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 0,
-              "end": 3,
-              "text": "이하이",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "billlie-member-3c2540674e49",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 6,
-              "end": 8,
-              "text": "수현",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-57cd8238ec9cf0f1",
           "state": "needs_review",
@@ -3839,6 +3811,34 @@
               "start": 6,
               "end": 8,
               "text": "수현",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "billlie-member-3c2540674e49",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 6,
+              "end": 8,
+              "text": "수현",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "lee-hi",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 0,
+              "end": 3,
+              "text": "이하이",
               "source": "title"
             }
           ]
@@ -4132,20 +4132,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "lee-hi",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 41,
-              "end": 44,
-              "text": "이하이",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-284e5402f7619ec0",
           "state": "inferred",
@@ -4155,6 +4141,20 @@
               "start": 19,
               "end": 21,
               "text": "라임",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "lee-hi",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 41,
+              "end": 44,
+              "text": "이하이",
               "source": "title"
             }
           ]
@@ -4246,10 +4246,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "oh-my-girl-yooa",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistType": "group",
+          "artistId": "yooa",
+          "state": "needs_review",
+          "reason": "everyday-name",
           "matches": [
             {
               "start": 0,
@@ -4266,10 +4266,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "yooa",
-          "state": "needs_review",
-          "reason": "everyday-name",
+          "artistType": "person",
+          "artistId": "oh-my-girl-yooa",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 0,
@@ -4731,21 +4731,15 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "lee-hi",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistType": "person",
+          "artistId": "hitgs-iyoo",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
-              "start": 48,
-              "end": 53,
-              "text": "LEEHI",
-              "source": "title"
-            },
-            {
-              "start": 0,
-              "end": 3,
-              "text": "이하이",
+              "start": 31,
+              "end": 33,
+              "text": "이유",
               "source": "title"
             }
           ]
@@ -4779,15 +4773,21 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "hitgs-iyoo",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "lee-hi",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 31,
-              "end": 33,
-              "text": "이유",
+              "start": 48,
+              "end": 53,
+              "text": "LEEHI",
+              "source": "title"
+            },
+            {
+              "start": 0,
+              "end": 3,
+              "text": "이하이",
               "source": "title"
             }
           ]
@@ -5107,10 +5107,10 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "ioi-chungha",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "artistType": "group",
+          "artistId": "chungha",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 18,
@@ -5121,10 +5121,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "chungha",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "ioi-chungha",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 18,
@@ -5186,20 +5186,6 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "tw-mina",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 43,
-              "end": 47,
-              "text": "Mina",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "group",
           "artistId": "akmu",
           "state": "mention",
@@ -5209,6 +5195,20 @@
               "start": 28,
               "end": 32,
               "text": "AKMU",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "tw-mina",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 43,
+              "end": 47,
+              "text": "Mina",
               "source": "title"
             }
           ]
@@ -5300,20 +5300,6 @@
       },
       "appearanceLinks": [
         {
-          "artistType": "group",
-          "artistId": "lee-hi",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 7,
-              "end": 10,
-              "text": "이하이",
-              "source": "title"
-            }
-          ]
-        },
-        {
           "artistType": "person",
           "artistId": "person-a15644dd7969fec5",
           "state": "inferred",
@@ -5323,6 +5309,20 @@
               "start": 11,
               "end": 14,
               "text": "백예린",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "lee-hi",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 7,
+              "end": 10,
+              "text": "이하이",
               "source": "title"
             }
           ]
@@ -5514,6 +5514,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "rose",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 63,
+              "end": 67,
+              "text": "Rose",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "lee-hi",
           "state": "inferred",
           "reason": "unambiguous-title-name",
@@ -5528,20 +5542,6 @@
               "start": 9,
               "end": 12,
               "text": "이하이",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "rose",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 63,
-              "end": 67,
-              "text": "Rose",
               "source": "title"
             }
           ]
@@ -5595,6 +5595,26 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "group",
+          "artistId": "lee-hi",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 8,
+              "end": 11,
+              "text": "이하이",
+              "source": "title"
+            },
+            {
+              "start": 31,
+              "end": 34,
+              "text": "이하이",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "person",
           "artistId": "person-a459bfc7242e62ad",
           "state": "needs_review",
@@ -5618,26 +5638,6 @@
               "start": 12,
               "end": 14,
               "text": "비아",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "lee-hi",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 8,
-              "end": 11,
-              "text": "이하이",
-              "source": "title"
-            },
-            {
-              "start": 31,
-              "end": 34,
-              "text": "이하이",
               "source": "title"
             }
           ]

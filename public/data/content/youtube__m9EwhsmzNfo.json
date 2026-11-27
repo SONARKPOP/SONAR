@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-09-08T09:00:00Z",
   "groupIds": [
-    "kiss-of-life",
-    "rescene"
+    "kiss-of-life"
   ],
   "memberIds": [
     "kiss-of-life-natty",
@@ -43,21 +42,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "rescene",
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 68,
-          "end": 75,
-          "text": "RESCENE",
+          "start": 61,
+          "end": 66,
+          "text": "NATTY",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
         {
-          "start": 77,
-          "end": 80,
-          "text": "리센느",
+          "start": 61,
+          "end": 66,
+          "text": "NATTY",
           "source": "title"
         }
       ]
@@ -83,29 +90,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "kiss-of-life-natty",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 61,
-          "end": 66,
-          "text": "NATTY",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "natty",
+      "artistId": "rescene",
       "state": "mention",
       "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 61,
-          "end": 66,
-          "text": "NATTY",
+          "start": 68,
+          "end": 75,
+          "text": "RESCENE",
+          "source": "title"
+        },
+        {
+          "start": 77,
+          "end": 80,
+          "text": "리센느",
           "source": "title"
         }
       ]
