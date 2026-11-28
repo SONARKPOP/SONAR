@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:39:11.363761Z",
+    "collectedAt": "2026-11-28T19:19:10.319652Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,8 +45,28 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "kiss-of-life-natty",
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 23,
+          "end": 35,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        },
+        {
+          "start": 15,
+          "end": 22,
+          "text": "키스오브라이프",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
@@ -59,8 +79,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "natty",
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
@@ -82,26 +102,6 @@
           "start": 23,
           "end": 27,
           "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 23,
-          "end": 35,
-          "text": "KISS OF LIFE",
-          "source": "title"
-        },
-        {
-          "start": 15,
-          "end": 22,
-          "text": "키스오브라이프",
           "source": "title"
         }
       ]

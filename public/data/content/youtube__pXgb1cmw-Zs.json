@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:39:55.877608Z",
+    "collectedAt": "2026-11-28T19:19:49.987721Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "artms",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 1,
+          "end": 6,
+          "text": "ARTMS",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "heejin",
@@ -59,7 +73,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "loona-heejin",
+      "artistId": "artms-heejin",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -87,7 +101,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "artms-heejin",
+      "artistId": "loona-heejin",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -95,20 +109,6 @@
           "start": 7,
           "end": 9,
           "text": "희진",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "artms",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 1,
-          "end": 6,
-          "text": "ARTMS",
           "source": "title"
         }
       ]

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:40:27.510947Z",
+    "collectedAt": "2026-11-28T19:20:19.745357Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 70,
+          "end": 73,
+          "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 66,
+          "end": 73,
+          "text": "(여자)아이들",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-4b927123d0b53a6e",
@@ -60,27 +80,7 @@
     },
     {
       "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 66,
-          "end": 73,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 70,
-          "end": 73,
-          "text": "아이들",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "gidle-minnie",
+      "artistId": "minnie",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -93,8 +93,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "minnie",
+      "artistType": "person",
+      "artistId": "gidle-minnie",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [

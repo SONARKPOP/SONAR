@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:37:22.281718Z",
+    "collectedAt": "2026-11-28T19:17:40.185233Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-a8c5954f103a307e",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "badvillain",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 13,
-          "end": 15,
-          "text": "윤서",
+          "start": 8,
+          "end": 12,
+          "text": "배드빌런",
+          "source": "title"
+        },
+        {
+          "start": 34,
+          "end": 44,
+          "text": "BADVILLAIN",
           "source": "title"
         }
       ]
@@ -73,21 +79,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "badvillain",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-a8c5954f103a307e",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 8,
-          "end": 12,
-          "text": "배드빌런",
-          "source": "title"
-        },
-        {
-          "start": 34,
-          "end": 44,
-          "text": "BADVILLAIN",
+          "start": 13,
+          "end": 15,
+          "text": "윤서",
           "source": "title"
         }
       ]

@@ -41,21 +41,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "hitgs-iyoo",
+      "artistType": "group",
+      "artistId": "hitgs",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 23,
+          "end": 26,
+          "text": "힛지스",
+          "source": "title"
+        },
+        {
+          "start": 16,
+          "end": 21,
+          "text": "HITGS",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-635192b2e655114d",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 34,
           "end": 36,
           "text": "이유",
-          "source": "title"
-        },
-        {
-          "start": 28,
-          "end": 32,
-          "text": "IYOO",
           "source": "title"
         }
       ]
@@ -76,34 +90,20 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-635192b2e655114d",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hitgs-iyoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 34,
           "end": 36,
           "text": "이유",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hitgs",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 23,
-          "end": 26,
-          "text": "힛지스",
-          "source": "title"
         },
         {
-          "start": 16,
-          "end": 21,
-          "text": "HITGS",
+          "start": 28,
+          "end": 32,
+          "text": "IYOO",
           "source": "title"
         }
       ]

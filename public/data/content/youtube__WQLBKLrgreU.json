@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:38:43.015553Z",
+    "collectedAt": "2026-11-28T19:18:46.727564Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -53,15 +53,29 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 45,
+          "end": 50,
+          "text": "NMIXX",
+          "source": "title"
+        },
+        {
           "start": 8,
           "end": 11,
           "text": "엔믹스",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-a1479c2cc95e8b6a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 45,
-          "end": 50,
-          "text": "NMIXX",
+          "start": 24,
+          "end": 26,
+          "text": "소원",
           "source": "title"
         }
       ]
@@ -108,6 +122,20 @@
     },
     {
       "artistType": "person",
+      "artistId": "person-19d4669ff0a2009e",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 14,
+          "text": "지우",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
       "artistId": "person-cbbb12691140e223",
       "state": "needs_review",
       "reason": "shared-name",
@@ -130,34 +158,6 @@
           "start": 12,
           "end": 14,
           "text": "지우",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-19d4669ff0a2009e",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "지우",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-a1479c2cc95e8b6a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 24,
-          "end": 26,
-          "text": "소원",
           "source": "title"
         }
       ]

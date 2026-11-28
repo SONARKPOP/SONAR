@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:37:49.461505Z",
+    "collectedAt": "2026-11-28T19:18:02.948154Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,6 +43,26 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "pixy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 6,
+          "end": 8,
+          "text": "픽시",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 4,
+          "text": "PIXY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "episode",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -51,26 +71,6 @@
           "start": 17,
           "end": 24,
           "text": "Episode",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "pixy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "PIXY",
-          "source": "title"
-        },
-        {
-          "start": 6,
-          "end": 8,
-          "text": "픽시",
           "source": "title"
         }
       ]

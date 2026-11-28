@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:37:09.211708Z",
+    "collectedAt": "2026-11-28T19:17:29.233155Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -104,15 +104,35 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-25dff8797c83a601",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "rescene",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 18,
-          "end": 19,
-          "text": "원",
+          "start": 0,
+          "end": 3,
+          "text": "리센느",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 13,
+          "text": "리센느",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-dbe1e024b60849a5",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "메이",
           "source": "title"
         }
       ]
@@ -122,6 +142,20 @@
       "artistId": "rescene-may",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 24,
+          "text": "메이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-6710cdc41d20f9fd",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 22,
@@ -147,48 +181,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-dbe1e024b60849a5",
+      "artistId": "person-25dff8797c83a601",
       "state": "needs_review",
-      "reason": "shared-name",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 22,
-          "end": 24,
-          "text": "메이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-6710cdc41d20f9fd",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 22,
-          "end": 24,
-          "text": "메이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rescene",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 3,
-          "text": "리센느",
-          "source": "title"
-        },
-        {
-          "start": 10,
-          "end": 13,
-          "text": "리센느",
+          "start": 18,
+          "end": 19,
+          "text": "원",
           "source": "title"
         }
       ]

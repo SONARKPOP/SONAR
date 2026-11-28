@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:37:44.950675Z",
+    "collectedAt": "2026-11-28T19:17:59.132000Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,21 +45,41 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 11,
+          "text": "아이브",
+          "source": "title"
+        },
+        {
+          "start": 36,
+          "end": 39,
+          "text": "IVE",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "ive-rei",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 12,
-          "end": 14,
-          "text": "레이",
-          "source": "title"
-        },
-        {
           "start": 40,
           "end": 43,
           "text": "REI",
+          "source": "title"
+        },
+        {
+          "start": 12,
+          "end": 14,
+          "text": "레이",
           "source": "title"
         }
       ]
@@ -74,26 +94,6 @@
           "start": 12,
           "end": 14,
           "text": "레이",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 36,
-          "end": 39,
-          "text": "IVE",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 11,
-          "text": "아이브",
           "source": "title"
         }
       ]

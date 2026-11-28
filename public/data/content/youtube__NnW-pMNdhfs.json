@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:38:10.824409Z",
+    "collectedAt": "2026-11-28T19:18:20.277994Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,14 +45,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "episode",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "minzy",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 19,
-          "end": 26,
-          "text": "Episode",
+          "start": 7,
+          "end": 10,
+          "text": "공민지",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 5,
+          "text": "Minzy",
           "source": "title"
         }
       ]
@@ -79,20 +85,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "minzy",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "episode",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 7,
-          "end": 10,
-          "text": "공민지",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 5,
-          "text": "Minzy",
+          "start": 19,
+          "end": 26,
+          "text": "Episode",
           "source": "title"
         }
       ]

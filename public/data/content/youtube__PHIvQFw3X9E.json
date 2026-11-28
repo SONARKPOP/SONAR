@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:38:16.760670Z",
+    "collectedAt": "2026-11-28T19:18:24.385042Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "bugaboo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 44,
+          "end": 51,
+          "text": "bugAboo",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "dreamnote",
@@ -74,34 +88,6 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 35,
-          "text": "SECRET NUMBER",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "bugaboo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 44,
-          "end": 51,
-          "text": "bugAboo",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "secret",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -110,6 +96,20 @@
           "start": 22,
           "end": 28,
           "text": "SECRET",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 35,
+          "text": "SECRET NUMBER",
           "source": "title"
         }
       ]

@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:38:27.965971Z",
+    "collectedAt": "2026-11-28T19:18:34.251146Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,10 +46,44 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-6775f1fd651e6b2d",
+      "artistType": "group",
+      "artistId": "oh-my-girl",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "오마이걸",
+          "source": "title"
+        },
+        {
+          "start": 56,
+          "end": 60,
+          "text": "오마이걸",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-b832aad57724cb63",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 13,
+          "text": "달",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e1112600ab2e1973",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 70,
@@ -61,9 +95,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-e1112600ab2e1973",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "person-6775f1fd651e6b2d",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 70,
@@ -125,40 +159,6 @@
           "start": 66,
           "end": 68,
           "text": "승희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-b832aad57724cb63",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 13,
-          "text": "달",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "오마이걸",
-          "source": "title"
-        },
-        {
-          "start": 56,
-          "end": 60,
-          "text": "오마이걸",
           "source": "title"
         }
       ]

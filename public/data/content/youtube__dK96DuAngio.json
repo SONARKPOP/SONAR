@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:39:11.352555Z",
+    "collectedAt": "2026-11-28T19:19:10.310636Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "lovelyz-yoo-ji-ae",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 25,
+          "text": "유지애",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "yoo-ji-ae",
@@ -65,14 +79,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "lovelyz-yoo-ji-ae",
+      "artistId": "person-8533fe4f92567ea1",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 22,
-          "end": 25,
-          "text": "유지애",
+          "start": 27,
+          "end": 30,
+          "text": "김지영",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "jeong-ye-in",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 17,
+          "end": 20,
+          "text": "정예인",
           "source": "title"
         }
       ]
@@ -101,34 +129,6 @@
           "start": 17,
           "end": 20,
           "text": "정예인",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "jeong-ye-in",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 17,
-          "end": 20,
-          "text": "정예인",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-8533fe4f92567ea1",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 27,
-          "end": 30,
-          "text": "김지영",
           "source": "title"
         }
       ]

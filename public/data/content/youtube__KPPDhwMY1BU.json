@@ -30,7 +30,7 @@
   "actualEndTime": "2025-09-01T16:58:02Z",
   "scheduledStartTime": "2025-09-01T15:00:00Z",
   "source": {
-    "collectedAt": "2026-11-28T07:37:58.559571Z",
+    "collectedAt": "2026-11-28T19:18:10.622947Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,8 +44,36 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "say-my-name",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 33,
+          "text": "SAY MY NAME",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-5e4af611df7b9334",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 34,
+          "end": 36,
+          "text": "도희",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-db89034fa43208cf",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -73,7 +101,7 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-db89034fa43208cf",
+      "artistId": "person-7d7cd6c710e78340",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -95,34 +123,6 @@
           "start": 34,
           "end": 36,
           "text": "도희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-7d7cd6c710e78340",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 34,
-          "end": 36,
-          "text": "도희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "say-my-name",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 33,
-          "text": "SAY MY NAME",
           "source": "title"
         }
       ]

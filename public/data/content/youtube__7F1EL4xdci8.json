@@ -29,7 +29,7 @@
   "actualEndTime": "2021-09-08T08:06:37Z",
   "scheduledStartTime": "2021-09-08T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-28T07:37:11.797947Z",
+    "collectedAt": "2026-11-28T19:17:31.512590Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
     {
       "artistType": "person",
       "artistId": "person-42750e2f8977ad73",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 63,
+          "end": 65,
+          "text": "은비",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-243a2e6a1bb15192",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -86,44 +100,10 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-243a2e6a1bb15192",
+      "artistId": "person-eb73497ae0cc470f",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
-        {
-          "start": 63,
-          "end": 65,
-          "text": "은비",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gg-3ea891caaee2e6ac",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 80,
-          "end": 81,
-          "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kwon-eun-bi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 14,
-          "end": 19,
-          "text": "EUNBI",
-          "source": "title"
-        },
         {
           "start": 5,
           "end": 8,
@@ -139,29 +119,49 @@
       "reason": "shared-name",
       "matches": [
         {
-          "start": 14,
-          "end": 19,
-          "text": "EUNBI",
-          "source": "title"
-        },
-        {
           "start": 5,
           "end": 8,
           "text": "권은비",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 19,
+          "text": "EUNBI",
           "source": "title"
         }
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-eb73497ae0cc470f",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "kwon-eun-bi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 5,
           "end": 8,
           "text": "권은비",
+          "source": "title"
+        },
+        {
+          "start": 14,
+          "end": 19,
+          "text": "EUNBI",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "gg-3ea891caaee2e6ac",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 80,
+          "end": 81,
+          "text": "s",
           "source": "title"
         }
       ]

@@ -33,7 +33,7 @@
   "actualEndTime": "2025-03-12T10:34:04Z",
   "scheduledStartTime": "2025-03-12T09:58:00Z",
   "source": {
-    "collectedAt": "2026-11-28T07:39:46.926810Z",
+    "collectedAt": "2026-11-28T19:19:41.107711Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -62,21 +62,7 @@
     },
     {
       "artistType": "group",
-      "artistId": "bibi",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 72,
-          "end": 76,
-          "text": "BIBI",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "gidle-soyeon",
+      "artistId": "soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -103,20 +89,6 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 67,
-          "end": 69,
-          "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "person-0a0c0ebc64042cc2",
       "state": "needs_review",
@@ -131,21 +103,49 @@
       ]
     },
     {
+      "artistType": "person",
+      "artistId": "gidle-soyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 67,
+          "end": 69,
+          "text": "소연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "bibi",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 72,
+          "end": 76,
+          "text": "BIBI",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 59,
-          "end": 66,
-          "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
           "start": 63,
           "end": 66,
           "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 59,
+          "end": 66,
+          "text": "(여자)아이들",
           "source": "title"
         }
       ]

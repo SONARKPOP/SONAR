@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:38:44.685473Z",
+    "collectedAt": "2026-11-28T19:18:48.343426Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,6 +47,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "person-1a94f85ddc70413a",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 21,
+          "end": 23,
+          "text": "연주",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "gidle",
@@ -74,43 +88,37 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yuqi",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 50,
-          "end": 54,
-          "text": "YUQI",
-          "source": "title"
-        },
-        {
-          "start": 14,
-          "end": 16,
-          "text": "우기",
-          "source": "title"
-        },
-        {
-          "start": 47,
-          "end": 49,
-          "text": "우기",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "gidle-yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 14,
+          "end": 16,
+          "text": "우기",
+          "source": "title"
+        },
+        {
+          "start": 47,
+          "end": 49,
+          "text": "우기",
+          "source": "title"
+        },
+        {
           "start": 50,
           "end": 54,
           "text": "YUQI",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yuqi",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
           "start": 14,
           "end": 16,
@@ -122,19 +130,11 @@
           "end": 49,
           "text": "우기",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-1a94f85ddc70413a",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
+        },
         {
-          "start": 21,
-          "end": 23,
-          "text": "연주",
+          "start": 50,
+          "end": 54,
+          "text": "YUQI",
           "source": "title"
         }
       ]

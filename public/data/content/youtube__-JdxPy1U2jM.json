@@ -32,7 +32,7 @@
   "actualEndTime": "2024-10-28T14:55:51Z",
   "scheduledStartTime": "2024-10-28T13:00:00Z",
   "source": {
-    "collectedAt": "2026-11-28T07:36:43.126739Z",
+    "collectedAt": "2026-11-28T19:17:01.955181Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -40,11 +40,25 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 35,
+          "end": 42,
+          "text": "키스오브라이프",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-c29ac6506908865e",
@@ -75,14 +89,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 35,
-          "end": 42,
-          "text": "키스오브라이프",
+          "start": 12,
+          "end": 14,
+          "text": "키스",
           "source": "title"
         }
       ]
@@ -97,20 +111,6 @@
           "start": 47,
           "end": 49,
           "text": "쥴리",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 12,
-          "end": 14,
-          "text": "키스",
           "source": "title"
         }
       ]

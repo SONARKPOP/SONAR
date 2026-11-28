@@ -30,7 +30,7 @@
   "actualEndTime": "2021-06-04T08:05:35Z",
   "scheduledStartTime": "2021-06-04T08:00:00Z",
   "source": {
-    "collectedAt": "2026-11-28T07:38:25.730008Z",
+    "collectedAt": "2026-11-28T19:18:32.313335Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -85,6 +85,26 @@
     },
     {
       "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 29,
+          "end": 33,
+          "text": "ITZY",
+          "source": "title"
+        },
+        {
+          "start": 59,
+          "end": 61,
+          "text": "있지",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gg-3ea891caaee2e6ac",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -93,26 +113,6 @@
           "start": 79,
           "end": 80,
           "text": "s",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 59,
-          "end": 61,
-          "text": "있지",
-          "source": "title"
-        },
-        {
-          "start": 29,
-          "end": 33,
-          "text": "ITZY",
           "source": "title"
         }
       ]

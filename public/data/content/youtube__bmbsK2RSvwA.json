@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:39:05.441164Z",
+    "collectedAt": "2026-11-28T19:19:06.133523Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 18,
+          "text": "오마이걸",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "yubin",
@@ -65,6 +79,20 @@
       "artistId": "person-1dae54c942ce816c",
       "state": "needs_review",
       "reason": "shared-name",
+      "matches": [
+        {
+          "start": 19,
+          "end": 21,
+          "text": "유빈",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-9e234c5ab92ae35e",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 19,
@@ -118,20 +146,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-9e234c5ab92ae35e",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 19,
-          "end": 21,
-          "text": "유빈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-8a50ea5c18115e1d",
       "state": "needs_review",
       "reason": "shared-name",
@@ -154,20 +168,6 @@
           "start": 23,
           "end": 25,
           "text": "승희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 14,
-          "end": 18,
-          "text": "오마이걸",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:39:32.348326Z",
+    "collectedAt": "2026-11-28T19:19:28.904796Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,10 +44,44 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "hot-issue",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 9,
+          "end": 18,
+          "text": "HOT ISSUE",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 22,
+          "text": "핫이슈",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-775bf7c70bc4b253",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 49,
+          "end": 51,
+          "text": "예빈",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-9e5ba9142a2c2e06",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 49,
@@ -95,40 +129,6 @@
           "start": 49,
           "end": 51,
           "text": "예빈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-9e5ba9142a2c2e06",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 49,
-          "end": 51,
-          "text": "예빈",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hot-issue",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 9,
-          "end": 18,
-          "text": "HOT ISSUE",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 22,
-          "text": "핫이슈",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:40:29.055518Z",
+    "collectedAt": "2026-11-28T19:20:20.990936Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "younha",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 24,
+          "end": 26,
+          "text": "윤하",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "kiss-of-life",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -53,20 +67,6 @@
           "start": 78,
           "end": 90,
           "text": "KISS OF LIFE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 78,
-          "end": 82,
-          "text": "KISS",
           "source": "title"
         }
       ]
@@ -87,14 +87,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "younha",
+      "artistId": "kiss",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 24,
-          "end": 26,
-          "text": "윤하",
+          "start": 78,
+          "end": 82,
+          "text": "KISS",
           "source": "title"
         }
       ]

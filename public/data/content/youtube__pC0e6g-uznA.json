@@ -7,7 +7,8 @@
   "description": "",
   "publishedAt": "2026-11-25T09:00:19Z",
   "groupIds": [
-    "itzy"
+    "itzy",
+    "twice"
   ],
   "memberIds": [
     "itzy-member-608992372543",
@@ -42,15 +43,35 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "itzy-member-608992372543",
+      "artistType": "group",
+      "artistId": "itzy",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 52,
-          "end": 62,
-          "text": "CHAERYEONG",
+          "start": 46,
+          "end": 50,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "twice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 64,
+          "end": 69,
+          "text": "TWICE",
+          "source": "title"
+        },
+        {
+          "start": 79,
+          "end": 84,
+          "text": "TWICE",
           "source": "title"
         }
       ]
@@ -96,35 +117,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "twice",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 64,
-          "end": 69,
-          "text": "TWICE",
-          "source": "title"
-        },
-        {
-          "start": 79,
-          "end": 84,
-          "text": "TWICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
+      "artistType": "person",
+      "artistId": "itzy-member-608992372543",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 46,
-          "end": 50,
-          "text": "ITZY",
+          "start": 52,
+          "end": 62,
+          "text": "CHAERYEONG",
           "source": "title"
         }
       ]

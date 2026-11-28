@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:40:23.530583Z",
+    "collectedAt": "2026-11-28T19:20:16.391887Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,20 +44,48 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "punch",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 33,
+          "end": 38,
+          "text": "Punch",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "rocket-punch",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
+          "start": 0,
+          "end": 4,
+          "text": "로켓펀치",
+          "source": "title"
+        },
+        {
           "start": 26,
           "end": 38,
           "text": "Rocket Punch",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-beabf7f2ae204647",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "로켓펀치",
+          "start": 47,
+          "end": 49,
+          "text": "소희",
           "source": "title"
         }
       ]
@@ -86,34 +114,6 @@
           "start": 47,
           "end": 49,
           "text": "소희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-beabf7f2ae204647",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 47,
-          "end": 49,
-          "text": "소희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "punch",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 33,
-          "end": 38,
-          "text": "Punch",
           "source": "title"
         }
       ]

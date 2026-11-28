@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T07:40:27.695703Z",
+    "collectedAt": "2026-11-28T19:20:19.891052Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,14 +44,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "episode",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "purple-kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 26,
-          "end": 33,
-          "text": "Episode",
+          "start": 0,
+          "end": 11,
+          "text": "PURPLE KISS",
+          "source": "title"
+        },
+        {
+          "start": 13,
+          "end": 17,
+          "text": "퍼플키스",
           "source": "title"
         }
       ]
@@ -72,20 +78,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "purple-kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "episode",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 13,
-          "end": 17,
-          "text": "퍼플키스",
-          "source": "title"
-        },
-        {
-          "start": 0,
-          "end": 11,
-          "text": "PURPLE KISS",
+          "start": 26,
+          "end": 33,
+          "text": "Episode",
           "source": "title"
         }
       ]
