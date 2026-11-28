@@ -43,20 +43,6 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "twice",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 15,
-          "end": 20,
-          "text": "TWICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "illit",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -76,10 +62,24 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-nayeon",
+      "artistType": "group",
+      "artistId": "twice",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 15,
+          "end": 20,
+          "text": "TWICE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "nayeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 22,
@@ -90,10 +90,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nayeon",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "tw-nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 22,

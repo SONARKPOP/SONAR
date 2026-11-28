@@ -45,6 +45,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 33,
+          "end": 39,
+          "text": "SECRET",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "x-in",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -53,20 +67,6 @@
           "start": 60,
           "end": 64,
           "text": "X:IN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 33,
-          "end": 46,
-          "text": "SECRET NUMBER",
           "source": "title"
         }
       ]
@@ -87,14 +87,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 33,
-          "end": 39,
-          "text": "SECRET",
+          "end": 46,
+          "text": "SECRET NUMBER",
           "source": "title"
         }
       ]
