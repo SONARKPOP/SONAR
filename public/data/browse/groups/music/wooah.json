@@ -132,11 +132,17 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "person-b1ac6c92f40f08e6",
-          "state": "needs_review",
-          "reason": "shared-name",
+          "artistType": "group",
+          "artistId": "wooah",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
+            {
+              "start": 5,
+              "end": 10,
+              "text": "WOOAH",
+              "source": "title"
+            },
             {
               "start": 11,
               "end": 13,
@@ -152,10 +158,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "wooah",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "person",
+          "artistId": "person-b1ac6c92f40f08e6",
+          "state": "needs_review",
+          "reason": "shared-name",
           "matches": [
             {
               "start": 11,
@@ -167,12 +173,6 @@
               "start": 66,
               "end": 68,
               "text": "우아",
-              "source": "title"
-            },
-            {
-              "start": 5,
-              "end": 10,
-              "text": "WOOAH",
               "source": "title"
             }
           ]
@@ -235,15 +235,15 @@
           "reason": "unambiguous-title-name",
           "matches": [
             {
-              "start": 6,
-              "end": 9,
-              "text": "헤이즈",
-              "source": "title"
-            },
-            {
               "start": 10,
               "end": 15,
               "text": "Heize",
+              "source": "title"
+            },
+            {
+              "start": 6,
+              "end": 9,
+              "text": "헤이즈",
               "source": "title"
             }
           ]

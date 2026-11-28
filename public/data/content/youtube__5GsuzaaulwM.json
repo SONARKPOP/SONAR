@@ -43,20 +43,6 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "solar",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 2,
-          "text": "솔라",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "mamamoo-solar",
       "state": "inferred",
@@ -71,10 +57,24 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "mamamoo-wheein",
+      "artistType": "group",
+      "artistId": "solar",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "솔라",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "wheein",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 3,
@@ -85,10 +85,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "wheein",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "mamamoo-wheein",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 3,
