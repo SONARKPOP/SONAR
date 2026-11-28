@@ -46,6 +46,34 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "saturday",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 30,
+          "end": 38,
+          "text": "Saturday",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 0,
+          "end": 6,
+          "text": "SECRET",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "secret-number",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -60,20 +88,6 @@
           "start": 15,
           "end": 20,
           "text": "시크릿넘버",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "saturday",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 30,
-          "end": 38,
-          "text": "Saturday",
           "source": "title"
         }
       ]
@@ -94,20 +108,6 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-1c4d9684873ec015",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 54,
-          "end": 56,
-          "text": "진희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
       "artistId": "person-487f9ac252bdd2c1",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -121,15 +121,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "secret",
+      "artistType": "person",
+      "artistId": "person-1c4d9684873ec015",
       "state": "needs_review",
-      "reason": "everyday-name",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 0,
-          "end": 6,
-          "text": "SECRET",
+          "start": 54,
+          "end": 56,
+          "text": "진희",
           "source": "title"
         }
       ]
