@@ -58,6 +58,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "secret-number",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 13,
+          "text": "Secret Number",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "secret",
       "state": "needs_review",
       "reason": "everyday-name",
@@ -72,20 +86,6 @@
           "start": 0,
           "end": 6,
           "text": "Secret",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret-number",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 13,
-          "text": "Secret Number",
           "source": "title"
         }
       ]
