@@ -46,6 +46,20 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 35,
+          "end": 39,
+          "text": "오마이걸",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-e1112600ab2e1973",
       "state": "needs_review",
@@ -75,14 +89,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "minnie",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 35,
-          "end": 39,
-          "text": "오마이걸",
+          "start": 14,
+          "end": 20,
+          "text": "MINNIE",
+          "source": "title"
+        },
+        {
+          "start": 10,
+          "end": 12,
+          "text": "민니",
           "source": "title"
         }
       ]
@@ -94,35 +114,15 @@
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 10,
-          "end": 12,
-          "text": "민니",
-          "source": "title"
-        },
-        {
           "start": 14,
           "end": 20,
           "text": "MINNIE",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "minnie",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
+        },
         {
           "start": 10,
           "end": 12,
           "text": "민니",
-          "source": "title"
-        },
-        {
-          "start": 14,
-          "end": 20,
-          "text": "MINNIE",
           "source": "title"
         }
       ]

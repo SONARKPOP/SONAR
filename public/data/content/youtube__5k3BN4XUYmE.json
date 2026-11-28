@@ -7,7 +7,8 @@
   "description": "",
   "publishedAt": "2023-08-01T13:32:15Z",
   "groupIds": [
-    "mijoo"
+    "mijoo",
+    "oh-my-girl"
   ],
   "memberIds": [
     "lovelyz-mijoo",
@@ -37,7 +38,7 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "unclassified",
+    "source": "title",
     "appearanceVerified": false
   },
   "externalId": "5k3BN4XUYmE",
@@ -97,6 +98,20 @@
       ]
     },
     {
+      "artistType": "group",
+      "artistId": "oh-my-girl",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 60,
+          "end": 64,
+          "text": "오마이걸",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "person-e1112600ab2e1973",
       "state": "needs_review",
@@ -120,20 +135,6 @@
           "start": 66,
           "end": 68,
           "text": "효정",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "oh-my-girl",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 60,
-          "end": 64,
-          "text": "오마이걸",
           "source": "title"
         }
       ]
