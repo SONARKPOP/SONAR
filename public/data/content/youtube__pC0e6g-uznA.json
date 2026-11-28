@@ -7,7 +7,8 @@
   "description": "",
   "publishedAt": "2026-11-25T09:00:19Z",
   "groupIds": [
-    "itzy"
+    "itzy",
+    "twice"
   ],
   "memberIds": [
     "itzy-member-608992372543",
@@ -42,6 +43,20 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 46,
+          "end": 50,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "itzy-member-608992372543",
       "state": "inferred",
@@ -56,10 +71,30 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-nayeon",
+      "artistType": "group",
+      "artistId": "twice",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 64,
+          "end": 69,
+          "text": "TWICE",
+          "source": "title"
+        },
+        {
+          "start": 79,
+          "end": 84,
+          "text": "TWICE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "nayeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 7,
@@ -76,10 +111,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nayeon",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "tw-nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 7,
@@ -119,40 +154,6 @@
           "start": 7,
           "end": 9,
           "text": "나연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 46,
-          "end": 50,
-          "text": "ITZY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "twice",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 64,
-          "end": 69,
-          "text": "TWICE",
-          "source": "title"
-        },
-        {
-          "start": 79,
-          "end": 84,
-          "text": "TWICE",
           "source": "title"
         }
       ]
