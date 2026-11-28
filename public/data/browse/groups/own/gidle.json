@@ -34,14 +34,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "minnie",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistId": "gidle",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 2,
-              "text": "민니",
+              "start": 74,
+              "end": 77,
+              "text": "아이들",
+              "source": "title"
+            },
+            {
+              "start": 67,
+              "end": 72,
+              "text": "i-dle",
               "source": "title"
             }
           ]
@@ -62,20 +68,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "gidle",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "minnie",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 74,
-              "end": 77,
-              "text": "아이들",
-              "source": "title"
-            },
-            {
-              "start": 67,
-              "end": 72,
-              "text": "i-dle",
+              "start": 0,
+              "end": 2,
+              "text": "민니",
               "source": "title"
             }
           ]
@@ -138,28 +138,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "minnie",
-          "state": "mention",
-          "reason": "official-owner-reference",
-          "matches": [
-            {
-              "start": 0,
-              "end": 2,
-              "text": "민니",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "gidle-minnie",
+          "artistId": "gidle",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 2,
-              "text": "민니",
+              "start": 77,
+              "end": 80,
+              "text": "아이들",
+              "source": "title"
+            },
+            {
+              "start": 70,
+              "end": 75,
+              "text": "i-dle",
               "source": "title"
             }
           ]
@@ -179,21 +171,29 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "gidle",
+          "artistType": "person",
+          "artistId": "gidle-minnie",
           "state": "inferred",
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 77,
-              "end": 80,
-              "text": "아이들",
+              "start": 0,
+              "end": 2,
+              "text": "민니",
               "source": "title"
-            },
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "minnie",
+          "state": "mention",
+          "reason": "official-owner-reference",
+          "matches": [
             {
-              "start": 70,
-              "end": 75,
-              "text": "i-dle",
+              "start": 0,
+              "end": 2,
+              "text": "민니",
               "source": "title"
             }
           ]

@@ -106,6 +106,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-ad20d19ef2fdbbf6",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "최정은",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "izna",
           "state": "inferred",
@@ -121,20 +135,6 @@
               "start": 10,
               "end": 13,
               "text": "이즈나",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-ad20d19ef2fdbbf6",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "최정은",
               "source": "title"
             }
           ]
@@ -257,7 +257,8 @@
       "publishedAt": "2026-11-27T10:20:21Z",
       "groupIds": [
         "izna",
-        "min"
+        "min",
+        "miss-a"
       ],
       "memberIds": [
         "miss-a-min",
@@ -282,7 +283,7 @@
         "external"
       ],
       "memberTagging": {
-        "policy": "title-context-v2",
+        "policy": "title-only-v1",
         "source": "title",
         "appearanceVerified": false
       },
@@ -322,10 +323,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "min",
+          "artistType": "person",
+          "artistId": "miss-a-min",
           "state": "inferred",
-          "reason": "group-or-channel-context",
+          "reason": "unambiguous-title-name",
           "matches": [
             {
               "start": 51,
@@ -336,10 +337,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "miss-a-min",
+          "artistType": "group",
+          "artistId": "min",
           "state": "inferred",
-          "reason": "unambiguous-title-name",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 51,
@@ -498,6 +499,20 @@
       },
       "appearanceLinks": [
         {
+          "artistType": "person",
+          "artistId": "person-b3b1a994cf46ef8a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 14,
+              "end": 17,
+              "text": "정세비",
+              "source": "title"
+            }
+          ]
+        },
+        {
           "artistType": "group",
           "artistId": "izna",
           "state": "inferred",
@@ -513,20 +528,6 @@
               "start": 10,
               "end": 13,
               "text": "이즈나",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-b3b1a994cf46ef8a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 14,
-              "end": 17,
-              "text": "정세비",
               "source": "title"
             }
           ]

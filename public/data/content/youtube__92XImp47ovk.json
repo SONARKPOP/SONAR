@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:20:19.994992Z",
+    "collectedAt": "2026-11-28T01:39:21.620032Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,20 +44,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 41,
-          "end": 45,
-          "text": "KISS",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "group",
       "artistId": "tuide",
@@ -92,20 +78,54 @@
     },
     {
       "artistType": "person",
-      "artistId": "hitgs-seohee",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "tuide-seohee",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 1,
+          "end": 7,
+          "text": "SEOHEE",
+          "source": "title"
+        },
         {
           "start": 8,
           "end": 10,
           "text": "서희",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "hitgs-seohee",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
           "start": 1,
           "end": 7,
           "text": "SEOHEE",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 10,
+          "text": "서희",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 41,
+          "end": 45,
+          "text": "KISS",
           "source": "title"
         }
       ]
@@ -120,26 +140,6 @@
           "start": 8,
           "end": 10,
           "text": "서희",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "tuide-seohee",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 10,
-          "text": "서희",
-          "source": "title"
-        },
-        {
-          "start": 1,
-          "end": 7,
-          "text": "SEOHEE",
           "source": "title"
         }
       ]

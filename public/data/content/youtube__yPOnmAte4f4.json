@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:23:20.534226Z",
+    "collectedAt": "2026-11-28T01:45:02.881809Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -50,21 +50,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "jo-yuri",
+      "artistType": "person",
+      "artistId": "girls-generation-yuri",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 32,
-          "end": 35,
-          "text": "조유리",
-          "source": "title"
-        },
-        {
-          "start": 24,
+          "start": 27,
           "end": 31,
-          "text": "Jo Yuri",
+          "text": "Yuri",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yuri",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 27,
+          "end": 31,
+          "text": "Yuri",
           "source": "title"
         }
       ]
@@ -91,42 +99,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "izone",
+      "artistId": "jo-yuri",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 17,
-          "end": 23,
-          "text": "IZ*ONE",
+          "start": 32,
+          "end": 35,
+          "text": "조유리",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
+        },
         {
-          "start": 43,
-          "end": 49,
-          "text": "Secret",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 63,
-          "end": 67,
-          "text": "Swan",
+          "start": 24,
+          "end": 31,
+          "text": "Jo Yuri",
           "source": "title"
         }
       ]
@@ -147,28 +133,42 @@
     },
     {
       "artistType": "person",
-      "artistId": "girls-generation-yuri",
+      "artistId": "purple-kiss-swan",
       "state": "inferred",
       "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 27,
-          "end": 31,
-          "text": "Yuri",
+          "start": 63,
+          "end": 67,
+          "text": "Swan",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "group",
-      "artistId": "yuri",
+      "artistId": "secret",
       "state": "needs_review",
       "reason": "everyday-name",
       "matches": [
         {
-          "start": 27,
-          "end": 31,
-          "text": "Yuri",
+          "start": 43,
+          "end": 49,
+          "text": "Secret",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "izone",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 23,
+          "text": "IZ*ONE",
           "source": "title"
         }
       ]

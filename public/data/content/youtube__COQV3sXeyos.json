@@ -34,18 +34,66 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:20:32.036703Z",
+    "collectedAt": "2026-11-28T01:39:42.770885Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
     "external"
   ],
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 8,
+          "end": 12,
+          "text": "KISS",
+          "source": "title"
+        },
+        {
+          "start": 55,
+          "end": 59,
+          "text": "Kiss",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss-of-life",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 8,
+          "end": 20,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-ecfa150b92cf2ae4",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 21,
+          "end": 22,
+          "text": "벨",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-dff6b18b1d4d3a3c",
@@ -75,20 +123,6 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-ecfa150b92cf2ae4",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 21,
-          "end": 22,
-          "text": "벨",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "younha",
       "state": "inferred",
@@ -98,40 +132,6 @@
           "start": 32,
           "end": 34,
           "text": "윤하",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 8,
-          "end": 20,
-          "text": "KISS OF LIFE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 8,
-          "end": 12,
-          "text": "KISS",
-          "source": "title"
-        },
-        {
-          "start": 55,
-          "end": 59,
-          "text": "Kiss",
           "source": "title"
         }
       ]

@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:21:00.230453Z",
+    "collectedAt": "2026-11-28T01:40:36.321470Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,8 +48,28 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "gidle-yuqi",
+      "artistType": "group",
+      "artistId": "gidle",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 11,
+          "end": 14,
+          "text": "아이들",
+          "source": "title"
+        },
+        {
+          "start": 7,
+          "end": 14,
+          "text": "(여자)아이들",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -62,8 +82,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "yuqi",
+      "artistType": "person",
+      "artistId": "gidle-yuqi",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
@@ -99,26 +119,6 @@
           "start": 47,
           "end": 49,
           "text": "미연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 11,
-          "end": 14,
-          "text": "아이들",
-          "source": "title"
-        },
-        {
-          "start": 7,
-          "end": 14,
-          "text": "(여자)아이들",
           "source": "title"
         }
       ]

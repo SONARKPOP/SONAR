@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:21:27.383805Z",
+    "collectedAt": "2026-11-28T01:41:28.866802Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,10 +48,16 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-5ca3e05a2aab632a",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "hearts2hearts-juun",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 42,
+          "end": 46,
+          "text": "JUUN",
+          "source": "title"
+        },
         {
           "start": 16,
           "end": 18,
@@ -76,34 +82,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "hearts2hearts-juun",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-5ca3e05a2aab632a",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 16,
           "end": 18,
           "text": "주은",
-          "source": "title"
-        },
-        {
-          "start": 42,
-          "end": 46,
-          "text": "JUUN",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-287b4bd95d98a04a",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 17,
-          "text": "주",
           "source": "title"
         }
       ]
@@ -124,6 +110,20 @@
           "start": 28,
           "end": 41,
           "text": "Hearts2Hearts",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-287b4bd95d98a04a",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 17,
+          "text": "주",
           "source": "title"
         }
       ]

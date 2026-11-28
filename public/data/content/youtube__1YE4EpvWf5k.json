@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:19:54.803600Z",
+    "collectedAt": "2026-11-28T01:38:41.790093Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
+      "matches": [
+        {
+          "start": 12,
+          "end": 16,
+          "text": "Rose",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "person-6c94e077a885f432",
@@ -60,34 +74,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 12,
-          "end": 16,
-          "text": "Rose",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
       "artistId": "h1-key",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 6,
-          "text": "H1-KEY",
-          "source": "title"
-        },
-        {
           "start": 7,
           "end": 10,
           "text": "하이키",
+          "source": "title"
+        },
+        {
+          "start": 0,
+          "end": 6,
+          "text": "H1-KEY",
           "source": "title"
         }
       ]

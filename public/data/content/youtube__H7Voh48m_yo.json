@@ -30,7 +30,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:20:47.901310Z",
+    "collectedAt": "2026-11-28T01:40:13.022188Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,15 +44,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-c06fbccf8aa84fa8",
-      "state": "needs_review",
-      "reason": "everyday-name",
+      "artistType": "group",
+      "artistId": "soyou",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 36,
-          "end": 37,
-          "text": "퀸",
+          "start": 38,
+          "end": 40,
+          "text": "소유",
+          "source": "title"
+        },
+        {
+          "start": 73,
+          "end": 75,
+          "text": "소유",
           "source": "title"
         }
       ]
@@ -78,21 +84,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "soyou",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "person-c06fbccf8aa84fa8",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 38,
-          "end": 40,
-          "text": "소유",
-          "source": "title"
-        },
-        {
-          "start": 73,
-          "end": 75,
-          "text": "소유",
+          "start": 36,
+          "end": 37,
+          "text": "퀸",
           "source": "title"
         }
       ]

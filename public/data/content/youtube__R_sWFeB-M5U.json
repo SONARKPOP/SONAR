@@ -29,7 +29,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:21:24.009969Z",
+    "collectedAt": "2026-11-28T01:41:21.518706Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,11 +43,17 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-b1ac6c92f40f08e6",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "wooah",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 13,
+          "end": 18,
+          "text": "wooah",
+          "source": "title"
+        },
         {
           "start": 9,
           "end": 11,
@@ -57,21 +63,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "wooah",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-b1ac6c92f40f08e6",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 9,
           "end": 11,
           "text": "우아",
-          "source": "title"
-        },
-        {
-          "start": 13,
-          "end": 18,
-          "text": "wooah",
           "source": "title"
         }
       ]

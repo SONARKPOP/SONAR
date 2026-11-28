@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:20:39.894535Z",
+    "collectedAt": "2026-11-28T01:39:58.312571Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -44,6 +44,20 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
+        {
+          "start": 31,
+          "end": 36,
+          "text": "NATTY",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "person",
       "artistId": "kiss-of-life-natty",
@@ -60,14 +74,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "natty",
+      "artistId": "kiss",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 31,
-          "end": 36,
-          "text": "NATTY",
+          "start": 5,
+          "end": 9,
+          "text": "KISS",
           "source": "title"
         }
       ]
@@ -82,20 +96,6 @@
           "start": 5,
           "end": 17,
           "text": "KISS OF LIFE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 9,
-          "text": "KISS",
           "source": "title"
         }
       ]

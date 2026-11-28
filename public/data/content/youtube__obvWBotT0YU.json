@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T19:22:47.115936Z",
+    "collectedAt": "2026-11-28T01:44:01.578452Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,14 +46,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "yena",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 44,
-          "end": 46,
-          "text": "키스",
+          "start": 20,
+          "end": 24,
+          "text": "Yena",
+          "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 14,
+          "text": "최예나",
           "source": "title"
         }
       ]
@@ -80,20 +86,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "yena",
+      "artistId": "kiss",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 20,
-          "end": 24,
-          "text": "Yena",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 14,
-          "text": "최예나",
+          "start": 44,
+          "end": 46,
+          "text": "키스",
           "source": "title"
         }
       ]
