@@ -39,15 +39,21 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-740b582fc9cc1cf0",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "secret",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 32,
-          "end": 34,
-          "text": "사랑",
+          "start": 24,
+          "end": 30,
+          "text": "Secret",
+          "source": "title"
+        },
+        {
+          "start": 19,
+          "end": 22,
+          "text": "시크릿",
           "source": "title"
         }
       ]
@@ -81,21 +87,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "secret",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-740b582fc9cc1cf0",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 24,
-          "end": 30,
-          "text": "Secret",
-          "source": "title"
-        },
-        {
-          "start": 19,
-          "end": 22,
-          "text": "시크릿",
+          "start": 32,
+          "end": 34,
+          "text": "사랑",
           "source": "title"
         }
       ]
