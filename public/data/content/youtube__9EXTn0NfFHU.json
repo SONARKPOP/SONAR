@@ -57,15 +57,29 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "craxy",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
       "state": "inferred",
-      "reason": "group-or-channel-context",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 9,
-          "end": 14,
-          "text": "craxy",
+          "start": 23,
+          "end": 27,
+          "text": "swan",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "swan",
+      "state": "mention",
+      "reason": "official-owner-reference",
+      "matches": [
+        {
+          "start": 23,
+          "end": 27,
+          "text": "swan",
           "source": "title"
         }
       ]
@@ -86,28 +100,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "swan",
-      "state": "mention",
-      "reason": "official-owner-reference",
-      "matches": [
-        {
-          "start": 23,
-          "end": 27,
-          "text": "swan",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
+      "artistId": "craxy",
       "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 23,
-          "end": 27,
-          "text": "swan",
+          "start": 9,
+          "end": 14,
+          "text": "craxy",
           "source": "title"
         }
       ]

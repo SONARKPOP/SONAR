@@ -48,10 +48,10 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-3fe6e94556a877e5",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "joy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 16,
@@ -62,10 +62,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "joy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-3fe6e94556a877e5",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 16,
@@ -91,6 +91,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "blackpink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "블랙핑크",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "red-velvet",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -99,20 +113,6 @@
           "start": 44,
           "end": 48,
           "text": "레드벨벳",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "bp-rose",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "로제",
           "source": "title"
         }
       ]
@@ -132,15 +132,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "blackpink",
+      "artistType": "person",
+      "artistId": "bp-rose",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "블랙핑크",
+          "start": 5,
+          "end": 7,
+          "text": "로제",
           "source": "title"
         }
       ]

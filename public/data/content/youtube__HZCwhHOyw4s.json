@@ -46,15 +46,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-1ec8f5db9c7a85b5",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "yooa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 6,
-          "text": "유",
+          "start": 14,
+          "end": 16,
+          "text": "유아",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "oh-my-girl-yooa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 14,
+          "end": 16,
+          "text": "유아",
           "source": "title"
         }
       ]
@@ -75,28 +89,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "oh-my-girl-yooa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-1ec8f5db9c7a85b5",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 14,
-          "end": 16,
-          "text": "유아",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "yooa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 14,
-          "end": 16,
-          "text": "유아",
+          "start": 5,
+          "end": 6,
+          "text": "유",
           "source": "title"
         }
       ]
