@@ -115,6 +115,20 @@
       "appearanceLinks": [
         {
           "artistType": "person",
+          "artistId": "tw-mina",
+          "state": "inferred",
+          "reason": "unambiguous-title-name",
+          "matches": [
+            {
+              "start": 8,
+              "end": 12,
+              "text": "Mina",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
           "artistId": "person-d1c7084be036b96b",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -137,20 +151,6 @@
               "start": 48,
               "end": 52,
               "text": "OWIS",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "tw-mina",
-          "state": "inferred",
-          "reason": "unambiguous-title-name",
-          "matches": [
-            {
-              "start": 8,
-              "end": 12,
-              "text": "Mina",
               "source": "title"
             }
           ]
@@ -233,10 +233,10 @@
           ]
         },
         {
-          "artistType": "person",
-          "artistId": "tw-tzuyu",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "tzuyu",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 66,
@@ -247,10 +247,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "tzuyu",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "tw-tzuyu",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 66,
