@@ -43,6 +43,20 @@
   },
   "appearanceLinks": [
     {
+      "artistType": "group",
+      "artistId": "twice",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 3,
+          "end": 8,
+          "text": "TWICE",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "person",
       "artistId": "tw-jeongyeon",
       "state": "inferred",
@@ -99,24 +113,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "twice",
+      "artistType": "person",
+      "artistId": "tw-jihyo",
       "state": "inferred",
       "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 3,
-          "end": 8,
-          "text": "TWICE",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "jihyo",
-      "state": "mention",
-      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 80,
@@ -127,10 +127,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-jihyo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "jihyo",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 80,

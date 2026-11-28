@@ -7,8 +7,7 @@
   "description": "",
   "publishedAt": "2026-11-17T11:30:23Z",
   "groupIds": [
-    "illit",
-    "itzy"
+    "illit"
   ],
   "memberIds": [
     "itzy-member-608992372543"
@@ -42,10 +41,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "itzy",
+      "artistType": "person",
+      "artistId": "itzy-member-608992372543",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 22,
+          "end": 32,
+          "text": "CHAERYEONG",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 15,
@@ -71,20 +84,6 @@
           "start": 62,
           "end": 65,
           "text": "아일릿",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "itzy-member-608992372543",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 22,
-          "end": 32,
-          "text": "CHAERYEONG",
           "source": "title"
         }
       ]

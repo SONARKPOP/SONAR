@@ -43,29 +43,9 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "mamamoo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 30,
-          "end": 33,
-          "text": "마마무",
-          "source": "title"
-        },
-        {
-          "start": 35,
-          "end": 42,
-          "text": "MAMAMOO",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "mamamoo-solar",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "solar",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 22,
@@ -76,10 +56,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "solar",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "mamamoo-solar",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 22,
@@ -113,6 +93,26 @@
           "start": 26,
           "end": 28,
           "text": "화사",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "mamamoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 30,
+          "end": 33,
+          "text": "마마무",
+          "source": "title"
+        },
+        {
+          "start": 35,
+          "end": 42,
+          "text": "MAMAMOO",
           "source": "title"
         }
       ]
