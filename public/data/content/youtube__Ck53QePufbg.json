@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:39:44.896780Z",
+    "collectedAt": "2026-11-28T07:37:31.400313Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,6 +45,26 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "person",
+      "artistId": "girls-generation-taeyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "태연",
+          "source": "title"
+        },
+        {
+          "start": 40,
+          "end": 42,
+          "text": "태연",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "taeyeon",
@@ -66,21 +86,29 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "girls-generation-taeyeon",
+      "artistType": "group",
+      "artistId": "girls-generation",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 5,
-          "end": 7,
-          "text": "태연",
+          "start": 0,
+          "end": 4,
+          "text": "소녀시대",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-e15f2801873c3186",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
         {
-          "start": 40,
-          "end": 42,
-          "text": "태연",
+          "start": 17,
+          "end": 19,
+          "text": "이유",
           "source": "title"
         }
       ]
@@ -109,34 +137,6 @@
           "start": 17,
           "end": 19,
           "text": "이유",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-e15f2801873c3186",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 17,
-          "end": 19,
-          "text": "이유",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "girls-generation",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 4,
-          "text": "소녀시대",
           "source": "title"
         }
       ]

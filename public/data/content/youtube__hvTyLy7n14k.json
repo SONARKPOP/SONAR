@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:43:17.733731Z",
+    "collectedAt": "2026-11-28T07:39:27.943682Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -49,6 +49,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
+      "artistId": "blackpink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "블랙핑크",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "red-velvet",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -57,20 +71,6 @@
           "start": 44,
           "end": 48,
           "text": "레드벨벳",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "bp-rose",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 5,
-          "end": 7,
-          "text": "로제",
           "source": "title"
         }
       ]
@@ -90,29 +90,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "blackpink",
+      "artistType": "person",
+      "artistId": "bp-rose",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 4,
-          "text": "블랙핑크",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-3fe6e94556a877e5",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 16,
-          "end": 18,
-          "text": "조이",
+          "start": 5,
+          "end": 7,
+          "text": "로제",
           "source": "title"
         }
       ]
@@ -136,6 +122,20 @@
       "artistId": "joy",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 18,
+          "text": "조이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-3fe6e94556a877e5",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 16,

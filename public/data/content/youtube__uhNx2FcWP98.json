@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:44:39.193805Z",
+    "collectedAt": "2026-11-28T07:40:13.951464Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,20 +46,6 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
-    {
-      "artistType": "person",
-      "artistId": "person-aaad6bdaece61045",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 42,
-          "end": 44,
-          "text": "채인",
-          "source": "title"
-        }
-      ]
-    },
     {
       "artistType": "person",
       "artistId": "person-c73ce5fb2451dbbf",
@@ -76,14 +62,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "kiss",
+      "artistId": "purple-kiss",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 56,
+          "start": 34,
+          "end": 38,
+          "text": "퍼플키스",
+          "source": "title"
+        },
+        {
+          "start": 49,
           "end": 60,
-          "text": "KISS",
+          "text": "PURPLE KISS",
           "source": "title"
         }
       ]
@@ -93,20 +85,6 @@
       "artistId": "person-db461325cd947b43",
       "state": "needs_review",
       "reason": "shared-name",
-      "matches": [
-        {
-          "start": 45,
-          "end": 47,
-          "text": "수안",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "purple-kiss-swan",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 45,
@@ -131,21 +109,43 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "purple-kiss",
+      "artistType": "person",
+      "artistId": "purple-kiss-swan",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 49,
-          "end": 60,
-          "text": "PURPLE KISS",
+          "start": 45,
+          "end": 47,
+          "text": "수안",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-aaad6bdaece61045",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 34,
-          "end": 38,
-          "text": "퍼플키스",
+          "start": 42,
+          "end": 44,
+          "text": "채인",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 56,
+          "end": 60,
+          "text": "KISS",
           "source": "title"
         }
       ]

@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:43:10.694369Z",
+    "collectedAt": "2026-11-28T07:39:24.081949Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,6 +46,20 @@
     {
       "artistType": "person",
       "artistId": "person-dbe1e024b60849a5",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 34,
+          "end": 36,
+          "text": "메이",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-6710cdc41d20f9fd",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -92,35 +106,21 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-6710cdc41d20f9fd",
-      "state": "needs_review",
-      "reason": "shared-name",
-      "matches": [
-        {
-          "start": 34,
-          "end": 36,
-          "text": "메이",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
       "artistId": "rescene",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 20,
-          "end": 27,
-          "text": "RESCENE",
-          "source": "title"
-        },
-        {
           "start": 29,
           "end": 32,
           "text": "리센느",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 27,
+          "text": "RESCENE",
           "source": "title"
         }
       ]

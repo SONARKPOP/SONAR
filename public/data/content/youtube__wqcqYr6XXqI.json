@@ -34,7 +34,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:44:53.318647Z",
+    "collectedAt": "2026-11-28T07:40:21.459009Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -63,6 +63,20 @@
     },
     {
       "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 47,
+          "end": 49,
+          "text": "키스",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
       "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
@@ -71,12 +85,6 @@
           "start": 0,
           "end": 7,
           "text": "(여자)아이들",
-          "source": "title"
-        },
-        {
-          "start": 11,
-          "end": 16,
-          "text": "I-DLE",
           "source": "title"
         },
         {
@@ -90,19 +98,25 @@
           "end": 16,
           "text": "(G)I-DLE",
           "source": "title"
+        },
+        {
+          "start": 11,
+          "end": 16,
+          "text": "I-DLE",
+          "source": "title"
         }
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "kiss",
+      "artistType": "person",
+      "artistId": "gidle-soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 47,
-          "end": 49,
-          "text": "키스",
+          "start": 18,
+          "end": 20,
+          "text": "소연",
           "source": "title"
         }
       ]
@@ -123,9 +137,9 @@
     },
     {
       "artistType": "person",
-      "artistId": "gidle-soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-0a0c0ebc64042cc2",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 18,
@@ -140,20 +154,6 @@
       "artistId": "soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 18,
-          "end": 20,
-          "text": "소연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "person-0a0c0ebc64042cc2",
-      "state": "needs_review",
-      "reason": "shared-name",
       "matches": [
         {
           "start": 18,

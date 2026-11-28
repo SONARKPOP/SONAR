@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:40:33.365513Z",
+    "collectedAt": "2026-11-28T07:37:58.021426Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -39,30 +39,36 @@
   ],
   "externalType": "radio",
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-7c6ccda0122b2222",
+      "artistType": "group",
+      "artistId": "nature",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
         {
-          "start": 45,
-          "end": 47,
-          "text": "새봄",
+          "start": 0,
+          "end": 6,
+          "text": "NATURE",
+          "source": "title"
+        },
+        {
+          "start": 8,
+          "end": 11,
+          "text": "네이처",
           "source": "title"
         }
       ]
     },
     {
       "artistType": "person",
-      "artistId": "person-8a0be4cb381e9115",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-7c6ccda0122b2222",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 45,
@@ -87,21 +93,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nature",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "person",
+      "artistId": "person-8a0be4cb381e9115",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 6,
-          "text": "NATURE",
-          "source": "title"
-        },
-        {
-          "start": 8,
-          "end": 11,
-          "text": "네이처",
+          "start": 45,
+          "end": 47,
+          "text": "새봄",
           "source": "title"
         }
       ]

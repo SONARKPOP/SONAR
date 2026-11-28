@@ -32,11 +32,11 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-27T07:44:56.618484Z",
+    "collectedAt": "2026-11-28T07:37:35.868147Z",
     "adapter": "youtube-v3"
   },
   "memberTagging": {
-    "policy": "title-context-v2",
+    "policy": "title-only-v1",
     "source": "unclassified",
     "appearanceVerified": false
   },
@@ -48,15 +48,15 @@
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 51,
-          "end": 56,
-          "text": "ILLIT",
-          "source": "title"
-        },
-        {
           "start": 58,
           "end": 61,
           "text": "아일릿",
+          "source": "title"
+        },
+        {
+          "start": 51,
+          "end": 56,
+          "text": "ILLIT",
           "source": "title"
         }
       ]
@@ -76,10 +76,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "nayeon",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "tw-nayeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 22,
@@ -90,10 +90,10 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "tw-nayeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "group",
+      "artistId": "nayeon",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 22,

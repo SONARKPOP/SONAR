@@ -28,7 +28,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:40:45.887130Z",
+    "collectedAt": "2026-11-28T07:38:05.024595Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -43,14 +43,20 @@
   "appearanceLinks": [
     {
       "artistType": "group",
-      "artistId": "kiss",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "rose",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 23,
-          "end": 27,
-          "text": "KISS",
+          "start": 51,
+          "end": 53,
+          "text": "로제",
+          "source": "title"
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "text": "ROSÉ",
           "source": "title"
         }
       ]
@@ -62,35 +68,15 @@
       "reason": "original-artist-or-comparison",
       "matches": [
         {
-          "start": 54,
-          "end": 58,
-          "text": "ROSÉ",
-          "source": "title"
-        },
-        {
           "start": 51,
           "end": 53,
           "text": "로제",
           "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rose",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
-      "matches": [
+        },
         {
           "start": 54,
           "end": 58,
           "text": "ROSÉ",
-          "source": "title"
-        },
-        {
-          "start": 51,
-          "end": 53,
-          "text": "로제",
           "source": "title"
         }
       ]
@@ -102,15 +88,29 @@
       "reason": "everyday-name",
       "matches": [
         {
+          "start": 23,
+          "end": 35,
+          "text": "KISS OF LIFE",
+          "source": "title"
+        },
+        {
           "start": 15,
           "end": 22,
           "text": "키스오브라이프",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kiss",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
           "start": 23,
-          "end": 35,
-          "text": "KISS OF LIFE",
+          "end": 27,
+          "text": "KISS",
           "source": "title"
         }
       ]

@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:38:46.407572Z",
+    "collectedAt": "2026-11-28T07:36:55.192267Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,20 +45,6 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "ive",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 3,
-          "text": "IVE",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "person",
       "artistId": "ive-liz",
       "state": "inferred",
@@ -68,6 +54,20 @@
           "start": 4,
           "end": 6,
           "text": "리즈",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "person-85a74b9d1650b4e3",
+      "state": "needs_review",
+      "reason": "shared-name",
+      "matches": [
+        {
+          "start": 8,
+          "end": 10,
+          "text": "이서",
           "source": "title"
         }
       ]
@@ -87,15 +87,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-85a74b9d1650b4e3",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "ive",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 8,
-          "end": 10,
-          "text": "이서",
+          "start": 0,
+          "end": 3,
+          "text": "IVE",
           "source": "title"
         }
       ]

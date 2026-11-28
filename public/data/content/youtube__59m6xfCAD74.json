@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:38:57.825643Z",
+    "collectedAt": "2026-11-28T07:37:03.682251Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -46,10 +46,16 @@
   "appearanceLinks": [
     {
       "artistType": "person",
-      "artistId": "person-e6aff3c2bf942094",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "rescene-liv",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
+        {
+          "start": 44,
+          "end": 47,
+          "text": "LIV",
+          "source": "title"
+        },
         {
           "start": 12,
           "end": 14,
@@ -60,20 +66,14 @@
     },
     {
       "artistType": "person",
-      "artistId": "rescene-liv",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "person-e6aff3c2bf942094",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 12,
           "end": 14,
           "text": "리브",
-          "source": "title"
-        },
-        {
-          "start": 44,
-          "end": 47,
-          "text": "LIV",
           "source": "title"
         }
       ]

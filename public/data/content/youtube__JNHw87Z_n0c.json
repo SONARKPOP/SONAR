@@ -33,7 +33,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:40:27.861676Z",
+    "collectedAt": "2026-11-28T07:37:55.130135Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -47,15 +47,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "miyeon",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 8,
-          "end": 10,
-          "text": "소연",
+          "start": 0,
+          "end": 2,
+          "text": "미연",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "gidle-miyeon",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "미연",
           "source": "title"
         }
       ]
@@ -75,8 +89,8 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "soyeon",
+      "artistType": "person",
+      "artistId": "person-3caf8650648aaf32",
       "state": "needs_review",
       "reason": "shared-name",
       "matches": [
@@ -104,28 +118,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "miyeon",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistId": "soyeon",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 0,
-          "end": 2,
-          "text": "미연",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "gidle-miyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 0,
-          "end": 2,
-          "text": "미연",
+          "start": 8,
+          "end": 10,
+          "text": "소연",
           "source": "title"
         }
       ]

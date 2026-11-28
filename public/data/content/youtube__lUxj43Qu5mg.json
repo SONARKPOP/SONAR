@@ -32,7 +32,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:43:41.158655Z",
+    "collectedAt": "2026-11-28T07:39:41.205736Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -65,38 +65,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "itzy",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 50,
-          "end": 54,
-          "text": "ITZY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "aespa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 34,
-          "end": 39,
-          "text": "aespa",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "hyuna",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "person",
+      "artistId": "wonder-girls-hyuna",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 55,
@@ -121,15 +93,43 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "wonder-girls-hyuna",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "hyuna",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
           "start": 55,
           "end": 60,
           "text": "HyunA",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "itzy",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 50,
+          "end": 54,
+          "text": "ITZY",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "aespa",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 34,
+          "end": 39,
+          "text": "aespa",
           "source": "title"
         }
       ]

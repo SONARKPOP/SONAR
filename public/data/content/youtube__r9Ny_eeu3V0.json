@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:44:17.314855Z",
+    "collectedAt": "2026-11-28T07:40:01.116098Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -65,15 +65,21 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "jewelry",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-c42682e955f6c3f7",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
-          "start": 55,
-          "end": 58,
-          "text": "쥬얼리",
+          "start": 11,
+          "end": 14,
+          "text": "박정아",
+          "source": "title"
+        },
+        {
+          "start": 60,
+          "end": 63,
+          "text": "박정아",
           "source": "title"
         }
       ]
@@ -99,21 +105,15 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "person-c42682e955f6c3f7",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistType": "group",
+      "artistId": "jewelry",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 11,
-          "end": 14,
-          "text": "박정아",
-          "source": "title"
-        },
-        {
-          "start": 60,
-          "end": 63,
-          "text": "박정아",
+          "start": 55,
+          "end": 58,
+          "text": "쥬얼리",
           "source": "title"
         }
       ]

@@ -35,7 +35,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:45:00.230187Z",
+    "collectedAt": "2026-11-28T07:40:25.246306Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -90,14 +90,28 @@
     },
     {
       "artistType": "person",
-      "artistId": "person-3caf8650648aaf32",
-      "state": "needs_review",
-      "reason": "shared-name",
+      "artistId": "apink-kim-nam-joo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 60,
-          "end": 62,
-          "text": "소연",
+          "start": 16,
+          "end": 19,
+          "text": "김남주",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "kim-nam-joo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 16,
+          "end": 19,
+          "text": "김남주",
           "source": "title"
         }
       ]
@@ -117,10 +131,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "soyeon",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistType": "person",
+      "artistId": "person-3caf8650648aaf32",
+      "state": "needs_review",
+      "reason": "shared-name",
       "matches": [
         {
           "start": 60,
@@ -146,28 +160,14 @@
     },
     {
       "artistType": "group",
-      "artistId": "kim-nam-joo",
+      "artistId": "soyeon",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 16,
-          "end": 19,
-          "text": "김남주",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "apink-kim-nam-joo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 16,
-          "end": 19,
-          "text": "김남주",
+          "start": 60,
+          "end": 62,
+          "text": "소연",
           "source": "title"
         }
       ]

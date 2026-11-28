@@ -31,7 +31,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:39:10.282755Z",
+    "collectedAt": "2026-11-28T07:37:11.891731Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -45,15 +45,29 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "person-6c94e077a885f432",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
+      "artistType": "group",
+      "artistId": "rose",
+      "state": "needs_review",
+      "reason": "everyday-name",
       "matches": [
         {
-          "start": 37,
-          "end": 39,
-          "text": "장미",
+          "start": 13,
+          "end": 17,
+          "text": "Rose",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "h1-key",
+      "state": "mention",
+      "reason": "original-artist-or-comparison",
+      "matches": [
+        {
+          "start": 53,
+          "end": 59,
+          "text": "H1-KEY",
           "source": "title"
         }
       ]
@@ -79,29 +93,15 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "h1-key",
-      "state": "mention",
-      "reason": "original-artist-or-comparison",
+      "artistType": "person",
+      "artistId": "person-6c94e077a885f432",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
       "matches": [
         {
-          "start": 53,
-          "end": 59,
-          "text": "H1-KEY",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "rose",
-      "state": "needs_review",
-      "reason": "everyday-name",
-      "matches": [
-        {
-          "start": 13,
-          "end": 17,
-          "text": "Rose",
+          "start": 37,
+          "end": 39,
+          "text": "장미",
           "source": "title"
         }
       ]

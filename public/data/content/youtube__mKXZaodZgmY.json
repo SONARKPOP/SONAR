@@ -36,7 +36,7 @@
   "actualEndTime": null,
   "scheduledStartTime": null,
   "source": {
-    "collectedAt": "2026-11-28T01:43:45.945669Z",
+    "collectedAt": "2026-11-28T07:39:44.474983Z",
     "adapter": "youtube-v3"
   },
   "contentTypes": [
@@ -48,6 +48,34 @@
     "appearanceVerified": false
   },
   "appearanceLinks": [
+    {
+      "artistType": "group",
+      "artistId": "ichillin",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 43,
+          "end": 47,
+          "text": "아이칠린",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "blackpink",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 0,
+          "end": 9,
+          "text": "BLACKPINK",
+          "source": "title"
+        }
+      ]
+    },
     {
       "artistType": "group",
       "artistId": "lisa",
@@ -72,40 +100,6 @@
           "start": 10,
           "end": 14,
           "text": "LISA",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "ichillin",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 43,
-          "end": 47,
-          "text": "아이칠린",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "gidle",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 20,
-          "end": 25,
-          "text": "I-DLE",
-          "source": "title"
-        },
-        {
-          "start": 17,
-          "end": 25,
-          "text": "(G)I-DLE",
           "source": "title"
         }
       ]
@@ -140,14 +134,20 @@
     },
     {
       "artistType": "group",
-      "artistId": "blackpink",
+      "artistId": "gidle",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 0,
-          "end": 9,
-          "text": "BLACKPINK",
+          "start": 17,
+          "end": 25,
+          "text": "(G)I-DLE",
+          "source": "title"
+        },
+        {
+          "start": 20,
+          "end": 25,
+          "text": "I-DLE",
           "source": "title"
         }
       ]
