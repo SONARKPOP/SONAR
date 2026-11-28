@@ -188,20 +188,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "gg-3ea891caaee2e6ac",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 36,
-              "end": 37,
-              "text": "s",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "miss-a",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -210,6 +196,20 @@
               "start": 29,
               "end": 35,
               "text": "miss A",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "gg-3ea891caaee2e6ac",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 36,
+              "end": 37,
+              "text": "s",
               "source": "title"
             }
           ]
@@ -327,10 +327,10 @@
       "hierarchyVersion": 2,
       "appearanceLinks": [
         {
-          "artistType": "person",
-          "artistId": "wonder-girls-hatfelt",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistType": "group",
+          "artistId": "hatfelt",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
               "start": 6,
@@ -341,10 +341,10 @@
           ]
         },
         {
-          "artistType": "group",
-          "artistId": "hatfelt",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistType": "person",
+          "artistId": "wonder-girls-hatfelt",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
               "start": 6,
@@ -474,6 +474,26 @@
       "appearanceLinks": [
         {
           "artistType": "group",
+          "artistId": "miss-a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
+          "matches": [
+            {
+              "start": 12,
+              "end": 18,
+              "text": "miss A",
+              "source": "title"
+            },
+            {
+              "start": 19,
+              "end": 23,
+              "text": "미쓰에이",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
           "artistId": "fei",
           "state": "mention",
           "reason": "official-owner-reference",
@@ -496,26 +516,6 @@
               "start": 68,
               "end": 71,
               "text": "FEI",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
-          "artistId": "miss-a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
-          "matches": [
-            {
-              "start": 12,
-              "end": 18,
-              "text": "miss A",
-              "source": "title"
-            },
-            {
-              "start": 19,
-              "end": 23,
-              "text": "미쓰에이",
               "source": "title"
             }
           ]
@@ -572,14 +572,20 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "jia",
-          "state": "mention",
-          "reason": "official-owner-reference",
+          "artistId": "miss-a",
+          "state": "inferred",
+          "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 69,
-              "end": 72,
-              "text": "JIA",
+              "start": 12,
+              "end": 18,
+              "text": "miss A",
+              "source": "title"
+            },
+            {
+              "start": 19,
+              "end": 23,
+              "text": "미쓰에이",
               "source": "title"
             }
           ]
@@ -614,20 +620,14 @@
         },
         {
           "artistType": "group",
-          "artistId": "miss-a",
-          "state": "inferred",
-          "reason": "group-or-channel-context",
+          "artistId": "jia",
+          "state": "mention",
+          "reason": "official-owner-reference",
           "matches": [
             {
-              "start": 12,
-              "end": 18,
-              "text": "miss A",
-              "source": "title"
-            },
-            {
-              "start": 19,
-              "end": 23,
-              "text": "미쓰에이",
+              "start": 69,
+              "end": 72,
+              "text": "JIA",
               "source": "title"
             }
           ]
@@ -749,43 +749,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 8,
-              "text": "ChoColat",
-              "source": "title"
-            },
-            {
               "start": 11,
               "end": 14,
               "text": "쇼콜라",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-0605b9a5570b7f5d",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
+            },
             {
-              "start": 17,
-              "end": 19,
-              "text": "하루",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-dfc8c250fa8ac988",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 17,
-              "end": 19,
-              "text": "하루",
+              "start": 0,
+              "end": 8,
+              "text": "ChoColat",
               "source": "title"
             }
           ]
@@ -820,7 +792,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-570ac381b62ca2d1",
+          "artistId": "person-dfc8c250fa8ac988",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -835,6 +807,34 @@
         {
           "artistType": "person",
           "artistId": "person-b085c85dbb862ce6",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 17,
+              "end": 19,
+              "text": "하루",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-0605b9a5570b7f5d",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 17,
+              "end": 19,
+              "text": "하루",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-570ac381b62ca2d1",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -901,43 +901,15 @@
           "reason": "group-or-channel-context",
           "matches": [
             {
-              "start": 0,
-              "end": 8,
-              "text": "ChoColat",
-              "source": "title"
-            },
-            {
               "start": 9,
               "end": 12,
               "text": "쇼콜라",
               "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-0605b9a5570b7f5d",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
+            },
             {
-              "start": 15,
-              "end": 17,
-              "text": "하루",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "person",
-          "artistId": "person-dfc8c250fa8ac988",
-          "state": "needs_review",
-          "reason": "shared-name",
-          "matches": [
-            {
-              "start": 15,
-              "end": 17,
-              "text": "하루",
+              "start": 0,
+              "end": 8,
+              "text": "ChoColat",
               "source": "title"
             }
           ]
@@ -972,7 +944,7 @@
         },
         {
           "artistType": "person",
-          "artistId": "person-570ac381b62ca2d1",
+          "artistId": "person-dfc8c250fa8ac988",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -987,6 +959,34 @@
         {
           "artistType": "person",
           "artistId": "person-b085c85dbb862ce6",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 15,
+              "end": 17,
+              "text": "하루",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-0605b9a5570b7f5d",
+          "state": "needs_review",
+          "reason": "shared-name",
+          "matches": [
+            {
+              "start": 15,
+              "end": 17,
+              "text": "하루",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "person",
+          "artistId": "person-570ac381b62ca2d1",
           "state": "needs_review",
           "reason": "shared-name",
           "matches": [
@@ -1047,20 +1047,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "episode",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 43,
-              "end": 50,
-              "text": "Episode",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "wonder-girls",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1069,6 +1055,20 @@
               "start": 5,
               "end": 17,
               "text": "Wonder Girls",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "episode",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 43,
+              "end": 50,
+              "text": "Episode",
               "source": "title"
             }
           ]
@@ -1122,20 +1122,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "episode",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 43,
-              "end": 50,
-              "text": "Episode",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "wonder-girls",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1144,6 +1130,20 @@
               "start": 5,
               "end": 17,
               "text": "Wonder Girls",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "episode",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 43,
+              "end": 50,
+              "text": "Episode",
               "source": "title"
             }
           ]
@@ -1197,20 +1197,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "episode",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 43,
-              "end": 50,
-              "text": "Episode",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "wonder-girls",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1219,6 +1205,20 @@
               "start": 5,
               "end": 17,
               "text": "Wonder Girls",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "episode",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 43,
+              "end": 50,
+              "text": "Episode",
               "source": "title"
             }
           ]
@@ -1272,20 +1272,6 @@
       "appearanceLinks": [
         {
           "artistType": "group",
-          "artistId": "episode",
-          "state": "needs_review",
-          "reason": "everyday-name",
-          "matches": [
-            {
-              "start": 43,
-              "end": 50,
-              "text": "Episode",
-              "source": "title"
-            }
-          ]
-        },
-        {
-          "artistType": "group",
           "artistId": "wonder-girls",
           "state": "inferred",
           "reason": "group-or-channel-context",
@@ -1294,6 +1280,20 @@
               "start": 5,
               "end": 17,
               "text": "Wonder Girls",
+              "source": "title"
+            }
+          ]
+        },
+        {
+          "artistType": "group",
+          "artistId": "episode",
+          "state": "needs_review",
+          "reason": "everyday-name",
+          "matches": [
+            {
+              "start": 43,
+              "end": 50,
+              "text": "Episode",
               "source": "title"
             }
           ]

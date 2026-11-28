@@ -42,10 +42,24 @@
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "kiss-of-life-natty",
+      "artistType": "group",
+      "artistId": "kiss-of-life",
       "state": "inferred",
       "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 17,
+          "end": 24,
+          "text": "키스오브라이프",
+          "source": "title"
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "natty",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
           "start": 32,
@@ -62,10 +76,10 @@
       ]
     },
     {
-      "artistType": "group",
-      "artistId": "natty",
-      "state": "mention",
-      "reason": "official-owner-reference",
+      "artistType": "person",
+      "artistId": "kiss-of-life-natty",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
       "matches": [
         {
           "start": 32,
@@ -105,20 +119,6 @@
           "start": 51,
           "end": 53,
           "text": "하늘",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "group",
-      "artistId": "kiss-of-life",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 17,
-          "end": 24,
-          "text": "키스오브라이프",
           "source": "title"
         }
       ]
