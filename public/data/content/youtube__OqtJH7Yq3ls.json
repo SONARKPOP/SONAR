@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2024-10-07T09:00:22Z",
   "groupIds": [
-    "aespa",
     "tri-be"
   ],
   "memberIds": [
@@ -58,6 +57,26 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
+      "artistType": "person",
+      "artistId": "aespa-karina",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
+        {
+          "start": 46,
+          "end": 52,
+          "text": "KARINA",
+          "source": "title"
+        },
+        {
+          "start": 41,
+          "end": 44,
+          "text": "카리나",
+          "source": "title"
+        }
+      ]
+    },
+    {
       "artistType": "group",
       "artistId": "tri-be",
       "state": "inferred",
@@ -74,19 +93,19 @@
     {
       "artistType": "group",
       "artistId": "aespa",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
-        {
-          "start": 34,
-          "end": 39,
-          "text": "aespa",
-          "source": "title"
-        },
         {
           "start": 29,
           "end": 32,
           "text": "에스파",
+          "source": "title"
+        },
+        {
+          "start": 34,
+          "end": 39,
+          "text": "aespa",
           "source": "title"
         }
       ]
@@ -101,26 +120,6 @@
           "start": 19,
           "end": 21,
           "text": "미레",
-          "source": "title"
-        }
-      ]
-    },
-    {
-      "artistType": "person",
-      "artistId": "aespa-karina",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 46,
-          "end": 52,
-          "text": "KARINA",
-          "source": "title"
-        },
-        {
-          "start": 41,
-          "end": 44,
-          "text": "카리나",
           "source": "title"
         }
       ]

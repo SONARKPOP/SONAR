@@ -8,8 +8,7 @@
   "publishedAt": "2025-06-14T05:00:50Z",
   "groupIds": [
     "izna",
-    "min",
-    "miss-a"
+    "min"
   ],
   "memberIds": [
     "miss-a-min",
@@ -42,35 +41,27 @@
     "external"
   ],
   "memberTagging": {
-    "policy": "title-only-v1",
+    "policy": "title-context-v2",
     "source": "title",
     "appearanceVerified": false
   },
   "appearanceLinks": [
     {
-      "artistType": "person",
-      "artistId": "miss-a-min",
-      "state": "inferred",
-      "reason": "unambiguous-title-name",
-      "matches": [
-        {
-          "start": 43,
-          "end": 46,
-          "text": "MIN",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "min",
+      "artistId": "izna",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 43,
-          "end": 46,
-          "text": "MIN",
+          "start": 7,
+          "end": 10,
+          "text": "이즈나",
+          "source": "title"
+        },
+        {
+          "start": 29,
+          "end": 33,
+          "text": "izna",
           "source": "title"
         }
       ]
@@ -91,20 +82,28 @@
     },
     {
       "artistType": "group",
-      "artistId": "izna",
+      "artistId": "min",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 29,
-          "end": 33,
-          "text": "izna",
+          "start": 43,
+          "end": 46,
+          "text": "MIN",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "person",
+      "artistId": "miss-a-min",
+      "state": "inferred",
+      "reason": "unambiguous-title-name",
+      "matches": [
         {
-          "start": 7,
-          "end": 10,
-          "text": "이즈나",
+          "start": 43,
+          "end": 46,
+          "text": "MIN",
           "source": "title"
         }
       ]

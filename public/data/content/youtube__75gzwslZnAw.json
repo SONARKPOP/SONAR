@@ -7,7 +7,6 @@
   "description": "",
   "publishedAt": "2023-05-25T09:47:43Z",
   "groupIds": [
-    "aespa",
     "mijoo"
   ],
   "memberIds": [
@@ -38,7 +37,7 @@
   },
   "memberTagging": {
     "policy": "title-context-v2",
-    "source": "title",
+    "source": "unclassified",
     "appearanceVerified": false
   },
   "externalId": "75gzwslZnAw",
@@ -58,27 +57,29 @@
   "hierarchyVersion": 2,
   "appearanceLinks": [
     {
-      "artistType": "group",
-      "artistId": "aespa",
+      "artistType": "person",
+      "artistId": "lovelyz-mijoo",
       "state": "inferred",
       "reason": "group-or-channel-context",
       "matches": [
         {
-          "start": 66,
-          "end": 71,
-          "text": "aespa",
+          "start": 42,
+          "end": 47,
+          "text": "MIJOO",
           "source": "title"
-        },
+        }
+      ]
+    },
+    {
+      "artistType": "group",
+      "artistId": "mijoo",
+      "state": "inferred",
+      "reason": "group-or-channel-context",
+      "matches": [
         {
-          "start": 94,
-          "end": 99,
-          "text": "aespa",
-          "source": "title"
-        },
-        {
-          "start": 61,
-          "end": 64,
-          "text": "에스파",
+          "start": 42,
+          "end": 47,
+          "text": "MIJOO",
           "source": "title"
         }
       ]
@@ -104,29 +105,27 @@
       ]
     },
     {
-      "artistType": "person",
-      "artistId": "lovelyz-mijoo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
-      "matches": [
-        {
-          "start": 42,
-          "end": 47,
-          "text": "MIJOO",
-          "source": "title"
-        }
-      ]
-    },
-    {
       "artistType": "group",
-      "artistId": "mijoo",
-      "state": "inferred",
-      "reason": "group-or-channel-context",
+      "artistId": "aespa",
+      "state": "mention",
+      "reason": "official-owner-reference",
       "matches": [
         {
-          "start": 42,
-          "end": 47,
-          "text": "MIJOO",
+          "start": 61,
+          "end": 64,
+          "text": "에스파",
+          "source": "title"
+        },
+        {
+          "start": 66,
+          "end": 71,
+          "text": "aespa",
+          "source": "title"
+        },
+        {
+          "start": 94,
+          "end": 99,
+          "text": "aespa",
           "source": "title"
         }
       ]
